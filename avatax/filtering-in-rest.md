@@ -101,7 +101,7 @@ The following filters are not defined in the Microsoft standard, but are availab
         </tr>
         <tr>
             <td>EndsWith</td>
-            <td><pre>name endswith '%Bob%'</pre></td>
+            <td><pre>name endswith 'Bob'</pre></td>
             <td>Matches all records whose value ends with the specified filter string.  To represent an apostrophe, use two apostrophe characters in a row, for example <span class="highlight-rouge">'Bob''s Hardware'</span>.</td>
         </tr>
         <tr>
