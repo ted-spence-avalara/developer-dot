@@ -28,7 +28,7 @@ This article is about the June 2017 monthly update to the AvaTax REST v2 API.
         <tr>
             <td>Production</td>
             <td><a href="https://rest.avatax.com">https://rest.avatax.com</a></td>
-            <td>2017-06-26</td>
+            <td>2017-06-27</td>
         </tr>
     </table>
 </div>
