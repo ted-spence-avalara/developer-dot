@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import url from 'url';
 import ReactMarkdown from 'react-markdown';
 import ApiDocumentationParam from './apiDocumentationParam';
@@ -6,13 +7,9 @@ import ApiDocModelLink from './apiDocModelLink';
 
 const ApiDocumentation = ({endpoint}) => (
     <div>
-        <h1 id={endpoint.operationId}>{endpoint.name || endpoint.operationId}</h1>
+        <h1 id={endpoint.operationId}>{endpoint.operationId}</h1>
         <table className='styled-table'>
             <thead>
-                <tr>
-                    <th>{'API'}</th>
-                    <td>{endpoint.operationId}</td>
-                </tr>
                 <tr>
                     <th>{'Purpose'}</th>
                     <td>{endpoint.name}</td>
@@ -26,9 +23,15 @@ const ApiDocumentation = ({endpoint}) => (
                     <td>{decodeURI(url.parse(endpoint.path).pathname)}</td>
                 </tr>
                 <tr>
-                    <th>{'URL'}</th>
+                    <th>{(endpoint.productionPath) ? 'URL (SANDBOX)' : 'URL'}</th>
                     <td>{endpoint.path}</td>
                 </tr>
+                {(endpoint.productionPath) ?
+                    <tr>
+                        <th>{'URL (PRODUCTION)'}</th>
+                        <td>{endpoint.productionPath}</td>
+                    </tr> : null
+                }
                 <tr>
                     <th>{'Query String'}</th>
                     <td>{(endpoint.queryString) ? '?' : ''}{Object.keys(endpoint.queryString || {}).join('&')}</td>
@@ -46,7 +49,7 @@ const ApiDocumentation = ({endpoint}) => (
             </thead>
         </table>
         <h3 id='description'>{'Description'}</h3>
-        <ReactMarkdown source={endpoint.description} />
+        <ReactMarkdown source={endpoint.description || ''} />
         <h3 id='parameters'>{'Parameters'}</h3>
         <table className='styled-table'>
             <thead>
@@ -81,7 +84,7 @@ const ApiDocumentation = ({endpoint}) => (
 
 ApiDocumentation.displayName = 'API Documentation';
 ApiDocumentation.propTypes = {
-    endpoint: React.PropTypes.object
+    endpoint: PropTypes.object
 };
 
 export default ApiDocumentation;

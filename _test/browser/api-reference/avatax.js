@@ -1,30 +1,19 @@
-const assert = require('../helpers/assert');
+const deepEqual = require('../helpers/deepEqual');
+
+const NUMAPIS = 6;
+let expectedNumberOfApiEndpoints;
+let navigationBar;
 
 module.exports = {
-    'baseURL': process.env.BASEURL ? process.env.BASEURL.replace(/\/$/, '') : 'http://localhost:4000',
-    'waitTime': isNaN(parseInt(process.env.TIMEOUT, 10)) ? 5000 : parseInt(process.env.TIMEOUT, 10),
-    'before': function() {
-        /* eslint-disable no-console */
-        console.log('WaitTime set to', this.waitTime);
-        console.log('BaseURL set to', this.baseURL);
-        /* eslint-enable no-console */
+    'before': function(browser) {
+        browser.maximizeWindow();
+        navigationBar = browser.page.navigationBar();
     },
 
-    'API Reference: AvaTax: REST v1 (verify number of endpoints)': function(browser) {
-        const expectedNumberOfApiEndpoints = 4;
-
-        browser
-            .maximizeWindow()
-            .url(this.baseURL + '/avatax/api-reference/tax/v1/')
-            .waitForElementVisible('[data-reactroot]', this.waitTime)
-
-            .elements('css selector', '.endpoint-summary', function(result) {
-                /* eslint-disable no-invalid-this */
-                this.assert.equal(result.value.length, expectedNumberOfApiEndpoints, 'expected ' + expectedNumberOfApiEndpoints + ' endpoints, received ' + result.value.length);
-                /* eslint-enable no-invalid-this */
-            })
-            .end();
+    'after': function(browser) {
+        browser.end();
     },
+
     'API Reference: AvaTax: REST v1 (getTax fill sample data)': function(browser) {
         /* eslint-disable quotes */
         /* eslint-disable quote-props */
@@ -33,113 +22,77 @@ module.exports = {
         /* eslint-enable quotes */
         /* eslint-enable quote-props */
 
+        expectedNumberOfApiEndpoints = 4;
+
         browser
-            .maximizeWindow()
-            .url(this.baseURL + '/avatax/api-reference/tax/v1/')
-            .waitForElementVisible('[data-reactroot]', this.waitTime)
+            .initialize(browser.globals.baseURL + '/api-reference/avatax/rest/v1/methods/getTax/')
+            .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints);
 
-            .waitForElementVisible('#getTax-console', this.waitTime)
-            .click('#getTax-console')
-            .waitForElementVisible('#getTax-console-body', this.waitTime)
+        browser.page.endpointSummary()
+            .navigateTo('#getTax-console')
+            .navigateTo('#getTax-console-body .fill-sample-data')
 
-            .click('#getTax-console-body .fill-sample-data')
-            .waitForElementVisible('#getTax-console-body .console-req-container .code-snippet span:first-of-type', this.waitTime)
-            .getText('#getTax-console-body .console-req-container .code-snippet', function(req) {
-                /* eslint-disable no-invalid-this */
-                const request = JSON.parse(req.value);
-
-                this.assert.ok(assert.deepEqual(request, expectedRequest),
+            .getConsoleText('getTax', 'requestConsole', function(req) {
+                browser.assert.ok(deepEqual(req, expectedRequest),
                     "request for 'try it now' matches expected request");
-                /* eslint-enable no-invalid-this */
             })
 
             .click('#getTax-console-body .submit')
-            .waitForElementVisible('#getTax-console-body .console-res-container .code-snippet span:first-of-type', this.waitTime)
-            .getText('#getTax-console-body .console-res-container .code-snippet', function(res) {
-                /* eslint-disable no-invalid-this */
-                const response = JSON.parse(res.value);
-
-                response.Timestamp = undefined;
-                this.assert.ok(assert.deepEqual(response, expectedResponse),
+            .getConsoleText('getTax', 'responseConsole', function(res) {
+                browser.assert.ok(deepEqual(res, expectedResponse),
                     "response for 'try it now' matches expected response");
-                /* eslint-enable no-invalid-this */
-            })
-            .end();
+            });
     },
     'API Reference: AvaTax: REST v2 (verify number of endpoints)': function(browser) {
         // NOTE: THESE NOW ALL EXIST ON SUB 'TAG' PAGES
-        const expectedNumberOfApiEndpoints = 0;
+        expectedNumberOfApiEndpoints = 26;
+        const expectedNumberOfSubTags = 5;
+
+        const expectedRequest = {accountId: 123456789, confirmResetLicenseKey: true};
 
         browser
-            .maximizeWindow()
-            .url(this.baseURL + '/avatax/api-reference/tax/v2/')
-            .waitForElementVisible('[data-reactroot]', this.waitTime)
+            .initialize(browser.globals.baseURL + '/api-reference/avatax/rest/v2/methods/Accounts/AccountResetLicenseKey/')
+            .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints + expectedNumberOfSubTags);
 
-            .elements('css selector', '.endpoint-summary', function(result) {
-                /* eslint-disable no-invalid-this */
-                this.verify.equal(result.value.length, expectedNumberOfApiEndpoints, 'expected ' + expectedNumberOfApiEndpoints + ' endpoints, received ' + result.value.length);
-                /* eslint-enable no-invalid-this */
-            })
-            .end();
+        browser.page.endpointSummary()
+            .navigateTo('#AccountResetLicenseKey-console')
+            .navigateTo('#AccountResetLicenseKey-console-body .fill-sample-data')
+
+            .getConsoleText('AccountResetLicenseKey', 'requestConsole', function(req) {
+                browser.assert.ok(deepEqual(req, expectedRequest),
+                    "request for 'try it now' matches expected request");
+            });
+
+        // navbar for v2 has one extra assertion
+        navigationBar
+            .assert.elementNumTimes('@subtags', expectedNumberOfSubTags, 'navigationBar');
     },
     'API Reference: AvaTax: SOAP (verify number of endpoints)': function(browser) {
-        const expectedNumberOfApiEndpoints = 11;
+        expectedNumberOfApiEndpoints = 11;
 
         browser
-            .maximizeWindow()
-            .url(this.baseURL + '/avatax/api-reference/tax/soap/')
-            .waitForElementVisible('[data-reactroot]', this.waitTime)
-
-            .elements('css selector', '.endpoint-summary', function(result) {
-                /* eslint-disable no-invalid-this */
-                this.verify.equal(result.value.length, expectedNumberOfApiEndpoints, 'expected ' + expectedNumberOfApiEndpoints + ' endpoints, received ' + result.value.length);
-                /* eslint-enable no-invalid-this */
-            })
-            .end();
+            .initialize(browser.globals.baseURL + '/api-reference/avatax/soap/methods/postTax/')
+            .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints);
     },
     'API Reference: AvaTax: BatchSvc SOAP (verify number of endpoints)': function(browser) {
-        const expectedNumberOfApiEndpoints = 9;
+        expectedNumberOfApiEndpoints = 9;
 
         browser
-            .maximizeWindow()
-            .url(this.baseURL + '/avatax/api-reference/batch/soap/')
-            .waitForElementVisible('[data-reactroot]', this.waitTime)
-
-            .elements('css selector', '.endpoint-summary', function(result) {
-                /* eslint-disable no-invalid-this */
-                this.verify.equal(result.value.length, expectedNumberOfApiEndpoints, 'expected ' + expectedNumberOfApiEndpoints + ' endpoints, received ' + result.value.length);
-                /* eslint-enable no-invalid-this */
-            })
-            .end();
+            .initialize(browser.globals.baseURL + '/api-reference/avatax/batch/soap/methods/batchFetch/')
+            .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints);
     },
     'API Reference: AvaTax: AccountSvc SOAP (verify number of endpoints)': function(browser) {
-        const expectedNumberOfApiEndpoints = 2;
+        expectedNumberOfApiEndpoints = 2;
 
         browser
-            .maximizeWindow()
-            .url(this.baseURL + '/avatax/api-reference/account/soap/')
-            .waitForElementVisible('[data-reactroot]', this.waitTime)
-
-            .elements('css selector', '.endpoint-summary', function(result) {
-                /* eslint-disable no-invalid-this */
-                this.verify.equal(result.value.length, expectedNumberOfApiEndpoints, 'expected ' + expectedNumberOfApiEndpoints + ' endpoints, received ' + result.value.length);
-                /* eslint-enable no-invalid-this */
-            })
-            .end();
+            .initialize(browser.globals.baseURL + '/api-reference/avatax/account/soap/methods/isAuthorized/')
+            .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints);
     },
     'API Reference: AvaTax: Onboarding (verify number of endpoints)': function(browser) {
-        const expectedNumberOfApiEndpoints = 8;
+        expectedNumberOfApiEndpoints = 8;
 
         browser
-            .maximizeWindow()
-            .url(this.baseURL + '/avatax/api-reference/onboarding/v1/')
-            .waitForElementVisible('[data-reactroot]', this.waitTime)
-
-            .elements('css selector', '.endpoint-summary', function(result) {
-                /* eslint-disable no-invalid-this */
-                this.verify.equal(result.value.length, expectedNumberOfApiEndpoints, 'expected ' + expectedNumberOfApiEndpoints + ' endpoints, received ' + result.value.length);
-                /* eslint-enable no-invalid-this */
-            })
-            .end();
+            .initialize(browser.globals.baseURL + '/api-reference/onboarding/methods/getAccount/')
+            .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints);
     }
 };
