@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+Your API request contained unprintable characters or was incomplete.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+Your API call contained an invalid request body.  This can occur if it contains unicode characters that cannot be represented correctly by AvaTax, or if the API call was interrupted.

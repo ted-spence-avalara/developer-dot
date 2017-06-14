@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+Only Company-level users may be assigned to a company.
 
 ## Example
 
@@ -32,4 +32,8 @@ TBD
 
 ## Explanation
 
-TBD
+In AvaTax, a user may be either part of the overall account, or the user may be joined to a specific company within the account.
+
+If you are an Account level user, the `companyId` value on your [UserModel](https://developer.avalara.com/api-reference/avatax/rest/v2/models/UserModel/) will be null or zero.  Attempting to assign an account-level user to a company will result in this error message.
+
+If you are a Company level user, the `companyId` value on your [UserModel](https://developer.avalara.com/api-reference/avatax/rest/v2/models/UserModel/) will be set to the ID number of the company to which you are assigned.

@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+You specified an invalid value for a field.
 
 ## Example
 
@@ -32,4 +32,6 @@ TBD
 
 ## Explanation
 
-TBD
+The field you attempted to provide is an `enumerated value field`.  This means that the field only has a limited list of permitted values.
+
+Please review the list of values in the error message and choose a correct value.

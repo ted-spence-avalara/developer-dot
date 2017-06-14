@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The configuration value you supplied was invalid.
 
 ## Example
 
@@ -32,4 +32,6 @@ TBD
 
 ## Explanation
 
-TBD
+Avalara defined configuration values have a specified data type - for example, numeric, string, or boolean.
+
+The data value you provided was not of the correct type.

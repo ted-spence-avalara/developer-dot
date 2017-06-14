@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+Your password did not meet length requirements.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+Passwords must meet certain complexity criteria.  Please try again with a password within this length range.

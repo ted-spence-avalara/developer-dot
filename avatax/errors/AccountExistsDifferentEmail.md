@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+An account with this username already exists.
 
 ## Example
 
@@ -32,4 +32,6 @@ TBD
 
 ## Explanation
 
-TBD
+An account for this username already exists, but it is attached to a different email address.
+
+Please choose a different username for your user.

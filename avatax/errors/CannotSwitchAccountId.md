@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+You may not change the accountId value on a company.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+The `accountId` data field on the company is read-only and may not be changed.

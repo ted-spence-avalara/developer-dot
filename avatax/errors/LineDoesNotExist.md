@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+You attempted to remove a line that did not exist.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+When calling the [DeleteLines](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/DeleteLines/) API, you must specify the lines that you wish to delete.  If you specify a line number that cannot be found, you will receive this error message.

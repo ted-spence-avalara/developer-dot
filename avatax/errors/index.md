@@ -252,12 +252,12 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>62</td>
 			<td><a href="CannotAssignUserToCompany">CannotAssignUserToCompany</a></td>
-			<td>TBD</td>
+			<td>Only Company-level users may be assigned to a company.</td>
 		</tr>		
         <tr>
 			<td>63</td>
 			<td><a href="MustAssignUserToCompany">MustAssignUserToCompany</a></td>
-			<td>TBD</td>
+			<td>Company level users must be assigned to a company within this account.</td>
 		</tr>		
         <tr>
 			<td>70</td>
@@ -492,52 +492,52 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>162</td>
 			<td><a href="InvalidConfigurationSetting">InvalidConfigurationSetting</a></td>
-			<td>TBD</td>
+			<td>The configuration setting you specified is invalid.</td>
 		</tr>		
         <tr>
 			<td>163</td>
 			<td><a href="InvalidConfigurationValue">InvalidConfigurationValue</a></td>
-			<td>TBD</td>
+			<td>The configuration value you supplied was invalid.</td>
 		</tr>		
         <tr>
 			<td>164</td>
 			<td><a href="InvalidEnumValue">InvalidEnumValue</a></td>
-			<td>TBD</td>
+			<td>You specified an invalid value for a field.</td>
 		</tr>		
         <tr>
 			<td>165</td>
 			<td><a href="TaxCodeAssociatedTaxRule">TaxCodeAssociatedTaxRule</a></td>
-			<td>TBD</td>
+			<td>This tax code cannot be deleted because it is in use.</td>
 		</tr>		
         <tr>
 			<td>166</td>
 			<td><a href="CannotSwitchAccountId">CannotSwitchAccountId</a></td>
-			<td>TBD</td>
+			<td>You may not change the accountId value on a company.</td>
 		</tr>		
         <tr>
 			<td>167</td>
 			<td><a href="RequestIncomplete">RequestIncomplete</a></td>
-			<td>TBD</td>
+			<td>Your API request contained unprintable characters or was incomplete.</td>
 		</tr>		
         <tr>
 			<td>168</td>
 			<td><a href="AccountNotNew">AccountNotNew</a></td>
-			<td>TBD</td>
+			<td>Only accounts in 'New' status may be activated.</td>
 		</tr>		
         <tr>
 			<td>169</td>
 			<td><a href="PasswordLengthInvalid">PasswordLengthInvalid</a></td>
-			<td>TBD</td>
+			<td>Your password did not meet length requirements.</td>
 		</tr>		
         <tr>
 			<td>170</td>
 			<td><a href="LocalNexusConflict">LocalNexusConflict</a></td>
-			<td>TBD</td>
+			<td>Your nexus has invalid local nexus settings.</td>
 		</tr>		
         <tr>
 			<td>171</td>
 			<td><a href="InvalidEcmsOverrideCode">InvalidEcmsOverrideCode</a></td>
-			<td>TBD</td>
+			<td>The EcmsOverrideCode value you supplied conflicts with a system-defined code.</td>
 		</tr>		
         <tr>
 			<td>200</td>
@@ -647,7 +647,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>401</td>
 			<td><a href="CannotChangeFilingStatus">CannotChangeFilingStatus</a></td>
-			<td>TBD</td>
+			<td>The requested filing status change is invalid.</td>
 		</tr>		
         <tr>
 			<td>500</td>
@@ -687,12 +687,12 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>607</td>
 			<td><a href="AccountExistsDifferentEmail">AccountExistsDifferentEmail</a></td>
-			<td>TBD</td>
+			<td>An account with this username already exists.</td>
 		</tr>		
         <tr>
 			<td>608</td>
 			<td><a href="AvalaraIdentityApiError">AvalaraIdentityApiError</a></td>
-			<td>TBD</td>
+			<td>A server configuration problem has been detected.</td>
 		</tr>		
         <tr>
 			<td>700</td>
@@ -752,17 +752,17 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>901</td>
 			<td><a href="InvalidEffectiveDate">InvalidEffectiveDate</a></td>
-			<td>TBD</td>
+			<td>The effective date for your filing request is not valid.</td>
 		</tr>		
         <tr>
 			<td>902</td>
 			<td><a href="NonOutletForm">NonOutletForm</a></td>
-			<td>TBD</td>
+			<td>This form does not permit Outlet or Location-based reporting.</td>
 		</tr>		
         <tr>
 			<td>903</td>
 			<td><a href="OverlappingFilingCalendar">OverlappingFilingCalendar</a></td>
-			<td>TBD</td>
+			<td>This filing calendar overlaps with another calendar.</td>
 		</tr>		
         <tr>
 			<td>1000</td>
@@ -777,45 +777,45 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1100</td>
 			<td><a href="CannotModifyLockedTransaction">CannotModifyLockedTransaction</a></td>
-			<td>TBD</td>
+			<td>A locked transaction may not be modified.</td>
 		</tr>		
         <tr>
 			<td>1101</td>
 			<td><a href="LineAlreadyExists">LineAlreadyExists</a></td>
-			<td>TBD</td>
+			<td>You attempted to add a line with a conflicting line number.</td>
 		</tr>		
         <tr>
 			<td>1102</td>
 			<td><a href="LineDoesNotExist">LineDoesNotExist</a></td>
-			<td>TBD</td>
+			<td>You attempted to remove a line that did not exist.</td>
 		</tr>		
         <tr>
 			<td>1103</td>
 			<td><a href="LinesNotSpecified">LinesNotSpecified</a></td>
-			<td>TBD</td>
+			<td>You attempted to create a transaction with zero lines.</td>
 		</tr>		
         <tr>
 			<td>1200</td>
 			<td><a href="InvalidBusinessType">InvalidBusinessType</a></td>
-			<td>TBD</td>
+			<td>The business type field on the ECMS record is invalid.</td>
 		</tr>		
         <tr>
 			<td>1201</td>
 			<td><a href="CannotModifyExemptCert">CannotModifyExemptCert</a></td>
-			<td>TBD</td>
+			<td>Exemption certificates cannot be modified using the Company API.</td>
 		</tr>		
         <tr>
 			<td>1300</td>
 			<td><a href="TransactionNotCancelled">TransactionNotCancelled</a></td>
-			<td>TBD</td>
+			<td>A multi-company transaction was partially created.</td>
 		</tr>		
         <tr>
 			<td>1301</td>
 			<td><a href="TooManyTransactionLines">TooManyTransactionLines</a></td>
-			<td>TBD</td>
+			<td>The transaction you provided contains too many lines.</td>
 		</tr>		
         <tr>
 			<td>1302</td>
 			<td><a href="OnlyTaxDateOverrideIsAllowed">OnlyTaxDateOverrideIsAllowed</a></td>
-			<td>TBD</td>
+			<td>Multi-company transactions may only override tax dates.</td>
 		</tr></tbody></table>

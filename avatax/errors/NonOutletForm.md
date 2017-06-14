@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+This form does not permit Outlet or Location-based reporting.
 
 ## Example
 
@@ -32,4 +32,6 @@ TBD
 
 ## Explanation
 
-TBD
+This form does not permit Outlet or Location-based reporting, and you attempted to attach it to a `locationCode` value.
+
+Please resubmit your request while specifying the `locationCode` value of `NULL`.

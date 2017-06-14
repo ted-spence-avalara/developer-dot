@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+Multi-company transactions may only override tax dates.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+For multi-company transactions, only the TaxDate override type is permitted.

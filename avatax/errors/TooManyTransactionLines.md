@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The transaction you provided contains too many lines.
 
 ## Example
 
@@ -32,4 +32,6 @@ TBD
 
 ## Explanation
 
-TBD
+The multi-company transaction endpoint supports a limited number of individual transactions.  A transaction that is too complex - for example, one that involves too many different sellers - cannot be created using this endpoint.
+
+Please simplify your transaction and try again.

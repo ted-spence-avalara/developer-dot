@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The EcmsOverrideCode value you supplied conflicts with a system-defined code.
 
 ## Example
 
@@ -32,4 +32,6 @@ TBD
 
 ## Explanation
 
-TBD
+The code you supplied conflicts with an existing EntityUseCode.  
+
+For a list of system-defined EntityUseCode values, see [ListEntityUseCodes](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListEntityUseCodes/).

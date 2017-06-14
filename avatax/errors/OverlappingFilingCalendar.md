@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+This filing calendar overlaps with another calendar.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+A filing calendar may not overlap with a conflicting filing calendar.

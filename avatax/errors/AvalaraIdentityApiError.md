@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+A server configuration problem has been detected.
 
 ## Example
 
@@ -32,4 +32,6 @@ TBD
 
 ## Explanation
 
-TBD
+An internal error was detected and has been automatically reported to the Avalara service reliability engineering team.
+
+No action is required on the part of the user.

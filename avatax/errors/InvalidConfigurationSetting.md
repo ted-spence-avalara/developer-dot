@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The configuration setting you specified is invalid.
 
 ## Example
 
@@ -32,4 +32,8 @@ TBD
 
 ## Explanation
 
-TBD
+Avalara supports configuration values at the account level and the company level.  To set configuration values at the account level, call [SetAccountConfiguration](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Accounts/SetAccountConfiguration/).  To set configuration values at the company level, call [SetCompanyConfiguration](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Companies/SetCompanyConfiguration/).
+
+Configuration values are either Avalara-defined name/value pairs, or customer-defined name/value pairs.  All customer-defined name/value pairs have the prefix `X-`.  To define your own configuration setting values, please prefix the name with `X-.
+
+For a list of Avalara-defined name/value pairs, please call [GetAccountConfiguration](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Accounts/GetAccountConfiguration/) or [GetCompanyConfiguration](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Companies/GetCompanyConfiguration/).

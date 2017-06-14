@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+You attempted to add a line with a conflicting line number.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+When calling the [AddLines](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/AddLines/) API, you must specify the line numbers of the lines you wish to add.  If you specify a line number that conflicts with an existing line number, you will receive this error.

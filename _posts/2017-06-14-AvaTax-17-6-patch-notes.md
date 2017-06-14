@@ -35,7 +35,7 @@ This article is about the June 2017 monthly update to the AvaTax REST v2 API.
 
 <h3>New Tax Type Supported: Telecommunications Taxes</h3>
 
-Avalara is proud to announce the preview release of integrated telecommunications tax calculation for customers using AvaTax.  The telecommunications tax domain handles a wide variety of taxes and fees for customers selling phones, conference calling services, internet access, and many other product and service types.  Customers interested in working with Avalara for communications tax calculation should contact their customer account manager for more details.
+Avalara is proud to announce the preview release of integrated telecommunications tax calculation for customers using AvaTax.  The telecommunications tax domain handles a wide variety of taxes and fees for customers selling phones, conference calling services, internet access, and many other product and service types.  Customers interested in developing communications tax connectors or working with Avalara for communications tax calculation should contact their customer account manager for more details.
 
 <h3>New API: Transactions for Multi-Company Marketplace Vendors</h3>
 

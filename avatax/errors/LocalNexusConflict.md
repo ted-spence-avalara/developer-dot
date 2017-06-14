@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+Your nexus has invalid local nexus settings.
 
 ## Example
 
@@ -32,4 +32,8 @@ TBD
 
 ## Explanation
 
-TBD
+If you declare nexus in a jurisdiction, you can also choose to declare nexus in all child jurisdictions or select child jurisdictions individually.
+
+If you set the `hasLocalNexus` value to true, you can choose a `localNexusTypeId` corresponding to the way in which you want to declare child nexus.
+
+If you set the `hasLocalNexus` value to false, you must set the `localNexusTypeId` value to either null or `Selected`.

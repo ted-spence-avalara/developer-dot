@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+A locked transaction may not be modified.
 
 ## Example
 
@@ -32,4 +32,6 @@ TBD
 
 ## Explanation
 
-TBD
+A transaction that is `Locked` has been reported to a tax authority.  Transactions that have been reported to a tax authority are maintained indefinitely for audit purposes and may not be changed.
+
+If a locked transaction needs to be adjusted, you must add a second journal entry reflecting the difference between the original transaction as reported and the corrected transaction.  You may use the [RefundTransaction](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/RefundTransaction/) API to create a reverse-charge journal entry.

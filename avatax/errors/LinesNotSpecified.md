@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+You attempted to create a transaction with zero lines.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+You called the API with no lines.  Please specify some lines.

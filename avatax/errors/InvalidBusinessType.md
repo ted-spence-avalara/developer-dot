@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The business type field on the ECMS record is invalid.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+ECMS records may only be updated by Avalara CertCapture team members.

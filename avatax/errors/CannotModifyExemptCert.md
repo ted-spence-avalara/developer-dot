@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+Exemption certificates cannot be modified using the Company API.
 
 ## Example
 
@@ -32,4 +32,4 @@ TBD
 
 ## Explanation
 
-TBD
+Please use the CertCapture API to modify these records.

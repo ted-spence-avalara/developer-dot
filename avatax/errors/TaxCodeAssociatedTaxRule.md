@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+This tax code cannot be deleted because it is in use.
 
 ## Example
 
@@ -32,4 +32,6 @@ TBD
 
 ## Explanation
 
-TBD
+A [TaxCode](https://developer.avalara.com/api-reference/avatax/rest/v2/models/TaxCodeModel/) can be associated with a [TaxRule](https://developer.avalara.com/api-reference/avatax/rest/v2/models/TaxRuleModel/).
+
+When a TaxCode is associated with a TaxRule, the TaxCode cannot be deleted.
