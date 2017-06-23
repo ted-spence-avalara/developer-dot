@@ -22,7 +22,7 @@ ul {
     }
 }
 
-.markdown-description > ul {
+.markdown-description > ul, ul.dev-guide-list {
     padding-left: 40px;
     list-style-type: disc;
 }
