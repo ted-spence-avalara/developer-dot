@@ -638,6 +638,14 @@ footer {
             border-top: 1px solid #ddd;
 
         }
+         th {
+            background-color: #fff;
+            color: $Dark-grey;
+            font-weight: normal;
+            text-transform: uppercase;
+            white-space: nowrap;
+            letter-spacing: 0.07em;
+        }
         tr {
             &:first-of-type td {
                 border-top: none;
