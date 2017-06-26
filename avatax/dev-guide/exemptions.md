@@ -85,7 +85,6 @@ In your connector, creat the following transaction:
 Calculate tax for your transaction using AvaTax.
                 </td>
                 <td><pre>
-```json
 {
     "type": "SalesInvoice",
     "code": "Chapter-8-Test-1",
@@ -109,7 +108,6 @@ Calculate tax for your transaction using AvaTax.
         }
     ]
 }
-```
 </pre></td>
 <td>
 The tax for line 1 should be $0.00.
@@ -217,7 +215,6 @@ CustomerCode is a unique identifier for that specific customer record that was i
                 Calculate tax for your transaction using AvaTax.
                 </td>
                 <td><pre>
-```json
 {
     "type": "SalesInvoice",
     "code": "Chapter-8-Test-1",
@@ -241,7 +238,6 @@ CustomerCode is a unique identifier for that specific customer record that was i
         }
     ]
 }
-```
                 </pre></td>
                 <td> The tax for line 1 should be $0.00. <br />The Taxable amount for line 1 should be $0.00.<br />The exempt amount for line 1 should be $100.00.</td>
             </tr>
@@ -364,7 +360,6 @@ Since changing this value can make an entire transaction exempt, this field is n
                 </ul>
                 Calculate tax for your transaction using AvaTax.</td>
                 <td><pre>
-```json
 {
     "type": "SalesInvoice",
     "code": "Chapter-8-Test-2"
@@ -389,7 +384,7 @@ Since changing this value can make an entire transaction exempt, this field is n
         }
     ]
 }
-```</pre></td>
+</pre></td>
                 <td>The tax for line 1 should be $0.00.
                 The Taxable amount for line 1 should be $0.00.
                 The Exempt amount for line 1 should be $100.00.</td>
