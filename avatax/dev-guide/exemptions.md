@@ -49,20 +49,8 @@ This definition of the word <b><u>Nexus</u></b> comes from the United States, wh
 When using AvaTax, your company must decide where it has nexus, and where it does not.  This selection is used to determine whether you are obligated to collect taxes.  For example, if your company has nexus in the state of Massachusetts, but you do not have nexus in the state of Rhode Island, in general a tax calculation for a customer in Rhode Island will result in zero tax.  According to legal precedents in the United States, this zero tax means that it is the responsibility of the buyer, instead, to determine the correct tax to pay to the taxing authority.  This tax obligation is called "Consumer Use Tax".
 
 <h3 id="exemptions-3">Testing Nexus Based Obligations</h3>
-
-<div class="mobile-table">
-    <table class="styled-table">
-        <thead>
-            <tr>
-                <th>Setup</th>
-                <th>Expected API Call</th>
-                <th>Assertions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-Your DEVGUIDE company should ahve nexus in Washington State, but not in Rhode Island.
+<h4>Set Up</h4>
+Your DEVGUIDE company should have nexus in Washington State, but not in Rhode Island.
 
 In your connector, creat the following transaction: 
 
@@ -83,8 +71,9 @@ In your connector, creat the following transaction:
 </ul>
 
 Calculate tax for your transaction using AvaTax.
-                </td>
-                <td><pre>
+
+<h4>Expected API Call</h4>
+```json
 {
     "type": "SalesInvoice",
     "code": "Chapter-8-Test-1",
@@ -108,18 +97,15 @@ Calculate tax for your transaction using AvaTax.
         }
     ]
 }
-</pre></td>
-<td>
+```
+
+<h4>Assertions</h4>
+
 The tax for line 1 should be $0.00.
 
 The Taxable amount for line 1 should be $0.00. 
 
 The Exempt amount for line 1 should be $100.00.
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
 
 <h3 id="exemptions-4">States that do not collect sales Tax</h3>
 

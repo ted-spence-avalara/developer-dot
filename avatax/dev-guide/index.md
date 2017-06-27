@@ -7,7 +7,9 @@ nav: apis
 disqus: 1
 ---
 
-Insert some introductory text about what the developer guide is and what it is used for. 
+Insert some introductory text about what the developer guide is and what it is used for.
+
+If you are ever confused about what definition of a word we are using, please read through our <a href="/avatax/dev-guide/glossary/">glossary</a>! 
 
 
 <h3>Chapters</h3>
