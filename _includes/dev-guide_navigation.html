@@ -1,6 +1,6 @@
-<div id='the-nav' class='nav wrapper hidden-xs hidden-sm' style='height: 100%; overflow-y:auto;'>
+<div id='the-nav' class='nav wrapper hidden-xs hidden-sm dev-guide-nav' style='height: 100%; overflow-y:auto;'>
     <h3>Chapters</h3>
-    <ol type="1">
+    <ol>
         <li {% if page.url=="/avatax/dev-guide/connecting-to-avatax/" %}class="active" {% endif %}><a href="/avatax/dev-guide/connecting-to-avatax/">Connecting to AvaTax</a></li>
         <li {% if page.url=="/avatax/dev-guide/transactions/" %}class="active" {% endif %}><a href="/avatax/dev-guide/transactions/">Transactions</a></li>
         <li {% if page.url=="/avatax/dev-guide/customizing-transaction/" %}class="active" {% endif %}><a href="/avatax/dev-guide/customizing-transaction/">Customizing Your Transactions</a></li>
@@ -8,40 +8,51 @@
         <li {% if page.url=="/avatax/dev-guide/product-taxability/" %}class="active" {% endif %}><a href="/avatax/dev-guide/product-taxability/">Product Taxability</a></li>
         <li {% if page.url=="/avatax/dev-guide/discounts-and-overrides/" %}class="active" {% endif %}><a href="/avatax/dev-guide/discounts-and-overrides/">Discounts and Overrides</a></li>
         <li {% if page.url=="/avatax/dev-guide/shipping-and-handling/" %}class="active" {% endif %}><a href="/avatax/dev-guide/shipping-and-handling/">Shipping and Handling</a></li>
-        <li {% if page.url=="/avatax/dev-guide/exemptions/" %}class="active" {% endif %}><a href="/avatax/dev-guide/exemptions/">Exemptions</a></li>
-        {% if page.url=="/avatax/dev-guide/exemptions/" %}
-        <ul class = "dev-guide-list" type="1">
-            <li><a href="#exemptions-1">What causes tax to be zero?</a></li>
-            <li><a href="#exemptions-2">Zero Tax due to Nexus</a></li>
-            <ul class="dev-guide-list">
-                <li><a href="#exemptions-3">Testing Nexus Bases Obligations</a></li>
-            </ul>
-            <li><a href="#exemptions-4">States that do not collect Sales Tax</a></li>
-            <li><a href="#exemptions-5">Zero Tax due to Product Taxability</a></li>
-            <li><a href="#exemptions-6">Exempt due to Certificate</a></li>
-            <ul class="dev-guide-list">
-                <li><a href="#exemptions-7">Certification Requirements for Exemption Certificates Support</a></li>
-                <li><a href="#exemptions-8">Testing Exemption Certificate Exemptions</a></li>
-            </ul>
-            <li><a href="#exemptions-9">Exempt due to Entity Use Code</a></li>
-            <ul class="dev-guide-list">
-                <li><a href="#exemptions-10">Certification Requirements for Entity Use Codes</a></li>
-                <li><a href="#exemptions-11">Testing Entity Use Codes Exemptions</a></li>
-            </ul>
-            <li><a href="#exemptions-12">Zero Tax using Tax Overrides</a></li>
-            <li><a href="#exemptions-13">Partial Exemptions</a></li>
-        </ul>
-        {% endif %}
+        <li {% if page.url=="/avatax/dev-guide/exemptions/" %}class="active" {% endif %}><a href="/avatax/dev-guide/exemptions/">Exemptions</a>
+            {% if page.url=="/avatax/dev-guide/exemptions/" %}
+            <ol>
+                <li><a href="#exemptions-1">What causes tax to be zero?</a></li>
+                <li><a href="#exemptions-2">Zero Tax due to Nexus</a>
+                    <ol>
+                        <li><a href="#exemptions-3">Testing Nexus Bases Obligations</a></li>
+                    </ol>
+                </li>
+                <li><a href="#exemptions-4">States that do not collect Sales Tax</a></li>
+                <li><a href="#exemptions-5">Zero Tax due to Product Taxability</a></li>
+                <li><a href="#exemptions-6">Exempt due to Certificate</a>
+                    <ol>
+                        <li><a href="#exemptions-7">Certification Requirements for Exemption Certificates Support</a></li>
+                        <li><a href="#exemptions-8">Testing Exemption Certificate Exemptions</a></li>
+                    </ol>
+                </li>
+                <li><a href="#exemptions-9">Exempt due to Entity Use Code</a>
+                    <ol>
+                        <li><a href="#exemptions-10">Certification Requirements for Entity Use Codes</a></li>
+                        <li><a href="#exemptions-11">Testing Entity Use Codes Exemptions</a></li>
+                    </ol>
+                </li>
+                <li><a href="#exemptions-12">Zero Tax using Tax Overrides</a></li>
+                <li><a href="#exemptions-13">Partial Exemptions</a></li>
+            </ol>
+            {% endif %}
+        </li>
+        <li{% if page.url=="/avatax/dev-guide/exemptions1/" %}class="active" {% endif %}><a href="/avatax/dev-guide/exemptions1/">Exemptions (other version)</a>
+            {% if page.chapter=="exemptions" %}
+            <ol>
+                <li><a href="/avatax/dev-guide/exemptions1/what-cause-tax-to-be-zero/">What causes tax to be zero?</a></li>
+                <li><a href="/avatax/dev-guide/exemptions1/zero-tax-due-to-nexus/">Zero Tax due to Nexus</a></li>
+                <li><a href="/avatax/dev-guide/exemptions1/states-that-do-not-collect-sales-tax/">States that do not collect sales tax</a></li>
+                <li><a href="/avatax/dev-guide/exemptions1/zero-tex-due-to-product-taxability/">Zero Tax due to Prodcut Taxability</a></li>
+                <li><a href="/avatax/dev-guide/exemptions1/exempt-due-to-certification/">Exempt due to Certification</a></li>
+                <li><a href="/avatax/dev-guide/exemptions1/exempt-due-to-entity-use-code/">Exempt due to Entity Use Code</a></li>
+                <li><a href="/avatax/dev-guide/exemptions1/zero-tax-using-tax-overrides/">Zero Tax using Tax Overrides</a></li>
+                <li><a href="/avatax/dev-guide/exemptions1/partial-exemptions/">Partial Exemptions</a></li>
+            </ol>
+            {% endif %}
+        </li>
         <li {% if page.url=="/avatax/dev-guide/locations/" %}class="active" {% endif %}><a href="/avatax/dev-guide/locations/">Locations</a></li>
         <li {% if page.url=="/avatax/dev-guide/consumer-use-tax/" %}class="active" {% endif %}><a href="/avatax/dev-guide/consumer-use-tax/">Consumer Use Tax</a></li>
         <li {% if page.url=="/avatax/dev-guide/calculating-tax-offline/" %}class="active" {% endif %}><a href="/avatax/dev-guide/calculating-tax-offline/">Calculating Tax offline</a></li>
-        <li>Appendices</li>
-        <ul>
-            <li {% if page.url=="/avatax/dev-guide/appendix-batch-files/" %}class="active" {% endif %}><a href="/avatax/dev-guide/appendix-batch-files/">Appendix: Batch Files</a></li>
-            <li {% if page.url=="/avatax/dev-guide/appendix-business-development/" %}class="active" {% endif %}><a href="/avatax/dev-guide/appendix-business-development/">Appendix: Business Developement</a></li>
-            <li {% if page.url=="/avatax/dev-guide/appendix-cloud-connect/" %}class="active" {% endif %}><a href="/avatax/dev-guide/appendix-cloud-connect/">Appendix: Cloud Connect</a></li>
-            <li {% if page.url=="/avatax/dev-guide/appendix-global-taxes/" %}class="active" {% endif %}><a href="/avatax/dev-guide/appendix-global-taxes/">Appendix: Global Taxes</a></li>
-        </ul>
     </ol>
     <h3>Appendices</h3>
     <ul>

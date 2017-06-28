@@ -6,6 +6,27 @@ doctype: dev_guide
 nav: apis
 disqus: 1
 ---
+<ol class = "dev-guide-list" type="1">
+    <li><a href="#exemptions-1">What causes tax to be zero?</a></li>
+    <li><a href="#exemptions-2">Zero Tax due to Nexus</a></li>
+    <ul class="dev-guide-list">
+        <li><a href="#exemptions-3">Testing Nexus Bases Obligations</a></li>
+    </ul>
+    <li><a href="#exemptions-4">States that do not collect Sales Tax</a></li>
+    <li><a href="#exemptions-5">Zero Tax due to Product Taxability</a></li>
+    <li><a href="#exemptions-6">Exempt due to Certificate</a></li>
+    <ul class="dev-guide-list">
+        <li><a href="#exemptions-7">Certification Requirements for Exemption Certificates Support</a></li>
+        <li><a href="#exemptions-8">Testing Exemption Certificate Exemptions</a></li>
+    </ul>
+    <li><a href="#exemptions-9">Exempt due to Entity Use Code</a></li>
+    <ul class="dev-guide-list">
+        <li><a href="#exemptions-10">Certification Requirements for Entity Use Codes</a></li>
+        <li><a href="#exemptions-11">Testing Entity Use Codes Exemptions</a></li>
+    </ul>
+    <li><a href="#exemptions-12">Zero Tax using Tax Overrides</a></li>
+    <li><a href="#exemptions-13">Partial Exemptions</a></li>
+</ol>
 
 This chapter is about exemptions - in other words, reasons that certain transactions are not taxed.By the end of this chapter, you will learn the following: 
 <ul class="dev-guide-list">
