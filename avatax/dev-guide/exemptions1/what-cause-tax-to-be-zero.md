@@ -32,6 +32,6 @@ Although tax overrides may seem to be a very easy way to adjust the taxes for a 
 Let's discuss each condition in turn.
 
 <ul class="pager">
-  <li class="previous"><a href="/avatax/dev-guide/exemptions1/">Previous</a></li>
-  <li class="next"><a href="/avatax/dev-guide/exemptions1/zero-tax-due-to-nexus/">Next</a></li>
+  <li class="previous"><a href="/avatax/dev-guide/exemptions1/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/avatax/dev-guide/exemptions1/zero-tax-due-to-nexus/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

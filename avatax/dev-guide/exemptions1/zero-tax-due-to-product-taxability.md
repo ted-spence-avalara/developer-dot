@@ -16,6 +16,6 @@ Another common reason why tax could be zero would be related to product taxabili
 Product taxability is discussed in more detail in <a href="/avatax/dev-guide/product-taxability/">Chapter 5 - Product Taxability</a>.
 
 <ul class="pager">
-  <li class="previous"><a href="/avatax/dev-guide/exemptions1/zero-tax-due-to-product-taxability/">Previous</a></li>
-  <li class="next"><a href="/avatax/dev-guide/exemptions1/exempt-due-to-certificate/">Next</a></li>
+  <li class="previous"><a href="/avatax/dev-guide/exemptions1/zero-tax-due-to-product-taxability/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/avatax/dev-guide/exemptions1/exempt-due-to-certificate/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
