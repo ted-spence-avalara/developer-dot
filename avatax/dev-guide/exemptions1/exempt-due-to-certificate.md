@@ -126,6 +126,6 @@ The exempt amount for line 1 should be $100.00.
 </div>
 
 <ul class="pager">
-  <li><a href="/avatax/dev-guide/exemptions1/exempt-due-to-certificate/">Previous</a></li>
-  <li><a href="/avatax/dev-guide/exemptions1/exempt-due-to-entity-use-code/">Next</a></li>
+  <li class="previous"><a href="/avatax/dev-guide/exemptions1/exempt-due-to-certificate/">Previous</a></li>
+  <li class="next"><a href="/avatax/dev-guide/exemptions1/exempt-due-to-entity-use-code/">Next</a></li>
 </ul>

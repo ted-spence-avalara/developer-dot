@@ -11,6 +11,6 @@ disqus: 1
 {% include exemptions_toc.html %}
 
 <ul class="pager">
-  <li><a href="/avatax/dev-guide/exemptions1/partial-exemptions/">Previous</a></li>
-  <li><a href="/avatax/dev-guide/locations/">Next</a></li>
+  <li class="previous"><a href="/avatax/dev-guide/exemptions1/partial-exemptions/">Previous</a></li>
+  <li class="next"><a href="/avatax/dev-guide/locations/">Next</a></li>
 </ul>

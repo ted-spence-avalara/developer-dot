@@ -15,6 +15,6 @@ If you are using a tax override to import tax calculated by a different tax engi
 Tax Overrides are discussed in more detail in <a href="/avatax/dev-guide/discounts-and-overrides/">Chapter 6 - Discounts and Overrides</a>.
 
 <ul class="pager">
-  <li><a href="/avatax/dev-guide/exemptions1/zero-tax-using-tax-overrides/">Previous</a></li>
-  <li><a href="/avatax/dev-guide/exemptions1/partial-exemptions/">Next</a></li>
+  <li class="previous"><a href="/avatax/dev-guide/exemptions1/zero-tax-using-tax-overrides/">Previous</a></li>
+  <li class="next"><a href="/avatax/dev-guide/exemptions1/partial-exemptions/">Next</a></li>
 </ul>

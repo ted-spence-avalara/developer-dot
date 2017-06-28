@@ -11,6 +11,6 @@ disqus: 1
 {% include exemptions_toc.html %}
 
 <ul class="pager">
-  <li><a href="/avatax/dev-guide/exemptions1/states-that-do-not-collect-sales-tax/">Previous</a></li>
-  <li><a href="/avatax/dev-guide/exemptions1/zero-tax-due-to-product-taxability/">Next</a></li>
+  <li class="previous"><a href="/avatax/dev-guide/exemptions1/states-that-do-not-collect-sales-tax/">Previous</a></li>
+  <li class="next"><a href="/avatax/dev-guide/exemptions1/zero-tax-due-to-product-taxability/">Next</a></li>
 </ul>

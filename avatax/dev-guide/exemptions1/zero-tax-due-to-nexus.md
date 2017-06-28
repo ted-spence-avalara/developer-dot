@@ -78,6 +78,6 @@ The Exempt amount for line 1 should be $100.00.
 </div>
 
 <ul class="pager">
-  <li><a href="/avatax/dev-guide/exemptions1/zero-tax-due-to-nexus/">Previous</a></li>
-  <li><a href="/avatax/dev-guide/exemptions1/states-that-do-not-collect-sales-tax/">Next</a></li>
+  <li class="previous"><a href="/avatax/dev-guide/exemptions1/zero-tax-due-to-nexus/">Previous</a></li>
+  <li class="next"><a href="/avatax/dev-guide/exemptions1/states-that-do-not-collect-sales-tax/">Next</a></li>
 </ul>

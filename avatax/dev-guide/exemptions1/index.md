@@ -20,6 +20,6 @@ Let's begin by understanding what could cause a transaction to have no tax.
 {% include exemptions_toc.html %}
 
 <ul class="pager">
-  <li><a href="/avatax/dev-guide/shipping-and-handling/">Previous</a></li>
-  <li><a href="/avatax/dev-guide/exemptions1/what-casue-tax-to-be-zero/">Next</a></li>
+  <li class="previous"><a href="/avatax/dev-guide/shipping-and-handling/">Previous</a></li>
+  <li class="next"><a href="/avatax/dev-guide/exemptions1/what-cause-tax-to-be-zero/">Next</a></li>
 </ul>

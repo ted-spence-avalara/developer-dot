@@ -1,10 +1,14 @@
 .dev-guide-nav {
-  //i added
   ol {
     counter-reset: item;
+    list-style-type: decimal;
 
     li { 
       display: block;
+    }
+    li.dev-hidden {
+      visibility: hidden;
+      line-height: 0px;
     }
 
     li:before { 
@@ -13,16 +17,32 @@
     }
 
   }
-  
-  ol ol > li {
-      display: block;
-  }
 }
+
+ul.dev-guide-list {
+    padding-left: 40px;
+    list-style-type: disc;
+}
+
 
 .dev-guide-test {
     border-style: solid;
     border-width: 5px;
     border-color: #ff6600;
     padding: 10px 10px 10px 10px;
+    margin: 5px 5px 5px 5px;
     
+}
+
+.dev-guide-test-2 {
+  border-style: solid;
+    border-width: 5px;
+    border-color: #027fad;
+    padding: 10px 10px 10px 10px;
+    margin: 5px 5px 5px 5px;
+    color: #fff;
+    background-color: #919195;
+    h4 {
+      color: #027fad;
+    } 
 }
