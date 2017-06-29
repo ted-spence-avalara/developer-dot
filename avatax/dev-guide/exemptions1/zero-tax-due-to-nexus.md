@@ -9,9 +9,9 @@ disqus: 1
 ---
 {% include exemptions_toc.html %}
 
-The most common reason that tax could be zero is if your company does not have <b><u>"Nexus"</u></b>, and is not obligated to collect tax.
+The most common reason that tax could be zero is if your company does not have <b class="dev-guide-bold"><u>"Nexus"</u></b>, and is not obligated to collect tax.
 
-This definition of the word <b><u>Nexus</u></b> comes from the United States, where a legal ruling by the supreme court established that a company must only collect tax if they have sufficient "Nexus" in a jurisdiction.  Unfortunately, the specific definition of Nexus is complex and changes when new laws are passed or when new legal precedents are established.  
+This definition of the word <b class="dev-guide-bold"><u>Nexus</u></b> comes from the United States, where a legal ruling by the supreme court established that a company must only collect tax if they have sufficient "Nexus" in a jurisdiction.  Unfortunately, the specific definition of Nexus is complex and changes when new laws are passed or when new legal precedents are established.  
 
 When using AvaTax, your company must decide where it has nexus, and where it does not.  This selection is used to determine whether you are obligated to collect taxes.  For example, if your company has nexus in the state of Massachusetts, but you do not have nexus in the state of Rhode Island, in general a tax calculation for a customer in Rhode Island will result in zero tax.  According to legal precedents in the United States, this zero tax means that it is the responsibility of the buyer, instead, to determine the correct tax to pay to the taxing authority.  This tax obligation is called "Consumer Use Tax".
 

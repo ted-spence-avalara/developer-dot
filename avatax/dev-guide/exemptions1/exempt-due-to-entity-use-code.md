@@ -13,11 +13,11 @@ disqus: 1
 
 An Entity Use Code provides information about how a transaction will be used by the customer, and information about the type of customer making the purchase.  For example, a purchase made by the US federal government would be designated for government use, and it would generally be exempt or nontaxable for that specific use.
 
-Entity Use Codes are generally displayed in the user interface of a connector as a dropdown, combo box, or selection element.  This element uses the <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListEntityUseCodes/">ListEntityUseCodes API</a> to retrieve the list of available choices, and displays it as a list of values in a dropdown.  The default value should be NULL, indicating that by default a transaction does not have a custom entity use code.
+Entity Use Codes are generally displayed in the user interface of a connector as a dropdown, combo box, or selection element.  This element uses the <a class="dev-guide;link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListEntityUseCodes/">ListEntityUseCodes API</a> to retrieve the list of available choices, and displays it as a list of values in a dropdown.  The default value should be NULL, indicating that by default a transaction does not have a custom entity use code.
 
-********Insert the dropdown picture here*********
+<img src="entity_due_to_use_codes_img1.png">
 
-The value of the customer's choice is placed in the <u><b>customerUsageType</b></u> field in the <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/">CreateTransctionModel</a> element.  Here's how to find the values and put them into your transaction.
+The value of the customer's choice is placed in the <b class="dev-guide-bold">customerUsageType</b> field in the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/">CreateTransctionModel</a> element.  Here's how to find the values and put them into your transaction.
 
 First, call the  <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListEntityUseCodes/">ListEntityUseCodes API</a>.  The field "code" is the value you will use, and the field "name" is the description you will show to the customer.  You can either show "code - name", like "A - FEDERAL GOV", or you can just show the name field.
 
@@ -65,15 +65,15 @@ Since changing this value can make an entire transaction exempt, this field is n
 <div class="dev-guide-certification">
 <div class="dev-guide-certification-heading"> Certification Requirements - Entity Use Codes </div>
 <div class="dev-guide-certification-content">
-<h4>Certified Connector</h4>
-<h3>Requirements</h3>
+<h3>Certified Connector</h3>
+<h4>Requirements</h4>
 <ul class="dev-guide-list">
     <li>AvaTax Certified Connectors must allow a salesperson to provide an entity use code for a transaction.</li>
     <li>The connector must display a dropdown box allowing the salesperson to choose from defined codes.</li>
     <li>The default code must be null.</li>
 </ul>
-<h4>Custom Integration</h4>
-<h3>Suggested</h3>
+<h3>Custom Integration</h3>
+<h4>Suggested</h4>
 <ul class="dev-guide-list">
     <li>It's suggested for a Custom integration to implement entity use codes, if the application supports Tax Exempt sales.</li>
 </ul>

@@ -12,7 +12,7 @@ disqus: 1
 
 If you are using a tax override to import tax calculated by a different tax engine, AvaTax may assign zero tax to your transaction in order to match the functionality of your older software.
 
-Tax Overrides are discussed in more detail in <a href="/avatax/dev-guide/discounts-and-overrides/">Chapter 6 - Discounts and Overrides</a>.
+Tax Overrides are discussed in more detail in <a class+="dev-guide-link" href="/avatax/dev-guide/discounts-and-overrides/">Chapter 6 - Discounts and Overrides</a>.
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/exemptions1/zero-tax-using-tax-overrides/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

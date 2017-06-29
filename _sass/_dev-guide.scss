@@ -21,6 +21,14 @@
   }
 }
 
+.dev-guide-link {
+  color: #ff6600;
+}
+
+.dev-guide-bold {
+  color: #337ab7;
+}
+
 ul.dev-guide-list {
     padding-left: 20px;
     list-style-type: disc;
@@ -71,4 +79,7 @@ ul.dev-guide-list {
   h4 {
     color: #494e58;
   } 
+  a {
+    text-decoration: underline;
+  }
 }

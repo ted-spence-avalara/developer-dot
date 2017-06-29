@@ -10,10 +10,10 @@ disqus: 1
 
 {% include exemptions_toc.html %}
 
-Another common reason why tax could be zero would be related to product taxability.  A transaction may have zero tax because the products sold in the transaction are exempt from tax, or nontaxable, or have a zero rate, in the jurisdictions involved in that transaction.
+Transactions can also have zero tax if they involve products that are not taxable.  Some jurisdictions may choose not to tax certain products, or to tax them only in certain conditions.  The jurisdiction may choose to call the product "exempt from tax", or "nontaxable", or simply a product with a zero tax rate.  AvaTax will determine the taxability of the product based on the <u><b class="dev-guide-bold">TaxCode</u></b> you provide.
 
 
-Product taxability is discussed in more detail in <a href="/avatax/dev-guide/product-taxability/">Chapter 5 - Product Taxability</a>.
+Product taxability and TaxCodes are discussed in more detail in <a class="dev-guide-link" href="/avatax/dev-guide/product-taxability/">Chapter 5 - Product Taxability</a>.
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/exemptions1/zero-tax-due-to-product-taxability/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

@@ -18,6 +18,8 @@ There are several ways to store/create an exemption record across the service, h
 
 CustomerCode is a unique identifier for that specific customer record that was invoiced or sold an item. This value (must be in one of Avatax repositories to exempt the customer,  CertCapture or Avatax Admin Console- AP) is a part of both exemption records that are created using our CertCapture service and exemption records created in AvaTax via the stand alone functionality built into it.
 
+For this to function nicely the value within the integration that should be pulling into the CustomerCode should be something easily recognizable and intuitive within the application, such as the account name, customer name, or email address for the customer. (this could actually be anything as long as it is the same in CertCapture or AC - AP)
+
 <div class="dev-guide-certification">
 <div class="dev-guide-certification-heading">Certification Requirements - Exemptions Certificates Support</div>
 <div class="dev-guide-certification-content">
@@ -105,7 +107,7 @@ Customer should be searchable from the API
 
 Transactions sold to a customer who has an exemption record within the service should be sales tax exempt if the transaction ships to the state they are sales tax exempt in.
   <ol>
-    <li>Create an exemption record within your test account following the steps section <a href="https://help.avalara.com/000_Avalara_AvaTax/Exempt_Customers_from_Sales_Tax/Add_or_Import_ECMS_Exemption_Certificate_Entries">Add an ECMS Exemption Certificate Entry"</a></li>
+    <li>Create an exemption record within your test account following the steps section <a href="https://help.avalara.com/000_Avalara_AvaTax/Exempt_Customers_from_Sales_Tax/Add_or_Import_ECMS_Exemption_Certificate_Entries">"Add an ECMS Exemption Certificate Entry"</a></li>
     <ul class="dev-guide-list">
         <li>Set CustomerCode to "HASEXEMPTION"</li>
         <li>Customer Name can whatever you'd like.</li>
@@ -181,7 +183,7 @@ The exempt amount for line 1 should be $100.00.
 </div>
 
 <div class="dev-guide-test">
-<div class="dev-guide-test-heading">Test Case: Exemption Certificate Exemptions - Case 2</div>
+<div class="dev-guide-test-heading">Test Case: Exemption Certificate Exemptions - Case 4</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
     <ul class="dev-guide-list">

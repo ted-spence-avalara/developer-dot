@@ -8,11 +8,11 @@ nav: apis
 disqus: 1
 ---
 
-This chapter is about exemptions - in other words, reasons that certain transactions are not taxed.By the end of this chapter, you will learn the following: 
+This chapter is about exemptions - in other words, the reasons that certain transactions are not taxed.  By the end of this chapter, you will learn the following:
 <ul class="dev-guide-list">
     <li>All the factors that could cause tax on a transaction to be zero</li>
     <li>Which factors are company-related, which are product-related, and which are transaction-related</li>
-    <li>How to allow a customer to choose these factors correctly in your user interfact</li>
+    <li>How to allow a customer to choose these factors correctly in your user interface</li>
     <li>Test cases that must be understood to correctly handle tax exemptions</li>
 </ul>
 
