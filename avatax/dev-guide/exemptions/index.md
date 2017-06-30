@@ -8,6 +8,11 @@ nav: apis
 disqus: 1
 ---
 
+<ul class="pager">
+  <li class="previous"><a href="/avatax/dev-guide/shipping-and-handling/"><i class="glyphicon glyphicon-chevron-left"></i>Previous Chapter</a></li>
+  <li class="next"><a href="/avatax/dev-guide/exemptions/what-cause-tax-to-be-zero/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
 This chapter is about exemptions - in other words, the reasons that certain transactions are not taxed.  By the end of this chapter, you will learn the following:
 <ul class="dev-guide-list">
     <li>All the factors that could cause tax on a transaction to be zero</li>
@@ -18,9 +23,8 @@ This chapter is about exemptions - in other words, the reasons that certain tran
 
 Let's begin by understanding what could cause a transaction to have no tax.
 
-{% include exemptions_toc.html %}
 
 <ul class="pager">
-  <li class="previous"><a href="/avatax/dev-guide/shipping-and-handling/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/avatax/dev-guide/exemptions1/what-cause-tax-to-be-zero/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="previous"><a href="/avatax/dev-guide/shipping-and-handling/"><i class="glyphicon glyphicon-chevron-left"></i>Previous Chapter</a></li>
+  <li class="next"><a href="/avatax/dev-guide/exemptions/what-cause-tax-to-be-zero/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

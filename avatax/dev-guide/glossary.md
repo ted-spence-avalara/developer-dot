@@ -18,6 +18,10 @@ In order to provide clarity, we need to define some terminology:
             </tr>
         </thead>
         <tbody>
+            <tr id="nexus">
+            <td>Nexus</td>
+            <td> There is more information in our <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/NexusModel/">API Reference</a> documentation.</td>
+            </tr>
             <tr>
                 <td>Customer</td>
                 <td>We will never use this word, due to the confusing nature of it.</td>

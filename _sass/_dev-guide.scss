@@ -82,4 +82,15 @@ ul.dev-guide-list {
   a {
     text-decoration: underline;
   }
+
+  input[type=checkbox] {
+    display: none;
+  }
+  ul.dev-guide-dropdown-content {
+    display: none;
+  }
+  input[type=checkbox]:checked ~ ul.dev-guide-dropdown-content {
+    display: block;
+  }
 }
+

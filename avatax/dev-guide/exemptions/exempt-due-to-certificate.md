@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Exempt due to Certificate
+title: 8.5 - Exempt due to Certificate
 product: avaTax
 doctype: dev_guide
 chapter: exemptions
@@ -8,7 +8,10 @@ nav: apis
 disqus: 1
 ---
 
-{% include exemptions_toc.html %}
+<ul class="pager">
+  <li class="previous"><a href="/avatax/dev-guide/exemptions/zero-tax-due-to-product-taxability/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/avatax/dev-guide/exemptions/exempt-due-to-entity-use-code/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
 
 An Exemption Certificate provides information about the buyer or customer, and their tax status. For example it's possible that a customer be sales tax exempt in a specific state due to their being registered as a reseller there.
 
@@ -24,7 +27,6 @@ For this to function nicely the value within the integration that should be pull
 <div class="dev-guide-certification-heading">Certification Requirements - Exemptions Certificates Support</div>
 <div class="dev-guide-certification-content">
     <h3>Certified Connector</h3>
-    <h4>Required</h4>
     AvaTax Certified Connectors must allow for a clear and concise CustomerCode value to be consumed by the AvaTax Service.
     Typically this is an account name, customer name, or email address on file for the customer.
     The connector must show the following:
@@ -36,25 +38,27 @@ For this to function nicely the value within the integration that should be pull
         <li>Ability to list active exemption certificates for a customer (show at a minimum exempt state, exempt reason, expiration date)</li>
         <li>Ability to view an exemption certificate</li>
     </ul>
-    <h3>Recommended Connector</h3>
-    <h4>Reccommended</h4>
-    These features are strongly suggested but are not mandatory:
-        <ul class="dev-guide-list">
-            <li>Ability to upload a certificate directly in the user interface</li>
-            <li>Ability to revoke a certificate</li>
-            <li>Ability to load customers via a batch</li>
-            <li>Link to CertCapture admin console</li>
-        </ul>
-    <h3>Customer Integration</h3>
-    <h4>Required</h4>
-    <ul class="dev-guide-list">
-        <li>Customer integrations should also allow for a clear and concise CustomerCode value to be consumed by the AvaTax Service.</li>
-        <li>This is important for both supporting Tax Exempt Sales as well as Reconciling data between AvaTax and the application that is being integrated with.</li>
-    </ul>
 </div>
 </div>
 
-<div class="dev-guide-test">
+<h3>Recommended Connector</h3>
+
+These features are strongly suggested but are not mandatory:
+<ul class="dev-guide-list">
+    <li>Ability to upload a certificate directly in the user interface</li>
+    <li>Ability to revoke a certificate</li>
+    <li>Ability to load customers via a batch</li>
+    <li>Link to CertCapture admin console</li>
+</ul>
+
+<h3>Required for a Custom Integration</h3>
+
+<ul class="dev-guide-list">
+    <li>Customer integrations should also allow for a clear and concise CustomerCode value to be consumed by the AvaTax Service.</li>
+    <li>This is important for both supporting Tax Exempt Sales as well as Reconciling data between AvaTax and the application that is being integrated with.</li>
+</ul>
+
+<div class="dev-guide-test" id="test1">
 <div class="dev-guide-test-heading">Test Case: Exemption Certificate Exemptions - Case 1</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
@@ -82,7 +86,7 @@ Customer should be searchable from the API
 </div>
 </div>
 
-<div class="dev-guide-test">
+<div class="dev-guide-test" id="test2">
 <div class="dev-guide-test-heading">Test Case: Exemption Certificate Exemptions - Case 2</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
@@ -100,7 +104,7 @@ Customer should be searchable from the API
 </div>
 </div>
 
-<div class="dev-guide-test">
+<div class="dev-guide-test" id="test3">
 <div class="dev-guide-test-heading">Test Case: Exemption Certificate Exemptions - Case 3</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
@@ -141,9 +145,23 @@ Transactions sold to a customer who has an exemption record within the service s
 </ol>
 Calculate tax for your transaction using AvaTax.
 
-<h4>Expected API Call</h4>
+<h4>Assertions</h4>
 
-<pre>
+
+The tax for line 1 should be $0.00.
+
+
+The Taxable amount for line 1 should be $0.00.
+
+
+The exempt amount for line 1 should be $100.00.
+
+<div class="dev-guide-dropdown">
+    <input id="checkbox_toggle" type="checkbox" />
+    <label for="checkbox_toggle"><h4><i class="glyphicon glyphicon-chevron-down"></i>Expected API Call</h4></label>
+    <ul class="dev-guide-dropdown-content">
+        <li>
+            <pre>
 {
     "type": "SalesInvoice",
     "code": "Chapter-8-Test-1",
@@ -168,21 +186,13 @@ Calculate tax for your transaction using AvaTax.
     ]
 }
 </pre>
-
-<h4>Assertions</h4>
-
-
-The tax for line 1 should be $0.00.
-
-
-The Taxable amount for line 1 should be $0.00.
-
-
-The exempt amount for line 1 should be $100.00.
+        </li>
+    </ul>
+</div>
 </div>
 </div>
 
-<div class="dev-guide-test">
+<div class="dev-guide-test" id="test4">
 <div class="dev-guide-test-heading">Test Case: Exemption Certificate Exemptions - Case 4</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
@@ -193,6 +203,6 @@ The exempt amount for line 1 should be $100.00.
 </div>
 
 <ul class="pager">
-  <li class="previous"><a href="/avatax/dev-guide/exemptions1/exempt-due-to-certificate/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/avatax/dev-guide/exemptions1/exempt-due-to-entity-use-code/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="previous"><a href="/avatax/dev-guide/exemptions/zero-tax-due-to-product-taxability/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/avatax/dev-guide/exemptions/exempt-due-to-entity-use-code/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
