@@ -41,13 +41,15 @@ At the end of each page, we aim to show a sample object for each type, so you ca
 
 Here's a sample object that shows how you can use this documentation:
 
-<img src="/public/images/blog/new-model-reference.png" alt="New Avalara API Documentation" width="374" height="238" />
+<img src="/public/images/blog/new-model-reference.png" alt="Model Reference Information for AvaTax Developers" width="374" height="238" />
 
 <h3>Try Every API</h3>
 
 Even more exciting, you're invited to visit our developer website and try out each API interactively!  For example [ListCountries](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListCountries/) is the API that provides access to the ISO 3166 country code database.  (Avalara maintains a subscription to the ISO country code definition system so that our customers don't have to!)  You can visit the web page for the [ListCountries API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListCountries/) and click on "Try ListCountries Now".  You'll be able to click the `Submit` button and see, in just a few moments, the exact response that you would receive if you called it with your production account credentials!
 
 This Try-It-Now functionality is available - now - for every API in Avalara's REST v2 suite.  Use it as a great way to get started and understand how the product would respond - use it as a way to preview results - or just to play around with new features before writing code against them.
+
+<img src="/public/images/blog/new-tryitnow.png" alt="Interactive Try It Now for AvaTax Developers" width="455" height="156" />
 
 <h3>Exploration encouraged!</h3>
 
