@@ -117,17 +117,27 @@ export default (state, action) => {
         newState.qsPath = buildQueryString(reduceParamsToKeyValuePair(newState.queryString));
         newState.curl = buildCurl(newState.sampleAuthHeader, newState);
         newState.apiResponse = undefined;
+        if (newState.consoleViewFreeEdit) {
+            newState.requestInput = '{}';
+        }
+        break;
+    case actionTypes.SUBMIT_STARTED:
+        newState.apiConsoleLoading = true;
         break;
     case actionTypes.SUBMIT_DONE:
         newState.apiResponse = action.apiResponse;
         if (action.error) {
             newState.error = action.error;
         }
+        newState.apiConsoleLoading = false;
+        newState.consoleError = false;
         break;
     case actionTypes.FILL_REQUEST_SAMPLE_DATA:
         newState = fillOrRemoveSampleData(newState);
         newState.qsPath = buildQueryString(reduceParamsToKeyValuePair(newState.queryString));
         newState.curl = buildCurl(newState.sampleAuthHeader, newState);
+        newState.requestInput = JSON.stringify(newState.postBody, null, 2);
+        newState.consoleError = false;
         break;
     case actionTypes.QUERY_STRING_CHANGED:
         newState = {...newState, queryString: queryStringReducer(newState.queryString, action)};
@@ -154,7 +164,33 @@ export default (state, action) => {
 
         updateDataAtProperty(action.postBodyParamName, castedValue, newState.postBody);
         break;
+    case actionTypes.REQUEST_CHANGED:
+        newState.requestInput = action.newValue;
+        try {
+            newState.postBody = JSON.parse(action.newValue);
+            newState.consoleError = false;
+        } catch (e) {
+            newState.consoleError = true;
+        }
+        break;
+    case actionTypes.CONSOLE_TOGGLED_READ_ONLY:
+        newState.consoleViewFreeEdit = false;
+        newState.consoleError = false;
+        newState.requestInput = undefined;
+        break;
+    case actionTypes.CONSOLE_TOGGLED_FREE_EDIT:
+        newState.consoleViewFreeEdit = true;
+        newState.requestInput = JSON.stringify(newState.postBody, null, 2);
+        break;
+    case actionTypes.CONSOLE_ERROR:
+        newState.consoleError = true;
+        newState.apiResponse = undefined;
+        newState.apiConsoleLoading = false;
+        break;
     case actionTypes.ADD_ITEM_TO_POST_BODY_COLLECTION:
+        // Re-initialize all bootstrap tooltips
+        // Re-render isn't instant, so call on a delay.
+        setTimeout(() => $('.console-tool-tip').tooltip(), 1000);
         const newArrObj = buildInitialPostBodyData(action.itemSchema, newState.showExcludedPostBodyFields);
         const {val, param, failed} = traversePostBodyData(action.postBodyParamName, newState.postBody);
 
@@ -175,6 +211,9 @@ export default (state, action) => {
 
         break;
     case actionTypes.TOGGLE_SHOW_EXCLUDED_POST_BODY_PROPS:
+        // Re-initialize all bootstrap tooltips
+        // Re-render isn't instant, so call on a delay.
+        setTimeout(() => $('.console-tool-tip').tooltip(), 1000);
         newState.showExcludedPostBodyFields = !newState.showExcludedPostBodyFields;
         newState.postBody = buildInitialPostBodyData(newState.requestSchema, newState.showExcludedPostBodyFields);
         break;

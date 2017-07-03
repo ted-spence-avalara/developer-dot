@@ -10,19 +10,26 @@ const PARAM_TYPES = {
     PATH: 'PATH'
 };
 
-const QueryOrPathParamsForm = ({endpoint, paramType, params, onInputChange, onSubmitConsoleRequest}) => {
-    return (
+const QueryOrPathParamsForm = ({endpoint, paramType, params, onInputChange, onSubmitConsoleRequest}) => (
+    <div>
         <form className={'api-console-input-section'} onSubmit={
             (e) => {
                 e.preventDefault();
                 onSubmitConsoleRequest(endpoint);
             }
         }>
+        <fieldset disabled={Boolean(endpoint.consoleViewFreeEdit)}>
             <h4 className={'api-console-section-header'}>{paramType === PARAM_TYPES.QUERY_STRING ? 'Query String' : 'Path Parameters'}</h4>
             {Object.keys(params).map((key, i) => {
                 return (
                     <div className={'form-group'} key={i}>
                         <label className={'api-label-text'} htmlFor={`${endpoint.id}-qs-${i}`}>{key}</label>
+                        {params[key].description ?
+                            <a className='console-tool-tip' dataPlacement='top' dataToggle='tooltip' title={params[key].description}>
+                                &nbsp;&nbsp;&nbsp;
+                                <i className='glyphicon glyphicon-info-sign'/>
+                            </a> : null
+                        }
                         {params[key].enum && params[key].enum.length ?
                             <select
                                 className={'form-control'}
@@ -49,10 +56,11 @@ const QueryOrPathParamsForm = ({endpoint, paramType, params, onInputChange, onSu
                     </div>
                 );
             })}
-            <input style={{display: 'none'}} type={'submit'} value={'submit'}/>
+        </fieldset>
+        <input style={{display: 'none'}} type={'submit'} value={'submit'}/>
         </form>
+        </div>
     );
-};
 
 QueryOrPathParamsForm.displayName = 'Request Parameters';
 QueryOrPathParamsForm.propTypes = {

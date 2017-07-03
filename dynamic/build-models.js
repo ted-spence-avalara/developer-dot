@@ -23,7 +23,7 @@ const loadFile = function(file) {
 const writeDirectoryIndex = function(dir, defs, product, apiName) {
     let table = `---
 layout: default
-title: "API Console"
+title: "${apiName}"
 api_console: 1
 api_name: ${apiName}
 nav: apis
@@ -49,12 +49,15 @@ endpoint_links: []
         if (def.indexOf(' > ') !== -1) {
             return;
         }
+        let model = def;
 
-        table = `${table}
-        <tr>
-            <td><a href="${encodeURIComponent(def)}">${def}</a></td>
-            <td>{{"${(defs[def].description || '').replace(/"/g, "'")}" | markdownify}}</td>
-        </tr>`;
+        if (!model.includes('FetchResult')) {
+            table = `${table}
+            <tr>
+                <td><a href="${encodeURIComponent(def)}">${def}</a></td>
+                <td>{{"${(defs[def].description || '').replace(/"/g, "'")}" | markdownify}}</td>
+            </tr>`;
+        }
     });
 
     table = `${table}
@@ -73,27 +76,23 @@ const writeHtml = function(dir, defs, product, fields, apiName) {
     writeDirectoryIndex(dir, defs, product, apiName);
 
     Object.keys(defs).forEach((def) => {
-        let prettyJson = JSON.stringify(defs[def].example, null, 4);
-
-        prettyJson = (prettyJson) ? prettyJson.replace(/'/g, '') : prettyJson;
-
         const html = `---
 layout: default
-title: "API Console"
+title: "${def} | ${apiName}"
+${defs[def].description ? `ogdescription: "${(defs[def].description).replace(/"/g, "'")}"` : ''}
 api_console: 1
 api_name: ${apiName}
 nav: apis
 product: ${product}
 doctype: api_references
-endpoint_links: []
 ---
 
-{% assign name = "${def}" %}
-{% assign path = "${dir}" %}
-{% assign model_ = site.data.swagger${fields}[name] %}
-{% assign ep = '${prettyJson}' %}
-
-{% include models.html name=name path=path ${(prettyJson) ? 'examplePretty=ep' : ''} model=model_ %}
+<div id='react-root'></div>
+<script>
+    window.PAGE_MODEL = ${JSON.stringify(defs[def])};
+    window.MODEL_NAME = '${def}';
+</script>
+<script src='/public/js/render-model-bundle.js'></script>
 
 {% include disqus.html %}`;
 

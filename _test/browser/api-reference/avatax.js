@@ -67,6 +67,22 @@ module.exports = {
         navigationBar
             .assert.elementNumTimes('@subtags', expectedNumberOfSubTags, 'navigationBar');
     },
+    'API Reference: AvaTax: REST v2 - API Console for ResolveAddressPost': function(browser) {
+        const expectedResponse = {address: {textCase: 'Upper', line1: '123 Main Street', city: 'Irvine', region: 'CA', country: 'US', postalCode: '92615'}, validatedAddresses: [{addressType: 'UnknownAddressType', line1: '123 Main Street', line2: '', line3: '', city: 'Irvine', region: 'CA', country: 'US', postalCode: '92615', latitude: 33.657808, longitude: -117.968489}], coordinates: {latitude: 33.657808, longitude: -117.968489}, resolutionQuality: 'NotCoded', messages: [{summary: 'The address is not deliverable.', details: 'The physical location exists but there are no homes on this street. One reason might be railroad tracks or rivers running alongside this street, as they would prevent construction of homes in this location.', refersTo: 'Address', severity: 'Error', source: 'Avalara.AvaTax.Services.Address'}]};
+
+        browser
+            .initialize(browser.globals.baseURL + '/api-reference/avatax/rest/v2/methods/Addresses/ResolveAddressPost/');
+
+        browser.page.endpointSummary()
+            .navigateTo('#ResolveAddressPost-console')
+            .navigateTo('#ResolveAddressPost-console-body .fill-sample-data')
+            .click('#ResolveAddressPost-console-body .submit')
+
+            .getConsoleText('ResolveAddressPost', 'responseConsole', function(res) {
+                browser.assert.ok(deepEqual(res, expectedResponse),
+                    "response for 'try it now' matches expected response");
+            });
+    },
     'API Reference: AvaTax: SOAP (verify number of endpoints)': function(browser) {
         expectedNumberOfApiEndpoints = 11;
 
@@ -94,5 +110,14 @@ module.exports = {
         browser
             .initialize(browser.globals.baseURL + '/api-reference/onboarding/methods/getAccount/')
             .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints);
+    },
+    'API Console: AvaTax: REST v2 Swagger Links': function(browser) {
+        const endpointUrl = `${browser.globals.baseURL}/api-reference/avatax/rest/v2/methods/Companies/CompanyInitialize/`;
+
+        browser
+            .initialize(endpointUrl)
+            .navigateTo('#CompanyInitialize-console')
+            .assert.elementNumTimes('.v2Links > a', 2, 'Assert 2 Swagger UI Links')
+            .navigateToUrl('.v2Links > a', '#Companies_CompanyInitialize', /Companies\/CompanyInitialize/);
     }
 };

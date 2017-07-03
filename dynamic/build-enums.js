@@ -52,9 +52,13 @@ function titleLinks(parent, name) {
 }
 
 function appendEnum(info, attr) {
+    const enumName = attr['x-enum-type'] || info.name;
+    const fileName = attr['x-enum-type'] || `${info.def} > ${info.name}`;
+
     const html = `---
 layout: default
-title: "API Console"
+title: "${enumName} | ${info.apiName}"
+${(attr.description) ? `ogdescription: "${(attr.description || '').replace(/"/g, "'")}"` : ''}
 api_console: 1
 api_name: ${info.apiName}
 nav: apis
@@ -63,7 +67,9 @@ doctype: api_references
 endpoint_links: []
 ---
 
-${titleLinks(info.def, info.name)}
+${attr['x-enum-type'] ?
+`<h1>${attr['x-enum-type']}</h1>` :
+titleLinks(info.def, enumName)}
 
 <div class="enum-summary">
     <h2>${info.enumType}</h2>
@@ -89,7 +95,7 @@ ${titleLinks(info.def, info.name)}
 
 {% include disqus.html %}`;
 
-    writeHtml(path.join(info.dir, 'enums'), `${info.def} > ${info.name}`, html);
+    writeHtml(path.join(info.dir, 'enums'), fileName, html);
 }
 
 function buildEnumFromModel(info, model) {

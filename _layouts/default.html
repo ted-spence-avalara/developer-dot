@@ -8,15 +8,17 @@
     <meta name="robots" content="index,follow" /> {% endif %}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }}{% if page.title %} : {{ page.title }}{% endif %}</title>
-    <meta name="description" content="{{ site.subtitle }}">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}Avalara Developer</title>
 
-    <meta property="og:title" content="Home" />
+    {% assign default_desc = "API solutions for end-to-end tax compliance" %}
+    <meta name="description" content="{{ default_desc }}">
+
+    {% assign ogtitle = page.ogtitle | default:page.title %}
+    <meta property="og:title" content="{% if ogtitle %}{{ogtitle}} | {% endif %}Avalara Developer" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://developer.avalara.com/" />
     <meta property="og:site_name" content="Avalara Developer Network" />
-    <meta property="og:description" content="Avalara AvaTax Accurate and easy sales tax calculation Automatically tie your non-taxable transactions directly to the correct exemption or reseller certificate. Determine accurate taxability & duties for millions of products and services in over 100 countries."
-    />
+    <meta property="og:description" content="{{ page.ogdescription | default:default_desc }}"/>
 
     <link rel="apple-touch-icon" sizes="57x57" href="/public/images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/public/images/favicon/apple-icon-60x60.png">
@@ -165,10 +167,11 @@
                             <li><a href="/sdk/">The AvaTax SDK</a></li>
                             <li><a href="/sdk/soap">SOAP SDK</a></li>
                             <br/>
-                            <li><a target="_blank" href="https://github.com/avadev/AvaTax-REST-V2-DotNet-SDK#installing-the-dotnet-sdk">Install C# SDK via NuGet</a></li>
-                            <li><a target="_blank" href="https://github.com/avadev/AvaTax-REST-V2-JRE-SDK#installing-the-jre-sdk">Install JRE SDK via Maven</a></li>
-                            <li><a target="_blank" href="https://github.com/avadev/AvaTax-REST-V2-PHP-SDK#installing-the-php-sdk">Install PHP SDK via Composer</a></li>
-                            <li><a target="_blank" href="https://github.com/avadev/AvaTax-REST-V2-Ruby-SDK">Install Ruby SDK via RubyGems</a></li>
+                            <li><a target="_blank" href="https://www.nuget.org/packages/Avalara.AvaTax/">Install C# SDK via NuGet</a></li>
+                            <li><a target="_blank" href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.avalara.avatax%22">Install JRE SDK via Maven</a></li>
+                            <li><a target="_blank" href="https://packagist.org/packages/avalara/avataxclient">Install PHP SDK via Composer</a></li>
+                            <li><a target="_blank" href="https://rubygems.org/gems/avatax">Install Ruby SDK via RubyGems</a></li>
+                            <li><a target="_blank" href="https://www.npmjs.com/package/avatax">Install JavaScript SDK via NPMJS</a></li>
                         </ul>
                     </li>
                     <li class="tests"><a href="/tests/testing-your-integration/"><span class="text-uppercase">Tests</span></a></li>
@@ -242,6 +245,24 @@
         </nav>
     </header>
     <div class="container-fluid {{page.doctype}}">
+        {% if page.nav=="home" %}
+        <div class="recent-blog-posts" id="recentPosts">
+            <button class="btn btn-seconndary pull-right" onClick="{document.getElementById('recentPosts').style.display='none';}"><i class="glyphicon glyphicon-remove"></i> Close</button>
+            <h1>What's new</h1>
+            <p class="whats-new"><a href="https://register.gotowebinar.com/register/5947594126538791426?elqTrackId=e3a2e452fc7b40918335a242e5a41a39&elqaid=2376&elqat=2">Sign up</a> for our next upcoming developer webinar on July 18th!</p>
+            <h2>Recent Blog Posts</h2>
+            {% for post in site.posts limit:4 %}
+            <div class="col-md-3">
+                <div class="blog-preview recent-posts">
+                    <div class="gradient"></div>
+                    <h5><a href="{{ post.url }}">{{ post.title }}</a></h5>
+                    <h6>{{ post.subtitle }}</h6>
+                    <p class="byline">By {{post.author}} | {{ post.date | date: "%B %d, %Y"}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
         {%if page.nav == 'sdk' %} {% include sdk_breadcrumb.html %}
         <section class="row padding-sides half">
             <nav class="col-md-3">
@@ -278,7 +299,7 @@
         </section>
         {% elsif page.nav == 'apis' %} {%if page.doctype != 'overview' %} {% include api_breadcrumb.html %} {%endif%} {% if page.doctype == 'api_references' or page.doctype == 'use_cases' %}
         <section class="row padding-sides{% if page.doctype == 'use_cases' or page.doctype == 'sdks' %} half{% endif %}">
-            <nav class="col-md-3">
+            <nav class="col-md-3{% if page.doctype == 'api_references' %} api-ref{% endif %}">
                 {% if page.doctype == 'api_references' %} {% include api_reference_navigation.html %} {% else %} {% include use_cases_navigation.html %} {% endif %}
             </nav>
             <main class="col-md-9{% if page.doctype == 'api_references' %} small-no-padding{% endif %}">{{ content }}</main>
