@@ -66,54 +66,53 @@ If the customer does not make a choice, omit the customerUsageType element entir
 Since changing this value can make an entire transaction exempt, this field is not generally displayed when building a web storefront.  Developers are encouraged instead to ask their customers for an exemption certificate or other documentation that can validate the claim that the customer is an exempt buyer.
 
 <div class="dev-guide-certification">
-<div class="dev-guide-certification-heading"> Certification Requirements - Entity Use Codes </div>
-<div class="dev-guide-certification-content">
-<h3>Certified Connector</h3>
-<ul class="dev-guide-list">
-    <li>AvaTax Certified Connectors must allow a salesperson to provide an entity use code for a transaction.</li>
-    <li>The connector must display a dropdown box allowing the salesperson to choose from defined codes.</li>
-    <li>The default code must be null.</li>
-</ul>
-</div>
+    <div class="dev-guide-certification-heading"> Certification Requirements</div>
+    <div class="dev-guide-certification-content">
+        <ul class="dev-guide-list">
+            <li>AvaTax Certified Connectors must allow a salesperson to provide an entity use code for a transaction.</li>
+            <li>The connector must display a dropdown box allowing the salesperson to choose from defined codes.</li>
+            <li>The default code must be null.</li>
+        </ul>
+    </div>
 </div>
 
 <h3>Custom Integration</h3>
 It's suggested for a Custom integration to implement entity use codes, if the application supports Tax Exempt sales.
 
 <div class="dev-guide-test" id="test1">
-<div class="dev-guide-test-heading">Test Case: Entity Use Code Exemptions </div>
+<div class="dev-guide-test-heading">Test Case - 8.6.1 </div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
-
-Transactions sold with an EntityUseCode of "D" are considered sold for foreign diplomatic use.
-In the United States, foreign diplomatic sales are legally exempt from sales taxes.
-In your connector, create the following transaction:
 <ul class="dev-guide-list">
-    <li>Transaction Type: SalesInvoice</li>
-    <li>Transaction Code: Chapter-8-Test-2</li>
-    <li>Document Date: 2017-06-15</li>
-    <li>CompanyCode, Date, CustomerCode set to reasonable default values.</li>
-    <li>CustomerUsageType: D</li>
-    <li>Addresses:</li>
-        <ul class="dev-guide-list">
-            <li>SingleLocation</li>
-            <li>100 Ravine Lane NE, Bainbridge Island, WA, 98110</li>
-        </ul>
-    <li>Line #1:</li>
-        <ul class="dev-guide-list">
-            <li>Amount: 100</li>
-            <li>TaxCode: P0000000</li>
-        </ul>
+    <li>Transactions sold with an EntityUseCode of "D" are considered sold for foreign diplomatic use.</li>
+    <li>In the United States, foreign diplomatic sales are legally exempt from sales taxes.</li>
+<li>In your connector, create the following transaction:</li>
+    <ul class="dev-guide-list">
+        <li>Transaction Type: SalesInvoice</li>
+        <li>Transaction Code: Chapter-8-Test-2</li>
+        <li>Document Date: 2017-06-15</li>
+        <li>CompanyCode, Date, CustomerCode set to reasonable default values.</li>
+        <li>CustomerUsageType: D</li>
+        <li>Addresses:</li>
+            <ul class="dev-guide-list">
+                <li>SingleLocation</li>
+                <li>100 Ravine Lane NE, Bainbridge Island, WA, 98110</li>
+            </ul>
+        <li>Line #1:</li>
+            <ul class="dev-guide-list">
+                <li>Amount: 100</li>
+                <li>TaxCode: P0000000</li>
+            </ul>
+    </ul>
+    <li>Calculate tax for your transaction using AvaTax.</li>
 </ul>
-Calculate tax for your transaction using AvaTax.
 
 <h4>Assertions</h4>
-
-The tax for line 1 should be $0.00.
-
-The Taxable amount for line 1 should be $0.00.
-
-The Exempt amount for line 1 should be $100.00.
+<ul class="dev-guide-list">
+    <li>The tax for line 1 should be $0.00.</li>
+    <li>The Taxable amount for line 1 should be $0.00.</li>
+    <li>The Exempt amount for line 1 should be $100.00.</li>
+</ul>
 
 <div class="dev-guide-dropdown">
     <input id="checkbox_toggle" type="checkbox" />

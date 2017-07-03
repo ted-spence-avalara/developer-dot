@@ -30,7 +30,7 @@ Although these states do not charge sales tax, it is important that your connect
 To ensure that your connector correctly sends NOMAD tax, you must be able to demonstrate that the tax transaction in the test case below is correctly recorded in AvaTax.
 
 <div class="dev-guide-test" id="test1">
-<div class="dev-guide-test-heading"> Test Case: NOMAD States</div>
+<div class="dev-guide-test-heading"> Test Case: 8.3.1 </div>
 <div class="dev-guide-test-content">
 <h4>Set Up</h4> 
 <ul class="dev-guide-list">

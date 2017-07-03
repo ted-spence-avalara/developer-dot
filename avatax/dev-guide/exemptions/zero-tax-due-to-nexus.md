@@ -19,38 +19,36 @@ This definition of the word Nexus comes from the United States, where a legal ru
 When using AvaTax, your company must decide where it has nexus, and where it does not.  This selection is used to determine whether you are obligated to collect taxes.  For example, if your company has nexus in the state of Massachusetts, but you do not have nexus in the state of Rhode Island, in general a tax calculation for a customer in Rhode Island will result in zero tax. According to legal precedents in the United States, this zero tax means that it is the responsibility of the buyer, instead, to determine the correct tax to pay to the taxing authority. This tax obligation is called "Consumer Use Tax".
 
 <div class="dev-guide-test" id="test1">
-<div class="dev-guide-test-heading"> Test Case: Nexus Based Obligations</div>
+<div class="dev-guide-test-heading">Test Case - 8.2.1</div>
 <div class="dev-guide-test-content">
 <h4>Set Up</h4>
-Your DEVGUIDE company should have nexus in Washington State, but not in Rhode Island.
-
-In your connector, creat the following transaction: 
-
 <ul class="dev-guide-list">
-    <li>Transaction Type: SalesInvoice</li>
-    <li>Transaction Code: Chapter-8-Test-1</li>
-    <li>Document Date: 2017-06-15</li>
-    <li>Addresses:</li>
-    <ul class="dev-guide-list">
-        <li>SingleLocation</li>
-        <li>468 Angell Street, Providence, RI 02906</li>
-    </ul>
-    <li>Line #1</li>
-    <ul class="dev-guide-list">
-        <li>Amount: 100</li>
-        <li>TaxCode: P0000000</li>
-    </ul>
+    <li>Your DEVGUIDE company should have nexus in Washington State, but not in Rhode Island.</li>
+    <li>In your connector, creat the following transaction:</li>
+        <ul class="dev-guide-list">
+            <li>Transaction Type: SalesInvoice</li>
+            <li>Transaction Code: Chapter-8-Test-1</li>
+            <li>Document Date: 2017-06-15</li>
+            <li>Addresses:</li>
+            <ul class="dev-guide-list">
+                <li>SingleLocation</li>
+                <li>468 Angell Street, Providence, RI 02906</li>
+            </ul>
+            <li>Line #1</li>
+            <ul class="dev-guide-list">
+                <li>Amount: 100</li>
+                <li>TaxCode: P0000000</li>
+            </ul>
+        </ul>
+    <li>Calculate tax for your transaction using AvaTax.</li>
 </ul>
 
-Calculate tax for your transaction using AvaTax.
-
 <h4>Assertions</h4>
-
-The tax for line 1 should be $0.00.
-
-The Taxable amount for line 1 should be $0.00. 
-
-The Exempt amount for line 1 should be $100.00.
+<ul class="dev-guide-list">
+    <li>The tax for line 1 should be $0.00.</li>
+    <li>The Taxable amount for line 1 should be $0.00. </li>
+    <li>The Exempt amount for line 1 should be $100.00.</li>
+</ul>
 
 <div class="dev-guide-dropdown">
     <input id="checkbox_toggle" type="checkbox" />
