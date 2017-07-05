@@ -52,7 +52,8 @@ When using AvaTax, your company must decide where it has nexus, and where it doe
 
 <div class="dev-guide-dropdown">
     <input id="checkbox_toggle" type="checkbox" />
-    <label for="checkbox_toggle"><h4><i class="glyphicon glyphicon-chevron-down"></i>Expected API Call</h4></label>
+    <i id="icon-up" class="glyphicon glyphicon-chevron-up"></i><i id="icon-down" class="glyphicon glyphicon-chevron-down"></i>
+    <label for="checkbox_toggle"><h4>Expected API Call</h4></label>
     <ul class="dev-guide-dropdown-content">
         <li>
             <pre>

@@ -106,61 +106,59 @@ These features are strongly suggested but are not mandatory:
 </div>
 
 <div class="dev-guide-test" id="test3">
-<div class="dev-guide-test-heading">Test Case - 8.5.3</div>
-<div class="dev-guide-test-content">
-<h4>Setup</h4>
-<ul class="dev-guide-list">
-    <li>Transactions sold to a customer who has an exemption record within the service should be sales tax exempt if the transaction ships to the state they are sales tax exempt in.</li>
-    <ul class"dev-guide-list">
-        <li>Create an exemption record within your test account following the steps section <a href="https://help.avalara.com/000_Avalara_AvaTax/Exempt_Customers_from_Sales_Tax/Add_or_Import_ECMS_Exemption_Certificate_Entries">"Add an ECMS Exemption Certificate Entry"</a></li>
+    <div class="dev-guide-test-heading">Test Case - 8.5.3</div>
+    <div class="dev-guide-test-content">
+    <h4>Setup</h4>
+    <ul class="dev-guide-list">
+        <li>Transactions sold to a customer who has an exemption record within the service should be sales tax exempt if the transaction ships to the state they are sales tax exempt in.</li>
         <ul class="dev-guide-list">
-            <li>Set CustomerCode to "HASEXEMPTION"</li>
-            <li>Customer Name can whatever you'd like.</li>
-            <li>Use the address information defined below for the SingleLocation</li>
-            <li>Set the Certificate Type to "Blanket"</li>
-            <li>Choose the Issuing Region of WA</li>
-            <li>Choose Effective Date of 6/1/2017</li>
-            <li>Use 9999999 for the Exemption No</li>
-            <li>Choose any Business Type</li>
-            <li>Choose Exempt Reason of G) Resale</li>
-        </ul>
-        <li>In your connector, create the following transaction:</li>
-        <ul class="dev-guide-list">
-            <li>Transaction Type: SalesInvoice</li>
-            <li>Transaction Code: Chapter-8-Test-1</li>
-            <li>Document Date: 2017-06-15</li>
-            <li>CompanyCode, Date set to reasonable default values.</li>
-            <li>CustomerCode set for HASEXEMPTION (make sure the customer you invoice for example is HASEXEMPTION)</li>
-            <li>CustomerUsageType: NULL</li>
-            <li>Addresses:</li>
+            <li>Create an exemption record within your test account following the steps section <a href="https://help.avalara.com/000_Avalara_AvaTax/Exempt_Customers_from_Sales_Tax/Add_or_Import_ECMS_Exemption_Certificate_Entries">"Add an ECMS Exemption Certificate Entry"</a></li>
             <ul class="dev-guide-list">
-                <li>SingleLocation</li>
-                <li>100 Ravine Lane NE, Bainbridge Island, WA, 98110</li>
+                <li>Set CustomerCode to "HASEXEMPTION"</li>
+                <li>Customer Name can whatever you'd like.</li>
+                <li>Use the address information defined below for the SingleLocation</li>
+                <li>Set the Certificate Type to "Blanket"</li>
+                <li>Choose the Issuing Region of WA</li>
+                <li>Choose Effective Date of 6/1/2017</li>
+                <li>Use 9999999 for the Exemption No</li>
+                <li>Choose any Business Type</li>
+                <li>Choose Exempt Reason of G) Resale</li>
             </ul>
-            <li>Line #1:</li>
+            <li>In your connector, create the following transaction:</li>
             <ul class="dev-guide-list">
-                <li>Amount 100</li>
-                <li>TaxCode P0000000</li>
-            </ul>    
+                <li>Transaction Type: SalesInvoice</li>
+                <li>Transaction Code: Chapter-8-Test-1</li>
+                <li>Document Date: 2017-06-15</li>
+                <li>CompanyCode, Date set to reasonable default values.</li>
+                <li>CustomerCode set for HASEXEMPTION (make sure the customer you invoice for example is HASEXEMPTION)</li>
+                <li>CustomerUsageType: NULL</li>
+                <li>Addresses:</li>
+                <ul class="dev-guide-list">
+                    <li>SingleLocation</li>
+                    <li>100 Ravine Lane NE, Bainbridge Island, WA, 98110</li>
+                </ul>
+                <li>Line #1:</li>
+                <ul class="dev-guide-list">
+                    <li>Amount 100</li>
+                    <li>TaxCode P0000000</li>
+                </ul>    
+            </ul>
         </ul>
+        <li>Calculate tax for your transaction using AvaTax.</li>
     </ul>
-    <li>Calculate tax for your transaction using AvaTax.</li>
-</ul>
-
-<h4>Assertions</h4>
-
-<ul class="dev-guide-list">
-    <li>The tax for line 1 should be $0.00.</li>
-    <li>The Taxable amount for line 1 should be $0.00.</li>
-    <li>The exempt amount for line 1 should be $100.00.</li>
-</ul>
-
-<div class="dev-guide-dropdown">
-    <input id="checkbox_toggle" type="checkbox" />
-    <label for="checkbox_toggle"><h4><i class="glyphicon glyphicon-chevron-down"></i>Expected API Call</h4></label>
-    <ul class="dev-guide-dropdown-content">
-        <li>
-            <pre>
+    <h4>Assertions</h4>
+    <ul class="dev-guide-list">
+        <li>The tax for line 1 should be $0.00.</li>
+        <li>The Taxable amount for line 1 should be $0.00.</li>
+        <li>The exempt amount for line 1 should be $100.00.</li>
+    </ul>
+    <div class="dev-guide-dropdown">
+        <input id="checkbox_toggle" type="checkbox" />
+        <i id="icon-up" class="glyphicon glyphicon-chevron-up"></i><i id="icon-down" class="glyphicon glyphicon-chevron-down"></i>
+        <label for="checkbox_toggle"><h4>Expected API Call</h4></label>
+        <ul class="dev-guide-dropdown-content">
+            <li>
+                <pre>
 {
     "type": "SalesInvoice",
     "code": "Chapter-8-Test-1",
@@ -184,10 +182,10 @@ These features are strongly suggested but are not mandatory:
         }
     ]
 }
-</pre>
-        </li>
-    </ul>
-</div>
+                </pre>
+            </li>
+        </ul>
+    </div>
 </div>
 </div>
 

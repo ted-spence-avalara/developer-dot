@@ -1,3 +1,4 @@
+
 .dev-guide-nav {
   ol {
     counter-reset: item;
@@ -83,15 +84,30 @@ ul.dev-guide-list {
     text-decoration: underline;
     color: #494e58;
   }
-
   input[type=checkbox] {
     display: none;
   }
   ul.dev-guide-dropdown-content {
     display: none;
   }
+  i#icon-down {
+    color: #494e58;
+    display: inline;
+  }
+  i#icon-up {
+    display: none;
+  }
   input[type=checkbox]:checked ~ ul.dev-guide-dropdown-content {
     display: block;
   }
+  input[type=checkbox]:checked ~ i#icon-up {
+    color: #494e58;
+    display: inline;
+  }
+  input[type=checkbox]:checked ~ i#icon-down {
+    display: none;
+  }
 }
+
+
 
