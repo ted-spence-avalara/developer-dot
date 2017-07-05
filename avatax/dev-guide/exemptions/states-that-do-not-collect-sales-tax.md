@@ -67,7 +67,7 @@ Calculate tax for your transaction using AvaTax.
 
 <div class="dev-guide-dropdown">
     <input id="checkbox_toggle" type="checkbox" />
-    <i id="icon-up" class="glyphicon glyphicon-chevron-up"></i><i id="icon-down" class="glyphicon glyphicon-chevron-down"></i>
+    <i id="icon-up" class="glyphicon glyphicon-chevron-down"></i><i id="icon-down" class="glyphicon glyphicon-chevron-right"></i>
     <label for="checkbox_toggle"><h4>Expected API Call</h4></label>
     <ul class="dev-guide-dropdown-content">
         <li>

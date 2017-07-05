@@ -24,7 +24,7 @@ When using AvaTax, your company must decide where it has nexus, and where it doe
 <h4>Set Up</h4>
 <ul class="dev-guide-list">
     <li>Your DEVGUIDE company should have nexus in Washington State, but not in Rhode Island.</li>
-    <li>In your connector, creat the following transaction:</li>
+    <li>In your connector, create the following transaction:</li>
         <ul class="dev-guide-list">
             <li>Transaction Type: SalesInvoice</li>
             <li>Transaction Code: Chapter-8-Test-1</li>
@@ -52,7 +52,7 @@ When using AvaTax, your company must decide where it has nexus, and where it doe
 
 <div class="dev-guide-dropdown">
     <input id="checkbox_toggle" type="checkbox" />
-    <i id="icon-up" class="glyphicon glyphicon-chevron-up"></i><i id="icon-down" class="glyphicon glyphicon-chevron-down"></i>
+    <i id="icon-up" class="glyphicon glyphicon-chevron-down"></i><i id="icon-down" class="glyphicon glyphicon-chevron-right"></i>
     <label for="checkbox_toggle"><h4>Expected API Call</h4></label>
     <ul class="dev-guide-dropdown-content">
         <li>
