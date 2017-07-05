@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 8.6 - Exempt due to Entity Use Code
+title: 8.5 - Exempt due to Entity Use Code
 product: avaTax
 doctype: dev_guide
 chapter: exemptions
@@ -80,7 +80,7 @@ Since changing this value can make an entire transaction exempt, this field is n
 It's suggested for a Custom integration to implement entity use codes, if the application supports Tax Exempt sales.
 
 <div class="dev-guide-test" id="test1">
-<div class="dev-guide-test-heading">Test Case - 8.6.1 </div>
+<div class="dev-guide-test-heading">Test Case - 8.5.1 </div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
 <ul class="dev-guide-list">

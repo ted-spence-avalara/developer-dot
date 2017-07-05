@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 8.4 - Zero Tax due to Product Taxability
+title: 8.3 - Zero Tax due to Product Taxability
 product: avaTax
 doctype: dev_guide
 chapter: exemptions

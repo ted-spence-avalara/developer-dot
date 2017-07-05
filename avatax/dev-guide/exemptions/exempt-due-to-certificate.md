@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 8.5 - Exempt due to Certificate
+title: 8.4 - Exempt due to Certificate
 product: avaTax
 doctype: dev_guide
 chapter: exemptions
@@ -58,7 +58,7 @@ These features are strongly suggested but are not mandatory:
 </ul>
 
 <div class="dev-guide-test" id="test1">
-<div class="dev-guide-test-heading">Test Case - 8.5.1</div>
+<div class="dev-guide-test-heading">Test Case - 8.4.1</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
 
@@ -88,7 +88,7 @@ These features are strongly suggested but are not mandatory:
 </div>
 
 <div class="dev-guide-test" id="test2">
-<div class="dev-guide-test-heading">Test Case - 8.5.2</div>
+<div class="dev-guide-test-heading">Test Case - 8.4.2</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
 <ul class="dev-guide-list">
@@ -106,7 +106,7 @@ These features are strongly suggested but are not mandatory:
 </div>
 
 <div class="dev-guide-test" id="test3">
-    <div class="dev-guide-test-heading">Test Case - 8.5.3</div>
+    <div class="dev-guide-test-heading">Test Case - 8.4.3</div>
     <div class="dev-guide-test-content">
     <h4>Setup</h4>
     <ul class="dev-guide-list">
@@ -190,7 +190,7 @@ These features are strongly suggested but are not mandatory:
 </div>
 
 <div class="dev-guide-test" id="test4">
-<div class="dev-guide-test-heading">Test Case - 8.5.4</div>
+<div class="dev-guide-test-heading">Test Case - 8.4.4</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
     <ul class="dev-guide-list">

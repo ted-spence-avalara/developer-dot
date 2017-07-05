@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 8.7 - Zero Tax using Tax Overrides
+title: 8.6 - Zero Tax using Tax Overrides
 product: avaTax
 doctype: dev_guide
 chapter: exemptions

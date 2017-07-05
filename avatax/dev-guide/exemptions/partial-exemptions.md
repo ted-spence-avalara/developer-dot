@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 8.8 - Partial Exemptions
+title: 8.7 - Partial Exemptions
 product: avaTax
 doctype: dev_guide
 chapter: exemptions
@@ -17,4 +17,3 @@ disqus: 1
   <li class="previous"><a href="/avatax/dev-guide/exemptions/zero-tax-using-tax-overrides/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/avatax/dev-guide/exemptions/chapter-summary/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
-

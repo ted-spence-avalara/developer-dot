@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 8.2 - Zero Tax Due to Nexus
+title: 8.1 - Zero Tax Due to Nexus
 product: avaTax
 doctype: dev_guide
 chapter: exemptions
@@ -8,7 +8,7 @@ nav: apis
 disqus: 1
 ---
 <ul class="pager">
-  <li class="previous"><a href="/avatax/dev-guide/exemptions/what-cause-tax-to-be-zero/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="previous"><a href="/avatax/dev-guide/exemptions/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/avatax/dev-guide/exemptions/states-that-do-not-collect-sales-tax/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
@@ -19,7 +19,7 @@ This definition of the word Nexus comes from the United States, where a legal ru
 When using AvaTax, your company must decide where it has nexus, and where it does not.  This selection is used to determine whether you are obligated to collect taxes.  For example, if your company has nexus in the state of Massachusetts, but you do not have nexus in the state of Rhode Island, in general a tax calculation for a customer in Rhode Island will result in zero tax. According to legal precedents in the United States, this zero tax means that it is the responsibility of the buyer, instead, to determine the correct tax to pay to the taxing authority. This tax obligation is called "Consumer Use Tax".
 
 <div class="dev-guide-test" id="test1">
-<div class="dev-guide-test-heading">Test Case - 8.2.1</div>
+<div class="dev-guide-test-heading">Test Case - 8.1.1</div>
 <div class="dev-guide-test-content">
 <h4>Set Up</h4>
 <ul class="dev-guide-list">
@@ -88,6 +88,6 @@ When using AvaTax, your company must decide where it has nexus, and where it doe
 </div>
 
 <ul class="pager">
-   <li class="previous"><a href="/avatax/dev-guide/exemptions/what-cause-tax-to-be-zero/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+   <li class="previous"><a href="/avatax/dev-guide/exemptions/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/avatax/dev-guide/exemptions/states-that-do-not-collect-sales-tax/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
