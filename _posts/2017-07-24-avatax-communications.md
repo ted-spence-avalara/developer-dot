@@ -22,26 +22,29 @@ There are a few things you need to pre-configure before making a successful AvaT
     <table class="styled-table">
         <thead>
             <tr>
-                <th>CreateCommsConfig</th>
+                <th>CreateCommsConfig - <code>POST</code> /api/v2/companies/{id}/configuration</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><pre>
-POST /api/v2/companies/{id}/configuration
-[{
-"companyId": 12345,
-"category": "AvaCommsConfig",
-"name": "ClientId",
-"value": "536"
-},
-{
-"companyId": 12345,
-"category": "AvaCommsConfig",
-"name": "ClientProfileId",
-"value": "1"
-}]
-</pre></td>
+                <td>
+                    <div class="language-json highlighter-rouge">
+                        <pre class="highlight">
+<span class="p">[{</span>
+    <span class="nt">"companyId"</span><span class="p">: </span><span class="mi">12345</span><span class="p">,</span>
+    <span class="nt">"category"</span><span class="p">: </span><span class="s2">"AvaCommsConfig"</span><span class="p">,</span>
+    <span class="nt">"name"</span><span class="p">: </span><span class="s2">"ClientId"</span><span class="p">,</span>
+    <span class="nt"> "value"</span><span class="p">: </span><span class="s2">"536"</span>
+<span class="p">},
+{</span>
+    <span class="nt">"companyId"</span><span class="p">: </span><span class="mi">12345</span><span class="p">,</span>
+    <span class="nt">"category"</span><span class="p">: </span><span class="s2">"AvaCommsConfig"</span><span class="p">,</span>
+    <span class="nt">"name"</span><span class="p">: </span><span class="s2">"ClientProfileId"</span><span class="p">,</span>
+    <span class="nt"> "value"</span><span class="p">: </span><span class="s2">"1"</span>
+<span class="p">}]</span>
+                        </pre>
+                    </div>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -66,55 +69,58 @@ So a Communications transaction looks something as below. Note that the "AvaTax.
 <table class="styled-table">
         <thead>
             <tr>
-                <th>AvaTax Communications transaction example</th>
+                <th>AvaTax Communications transaction example - <code>POST</code> /api/v2/transactions/create</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><pre>
-POST /api/v2/transactions/create
-{
-  "type": "SalesInvoice",
-  "companyCode": "DEFAULT",
-  "date": "2017-05-26",
-  "customerCode": "RestSample",
-  "purchaseOrderNo": "2017-05-26-001",
-  "addresses": {
-    "singleLocation": {
-      "line1": "8675 W 96th Street Suite 220",
-      "city": "Overland Park",
-      "region": "KS",
-      "country": "US",
-      "postalCode": "66212"
-    }
-  },
-  "lines": [
-    {
-      "number": "1",
-      "quantity": 1,
-      "amount": 100,
-      "taxCode": "P0000000",
-      "description": "Yarn",
-      "parameters": {
-        "AvaTax.Communications.TransactionType": "Cellular",
-        "AvaTax.Communications.ServiceType": "Access Charge",
-        "AvaTax.Communications.Lines": 10,
-        "AvaTax.Communications.Minutes": 60
-      }
-    }
-  ],
-  "commit": true,
-  "currencyCode": "USD",
-  "description": "Yarn",
-  "parameters": {
-    "AvaTax.Communications.CustomerType": "Business",
-    "AvaTax.Communications.BusinessClass": "CLEC",
-    "AvaTax.Communications.Sale": true,
-    "AvaTax.Communications.ServiceClass": "Primary Long Distance",
-  },
-  "debugLevel": "Diagnostic"
-}
-</pre></td>
+                <td>
+                    <div class="language-json highlighter-rouge">
+                        <pre class="highlight">
+<span class="p">{</span>
+    <span class="nt">"type"</span><span class="p">: </span><span class="s2">"SalesInvoice"</span><span class="p">,</span>
+    <span class="nt">"companyCode"</span><span class="p">: </span><span class="s2">"DEFAULT"</span><span class="p">,</span>
+    <span class="nt">"date"</span><span class="p">: </span><span class="s2">"2017-05-26"</span><span class="p">,</span>
+    <span class="nt">"customerCode"</span><span class="p">: </span><span class="s2">"RestSample"</span><span class="p">,</span>
+    <span class="nt">"purchaseOrderNo"</span><span class="p">: </span><span class="s2">"2017-05-26-001"</span><span class="p">,</span>
+    <span class="nt">"addresses"</span><span class="p">: {</span>
+        <span class="nt">"singleLocation"</span><span class="p">: {</span>
+        <span class="nt">"line1"</span><span class="p">: </span><span class="s2">"8675 W 96th Street Suite 220"</span><span class="p">,</span>
+        <span class="nt">"city"</span><span class="p">: </span><span class="s2">"Overland Park"</span><span class="p">,</span>
+        <span class="nt">"region"</span><span class="p">: </span><span class="s2">"KS"</span><span class="p">,</span>
+        <span class="nt">"country"</span><span class="p">: </span><span class="s2">"US"</span><span class="p">,</span>
+            <span class="nt">"postalCode"</span><span class="p">: </span><span class="s2">"66212"</span><span class="p">,</span>
+        <span class="p">}
+    },</span>
+    <span class="nt">"lines"</span><span class="p">: {
+        {</span>
+        <span class="nt">"number"</span><span class="p">: </span><span class="s2">"1"</span><span class="p">,</span>
+        <span class="nt">"quantity"</span><span class="p">: </span><span class="mi">1</span><span class="p">,</span>
+        <span class="nt">"amount"</span><span class="p">: </span><span class="mi">100</span><span class="p">,</span>
+        <span class="nt">"taxCode"</span><span class="p">: </span><span class="s2">"P0000000"</span><span class="p">,</span>
+        <span class="nt">"description"</span><span class="p">: </span><span class="s2">"Yarn"</span><span class="p">,</span>
+        <span class="nt">"parameters"</span><span class="p">: {</span>
+            <span class="nt">"AvaTax.Communications.TransactionType"</span><span class="p">: </span><span class="s2">"Cellular"</span><span class="p">,</span>
+            <span class="nt">"AvaTax.Communications.ServiceType"</span><span class="p">: </span><span class="s2">"Access Charge"</span><span class="p">,</span>
+            <span class="nt">"AvaTax.Communications.Lines"</span><span class="p">: </span><span class="mi">10</span><span class="p">,</span>
+            <span class="nt"> "AvaTax.Communications.Minutes"</span><span class="p">: </span><span class="mi">60</span>
+        <span class="p">}
+        }
+    ],</span>
+    <span class="nt">"commit"</span><span class="p">: </span><span class="mi">true</span><span class="p">,</span>
+    <span class="nt">"currencyCode"</span><span class="p">: </span><span class="s2">"USD"</span><span class="p">,</span>
+    <span class="nt">"description"</span><span class="p">: </span><span class="s2">"Yarn"</span><span class="p">,</span>
+    <span class="nt">"parameters"</span><span class="p">: {</span>
+            <span class="nt">"AvaTax.Communications.CustomerType"</span><span class="p">: </span><span class="s2">"Business"</span><span class="p">,</span>
+            <span class="nt">"AvaTax.Communications.BusinessClass"</span><span class="p">: </span><span class="s2">"CLEC"</span><span class="p">,</span>
+        <span class="nt">"AvaTax.Communications.Sale"</span><span class="p">: </span><span class="mi">true</span><span class="p">,</span>
+        <span class="nt"> "AvaTax.Communications.ServiceClass"</span><span class="p">: </span><span class="s2">"Primary Long Distance"</span><span class="p">,
+    },</span>
+    <span class="nt">"debugLevel"</span><span class="p">: </span><span class="s2">"Diagnostic"</span>
+<span class="p">}</span>
+                        </pre>
+                    </div>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -165,26 +171,39 @@ Below is how you configure default parameters. Make sure you pass a valid JSON f
 <table class="styled-table">
         <thead>
             <tr>
-                <th>CreateCommsConfig</th>
+                <th>Configuring default parameters - <code>POST</code> /api/v2/companies/{id}/configuration</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><pre>
-POST /api/v2/companies/{id}/configuration
-[{
-"companyId": 12345,
-"category": "AvaCommsConfig",
-"name": "ClientId",
-"value": "536"
-},
-{
-"companyId": 12345,
-"category": "AvaCommsConfig",
-"name": "ClientProfileId",
-"value": "1"
-}]
-</pre></td>
+                <td>
+                    <div class="language-json highlighter-rouge">
+                        <pre class="highlight">
+<span class="p">[{</span>
+    <span class="nt">"companyId"</span><span class="p">: </span><span class="mi">12345</span><span class="p">,</span>
+    <span class="nt">"category"</span><span class="p">: </span><span class="s2">"AvaCommsConfig"</span><span class="p">,</span>
+    <span class="nt">"name"</span><span class="p">: </span><span class="s2">"Parameters"</span><span class="p">,</span>
+    <span class="nt">"value"</span><span class="p">: "{</span>
+        <span class="nt">\"AvaTax.Communications.IsPrivateLine\"</span><span class="p">: </span><span class="mi">false</span><span class="p">,</span>
+        <span class="nt">\"AvaTax.Communications.PrivateLineSplit\"</span><span class="p">: </span><span class="mi">0.0</span><span class="p">,</span>
+        <span class="nt">\"AvaTax.Communications.CustomerType\"</span><span class="p">: </span><span class="s2">\"Business\"</span><span class="p">,</span>
+        <span class="nt">\"AvaTax.Communications.BusinessClass\"</span><span class="p">: </span><span class="s2">\"CLEC\"</span><span class="p">,</span>
+        <span class="nt">\"AvaTax.Communications.Sale\"</span><span class="p">: </span><span class="mi">true</span><span class="p">,</span>
+        <span class="nt">\"AvaTax.Communications.ServiceClass\"</span><span class="p">: </span><span class="s2">\"Primary Long Distance\"</span><span class="p">,</span>
+        <span class="nt">\"AvaTax.Communications.CustomerNumber\"</span><span class="p">: </span><span class="s2">\"RestSample\"</span><span class="p">,</span>
+        <span class="nt">\"AvaTax.Communications.CompanyIdentifier\"</span><span class="p">: </span><span class="s2">\"TST\"</span><span class="p">,</span>
+        <span class="nt">\"AvaTax.Communications.AdjustmentMethod\"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+        <span class="nt">\"AvaTax.Communications.Debit\"</span><span class="p">: </span><span class="mi">false</span><span class="p">,</span>
+        <span class="nt">\"AvaTax.Communications.FacilitiesBased\"</span><span class="p">: </span><span class="mi">true</span><span class="p">,</span>
+        <span class="nt">\"AvaTax.Communications.Franchise\"</span><span class="p">: </span><span class="mi">true</span><span class="p">,</span>
+        <span class="nt">\"AvaTax.Communications.Lifeline\"</span><span class="p">: </span><span class="mi">false</span><span class="p">,</span>
+        <span class="nt">\"AvaTax.Communications.Regulated\"</span><span class="p">: </span><span class="mi">true</span><span class="p">,</span>
+        <span class="nt">\"AvaTax.Communications.ServiceLevelNumber\"</span><span class="p">: </span><span class="mi">3456</span>
+    <span class="p">}"</span>
+<span class="p">}]</span>
+                        </pre>
+                    </div>
+                </td>
             </tr>
         </tbody>
     </table>
