@@ -71,12 +71,12 @@
                                 <div class="col-md-12"><a href="/avalara-apis">APIs overview</a></div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-8">
+                                <div class="col-sm-6">
                                     <h2>Tax calculation</h2>
-                                    {% if site.data.api_consoles.avatax1.nav_links %}
+                                    {% if site.data.api_consoles.avatax11.nav_links %}
                                     <h4>Avalara AvaTax</h4>
                                     <ul class="pipe">
-                                        {% for api_console_hash in site.data.api_consoles.avatax1.nav_links %}
+                                        {% for api_console_hash in site.data.api_consoles.avatax11.nav_links %}
                                         <li><a href="{{api_console_hash.path}}">{{api_console_hash.title}}</a></li>
                                         {% endfor %}
                                         <br/>
@@ -112,7 +112,7 @@
                                     </ul>
                                     {% endif %}
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-6">
                                     <h2>Compliance document management</h2>
                                     {% if site.data.api_consoles.certcapture.nav_links %}
                                     <h4>Avalara CertCapture</h4>
@@ -162,9 +162,7 @@
                     <!--
                     <li class="tests dropdown dropdown-large hidden-xs">
                         <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Tests</span> <b class="caret"></b></a>
-
                         <ul class="dropdown-menu dropdown-menu-large">
-
                             <li><a href="/tests/self-test">Avalara Self-Test Tool</a></li>
                             <li><a href="/tests/testing-your-integration/">Avalara Test Cases</a></li>
                         </ul>
@@ -184,7 +182,7 @@
                         <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Resources</span> <b class="caret"></b></a>
                         <ul class="dropdown-menu dropdown-menu-large">
                             <li><a href="/blog">Developer Blog</a></li>
-                            <li><a href="/resources/preferred-developers">Preferred developers</a></li>
+                            <!--<li><a href="/resources/preferred-developers">Preferred developers</a></li>-->
                             <li><a href="https://community.avalara.com/avalara/category_sets/developers">Help Forum</a></li>
                             <li><a href="http://www.info.avalara.com/avalaradevcentral">Developer Webinar Series</a></li>
                         </ul>
@@ -232,8 +230,8 @@
         <div class="recent-blog-posts" id="recentPosts">
             <button class="btn btn-seconndary pull-right" onClick="{document.getElementById('recentPosts').style.display='none';}"><i class="glyphicon glyphicon-remove"></i> Close</button>
             <h1>What's new</h1>
-            <p class="whats-new"><a href="https://register.gotowebinar.com/register/5947594126538791426?elqTrackId=e3a2e452fc7b40918335a242e5a41a39&elqaid=2376&elqat=2">Sign up</a> for our next upcoming developer webinar on July 18th!</p>
-            <h2>Recent Blog Posts</h2>
+            <p class="whats-new"><a href="https://register.gotowebinar.com/register/7674352948705262082?elqTrackId=751c1b96fbde4fadac04db46c8bcfd38&elqaid=2376&elqat=2">Sign up</a> for our next upcoming developer webinar on September 19th!</p>
+            <h2>Recent blog posts</h2>
             {% for post in site.posts limit:4 %}
             <div class="col-md-3">
                 <div class="blog-preview recent-posts">
@@ -253,7 +251,7 @@
             </nav>
             <main class="col-md-9 small-no-padding">{{ content }}</main>
         </section>
-        {% elsif page.nav == "certification" and page.product != "avaTax" and page.doctype != 'overview' %} {% include certification_breadcrumb.html %}
+        {% elsif page.nav == "certification" and page.doctype != 'overview' %}{% include certification_breadcrumb.html %} 
         <section class="row padding-sides half">
             <nav class="col-md-3">
                 {% include certification_navigation.html %}
@@ -270,14 +268,6 @@
                 {% include tests_navigation.html %}
             </nav>
 -->
-            <main class="col-md-9 small-no-padding">{{ content }}</main>
-        </section>
-
-        {% elsif page.nav == 'certification' and page.product == "avaTax" %} {% include ava_certification_breadcrumbs.html %}
-        <section class="row padding-sides half">
-            <nav class="col-md-3">
-               {% include ava_certification_navigation.html %}
-                </nav>
             <main class="col-md-9 small-no-padding">{{ content }}</main>
         </section>
         {% elsif page.nav == 'apis' %} {%if page.doctype != 'overview' %} {% include api_breadcrumb.html %} {%endif%} {% if page.doctype == 'api_references' or page.doctype == 'use_cases' %}
@@ -318,9 +308,23 @@
             <li class="linkedin"><a href="https://www.linkedin.com/company/avalara">LinkedIn</a></li>
             <li class="youtube"><a href="https://www.youtube.com/user/Avalara1">Youtube</a></li>
         </ul>
-        {% if page.api_console == 1 %} {% for api_console_hash in site.data.api_consoles %} {% assign api_console = api_console_hash[1] %} {% assign api_console_path = api_console.nav_link.path | remove_first: '/' %} {% if page.path contains api_console_path
-        %} {% assign githubpath = api_console.swagger_path | prepend: 'https://github.com/Avalara/developer-dot/edit/master/dynamic/swagger/' %} {% endif %} {% endfor %} {% else %} {% assign githubpath = page.path | prepend: 'https://github.com/Avalara/developer-dot/edit/master/'
-        %} {% endif %} {% unless githubpath contains '/blog/page' %}
+        {% if page.api_console == 1 %}
+            {% for api_console_hash in site.data.api_consoles %}
+                {% assign api_console = api_console_hash[1] %}
+                {% assign api_console_path = api_console.nav_link.path | remove_first: '/' %}
+                {% if page.path contains api_console_path %}
+                    {% for config in site.data.SWAGGER_CONFIG %}
+                        {% if config[1].name == page.api_name %}
+                            {% assign swagger_path = config[0] %}
+                        {% endif %}
+                    {% endfor %}
+                    {% assign githubpath = swagger_path | prepend: 'https://github.com/Avalara/developer-dot/edit/master/dynamic/swagger/' %}
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            {% assign githubpath = page.path | prepend: 'https://github.com/Avalara/developer-dot/edit/master/' %}
+        {% endif %}
+        {% unless githubpath contains '/blog/page' %}
 
         {% endunless %}
 
