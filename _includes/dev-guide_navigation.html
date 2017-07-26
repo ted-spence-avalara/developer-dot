@@ -4,7 +4,15 @@
         <li {% if page.url=="/avatax/dev-guide/connecting-to-avatax/" %}class="active" {% endif %}><a href="/avatax/dev-guide/connecting-to-avatax/">Connecting to AvaTax</a></li>
         <li {% if page.url=="/avatax/dev-guide/transactions/" %}class="active" {% endif %}><a href="/avatax/dev-guide/transactions/">Transactions</a></li>
         <li {% if page.url=="/avatax/dev-guide/customizing-transaction/" %}class="active" {% endif %}><a href="/avatax/dev-guide/customizing-transaction/">Customizing Your Transactions</a></li>
-        <li {% if page.url=="/avatax/dev-guide/reconciliation/" %}class="active" {% endif %}><a href="/avatax/dev-guide/reconciliation/">Reconciliation</a></li>
+        <li {% if page.url=="/avatax/dev-guide/reconciliation/" %}class="active" {% endif %}><a href="/avatax/dev-guide/reconciliation/">Reconciliation</a>
+            {% if page.chapter=="reconciliation" %}
+            <ol>
+                <li><a href="/avatax/dev-guide/reconciliation/committing-a-transaction">Committing a Transaction</a></li>
+                <li><a href="/avatax/dev-guide/reconciliation/modifying-a-transaction">Modifying a Transaction</a></li>
+                <li><a href="/avatax/dev-guide/reconciliation/chapter-summary">Chapter Summary</a></li>
+            </ol>
+            {% endif %}
+        </li>
         <li {% if page.url=="/avatax/dev-guide/product-taxability/" %}class="active" {% endif %}><a href="/avatax/dev-guide/product-taxability/">Product Taxability</a></li>
         <li {% if page.url=="/avatax/dev-guide/discounts-and-overrides/" %}class="active" {% endif %}><a href="/avatax/dev-guide/discounts-and-overrides/">Discounts and Overrides</a></li>
         <li {% if page.url=="/avatax/dev-guide/shipping-and-handling/" %}class="active" {% endif %}><a href="/avatax/dev-guide/shipping-and-handling/">Shipping and Handling</a></li>
@@ -22,7 +30,6 @@
             </ol>
             {% endif %}
         </li>
-
         <li {% if page.url=="/avatax/dev-guide/locations/" %}class="active" {% endif %}><a href="/avatax/dev-guide/locations/">Locations</a></li>
         <li {% if page.url=="/avatax/dev-guide/consumer-use-tax/" %}class="active" {% endif %}><a href="/avatax/dev-guide/consumer-use-tax/">Consumer Use Tax</a></li>
         <li {% if page.url=="/avatax/dev-guide/calculating-tax-offline/" %}class="active" {% endif %}><a href="/avatax/dev-guide/calculating-tax-offline/">Calculating Tax offline</a></li>
