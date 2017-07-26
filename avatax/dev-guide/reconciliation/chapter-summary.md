@@ -10,7 +10,7 @@ disqus: 1
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/reconciliation/modifying-a-transaction/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/avatax/dev-guide/product-taxability/">Next Chapter - Product Taxability<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/avatax/dev-guide/product-taxability/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 In this chapter, you've seen all the features available in AvaTax for designing a transaction reconciliation process.  You can choose which process best fits your company.
 
@@ -25,5 +25,5 @@ Connector developers are free to customize the use of the reconciliation API sui
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/reconciliation/modifying-a-transaction/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/avatax/dev-guide/product-taxability/">Next Chapter - Product Taxability<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/avatax/dev-guide/product-taxability/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
