@@ -136,423 +136,221 @@ And the calculation response for above request is:
             <tr>
                 <td>
                     <div class="language-json highlighter-rouge">
-                        <pre class="highlight">
-{
-  "id": 0,
-  "code": "b08190bc-d449-4643-b34c-caf2cf6cfa68",
-  "companyId": 0,
-  "date": "2017-05-26",
-  "paymentDate": "2017-05-26",
-  "status": "Temporary",
-  "type": "SalesInvoice",
-  "currencyCode": "USD",
-  "customerVendorCode": "RestSample",
-  "reconciled": false,
-  "purchaseOrderNo": "2017-05-26-001",
-  "totalAmount": 100,
-  "totalExempt": 0,
-  "totalTax": 22.427061,
-  "totalTaxable": 111.032317,
-  "totalTaxCalculated": 22.427061,
-  "adjustmentReason": "NotAdjusted",
-  "locked": false,
-  "version": 1,
-  "exchangeRateEffectiveDate": "2017-05-26",
-  "exchangeRate": 1,
-  "isSellerImporterOfRecord": false,
-  "description": "Yarn",
-  "modifiedDate": "2017-07-24T21:53:30.6139926Z",
-  "modifiedUserId": 30581,
-  "taxDate": "0001-01-01T00:00:00",
-  "lines": [
-    {
-      "id": 0,
-      "transactionId": 0,
-      "lineNumber": "1",
-      "description": "",
-      "discountAmount": 0,
-      "exemptAmount": 0,
-      "exemptCertId": 0,
-      "isItemTaxable": true,
-      "lineAmount": 111.032317,
-      "quantity": 1,
-      "reportingDate": "1900-01-01",
-      "tax": 22.427061,
-      "taxableAmount": 111.032317,
-      "taxCalculated": 22.427061,
-      "taxCode": "Cellular - Access Charge",
-      "taxDate": "2017-07-24",
-      "taxIncluded": false,
-      "details": [
-        {
-          "id": 0,
-          "transactionLineId": 0,
-          "transactionId": 0,
-          "country": "USA",
-          "region": "",
-          "exemptAmount": 37.1,
-          "jurisCode": "",
-          "jurisName": "",
-          "stateAssignedNo": "",
-          "jurisType": "STA",
-          "nonTaxableAmount": 37.1,
-          "rate": 0.0725,
-          "tax": 4.56025,
-          "taxableAmount": 62.9,
-          "taxType": "Sales",
-          "taxName": "CONNECTIVITY CHARGES - Universal Service Fund (Wireless)",
-          "taxAuthorityTypeId": 0,
-          "taxCalculated": 4.56025,
-          "rateType": "General",
-          "rateTypeCode": "General"
-        },
-        {
-          "id": 0,
-          "transactionLineId": 0,
-          "transactionId": 0,
-          "country": "USA",
-          "region": "",
-          "exemptAmount": 0,
-          "jurisCode": "",
-          "jurisName": "",
-          "stateAssignedNo": "",
-          "jurisType": "STA",
-          "nonTaxableAmount": 100,
-          "rate": 0.6,
-          "tax": 0.6,
-          "taxableAmount": 0,
-          "taxType": "Sales",
-          "taxName": "E-911 CHARGES - E911 (Wireless)",
-          "taxAuthorityTypeId": 0,
-          "taxCalculated": 0.6,
-          "rateType": "General",
-          "rateTypeCode": "General"
-        },
-        {
-          "id": 0,
-          "transactionLineId": 0,
-          "transactionId": 0,
-          "country": "USA",
-          "region": "",
-          "exemptAmount": 0,
-          "jurisCode": "",
-          "jurisName": "",
-          "stateAssignedNo": "",
-          "jurisType": "CIT",
-          "nonTaxableAmount": -11.032317,
-          "rate": 0.01125,
-          "tax": 1.249114,
-          "taxableAmount": 111.032317,
-          "taxType": "Sales",
-          "taxName": "SALES AND USE TAXES - Sales Tax",
-          "taxAuthorityTypeId": 0,
-          "taxCalculated": 1.249114,
-          "rateType": "General",
-          "rateTypeCode": "General"
-        },
-        {
-          "id": 0,
-          "transactionLineId": 0,
-          "transactionId": 0,
-          "country": "USA",
-          "region": "",
-          "exemptAmount": 0,
-          "jurisCode": "",
-          "jurisName": "",
-          "stateAssignedNo": "",
-          "jurisType": "CTY",
-          "nonTaxableAmount": -11.032317,
-          "rate": 0.01475,
-          "tax": 1.637727,
-          "taxableAmount": 111.032317,
-          "taxType": "Sales",
-          "taxName": "SALES AND USE TAXES - Sales Tax",
-          "taxAuthorityTypeId": 0,
-          "taxCalculated": 1.637727,
-          "rateType": "General",
-          "rateTypeCode": "General"
-        },
-        {
-          "id": 0,
-          "transactionLineId": 0,
-          "transactionId": 0,
-          "country": "USA",
-          "region": "",
-          "exemptAmount": 0,
-          "jurisCode": "",
-          "jurisName": "",
-          "stateAssignedNo": "",
-          "jurisType": "STA",
-          "nonTaxableAmount": -11.032317,
-          "rate": 0.065,
-          "tax": 7.217101,
-          "taxableAmount": 111.032317,
-          "taxType": "Sales",
-          "taxName": "SALES AND USE TAXES - Sales Tax",
-          "taxAuthorityTypeId": 0,
-          "taxCalculated": 7.217101,
-          "rateType": "General",
-          "rateTypeCode": "General"
-        },
-        {
-          "id": 0,
-          "transactionLineId": 0,
-          "transactionId": 0,
-          "country": "USA",
-          "region": "",
-          "exemptAmount": 62.9,
-          "jurisCode": "",
-          "jurisName": "",
-          "stateAssignedNo": "",
-          "jurisType": "CNT",
-          "nonTaxableAmount": 62.9,
-          "rate": 0.174,
-          "tax": 6.4554,
-          "taxableAmount": 37.1,
-          "taxType": "Sales",
-          "taxName": "CONNECTIVITY CHARGES - Fed USF Cellular",
-          "taxAuthorityTypeId": 0,
-          "taxCalculated": 6.4554,
-          "rateType": "General",
-          "rateTypeCode": "General"
-        },
-        {
-          "id": 0,
-          "transactionLineId": 0,
-          "transactionId": 0,
-          "country": "USA",
-          "region": "",
-          "exemptAmount": 0,
-          "jurisCode": "",
-          "jurisName": "",
-          "stateAssignedNo": "",
-          "jurisType": "CNT",
-          "nonTaxableAmount": 0,
-          "rate": 0.016667,
-          "tax": 0.016667,
-          "taxableAmount": 100,
-          "taxType": "Sales",
-          "taxName": "REGULATORY CHARGES - FCC Regulatory Fee (Wireless)",
-          "taxAuthorityTypeId": 0,
-          "taxCalculated": 0.016667,
-          "rateType": "General",
-          "rateTypeCode": "General"
-        },
-        {
-          "id": 0,
-          "transactionLineId": 0,
-          "transactionId": 0,
-          "country": "USA",
-          "region": "",
-          "exemptAmount": 62.9,
-          "jurisCode": "",
-          "jurisName": "",
-          "stateAssignedNo": "",
-          "jurisType": "CNT",
-          "nonTaxableAmount": 62.9,
-          "rate": 0.01862,
-          "tax": 0.690802,
-          "taxableAmount": 37.1,
-          "taxType": "Sales",
-          "taxName": "CONNECTIVITY CHARGES - Telecommunications Relay Surcharge (Cellular)",
-          "taxAuthorityTypeId": 0,
-          "taxCalculated": 0.690802,
-          "rateType": "General",
-          "rateTypeCode": "General"
-        }
-      ],
-      "parameters": {
-        "AvaTax.Communications.TransactionType": "Cellular",
-        "AvaTax.Communications.ServiceType": "Access Charge",
-        "AvaTax.Communications.Lines": "10",
-        "AvaTax.Communications.Minutes": "60"
-      }
+                        <pre class="highlight blog-scrollable">
+<span class="p">{</span>
+  <span class="nt">"code"</span><span class="p">: </span><span class="s2">"b08190bc-d449-4643-b34c-caf2cf6cfa68"</span><span class="p">,</span>
+  <span class="nt">"companyId"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+  <span class="nt">"date"</span><span class="p">: </span><span class="s2">"2017-05-26"</span><span class="p">,</span>
+  <span class="nt">"paymentDate"</span><span class="p">: </span><span class="s2">"2017-05-26"</span><span class="p">,</span>
+  <span class="nt">"status"</span><span class="p">: </span><span class="s2">"Temporary"</span><span class="p">,</span>
+  <span class="nt">"type"</span><span class="p">: </span><span class="s2">"SalesInvoice"</span><span class="p">,</span>
+  <span class="nt">"currencyCode"</span><span class="p">: </span><span class="s2">"USD"</span><span class="p">,</span>
+  <span class="nt">"customerVendorCode"</span><span class="p">: </span><span class="s2">"RestSample"</span><span class="p">,</span>
+  <span class="nt">"reconciled"</span><span class="p">: </span><span class="mi">false</span><span class="p">,</span>
+  <span class="nt">"purchaseOrderNo"</span><span class="p">: </span><span class="s2">"2017-05-26-001"</span><span class="p">,</span>
+  <span class="nt">"totalAmount"</span><span class="p">: </span><span class="mi">100</span><span class="p">,</span>
+  <span class="nt">"totalExempt"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+  <span class="nt">"totalTax"</span><span class="p">: </span><span class="mi">22.427061</span><span class="p">,</span>
+  <span class="nt">"totalTaxable"</span><span class="p">: </span><span class="mi">111.032317</span><span class="p">,</span>
+  <span class="nt">"totalTaxCalculated"</span><span class="p">: </span><span class="mi">22.427061</span><span class="p">,</span>
+  <span class="nt">"adjustmentReason"</span><span class="p">: </span><span class="s2">"NotAdjusted"</span><span class="p">,</span>
+  <span class="nt">"locked"</span><span class="p">: </span><span class="mi">false</span><span class="p">,</span>
+  <span class="nt">"version"</span><span class="p">: </span><span class="mi">1</span><span class="p">,</span>
+  <span class="nt">"exchangeRateEffectiveDate"</span><span class="p">: </span><span class="s2">"2017-05-26"</span><span class="p">,</span>
+  <span class="nt">"exchangeRate"</span><span class="p">: </span><span class="mi">1</span><span class="p">,</span>
+  <span class="nt">"isSellerImporterOfRecord"</span><span class="p">: </span><span class="mi">false</span><span class="p">,</span>
+  <span class="nt">"description"</span><span class="p">: </span><span class="s2">"Yarn"</span><span class="p">,</span>
+  <span class="nt">"modifiedDate"</span><span class="p">: </span><span class="s2">"2017-07-24T21:53:30.6139926Z"</span><span class="p">,</span>
+  <span class="nt">"modifiedUserId"</span><span class="p">: </span><span class="mi">30581</span><span class="p">,</span>
+  <span class="nt">"taxDate"</span><span class="p">: </span><span class="s2">"0001-01-01T00:00:00"</span><span class="p">,</span>
+  <span class="nt">"lines"</span><span class="p">: [
+    {</span>
+      <span class="nt">"lineNumber"</span><span class="p">: </span><span class="mi">1</span><span class="p">,</span>
+      <span class="nt">"description"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+      <span class="nt">"discountAmount"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+      <span class="nt">"exemptAmount"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+      <span class="nt">"exemptCertId"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+      <span class="nt">"isItemTaxable"</span><span class="p">: </span><span class="mi">true</span><span class="p">,</span>
+      <span class="nt">"lineAmount"</span><span class="p">: </span><span class="mi">111.032317</span><span class="p">,</span>
+      <span class="nt">"quantity"</span><span class="p">: </span><span class="mi">1</span><span class="p">,</span>
+      <span class="nt">"reportingDate"</span><span class="p">: </span><span class="s2">"1900-01-01"</span><span class="p">,</span>
+      <span class="nt">"tax"</span><span class="p">: </span><span class="mi">22.427061</span><span class="p">,</span>
+      <span class="nt">"taxableAmount"</span><span class="p">: </span><span class="mi">111.032317</span><span class="p">,</span>
+      <span class="nt">"taxCalculated"</span><span class="p">: </span><span class="mi">22.427061</span><span class="p">,</span>
+      <span class="nt">"taxCode"</span><span class="p">: </span><span class="s2">"Cellular - Access Charge"</span><span class="p">,</span>
+      <span class="nt">"taxDate"</span><span class="p">: </span><span class="s2">"2017-07-24"</span><span class="p">,</span>
+      <span class="nt">"taxIncluded"</span><span class="p">: </span><span class="mi">false</span><span class="p">,</span>
+      <span class="nt">"details"</span><span class="p">: [
+          {</span>
+          <span class="nt">"country"</span><span class="p">: </span><span class="s2">"USA"</span><span class="p">,</span>
+          <span class="nt">"region"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"exemptAmount"</span><span class="p">: </span><span class="mi">37.1</span><span class="p">,</span>
+          <span class="nt">"jurisCode"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"jurisName"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"stateAssignedNo"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"jurisType"</span><span class="p">: </span><span class="s2">"STA"</span><span class="p">,</span>
+          <span class="nt">"nonTaxableAmount"</span><span class="p">: </span><span class="mi">37.1</span><span class="p">,</span>
+          <span class="nt">"rate"</span><span class="p">: </span><span class="mi">0.0725</span><span class="p">,</span>
+          <span class="nt">"tax"</span><span class="p">: </span><span class="mi">4.56025</span><span class="p">,</span>
+          <span class="nt">"taxableAmount"</span><span class="p">: </span><span class="mi">62.9</span><span class="p">,</span>
+          <span class="nt">"taxType"</span><span class="p">: </span><span class="s2">"Sales"</span><span class="p">,</span>
+          <span class="nt">"taxName"</span><span class="p">: </span><span class="s2">"CONNECTIVITY CHARGES - Universal Service Fund (Wireless)"</span><span class="p">,</span>
+          <span class="nt">"taxAuthorityTypeId"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+          <span class="nt">"taxCalculated"</span><span class="p">: </span><span class="mi">4.56025</span><span class="p">,</span>
+          <span class="nt">"rateType"</span><span class="p">: </span><span class="s2">"General"</span><span class="p">,</span>
+          <span class="nt">"rateTypeCode"</span><span class="p">: </span><span class="s2">"General"</span>
+        <span class="p">},
+        {</span>
+          <span class="nt">"country"</span><span class="p">: </span><span class="s2">"USA"</span><span class="p">,</span>
+          <span class="nt">"region"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"exemptAmount"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+          <span class="nt">"jurisCode"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"jurisName"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"stateAssignedNo"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"jurisType"</span><span class="p">: </span><span class="s2">"STA"</span><span class="p">,</span>
+          <span class="nt">"nonTaxableAmount"</span><span class="p">: </span><span class="mi">100</span><span class="p">,</span>
+          <span class="nt">"rate"</span><span class="p">: </span><span class="mi">0.6</span><span class="p">,</span>
+          <span class="nt">"tax"</span><span class="p">: </span><span class="mi">0.6</span><span class="p">,</span>
+          <span class="nt">"taxableAmount"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+          <span class="nt">"taxType"</span><span class="p">: </span><span class="s2">"Sales"</span><span class="p">,</span>
+          <span class="nt">"taxName"</span><span class="p">: </span><span class="s2">"E-911 CHARGES - E911 (Wireless)"</span><span class="p">,</span>
+          <span class="nt">"taxAuthorityTypeId"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+          <span class="nt">"taxCalculated"</span><span class="p">: </span><span class="mi">0.6</span><span class="p">,</span>
+          <span class="nt">"rateType"</span><span class="p">: </span><span class="s2">"General"</span><span class="p">,</span>
+          <span class="nt">"rateTypeCode"</span><span class="p">: </span><span class="s2">"General"</span>
+        <span class="p">},
+        {</span>
+          <span class="nt">"country"</span><span class="p">: </span><span class="s2">"USA"</span><span class="p">,</span>
+          <span class="nt">"region"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"exemptAmount"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+          <span class="nt">"jurisCode"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"jurisName"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"stateAssignedNo"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"jurisType"</span><span class="p">: </span><span class="s2">"CIT"</span><span class="p">,</span>
+          <span class="nt">"nonTaxableAmount"</span><span class="p">: </span><span class="mi">-11.032317</span><span class="p">,</span>
+          <span class="nt">"rate"</span><span class="p">: </span><span class="mi">0.01125</span><span class="p">,</span>
+          <span class="nt">"tax"</span><span class="p">: </span><span class="mi">1.249114</span><span class="p">,</span>
+          <span class="nt">"taxableAmount"</span><span class="p">: </span><span class="mi">111.032317</span><span class="p">,</span>
+          <span class="nt">"taxType"</span><span class="p">: </span><span class="s2">"Sales"</span><span class="p">,</span>
+          <span class="nt">"taxName"</span><span class="p">: </span><span class="s2">"SALES AND USE TAXES - Sales Tax"</span><span class="p">,</span>
+          <span class="nt">"taxAuthorityTypeId"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+          <span class="nt">"taxCalculated"</span><span class="p">: </span><span class="mi">1.249114</span><span class="p">,</span>
+          <span class="nt">"rateType"</span><span class="p">: </span><span class="s2">"General"</span><span class="p">,</span>
+          <span class="nt">"rateTypeCode"</span><span class="p">: </span><span class="s2">"General"</span>
+        <span class="p">},
+        {</span>
+          <span class="nt">"country"</span><span class="p">: </span><span class="s2">"USA"</span><span class="p">,</span>
+          <span class="nt">"region"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"exemptAmount"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+          <span class="nt">"jurisCode"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"jurisName"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"stateAssignedNo"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"jurisType"</span><span class="p">: </span><span class="s2">"CTY"</span><span class="p">,</span>
+          <span class="nt">"nonTaxableAmount"</span><span class="p">: </span><span class="mi">-11.032317</span><span class="p">,</span>
+          <span class="nt">"rate"</span><span class="p">: </span><span class="mi">0.01475</span><span class="p">,</span>
+          <span class="nt">"tax"</span><span class="p">: </span><span class="mi">1.637727</span><span class="p">,</span>
+          <span class="nt">"taxableAmount"</span><span class="p">: </span><span class="mi">111.032317</span><span class="p">,</span>
+          <span class="nt">"taxType"</span><span class="p">: </span><span class="s2">"Sales"</span><span class="p">,</span>
+          <span class="nt">"taxName"</span><span class="p">: </span><span class="s2">"SALES AND USE TAXES - Sales Tax"</span><span class="p">,</span>
+          <span class="nt">"taxAuthorityTypeId"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+          <span class="nt">"taxCalculated"</span><span class="p">: </span><span class="mi">1.637727</span><span class="p">,</span>
+          <span class="nt">"rateType"</span><span class="p">: </span><span class="s2">"General"</span><span class="p">,</span>
+          <span class="nt">"rateTypeCode"</span><span class="p">: </span><span class="s2">"General"</span>
+        <span class="p">},
+        {</span>
+          <span class="nt">"country"</span><span class="p">: </span><span class="s2">"USA"</span><span class="p">,</span>
+          <span class="nt">"region"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"exemptAmount"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+          <span class="nt">"jurisCode"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"jurisName"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"stateAssignedNo"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"jurisType"</span><span class="p">: </span><span class="s2">"STA"</span><span class="p">,</span>
+          <span class="nt">"nonTaxableAmount"</span><span class="p">: </span><span class="mi">-11.032317</span><span class="p">,</span>
+          <span class="nt">"rate"</span><span class="p">: </span><span class="mi">0.065</span><span class="p">,</span>
+          <span class="nt">"tax"</span><span class="p">: </span><span class="mi">7.217101</span><span class="p">,</span>
+          <span class="nt">"taxableAmount"</span><span class="p">: </span><span class="mi">111.032317</span><span class="p">,</span>
+          <span class="nt">"taxType"</span><span class="p">: </span><span class="s2">"Sales"</span><span class="p">,</span>
+          <span class="nt">"taxName"</span><span class="p">: </span><span class="s2">"SALES AND USE TAXES - Sales Tax"</span><span class="p">,</span>
+          <span class="nt">"taxAuthorityTypeId"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+          <span class="nt">"taxCalculated"</span><span class="p">: </span><span class="mi">7.217101</span><span class="p">,</span>
+          <span class="nt">"rateType"</span><span class="p">: </span><span class="s2">"General"</span><span class="p">,</span>
+          <span class="nt">"rateTypeCode"</span><span class="p">: </span><span class="s2">"General"</span>
+        <span class="p">},
+        {</span>
+          <span class="nt">"country"</span><span class="p">: </span><span class="s2">"USA"</span><span class="p">,</span>
+          <span class="nt">"region"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"exemptAmount"</span><span class="p">: </span><span class="mi">62.9</span><span class="p">,</span>
+          <span class="nt">"jurisCode"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"jurisName"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"stateAssignedNo"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"jurisType"</span><span class="p">: </span><span class="s2">"CNT"</span><span class="p">,</span>
+          <span class="nt">"nonTaxableAmount"</span><span class="p">: </span><span class="mi">62.9</span><span class="p">,</span>
+          <span class="nt">"rate"</span><span class="p">: </span><span class="mi">0.174</span><span class="p">,</span>
+          <span class="nt">"tax"</span><span class="p">: </span><span class="mi">6.4554</span><span class="p">,</span>
+          <span class="nt">"taxableAmount"</span><span class="p">: </span><span class="mi">37.1</span><span class="p">,</span>
+          <span class="nt">"taxType"</span><span class="p">: </span><span class="s2">"Sales"</span><span class="p">,</span>
+          <span class="nt">"taxName"</span><span class="p">: </span><span class="s2">"CONNECTIVITY CHARGES - Fed USF Cellular"</span><span class="p">,</span>
+          <span class="nt">"taxAuthorityTypeId"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+          <span class="nt">"taxCalculated"</span><span class="p">: </span><span class="mi">6.4554</span><span class="p">,</span>
+          <span class="nt">"rateType"</span><span class="p">: </span><span class="s2">"General"</span><span class="p">,</span>
+          <span class="nt">"rateTypeCode"</span><span class="p">: </span><span class="s2">"General"</span>
+        <span class="p">},
+        {</span>
+          <span class="nt">"country"</span><span class="p">: </span><span class="s2">"USA"</span><span class="p">,</span>
+          <span class="nt">"region"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"exemptAmount"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+          <span class="nt">"jurisCode"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"jurisName"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"stateAssignedNo"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"jurisType"</span><span class="p">: </span><span class="s2">"CNT"</span><span class="p">,</span>
+          <span class="nt">"nonTaxableAmount"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+          <span class="nt">"rate"</span><span class="p">: </span><span class="mi">0.016667</span><span class="p">,</span>
+          <span class="nt">"tax"</span><span class="p">: </span><span class="mi">0.016667</span><span class="p">,</span>
+          <span class="nt">"taxableAmount"</span><span class="p">: </span><span class="mi">100</span><span class="p">,</span>
+          <span class="nt">"taxType"</span><span class="p">: </span><span class="s2">"Sales"</span><span class="p">,</span>
+          <span class="nt">"taxName"</span><span class="p">: </span><span class="s2">"REGULATORY CHARGES - FCC Regulatory Fee (Wireless)"</span><span class="p">,</span>
+          <span class="nt">"taxAuthorityTypeId"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+          <span class="nt">"taxCalculated"</span><span class="p">: </span><span class="mi">0.016667</span><span class="p">,</span>
+          <span class="nt">"rateType"</span><span class="p">: </span><span class="s2">"General"</span><span class="p">,</span>
+          <span class="nt">"rateTypeCode"</span><span class="p">: </span><span class="s2">"General"</span>
+        <span class="p">},
+        {</span>
+          <span class="nt">"country"</span><span class="p">: </span><span class="s2">"USA"</span><span class="p">,</span>
+          <span class="nt">"region"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"exemptAmount"</span><span class="p">: </span><span class="mi">62.9</span><span class="p">,</span>
+          <span class="nt">"jurisCode"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"jurisName"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"stateAssignedNo"</span><span class="p">: </span><span class="s2">""</span><span class="p">,</span>
+          <span class="nt">"jurisType"</span><span class="p">: </span><span class="s2">"CNT"</span><span class="p">,</span>
+          <span class="nt">"nonTaxableAmount"</span><span class="p">: </span><span class="mi">62.9</span><span class="p">,</span>
+          <span class="nt">"rate"</span><span class="p">: </span><span class="mi">0.01862</span><span class="p">,</span>
+          <span class="nt">"tax"</span><span class="p">: </span><span class="mi">0.690802</span><span class="p">,</span>
+          <span class="nt">"taxableAmount"</span><span class="p">: </span><span class="mi">37.1</span><span class="p">,</span>
+          <span class="nt">"taxType"</span><span class="p">: </span><span class="s2">"Sales"</span><span class="p">,</span>
+          <span class="nt">"taxName"</span><span class="p">: </span><span class="s2">"CONNECTIVITY CHARGES - Telecommunications Relay Surcharge (Cellular)"</span><span class="p">,</span>
+          <span class="nt">"taxAuthorityTypeId"</span><span class="p">: </span><span class="mi">0</span><span class="p">,</span>
+          <span class="nt">"taxCalculated"</span><span class="p">: </span><span class="mi">0.690802</span><span class="p">,</span>
+          <span class="nt">"rateType"</span><span class="p">: </span><span class="s2">"General"</span><span class="p">,</span>
+          <span class="nt">"rateTypeCode"</span><span class="p">: </span><span class="s2">"General"</span>
+        <span class="p">}
+      ],</span>
+       <span class="nt">"parameters"</span><span class="p">: {</span>
+        <span class="nt">"AvaTax.Communications.TransactionType"</span><span class="p">: </span><span class="s2">"Cellular"</span><span class="p">,</span>
+        <span class="nt">"AvaTax.Communications.ServiceType"</span><span class="p">: </span><span class="s2">"Access Charge"</span><span class="p">,</span>
+        <span class="nt">"AvaTax.Communications.Lines"</span><span class="p">: </span><span class="s2">"10"</span><span class="p">,</span>
+        <span class="nt">"AvaTax.Communications.Minutes"</span><span class="p">: </span><span class="s2">"60"</span>
+      <span class="p">}
     }
-  ],
-  "addresses": [
-    {
-      "id": 0,
-      "transactionId": 0,
-      "boundaryLevel": "Zip5",
-      "line1": "8675 W 96th Street Suite 220",
-      "city": "Overland Park",
-      "region": "KS",
-      "postalCode": "66212",
-      "country": "US",
-      "taxRegionId": 0,
-      "latitude": "",
-      "longitude": ""
-    }
-  ],
-  "summary": [
-    {
-      "country": "USA",
-      "region": "",
-      "jurisType": "State",
-      "jurisCode": "",
-      "jurisName": "",
-      "taxAuthorityType": 0,
-      "stateAssignedNo": "",
-      "taxType": "Sales",
-      "taxName": "CONNECTIVITY CHARGES - Universal Service Fund (Wireless)",
-      "taxGroup": "",
-      "rateType": "General",
-      "rateTypeCode": "General",
-      "taxable": 62.9,
-      "rate": 0.0725,
-      "tax": 4.56025,
-      "taxCalculated": 4.56025,
-      "nonTaxable": 37.1,
-      "exemption": 37.1
-    },
-    {
-      "country": "USA",
-      "region": "",
-      "jurisType": "State",
-      "jurisCode": "",
-      "jurisName": "",
-      "taxAuthorityType": 0,
-      "stateAssignedNo": "",
-      "taxType": "Sales",
-      "taxName": "E-911 CHARGES - E911 (Wireless)",
-      "taxGroup": "",
-      "rateType": "General",
-      "rateTypeCode": "General",
-      "taxable": 0,
-      "rate": 0.6,
-      "tax": 0.6,
-      "taxCalculated": 0.6,
-      "nonTaxable": 100,
-      "exemption": 0
-    },
-    {
-      "country": "USA",
-      "region": "",
-      "jurisType": "City",
-      "jurisCode": "",
-      "jurisName": "",
-      "taxAuthorityType": 0,
-      "stateAssignedNo": "",
-      "taxType": "Sales",
-      "taxName": "SALES AND USE TAXES - Sales Tax",
-      "taxGroup": "",
-      "rateType": "General",
-      "rateTypeCode": "General",
-      "taxable": 111.032317,
-      "rate": 0.01125,
-      "tax": 1.249114,
-      "taxCalculated": 1.249114,
-      "nonTaxable": -11.032317,
-      "exemption": 0
-    },
-    {
-      "country": "USA",
-      "region": "",
-      "jurisType": "County",
-      "jurisCode": "",
-      "jurisName": "",
-      "taxAuthorityType": 0,
-      "stateAssignedNo": "",
-      "taxType": "Sales",
-      "taxName": "SALES AND USE TAXES - Sales Tax",
-      "taxGroup": "",
-      "rateType": "General",
-      "rateTypeCode": "General",
-      "taxable": 111.032317,
-      "rate": 0.01475,
-      "tax": 1.637727,
-      "taxCalculated": 1.637727,
-      "nonTaxable": -11.032317,
-      "exemption": 0
-    },
-    {
-      "country": "USA",
-      "region": "",
-      "jurisType": "State",
-      "jurisCode": "",
-      "jurisName": "",
-      "taxAuthorityType": 0,
-      "stateAssignedNo": "",
-      "taxType": "Sales",
-      "taxName": "SALES AND USE TAXES - Sales Tax",
-      "taxGroup": "",
-      "rateType": "General",
-      "rateTypeCode": "General",
-      "taxable": 111.032317,
-      "rate": 0.065,
-      "tax": 7.217101,
-      "taxCalculated": 7.217101,
-      "nonTaxable": -11.032317,
-      "exemption": 0
-    },
-    {
-      "country": "USA",
-      "region": "",
-      "jurisType": "Country",
-      "jurisCode": "",
-      "jurisName": "",
-      "taxAuthorityType": 0,
-      "stateAssignedNo": "",
-      "taxType": "Sales",
-      "taxName": "CONNECTIVITY CHARGES - Fed USF Cellular",
-      "taxGroup": "",
-      "rateType": "General",
-      "rateTypeCode": "General",
-      "taxable": 37.1,
-      "rate": 0.174,
-      "tax": 6.4554,
-      "taxCalculated": 6.4554,
-      "nonTaxable": 62.9,
-      "exemption": 62.9
-    },
-    {
-      "country": "USA",
-      "region": "",
-      "jurisType": "Country",
-      "jurisCode": "",
-      "jurisName": "",
-      "taxAuthorityType": 0,
-      "stateAssignedNo": "",
-      "taxType": "Sales",
-      "taxName": "REGULATORY CHARGES - FCC Regulatory Fee (Wireless)",
-      "taxGroup": "",
-      "rateType": "General",
-      "rateTypeCode": "General",
-      "taxable": 100,
-      "rate": 0.016667,
-      "tax": 0.016667,
-      "taxCalculated": 0.016667,
-      "nonTaxable": 0,
-      "exemption": 0
-    },
-    {
-      "country": "USA",
-      "region": "",
-      "jurisType": "Country",
-      "jurisCode": "",
-      "jurisName": "",
-      "taxAuthorityType": 0,
-      "stateAssignedNo": "",
-      "taxType": "Sales",
-      "taxName": "CONNECTIVITY CHARGES - Telecommunications Relay Surcharge (Cellular)",
-      "taxGroup": "",
-      "rateType": "General",
-      "rateTypeCode": "General",
-      "taxable": 37.1,
-      "rate": 0.01862,
-      "tax": 0.690802,
-      "taxCalculated": 0.690802,
-      "nonTaxable": 62.9,
-      "exemption": 62.9
-    }
-  ],
-  "parameters": {
-    "AvaTax.Communications.CustomerType": "Business",
-    "AvaTax.Communications.BusinessClass": "CLEC",
-    "AvaTax.Communications.Sale": "true",
-    "AvaTax.Communications.ServiceClass": "Primary Long Distance"
-  }
-}
+  ],</span>
+  <span class="nt">"addresses"</span><span class="p">[],</span>
+  <span class="nt">"summary"</span><span class="p">[],</span>
+  <span class="nt">"parameters"</span><span class="p">: {</span>
+    <span class="nt">"AvaTax.Communications.CustomerType"</span><span class="p">: </span><span class="s2">"Business"</span><span class="p">,</span>
+    <span class="nt">"AvaTax.Communications.BusinessClass"</span><span class="p">: </span><span class="s2">"CLEC"</span><span class="p">,</span>
+    <span class="nt">"AvaTax.Communications.Sale"</span><span class="p">: </span><span class="s2">"true"</span><span class="p">,</span>
+    <span class="nt">"AvaTax.Communications.ServiceClass"</span><span class="p">: </span><span class="s2">"Primary Long Distance"</span>
+  <span class="p">}
+}</span>
                         </pre>
                     </div>
                 </td>
