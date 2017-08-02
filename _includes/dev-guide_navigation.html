@@ -32,7 +32,14 @@
             </ol>
             {% endif %}
         </li>
-        <li {% if page.url=="/avatax/dev-guide/product-taxability/" %}class="active" {% endif %}><a href="/avatax/dev-guide/product-taxability/">Product Taxability</a></li>
+        <li {% if page.url=="/avatax/dev-guide/product-taxability/" %}class="active" {% endif %}><a href="/avatax/dev-guide/product-taxability/">Product Taxability</a>
+            {% if page.chapter=="product-taxability" %}
+            <ol>
+                <li><a href="/avatax/dev-guide/product-taxability/finding-a-tax-code/">Finding a Tax Code</a></li>
+                <li><a href="/avatax/dev-guide/product-taxability/mapping-items-to-tax-code/">Mapping Items to TaxCodes</a></li>
+                <li><a href="/avatax/dev-guide/product-taxability/zero-tax-due-to-product-taxability/">Zero Tax due to Product Taxability</a></li>
+            </ol>
+            {% endif %}</li>
         <li {% if page.url=="/avatax/dev-guide/discounts-and-overrides/" %}class="active" {% endif %}><a href="/avatax/dev-guide/discounts-and-overrides/">Discounts and Overrides</a></li>
         <li {% if page.url=="/avatax/dev-guide/shipping-and-handling/" %}class="active" {% endif %}><a href="/avatax/dev-guide/shipping-and-handling/">Shipping and Handling</a></li>
         <li{% if page.url=="/avatax/dev-guide/exemptions1/" %}class="active" {% endif %}><a href="/avatax/dev-guide/exemptions/">Exemptions</a>
@@ -50,7 +57,7 @@
             {% endif %}
         </li>
         <li {% if page.url=="/avatax/dev-guide/locations/" %}class="active" {% endif %}><a href="/avatax/dev-guide/locations/">Locations</a>
-        {% if page.chapter=="locations" %}
+            {% if page.chapter=="locations" %}
             <ol>
                 <li><a href="/avatax/dev-guide/locations/location-based-reporting/">About Location Based Reporting</a></li>
                 <li><a href="/avatax/dev-guide/locations/using-locations/">Using Locations</a></li>
