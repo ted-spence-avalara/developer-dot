@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Chapter 4 - Chapter Summary
+title: Chapter 4 - Summary
 product: avaTax
 doctype: dev_guide
 chapter: reconciliation

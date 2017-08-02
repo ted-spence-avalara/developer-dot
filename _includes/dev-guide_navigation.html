@@ -49,7 +49,15 @@
             </ol>
             {% endif %}
         </li>
-        <li {% if page.url=="/avatax/dev-guide/locations/" %}class="active" {% endif %}><a href="/avatax/dev-guide/locations/">Locations</a></li>
+        <li {% if page.url=="/avatax/dev-guide/locations/" %}class="active" {% endif %}><a href="/avatax/dev-guide/locations/">Locations</a>
+        {% if page.chapter=="locations" %}
+            <ol>
+                <li><a href="/avatax/dev-guide/locations/location-based-reporting/">About Location Based Reporting</a></li>
+                <li><a href="/avatax/dev-guide/locations/using-locations/">Using Locations</a></li>
+                <li><a href="/avatax/dev-guide/locations/chapter-summary">Chapter Summary</a></li>
+            </ol>
+            {% endif %}
+        </li>
         <li {% if page.url=="/avatax/dev-guide/consumer-use-tax/" %}class="active" {% endif %}><a href="/avatax/dev-guide/consumer-use-tax/">Consumer Use Tax</a></li>
         <li {% if page.url=="/avatax/dev-guide/calculating-tax-offline/" %}class="active" {% endif %}><a href="/avatax/dev-guide/calculating-tax-offline/">Calculating Tax offline</a></li>
     </ol>
