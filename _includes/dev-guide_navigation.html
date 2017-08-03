@@ -39,8 +39,17 @@
                 <li><a href="/avatax/dev-guide/product-taxability/mapping-items-to-tax-code/">Mapping Items to TaxCodes</a></li>
                 <li><a href="/avatax/dev-guide/product-taxability/zero-tax-due-to-product-taxability/">Zero Tax due to Product Taxability</a></li>
             </ol>
-            {% endif %}</li>
-        <li {% if page.url=="/avatax/dev-guide/discounts-and-overrides/" %}class="active" {% endif %}><a href="/avatax/dev-guide/discounts-and-overrides/">Discounts and Overrides</a></li>
+            {% endif %}
+        </li>
+        <li {% if page.url=="/avatax/dev-guide/discounts-and-overrides/" %}class="active" {% endif %}><a href="/avatax/dev-guide/discounts-and-overrides/">Discounts and Overrides</a>
+            {% if page.chapter=="discounts-and-overrides" %}
+            <ol>
+                <li><a href="/avatax/dev-guide/discounts-and-overrides/overrides/">Overrides</a></li>
+                <li><a href="/avatax/dev-guide/discounts-and-overrides/discounts/">Discounts</a></li>
+                <li><a href="/avatax/dev-guide/discounts-and-overrides/chapter-summary/">Chapter Summary</a></li>
+            </ol>
+            {% endif %}
+        </li>
         <li {% if page.url=="/avatax/dev-guide/shipping-and-handling/" %}class="active" {% endif %}><a href="/avatax/dev-guide/shipping-and-handling/">Shipping and Handling</a></li>
         <li{% if page.url=="/avatax/dev-guide/exemptions1/" %}class="active" {% endif %}><a href="/avatax/dev-guide/exemptions/">Exemptions</a>
             {% if page.chapter=="exemptions" %}
