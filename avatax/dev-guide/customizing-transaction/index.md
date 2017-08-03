@@ -10,11 +10,18 @@ disqus: 1
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/transactions/"><i class="glyphicon glyphicon-chevron-left"></i>Previous Chapter</a></li>
-  <li class="next"><a href="/avatax/dev-guide/reconciliation/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/avatax/dev-guide/customizing-transaction/document-level/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
+This chapter is all about customizing your transactions to expand on what the capabilities of your application are.  By the end of this chapter, you will learn the following:
+<ul class="dev-guide-list">
+  <li>How the Document level properties apply to the transaction and the impact of line level adjustments.</li>
+  <li>How to use multiple addresses at both the document and line levels.</li>
+  <li>How reference codes and other user managed data can be used by you.</li>
 </ul>
 
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/transactions/"><i class="glyphicon glyphicon-chevron-left"></i>Previous Chapter</a></li>
-  <li class="next"><a href="/avatax/dev-guide/reconciliation/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/avatax/dev-guide/customizing-transaction/document-level/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

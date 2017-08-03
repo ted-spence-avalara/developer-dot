@@ -22,7 +22,17 @@
                 <li><a href="/avatax/dev-guide/transactions/addresses/">Addresses</a></li>
             </ol>
             {% endif %}</li>
-        <li {% if page.url=="/avatax/dev-guide/customizing-transaction/" %}class="active" {% endif %}><a href="/avatax/dev-guide/customizing-transaction/">Customizing Your Transactions</a></li>
+        <li {% if page.url=="/avatax/dev-guide/customizing-transaction/" %}class="active" {% endif %}><a href="/avatax/dev-guide/customizing-transaction/">Customizing Your Transactions</a>
+            {% if page.chapter=="customizing-transaction" %}
+            <ol>
+                <li><a href="/avatax/dev-guide/customizing-transaction/document-level/">Document Level</a></li>
+                <li><a href="/avatax/dev-guide/customizing-transaction/origin-and-destination/">Using Origin and Destination Addresses</a></li>
+                <li><a href="/avatax/dev-guide/customizing-transaction/using-reference-codes/">Using Reference Codes</a></li>
+                <li><a href="/avatax/dev-guide/customizing-transaction/user-managed-meta-data/">User Managed Meta Data</a></li>
+                <li><a href="/avatax/dev-guide/customizing-transaction/chapter-summary/">Chapter Summary</a></li>
+            </ol>
+            {% endif %}
+        </li>
         <li {% if page.url=="/avatax/dev-guide/reconciliation/" %}class="active" {% endif %}><a href="/avatax/dev-guide/reconciliation/">Reconciliation</a>
             {% if page.chapter=="reconciliation" %}
             <ol>
