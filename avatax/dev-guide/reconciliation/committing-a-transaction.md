@@ -24,13 +24,13 @@ Here's how to implement "commit" for each of these scenarios.
 
 <h3>Direct Commit</h3>
 
-For software that considers all transactions final, you will create a transaction directly using the "commit": "true" flag in the CreateTransaction API call.
-Creating transactions directly in "Committed" status is covered in <a class="dev-guide-link" href="/avatax/dev-guide/transactions/">Chapter 2 - Transactions</a>.
+For software that considers all transactions final, you will create a transaction directly using the <code>"commit": "true"</code> flag in the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/">CreateTransaction</a> API call.
+Creating transactions directly in <code>Committed</code> status is covered in <a class="dev-guide-link" href="/avatax/dev-guide/transactions/">Chapter 2 - Transactions</a>.
 
 <h3>One Stage Reconciliation</h3>
-For software that permits transactions to be verified after creation, transactions are created with the Commit flag set to false.  Transactions that have not been committed are stored with the status code Saved.  They are considered to be "provisional"; they will not be reported to a tax authority until they have been verified.
+For software that permits transactions to be verified after creation, transactions are created with the <code>Commit</code> flag set to false.  Transactions that have not been committed are stored with the status code <code>Saved</code>.  They are considered to be "provisional"; they will not be reported to a tax authority until they have been verified.
 
-Your back-end system should provide a way for your management team to review "Saved" transactions and perform reconciliation.  A good way to design a verification process for a back-end systems team is to call <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/ListTransactionsByCompany/">ListTransactionsByCompany</a> and pass in the parameter "$filter=status eq Saved".  This API call will list all transactions for your company that have not yet finished reconciliation, and you can use this to display a queue of transactions to be reconciled.
+Your back-end system should provide a way for your management team to review <code>Saved</code> transactions and perform reconciliation.  A good way to design a verification process for a back-end systems team is to call <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/ListTransactionsByCompany/">ListTransactionsByCompany</a> and pass in the parameter <code>$filter=status eq Saved</code>.  This API call will list all transactions for your company that have not yet finished reconciliation, and you can use this to display a queue of transactions to be reconciled.
 
 When a transaction has been reconciled and is final, your software will use the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CommitTransaction/">CommitTransaction</a> API call to mark the transaction as committed.  Here's how to commit a transaction:
 <pre>
@@ -129,18 +129,18 @@ Now that you have this process in place, let's verify that your connector can se
 
 <h3>Two Stage Reconciliation</h3>
 
-Some companies prefer to have multiple stages of reconciliation.  In this case, a transaction can go through three statuses: Saved, Posted, and Committed. 
+Some companies prefer to have multiple stages of reconciliation.  In this case, a transaction can go through three statuses: <code>Saved</code>, <code>Posted</code>, and <code>Committed</code>. 
 
 The three stages work as follows:
 <ul class="dev-guide-list">
-    <li>Create a transaction in the status "Saved" following the same process as for one-stage reconciliation</li>
-    <li>Display a queue of transactions that are in the first stage of reconciliation using <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/ListTransactionsByCompany/">ListTransactionsByCompany</a> with the parameter "$filter=status eq Saved".</li>
-    <li>When a transaction is ready to move out of the first stage of reconciliation, update it by calling <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/VerifyTransaction/">VerifyTransaction</a>.  The transaction's new status will be "Posted".</li>
-    <li>Display a queue of transactions that are in the second stage of reconciliation using <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/ListTransactionsByCompany/">ListTransactionsByCompany</a> with the parameter "$filter=status eq Posted".</li>
-    <li>When a transaction is ready to move out of the second stage of reconciliation, update it by calling <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CommitTransaction/">CommitTransaction</a> as above.  The transaction's new status will be "Committed".</li>
+    <li>Create a transaction in the status <code>Saved</code> following the same process as for one-stage reconciliation</li>
+    <li>Display a queue of transactions that are in the first stage of reconciliation using <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/ListTransactionsByCompany/">ListTransactionsByCompany</a> with the parameter <code>$filter=status eq Saved</code>.</li>
+    <li>When a transaction is ready to move out of the first stage of reconciliation, update it by calling <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/VerifyTransaction/">VerifyTransaction</a>.  The transaction's new status will be <code>Posted</code>.</li>
+    <li>Display a queue of transactions that are in the second stage of reconciliation using <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/ListTransactionsByCompany/">ListTransactionsByCompany</a> with the parameter <code>$filter=status eq Posted</code>.</li>
+    <li>When a transaction is ready to move out of the second stage of reconciliation, update it by calling <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CommitTransaction/">CommitTransaction</a> as above.  The transaction's new status will be <code>Committed</code>.</li>
 </ul>
 
-In the two-stage reconciliation process, additional verification features are available.  When you call VerifyTransaction, you can optionally choose to assert that the transaction's amount matches an amount in a different ledger.  Here's how the VerifyTransaction API call works:
+In the two-stage reconciliation process, additional verification features are available.  When you call VerifyTransaction, you can optionally choose to assert that the transaction's amount matches an amount in a different ledger.  Here's how the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/VerifyTransaction/">VerifyTransaction API</a> call works:
 
 <pre>
 POST https://sandbox-rest.avatax.com/api/v2/companies/DEVGUIDE/transactions/MYTRANSACTIONCODE/verify
@@ -157,7 +157,7 @@ Your system can maintain and verify these fields if desired, but it is not requi
 
 When you provide this information, the API will test the transaction and report an error if any fields do not match.  This feature allows you to perform automated reconciliation of transactions, and to detect discrepancies programmatically.  Your software can call VerifyTransaction on all entries in your accounting system ledger every evening, and assert that the amounts match expectations.  Any transactions that fail to verify can be escalated for human oversight.
 
-The ListTransactionsByCompany API is intended to help you display a list of transactions that are in any particular stage of the reconciliation process.  You can use it to examine any stage for transactions that need human review.
+The <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/TaxCodes/ListTaxCodesByCompany/">ListTransactionsByCompany API</a> is intended to help you display a list of transactions that are in any particular stage of the reconciliation process.  You can use it to examine any stage for transactions that need human review.
 
 Let's examine how a two-stage verification process would work:
 
@@ -247,13 +247,13 @@ Let's examine how a two-stage verification process would work:
 
 <h3>Locked Transactions</h3>
 
-The purpose of committing a transaction is to indicate that the transaction is ready to be reported to a tax authority.  For customers using Avalara's Managed Returns Service, our software will automatically prepare a liability worksheet for you every filing period and notify you to approve the tax filing.  When you approve the tax filing, all transactions included on that filing are automatically <span="dev-guide-bold">Locked</span>.  A transaction that is locked cannot be changed further - it is considered a permanent part of your company's accounting record, and must be preserved as is for audit circumstances.
+The purpose of committing a transaction is to indicate that the transaction is ready to be reported to a tax authority.  For customers using Avalara's Managed Returns Service, our software will automatically prepare a liability worksheet for you every filing period and notify you to approve the tax filing.  When you approve the tax filing, all transactions included on that filing are automatically <code>Locked</code>.  A transaction that is locked cannot be changed further - it is considered a permanent part of your company's accounting record, and must be preserved as is for audit circumstances.
 
-You can determine which transactions are locked by calling the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/ListTransactionsByCompany/">ListTransactionsByCompany</a> API with the parameter "$filter=locked eq true"
+You can determine which transactions are locked by calling the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/ListTransactionsByCompany/">ListTransactionsByCompany</a> API with the parameter <code>$filter=locked eq true"</code>
 
 Any attempt to modify a locked transaction will fail with an error.
 
-You can determine which transactions are locked by calling the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/ListTransactionsByCompany/">ListTransactionsByCompany</a> API with the parameter "$filter=locked eq true"
+You can determine which transactions are locked by calling the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/ListTransactionsByCompany/">ListTransactionsByCompany</a> API with the parameter <code>$filter=locked eq true</code>
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/reconciliation/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

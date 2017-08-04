@@ -13,15 +13,15 @@ disqus: 1
   <li class="next"><a href="/avatax/dev-guide/exemptions/exempt-due-to-entity-use-code/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-An Exemption Certificate provides information about the buyer or customer, and their tax status. For example it's possible that a customer be sales tax exempt in a specific state due to their being registered as a reseller there.
+An Exemption Certificate provides information about the buyer or customer, and their tax status. For example, it's possible that a customer be sales tax exempt in a specific state due to their being registered as a reseller there.
 
 
-There are several ways to store/create an exemption record across the service, however they all use a key value; the CustomerCode.
+There are several ways to store/create an exemption record across the service, however they all use a key value: the <code>CustomerCode</code>.
 
 
-CustomerCode is a unique identifier for that specific customer record that was invoiced or sold an item. This value (must be in one of Avatax repositories to exempt the customer,  CertCapture or Avatax Admin Console- AP) is a part of both exemption records that are created using our CertCapture service and exemption records created in AvaTax via the stand alone functionality built into it.
+<code>CustomerCode</code> is a unique identifier for that specific customer record that was invoiced or sold an item. This value is a part of both exemption records that are created using our CertCapture service and exemption records created in AvaTax via the stand alone functionality built into it.
 
-For this to function nicely the value within the integration that should be pulling into the CustomerCode should be something easily recognizable and intuitive within the application, such as the account name, customer name, or email address for the customer. (this could actually be anything as long as it is the same in CertCapture or AC - AP)
+For this to function nicely the value within the integration that should be pulling into the <code>CustomerCode</code> should be something easily recognizable and intuitive within the application, such as the account name, customer name, or email address for the customer.
 
 <div class="dev-guide-certification">
 <div class="dev-guide-certification-heading">Certification Requirements</div>

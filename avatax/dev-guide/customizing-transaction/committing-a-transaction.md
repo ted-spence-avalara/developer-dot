@@ -24,7 +24,7 @@ Here's how to implement "commit" for each of these scenarios.
 
 <h3>Direct Commit</h3>
 
-For software that considers all transactions final, you will create a transaction directly using the "commit": "true" flag in the CreateTransaction API call.
+For software that considers all transactions final, you will create a transaction directly using the "commit": "true" flag in the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/">CreateTransaction API</a> call.
 Creating transactions directly in "Committed" status is covered in <a class="dev-guide-link" href="/avatax/dev-guide/transactions/">Chapter 2 - Transactions</a>.
 
 <h3>One Stage Reconciliation</h3>
@@ -140,7 +140,7 @@ The three stages work as follows:
     <li>When a transaction is ready to move out of the second stage of reconciliation, update it by calling <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CommitTransaction/">CommitTransaction</a> as above.  The transaction's new status will be "Committed".</li>
 </ul>
 
-In the two-stage reconciliation process, additional verification features are available.  When you call VerifyTransaction, you can optionally choose to assert that the transaction's amount matches an amount in a different ledger.  Here's how the VerifyTransaction API call works:
+In the two-stage reconciliation process, additional verification features are available.  When you call <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/VerifyTransaction/">VerifyTransaction</a>, you can optionally choose to assert that the transaction's amount matches an amount in a different ledger.  Here's how the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/VerifyTransaction/">VerifyTransaction API</a> call works:
 
 <pre>
 POST https://sandbox-rest.avatax.com/api/v2/companies/DEVGUIDE/transactions/MYTRANSACTIONCODE/verify
@@ -157,7 +157,7 @@ Your system can maintain and verify these fields if desired, but it is not requi
 
 When you provide this information, the API will test the transaction and report an error if any fields do not match.  This feature allows you to perform automated reconciliation of transactions, and to detect discrepancies programmatically.  Your software can call VerifyTransaction on all entries in your accounting system ledger every evening, and assert that the amounts match expectations.  Any transactions that fail to verify can be escalated for human oversight.
 
-The ListTransactionsByCompany API is intended to help you display a list of transactions that are in any particular stage of the reconciliation process.  You can use it to examine any stage for transactions that need human review.
+The <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/ListTransactionsByCompany/">ListTransactionsByCompany API</a> is intended to help you display a list of transactions that are in any particular stage of the reconciliation process.  You can use it to examine any stage for transactions that need human review.
 
 Let's examine how a two-stage verification process would work:
 
@@ -247,7 +247,7 @@ Let's examine how a two-stage verification process would work:
 
 <h3>Locked Transactions</h3>
 
-The purpose of committing a transaction is to indicate that the transaction is ready to be reported to a tax authority.  For customers using Avalara's Managed Returns Service, our software will automatically prepare a liability worksheet for you every filing period and notify you to approve the tax filing.  When you approve the tax filing, all transactions included on that filing are automatically <span="dev-guide-bold">Locked</span>.  A transaction that is locked cannot be changed further - it is considered a permanent part of your company's accounting record, and must be preserved as is for audit circumstances.
+The purpose of committing a transaction is to indicate that the transaction is ready to be reported to a tax authority.  For customers using Avalara's Managed Returns Service, our software will automatically prepare a liability worksheet for you every filing period and notify you to approve the tax filing.  When you approve the tax filing, all transactions included on that filing are automatically <code>Locked</code>.  A transaction that is locked cannot be changed further - it is considered a permanent part of your company's accounting record, and must be preserved as is for audit circumstances.
 
 You can determine which transactions are locked by calling the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/ListTransactionsByCompany/">ListTransactionsByCompany</a> API with the parameter "$filter=locked eq true"
 

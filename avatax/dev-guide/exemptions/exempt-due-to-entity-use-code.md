@@ -22,7 +22,7 @@ Entity Use Codes are generally displayed in the user interface of a connector as
 
 The value of the customer's choice is placed in the <code>customerUsageType</code> field in the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/">CreateTransctionModel</a> element.  Here's how to find the values and put them into your transaction.
 
-First, call the ListEntityUseCodes API.  The field "code" is the value you will use, and the field "name" is the description you will show to the customer.  You can either show "code - name", like "A - FEDERAL GOV", or you can just show the name field.
+First, call the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListEntityUseCodes/">ListEntityUseCodes API</a>.  The field <code>"code"</code> is the value you will use, and the field <code>"name"</code> is the description you will show to the customer.  You can either show "code - name", like <code>"A - FEDERAL GOV"</code>, or you can just show the name field.
 
 ```json
 {
@@ -48,7 +48,7 @@ First, call the ListEntityUseCodes API.  The field "code" is the value you will 
 }
 ```
 
-If the customer makes a choice, put that value in the "customerUsageType field on the CreateTransactionModel element:
+If the customer makes a choice, put that value in the <code>customerUsageType</code> field on the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/">CreateTransactionModel</a> element:
 
 ```json
 {
@@ -61,7 +61,7 @@ If the customer makes a choice, put that value in the "customerUsageType field o
 }
 ```
 
-If the customer does not make a choice, omit the customerUsageType element entirely, or set its value to null.
+If the customer does not make a choice, omit the <code>customerUsageType</code> element entirely, or set its value to null.
 
 Since changing this value can make an entire transaction exempt, this field is not generally displayed when building a web storefront.  Developers are encouraged instead to ask their customers for an exemption certificate or other documentation that can validate the claim that the customer is an exempt buyer.
 
@@ -77,7 +77,7 @@ Since changing this value can make an entire transaction exempt, this field is n
 </div>
 
 <h3>Custom Integration</h3>
-It's suggested for a Custom integration to implement entity use codes, if the application supports Tax Exempt sales.
+It's suggested for a custom integration to implement entity use codes, if the application supports Tax Exempt sales.
 
 <div class="dev-guide-test" id="test1">
 <div class="dev-guide-test-heading">Test Case - 8.5.1 </div>

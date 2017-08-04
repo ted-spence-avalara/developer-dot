@@ -12,7 +12,7 @@ disqus: 1
   <li class="next"><a href="/avatax/dev-guide/transactions/should-i-commit/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-First, we will create a transaction using the minimum elements required for a successful tax calculation. The transaction below represents a 'single location' transaction, meaning that it is a point-of-sale cash register transaction. As such, only one address is needed. All other transactions types will need both a "ship-from (origin)" address and a "ship-to (destination)" address. We'll focus on single location transactions for the rest of this chapter to keep things simple, but you can find more information on multi-address transactions in <a class="dev-guide-link" href="/avatax/dev-guide/customizing-transaction/">Chapter 3 - Customizing Your Transaction</a>.
+First, we will create a transaction using the minimum elements required for a successful tax calculation. The transaction below represents a "single location" transaction, meaning that it is a point-of-sale cash register transaction. As such, only one address is needed. All other transactions types will need both a "ship-from (origin)" address and a "ship-to (destination)" address. We'll focus on single location transactions for the rest of this chapter to keep things simple, but you can find more information on multi-address transactions in <a class="dev-guide-link" href="/avatax/dev-guide/customizing-transaction/">Chapter 3 - Customizing Your Transaction</a>.
 
 <div class="dev-guide-test" id="test1">
 <div class="dev-guide-test-heading">Test Case - 2.1.1 </div>
@@ -68,7 +68,7 @@ First, we will create a transaction using the minimum elements required for a su
 </div>
 </div>
 
-Now we'll take a look at a more fleshed-out version of a single location transaction. You can see that we've included some additional fields, such as 'Type', 'Company Code', 'Number', and 'Quantity', as well as specifying a full street address. The additional fields are not strictly required, but it's good practice to include them. Likewise, a full street address is not strictly required, but providing as much address information as is available helps to ensure that you receive the most accurate sales tax calculation.
+Now we'll take a look at a more fleshed-out version of a single location transaction. You can see that we've included some additional fields, such as <code>Type</code>, <code>Company Code</code>, <code>Number</code>, and <code>Quantity</code>, as well as specifying a full street address. The additional fields are not strictly required, but it's good practice to include them. Likewise, a full street address is not strictly required, but providing as much address information as is available helps to ensure that you receive the most accurate sales tax calculation.
 
 <div class="dev-guide-test" id="test2">
 <div class="dev-guide-test-heading">Test Case - 2.1.2 </div>

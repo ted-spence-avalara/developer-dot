@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 3.2 - Using Origin and Destination addresses
+title: 3.2 - Using Origin and Destination Addresses
 product: avaTax
 doctype: dev_guide
 chapter: customizing-transaction
@@ -13,7 +13,7 @@ disqus: 1
   <li class="next"><a href="/avatax/dev-guide/customizing-transaction/using-reference-codes/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-You were able to create a single location transaction in Chapter 1, but how do you handle transactions that may be shipped to another location.  What about transactions that may not be in stock locally and need to be shipped from another warehouse or distribution center?  The use of Origin and Destination addresses will help determine calculation.  
+You were able to create a single location transaction in <a class="dev-guide-link" href="avatax/dev-guide/getting-started-with-avatax/">Chapter 1</a>, but how do you handle transactions that may be shipped to another location?  What about transactions that may not be in stock locally and need to be shipped from another warehouse or distribution center?  The use of Origin and Destination addresses will help determine calculation.  
 
 As an example, let's say that I 
 
@@ -111,7 +111,7 @@ As an example, let's say that I
 </div>
 
 <h3>Using Line Level Origin and Destination</h3>
-Origin and destination fields are not bound to the document level, they can also be used on the line level to accommodate scenarios in which an item may not be available and is shipping from another location or where a buyer may have multiple locations that they need items shipped.  You can use a line level Origin or Destination address to override the Document level addresses, but preserve them for other items.
+Origin and destination fields are not bound to the document level, they can also be used on the line level to accommodate scenarios in which an item may not be available and is shipping from another location or where a buyer may have multiple locations that they need items shipped.  You can use a line level origin or destination address to override the document level addresses, but preserve them for other items.
 
 There are a variety of reasons, but a common reason
 <ul class="dev-guide-list">
@@ -119,7 +119,7 @@ There are a variety of reasons, but a common reason
     <li>A buyer may have multiple locations for a single order.</li>
 </ul>
 
-For example, I am purchasing an item from a store and would like one item shipped to a secondary address.  The store doesn't carry that item in stock and must send it from one of their other distribution centers.  This would mean that one line item would have both an Origin and Destination that is different from the document level origin and destination.  Let's go ahead and build out that scenario using our second test:
+For example, I am purchasing an item from a store and would like one item shipped to a secondary address.  The store doesn't carry that item in stock and must send it from one of their other distribution centers.  This would mean that one line item would have both an origin and destination that is different from the document level origin and destination.  Let's go ahead and build out that scenario using our second test:
 
 <div class="dev-guide-test" id="test">
     <div class="dev-guide-test-heading">Test Case - 3.2.2</div>

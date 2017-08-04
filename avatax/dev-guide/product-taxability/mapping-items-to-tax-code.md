@@ -27,7 +27,7 @@ Identifying itemCode mapping to taxCodes can be done through the Avatax UI, ERP 
 ]
 </pre>
 
-The Line “Description” is a string that will specify additional details about the product, like a name, color, size, etc. 
+The line <code>"description”</code> is a string that will specify additional details about the product, like a name, color, size, etc. 
 
 Some jurisdictions may have regulations pertaining to quantity and amount values. For example, in certain jurisdictions in New York clothing items under $110.00 can be nontaxable.
 
@@ -37,17 +37,17 @@ Examples:
 <ul class="dev-guide-list">
     <li>No sales tax on an item of clothing or footwear that costs less than $110
         <ul class="dev-guide-list">
-            <li>http://www1.nyc.gov/nyc-resources/service/2389/sales-tax</li>
+            <li><a class="dev-guide-link" href="http://www1.nyc.gov/nyc-resources/service/2389/sales-tax">http://www1.nyc.gov/nyc-resources/service/2389/sales-tax</a></li>
         </ul>
     </li>
     <li>Tennessee single article tax cap
         <ul class="dev-guide-list">
-            <li>https://revenue.support.tn.gov/hc/en-us/articles/205576765-What-is-a-single-article-and-how-is-sales-tax-on-a-single-article-calculated-</li>
+            <li><a class="dev-guide-link" href="https://revenue.support.tn.gov/hc/en-us/articles/205576765-What-is-a-single-article-and-how-is-sales-tax-on-a-single-article-calculated-<">https://revenue.support.tn.gov/hc/en-us/articles/205576765-What-is-a-single-article-and-how-is-sales-tax-on-a-single-article-calculated-</a></li>
         </ul>
     </li>
 </ul>
 
-Note: If your business is part of the Streamlined Sales Tax (SST) program, you will be required to send both an “ItemCode” and “Description” for each product line on your orders. The “Description” is an SST requirement not a required field for the API. Yet, sending a description is a best practice for all clients, not just those companies participating in SST program.
+Note: If your business is part of the Streamlined Sales Tax (SST) program, you will be required to send both an <code>“itemCode”</code> and <code>“description”</code> for each product line on your orders. The <code>“description”</code> is an SST requirement not a required field for the API. Yet, sending a description is a best practice for all clients, not just those companies participating in SST program.
 
 Keep in mind that items and tax codes represent the production taxabiltiy. Other factors like exempt status of customer and the client's tax profile generally would place higher in a hierarchy sense to product. Meaning if your customer is exempt, referencing a taxable tax code will still generate a zero tax result. Same of nexus and tax rules. If you are getting a gettax result for a jurisdiction that you have not identified in the Avalara Nexus settings, regardless of the item or tax code passed the result will be nontaxable. The application of these three levels results in the tax calculation you see returned by the API and/or recorded in AvaTax.
 

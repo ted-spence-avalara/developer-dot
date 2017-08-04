@@ -12,19 +12,19 @@ disqus: 1
   <li class="next"><a href="/avatax/dev-guide/product-taxability/mapping-items-to-tax-code/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-So far in the developer guide, your code has left the taxCode field empty.  In this case, AvaTax assumes you are creating transactions that refer to general Tangible Personal Property, which is represented by the default tax code P0000000.
+So far in the developer guide, your code has left the <code>taxCode</code> field empty.  In this case, AvaTax assumes you are creating transactions that refer to general Tangible Personal Property, which is represented by the default tax code, <code>P0000000</code>.
 
 As long as you continue using a null tax code, AvaTax will treat your products the same.  However, many products are taxed differently in different jurisdictions.  Finding the correct tax code will ensure that AvaTax treats your product correctly everywhere.
 
 You can find the correct tax code for your product in one of two ways:
 <ul class="dev-guide-list">
-    <li>Look on Avalara's tax code site, <a class="dev-guide-link" href="https://taxcode.avatax.avalara.com">https://taxcode.avatax.avalara.com/</a></li>
-    <li>Or you could call the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListTaxCodes/">ListTaxCodes API. to list available tax codes</a></li>
+    <li>Look on Avalara's tax code site: <a class="dev-guide-link" href="https://taxcode.avatax.avalara.com">https://taxcode.avatax.avalara.com/</a></li>
+    <li>Or you could call the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListTaxCodes/">ListTaxCodes API</a> to list available tax codes</li>
 </ul>
 
 When you use tax codes correctly in AvaTax, you will get the correct tax rate for your transaction. Some customers will choose to enter a tax code directly when creating a transaction. 
 
-Other customers may wish to search for tax codes directly through the ListTaxCodes API.   A common use case is to show a drop down text box.  When a customer starts typing the word "C", your program can call ListTaxCodes to find all tax codes that begin with the letters that the customer has typed.  Here's how to call ListTaxCodes:
+Other customers may wish to search for tax codes directly through the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListTaxCodes/">ListTaxCodes API</a>.   A common use case is to show a drop down text box.  When a customer starts typing the word "C", your program can call <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListTaxCodes/">ListTaxCodes</a> to find all tax codes that begin with the letters that the customer has typed.  Here's how to call <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListTaxCodes/">ListTaxCodes</a>:
 
 <pre>
 
@@ -48,7 +48,7 @@ GET /api/v2/definitions/taxcodes/$filter=description startswith C
 
 <h3>Adding TaxCodes to your Transaction</h3>
 
-On the document line level you can pass via the CreateTransactionModel. There are a few properties that allow you to identify your line categories of “ItemCode”, “Qty”, “Amount”, “Description”, and “TaxCode”. The ItemCode are generally the value passed by your integration or web service to represent a part number, SKU or product ID for the said products or services.
+On the document line level you can pass via the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/">CreateTransactionModel</a>. There are a few properties that allow you to identify your line categories of “ItemCode”, “Qty”, “Amount”, “Description”, and “TaxCode”. The <code>ItemCode</code> are generally the value passed by your integration or web service to represent a part number, SKU or product ID for the said products or services.
 
 <pre>
 {

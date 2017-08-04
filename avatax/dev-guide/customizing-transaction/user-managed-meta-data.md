@@ -29,7 +29,7 @@ Below is a list of the available meta data fields and at which level they can ap
             <tr>
                 <td>Customer Code</td>
                 <td>Document</td>
-                <td>Company Name or Number of the purchaser.</td>
+                <td>Company name or number of the purchaser.</td>
             </tr>
             <tr>
                 <td>Purchase Order Number</td>

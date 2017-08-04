@@ -22,7 +22,7 @@ AvaTax identifies all error messages using HTTP response codes within the range 
     <li>Parse the error message</li>
     <li>Display the summary of the error to the user</li>
     <li>Link the user to the documentation page that explains the error</li>
-    <li>Allow the user to retry their action.</li>
+    <li>Allow the user to retry their action</li>
 </ul>
 For example, let's examine how to handle an authentication error.  If you make an AvaTax API call you receive the error message <a class="dev-guide-link" href="https://developer.avalara.com/avatax/errors/AuthenticationIncomplete/">AuthenticationIncomplete</a>, here's what you will see:
 <pre>
@@ -50,12 +50,12 @@ Response: 401 Unauthorized
 
 Your next step should be to display an error message in your product.  The error message should have:
 <ul class="dev-guide-list">
-    <li>At a minimum, the error message should have the title of "details[0].message"</li>
-    <li>Best practice is to include the details[0].description and the details[0].helpLink values so the customer can learn more about the problem.</li>
+    <li>The title of <code>"details[0].message"</code>.</li>
+    <li>Best practice is to include the <code>details[0].description</code> and the <code>details[0].helpLink</code> values so the customer can learn more about the problem.</li>
     <li>Some API calls can include more than one error.  You can optionally display information about more than one error message at a time.</li>
 </ul>
 
-It's critical that you allow the customer to either make changes and retry the API call or just proceed in their work and bypass the API call.  Your customers may be working offline or with an interrupted Internet connection, and they need to get their work done even if they can't use AvaTax at the moment.  We'll cover offline behavior more in <a class="dev-guide-link" href="">Chapter 11 - Working While Offline</a>, but for the moment let's review how to properly handle error messages.
+It's critical that you allow the customer to either make changes and retry the API call or just proceed in their work and bypass the API call.  Your customers may be working offline or with an interrupted Internet connection, and they need to get their work done even if they can't use AvaTax at the moment.  We'll cover offline behavior more in <a class="dev-guide-link" href="/avatax/dev-guide/calculating-tax-offline/">Chapter 11 - Calculating Tax Offline</a>, but for the moment let's review how to properly handle error messages.
 
 <div class="dev-guide-test" id="test1">
 <div class="dev-guide-test-heading">Test Case - 1.3.1 </div>
@@ -108,9 +108,9 @@ Before you proceed, please make sure that your office can contact these URLs.  W
 If you can't see this page, check your connection!
 
 <h3>Check Your Authentication</h3>
-One good way to begin troubleshooting a problematic connection is to use the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/soap/methods/ping/">Ping API</a>.  The Ping API is useful because it never returns authentication errors; you can call it even if your authorization header is missing.  If your Ping call fails, you know you are having trouble with your internet connection.
+One good way to begin troubleshooting a problematic connection is to use the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/soap/methods/ping/">Ping API</a>.  The Ping API is useful because it never returns authentication errors; you can call it even if your authorization header is missing.  If your ping call fails, you know you are having trouble with your internet connection.
 
-Here's how to use Ping:
+Here's how to use ping:
 <pre>
 curl
     -X GET
@@ -150,7 +150,7 @@ curl
             </tr>
             <tr>
                 <td>Authentication Problems</td>
-                <td>Try using the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/soap/methods/ping/">Ping API</a>, or switch to using an AvaTax SDK which has prebuilt and tested authentication code.</td>
+                <td>Try using the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/soap/methods/ping/">Ping API</a>, or switch to using an <a class="dev-guide-link" href="https://developer.avalara.com/sdk/">AvaTax SDK</a> which has prebuilt and tested authentication code.</td>
             </tr>
             <tr>
                 <td>Firewall Problems</td>
@@ -164,7 +164,7 @@ curl
             </tr>
             <tr>
                 <td>Ethernet Problems</td>
-                <td>Check the quality of your wiring and the auto-negotiate settings on your ethernet devices. Bad wiring or devices with mismatched speed settings are easy to overlook! You can run netstat -s on a windows machine or ifconfig -a on a linux machine to detect whether an unusual number of bad packets are coming through your network. If you have a performance mismatch, try checking with your network administrator to see if the cabling can be improved.</td>
+                <td>Check the quality of your wiring and the auto-negotiate settings on your ethernet devices. Bad wiring or devices with mismatched speed settings are easy to overlook! You can run <code>netstat -s </code>on a windows machine or <code>ifconfig -a </code>on a linux machine to detect whether an unusual number of bad packets are coming through your network. If you have a performance mismatch, try checking with your network administrator to see if the cabling can be improved.</td>
             </tr>
             <tr>
                 <td>Host Files / IP Address Hardcoding / DNS Caching</td>
@@ -174,32 +174,32 @@ curl
             <tr>
                 <td>Proxy Server Problems</td>
                 <td>AvaTax is not designed for environments using proxy servers. Proxy servers can cause latency and connectivity problems when calling high performance APIs like AvaTax.
-                If your company policy requires a proxy server by policy, please consult your proxy provider for how to correctly configure the proxy to work with AvaTax.</td>
+                If your company policy requires a proxy server, please consult your proxy provider for how to correctly configure the proxy to work with AvaTax.</td>
             </tr>
             <tr>
                 <td>Java Proxy</td>
                 <td>The default Java behavior is to cache DNS lookups indefinitely, which does not follow best practices for Internet hosts. There are two properties that can be used to override the default behavior.
                 <ol>
-                    <li>networkaddress.cache.ttl
-                    <ul>
-                        <li>a. This property indicates the caching policy for successful name lookups from the domain name service. The value is specified as an integer to indicate the number of seconds to cache the successful lookup. The default value of this property is -1, which means the successful DNS lookup value will be cached forever. If the value is set to 0, it means it will not cache successful DNS lookups up at all. Any other positive value indicates that successful DNS lookups will be cached for that many seconds. This value must be set to 60.</li>
+                    <li><code>networkaddress.cache.ttl</code>
+                    <ul class="dev-guide-list">
+                        <li>This property indicates the caching policy for successful name lookups from the domain name service. The value is specified as an integer to indicate the number of seconds to cache the successful lookup. The default value of this property is -1, which means the successful DNS lookup value will be cached forever. If the value is set to 0, it means it will not cache successful DNS lookups up at all. Any other positive value indicates that successful DNS lookups will be cached for that many seconds. This value must be set to 60.</li>
                     </ul>
                     </li>
-                    <li>networkaddress.cache.negative.ttl
-                        <ul>
-                            <li>a. This property indicates the caching policy for unsuccessful name lookups from the domain name service. The value is specified as an integer to indicate the number of seconds to cache the unsuccessful lookup. The default value of this property is 10, which means that unsuccessful DNS lookup values will be cached for 10 seconds. If the value is set to 0, it means that it will not cache successful DNS lookups up at all. Any other positive value indicates that unsuccessful DNS lookups will be cached for that many seconds. This value must be set to 60 as well.</li>
+                    <li><code>networkaddress.cache.negative.ttl</code>
+                        <ul class="dev-guide-list">
+                            <li>This property indicates the caching policy for unsuccessful name lookups from the domain name service. The value is specified as an integer to indicate the number of seconds to cache the unsuccessful lookup. The default value of this property is 10, which means that unsuccessful DNS lookup values will be cached for 10 seconds. If the value is set to 0, it means that it will not cache successful DNS lookups up at all. Any other positive value indicates that unsuccessful DNS lookups will be cached for that many seconds. This value must be set to 60 as well.</li>
                         </ul>
                     </li>
                 </ol>
-                What needs to be done: networkaddress.cache.ttl and networkaddress.cache.negative.ttl are not typically set Java properties. They are security related properties that can be set in one of two ways:
+                What needs to be done: <code>networkaddress.cache.ttl</code> and <code>networkaddress.cache.negative.ttl</code> are not typically set Java properties. They are security related properties that can be set in one of two ways:
                 <ol>
-                    <li>Edit the $JAVA_HOME/jre/lib/security/java.security by changing the value of the networkaddress cache properties in the file.
+                    <li>Edit the <code>$JAVA_HOME/jre/lib/security/java.security</code> by changing the value of the networkaddress cache properties in the file.
                         <ul class="dev-guide-list">
                             <li>The advantage of this solution is that it is a non-programmatic solution.</li>
                             <li>The disadvantage is that since JVMs are global resources, used by multiple applications, the setting may not work well in applications that have consumed the adapter classes.</li>
                         </ul>
                     </li>
-                    <li>Use java.security.Security.setProperty(“propertyname”, “value”) to programmatically set the property.
+                    <li>Use <code>java.security.Security.setProperty(“propertyname”, “value”)</code> to programmatically set the property.
                         <ul class="dev-guide-list">
                             <li>The advantage is that other applications using the same JVM are not affected.</li>
                             <li>The disadvantage of this solution is that it is a programmatic solution.</li>

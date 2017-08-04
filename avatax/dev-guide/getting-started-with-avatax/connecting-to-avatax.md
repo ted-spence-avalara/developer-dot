@@ -12,7 +12,7 @@ disqus: 1
   <li class="next"><a href="/avatax/dev-guide/getting-started-with-avatax/authentication-in-avatax/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-To begin, Avalara provides free free trial accounts you can use to begin developing against AvaTax. This trial account will allow you to use advanced AvaTax functionality in the <span class="dev-guide-bold">U.S. and Canada</span> only, in an environment called Sandbox.  You can begin by <a class="dev-guide-link" href="https://developer.avalara.com/avatax/get-started/">signing up for a free AvaTax 30-day sandbox account online</a>, or you can <a class="dev-guide-link" href="https://www.avalara.com/contact-us/?referrer=&lastReferrer=developer.avalara.com&sessionId=1499692719266">contact sales</a> to request a more permanent account.
+To begin, Avalara provides free trial accounts you can use to begin developing against AvaTax. This trial account will allow you to use advanced AvaTax functionality in the U.S. and Canada only, in an environment called Sandbox.  You can begin by <a class="dev-guide-link" href="https://developer.avalara.com/avatax/get-started/">signing up for a free AvaTax 30-day sandbox account online</a>, or you can <a class="dev-guide-link" href="https://www.avalara.com/contact-us/?referrer=&lastReferrer=developer.avalara.com&sessionId=1499692719266">contact sales</a> to request a more permanent account.
 
 Your  AvaTax sandbox account is for evaluation only and is initially active for 30 days, but you can request an extension if needed. You will need to add company profile and tax profile information to calculate sales tax. Because this is a sandbox, you can experiment all you like and your test data will be kept separate from your production accounts.
 

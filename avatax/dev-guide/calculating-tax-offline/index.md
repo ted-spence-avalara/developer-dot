@@ -15,7 +15,7 @@ disqus: 1
 
 Unfortunately things don't always go as we would like them to.  While Avalara outages have been historically infrequent and short in duration, disruptions in connectivity due to service or internet outages are things that should be considered when designing your AvaTax SDK integration. Avalara sends out service notifications if there is an issue with our service which you can monitor through <a class="dev-guide-link" href="status.avalara.com">status.avalara.com</a>.
 
-Avalara does not queue transactions when the web service is down. Unless a connection is made to the web service, you will only receive an "HTTP 500 - Internal Server Error" message which means you have lost connection to the AvaTax Web Service and your local system needs to track invoices until the web service is restored.
+Avalara does not queue transactions when the web service is down. Unless a connection is made to the web service, you will only receive an <code>"HTTP 500 - Internal Server Error"</code> message which means you have lost connection to the AvaTax Web Service and your local system needs to track invoices until the web service is restored.
 
 Consideration must then be given to how you will report taxes back to the customers and/ or users during the outage, as the solution sets used are wide and diverse depending on the ERP / Shopping Cart system. When weighing your options, you should consult your company’s tax accountant or attorney.
 
@@ -35,8 +35,8 @@ Consideration must then be given to how you will report taxes back to the custom
 <h4>Once Services are restored:</h4>
 Once the service connection has been restored, he tax can be transmitted to AvaTax using one of the following calculation methods:
 <ul class="dev-guide-list">
-  <li>Use a tax override of TaxAmount to reflect the estimated tax.</li>
-  <li>Use TaxIncluded to back-calculate the correct tax amount from the total (including estimated tax) charged to the customer.</li>
+  <li>Use a tax override of <code>TaxAmount</code> to reflect the estimated tax.</li>
+  <li>Use <code>TaxIncluded</code> to back-calculate the correct tax amount from the total (including estimated tax) charged to the customer.</li>
   <li>Allow AvaTax to recalculate the tax amount, and absorb any additional payment of taxes.
 </li>
   <li>

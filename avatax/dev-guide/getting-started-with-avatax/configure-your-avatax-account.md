@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 1.4 - Configure your Avatax Account
+title: 1.4 - Configure Your Avatax Account
 product: avaTax
 doctype: dev_guide
 chapter: getting-started-with-avatax
@@ -9,13 +9,13 @@ disqus: 1
 ---
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/getting-started-with-avatax/troubleshooting/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/avatax/dev-guide/transactions/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/avatax/dev-guide/getting-started-with-avatax/chapter-summary/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 To use AvaTax, you must configure your company and set up your tax profile.  You can configure your company on the <a class="dev-guide-link" href="https://admin-avatax.avalara.net/login.aspx">AvaTax administration website</a> or by using the API directly.
 
 If you are building a connector that links up to AvaTax, you don't have to do any work to setup a company.  Your customers will log onto AvaTax and follow the company setup steps themselves.  No work necessary!
 
-To continue with this developer guide, let's set up a test company right now for our developer guide test cases.  This company will allow us to finish all the test cases within the AvaTax Developer Guide using a company with a known tax profile.  Let's take a look at a sample request code:
+To continue with this developer guide, let's set up a test company right now for our developer guide test cases.  This company will allow us to finish all the test cases within the AvaTax developer guide using a company with a known tax profile.  Let's take a look at a sample request code:
 <div class="dev-guide-test" id="test1">
 <div class="dev-guide-test-heading">Test Case - 1.3.1 </div>
 <div class="dev-guide-test-content">
@@ -77,9 +77,11 @@ To continue with this developer guide, let's set up a test company right now for
 </div>
 </div>
 
+
+
 Congratulations!  You have successfully initialized your first AvaTax company using the RESTv2 API. 
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/getting-started-with-avatax/troubleshooting/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/avatax/dev-guide/transactions/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/avatax/dev-guide/getting-started-with-avatax/chapter-summary/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

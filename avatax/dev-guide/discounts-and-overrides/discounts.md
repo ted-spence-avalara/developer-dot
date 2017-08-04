@@ -15,7 +15,7 @@ disqus: 1
 
 You have several options for handling discounts with AvaTax. However, before we get to into the details we need to call out the different types of discounts you can apply as each is handled differently. Vendor discounts are simply a price reduction in the sale amount of an item or service. Whereas 3rd party (manufacturer) discounts are, generally speaking, a price reduction sponsored by the manufacturer where the vendor is compensated for the reduced price. When dealing with Vendor discounts, there are three basic ways to include the discount in your GetTax request:
 
-<h3>Apply the discount prior to making the tax calculation request.</h3>
+<h3>Apply the Discount Prior to Making the Tax Calculation Request</h3>
 MORE DETAIL
 <ul class="dev-guide-list">
     <li>What are you doing</li>
@@ -91,7 +91,7 @@ MORE DETAIL
 </div>
 </div>
 
-<h3>Add a line item with a negative amount (same tax code as the item being discounted)</h3>
+<h3>Add a Line Item with a Negative Amount (Same Tax Code as the Item Being Discounted)</h3>
 
 With this approach, you will simply add an additional line that contains the discounted amount as a negative extended amount. Please ensure to use the same taxCode on the discount line as the item being discounted. This will ensure that any taxability rules applied to the product/service are also applied to the discount.
 
@@ -175,7 +175,7 @@ With this approach, you will simply add an additional line that contains the dis
 </div>
 </div>
 
-<h3>Use the header level < discount> field and identify the lines that will be participating in the discount.</h3>
+<h3>Use the Header Level < discount> Field and Identify the Lines that will be Participating in the Discount</h3>
 
 With this approach you will pass the complete discounted amount in the < discount> field then identify the lines that are participating in the discount by setting the < discounted> field to 'True'. Unlike the other methods, you will enter the total discount as a positive integer with this approach. If no lines have the < discounted> set to 'True', then the discount will NOT be applied. 
 

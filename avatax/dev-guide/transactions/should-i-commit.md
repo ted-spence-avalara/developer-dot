@@ -12,19 +12,19 @@ disqus: 1
   <li class="next"><a href="/avatax/dev-guide/transactions/document-types/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-A Transaction can reflect one of many different types of business documents, and it’s worth discussing how a transaction can change over time. Let’s begin by understanding how a “Sales” transaction is created, and how it can change over time.
+A Transaction can reflect one of many different types of business documents, and it’s worth discussing how a transaction can change over time. Let’s begin by understanding how a “sales” transaction is created, and how it can change over time.
 
 <h3>The Transaction State Diagram</h3>
 
 In AvaTax, a sales transaction is an exchange that occurs between two companies. Although other types of transactions exist that can be within a single company - for example, inventory transfer transactions - in today’s use case we will only examine transactions that occur between two companies.
 
-When you create a transaction, the information about that transaction is referred to as a “Document”. You will see many comments or articles that refer to “Documents” rather than transactions - it helps if you think of the “Transaction” as the API call, and the “Document” as the data that is stored on disk. For today’s article, we will refer to Transactions as the API, and Documents as the values returned back from the API calls.
+When you create a transaction, the information about that transaction is referred to as a “document”. You will see many comments or articles that refer to “documents” rather than transactions - it helps if you think of the “transaction” as the API call, and the “document” as the data that is stored on disk. For today’s article, we will refer to transactions as the API, and documents as the values returned back from the API calls.
 
 <img src="/avatax/dev-guide/transactions/transaction-commit.png">
 
 As you can see from the lifecycle document above, a transaction can go through a number of steps before it is finalized. We have designed these steps to be flexible enough to solve problems for a variety of different customers and different types of tax processes. Clearly, the way you use AvaTax can be uniquely suited to your business. Let’s start with a few common use cases.
 
-In an online store, your first task is to provide a sales tax estimate for the user casually browsing through your website. These casual visitors have not purchased anything yet; but by giving them an accurate tax estimate you can show off your store’s high quality and commitment to accuracy. To help out this customer, you call <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/">CreateTransaction</a> with the transaction type set to SalesOrder. This gives you an accurate estimate of tax (assuming the customer put in their address correctly!), but it won’t record any tax data yet, because the customer hasn’t bought anything.
+In an online store, your first task is to provide a sales tax estimate for the user casually browsing through your website. These casual visitors have not purchased anything yet; but by giving them an accurate tax estimate you can show off your store’s high quality and commitment to accuracy. To help out this customer, you call <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/">CreateTransaction</a> with the transaction type set to <code>SalesOrder</code>. This gives you an accurate estimate of tax (assuming the customer put in their address correctly!), but it won’t record any tax data yet, because the customer hasn’t bought anything.
 
 We'll look at an example of this below:
 <div class="dev-guide-test" id="test1">

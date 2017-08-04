@@ -25,12 +25,12 @@ We will look at how to address the following:
   <li>Risk: Failing to report a valid transaction</li>
 </ul>
 
-To address these challenges, AvaTax separates transactions into those that are <span class="dev-guide-bold">Uncommitted</span>, those that are <span class="dev-guide-bold">Committed</span>, and those that have been <span class="dev-guide-bold">Locked for Reporting</span>.  Here's a brief description of how to use these statuses:
+To address these challenges, AvaTax separates transactions into those that are <code>Uncommitted</code>, those that are <code>Committed</code>, and those that have been <code>Locked for Reporting</code>.  Here's a brief description of how to use these statuses:
 
 <ul class="normal">
-  <li><span class="dev-guide-bold">Uncommitted</span> transactions cannot be reported to a tax authority.  They can be reviewed, reconciled, modified, and voided.  They must be committed before they will be reported to a tax authority.</li>
-  <li><span class="dev-guide-bold">Committed</span> transactions are waiting to be reported, and can still be adjusted or voided.  All committed transactions for the filing period will automatically be locked for reporting when you approve your next filing using Avalara's Managed Returns Service.</li>
-  <li><span class="dev-guide-bold">Locked for Reporting </span>transactions have been attached to an approved tax filing.  They can no longer be modified, adjusted, or voided.</li>
+  <li><code>Uncommitted</code> transactions cannot be reported to a tax authority.  They can be reviewed, reconciled, modified, and voided.  They must be committed before they will be reported to a tax authority.</li>
+  <li><code>Committed</code> transactions are waiting to be reported, and can still be adjusted or voided.  All committed transactions for the filing period will automatically be locked for reporting when you approve your next filing using Avalara's Managed Returns Service.</li>
+  <li><code>Locked for Reporting</code> transactions have been attached to an approved tax filing.  They can no longer be modified, adjusted, or voided.</li>
 </ul>
 
 This chapter will explain how to make use of the reconciliation features in AvaTax to ensure that your transactions are reported correctly.

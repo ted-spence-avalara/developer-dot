@@ -13,12 +13,12 @@ disqus: 1
   <li class="next"><a href="/avatax/dev-guide/locations/chapter-summary/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-To use the Location API in your connector, you must first identify what your system considers "Locations".  Does your accounting system or tax platform store any of the following:
+To use the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Locations/">Location API</a> in your connector, you must first identify what your system considers "locations".  Does your accounting system or tax platform store any of the following:
 
 <ul class="dev-guide-list">
     <li>Addresses of warehouses
         <ul class="dev-guide-list">
-            <li>If your platform tracks warehouses, this would be a natural fit for Locations in AvaTax. It's typically a short code that represents a specific warehouse that is managed within the platform itself.</li>
+            <li>If your platform tracks warehouses, this would be a natural fit for locations in AvaTax. It's typically a short code that represents a specific warehouse that is managed within the platform itself.</li>
         </ul>
     </li>
     <li>Addresses of retail sales locations or field sales team members
@@ -33,9 +33,9 @@ To use the Location API in your connector, you must first identify what your sys
     </li>
 </ul>
 
-If your platform stores information about locations and you wish to sync this data with AvaTax, you can use the <span class="dev-guide-bold">CreateLocations API</span> and the <span class="dev-guide-bold">UpdateLocation API</span> to store and maintain this data in AvaTax.
+If your platform stores information about locations and you wish to sync this data with AvaTax, you can use the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Locations/CreateLocations/">CreateLocations API</a> and the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Locations/UpdateLocation/">UpdateLocation API</a> to store and maintain this data in AvaTax.
 
-For the purposes of this chapter, let us create a new location within Texas, a state that sometimes requires location based reporting via the TX 01-115 form.  Here's how to use the CreateLocations API call to create a location within Texas:
+For the purposes of this chapter, let us create a new location within Texas, a state that sometimes requires location based reporting via the TX 01-115 form.  Here's how to use the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Locations/CreateLocations/">CreateLocations API</a> call to create a location within Texas:
 <div class="dev-guide-test" id="test">
     <div class="dev-guide-test-heading">Test Case - 9.2.1</div>
 <div class="dev-guide-test-content">
@@ -102,9 +102,9 @@ For the purposes of this chapter, let us create a new location within Texas, a s
 
 For companies that must use location-based reporting, all transactions must be tied to either a reporting location code or to a default location.
 
-You should allow your customer to choose a reporting location code using a drop-down or multi-select interface.  You can retrieve a list of valid locations by calling the <span class="dev-guide-bold">ListLocations API</span>.  You should present the friendly name of the location in the drop-down or multi-select box.  If your user interface permits multi-line select boxes, please also include the address of the location.  The user interface box for this drop-down or multi-select box should be "Reporting Location".  The default value of this box should be "None".
+You should allow your customer to choose a reporting location code using a drop-down or multi-select interface.  You can retrieve a list of valid locations by calling the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Locations/ListLocationsByCompany/">ListLocations API</a>.  You should present the friendly name of the location in the drop-down or multi-select box.  If your user interface permits multi-line select boxes, please also include the address of the location.  The user interface box for this drop-down or multi-select box should be <code>"Reporting Location"</code>.  The default value of this box should be <code>"None"</code>.
 
-If the user chooses "None", you should set the reportingLocationCode value of your transaction to NULL.  If the user selects a location, you should instead set the reportingLocationCode value to be the location code value from the location object.
+If the user chooses <code>"None"</code>, you should set the <code>reportingLocationCode</code> value of your transaction to <code>NULL</code>.  If the user selects a location, you should instead set the <code>reportingLocationCode</code> value to be the location code value from the location object.
 
 Here's how to create a transaction tied to a reporting location:
 <div class="dev-guide-test" id="test">
@@ -172,7 +172,7 @@ Optionally, you can present your customers with a convenient shortcut for choosi
     <li>If the customer selects an existing location, the </li>
 </ul>
 
-Now that you've created a Locations successfully it's time to use that Location data for reporting purposes on a transaction.
+Now that you've created a location successfully it's time to use that location data for reporting purposes on a transaction.
 
 <div class="dev-guide-test" id="test">
     <div class="dev-guide-test-heading">Test Case - 9.2.3</div>

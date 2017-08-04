@@ -9,7 +9,7 @@ disqus: 1
 ---
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/product-taxability/mapping-itmes-to-tax-code/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/avatax/dev-guide/discounts-and-overrides/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/avatax/dev-guide/product-taxability/chapter-summary/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 <div class="dev-guide-test" id="test">
@@ -163,3 +163,8 @@ disqus: 1
     </div>
 </div>
 </div>
+
+<ul class="pager">
+  <li class="previous"><a href="/avatax/dev-guide/product-taxability/mapping-itmes-to-tax-code/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/avatax/dev-guide/product-taxability/chapter-summary/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>

@@ -20,7 +20,7 @@ nav_links:
     path: /avatax
   - title: Use cases
     path: /avatax/use-cases
-  - title: Developer Guide
-    path: /avatax/dev-guide/
+  - title: Developer guide
+    path: /avatax/dev-guide/getting-started-with-avatax/
   - title: API references
     path: /api-reference/avatax/rest/v2
