@@ -13,9 +13,9 @@ disqus: 1
   <li class="next"><a href="/avatax/dev-guide/customizing-transaction/using-reference-codes/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-You were able to create a single location transaction in <a class="dev-guide-link" href="avatax/dev-guide/getting-started-with-avatax/">Chapter 1</a>, but how do you handle transactions that may be shipped to another location?  What about transactions that may not be in stock locally and need to be shipped from another warehouse or distribution center?  The use of Origin and Destination addresses will help determine calculation.  
+As mention in <a class="dev-guide-link" href="/avatax/dev-guide/transactions/">Chapter 2 - Transaction</a>, origin (aka <code>ShipFrom</code>) and the destination (aka <code>ShipTo</code>) addresses are used to help determine tax for a given transaction in a given situation.  A retail transaction and an eCommerce transaction are not that much different.  They both use an origin and destination, but while the retail location is likely bought and sold at the same location it still contains an origin and a destination, they just happen to be the same address.  An eCommerce transaction varies in that at least two different addresses are taken into account.  For example, in a retail transaction where the origin and destination are the same, we'd use the <code>SingleLocation</code> address, but for an eCommerce transaction, we'd use <code>ShipFrom</code> and <code>ShipTo</code>.
 
-As an example, let's say that I 
+Let's try building a transaction that uses two different addresses and a single line item:
 
 <div class="dev-guide-test" id="test1">
     <div class="dev-guide-test-heading">Test Case - 3.2.1</div>
@@ -23,7 +23,7 @@ As an example, let's say that I
 <h4>Setup</h4>
 <ul class="dev-guide-list">
     <li>Your DEVGUIDE company should have nexus in Rhode Island and Washington.</li>
-    <li>In your connector, create the following transaction:</li>
+    <li>n your connector, create the following transactions</li>
         <ul class="dev-guide-list">
             <li>Transaction Type: SalesInvoice</li>
             <li>Transaction Code: Chapter-3-Test-1</li>
@@ -45,13 +45,7 @@ As an example, let's say that I
         </li>
         <li>Line #1:
             <ul class="dev-guide-list">
-                <li>Amount $65</li>
-                <li>TaxCode P0000000</li>
-            </ul>
-        </li>
-        <li>Line #2:
-            <ul class="dev-guide-list">
-                <li>Amount $35</li>
+                <li>Amount $100</li>
                 <li>TaxCode P0000000</li>
             </ul>
         </li>
@@ -93,14 +87,9 @@ As an example, let's say that I
   "lines": [
     {
       "number": "1",
-      "amount": 65,
+      "amount": 100,
       "taxCode": "P0000000"
     },
-    {
-      "number2": "2",
-      "amount": 35,
-      "taxCode": "P0000000"
-    }
   ]
 }
                 </pre>
@@ -111,16 +100,9 @@ As an example, let's say that I
 </div>
 
 <h3>Using Line Level Origin and Destination</h3>
-Origin and destination fields are not bound to the document level, they can also be used on the line level to accommodate scenarios in which an item may not be available and is shipping from another location or where a buyer may have multiple locations that they need items shipped.  You can use a line level origin or destination address to override the document level addresses, but preserve them for other items.
+Origin and destination fields are not bound to the document level, they can also be used on the line level to accommodate scenarios in which an item may not be available and is shipping from another location or where a buyer may have multiple locations that they need items shipped.  There are a variety of reasons in which this may occur, but it's important to remember you do not need to specify different addresses for each line.  Document level properties still apply and your origin and destination addresses will only be overridden by the line address property that is different.  For example, if you have two lines and one item is out of stock at the origin and must be shipped from another location, you only need to change the line level origin for that line.  The document level origin and destination will continue to apply.  
 
-There are a variety of reasons, but a common reason
-<ul class="dev-guide-list">
-    <li>An item may not be available at the current location but may be stocked in another distribution center.</li>
-    <li>A buyer may have multiple locations for a single order.</li>
-</ul>
-
-For example, I am purchasing an item from a store and would like one item shipped to a secondary address.  The store doesn't carry that item in stock and must send it from one of their other distribution centers.  This would mean that one line item would have both an origin and destination that is different from the document level origin and destination.  Let's go ahead and build out that scenario using our second test:
-
+Ok, let's try another test.  In this example, we'll be purchasing an item from a store and would like one item shipped to a secondary address.  The store doesn't carry that item in stock and must send it from one of their other distribution centers.  This would mean that one line item would have both an origin and destination that is different from the document level origin and destination:
 <div class="dev-guide-test" id="test2">
     <div class="dev-guide-test-heading">Test Case - 3.2.2</div>
 <div class="dev-guide-test-content">
@@ -131,6 +113,8 @@ For example, I am purchasing an item from a store and would like one item shippe
         <ul class="dev-guide-list">
             <li>Transaction Type: SalesInvoice</li>
             <li>Transaction Code: Chapter-3-Test-2</li>
+            <li>Company Code: DEVGUIDE</li>
+            <li>Customer Code: ABC</li>
             <li>Document Date: 2017-06-15</li>
         </ul>
         <li>Addresses:
@@ -173,8 +157,10 @@ For example, I am purchasing an item from a store and would like one item shippe
 </ul>
 <h4>Assertions</h4>
 <ul class="dev-guide-list">
-    <li></li>
-    <li></li>
+    <li>The taxable amount should be $100.00</li>
+    <li>The tax for both lines should be sourced within Washington.</li>
+    <li>Line1 should have tax calculated for Washington State, Grays Harbor County, and the city of Aberdeen.</li>
+    <li>Line2 should have tax calculated for Washington State, King County, and the city of Seattle.</li>
 </ul>
 <div class="dev-guide-dropdown">
         <input id="checkbox_toggle2" type="checkbox" />
@@ -187,6 +173,7 @@ For example, I am purchasing an item from a store and would like one item shippe
   "type": "SalesInvoice",
   "code": "Chapter-3-Test-1",
   "companyCode": "DEVGUIDE",
+  "customerCode": "ABC",
   "date": "2017-06-15",
   "addresses": {
     "shipFrom": {

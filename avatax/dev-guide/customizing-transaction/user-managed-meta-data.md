@@ -13,7 +13,7 @@ disqus: 1
   <li class="next"><a href="/avatax/dev-guide/customizing-transaction/chapter-summary/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-Much like the reference code fields, there are other meta data that can be utilized in both document level and line level properties.  These meta data fields are helpful in providing information that helps provide additional information and tracking around the transaction.  For example, if you have a sales associate that made the sale for the customer, you can track that at the document level.
+Much like the <code>ReferenceCode</code>, <code>Ref1</code>, and <code>Ref2</code> fields, there are other meta data that can be utilized in both document level and line level properties.  These meta data fields are helpful in providing information that helps provide additional information and tracking around the transaction.  For example, if you have a sales associate that made the sale for the customer, you can track that at the document level.
 
 Below is a list of the available meta data fields and at which level they can apply (document or line):
 <div class="mobile-table">
@@ -27,33 +27,25 @@ Below is a list of the available meta data fields and at which level they can ap
         </thead>
         <tbody>
             <tr>
-                <td>Customer Code</td>
-                <td>Document</td>
-                <td>Company name or number of the purchaser.</td>
-            </tr>
-            <tr>
-                <td>Purchase Order Number</td>
+                <td><code>PurchaseOrderNo</code></td>
                 <td>Document</td>
                 <td>If converting to another document type from a purchase order (i.e. purchase invoice) you can reference that in this field.</td>
             </tr>
             <tr>
-                <td>Salesperson Code</td>
+                <td><code>SalespersonCode</code></td>
                 <td>Document</td>
                 <td>The number of the sales person associated with the transaction.</td>
             </tr>
             <tr>
-                <td>Salesperson Code</td>
-                <td>Document</td>
-                <td>The number of the sales person associated with the transaction.</td>
-            </tr>
-            <tr>
-                <td>Description</td>
+                <td><code>Description</code></td>
                 <td>Line</td>
                 <td>Field provided to describe the item/service/shipping method for that given line.</td>
             </tr>
         </tbody>
     </table>
 </div>
+
+Let's build out final test transaction using everything that we've covered in this chapter:
 
 <div class="dev-guide-test" id="test1">
     <div class="dev-guide-test-heading">Test Case - 3.4.1</div>
@@ -69,7 +61,7 @@ Below is a list of the available meta data fields and at which level they can ap
             <li>Customer Code: ABC</li>
             <li>Reference Code: SalesOrder 123456</li>
             <li>Sales Person Code: SA8675309</li>
-            <li>Purchase Oder</li>
+            <li>Purchase Order: PO6-5000</li>
         </ul>
         <li>Addresses:
             <ul class="dev-guide-list">
@@ -89,8 +81,9 @@ Below is a list of the available meta data fields and at which level they can ap
             <ul class="dev-guide-list">
                 <li>Amount $65</li>
                 <li>TaxCode P0000000</li>
+                <li>Description "A bundle of assorted yarn colors"</li>
                 <li>Ref1 "Item out of stock in Providence distribution center. ShipFrom Newport distribution center."</li>
-                <li>Ref2 "Customer would like the itemtoShipToasecondary address."</li>
+                <li>Ref2 "Customer would like the item to ShipTo a secondary address."</li>
                 <li>ShipFrom
                     <ul class="dev-guide-list">
                         <li>142 Long Wharf, Newport, RI 02840</li>
@@ -107,12 +100,40 @@ Below is a list of the available meta data fields and at which level they can ap
             <ul class="dev-guide-list">
                 <li>Amount $35</li>
                 <li>TaxCode P0000000</li>
+                <li>Description "A single bolt of wool."</li>
             </ul>
         </li>
     <li>Calculate tax for your transaction using AvaTax.</li>  
 </ul>
 <h4>Assertions</h4>
 <ul class="dev-guide-list">
+    <li>The taxable amount should be $100.00</li>
+    <li>The tax for both lines should be sourced within Washington.</li>
+    <li>Line1 should have tax calculated for Washington State, Grays Harbor County, and the city of Aberdeen.</li>
+    <li>Line2 should have tax calculated for Washington State, King County, and the city of Seattle.</li>
+    <li>Document level properties:
+        <ul class="dev-guide-list">
+            <li>Reference Code field should list "SalesOrder 123456"</li>
+            <li>Sales Person should show as SA8675309</li>
+            <li>PO6-5000 should be listed as the Purchase Order</li>
+        </ul>
+    </li>
+    <li>Line level properties:
+        <ul class="dev-guide-list">
+            <li>Line1
+                <ul class="dev-guide-list">
+                    <li>Description field should state "A bundle of assorted yarn colors"</li>
+                    <li>Ref1 field should state that the "Item out of stock in Providence distribution center. ShipFrom Newport distribution center."</li>
+                    <li>Ref2 field should list that the "Customer would like the item to ShipTo a secondary </li>
+                </ul>
+            </li>
+            <li>Line2
+                <ul class="dev-guide-list">
+                    <li>Description field should list a single bolt of wool.</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
     <li></li>
 </ul>
 <div class="dev-guide-dropdown">
@@ -150,10 +171,11 @@ Below is a list of the available meta data fields and at which level they can ap
   "lines": [
     {
       "number": "1",
-      "amount": 84,
+      "amount": 65,
       "taxCode": "P0000000",
       "ref1": "Item out of stock in Providence distribution center.  ShipFrom Newport distribution center."
       "ref2": "Customer would like the item to ShipTo a secondary address."
+      "description": "A bundle of assorted yarn colors"
       "addresses": {
         "shipFrom": {
           "line1": "12 Christies Landing",
@@ -173,8 +195,9 @@ Below is a list of the available meta data fields and at which level they can ap
     },
     {
       "number": "2",
-      "amount": 16,
+      "amount": 35,
       "taxCode": "P0000000"
+      "description": "a single bolt of wool."
     }
   ]
 }
