@@ -22,7 +22,7 @@ MORE DETAIL
     <li>Why are you doing it this way</li>
 </ul>
 
-<div class="dev-guide-test" id="test">
+<div class="dev-guide-test" id="test1">
     <div class="dev-guide-test-heading">Test Case - 6.2.1</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
@@ -95,7 +95,7 @@ MORE DETAIL
 
 With this approach, you will simply add an additional line that contains the discounted amount as a negative extended amount. Please ensure to use the same taxCode on the discount line as the item being discounted. This will ensure that any taxability rules applied to the product/service are also applied to the discount.
 
-<div class="dev-guide-test" id="test">
+<div class="dev-guide-test" id="test2">
     <div class="dev-guide-test-heading">Test Case - 6.2.2</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
@@ -179,7 +179,7 @@ With this approach, you will simply add an additional line that contains the dis
 
 With this approach you will pass the complete discounted amount in the < discount> field then identify the lines that are participating in the discount by setting the < discounted> field to 'True'. Unlike the other methods, you will enter the total discount as a positive integer with this approach. If no lines have the < discounted> set to 'True', then the discount will NOT be applied. 
 
-<div class="dev-guide-test" id="test">
+<div class="dev-guide-test" id="test3">
     <div class="dev-guide-test-heading">Test Case - 6.2.3</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
@@ -271,7 +271,7 @@ With this approach you will pass the complete discounted amount in the < discoun
 
 When working with discounts provided by a 3rd party (ex. manufacturer coupon) the process is very similar to the discount method of adding a line with a negative amount. However in this case, instead of using the same tax code as the item being discounted, you will use the tax code for Coupons (third party) - OC030000. Check out Chapter 5 for more information on tax codes and their function.
 
-<div class="dev-guide-test" id="test">
+<div class="dev-guide-test" id="test4">
     <div class="dev-guide-test-heading">Test Case - 6.2.4</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>

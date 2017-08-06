@@ -36,7 +36,7 @@ To use the <a class="dev-guide-link" href="https://developer.avalara.com/api-ref
 If your platform stores information about locations and you wish to sync this data with AvaTax, you can use the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Locations/CreateLocations/">CreateLocations API</a> and the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Locations/UpdateLocation/">UpdateLocation API</a> to store and maintain this data in AvaTax.
 
 For the purposes of this chapter, let us create a new location within Texas, a state that sometimes requires location based reporting via the TX 01-115 form.  Here's how to use the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Locations/CreateLocations/">CreateLocations API</a> call to create a location within Texas:
-<div class="dev-guide-test" id="test">
+<div class="dev-guide-test" id="test1">
     <div class="dev-guide-test-heading">Test Case - 9.2.1</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
@@ -107,7 +107,7 @@ You should allow your customer to choose a reporting location code using a drop-
 If the user chooses <code>"None"</code>, you should set the <code>reportingLocationCode</code> value of your transaction to <code>NULL</code>.  If the user selects a location, you should instead set the <code>reportingLocationCode</code> value to be the location code value from the location object.
 
 Here's how to create a transaction tied to a reporting location:
-<div class="dev-guide-test" id="test">
+<div class="dev-guide-test" id="test2">
     <div class="dev-guide-test-heading">Test Case - 9.2.2</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
@@ -174,7 +174,7 @@ Optionally, you can present your customers with a convenient shortcut for choosi
 
 Now that you've created a location successfully it's time to use that location data for reporting purposes on a transaction.
 
-<div class="dev-guide-test" id="test">
+<div class="dev-guide-test" id="test3">
     <div class="dev-guide-test-heading">Test Case - 9.2.3</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>

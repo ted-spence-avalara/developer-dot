@@ -12,7 +12,7 @@ disqus: 1
   <li class="next"><a href="/avatax/dev-guide/product-taxability/chapter-summary/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-<div class="dev-guide-test" id="test">
+<div class="dev-guide-test" id="test1">
     <div class="dev-guide-test-heading">Test Case - 5.3.1</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
@@ -96,7 +96,7 @@ disqus: 1
     </div>
 </div>
 </div>
-<div class="dev-guide-test" id="test">
+<div class="dev-guide-test" id="test2">
     <div class="dev-guide-test-heading">Test Case - 5.3.2</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>

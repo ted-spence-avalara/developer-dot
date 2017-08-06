@@ -22,6 +22,14 @@ In this chapter, you've seen all the features available in AvaTax for designing 
 
 Connector developers are free to customize the use of the reconciliation API suite to match their business processes.
 
+Tests in this chapter:
+<ul class="dev-guide-list">
+  <li><a href="/avatax/dev-guide/reconciliation/committing-a-transaction/#test1">4.1.1 - Committing a Transaction</a></li>
+  <li><a href="/avatax/dev-guide/reconciliation/committing-a-transaction/#test2">4.1.2 - Committing a Transaction</a></li>
+  <li><a href="/avatax/dev-guide/reconciliation/modifying-a-transaction/#test1">4.2.1 - Modifying a Transaction</a></li>
+  <li><a href="/avatax/dev-guide/reconciliation/modifying-a-transaction/#test2">4.2.2 - Modifying a Transaction</a></li>
+  <li><a href="/avatax/dev-guide/reconciliation/modifying-a-transaction/#test3">4.2.3 - Modifying a Transaction</a></li>
+</ul>
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/reconciliation/modifying-a-transaction/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

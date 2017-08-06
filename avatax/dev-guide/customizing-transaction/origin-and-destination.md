@@ -17,7 +17,7 @@ You were able to create a single location transaction in <a class="dev-guide-lin
 
 As an example, let's say that I 
 
-<div class="dev-guide-test" id="test">
+<div class="dev-guide-test" id="test1">
     <div class="dev-guide-test-heading">Test Case - 3.2.1</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
@@ -121,7 +121,7 @@ There are a variety of reasons, but a common reason
 
 For example, I am purchasing an item from a store and would like one item shipped to a secondary address.  The store doesn't carry that item in stock and must send it from one of their other distribution centers.  This would mean that one line item would have both an origin and destination that is different from the document level origin and destination.  Let's go ahead and build out that scenario using our second test:
 
-<div class="dev-guide-test" id="test">
+<div class="dev-guide-test" id="test2">
     <div class="dev-guide-test-heading">Test Case - 3.2.2</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>

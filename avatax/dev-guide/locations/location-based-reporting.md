@@ -22,7 +22,7 @@ In order to file these forms correctly, you must set up your company as follows:
             <li>If there is any doubt as to the boundaries of this jurisdiction, it's safest to define all locations within that state.</li>
         </ul>
     </li>
-    <li>Define a <code>"Default Location"<code>, which will be used to report any transactions that are not tagged to a location.</li>
+    <li>Define a <code>"Default Location"</code>, which will be used to report any transactions that are not tagged to a location.</li>
     <li>Your connector must indicate, on each transaction, which location will be used for reporting purposes.
         <ul class="dev-guide-list">
             <li>This is done by filling out the field <code>reportingLocationCode</code> on the transaction.</li>

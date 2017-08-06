@@ -29,6 +29,13 @@ Optionally, you can include additional features if you choose:
 
 These optional features are available but are not required for certified connectors.
 
+Tests in this chapter:
+<ul class="dev-guide-list">
+  <li><a href="/avatax/dev-guide/locations/using-locations/#test1">9.2.1 - Using Locations</a></li>
+  <li><a href="/avatax/dev-guide/locations/using-locations/#test2">9.2.2 - Using Locations</a></li>
+  <li><a href="/avatax/dev-guide/locations/using-locations/#test3">9.2.3 - Using Locations</a></li>
+</ul>
+
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/locations/using-locations/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/avatax/dev-guide/consumer-use-tax/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>

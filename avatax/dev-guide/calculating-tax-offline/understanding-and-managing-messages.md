@@ -10,7 +10,7 @@ disqus: 1
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/calculating-tax-offline/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="previous"><a href="/avatax/dev-guide/calculating-tax-offline/chapter-summary/"><i class="glyphicon glyphicon-chevron-left"></i>Next</a></li>
+  <li class="next"><a href="/avatax/dev-guide/calculating-tax-offline/chapter-summary/"><i class="glyphicon glyphicon-chevron-right"></i>Next</a></li>
 </ul>
 
 Understanding and taking appropriate action on error messages is critical to the successful implementation of a custom connector. The errors and warnings that result from web service calls will guide the receiver to the most logical problem resolution path.
@@ -194,5 +194,5 @@ Calculating Tax Offline Using Rate Tables
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/calculating-tax-offline/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="previous"><a href="/avatax/dev-guide/calculating-tax-offline/chapter-summary/"><i class="glyphicon glyphicon-chevron-left"></i>Next</a></li>
+  <li class="next"><a href="/avatax/dev-guide/calculating-tax-offline/chapter-summary/"><i class="glyphicon glyphicon-chevron-right"></i>Next</a></li>
 </ul>

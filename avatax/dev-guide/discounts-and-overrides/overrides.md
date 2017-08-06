@@ -22,7 +22,7 @@ This feature is available so that you can import transactions where you've alrea
 
 Tax amount overrides can also be used to determine the difference between tax paid to a vendor and consumer use tax due to an authority.  This is covered in more detail in CHAPTER.
 
-<div class="dev-guide-test" id="test">
+<div class="dev-guide-test" id="test1">
     <div class="dev-guide-test-heading">Test Case - 6.1.1</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
@@ -103,7 +103,7 @@ TaxDate overrides are used when you want to calculate tax on a date different th
 
 Let's say Alice purchases a new chair from the store on May 1st.  She discovers that the chair doesn't fit in her home office, and she decides to return the chair on June 1st.  If you calculate tax on the June 1st date, you might refund a different amount of tax to Alice than she paid on May 1st.  So you use a TaxDate override to ensure that the tax rates are calculated as of May 1st.
 
-<div class="dev-guide-test" id="test">
+<div class="dev-guide-test" id="test2">
     <div class="dev-guide-test-heading">Test Case - 6.1.2</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>

@@ -17,7 +17,7 @@ If you are building a connector that links up to AvaTax, you don't have to do an
 
 To continue with this developer guide, let's set up a test company right now for our developer guide test cases.  This company will allow us to finish all the test cases within the AvaTax developer guide using a company with a known tax profile.  Let's take a look at a sample request code:
 <div class="dev-guide-test" id="test1">
-<div class="dev-guide-test-heading">Test Case - 1.3.1 </div>
+<div class="dev-guide-test-heading">Test Case - 1.4.1 </div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
 <ul class="dev-guide-list">

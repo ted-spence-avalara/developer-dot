@@ -14,7 +14,16 @@ disqus: 1
 </ul>
 
 In this chapter you learned Blah Blah Blah
-List of test cases from this chapter
+
+Tests in this chapter:
+<ul class="dev-guide-list">
+  <li><a href="/avatax/dev-guide/discounts-and-overrides/overrides/#test1">6.1.1 - Overrides</a></li>
+  <li><a href="/avatax/dev-guide/discounts-and-overrides/overrides/#test2">6.1.2 - Overrides</a></li>
+  <li><a href="/avatax/dev-guide/discounts-and-overrides/discounts/#test1">6.2.1 - Discounts</a></li>
+  <li><a href="/avatax/dev-guide/discounts-and-overrides/discounts/#test2">6.2.2 - Discounts</a></li>
+  <li><a href="/avatax/dev-guide/discounts-and-overrides/discounts/#test3">6.2.3 - Discounts</a></li>
+  <li><a href="/avatax/dev-guide/discounts-and-overrides/discounts/#test4">6.2.4 - Discounts</a></li>
+</ul>
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/discounts-and-overrides/discounts/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

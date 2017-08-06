@@ -21,6 +21,13 @@ Because you have read this chapter, you should now know:
     <li>What other meta data can be managed and used within your transaction.</li>
 </ul>
 
+Tests that are in this chapter:
+<ul class="dev-guide-list">
+  <li><a href="/avatax/dev-guide/customizing-transaction/origin-and-destination/#test1">3.2.1 - Using Origin and Destination Addresses</a></li>
+  <li><a href="/avatax/dev-guide/customizing-transaction/origin-and-destination/#test2">3.2.2 - Using Origin and Destination Addresses</a></li>
+  <li><a href="/avatax/dev-guide/customizing-transaction/user-managed-meta-data/#test1">3.4.1 - User Managed Meta Data</a></li>
+</ul>
+
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/customizing-transaction/user-managed-meta-data/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/avatax/dev-guide/reconciliation/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>

@@ -161,7 +161,7 @@ The <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/
 
 Let's examine how a two-stage verification process would work:
 
-<div class="dev-guide-test" id="test">
+<div class="dev-guide-test" id="test2">
     <div class="dev-guide-test-heading">Test Case - 4.1.2</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
