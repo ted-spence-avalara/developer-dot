@@ -63,8 +63,16 @@
             </ol>
             {% endif %}
         </li>
-        <li {% if page.url=="/avatax/dev-guide/shipping-and-handling/" %}class="active" {% endif %}><a href="/avatax/dev-guide/shipping-and-handling/">Shipping and Handling</a></li>
-        <li{% if page.url=="/avatax/dev-guide/exemptions1/" %}class="active" {% endif %}><a href="/avatax/dev-guide/exemptions/">Exemptions</a>
+        <li {% if page.url=="/avatax/dev-guide/shipping-and-handling/" %}class="active" {% endif %}><a href="/avatax/dev-guide/shipping-and-handling/">Shipping and Handling</a>
+            {% if page.chapter=="shipping-and-handling" %}
+            <ol>
+                <li><a href="/avatax/dev-guide/shipping-and-handling/taxability-of-shipping-charges/">Taxability of Shipping Charges</a></li>
+                <li><a href="/avatax/dev-guide/shipping-and-handling/taxability-of-handling-charges/">Taxability of Handling Charges</a></li>
+                <li><a href="/avatax/dev-guide/shipping-and-handling/chapter-summary/">Chapter Summary</a></li>
+            </ol>
+            {% endif %}
+        </li> 
+        <li{% if page.url=="/avatax/dev-guide/exemptions/" %}class="active" {% endif %}><a href="/avatax/dev-guide/exemptions/">Exemptions</a>
             {% if page.chapter=="exemptions" %}
             <ol>
                 <li><a href="/avatax/dev-guide/exemptions/zero-tax-due-to-nexus/">Zero Tax due to Nexus</a></li>
