@@ -95,7 +95,16 @@
             </ol>
             {% endif %}
         </li>
-        <li {% if page.url=="/avatax/dev-guide/consumer-use-tax/" %}class="active" {% endif %}><a href="/avatax/dev-guide/consumer-use-tax/">Consumer Use Tax</a></li>
+        <li {% if page.url=="/avatax/dev-guide/consumer-use-tax/" %}class="active" {% endif %}><a href="/avatax/dev-guide/consumer-use-tax/">Consumer Use Tax</a>
+            {% if page.chapter=="consumer-use-tax" %}
+            <ol>
+                <li><a href="/avatax/dev-guide/consumer-use-tax/what-is-use-tax/">What Is Use Tax?</a></li>
+                <li><a href="/avatax/dev-guide/consumer-use-tax/difference-between-consumer-and-seller-use-tax/">What’s the Difference Between Consumer and Seller Use Tax?</a></li>
+                <li><a href="/avatax/dev-guide/consumer-use-tax/putting-it-all-together/">Putting It All Together</a></li>
+                <li><a href="/avatax/dev-guide/consumer-use-tax/chapter-summary">Chapter Summary</a></li>
+            </ol>
+            {% endif %}
+        </li>
         <li {% if page.url=="/avatax/dev-guide/calculating-tax-offline/" %}class="active" {% endif %}><a href="/avatax/dev-guide/calculating-tax-offline/">Calculating Tax offline</a>
             {% if page.chapter=="calculating-tax-offline" %}
             <ol>
