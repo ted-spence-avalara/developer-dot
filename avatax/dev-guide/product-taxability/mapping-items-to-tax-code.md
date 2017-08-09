@@ -35,15 +35,9 @@ In Tennessee  a special tax applied when the value of a single physical item (Qu
 
 Examples:
 <ul class="dev-guide-list">
-    <li>No sales tax on an item of clothing or footwear that costs less than $110
-        <ul class="dev-guide-list">
-            <li><a class="dev-guide-link" href="http://www1.nyc.gov/nyc-resources/service/2389/sales-tax">http://www1.nyc.gov/nyc-resources/service/2389/sales-tax</a></li>
-        </ul>
+    <li>No <a class="dev-guide-link" href="http://www1.nyc.gov/nyc-resources/service/2389/sales-tax">sales tax</a> on an item of clothing or footwear that costs less than $110
     </li>
-    <li>Tennessee single article tax cap
-        <ul class="dev-guide-list">
-            <li><a class="dev-guide-link" href="https://revenue.support.tn.gov/hc/en-us/articles/205576765-What-is-a-single-article-and-how-is-sales-tax-on-a-single-article-calculated-<">https://revenue.support.tn.gov/hc/en-us/articles/205576765-What-is-a-single-article-and-how-is-sales-tax-on-a-single-article-calculated-</a></li>
-        </ul>
+    <li>Tennessee <a class="dev-guide-link" href="https://revenue.support.tn.gov/hc/en-us/articles/205576765-What-is-a-single-article-and-how-is-sales-tax-on-a-single-article-calculated-<">single article tax cap</a>
     </li>
 </ul>
 

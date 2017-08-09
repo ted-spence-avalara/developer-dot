@@ -18,7 +18,7 @@ As long as you continue using a null tax code, AvaTax will treat your products t
 
 You can find the correct tax code for your product in one of two ways:
 <ul class="dev-guide-list">
-    <li>Look on Avalara's tax code site: <a class="dev-guide-link" href="https://taxcode.avatax.avalara.com">https://taxcode.avatax.avalara.com/</a></li>
+    <li>Look on Avalara's <a class="dev-guide-link" href="https://taxcode.avatax.avalara.com">tax code site</a></li>
     <li>Or you could call the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListTaxCodes/">ListTaxCodes API</a> to list available tax codes</li>
 </ul>
 
@@ -48,15 +48,15 @@ GET /api/v2/definitions/taxcodes/$filter=description startswith C
 
 <h3>Adding TaxCodes to your Transaction</h3>
 
-On the document line level you can pass via the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/">CreateTransactionModel</a>. There are a few properties that allow you to identify your line categories of “ItemCode”, “Qty”, “Amount”, “Description”, and “TaxCode”. The <code>ItemCode</code> are generally the value passed by your integration or web service to represent a part number, SKU or product ID for the said products or services.
+On the document line level you can pass via the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/">CreateTransactionModel</a>. There are a few properties that allow you to identify your line categories of <code>“ItemCode”</code>, <code>“Qty”</code>, <code>“Amount”</code>, <code>“Description”</code>, and <code>“TaxCode”</code>. The <code>ItemCode</code> are generally the value passed by your integration or web service to represent a part number, SKU or product ID for the said products or services.
 
 <pre>
 {
-  "LineNo":   "01",
-  "Qty":   "1",
-  "Amount":   "5.99",
-  "TaxCode":   "PF050001"
-
+  "LineNo":"01",
+  "Qty":"1",
+  "Amount":"5.99",
+  "TaxCode":"PF050001"
+}
 </pre>
 
 <h3>Custom TaxCodes</h3>

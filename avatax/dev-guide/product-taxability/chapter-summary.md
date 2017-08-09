@@ -15,8 +15,8 @@ TODO
 
 Tests in this chapter:
 <ul class="dev-guide-list">
-  <li><a href="/avatax/dev-guide/product-taxability/zero-tax-due-to-product-taxability/#test1">5.3.1 - Zero Tax due to Product Taxability</a></li>
-  <li><a href="/avatax/dev-guide/product-taxability/zero-tax-due-to-product-taxability/#test2">5.3.2 - Zero Tax due to Product Taxability</a></li>
+  <li><a class="dev-guide-link" href="/avatax/dev-guide/product-taxability/zero-tax-due-to-product-taxability/#test1">5.3.1 - Zero Tax due to Product Taxability</a></li>
+  <li><a class="dev-guide-link" href="/avatax/dev-guide/product-taxability/zero-tax-due-to-product-taxability/#test2">5.3.2 - Zero Tax due to Product Taxability</a></li>
 </ul>
 
 <ul class="pager">
