@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 1.4 - Configure Your Avatax Account
+title: 1.4 - Configure Your Account
 product: avaTax
 doctype: dev_guide
 chapter: getting-started-with-avatax

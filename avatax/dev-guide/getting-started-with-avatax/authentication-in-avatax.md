@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 1.2 - Authentication in Avatax
+title: 1.2 - Authentication
 product: avaTax
 doctype: dev_guide
 chapter: getting-started-with-avatax

@@ -23,11 +23,11 @@ If you omit this value, the API will assume you want to create a SalesOrder.
 
 This must be unique to the document type - you cannot have two SalesInvoice transactions with a document code of INV001, for instance. You could, however, have a SalesInvoice with the document code INV001 and a ReturnInvoice with the document code INV001, since these are separate document types.
 
-<code>Date:</code> Transaction Date - The date on the invoice, purchase order, etc.
+<code>Date</code>: Transaction Date - The date on the invoice, purchase order, etc.
 
 By default, this date will be used to calculate the tax rates for the transaction. If you wish to use a different date to calculate tax rates, please specify a taxOverride of type taxDate.
 
-<code>CustomerCode:</code> The client application customer reference code. This is especially important for triggering exemption certificates, so you'll need to be able to send consistent customer codes (see <a class="dev-guide-link" href="/avatax/dev-guide/exemptions/">Chapter 8 - Exemptions </a>for more details on this).
+<code>CustomerCode</code>: The client application customer reference code. This is especially important for triggering exemption certificates, so you'll need to be able to send consistent customer codes (see <a class="dev-guide-link" href="/avatax/dev-guide/exemptions/">Chapter 8 - Exemptions </a>for more details on this).
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/transactions/document-types/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

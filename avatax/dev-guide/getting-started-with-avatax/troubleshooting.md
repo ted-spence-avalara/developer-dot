@@ -17,7 +17,7 @@ When beginning development with AvaTax, you may often see errors.  Each error me
 <h3>Handling Error Messages</h3>
 It's normal at this stage of development to see error messages from the AvaTax API.  We've designed our error messages to clearly tell you what went wrong, what you can do about it, and how to proceed.  We've published documentation that explains <a class="dev-guide-link" href="https://developer.avalara.com/avatax/errors/">all REST error codes and how to interpret them</a>.  
 
-AvaTax identifies all error messages using HTTP response codes within the range 400-499 (for errors in your API call), and 500-599 (for errors within AvaTax itself).  If your program gets an HTTP response code between 400 and 499, here's how to proceed:
+AvaTax identifies all error messages using HTTP response codes between 400 and 499 (for errors in your API call), and between 500 and 599 (for errors within AvaTax itself).  If your program gets an HTTP response code between 400 and 499, here's how to proceed:
 <ul class="dev-guide-list">
     <li>Parse the error message</li>
     <li>Display the summary of the error to the user</li>
@@ -50,7 +50,7 @@ Response: 401 Unauthorized
 
 Your next step should be to display an error message in your product.  The error message should have:
 <ul class="dev-guide-list">
-    <li>The title of <code>"details[0].message"</code>.</li>
+    <li>The title of <code>details[0].message</code>.</li>
     <li>Best practice is to include the <code>details[0].description</code> and the <code>details[0].helpLink</code> values so the customer can learn more about the problem.</li>
     <li>Some API calls can include more than one error.  You can optionally display information about more than one error message at a time.</li>
 </ul>
@@ -97,8 +97,8 @@ https://sandbox-rest.avatax.com/api/v2/companies?$filter=id = 'abc'
 <h3>Check Your Connection</h3>
 The AvaTax API is available online at the following URLs:
 <ul class="dev-guide-list">
-    <li>Sandbox Environment:<a class="dev-guide-link" href="https://sandbox-rest.avatax.com">https://sandbox-rest.avatax.com</a></li>
-    <li>Production Environment:<a class="dev-guide-link" href="https://rest.avatax.com">https://rest.avatax.com</a></li>
+    <li>Sandbox Environment: <a class="dev-guide-link" href="https://sandbox-rest.avatax.com">https://sandbox-rest.avatax.com</a></li>
+    <li>Production Environment: <a class="dev-guide-link" href="https://rest.avatax.com">https://rest.avatax.com</a></li>
 </ul>
 
 Before you proceed, please make sure that your office can contact these URLs.  When you visit these sites, you should see a web page similar to the following:

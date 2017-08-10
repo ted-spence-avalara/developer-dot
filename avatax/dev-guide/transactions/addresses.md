@@ -22,5 +22,5 @@ We recommend validating/resolving addresses against Avalara's address-validation
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/transactions/line-items/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/avatax/dev-guide/tranactions/chapter-summary/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/avatax/dev-guide/transactions/chapter-summary/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
