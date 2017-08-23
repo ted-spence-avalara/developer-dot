@@ -103,7 +103,7 @@ The AvaTax API is available online at the following URLs:
 
 Before you proceed, please make sure that your office can contact these URLs.  When you visit these sites, you should see a web page similar to the following:
 
-<img src="/avatax/dev-guide/getting-started-with-avatax/connecting-to-avatax.png">
+<img class="dev-guide-pic" src="/avatax/dev-guide/getting-started-with-avatax/connecting-to-avatax.png">
 
 If you can't see this page, check your connection!
 

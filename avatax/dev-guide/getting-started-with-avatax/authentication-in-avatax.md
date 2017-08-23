@@ -51,19 +51,21 @@ If you are writing your own code, here's how to construct an authentication toke
             </tr>
             <tr>
                 <td>Now use your favorite <a class="dev-guide-link" href="https://www.google.com/webhp#q=base64+encoding">Base64 encoding program</a> to encode the right hand side of the string.</td>
-                <td>Basic Ym9iQGV4YW1wbGUub3JnOmJvYnNwYXNzd29yZGdvZXNoZXJl</td>
+                <td>Basic Ym9iQGV4YW1wbGUub3JnOmJvYnNwYXNzd29yZGdvZXNoZXJl </td>
             </tr>
             <tr>
                 <td>Add this to the "Authorization" header in your HTTP request.</td>
-                <td>Authorization: Basic Ym9iQGV4YW1wbGUub3JnOmJvYnNwYXNzd29yZGdvZXNoZXJl</td>
+                <td>Authorization: Basic Ym9iQGV4YW1wbGUub3JnOmJvYnNwYXNzd29yZGdvZXNoZXJl </td>
             </tr>
         </tbody>
     </table>
 </div>
 
+<br />
+
 Basic Authentication has a number of advantages and disadvantages:
 <ul class="dev-guide-list">
-    <li>Advantages
+    <li>Advantages:
         <ul class="dev-guide-list">
             <li>Allows user actions to be audited to the user who did them.</li>
             <li>Allows different users to have different privilege levels.</li>
@@ -72,7 +74,7 @@ Basic Authentication has a number of advantages and disadvantages:
             <li>All Avalara APIs support basic authentication.</li>
         </ul>
     </li>
-    <li>Disadvantages
+    <li>Disadvantages:
         <ul class="dev-guide-list">
             <li>Usernames and passwords can be stolen by viruses or trojans on a user's PC.</li>
             <li>Insecure passwords can be guessed by brute force. To prevent this, Avalara enforces a limit: if you fail to authenticate multiple times in a row, your account may be locked out.</li>
@@ -122,9 +124,11 @@ Let's construct an authorization using an Avalara License Key:
     </table>
 </div>
 
+<br />
+
 As you’ll notice, license key and basic authentication are very similar in practice. Why would someone want to use license key authentication instead of username/password? Let’s look at the advantages and disadvantages of license key authentication.
 <ul class="dev-guide-list">
-    <li>Advantages
+    <li>Advantages:
         <ul class="dev-guide-list">
             <li>License keys have much stronger entropy when compared to a username/password, and are harder to attack.</li>
             <li>Account ID / License Key authentication is not user-specific and will not expire if one user resets their password.</li>
@@ -133,7 +137,7 @@ As you’ll notice, license key and basic authentication are very similar in pra
             <li>All Avalara APIs support basic authentication.</li>
         </ul>
     </li>
-    <li>Disadvantages
+    <li>Disadvantages:
         <ul class="dev-guide-list">
             <li>There is only one license key for each company.</li>
             <li>Revoking your license key will cause all API calls with the old license key to fail.</li>
