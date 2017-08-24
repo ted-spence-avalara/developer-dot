@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 2.3 - Document Types
+title: 2.6 - Document Types
 product: avaTax
 doctype: dev_guide
 chapter: transactions
@@ -9,8 +9,10 @@ disqus: 1
 ---
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/transactions/should-i-commit/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/avatax/dev-guide/transactions/document-level-details/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/avatax/dev-guide/transactions/chapter-summary/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
+
+We've already touched on the differences between the <code>SalesOrder</code> and <code>SalesInvoice</code> document types, but it's worth delving into more details about these and the other document types.
 
 AvaTax is a full service engine for calculating transactional taxes, including sales, use, VAT, and many other tax types. In order to properly calculate taxes in these different circumstances, AvaTax must also support a wide variety of transaction types. In today’s article, I will walk you through the differences between these transactions and describe how to map them to your business processes.
 
@@ -27,34 +29,9 @@ We'll begin with an overview of all these transaction types, and then move on to
         </thead>
         <tbody>
             <tr>
-                <td>SalesOrder</td>
-                <td>Temporary</td>
-                <td>A quote for a potential sale</td>
-            </tr>
-            <tr>
-                <td>SalesInvoice</td>
+                <td>InventoryTransferInvoice</td>
                 <td>Permanent</td>
-                <td>A finalized sale made to a customer</td>
-            </tr>
-            <tr>
-                <td>ReturnOrder</td>
-                <td>Temporary</td>
-                <td>A quote for a refund to a customer</td>
-            </tr>
-            <tr>
-                <td>ReturnInvoice</td>
-                <td>Permanent</td>
-                <td>A finalized refund given to a customer</td>
-            </tr>
-            <tr>
-                <td>PurchaseOrder</td>
-                <td>Temporary</td>
-                <td>A quote for identifying estimated tax to pay to a vendor</td>
-            </tr>
-             <tr>
-                <td>PurchaseInvoice</td>
-                <td>Permanent</td>
-                <td>A purchase made from a vendor</td>
+                <td>A finalized shipment of inventory from one location to another</td>
             </tr>
             <tr>
                 <td>InventoryTransferOrder</td>
@@ -62,9 +39,34 @@ We'll begin with an overview of all these transaction types, and then move on to
                 <td>An estimate for shipping inventory from one location to another</td>
             </tr>
             <tr>
-                <td>InventoryTransferInvoice</td>
+                <td>PurchaseInvoice</td>
                 <td>Permanent</td>
-                <td>A finalized shipment of inventory from one location to another</td>
+                <td>A purchase made from a vendor</td>
+            </tr>
+            <tr>
+                <td>PurchaseOrder</td>
+                <td>Temporary</td>
+                <td>A quote for identifying estimated tax to pay to a vendor</td>
+            </tr>
+            <tr>
+                <td>ReturnInvoice</td>
+                <td>Permanent</td>
+                <td>A finalized refund given to a customer</td>
+            </tr>
+             <tr>
+                <td>ReturnOrder</td>
+                <td>Temporary</td>
+                <td>A quote for a refund to a customer</td>
+            </tr>
+            <tr>
+                <td>SalesInvoice</td>
+                <td>Permanent</td>
+                <td>A finalized sale made to a customer</td>
+            </tr>
+            <tr>
+                <td>SalesOrder</td>
+                <td>Temporary</td>
+                <td>A quote for a potential sale</td>
             </tr>
         </tbody>
     </table>
@@ -92,28 +94,28 @@ Next, let’s describe the various types of transactions and see how they work.
 <h3>Sales Transactions</h3>
 A <code>SalesOrder</code> or <code>SalesInvoice</code> transaction represents a sale that your company made to a customer. This is by far the most common type of transaction that AvaTax handles. As usual, a SalesOrder is an estimate and a SalesInvoice is a record of a transaction that occurred. SalesOrders are typically used to represent web shopping cart calculations, sales recorded through an accounting or ledger system, or service contracts signed on a particular date for future delivery.
 
-In the case of a sales transaction, a positive currency value means that your company received money from the customer; and a negative currency value means that your company paid the customer. It is generally expected that sales transactions are reported as positive currency values.
+In the case of a Sales transaction, a positive currency value means that your company received money from the customer; and a negative currency value means that your company paid the customer. It is generally expected that sales transactions are reported as positive currency values.
 
-Sales transactions are generally expected to be recorded as they occur. For example, if you calculate an estimate for a customer using a SalesOrder on the 11th of the month, then convert it to a SalesInvoice on the 20th of the month, it is customary to choose the transaction date as the 20th. The AvaTax API natively supports this date behavior - just omit the date field from your <code>/api/v2/transactions/create</code> API call and the date will be automatically selected for you.
+Sales transactions are generally expected to be recorded as they occur. For example, if you calculate an estimate for a customer using a SalesOrder on the 11th of the month, then convert it to a <code>SalesInvoice</code> on the 20th of the month, it is customary to choose the transaction date as the 20th. The AvaTax API natively supports this date behavior - just omit the date field from your <code>/api/v2/transactions/create</code> API call and the date will be automatically selected for you.
 
 <h3>Return Transactions</h3>
-When a customer changes their mind and asks for a refund, you can process that refund by specifying a <code>ReturnOrder</code> or <code>ReturnInvoice</code> transaction. This transaction type refers to a reversal of the charges that occurred when you originally made the sale. As usual, the ReturnOrder can be used for estimating and the ReturnInvoice is a permanent record.
+When a customer changes their mind and asks for a refund, you can process that refund by specifying a <code>ReturnOrder</code> or <code>ReturnInvoice</code> transaction. This transaction type refers to a reversal of the charges that occurred when you originally made the sale. As usual, the <code>ReturnOrder</code> can be used for estimating and the ReturnInvoice is a permanent record.
 
 A return transaction with a negative currency value refers to money that your company refunded to your customer; a return transaction with a positive currency value represents money the customer gives to your company. It is generally expected that return transactions are reported as negative currency values.
 
-Return transactions are usually reported on the day when the refund took place, but they often need to calculate tax for the date of the original transaction that is being reversed. For an example, imagine you purchase a sweater at the local shop and pay 7% sales tax. A month later, you return the sweater to the shop for a refund - but the tax rate is now 7.25%. In this case, the store is expected to refund you your original purchase price and the original sales tax you paid, not the new tax that you would pay if you purchased it today. AvaTax allows you to calculate tax for a different day by specifying the <code>taxDate</code> parameter on your ReturnInvoice or ReturnOrder. To use this feature, you specify the date of the transaction as the date when the refund occurred, and set the taxDate to the date of the original purchase.
+Return transactions are usually reported on the day when the refund took place, but they often need to calculate tax for the date of the original transaction that is being reversed. For an example, imagine you purchase a sweater at the local shop and pay 7% sales tax. A month later, you return the sweater to the shop for a refund - but the tax rate is now 7.25%. In this case, the store is expected to refund you your original purchase price and the original sales tax you paid, not the new tax that you would pay if you purchased it today. AvaTax allows you to calculate tax for a different day by specifying the taxDateparameter on your ReturnInvoice or ReturnOrder. To use this feature, you specify the date of the transaction as the date when the refund occurred, and set the taxDate to the date of the original purchase.
 
 <h3>Purchase Transactions</h3>
 A purchase transaction represents a purchase made by your company from a vendor. A <code>PurchaseOrder</code> represents a quote you request from a vendor, and a <code>PurchaseInvoice</code> represents a finalized purchase transaction.
 
 In the United States, most vendors will automatically charge and remit transactional taxes on your behalf. However, some companies choose to use AvaTax to identify any discrepancies between the tax rate you were charged by a vendor and the correct tax rate for a product or service. This calculation can assist a company in recovering overpaid taxes, or in identifying any cases where their vendor relationships are not in full compliance with tax laws.
 
-You may use a PurchaseOrder to get an estimate of the tax that you should pay on a transaction, and you may choose to use a PurchaseInvoice to record a transaction that occurred. When reporting a PurchaseInvoice, you may specify the tax amount that you were charged by the vendor and have Avalara calculate the actual tax discrepancy. This allows you to correctly report Consumer Use Tax via Avalara’s Managed Returns Service - we’ll delve further into Consumer Use Tax in a future article!
+You may use a <code>PurchaseOrder</code> to get an estimate of the tax that you should pay on a transaction, and you may choose to use a <code>PurchaseInvoice</code> to record a transaction that occurred. When reporting a <code>PurchaseInvoice</code>, you may specify the tax amount that you were charged by the vendor and have Avalara calculate the actual tax discrepancy. This allows you to correctly report Consumer Use Tax via Avalara’s Managed Returns Service - we’ll delve further into Consumer Use Tax in <a class="dev-guide-link" href="/avatax/dev-guide/consumer-use-tax/">Chapter 10 - Consumer Use Tax</a>.
 
 <h3>Inventory Transfer Transactions</h3>
-Inventory transfers are another way of tracking transactions that have Consumer Use Tax implications. For companies with multiple warehouses and offices, there are tax implications involved in shifting inventory from one location to another. As always, an <code>InventoryTransferOrder</code> represents an estimate and an <code>InventoryTransferInvoice</code> represents a permanent transaction. Again, we’ll discuss Consumer Use Tax further in a future article.
+Inventory transfers are another way of tracking transactions that have Consumer Use Tax implications. For companies with multiple warehouses and offices, there are tax implications involved in shifting inventory from one location to another. As always, an <code>InventoryTransferOrder</code> represents an estimate and an <code>InventoryTransferInvoice</code> represents a permanent transaction. Again, we’ll discuss Consumer Use Tax further in <a class="dev-guide-link" href="/avatax/dev-guide/consumer-use-tax/">Chapter 10 - Consumer Use Tax</a>.
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/transactions/should-i-commit/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/avatax/dev-guide/transactions/document-level-details/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/avatax/dev-guide/transactions/chapter-summary/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
