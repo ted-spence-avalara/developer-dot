@@ -16,11 +16,7 @@ disqus: 1
 You have several options for handling discounts with AvaTax. However, before we get to into the details we need to call out the different types of discounts you can apply as each is handled differently. Vendor discounts are simply a price reduction in the sale amount of an item or service. Whereas 3rd party (manufacturer) discounts are, generally speaking, a price reduction sponsored by the manufacturer where the vendor is compensated for the reduced price. When dealing with Vendor discounts, there are three basic ways to include the discount in your GetTax request:
 
 <h3>Apply the Discount Prior to Making the Tax Calculation Request</h3>
-MORE DETAIL
-<ul class="dev-guide-list">
-    <li>What are you doing</li>
-    <li>Why are you doing it this way</li>
-</ul>
+For this first discount exercise, we are going to perform the discount before sending the request to AvaTax for a tax calculation. So, if the item has a cost of $100 and you are applying a $10 discount, the GetTax request should have an amount of $90. This is the simplest method for handling a discount as it does not involve any additional fields or lines in the GetTax request. 
 
 <div class="dev-guide-test" id="test1">
     <div class="dev-guide-test-heading">Test Case - 6.2.1</div>
@@ -30,10 +26,10 @@ MORE DETAIL
     <li>You would like to provide a $10 discount on a $100 chair.</li>
     <li>In your connector, create the following transaction:</li>
         <ul class="dev-guide-list">
-            <li>Transaction Type: SalesInvoice</li>
-            <li>Transaction Code: Chapter-8-Test-3</li>
+            <li>Document Type: SalesInvoice</li>
+            <li>Document Code: Chapter-6-Test-3</li>
             <li>Document Date: 2017-06-15</li>
-            <li>CompanyCode, Date, CustomerCode set to reasonable default values.</li>
+            <li>Company Code: ABC</li>
         </ul>
         <li>Addresses:
             <ul class="dev-guide-list">
@@ -47,7 +43,6 @@ MORE DETAIL
                 <li>TaxCode P0000000</li>
             </ul>
         </li>
-        <li>Add a TaxOverride to set the TaxAmount to $5.67, and specify the reason as "Importing tax calculated by previous tax software"</li>
     <li>Calculate tax for your transaction using AvaTax.</li> 
 </ul>
 <h4>Assertions</h4>
@@ -63,9 +58,9 @@ MORE DETAIL
                 <pre>
 {
   "type": "SalesInvoice",
-  "code": "Chapter-6-Test-2",
+  "code": "Chapter-6-Test-3",
   "companyCode": "DEVGUIDE",
-  "date": "2017-06-01",
+  "date": "2017-06-15",
   "customerCode": "ABC",
   "addresses": {
     "singleLocation": {
@@ -93,7 +88,7 @@ MORE DETAIL
 
 <h3>Add a Line Item with a Negative Amount (Same Tax Code as the Item Being Discounted)</h3>
 
-With this approach, you will simply add an additional line that contains the discounted amount as a negative extended amount. Please ensure to use the same taxCode on the discount line as the item being discounted. This will ensure that any taxability rules applied to the product/service are also applied to the discount.
+With this exercise, you will simply add an additional line that contains the discounted amount as a negative extended amount. Please ensure to use the same <code>taxCode</code> on the discount line as the item being discounted. This will ensure that any taxability rules applied to the product/service are also applied to the discount.
 
 <div class="dev-guide-test" id="test2">
     <div class="dev-guide-test-heading">Test Case - 6.2.2</div>
@@ -103,10 +98,10 @@ With this approach, you will simply add an additional line that contains the dis
     <li>You would like to provide a $10 discount on a $100 T-Shirt.</li>
     <li>In your connector, create the following transaction:</li>
         <ul class="dev-guide-list">
-            <li>Transaction Type: SalesInvoice</li>
-            <li>Transaction Code: Chapter-8-Test-4</li>
+            <li>Document Type: SalesInvoice</li>
+            <li>Document Code: Chapter-6-Test-4</li>
+            <li>Company Code: ABC</li>
             <li>Document Date: 2017-06-15</li>
-            <li>CompanyCode, Date, CustomerCode set to reasonable default values.</li>
         </ul>
         <li>Addresses:
             <ul class="dev-guide-list">
@@ -142,9 +137,9 @@ With this approach, you will simply add an additional line that contains the dis
                 <pre>
 {
   "type": "ReturnInvoice",
-  "code": "Chapter-6-Test-2",
+  "code": "Chapter-6-Test-4",
   "companyCode": "DEVGUIDE",
-  "date": "2017-06-01",
+  "date": "2017-06-15",
   "customerCode": "ABC",
   "addresses": {
     "singleLocation": {
@@ -175,9 +170,9 @@ With this approach, you will simply add an additional line that contains the dis
 </div>
 </div>
 
-<h3>Use the Header Level < discount> Field and Identify the Lines that will be Participating in the Discount</h3>
+<h3>Use the header level < discount> field and identify the lines that will be participating in the discount</h3>
 
-With this approach you will pass the complete discounted amount in the < discount> field then identify the lines that are participating in the discount by setting the < discounted> field to 'True'. Unlike the other methods, you will enter the total discount as a positive integer with this approach. If no lines have the < discounted> set to 'True', then the discount will NOT be applied. 
+With this exercise you will pass the complete discounted amount in the < discount> field then identify the lines that are participating in the discount by setting the < discounted> field to 'True'. Unlike the other methods, you will enter the total discount as a positive integer with this approach. If no lines have the < discounted> set to 'True', then the discount will NOT be applied. 
 
 <div class="dev-guide-test" id="test3">
     <div class="dev-guide-test-heading">Test Case - 6.2.3</div>
@@ -187,10 +182,11 @@ With this approach you will pass the complete discounted amount in the < discoun
     <li>You would like to provide a $10 discount on a $100 T-Shirt only.</li>
     <li>In your connector, create the following transaction:</li>
         <ul class="dev-guide-list">
-            <li>Transaction Type: SalesInvoice</li>
-            <li>Transaction Code: Chapter-8-Test-5</li>
+            <li>Document Type: SalesInvoice</li>
+            <li>Document Code: Chapter-6-Test-5</li>
+            <li>Company Code: DEVGUIDE</li>
             <li>Document Date: 2017-06-15</li>
-            <li>CompanyCode, Date, CustomerCode set to reasonable default values.</li>
+            <li>Discount: 10</li>
         </ul>
         <li>Addresses:
             <ul class="dev-guide-list">
@@ -232,10 +228,11 @@ With this approach you will pass the complete discounted amount in the < discoun
                 <pre>
 {
   "type": "ReturnInvoice",
-  "code": "Chapter-6-Test-2",
+  "code": "Chapter-6-Test-5",
   "companyCode": "DEVGUIDE",
-  "date": "2017-06-01",
+  "date": "2017-06-15",
   "customerCode": "ABC",
+  "discount": "10",
   "addresses": {
     "singleLocation": {
       "line1": "100 Ravine Lane NE",
@@ -269,7 +266,7 @@ With this approach you will pass the complete discounted amount in the < discoun
 
 <h3>3rd Party (Manufacturer) Discounts</h3>
 
-When working with discounts provided by a 3rd party (ex. manufacturer coupon) the process is very similar to the discount method of adding a line with a negative amount. However in this case, instead of using the same tax code as the item being discounted, you will use the tax code for Coupons (third party) - OC030000. Check out Chapter 5 for more information on tax codes and their function.
+When working with discounts provided by a 3rd party (ex. manufacturer coupon) the process is very similar to the discount method of adding a line with a negative amount. However in this case, instead of using the same tax code as the item being discounted, you will use the tax code for Coupons (third party) - OC030000. Check out <a class="dev-guide-link" href="/developer-dot/avatax/dev-guide/product-taxability/">Chapter 5</a> for more information on tax codes and their function.
 
 <div class="dev-guide-test" id="test4">
     <div class="dev-guide-test-heading">Test Case - 6.2.4</div>
@@ -280,9 +277,10 @@ When working with discounts provided by a 3rd party (ex. manufacturer coupon) th
     <li>In your connector, create the following transaction:</li>
         <ul class="dev-guide-list">
             <li>Transaction Type: SalesInvoice</li>
-            <li>Transaction Code: Chapter-8-Test-4</li>
+            <li>Transaction Code: Chapter-6-Test-4</li>
+            <li>Company Code: DEVGUIDE</li>
             <li>Document Date: 2017-06-15</li>
-            <li>CompanyCode, Date, CustomerCode set to reasonable default values.</li>
+            <li>Customer Code: ABC</li>
         </ul>
         <li>Addresses:
             <ul class="dev-guide-list">
@@ -317,9 +315,9 @@ When working with discounts provided by a 3rd party (ex. manufacturer coupon) th
                 <pre>
 {
   "type": "ReturnInvoice",
-  "code": "Chapter-6-Test-2",
+  "code": "Chapter-6-Test-6",
   "companyCode": "DEVGUIDE",
-  "date": "2017-06-01",
+  "date": "2017-06-15",
   "customerCode": "ABC",
   "addresses": {
     "singleLocation": {
@@ -342,12 +340,16 @@ When working with discounts provided by a 3rd party (ex. manufacturer coupon) th
       "taxcode": "OC030000"
    }
   ]
-}              </pre>
+}             </pre>
             </li>
         </ul>
     </div>
 </div>
 </div>
+
+<h3>Certification Requirements</h3>
+
+To have your integration certified for AvaTax you will need to demonstrate that you can handle discounts using the methods listed above.
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/discounts-and-overrides/overrides/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

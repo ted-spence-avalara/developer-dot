@@ -17,7 +17,7 @@ When beginning development with AvaTax, you may often see errors.  Each error me
 <h3>Handling Error Messages</h3>
 It's normal at this stage of development to see error messages from the AvaTax API.  We've designed our error messages to clearly tell you what went wrong, what you can do about it, and how to proceed.  We've published documentation that explains <a class="dev-guide-link" href="https://developer.avalara.com/avatax/errors/">all REST error codes and how to interpret them</a>.  
 
-AvaTax identifies all error messages using HTTP response codes between 400 and 499 (for errors in your API call), and between 500 and 599 (for errors within AvaTax itself).  If your program gets an HTTP response code between 400 and 499, here's how to proceed:
+AvaTax identifies all error messages using HTTP response codes between 400 and 499 (for errors in your API call), as well as between 500 and 599 (for errors within AvaTax itself).  If your program gets an HTTP response code between 400 and 499, here's how to proceed:
 <ul class="dev-guide-list">
     <li>Parse the error message</li>
     <li>Display the summary of the error to the user</li>
@@ -101,14 +101,14 @@ The AvaTax API is available online at the following URLs:
     <li>Production Environment: <a class="dev-guide-link" href="https://rest.avatax.com">https://rest.avatax.com</a></li>
 </ul>
 
-Before you proceed, please make sure that your office can contact these URLs.  When you visit these sites, you should see a web page similar to the following:
+Before you proceed, please make sure that your office can contact these URLs. When you visit these sites, you should see a web page similar to the following:
 
 <img class="dev-guide-pic" src="/avatax/dev-guide/getting-started-with-avatax/connecting-to-avatax.png">
 
 If you can't see this page, check your connection!
 
 <h3>Check Your Authentication</h3>
-One good way to begin troubleshooting a problematic connection is to use the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/soap/methods/ping/">Ping API</a>.  The Ping API is useful because it never returns authentication errors; you can call it even if your authorization header is missing.  If your ping call fails, you know you are having trouble with your internet connection.
+One good way to begin troubleshooting a problematic connection is to use the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/soap/methods/ping/">Ping API</a>. The Ping API is useful because it never returns authentication errors; you can call it even if your authorization header is missing.  If your Ping call fails, you know you are having trouble with your internet connection.
 
 Here's how to use ping:
 <pre>
@@ -164,17 +164,17 @@ curl
             </tr>
             <tr>
                 <td>Ethernet Problems</td>
-                <td>Check the quality of your wiring and the auto-negotiate settings on your ethernet devices. Bad wiring or devices with mismatched speed settings are easy to overlook! You can run <code>netstat -s </code>on a windows machine or <code>ifconfig -a </code>on a linux machine to detect whether an unusual number of bad packets are coming through your network. If you have a performance mismatch, try checking with your network administrator to see if the cabling can be improved.</td>
+                <td>Check the quality of your wiring and the auto-negotiate settings on your ethernet devices. Bad wiring or devices with mismatched speed settings are easy to overlook! You can run <code>netstat -s</code> on a windows machine or <code>ifconfig -a</code> on a linux machine to detect whether an unusual number of bad packets are coming through your network. If you have a performance mismatch, try checking with your network administrator to see if the cabling can be improved.</td>
             </tr>
             <tr>
                 <td>Host Files / IP Address Hardcoding / DNS Caching</td>
-                <td>AvaTax does not support hardcoded IP addresses or host files. To use AvaTax, you must contact the API via DNS names.                
-                Your DNS server should respect the DNS time-to-live (TTL) values. Avalara publishes DNS TTL values designed to permit our operations team to adjust our connectivity in response to changing network configurations.</td>
+                <td>AvaTax does not support hard coded IP addresses or host files. To use AvaTax, you must contact the API via DNS names.              
+                Your DNS server should respect the DNS time-to-live (TTL) values. Avalara publishes DNS TTL values designed to permit our operations team to adjust our connectivity in response to changing network configuration</td>
             </tr>
             <tr>
                 <td>Proxy Server Problems</td>
                 <td>AvaTax is not designed for environments using proxy servers. Proxy servers can cause latency and connectivity problems when calling high performance APIs like AvaTax.
-                If your company policy requires a proxy server, please consult your proxy provider for how to correctly configure the proxy to work with AvaTax.</td>
+                If your company policy requires a proxy server by policy, please consult your proxy provider for how to correctly configure the proxy to work with AvaTax.</td>
             </tr>
             <tr>
                 <td>Java Proxy</td>

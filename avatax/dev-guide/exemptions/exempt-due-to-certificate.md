@@ -13,8 +13,7 @@ disqus: 1
   <li class="next"><a href="/avatax/dev-guide/exemptions/exempt-due-to-entity-use-code/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-An Exemption Certificate provides information about the buyer or customer, and their tax status. For example, it's possible that a customer be sales tax exempt in a specific state due to their being registered as a reseller there.
-
+An Exemption Certificate provides information about the buyer or customer, and their tax status. For example it's possible that a customer be sales tax exempt in a specific state due to their being registered as a reseller there.
 
 There are several ways to store/create an exemption record across the service, however they all use a key value: the <code>CustomerCode</code>.
 

@@ -39,7 +39,7 @@ There are also technical reasons why tax may be zero.  When using AvaTax, you ca
 
 Although tax overrides may seem to be a very easy way to adjust the taxes for a transaction, we do not recommend using it except when importing transactions whose tax was calculated using a different tax engine.
 
-Let's discuss each condition in turn. 
+Let's discuss each condition in turn.
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/shipping-and-handling/"><i class="glyphicon glyphicon-chevron-left"></i>Previous Chapter</a></li>

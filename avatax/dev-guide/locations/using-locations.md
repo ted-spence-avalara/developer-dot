@@ -43,17 +43,17 @@ For the purposes of this chapter, let us create a new location within Texas, a s
 <ul class="dev-guide-list">
     <li>Call the CreateLocations API call with the following information:</li>
         <ul class="dev-guide-list">
-            <li>locationCode: TEXASWAREHOUSE</li>
-            <li>Description: "Texas Warehouse chap-9-test-1"</li>
+            <li>locationCode: WASHINGTONWAREHOUSE</li>
+            <li>Description: "Washington Warehouse chap-9-test-1"</li>
             <li>addressTypeId: "Location"</li>
             <li>addressCategoryId: "Warehouse"</li>
             <li>Addresses:
                 <ul class="dev-guide-list">
-                    <li>600 Congress Avenue, Austin, TX 78101</li>
+                    <li>422 S F St., Aberdeen, WA, US 98520</li>
                 </ul>
             </li>
-            <li>dbaName: Developer Guide Texas Warehouse</li>>
-            <li>outletName: Texas Warehouse</li>
+            <li>dbaName: Developer Guide Washington Warehouse</li>>
+            <li>outletName: Washington Warehouse</li>
             <li>registeredDate: Jan 1 2015</li> 
         </ul> 
 </ul>
@@ -79,15 +79,15 @@ For the purposes of this chapter, let us create a new location within Texas, a s
     "description": "Chapter-9-Test-1",
     "addressTypeId": "Location",
     "addressCategoryId": "MainOffice",
-    "line1": "600 Congress Ave",
-    "city": "Austin",
-    "region": "TX",
-    "postalCode": "78701",
+    "line1": "422 S F St.",
+    "city": "Aberdeen",
+    "region": "WA",
     "country": "US",
+    "postalCode": "98520",
     "isDefault": false,
     "isRegistered": false,
-    "dbaName": "Developer Guide Texas Warehouse",
-    "outletName": "Texas Warehouse",
+    "dbaName": "Developer Guide Washington Warehouse",
+    "outletName": "Washington Warehouse",
     "registeredDate": "2015-01-01T00:00:00"
   }
 ]
@@ -181,12 +181,77 @@ Now that you've created a location successfully it's time to use that location d
 <ul class="dev-guide-list">
     <li>Create a transaction using the following settings:</li>
         <ul class="dev-guide-list">
+            <li>Document Date: 2017-06-15</li>
+            <li>Customer/vendor code: ABC</li>
+            <li>reportingLocationCode: WASHINGTONWAREHOUSE</li>
+            <li>Addresses:
+                <ul class="dev-guide-list">
+                    <li>SingleLocation</li>
+                    <li>Send only the ZIP code 92612</li>
+                </ul>
+            </li>
+            <li>Lines:
+                <ul class="dev-guide-list">
+                    <li>Amount 100</li>
+                </ul>
+            </li>
+        </ul> 
+    <li>Create the transaction using your connector.</li>
+</ul>
+<h4>Assertions</h4>
+<ul class="dev-guide-list">
+    <li>The created transaction should have reportingLocationCode = WASHINGTONWAREHOUSE.</li>
+</ul>
+<div class="dev-guide-dropdown">
+        <input id="checkbox_toggle3" type="checkbox" />
+        <i id="icon-up" class="glyphicon glyphicon-chevron-down"></i><i id="icon-down" class="glyphicon glyphicon-chevron-right"></i>
+        <label for="checkbox_toggle3"><h4>Expected API Call</h4></label>
+        <ul class="dev-guide-dropdown-content">
+            <li> 
+                <pre>
+{
+    "date": "2017-06-15",
+    "customerCode": "ABC",
+    "reportingLocationCode": "WASHINGTONWAREHOUSE"
+    "addresses": {
+        "singleLocation": {
+            "postalCode": "92612"
+        }
+    },
+    "lines": [
+        {
+            "amount": 100,
+        }
+    ],
+}
+                </pre>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+
+<h3>Shortcut for Addresses</h3>
+Optionally, you can present your customers with a convenient shortcut for choosing addresses for their transactions. Similar to choosing a value for reporting location code, you can allow customers to chose an address location code as follows.
+
+<ul class="dev-guide-list">
+    <li>The customer can either hand-type an address, or they can select an existing location.</li>
+    <li>If the customer selects an existing location, the location's address will be used instead of whatever you type in.</li>
+</ul>
+Now that you've created a Locations successfully it's time to use that Location data for reporting purposes on a transaction.
+<div class="dev-guide-test" id="test4">
+    <div class="dev-guide-test-heading">Test Case - 9.2.4</div>
+<div class="dev-guide-test-content">
+<h4>Setup</h4>
+<ul class="dev-guide-list">
+    <li>Create a transaction using the following settings:</li>
+        <ul class="dev-guide-list">
             <li>Type: SalesInvoice</li>
-            <li>Code: Chapter-9-test-2</li>
+            <li>Code: Chapter-9-Test-3</li>
             <li>Addresses:
                 <ul class="dev-guide-list">
                     <li>Type: SingleLocation</li>
-                    <li>LocationCode: TEXASWAREHOUSE</li>
+                    <li>LocationCode: WASHINGTONWAREHOUSE</li>
                 </ul>
             </li>
             <li>Lines:
@@ -201,11 +266,8 @@ Now that you've created a location successfully it's time to use that location d
 <ul class="dev-guide-list">
     <li>The transaction is created as follows:
         <ul class="dev-guide-list">
-            <li>Address:
-                <ul class="dev-guide-list">
-                    <li>600 Congress Avenue, Austin, TX 78101</li>
-                </ul>
-            </li>
+            <li>Address:</li>
+            <li>422 S F St., Aberdeen, WA, US 98520</li>
         </ul>
     </li>
 </ul>
@@ -218,13 +280,13 @@ Now that you've created a location successfully it's time to use that location d
                 <pre>
 {
   "type": "SalesInvoice",
-  "code": "Chapter-9-Test-2",
-  "companyCode": "DEFAULT",
+  "code": "Chapter-9-Test-3",
+  "companyCode": "DEVGUIDE",
   "date": "2017-06-15",
   "customerCode": "ABC",
   "addresses": {
       "SingleLocation": {
-        "locationCode": "TEXASWAREHOUSE"
+        "locationCode": "WASHINGTONWAREHOUSE"
       }
     },
   "lines": [

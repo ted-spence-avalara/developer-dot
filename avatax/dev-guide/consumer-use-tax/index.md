@@ -13,7 +13,7 @@ disqus: 1
   <li class="next"><a href="/avatax/dev-guide/consumer-use-tax/what-is-use-tax/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-In the previous chapters, we have been looking at transactions from the perspective of the sellers. With consumer use tax we are taking the role of the purchaser. Don't worry, the lessons you learned in the previous chapters still apply to calculating consumer use tax. In fact, the API request is not altogether much different from a sales tax calculation.
+In the previous chapters, we have been looking at transactions from the perspective of the sellers. With consumer Use Tax we are taking the role of the purchaser. Don't worry, the lessons you learned in the previous chapters still apply to Calculating Consumer Use Tax. In fact, the API request is not altogether much different from a sales tax calculation.
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/locations/"><i class="glyphicon glyphicon-chevron-left"></i>Previous Chapter</a></li>

@@ -24,7 +24,7 @@ disqus: 1
             <li>Transaction Type: SalesInvoice</li>
             <li>Transaction Code: Chapter-5-Test-1</li>
             <li>Document Date: 2017-06-15</li>
-            <li>Document Date: 2017-06-15</li>
+            <li>Customer Code: ABC</li>
             <li>Addresses:
                 <ul class="dev-guide-list">
                     <li>SingleLocation</li>
@@ -39,7 +39,7 @@ disqus: 1
             </li>
             <li>Line #2:
                 <ul class="dev-guide-list">
-                    <li>Amount: 75</li>
+                    <li>Amount 75</li>
                     <li>TaxCode PF050101</li>
                 </ul>
             </li>
@@ -65,7 +65,7 @@ disqus: 1
 {
   "type": "SalesInvoice",
   "code": "Chapter-5-Test-1",
-  "companyCode": "DEFAULT",
+  "companyCode": "DEVGUIDE",
   "date": "2017-06-15",
   "customerCode": "ABC",
   "addresses": {
@@ -132,7 +132,7 @@ disqus: 1
 {
   "type": "SalesInvoice",
   "code": "Chapter-5-Test-2",
-  "companyCode": "DEFAULT",
+  "companyCode": "DEVGUIDE",
   "date": "2017-06-15",
   "customerCode": "ABC",
   "addresses": {

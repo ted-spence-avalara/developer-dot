@@ -53,7 +53,7 @@ Let's build out final test transaction using everything that we've covered in th
 <h4>Setup</h4>
 <ul class="dev-guide-list">
     <li>Your DEVGUIDE company should have nexus in Rhode Island and Washington.</li>
-    <li>In your connector, create the following transaction:</li>
+    <li>In your connector, create the following transactions:</li>
         <ul class="dev-guide-list">
             <li>Transaction Type: SalesInvoice</li>
             <li>Transaction Code: Chapter-3-Test-3</li>
@@ -67,12 +67,12 @@ Let's build out final test transaction using everything that we've covered in th
             <ul class="dev-guide-list">
                 <li>ShipFrom
                     <ul class="dev-guide-list">
-                        <li>468 Angell Street, Providence, RI 02906</li>
+                        <li>100 Ravine Lane NE, Bainbridge Island, WA, 98110</li>
                     </ul>
                 </li>
                 <li>ShipTo
                     <ul class="dev-guide-list">
-                        <li>821 2nd Ave, Seattle, WA 98208</li>
+                        <li>18300 Von Karman Ave, Irvine, CA 92612</li>
                     </ul>
                 </li>
             </ul>
@@ -86,12 +86,12 @@ Let's build out final test transaction using everything that we've covered in th
                 <li>Ref2 "Customer would like the item to ShipTo a secondary address."</li>
                 <li>ShipFrom
                     <ul class="dev-guide-list">
-                        <li>142 Long Wharf, Newport, RI 02840</li>
+                        <li>422 S F St., Aberdeen, WA, US 98520</li>
                     </ul>
                 </li>
                 <li>ShipTo
                     <ul class="dev-guide-list">
-                        <li>422 S F St, Aberdeen, WA 98520</li>
+                        <li>21068 Bake Pkwy, Lake Forest, CA 92630</li>
                     </ul>
                 </li>
             </ul>
@@ -107,7 +107,7 @@ Let's build out final test transaction using everything that we've covered in th
 </ul>
 <h4>Assertions</h4>
 <ul class="dev-guide-list">
-    <li>The taxable amount should be $100.00</li>
+    <li>The taxable amount should be $100.00.</li>
     <li>The tax for both lines should be sourced within Washington.</li>
     <li>Line1 should have tax calculated for Washington State, Grays Harbor County, and the city of Aberdeen.</li>
     <li>Line2 should have tax calculated for Washington State, King County, and the city of Seattle.</li>
@@ -120,21 +120,20 @@ Let's build out final test transaction using everything that we've covered in th
     </li>
     <li>Line level properties:
         <ul class="dev-guide-list">
-            <li>Line1
+            <li>Line1:
                 <ul class="dev-guide-list">
                     <li>Description field should state "A bundle of assorted yarn colors"</li>
                     <li>Ref1 field should state that the "Item out of stock in Providence distribution center. ShipFrom Newport distribution center."</li>
-                    <li>Ref2 field should list that the "Customer would like the item to ShipTo a secondary </li>
+                    <li>Ref2 field should list that the "Customer would like the item to ShipTo a secondary address."</li>
                 </ul>
             </li>
-            <li>Line2
+            <li>Line2:
                 <ul class="dev-guide-list">
                     <li>Description field should list a single bolt of wool.</li>
                 </ul>
             </li>
         </ul>
     </li>
-    <li></li>
 </ul>
 <div class="dev-guide-dropdown">
         <input id="checkbox_toggle1" type="checkbox" />
@@ -145,7 +144,7 @@ Let's build out final test transaction using everything that we've covered in th
                 <pre>
 {
   "type": "SalesInvoice",
-  "code": "Chapter-3-Test-1",
+  "code": "Chapter-3-Test-3",
   "companyCode": "DEVGUIDE",
   "date": "2017-06-15",
   "customerCode": "ABC",

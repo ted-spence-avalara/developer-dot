@@ -36,10 +36,11 @@ Now, let's take a look at a simple transaction with shipping charges included:
     <li>You are shipping an item from Washington to California.</li>
     <li>In your connector, create the following transaction:</li>
         <ul class="dev-guide-list">
-            <li>Transaction Type: SalesInvoice</li>
-            <li>Transaction Code: Chapter-7-Test-1</li>
+            <li>Document Type: SalesInvoice</li>
+            <li>Document Code: Chapter-7-Test-1</li>
+            <li>Company Code: DEVGUIDE</li>
             <li>Document Date: 2017-06-15</li>
-            <li>CompanyCode, Date, CustomerCode set to reasonable default values</li>
+            <li>Customer Code: ABC</li>
         </ul>
         <li>Addresses:
             <li>ShipFrom
@@ -55,14 +56,19 @@ Now, let's take a look at a simple transaction with shipping charges included:
         </li>
         <li>Line #1:
             <ul class="dev-guide-list">
+                <li>Quantity: 10</li>
                 <li>Amount 100</li>
                 <li>TaxCode P0000000</li>
+                <li>Item Code: Widgets</li>
+                <li>Description: Taxable Gizmo</li>
             </ul>
         </li>
         <li>Line #2:
             <ul class="dev-guide-list">
+                <li>Quantity: 1</li>
                 <li>Amount 5</li>
                 <li>TaxCode FR020100</li>
+                <li>Item Code: Shipping</li>
             </ul>
         </li>
     <li>Calculate tax for your transaction using AvaTax.</li> 
@@ -80,44 +86,44 @@ Now, let's take a look at a simple transaction with shipping charges included:
             <li>
                 <pre>
 {
-    "companyCode": "DEVGUIDE",
-    "code": "Chapter-7-Test-1",
-    "customerCode": "ABC",
-    "type": "SalesInvoice",
-    "commit": "true",
-    "addresses": {
-        "ShipFrom": {
-        "line1": "100 Ravine Lane NE",
-        "city": "Bainbridge Island",
-        "region": "WA",
-        "country": "US",
-        "postalCode": "98110"
-        },
-        "ShipTo": {
-        "line1": "18300 Von Karman Ave",
-        "city": "Irvine",
-        "region": "CA",
-        "country": "US",
-        "postalCode": "92612"
-        },
-        "lines": [{
-                "number": "Line 1",
-                "quantity": 10,
-                "amount": 100,
-                "taxCode": "P0000000",
-                "itemCode": "Widgets",
-                "description": "Taxable Gizmo"
-            },
-            {
-                "number": "Line 2",
-                "quantity": 1,
-                "amount": 5.00,
-                "taxCode": "FR020100",
-                "itemCode": "Shipping"
-            }
-        ],
-        "date": "2017-06-15T00:00:00.000Z"
+  "type": "SalesInvoice",
+  "code": "Chapter-7-Test-1",
+  "companyCode": "DEVGUIDE",
+  "date": "2017-06-15",
+  "customerCode": "ABC",
+  "addresses": {
+    "shipFrom": {
+      "line1": "100 Ravine Lane NE",
+      "city": "Bainbridge Island",
+      "region": "WA",
+      "country": "US",
+      "postalCode": "98110"
+    },
+    "shipTo": {
+      "line1": "18300 Von Karman Ave",
+      "city": "Irvine",
+      "region": "CA",
+      "country": "US",
+      "postalCode": "92612"
     }
+  },
+  "lines": [
+    {
+      "number": "Line 1",
+      "quantity": 10,
+      "amount": 100,
+      "taxCode": "P0000000",
+      "itemCode": "Widgets",
+      "description": "Taxable Gizmo"
+    },
+    {
+      "number": "Line 2",
+      "quantity": 1,
+      "amount": 5,
+      "taxCode": "FR020100",
+      "itemCode": "Shipping"
+    }
+  ]
 }
                 </pre>
             </li>
@@ -135,10 +141,10 @@ Now let's take a look at the transaction when we ship an item that is non-taxabl
     <li>You are shipping an item from Washington to California.</li>
     <li>In your connector, create the following transaction:</li>
         <ul class="dev-guide-list">
-            <li>Transaction Type: SalesInvoice</li>
-            <li>Transaction Code: Chapter-7-Test-2</li>
+            <li>Document Type: SalesInvoice</li>
+            <li>Document Code: Chapter-7-Test-2</li>
             <li>Document Date: 2017-06-15</li>
-            <li>CompanyCode, Date, CustomerCode set to reasonable default values</li>
+            <li>Customer Code: ABC</li>
         </ul>
         <li>Addresses:
             <li>ShipFrom
@@ -154,14 +160,19 @@ Now let's take a look at the transaction when we ship an item that is non-taxabl
         </li>
         <li>Line #1:
             <ul class="dev-guide-list">
+                <li>Quantity 10</li>
                 <li>Amount 100</li>
-                <li>TaxCode P0000000</li>
+                <li>TaxCode NT</li>
+                <li>Item Code Widgets</li>
+                <li>Description "Non-Taxable Gizmo"</li>
             </ul>
         </li>
         <li>Line #2:
             <ul class="dev-guide-list">
+                <li>Quantity 1</li>
                 <li>Amount 5</li>
                 <li>TaxCode FR020100</li>
+                <li>Item Code Shipping</li>
             </ul>
         </li>
     <li>Calculate tax for your transaction using AvaTax.</li> 
@@ -179,44 +190,44 @@ Now let's take a look at the transaction when we ship an item that is non-taxabl
             <li>
                 <pre>
 {
-    "companyCode": "DEVGUIDE",
-    "code": "Chapter-7-Test-1",
-    "customerCode": "ABC",
-    "type": "SalesInvoice",
-    "commit": "true",
-    "addresses": {
-        "ShipFrom": {
-            "line1": "100 Ravine Lane NE",
-            "city": "Bainbridge Island",
-            "region": "WA",
-            "country": "US",
-            "postalCode": "98110"
-        },
-        "ShipTo": {
-            "line1": "18300 Von Karman Ave",
-            "city": "Irvine",
-            "region": "CA",
-            "country": "US",
-            "postalCode": "92612"
-        },
-        "lines": [{
-                "number": "Line 1",
-                "quantity": 10,
-                "amount": 100,
-                "taxCode": "NT",
-                "itemCode": "Widgets",
-                "description": "Non-Taxable Gizmo"
-            },
-            {
-                "number": "Line 2",
-                "quantity": 1,
-                "amount": 5.00,
-                "taxCode": "FR020100",
-                "itemCode": "Shipping"
-            }
-        ],
-        "date": "2017-06-15T00:00:00.000Z"
+  "type": "SalesInvoice",
+  "code": "Chapter-7-Test-1",
+  "companyCode": "DEVGUIDE",
+  "date": "2017-06-15",
+  "customerCode": "ABC",
+  "addresses": {
+    "shipFrom": {
+      "line1": "18300 Von Karman Ave",
+      "city": "Irvine",
+      "region": "CA",
+      "country": "US",
+      "postalCode": "92612"
+    },
+    "shipTo": {
+      "line1": "18300 Von Karman Ave",
+      "city": "Irvine",
+      "region": "CA",
+      "country": "US",
+      "postalCode": "92612"
     }
+  },
+  "lines": [
+    {
+      "number": "1",
+      "quantity": 10,
+      "amount": 100,
+      "taxCode": "NT",
+      "itemCode": "Widgets",
+      "description": "Non-Taxable Gizmo"
+    },
+    {
+      "number":"2",
+      "quantity": 1,
+      "amount": 5,
+      "taxCode": "FR020100",
+      "itemCode": "Shipping",
+    }
+  ]
 }
                 </pre>
             </li>
@@ -234,10 +245,11 @@ You can see that in California, for this freight code, the taxability of the fre
     <li>You are shipping an item from Washington to California.</li>
     <li>In your connector, create the following transaction:</li>
         <ul class="dev-guide-list">
-            <li>Transaction Type: SalesInvoice</li>
-            <li>Transaction Code: Chapter-7-Test-3</li>
+            <li>Document Type: SalesInvoice</li>
+            <li>Document Code: Chapter-7-Test-3</li>
+            <li>Company Code: DEVGUIDE</li>
             <li>Document Date: 2017-06-15</li>
-            <li>CompanyCode, Date, CustomerCode set to reasonable default values</li>
+            <li>Customer Code: ABC</li>
         </ul>
         <li>Addresses:
             <li>ShipFrom
@@ -253,20 +265,28 @@ You can see that in California, for this freight code, the taxability of the fre
         </li>
         <li>Line #1:
             <ul class="dev-guide-list">
-                <li>Amount 100</li>
-                <li>TaxCode P0000000</li>
+                <li>Quantity</li>
+                <li>Amount: 100</li>
+                <li>TaxCode: P0000000</li>
+                <li>Item Code: Widgets</li>
+                <li>Description: Taxable Gizmo</li>
             </ul>
         </li>
         <li>Line #2:
             <ul class="dev-guide-list">
-                <li>Amount 100</li>
-                <li>TaxCode NT</li>
+                <li>Quantity: 10</li>
+                <li>Amount: 100</li>
+                <li>TaxCode: NT</li>
+                <li>Item Code: Widgets</li>
+                <li>Description: Non-Taxable Gizmo</li>
             </ul>
         </li>
         <li>Line #3:
             <ul class="dev-guide-list">
-                <li>Amount 5</li>
-                <li>TaxCode FR020100</li>
+                <li>Quantity: 1</li>
+                <li>Amount: 5</li>
+                <li>Tax Code: FR020100</li>
+                <li>Item Code: Shipping</li>
             </ul>
         </li>
     <li>Calculate tax for your transaction using AvaTax.</li> 
@@ -284,52 +304,52 @@ You can see that in California, for this freight code, the taxability of the fre
             <li>
                 <pre>
 {
-    "companyCode": "DEVGUIDE",
-    "code": "Chapter-7-Test-1",
-    "customerCode": "ABC",
-    "type": "SalesInvoice",
-    "commit": "true",
-    "addresses": {
-        "ShipFrom": {
-            "line1": "100 Ravine Lane NE",
-            "city": "Bainbridge Island",
-            "region": "WA",
-            "country": "US",
-            "postalCode": "98110"
-        },
-        "ShipTo": {
-            "line1": "18300 Von Karman Ave",
-            "city": "Irvine",
-            "region": "CA",
-            "country": "US",
-            "postalCode": "92612"
-        },
-        "lines": [{
-                "number": "Line 1",
-                "quantity": 10,
-                "amount": 100,
-                "taxCode": "P0000000",
-                "itemCode": "Widgets",
-                "description": "Taxable Gizmo"
-            },
-            {
-                "number": "Line 2",
-                "quantity": 10,
-                "amount": 100,
-                "taxCode": "NT",
-                "itemCode": "Widgets",
-                "description": "Non-Taxable Gizmo"
-            },
-            {
-                "number": "Line 3",
-                "quantity": 1,
-                "amount": 5.00,
-                "taxCode": "FR020100",
-                "itemCode": "Shipping"
-            }
-        ],
-        "date": "2017-06-15T00:00:00.000Z"
-    }
+  "type": "SalesInvoice",
+  "code": "Chapter-7-Test-3",
+  "companyCode": "DEVGUIDE",
+  "date": "2017-06-15",
+  "customerCode": "ABC",
+  "addresses": {
+    "shipFrom": {
+      "line1": "100 Ravine Lane NE",
+      "city": "Bainbridge Island",
+      "region": "WA",
+      "country": "US",
+      "postalCode": "98110"
+    },
+    "shipTo": {
+      "line1": "18300 Von Karman Ave",
+      "city": "Irvine",
+      "region": "CA",
+      "country": "US",
+      "postalCode": "92612"
+    },
+    "lines": [
+      {
+        "number": "1",
+        "quantity": 10,
+        "amount": 100,
+        "taxCode": "P0000000",
+        "itemCode": "Widgets",
+        "description": "Taxable Gizmo"
+      },
+      {
+        "number": "2",
+        "quantity": 10,
+        "amount": 100,
+        "taxCode": "NT",
+        "itemCode": "Widgets",
+        "description": "Non-Taxable Gizmo"
+      },
+      {
+        "number": "3",
+        "quantity": 1,
+        "amount": 5,
+        "taxCode": "FR020100",
+        "itemCode": "Shipping"
+      }
+    ],
+  }
 }
                 </pre>
             </li>

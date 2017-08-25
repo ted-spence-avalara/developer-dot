@@ -21,11 +21,11 @@ In this section we will look at three of the most common use tax transactions:
 </ul>
 
 <h3>Creating a Purchase Order</h3>
-In this first example, we are working in the procurement department and we need to purchase some widgets for our business to use in the office. We will provide our vendor with a purchase order, which will include an estimated tax calculation. You'll notice that the structure of the request looks very similar to the Sales Tax requests from the previous chapters. There are some key differences that you should take into consideration:
+In this first example, we are working in the procurement department and we need to purchase some widgets for our business to use in the office. We will provide our vendor with a purchase order, which will include an estimated tax calculation. You'll notice that the structure of the request looks very similar to the Sales Tax requests from the previous chapters. That's because when providing a Purchase Order to a vendor we want to simulate the sales order that your vendor would send to you. There are some key differences that you should take into consideration:
 <ul class="dev-guide-list">
-    <li>The origin address on the transaction should represent the address of your vendor</li>
-    <li>The destination address on the transaction should represent the location where the goods will be consumed</li>
-    <li>The document type should be set to <code>PurchaseOrder</code></li>
+    <li>The Origin Address on the transaction should represent the address of your Vendor.</li>
+    <li>The Destination Address on the transaction should represent the location where the goods will be consumed.</li>
+    <li>The Document Type should be set to <code>SalesOrder</code></li>
 </ul>
 <div class="dev-guide-test" id="test1">
     <div class="dev-guide-test-heading">Test Case - 10.3.1</div>
@@ -90,10 +90,10 @@ In this first example, we are working in the procurement department and we need 
 <h3>Purchase Invoice - No Vendor Assessed Tax</h3>
 Ok, so let's jump ahead to when you've received your widgets along with the invoice from your vendor. Looking at the invoice, you note that tax was not assessed on the order, so let's take a look at how to calculate tax on this transaction. Again, here are some key differences that you should take into account:
 <ul class="dev-guide-list">
-    <li>The origin address on the transaction should represent the address of your vendor.</li>
-    <li>The destination address on the transaction should represent the location where the goods will be consumed.</li>
-    <li>The document type should be set to <code>PurchaseInvoice</code></li>
-    <li>The vendor assessed tax should be noted as a <code>TaxOverride</code>/<code>TaxAmount</code>, even if the amount is $0</li>
+    <li>The Origin Address on the transaction should represent the address of your Vendor.</li>
+    <li>The Destination Address on the transaction should represent the location where the goods will be consumed.</li>
+    <li>The Document Type should be set to <code>PurchaseInvoice</code></li>
+    <li>The Vendor Assessed Tax should be noted as a <code>TaxOverride</code>/<code>TaxAmount</code>, even if the amount is $0</li>
 </ul>
 
 <div class="dev-guide-test" id="test2">
@@ -159,10 +159,10 @@ Ok, so let's jump ahead to when you've received your widgets along with the invo
 <h3>Purchase Invoice - With Vendor Assessed Tax</h3>
 This time, let's imagine that your widget vendors invoice did note some sales tax. However, it may not be the value you are expecting, let's take a look at how you can check the calculation to determine if it is correct. Like the previous example, here are the key differences that you should take into account:
 <ul class="dev-guide-list">
-    <li>The origin address on the transaction should represent the address of your vendor.</li>
-    <li>The destination address on the transaction should represent the location where the goods will be consumed.</li>
-    <li>The document Ttype should be set to <code>PurchaseInvoice</code></li>
-    <li>The vendor assessed tax should be noted as a <code>TaxOverride</code>/<code>TaxAmount</code>.</li>
+    <li>The Origin Address on the transaction should represent the address of your Vendor.</li>
+    <li>The Destination Address on the transaction should represent the location where the goods will be consumed.</li>
+    <li>The Document Type should be set to <code>PurchaseInvoice</code></li>
+    <li>The Vendor Assessed Tax should be noted as a <code>TaxOverride</code>/<code>TaxAmount</code>.</li>
 </ul>
 
 <div class="dev-guide-test" id="test3">

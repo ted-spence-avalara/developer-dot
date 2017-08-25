@@ -13,11 +13,11 @@ disqus: 1
   <li class="next"><a href="/avatax/dev-guide/customizing-transaction/document-level/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-This chapter is all about customizing your transactions to expand on what the capabilities of your application.  By the end of this chapter, you will learn the following:
+This chapter is all about customizing your transactions to expand on the capabilities of your application.  By the end of this chapter, you will learn the following:
 <ul class="dev-guide-list">
-  <li>How the document level properties apply to the transaction and the impact of line level adjustments</li>
-  <li>How to use multiple addresses at both the document and line levels</li>
-  <li>How reference codes and other user managed meta data can be used for tracking and reporting</li>
+  <li>How the Document level properties apply to the transaction and the impact of line level adjustments.</li>
+  <li>How to use multiple addresses at both the document and line levels.</li>
+  <li>How reference codes and other user managed meta data can be used for tracking and reporting.</li>
 </ul>
 
 There are a multitude of use cases and scenarios that exist.  This chapter is about exposing ways in which you can shape your application to meet those needs.

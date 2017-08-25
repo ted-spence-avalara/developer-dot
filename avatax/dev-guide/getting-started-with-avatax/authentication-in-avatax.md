@@ -22,9 +22,9 @@ For HTTP Basic authentication, AvaTax supports two options:
 
 To choose the best authentication method, Avalara recommends:
 <ul class="dev-guide-list">
-    <li>If you are building a connector that customers will set up and use on their premises, use "Account ID/License Key" authentication.</li>
+    <li>If you are building a connector that customers will set up and use on their premises, use <code>Account ID/License Key</code> authentication.</li>
     <li>If you are building a web portal with direct AvaTax integration, please contact business development to see if bearer token authentication is the preferred approach.</li>
-    <li>Otherwise, use "Username/Password" authentication.</li>
+    <li>Otherwise, use <code>Username/Password</code> authentication.</li>
 </ul>
 Let's review these first.
 

@@ -12,11 +12,11 @@ disqus: 1
   <li class="next"><a href="/avatax/dev-guide/exemptions/states-that-do-not-collect-sales-tax/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-The most common reason that tax could be zero is if your company does not have <a class="dev-guide-link" href="/avatax/dev-guide/glossary/#nexus">"Nexus"</a>, and is not obligated to collect tax.
+The most common reason that tax could be zero is if your company does not have <a class="dev-guide-link" href="/avatax/dev-guide/glossary/#nexus">Nexus</a>, and is not obligated to collect tax.
 
-This definition of the word Nexus comes from the United States, where a legal ruling by the supreme court established that a company must only collect tax if they have sufficient "Nexus" in a jurisdiction. Unfortunately, the specific definition of Nexus is complex and changes when new laws are passed or when new legal precedents are established.  
+This definition of the word <a class="dev-guide-link" href="/avatax/dev-guide/glossary/#nexus">Nexus</a> comes from the United States, where a legal ruling by the supreme court established that a company must only collect tax if they have sufficient "Nexus" in a jurisdiction.  Unfortunately, the specific definition of Nexus is complex and changes when new laws are passed or when new legal precedents are established.
 
-When using AvaTax, your company must decide where it has nexus, and where it does not.  This selection is used to determine whether you are obligated to collect taxes.  For example, if your company has nexus in the state of Massachusetts, but you do not have nexus in the state of Rhode Island, in general a tax calculation for a customer in Rhode Island will result in zero tax. According to legal precedents in the United States, this zero tax means that it is the responsibility of the buyer, instead, to determine the correct tax to pay to the taxing authority. This tax obligation is called "Consumer Use Tax".
+When using AvaTax, your company must decide where it has nexus, and where it does not.  This selection is used to determine whether you are obligated to collect taxes.  For example, if your company has nexus in the state of Massachusetts, but you do not have nexus in the state of Rhode Island, in general a tax calculation for a customer in Rhode Island will result in zero tax.  According to legal precedents in the United States, this zero tax means that it is the responsibility of the buyer, instead, to determine the correct tax to pay to the taxing authority.  This tax obligation is called "Consumer Use Tax".
 
 <div class="dev-guide-test" id="test1">
 <div class="dev-guide-test-heading">Test Case - 8.1.1</div>
@@ -58,27 +58,27 @@ When using AvaTax, your company must decide where it has nexus, and where it doe
         <li>
             <pre>
 {
-    "type": "SalesInvoice",
-    "code": "Chapter-8-Test-1",
-    "companyCode": "DEVGUIDE",
-    "date": "2017-06-15",
-    "customerCode": "ABC",
-    "addresses": {
-        "singleLocation": {
-            "line1": "468 Angell Street",
-            "city": "Providence",
-            "region": "RI",
-            "country": "US", 
-            "postalCode": "02906"
-        }
-    },
-    "lines": [
-        {
-            "number": "1",
-            "amount": 100,
-            "taxCode": "P0000000"
-        }
-    ]
+  "type": "SalesInvoice",
+  "code": "Chapter-8-Test-1",
+  "companyCode": "DEVGUIDE",
+  "date": "2017-06-15",
+  "customerCode": "ABC",
+  "addresses": {
+    "singleLocation": {
+      "line1": "468 Angell Street",
+      "city": "Providence",
+      "region": "RI",
+      "country": "US",
+      "postalCode": "02906"
+    }
+  },
+  "lines": [
+    {
+      "number": "1",
+      "amount": 100,
+      "taxCode": "P0000000"
+    }
+  ]
 }
             </pre>
         </li>

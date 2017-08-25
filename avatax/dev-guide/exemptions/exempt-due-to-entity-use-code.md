@@ -13,7 +13,6 @@ disqus: 1
   <li class="next"><a href="/avatax/dev-guide/exemptions/zero-tax-using-tax-overrides/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-
 An Entity Use Code provides information about how a transaction will be used by the customer, and information about the type of customer making the purchase.  For example, a purchase made by the US federal government would be designated for government use, and it would generally be exempt or nontaxable for that specific use.
 
 Entity Use Codes are generally displayed in the user interface of a connector as a dropdown, combo box, or selection element.  This element uses the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListEntityUseCodes/">ListEntityUseCodes API</a> to retrieve the list of available choices, and displays it as a list of values in a dropdown.  The default value should be NULL, indicating that by default a transaction does not have a custom entity use code.
@@ -121,29 +120,30 @@ It's suggested for a custom integration to implement entity use codes, if the ap
     <ul class="dev-guide-dropdown-content">
         <li>
             <pre>
+
 {
-    "type": "SalesInvoice",
-    "code": "Chapter-8-Test-2"
-    "companyCode": "DEVGUIDE",
-    "date": "2017-06-15",
-    "customerCode:" "ABC",
-    "customerUsageType": "D",
-    "addresses": {
-        "singleLocation": {
-            "line1": "100 Ravine Lane NE",
-            "city": "Bainbridge Island",
-            "region": "WA", 
-            "country": "US",
-            "postalCode": "98110"
-        }
-    },
-    "lines": [
-        {
-            "number": "1",
-            "amount": 100,
-            "taxCode": "P0000000"
-        }
-    ]
+  "type": "SalesInvoice",
+  "code": "Chapter-8-Test-2",
+  "companyCode": "DEVGUIDE",
+  "date": "2017-06-15",
+  "customerCode": "ABC",
+  "customerUsageType": "D",
+  "addresses": {
+    "singleLocation": {
+      "line1": "100 Ravine Lane NE",
+      "city": "Bainbridge Island",
+      "region": "WA",
+      "country": "US",
+      "postalCode": "98110"
+    }
+  },
+  "lines": [
+    {
+      "number": "1",
+      "amount": 100,
+      "taxCode": "P0000000"
+    }
+  ]
 }
 </pre>
         </li>

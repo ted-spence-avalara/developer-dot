@@ -13,7 +13,7 @@ disqus: 1
   <li class="next"><a href="/avatax/dev-guide/discounts-and-overrides/discounts/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-There are two types of overrides supported in AvaTax: Tax Amount and TaxDate. (MORE DETAIL)
+There are two types of overrides supported in AvaTax: <code>TaxAmount</code> and <code>TaxDate</code>. The <code>TaxAmount Override</code>, will do just that, override the tax amount on the transaction. This is particularly helpful if you need to record transactions to AvaTax which had the tax calculated in another system. The <code>TaxDate</code> override, allows you to specify what tax date to use in the calculation. By default, the AvaTax engine will use the document date as the <code>TaxDate</code>. The common use-case for this override is processing refunds, as you want to calculate the refund tax credit using the same information that the original sale used. Let's take a closer look at each method. 
 
 <h3>Overriding the Tax Amount</h3>
 A tax amount override is when you override the tax amount of a transaction rather than having AvaTax calculate it.
@@ -31,10 +31,11 @@ Tax amount overrides can also be used to determine the difference between tax pa
     <li>The tax calculated by your old tax software was $5.67.</li>
     <li>In your connector, create the following transaction:</li>
         <ul class="dev-guide-list">
-            <li>Transaction Type: SalesInvoice</li>
-            <li>Transaction Code: Chapter-8-Test-1</li>
+            <li>Document Type: SalesInvoice</li>
+            <li>Document Code: Chapter-6-Test-1</li>
+            <li>Company Code: DEVGUIDE</li>
             <li>Document Date: 2017-06-15</li>
-            <li>CompanyCode, Date, CustomerCode set to reasonable default values</li>
+            <li>Customer Code: ABC</li>
         </ul>
         <li>Addresses:
             <ul class="dev-guide-list">
@@ -99,9 +100,9 @@ Tax amount overrides can also be used to determine the difference between tax pa
 </div>
 
 <h3>Overriding the Tax Date</h3>
-TaxDate overrides are used when you want to calculate tax on a date different than the date of a document.  For example, if you are returning a product, the tax date of the transaction would be the date of the original transaction, rather than the date of the refund.
+<code>TaxDate</code> overrides are used when you want to calculate tax on a date different than the date of a document.  For example, if you are returning a product, the tax date of the transaction would be the date of the original transaction, rather than the date of the refund.
 
-Let's say Alice purchases a new chair from the store on May 1st.  She discovers that the chair doesn't fit in her home office, and she decides to return the chair on June 1st.  If you calculate tax on the June 1st date, you might refund a different amount of tax to Alice than she paid on May 1st.  So you use a TaxDate override to ensure that the tax rates are calculated as of May 1st.
+Let's say Alice purchases a new chair from the store on May 1st.  She discovers that the chair doesn't fit in her home office, and she decides to return the chair on June 1st.  If you calculate tax on the June 1st date, you might refund a different amount of tax to Alice than she paid on May 1st.  So you use a <code>TaxDate</code> override to ensure that the tax rates are calculated as of May 1st.
 
 <div class="dev-guide-test" id="test2">
     <div class="dev-guide-test-heading">Test Case - 6.1.2</div>
@@ -112,10 +113,10 @@ Let's say Alice purchases a new chair from the store on May 1st.  She discovers 
     <li>The tax calculated by your old tax software was $5.67.</li>
     <li>In your connector, create the following transaction:</li>
         <ul class="dev-guide-list">
-            <li>ransaction Type: SalesInvoice</li>
-            <li>Transaction Code: Chapter-8-Test-2</li>
+            <li>Document Type: SalesInvoice</li>
+            <li>Document Code: Chapter-6-Test-2</li>
             <li>Document Date: 2017-06-15</li>
-            <li>CompanyCode, Date, CustomerCode set to reasonable default values.</li>
+            <li>Company Code: ABC</li>
         </ul>
         <li>Addresses:
             <ul class="dev-guide-list">
@@ -148,7 +149,7 @@ Let's say Alice purchases a new chair from the store on May 1st.  She discovers 
   "type": "ReturnInvoice",
   "code": "Chapter-6-Test-2",
   "companyCode": "DEVGUIDE",
-  "date": "2017-06-01",
+  "date": "2017-06-15",
   "customerCode": "ABC",
   "addresses": {
     "singleLocation": {
@@ -179,13 +180,16 @@ Let's say Alice purchases a new chair from the store on May 1st.  She discovers 
 </div>
 </div>
 
+<h3>Certification Requirements</h3>
+To have your integration certified AvaTax for Refunds/Credit Memos, you will need to demonstrate credit memo transactions pass the original transaction sale date as the <code>TaxOverride</code>/<code>TaxDate</code>. You may also use <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/RefundTransaction/">RefundTransaction API</a>, which automates much of this process.
+
 <h3>Line Level Overrides</h3>
 
-Overrides can happen at the line level or the document level. MORE DETAIL
+The examples we have used so far have all shown the <code>TaxAmount</code>/<code>TaxDate</code> overrides at the document level. It is also important to note that these overrides can also be applied at the line level.
 
 <h3>Consumer Use Tax Overrides</h3>
 
-This will be explained in more detail in chapter MORE DETAIL
+The Tax Override function is also used for verification of merchant charged tax in a Use Tax scenario. This will be explained in more detail in <a class="dev-guide-link" href="/avatax/dev-guide/consumer-use-tax/">Chapter 10: Consumer Use Tax</a>.
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/discounts-and-overrides/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

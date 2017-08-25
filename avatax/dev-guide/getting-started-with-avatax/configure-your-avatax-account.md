@@ -13,13 +13,14 @@ disqus: 1
 </ul>
 To use AvaTax, you must configure your company and set up your tax profile.  You can configure your company on the <a class="dev-guide-link" href="https://admin-avatax.avalara.net/login.aspx">AvaTax administration website</a> or by using the API directly.
 
-If you are building a connector that links up to AvaTax, you don't have to do any work to setup a company.  Your customers will log onto AvaTax and follow the company setup steps themselves.  No work necessary!
+If you are building a connector that links up to AvaTax, you don't have to do any work to setup a company.  Your customers will log onto AvaTax and follow the company setup steps themselves. No work necessary!
 
-To continue with this developer guide, let's set up a test company right now for our developer guide test cases.  This company will allow us to finish all the test cases within the AvaTax developer guide using a company with a known tax profile.  Let's take a look at a sample request code:
+To continue with this developer guide, let's set up a test company right now for our developer guide test cases.  This company will allow us to finish all the test cases within the AvaTax Developer Guide using a company with a known tax profile. Let's take a look at a sample request code:
 <div class="dev-guide-test" id="test1">
 <div class="dev-guide-test-heading">Test Case - 1.4.1 </div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
+<code>POST https://sandbox-rest.avatax.com/api/v2/companies/initialize</code>
 <ul class="dev-guide-list">
 <li>Call CompanyInitialize with the following parameters:</li>
     <ul class="dev-guide-list">
@@ -76,8 +77,6 @@ To continue with this developer guide, let's set up a test company right now for
 </div>
 </div>
 </div>
-
-
 
 Congratulations!  You have successfully initialized your first AvaTax company using the RESTv2 API. 
 

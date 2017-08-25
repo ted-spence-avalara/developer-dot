@@ -24,8 +24,9 @@ Depending on how you show the handling charge on your document, it may be includ
         <ul class="dev-guide-list">
             <li>Transaction Type: SalesInvoice</li>
             <li>Transaction Code: Chapter-7-Test-4</li>
+            <li>Company Code: DEVGUIDE</li>
             <li>Document Date: 2017-06-15</li>
-            <li>CompanyCode, Date, CustomerCode set to reasonable default values</li>
+            <li>Customer Code: ABC</li>
         </ul>
         <li>Addresses:
             <li>ShipFrom
@@ -41,20 +42,19 @@ Depending on how you show the handling charge on your document, it may be includ
         </li>
         <li>Line #1:
             <ul class="dev-guide-list">
-                <li>Amount 100</li>
-                <li>TaxCode P0000000</li>
+                <li>Quantity: 10</li>
+                <li>Amount: 100</li>
+                <li>TaxCode: P0000000</li>
+                <li>Item Code: Widgets</li>
+                <li>Description: Taxable Gizmo</li>
             </ul>
         </li>
         <li>Line #2:
             <ul class="dev-guide-list">
-                <li>Amount 100</li>
-                <li>TaxCode NT</li>
-            </ul>
-        </li>
-        <li>Line #3:
-            <ul class="dev-guide-list">
-                <li>Amount 5</li>
-                <li>TaxCode FR020100</li>
+                <li>Quantity: 1</li>
+                <li>Amount: 5</li>
+                <li>TaxCode: FR020100</li>
+                <li>Item Code: Shipping</li>
             </ul>
         </li>
     <li>Calculate tax for your transaction using AvaTax.</li> 
@@ -71,60 +71,46 @@ Depending on how you show the handling charge on your document, it may be includ
         <ul class="dev-guide-dropdown-content">
             <li>
                 <pre>
+
 {
-    "companyCode": "DEVGUIDE",
-    "code": "Chapter-7-Test-1",
-    "customerCode": "ABC",
-    "type": "SalesInvoice",
-    "commit": "true",
-    "addresses": {
-        "ShipFrom": {
-            "line1": "100 Ravine Lane NE",
-            "city": "Bainbridge Island",
-            "region": "WA",
-            "country": "US",
-            "postalCode": "98110"
-        },
-        "ShipTo": {
-            "line1": "18300 Von Karman Ave",
-            "city": "Irvine",
-            "region": "CA",
-            "country": "US",
-            "postalCode": "92612"
-        },
-        "lines": [{
-                "number": "Line 1",
-                "quantity": 10,
-                "amount": 100,
-                "taxCode": "P0000000",
-                "itemCode": "Widgets",
-                "description": "Taxable Gizmo"
-            },
-            {
-                "number": "Line 2",
-                "quantity": 10,
-                "amount": 100,
-                "taxCode": "NT",
-                "itemCode": "Widgets",
-                "description": "Non-Taxable Gizmo"
-            },
-            {
-                "number": "Line 3",
-                "quantity": 1,
-                "amount": 5.00,
-                "taxCode": "FR020100",
-                "itemCode": "Shipping"
-            },
-            {
-                "number": "Line 4",
-                "quantity": 1,
-                "amount": 3.00,
-                "taxCode": "OH010000",
-                "itemCode": "Handling"
-            },
-        ],
-        "date": "2017-06-15T00:00:00.000Z"
+  "type": "SalesInvoice",
+  "code": "Chapter-7-Test-1",
+  "companyCode": "DEVGUIDE",
+  "date": "2017-06-15",
+  "customerCode": "ABC",
+  "addresses": {
+    "shipFrom": {
+      "line1": "100 Ravine Lane NE",
+      "city": "Bainbridge Island",
+      "region": "WA",
+      "country": "US",
+      "postalCode": "98110"
+    },
+    "shipTo": {
+      "line1": "18300 Von Karman Ave",
+      "city": "Irvine",
+      "region": "CA",
+      "country": "US",
+      "postalCode": "92612"
     }
+  },
+  "lines": [
+    {
+      "number": "Line 1",
+      "quantity": 10,
+      "amount": 100,
+      "taxCode": "P0000000",
+      "itemCode": "Widgets",
+      "description": "Taxable Gizmo"
+    },
+    {
+      "number": "Line 2",
+      "quantity": 1,
+      "amount": 5,
+      "taxCode": "FR020100",
+      "itemCode": "Shipping"
+    }
+  ]
 }
                 </pre>
             </li>
@@ -132,6 +118,9 @@ Depending on how you show the handling charge on your document, it may be includ
     </div>
 </div>
 </div>
+
+<h3>Certification Requirements</h3>
+To have your integration certified for AvaTax you will need to demonstrate that you can apply an AvaTax Goods and Service code to the freight/handling charge. Additionally, you must demonstrate that the freight/handling charge is a separate line on the transaction sent to AvaTax.
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/shipping-and-handling/taxability-of-shipping-charges"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

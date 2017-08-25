@@ -17,15 +17,15 @@ Some states or tax authorities in the United States do not collect sales, use, o
 
 Let's look briefly at the status of sales tax in a few notable states.  These states are often called the "NOMAD" states, after an acronym that lists the state names: New Hampshire, Oregon, Montana, Alaska, and Delaware.
 <ul class="dev-guide-list">
-  <li>The state of Alaska does not have a state sales tax.  However, Alaska is also what is known as a "Home Rule" state, where individual cities and counties are granted the authority to levy and administer their own sales taxes.  This means that, although you will generally not calculate state sales tax in Alaska, local jurisdictions within Alaska may request that you pay sales, seller's use, or consumer use tax if you have nexus within that jurisdiction.  Because of this Home Rule designation, it is necessary for companies to correctly declare their nexus within Alaska and within local jurisdictions within the state of Alaska even though the state itself does not charge sales tax. </li>
-  <li>Delaware doesn't have a sales tax, but it does impose other taxes businesses based on their gross sales.  These taxes are not calculated transactionally, which means they will not show up on your AvaTax transactions. </li>
+  <li>The state of Alaska does not have a state sales tax.  However, Alaska is also what is known as a <a class="dev-guide-link" href="https://www.avalara.com/blog/2015/11/02/sales-tax-q-a-home-rule-states/">"Home Rule"</a> state, where individual cities and counties are granted the authority to levy and administer their own sales taxes.  This means that, although you will generally not calculate state sales tax in Alaska, local jurisdictions within Alaska may request that you pay sales, seller's use, or consumer use tax if you have nexus within that jurisdiction.  Because of this Home Rule designation, it is necessary for companies to correctly declare their nexus within Alaska and within local jurisdictions within the state of Alaska even though the state itself does not charge sales tax.</li>
+  <li>Delaware doesn't have a sales tax, but it does impose other taxes businesses based on their gross sales.  These taxes are not calculated transactionally, which means they will not show up on your AvaTax transactions.</li>
   <li>Montana, New Hampshire, and Oregon prohibit local jurisdictions within the state from levying sales taxes.  As a result, these three states do not have any sales tax either at a local or state level.</li>
 </ul>
 Although these states do not charge sales tax, it is important that your connector still record tax correctly.  Avalara Certified Connectors must record transactions in AvaTax even if the transaction is within these NOMAD states.  This is necessary because:
 <ul class="dev-guide-list">
   <li>Laws can change.  Avalara continually researches tax laws and updates our software promptly as soon as any changes affect correct tax calculation.  If any state changes its tax laws, your customers should not have to update their connector.</li>
   <li>Sourcing rules can change.  Some states can change their tax rules to determine the origin or destination of a transaction differently based on other factors such as the billing address or the call center address of a transaction.  In this case, a transaction that was previously nontaxable based on a NOMAD state law may become taxable based on the origination of the shipment.</li>
-  <li>Tax types can change.  Depending on your customer's subscriptions, Avalara provides support for excise, telecommunications, E-Waste, bottle taxes, and more.  These tax types may not always be exempt in NOMAD states.</li>
+  <li>Tax types can change. Depending on your customer's subscriptions, Avalara provides support for excise, telecommunications, E-Waste, bottle taxes, and more.  These tax types may not always be exempt in NOMAD states.</li>
 </ul>
 To ensure that your connector correctly sends NOMAD tax, you must be able to demonstrate that the tax transaction in the test case below is correctly recorded in AvaTax.
 
@@ -73,27 +73,28 @@ Calculate tax for your transaction using AvaTax.
         <li>
             <pre>
 {
-    "type": "SalesInvoice",
-    "code": "Chapter-8-Test-1",
-    "companyCode": "DEVGUIDE",
-    "date": "2017-06-15",
-    "customerCode": "ABC",
-    "addresses": {
-        "singleLocation": {
-            "line1": "720 SW Broadway",
-            "city": "Portland",
-            "region": "OR",
-            "country": "US", 
-            "postalCode": "97205"
-        }
-    },
-    "lines": [
-        {
-            "number": "1",
-            "amount": 100,
-            "taxCode": "P0000000"
-        }
-    ]
+  "type": "SalesInvoice",
+  "code": "Chapter-8-Test-1",
+  "companyCode": "DEVGUIDE",
+  "date": "2017-06-15",
+  "customerCode": "ABC",
+  "commit": "true",
+  "addresses": {
+    "singleLocation": {
+      "line1": "720 SW Broadway",
+      "city": "Portland",
+      "region": "OR",
+      "country": "US",
+      "postalCode": "97205"
+    }
+  },
+  "lines": [
+    {
+      "number": "1",
+      "amount": 100,
+      "taxCode": "P0000000"
+    }
+  ]
 }
             </pre>
         </li>

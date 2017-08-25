@@ -15,7 +15,7 @@ disqus: 1
 
 In general, use tax is imposed on transactions that are subject to sales tax, but for which sales tax is not charged. The intent is to capture tax on tangible items and certain services that are sold or purchased by a company or person located out-of-state, particularly if that person or company plans to use, donate, store or consume those items out of state.
 
-Unlike sales tax, which is normally paid by the consumer, use tax can be levied against a seller or consumer. 
+Unlike sales tax, which is normally paid by the consumer, use tax can be levied against a seller or consumer.
 
 
 <ul class="pager">
