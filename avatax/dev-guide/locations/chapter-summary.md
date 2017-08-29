@@ -13,7 +13,14 @@ disqus: 1
   <li class="next"><a href="/avatax/dev-guide/consumer-use-tax/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-In this chapter, you've learned how to use location codes to enable your software to use locations for tax transaction reporting.  Avalara-certified connectors must support, at a minimum, the ability to set a reporting location code on a transaction.
+In this chapter, you've learned how to use location codes to enable your software to use locations for tax transaction reporting.
+
+<div class="dev-guide-certification">
+<div class="dev-guide-certification-heading">Certification Requirements</div>
+<div class="dev-guide-certification-content">
+Avalara-certified connectors must support, at a minimum, the ability to set a reporting location code on a transaction.
+</div>
+</div>
 
 We recommend that a connector provide the following functionality:
 <ul class="dev-guide-list">

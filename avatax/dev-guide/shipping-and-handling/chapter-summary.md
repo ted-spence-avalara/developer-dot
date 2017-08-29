@@ -25,6 +25,15 @@ Optionally, you can include additional features if you choose:
   <li>Use the <a class="dev-guide-link" href="https://rest.avatax.com/swagger/ui/index.html#!/Definitions/ListTaxCodes">GET Taxcode Definitions</a> method of the API in order to build a search of our tax codes within the application, so that the customer can search by keyword within the application for the appropriate shipping taxcode without having to exit the application itself.</li>
 </ul>
 
+<div class="dev-guide-certification">
+<div class="dev-guide-certification-heading">Certification Requirements</div>
+<div class="dev-guide-certification-content">
+AvaTax Certified Connectors must demonstrate that you can apply an AvaTax Goods and Service code to the freight/handling charge.
+
+Additionally, you must demonstrate that the freight/handling charge is a separate line on the transaction sent to AvaTax
+</div>
+</div>
+
 
 Tests you can use to verify that your connector is working correctly:
 <ul class="dev-guide-list">
