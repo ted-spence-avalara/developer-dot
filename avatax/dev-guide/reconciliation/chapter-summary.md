@@ -20,6 +20,19 @@ In this chapter, you've seen all the features available in AvaTax for designing 
     <li>More complex processes will use all available APIs, including <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/VerifyTransaction/">VerifyTransaction</a>, <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/ListTransactionsByCompany/">ListTransactionByCode</a>, and <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/AdjustTransaction/">AdjustTransaction.</a></li>
 </ul>
 
+<div class="dev-guide-certification">
+<div class="dev-guide-certification-heading">Certification Requirements</div>
+<div class="dev-guide-certification-content">
+AvaTax Certified Connectors must ensure that transactions are processed through a logical document lifecycle
+    <ul class="dev-guide-list">
+      <li>Ensure that invoices are posted/committed for reporting appropriately.</li>
+      <li>When invoices are deleted/cancelled, the transaction is updated to reflect the status.</li>
+      <li>Ensure that Credit Memos are posted/committed for reporting appropriately.</li>
+      <li>When Credit Memos are deleted/cancelled, the transaction is updated to reflect the status.</li>
+    </ul>
+</div>
+</div>
+
 Tests in this chapter:
 <ul class="dev-guide-list">
   <li><a class='dev-guide-link' href="/avatax/dev-guide/reconciliation/committing-a-transaction/#test1">4.1.1 - Committing a Transaction</a></li>

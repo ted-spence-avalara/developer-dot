@@ -107,10 +107,18 @@ Let's build out final test transaction using everything that we've covered in th
 </ul>
 <h4>Assertions</h4>
 <ul class="dev-guide-list">
-    <li>The taxable amount should be $100.00.</li>
-    <li>The tax for both lines should be sourced within Washington.</li>
-    <li>Line1 should have tax calculated for Washington State, Grays Harbor County, and the city of Aberdeen.</li>
-    <li>Line2 should have tax calculated for Washington State, King County, and the city of Seattle.</li>
+    <li>The taxable amount should be $100.00 with a total tax amount of $8.58.</li>
+    <li>Line1 should have a total tax amount of $5.04, while Line 2 has 2.72.</li>
+    <li>Both lines should be sourced in California with the following jurisdictions:
+        <ul class="dev-guide-list">
+            <li>California State</li>
+            <li>Orange County</li>
+            <li>Orange County District Tax/Special Tax</li>
+            <li>Orange County Local Tax/Special Tax</li>
+        </ul>
+    </li>
+    <li>Sourcing destination should be 21068 Bake Pkwy, Lake Forest, CA 92630.</li>
+    <li>Sourcing origin should be 422 S F St., Aberdeen, WA, US 98520.</li>
     <li>Document level properties:
         <ul class="dev-guide-list">
             <li>Reference Code field should list "SalesOrder 123456"</li>
@@ -120,18 +128,14 @@ Let's build out final test transaction using everything that we've covered in th
     </li>
     <li>Line level properties:
         <ul class="dev-guide-list">
-            <li>Line1:
-                <ul class="dev-guide-list">
-                    <li>Description field should state "A bundle of assorted yarn colors"</li>
-                    <li>Ref1 field should state that the "Item out of stock in Providence distribution center. ShipFrom Newport distribution center."</li>
-                    <li>Ref2 field should list that the "Customer would like the item to ShipTo a secondary address."</li>
-                </ul>
-            </li>
-            <li>Line2:
-                <ul class="dev-guide-list">
-                    <li>Description field should list a single bolt of wool.</li>
-                </ul>
-            </li>
+            <li>Line 1:</li>
+            <ul class="dev-guide-list">
+                <li>The Description field should state "A bundle of assorted yarn colors"</li>
+            </ul>
+            <li>Line 2:</li>
+            <ul class="dev-guide-list">
+                <li>The Description field should state "A single bolt of wool"</li>
+            </ul>
         </ul>
     </li>
 </ul>
@@ -150,21 +154,21 @@ Let's build out final test transaction using everything that we've covered in th
   "customerCode": "ABC",
   "referenceCode": "SalesOrder 123456",
   "salespersonCode": "SA8675309",
-  "purchaseOrderNo": "PO2376500
+  "purchaseOrderNo": "PO2376500",
   "addresses": {
     "shipFrom": {
-      "line1": "468 Angell Street",
-      "city": "Providence",
-      "region": "RI",
-      "country": "US",
-      "postalCode": "02906"
-    },
-    "shipTo": {
-      "line1": "821 2nd Ave",
-      "city": "Seattle",
+      "line1": "100 Ravine Lane NE",
+      "city": "Bainbridge Island",
       "region": "WA",
       "country": "US",
-      "postalCode": "98104"
+      "postalCode": "98110"
+    },
+    "shipTo": {
+      "line1": "18300 Von Karman Ave",
+      "city": "Irvine",
+      "region": "CA",
+      "country": "US",
+      "postalCode": "92630"
     }
   },
   "lines": [
@@ -172,31 +176,31 @@ Let's build out final test transaction using everything that we've covered in th
       "number": "1",
       "amount": 65,
       "taxCode": "P0000000",
-      "ref1": "Item out of stock in Providence distribution center.  ShipFrom Newport distribution center."
-      "ref2": "Customer would like the item to ShipTo a secondary address."
-      "description": "A bundle of assorted yarn colors"
+      "ref1": "Item out of stock in Providence distribution center.  ShipFrom Aberdeen distribution center.",
+      "ref2": "Customer would like the item to ShipTo a secondary address.",
+      "description": "A bundle of assorted yarn colors",
       "addresses": {
         "shipFrom": {
-          "line1": "12 Christies Landing",
-          "city": "Newport",
-          "region": "RI",
-          "country": "US",
-          "postalCode": "02840"
-        },
-        "shipTo": {
           "line1": "422 S F St.",
           "city": "Aberdeen",
           "region": "WA",
           "country": "US",
           "postalCode": "98520"
+        },
+        "shipTo": {
+          "line1": "21068 Bake Pkwy",
+          "city": "Lake Forest",
+          "region": "CA",
+          "country": "US",
+          "postalCode": "92630"
         }
       }
     },
     {
       "number": "2",
       "amount": 35,
-      "taxCode": "P0000000"
-      "description": "a single bolt of wool."
+      "taxCode": "P0000000",
+      "description": "A single bolt of wool."
     }
   ]
 }

@@ -21,6 +21,38 @@ In this chapter you've learned ways in which you can customize your transactions
     <li>What other meta data can be managed and used within your transaction.</li>
 </ul>
 
+<div class="dev-guide-certification">
+<div class="dev-guide-certification-heading">Certification Requirements</div>
+<div class="dev-guide-certification-content">
+AvaTax Certified Connectors must include the following information when calling the service for a tax calculation.
+The connector must show the following:
+    <ul class="dev-guide-list">
+        <li>Header level data elements:
+          <ul class="dev-guide-list">
+            <li>Document number</li>
+            <li>Customer code</li>
+            <li>Document date</li>
+            <li>Tax calculation date</li>
+            <li>Document type</li>
+            <li>Destination address</li>
+            <li>Origin address</li>
+            <li>Location Code</li>
+          </ul>
+        </li>
+        <li>Line level data elements:
+          <ul class="dev-guide-list">
+            <li>Line number</li>
+            <li>Item code</li>
+            <li>Item description</li>
+            <li>Quantity</li>
+            <li>Amount (extended)</li>
+            <li>Tax Code</li>
+          </ul>
+        </li>
+    </ul>
+</div>
+</div>
+
 Tests that are in this chapter:
 <ul class="dev-guide-list">
   <li><a class="dev-guide-link" href="/avatax/dev-guide/customizing-transaction/origin-and-destination/#test1">3.2.1 - Using Origin and Destination Addresses</a></li>

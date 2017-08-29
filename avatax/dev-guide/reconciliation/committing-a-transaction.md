@@ -141,11 +141,9 @@ The three stages work as follows:
     <li>When a transaction is ready to move out of the second stage of reconciliation, update it by calling <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CommitTransaction/">CommitTransaction</a> as above.  The transaction's new status will be <code>Committed</code>.</li>
 </ul>
 
-In the two-stage reconciliation process, additional verification features are available.  When you call VerifyTransaction, you can optionally choose to assert that the transaction's amount matches an amount in a different ledger.  Here's how the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/VerifyTransaction/">VerifyTransaction API</a> call works:
-
+In the two-stage reconciliation process, additional verification features are available.  When you call <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/VerifyTransaction/">VerifyTransaction</a>, you can optionally choose to assert that the transaction's amount matches an amount in a different ledger.  Here's how the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/VerifyTransaction/">VerifyTransaction API</a> call works:
 <pre>
 POST https://sandbox-rest.avatax.com/api/v2/companies/DEVGUIDE/transactions/MYTRANSACTIONCODE/verify
- 
  
 {
   "verifyTransactionDate": "2017-06-15",
