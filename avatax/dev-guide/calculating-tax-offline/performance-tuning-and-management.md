@@ -10,7 +10,7 @@ disqus: 1
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/understanding-and-managing-messages/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/avatax/dev-guide/calculating-tax-offline/chapter-summary/">>Next<<i class="glyphicon glyphicon-chevron-right"></i/a></li>
+  <li class="next"><a href="/avatax/dev-guide/calculating-tax-offline/chapter-summary/">>Next<<i class="glyphicon glyphicon-chevron-right"></i/><a></li>
 </ul>
 Consuming sales tax related services can be considered mission-critical, especially when making calculation queries through the AvaTax product. As a cloud-based Software-as-a-Service provider, Avalara understands the need to ensure that our services are available continuously and respond in a timely manner.
 
