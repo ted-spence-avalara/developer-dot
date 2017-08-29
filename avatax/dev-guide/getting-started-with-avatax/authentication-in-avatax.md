@@ -42,11 +42,11 @@ If you are writing your own code, here's how to construct an authentication toke
         </thead>
         <tbody>
             <tr>
-                <td>Start with the word "Basic" followed by username and password.</td>
+                <td>Start with the word <code>Basic</code> followed by username and password.</td>
                 <td>Basic username: password</td>
             </tr>
             <tr>
-                <td>Replace "username" with your username, and "password" with your password.</td>
+                <td>Replace <code>username</code> with your username, and <code>password</code> with your password.</td>
                 <td>Basic bob@example.org: bobspasswordgoeshere</td>
             </tr>
             <tr>
@@ -54,7 +54,7 @@ If you are writing your own code, here's how to construct an authentication toke
                 <td>Basic Ym9iQGV4YW1wbGUub3JnOmJvYnNwYXNzd29yZGdvZXNoZXJl </td>
             </tr>
             <tr>
-                <td>Add this to the "Authorization" header in your HTTP request.</td>
+                <td>Add this to the <code>Authorization</code> header in your HTTP request.</td>
                 <td>Authorization: Basic Ym9iQGV4YW1wbGUub3JnOmJvYnNwYXNzd29yZGdvZXNoZXJl </td>
             </tr>
         </tbody>
@@ -105,11 +105,11 @@ Let's construct an authorization using an Avalara License Key:
         </thead>
         <tbody>
             <tr>
-                <td>Start with the word "Basic" followed by accountid and licensekey.</td>
+                <td>Start with the word <code>Basic</code> followed by accountid and licensekey.</td>
                 <td>Basic accountid:licensekey</td>
             </tr>
             <tr>
-                <td>Replace "accountid" with your account ID number, and "licensekey" with the license key you generated above.</td>
+                <td>Replace <code>accountid</code> with your account ID number, and <code>licensekey</code> with the license key you generated above.</td>
                 <td>Basic 123456789:123456789ABCDEF123456789ABCDEF</td>
             </tr>
             <tr>
@@ -117,7 +117,7 @@ Let's construct an authorization using an Avalara License Key:
                 <td>Basic MTIzNDU2Nzg5OjEyMzQ1Njc4OUFCQ0RFRjEyMzQ1Njc4OUFCQ0RFRg==</td>
             </tr>
             <tr>
-                <td>Add this to the "Authorization" header in your HTTP request.</td>
+                <td>Add this to the <code>Authorization</code> header in your HTTP request.</td>
                 <td>Authorization: Basic Ym9iQGV4YW1wbGUub3JnOmJvYnNwYXNzd29yZGdvZXNoZXJl</td>
             </tr>
         </tbody>

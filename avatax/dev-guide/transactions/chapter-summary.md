@@ -21,9 +21,9 @@ In this chapter you've learned how to create basic single-location transactions,
 
 Tests that are in this chapter: 
 <ul class="dev-guide-list">
-  <li><a class="dev-guide-list" href="/avatax/dev-guide/transactions/simple-transaction/#test1">2.1.1 - Simple Transaction</a></li>
-  <li><a class="dev-guide-list" href="/avatax/dev-guide/transactions/simple-transaction/#test2">2.1.2 - Simple Transaction</a></li>
-  <li><a class="dev-guide-list" href="/avatax/dev-guide/transactions/should-i-commit/#test1">2.2.1 - Should I Commit</a></li>
+  <li><a class="dev-guide-link" href="/avatax/dev-guide/transactions/simple-transaction/#test1">2.1.1 - Simple Transaction</a></li>
+  <li><a class="dev-guide-link" href="/avatax/dev-guide/transactions/simple-transaction/#test2">2.1.2 - Simple Transaction</a></li>
+  <li><a class="dev-guide-link" href="/avatax/dev-guide/transactions/should-i-commit/#test1">2.2.1 - Should I Commit</a></li>
 </ul>
 
 We'll build on this foundation and discuss the myriad other options when creating a transaction in <a class="dev-guide-link" href="/avatax/dev-guide/customizing-transaction/">Chapter 3 - Customizing Your Transaction</a>. 

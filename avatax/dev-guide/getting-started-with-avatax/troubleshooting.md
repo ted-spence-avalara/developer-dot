@@ -50,7 +50,7 @@ Response: 401 Unauthorized
 
 Your next step should be to display an error message in your product.  The error message should have:
 <ul class="dev-guide-list">
-    <li>The title of <code>details[0].message</code>.</li>
+    <li>At a minimum, the error message should have the title of <code>details[0].message</code>.</li>
     <li>Best practice is to include the <code>details[0].description</code> and the <code>details[0].helpLink</code> values so the customer can learn more about the problem.</li>
     <li>Some API calls can include more than one error.  You can optionally display information about more than one error message at a time.</li>
 </ul>
@@ -101,7 +101,7 @@ The AvaTax API is available online at the following URLs:
     <li>Production Environment: <a class="dev-guide-link" href="https://rest.avatax.com">https://rest.avatax.com</a></li>
 </ul>
 
-Before you proceed, please make sure that your office can contact these URLs. When you visit these sites, you should see a web page similar to the following:
+Before you proceed, please make sure that your office can contact these URLs.  When you visit these sites, you should see a web page similar to the following:
 
 <img class="dev-guide-pic" src="/avatax/dev-guide/getting-started-with-avatax/connecting-to-avatax.png">
 

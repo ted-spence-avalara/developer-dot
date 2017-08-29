@@ -13,39 +13,44 @@ disqus: 1
 </ul>
 To use AvaTax, you must configure your company and set up your tax profile.  You can configure your company on the <a class="dev-guide-link" href="https://admin-avatax.avalara.net/login.aspx">AvaTax administration website</a> or by using the API directly.
 
-If you are building a connector that links up to AvaTax, you don't have to do any work to setup a company.  Your customers will log onto AvaTax and follow the company setup steps themselves. No work necessary!
+If you are building a connector that links up to AvaTax, you don't have to do any work to setup a company.  Your customers will log onto AvaTax and follow the company setup steps themselves.  No work necessary!
 
-To continue with this developer guide, let's set up a test company right now for our developer guide test cases.  This company will allow us to finish all the test cases within the AvaTax Developer Guide using a company with a known tax profile. Let's take a look at a sample request code:
+To continue with this developer guide, let's set up a test company right now for our developer guide test cases.  This company will allow us to finish all the test cases within the AvaTax Developer Guide using a company with a known tax profile.  Let's take a look at a sample request code:
 <div class="dev-guide-test" id="test1">
 <div class="dev-guide-test-heading">Test Case - 1.4.1 </div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
 <code>POST https://sandbox-rest.avatax.com/api/v2/companies/initialize</code>
 <ul class="dev-guide-list">
-<li>Call CompanyInitialize with the following parameters:</li>
-    <ul class="dev-guide-list">
-        <li>Name: Developer Guide Company</li>
-        <li>CompanyCode: DEVGUIDE</li>
-        <li>Address:
-            <ul class="dev-guide-list">
-                <li>123 Main Street</li>
-                <li>Irvine, CA 92615</li>
-            </ul>
-        </li>
-        <li>Contact:
-            <ul class="dev-guide-list">
-                <li>Bob Example</li>
-                <li>bob@example.org</li>
-                <li>714 555 2121</li>
-            </ul>
-        </li>
-    </ul>
+    <li>Name: Developer Guide Company</li>
+    <li>CompanyCode: DEVGUIDE</li>
+    <li>Address:
+        <ul class="dev-guide-list">
+            <li>123 Main Street</li>
+            <li>Irvine, CA 92615</li>
+        </ul>
+    </li>
+    <li>Contact:
+        <ul class="dev-guide-list">
+            <li>Bob Example</li>
+            <li>bob@example.org</li>
+            <li>714 555 2121</li>
+        </ul>
+    </li>
 </ul>
 
 <h4>Assertions</h4>
 <ul class="dev-guide-list">
-    <li>Company is created</li>
-    <li>TODO: More assertions</li>
+    <li>Company should be created with Bob Example with his relevant contact information:
+        <ul class="dev-gude-list">
+            <li>Email as bob@example.org</li>
+            <li>Primary phone number as (714) 555-2121</li>
+            <li>Mobile phone number as (714) 555-1212</li>
+        </ul>
+    </li>
+    <li>Company name should be reflected as "Developer Guide"</li>
+    <li>Business is located at 123 Main Street, Irvine, CA 92615</li>
+    <li>Tax Payer ID is 12-3456789</li>
 </ul>
 
 <div class="dev-guide-dropdown">
