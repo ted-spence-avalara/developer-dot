@@ -180,12 +180,92 @@ Let's say Alice purchases a new chair from the store on May 1st.  She discovers 
 </div>
 </div>
 
-<h3>Certification Requirements</h3>
-To have your integration certified AvaTax for Refunds/Credit Memos, you will need to demonstrate credit memo transactions pass the original transaction sale date as the <code>TaxOverride</code>/<code>TaxDate</code>. You may also use <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/RefundTransaction/">RefundTransaction API</a>, which automates much of this process.
+<div class="dev-guide-certification">
+<div class="dev-guide-certification-heading">Certification Requirements</div>
+<div class="dev-guide-certification-content">
+To have your integration certified AvaTax for Refunds/Credit Memos, you will need to demonstrate credit memo transactions pass the original transaction sale date as the TaxOverride/TaxDate. You may also use RefundTransaction API, which automates much of this process.
+</div>
+</div>
 
 <h3>Line Level Overrides</h3>
 
 The examples we have used so far have all shown the <code>TaxAmount</code>/<code>TaxDate</code> overrides at the document level. It is also important to note that these overrides can also be applied at the line level.
+
+<div class="dev-guide-test" id="test2">
+    <div class="dev-guide-test-heading">Test Case - 6.1.2</div>
+<div class="dev-guide-test-content">
+<h4>Setup</h4>
+<ul class="dev-guide-list">
+    <li>You calculated tax for a transaction using your old tax software, and you are importing this transaction into AvaTax.</li>
+    <li>The tax calculated by your old tax software was $5.67.</li>
+    <li>In your connector, create the following transaction:</li>
+        <ul class="dev-guide-list">
+            <li>Document Type: SalesInvoice</li>
+            <li>Document Code: Chapter-6-Test-2</li>
+            <li>Document Date: 2017-06-15</li>
+            <li>Company Code: ABC</li>
+        </ul>
+        <li>Addresses:
+            <ul class="dev-guide-list">
+                <li>SingleLocation</li>
+                <li>100 Ravine Lane NE, Bainbridge Island, WA, 98110</li>
+            </ul>
+        </li>
+        <li>Line #1:
+            <ul class="dev-guide-list">
+                <li>Amount 100</li>
+                <li>TaxCode P0000000</li>
+            </ul>
+        </li>
+        <li>Add a TaxOverride to the line object and set the TaxDate to 2017-05-01 and specify the reason as "Refund for purchase of chair"</li>
+    <li>Calculate tax for your transaction using AvaTax.</li> 
+</ul>
+<h4>Assertions</h4>
+<ul class="dev-guide-list">
+    <li>The totalTax amount for the transaction should be $5.67. This is the amount you calculated in your previous tax software.</li>
+    <li>The totalTaxCalculated amount should be $9.00. This is the amount that AvaTax determined is correct.</li>
+</ul>
+<div class="dev-guide-dropdown">
+        <input id="checkbox_toggle3" type="checkbox" />
+        <i id="icon-up" class="glyphicon glyphicon-chevron-down"></i><i id="icon-down" class="glyphicon glyphicon-chevron-right"></i>
+        <label for="checkbox_toggle3"><h4>Expected API Call</h4></label>
+        <ul class="dev-guide-dropdown-content">
+            <li> 
+                <pre>
+{
+  "type": "ReturnInvoice",
+  "code": "Chapter-6-Test-3",
+  "companyCode": "DEVGUIDE",
+  "date": "2017-06-15",
+  "customerCode": "ABC",
+  "addresses": {
+    "singleLocation": {
+      "line1": "100 Ravine Lane NE",
+      "city": "Bainbridge Island",
+      "region": "WA",
+      "country": "US",
+      "postalCode": "98110"
+    }
+  },
+  "lines": [
+    {
+      "number": "1",
+      "amount": 100,
+      "taxCode": "P0000000",
+      "taxOverride": {
+            "type": "taxDate",
+            "taxDate": "2017-05-01",
+            "reason": "Refund for purchase of chair"
+            }
+        } 
+    ]
+}
+                </pre>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
 
 <h3>Consumer Use Tax Overrides</h3>
 

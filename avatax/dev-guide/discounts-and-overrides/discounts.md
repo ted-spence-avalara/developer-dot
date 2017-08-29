@@ -100,8 +100,9 @@ With this exercise, you will simply add an additional line that contains the dis
         <ul class="dev-guide-list">
             <li>Document Type: SalesInvoice</li>
             <li>Document Code: Chapter-6-Test-4</li>
-            <li>Company Code: ABC</li>
+            <li>Company Code: DEVGUIDE</li>
             <li>Document Date: 2017-06-15</li>
+            <li>CustomerCode: ABC</li>
         </ul>
         <li>Addresses:
             <ul class="dev-guide-list">
@@ -186,6 +187,7 @@ With this exercise you will pass the complete discounted amount in the < discoun
             <li>Document Code: Chapter-6-Test-5</li>
             <li>Company Code: DEVGUIDE</li>
             <li>Document Date: 2017-06-15</li>
+            <li>CustomerCode: ABC</li>
             <li>Discount: 10</li>
         </ul>
         <li>Addresses:
@@ -348,8 +350,12 @@ When working with discounts provided by a 3rd party (ex. manufacturer coupon) th
 </div>
 
 <h3>Certification Requirements</h3>
-
-To have your integration certified for AvaTax you will need to demonstrate that you can handle discounts using the methods listed above.
+<div class="dev-guide-certification">
+<div class="dev-guide-certification-heading">Certification Requirements</div>
+<div class="dev-guide-certification-content">
+AvaTax Certified Connectors must handle discounts appropriately by using one of the methods outlined in this chapter.
+</div>
+</div>
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/discounts-and-overrides/overrides/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
