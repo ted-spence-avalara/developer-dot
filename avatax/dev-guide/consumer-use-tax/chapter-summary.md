@@ -13,7 +13,20 @@ disqus: 1
   <li class="next"><a href="/avatax/dev-guide/calculating-tax-offline/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-TODO
+In summary, you should be able to:
+<ul class="dev-guide-list">
+  <li>Identify the difference between Consumer Use Tax and Sellers Use tax.</li>
+  <li>Calculate tax correctly on a Purchase Order.</li>
+  <li>Calculate tax on a vendor invoice that does not have tax.</li>
+  <li>Verify the tax on a vendor invoice and make an informed decision recording the liability.</li>
+</ul>
+
+<div class="dev-guide-certification">
+<div class="dev-guide-certification-heading">Certification Requirements</div>
+<div class="dev-guide-certification-content">
+Please see the following link for a comprehensive listing of requiremetns for Use Tax Certification: <a class="dev-guide-link" href="https://developer.avalara.com/certification/avatax/use-tax/">https://developer.avalara.com/certification/avatax/use-tax/</a>
+</div>
+</div>
 
 Tests that were in this chapter:
 <ul class="dev-guide-list">

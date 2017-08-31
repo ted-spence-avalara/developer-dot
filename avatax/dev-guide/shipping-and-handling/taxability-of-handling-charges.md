@@ -19,14 +19,13 @@ Depending on how you show the handling charge on your document, it may be includ
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
 <ul class="dev-guide-list">
-    <li>You are shipping an item from Washington to California.</li>
+    <li>You are shipping an item from Washington to Florida.</li>
     <li>In your connector, create the following transaction:</li>
         <ul class="dev-guide-list">
             <li>Transaction Type: SalesInvoice</li>
             <li>Transaction Code: Chapter-7-Test-4</li>
-            <li>Company Code: DEVGUIDE</li>
             <li>Document Date: 2017-06-15</li>
-            <li>Customer Code: ABC</li>
+            <li>CompanyCode, Date, CustomerCode set to reasonable default values.</li>
         </ul>
         <li>Addresses:
             <li>ShipFrom
@@ -36,13 +35,13 @@ Depending on how you show the handling charge on your document, it may be includ
             </li>
             <li>ShipTo
                 <ul class="dev-guide-list">
-                    <li>18300 Von Karman Ave, Irvine, CA 92612</li>
+                    <li>3500 Pan American Dr., Miami FL 3133</li>
                 </ul>
             </li>
         </li>
         <li>Line #1:
             <ul class="dev-guide-list">
-                <li>Quantity: 10</li>
+                <li>Quantity</li>
                 <li>Amount: 100</li>
                 <li>TaxCode: P0000000</li>
                 <li>Item Code: Widgets</li>
@@ -51,10 +50,27 @@ Depending on how you show the handling charge on your document, it may be includ
         </li>
         <li>Line #2:
             <ul class="dev-guide-list">
+                <li>Quantity: 10</li>
+                <li>Amount: 100</li>
+                <li>TaxCode: NT</li>
+                <li>Item Code: Widgets</li>
+                <li>Description: Non-Taxable Gizmo</li>
+            </ul>
+        </li>
+        <li>Line #3:
+            <ul class="dev-guide-list">
                 <li>Quantity: 1</li>
                 <li>Amount: 5</li>
                 <li>TaxCode: FR020100</li>
                 <li>Item Code: Shipping</li>
+            </ul>
+        </li>
+        <li>Line #4:
+            <ul class="dev-guide-list">
+                <li>Quantity: 1</li>
+                <li>Amount: 3</li>
+                <li>Tax Code: OH010000</li>
+                <li>Item Code: Handling</li>
             </ul>
         </li>
     <li>Calculate tax for your transaction using AvaTax.</li> 
@@ -71,10 +87,9 @@ Depending on how you show the handling charge on your document, it may be includ
         <ul class="dev-guide-dropdown-content">
             <li>
                 <pre>
-
 {
   "type": "SalesInvoice",
-  "code": "Chapter-7-Test-1",
+  "code": "Chapter-7-Test-3",
   "companyCode": "DEVGUIDE",
   "date": "2017-06-15",
   "customerCode": "ABC",
@@ -87,30 +102,45 @@ Depending on how you show the handling charge on your document, it may be includ
       "postalCode": "98110"
     },
     "shipTo": {
-      "line1": "18300 Von Karman Ave",
-      "city": "Irvine",
-      "region": "CA",
+      "line1": "3500 Pan American Dr.",
+      "city": "Miami",
+      "region": "FL",
       "country": "US",
-      "postalCode": "92612"
-    }
-  },
-  "lines": [
-    {
-      "number": "Line 1",
-      "quantity": 10,
-      "amount": 100,
-      "taxCode": "P0000000",
-      "itemCode": "Widgets",
-      "description": "Taxable Gizmo"
+      "postalCode": "33133"
     },
-    {
-      "number": "Line 2",
-      "quantity": 1,
-      "amount": 5,
-      "taxCode": "FR020100",
-      "itemCode": "Shipping"
-    }
-  ]
+    "lines": [
+      {
+        "number": "1",
+        "quantity": 10,
+        "amount": 100,
+        "taxCode": "P0000000",
+        "itemCode": "Widgets",
+        "description": "Taxable Gizmo"
+      },
+      {
+        "number": "2",
+        "quantity": 10,
+        "amount": 100,
+        "taxCode": "NT",
+        "itemCode": "Widgets",
+        "description": "Non-Taxable Gizmo"
+      },
+      {
+        "number": "3",
+        "quantity": 1,
+        "amount": 5,
+        "taxCode": "FR020100",
+        "itemCode": "Shipping"
+      },
+      {
+        "number": "4",
+        "quantity": 1,
+        "amount": 3,
+        "taxCode": "OH010000",
+        "itemCode": "Handling"
+      }
+    ],
+  }
 }
                 </pre>
             </li>
@@ -119,8 +149,14 @@ Depending on how you show the handling charge on your document, it may be includ
 </div>
 </div>
 
-<h3>Certification Requirements</h3>
-To have your integration certified for AvaTax you will need to demonstrate that you can apply an AvaTax Goods and Service code to the freight/handling charge. Additionally, you must demonstrate that the freight/handling charge is a separate line on the transaction sent to AvaTax.
+<div class="dev-guide-certification">
+<div class="dev-guide-certification-heading">Certification Requirements</div>
+<div class="dev-guide-certification-content">
+AvaTax Certified Connectors must demonstrate that you can apply an AvaTax Goods and Service code to the freight/handling charge.
+
+Additionally, you must demonstrate that the freight/handling charge is a separate line on the transaction sent to AvaTax.
+</div>
+</div>
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/shipping-and-handling/taxability-of-shipping-charges"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

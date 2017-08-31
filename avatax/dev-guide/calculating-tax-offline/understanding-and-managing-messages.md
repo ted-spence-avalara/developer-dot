@@ -21,7 +21,23 @@ Let's breakdown an example error message.  John has processed a <code>SalesOrder
 
 The message may appear within the response xml data as the following:
 <pre>
-Unknown macro: {insert XML example Doc Not Found}
+{
+    "error": {
+        "code": "EntityNotFoundError",
+        "message": "Document with ID 'TESTINGCO - 100' not found.",
+        "target": "HttpRequest",
+        "details": [
+            {
+                "code": "EntityNotFoundError",
+                "number": 4,
+                "message": "Document with ID 'TESTINGCO - 100' not found.",
+                "faultCode": "Client",
+                "helpLink": "http://developer.avalara.com/avatax/errors/EntityNotFoundError",
+                "severity": "Error"
+            }
+        ]
+    }
+}
 </pre>
 
 While rare, consideration should be given to critical errors that can occur that are not as straight-forward.  For example, if encountering an error stating:  "The server was unable to process the request due to an internal error," the messaging provided may seem cryptic in the details of the error. To gain more information about the error, either turn on <code>IncludeExceptionDetailInFaults</code>, (either from <code>ServiceBehaviorAttribute</code> or from the configuration behavior), on the server in order to send the exception information back to the client, or turn on tracing as per the Microsoft .NET Framework 3.0 SDK documentation and inspect the server trace logs.
@@ -56,120 +72,182 @@ Error messages give pertinent information as to the how, where and what has occu
             }
         ]
     }
+}
 </pre>
 
 <h3>Calculating Tax Offline Using TaxContent:</h3>
 Our TaxContent tool builds a tax content file containing information useful for a retail point-of-sale (POS) solution. This file contains tax rates and rules for items and locations that can be used to correctly calculate tax in the event a POS device is not able to reach AvaTax. The data file can also be customized for specific partner devices and usage conditions.  
 
 Let's take a look at an example of using a point of sale within a location defined in our Avalara Admin Console:
-<pre>
-REQUEST:
-    GET|https://rest.avatax.com/api/v2/taxrates/byaddress?line1=5%20gardenview%20Pl&city=durham&region=NC&postalCode=27713&country=US
+<div class="mobile-table">
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>REQUEST: POST|https://sandbox-rest.avatax.com/api/v2/pointofsaledata/build</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>
+              <pre>
 {
-  "companyCode": "STARLABS",
-  "documentDate": "2017-07-28T18:18:44.8781843Z",
-  "responseType": "Json",
-  "taxCodes": [
-    "P0000000"
-  ],
-  "locationCodes": [
-    201
-  ],
-  "includeJurisCodes": true
+  "companyCode":"DEFAULT"
+  "documentDate":"2017-06-27T18:18:44.8781843Z"
+  "responseType":"Json"
+  "taxCodes":["P0000000"]
+  "locationCodes":["01"]
+  "includeJurisCodes":true
 }
- 
-RESPONSE:
-[
-  {
-    ShipToCity": "DURHAM",
-    "ShipToCounty": "DURHAM",
-    "ShipToState": "NC",
-    "ShipToPostalCode": "27713-8261",
+              </pre>
+              </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="mobile-table">
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Response</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>
+              <pre>
+{
+    "ShipToCity": "BAINBRIDGE ISLAND",
+    "ShipToCounty": "KITSAP",
+    "ShipToState": "WA",
+    "ShipToPostalCode": "98110-2687",
     "ShipToCountry": "US",
     "JurisType": "State",
-    "JurisCode": "37",
-    "JurisName": "NORTH CAROLINA",
+    "JurisCode": "53",
+    "JurisName": "WASHINGTON",
     "TaxType": "Sales",
-    "Tax_Description": "NC STATE TAX",
-    "Tax_Rate": 0.0475,
+    "Tax_Description": "WA STATE TAX",
+    "Tax_Rate": 0.065,
     "Cap": "0",
     "Threshold": "0",
     "TaxRuleOptions": "",
     "TaxApplicationLevel": ""
   },
-  {
-    "ScenarioId": 1,
-    "EffDate": "11/1/2014 12:00:00 AM",
-    "EndDate": "12/31/9999 12:00:00 AM",
-    "LocationCode": "201",
-    "TaxCode": "P0000000",
-    "ShipToCity": "DURHAM",
-    "ShipToCounty": "DURHAM",
-    "ShipToState": "NC",
-    "ShipToPostalCode": "27713-8261",
-    "ShipToCountry": "US",
-    "JurisType": "County",
-    "JurisCode": "063",
-    "JurisName": "DURHAM",
-    "TaxType": "Sales",
-    "Tax_Description": "NC COUNTY TAX",
-    "Tax_Rate": 0.0225,
-    "Cap": "0",
-    "Threshold": "0",
-    "TaxRuleOptions": "",
-    "TaxApplicationLevel": ""
-  },
-  {
-    "ScenarioId": 1,
-    "EffDate": "11/1/2014 12:00:00 AM",
-    "EndDate": "12/31/9999 12:00:00 AM",
-    "LocationCode": "201",
-    "TaxCode": "P0000000",
-    "ShipToCity": "DURHAM",
-    "ShipToCounty": "DURHAM",
-    "ShipToState": "NC",
-    "ShipToPostalCode": "27713-8261",
-    "ShipToCountry": "US",
-    "JurisType": "Special",
-    "JurisCode": "1237063001",
-    "JurisName": "DURHAM CO TR",
-    "TaxType": "Sales",
-    "Tax_Description": "NC SPECIAL TAX",
-    "Tax_Rate": 0.005,
-    "Cap": "0",
-    "Threshold": "0",
-    "TaxRuleOptions": "",
-    "TaxApplicationLevel": ""
-  }
+[
+    {
+        "ScenarioId": 1,
+        "EffDate": "11/1/2014 12:00:00 AM",
+        "EndDate": "12/31/9999 12:00:00 AM",
+        "LocationCode": "01",
+        "TaxCode": "P0000000",
+        "ShipToCity": "BAINBRIDGE ISLAND",
+        "ShipToCounty": "KITSAP",
+        "ShipToState": "WA",
+        "ShipToPostalCode": "98110-2687",
+        "ShipToCountry": "US",
+        "JurisType": "State",
+        "JurisCode": "53",
+        "JurisName": "WASHINGTON",
+        "TaxType": "Sales",
+        "Tax_Description": "WA STATE TAX",
+        "Tax_Rate": 0.065,
+        "Cap": "0",
+        "Threshold": "0",
+        "TaxRuleOptions": "",
+        "TaxApplicationLevel": ""
+    },
+    {
+        "ScenarioId": 1,
+        "EffDate": "11/1/2014 12:00:00 AM",
+        "EndDate": "12/31/9999 12:00:00 AM",
+        "LocationCode": "01",
+        "TaxCode": "P0000000",
+        "ShipToCity": "BAINBRIDGE ISLAND",
+        "ShipToCounty": "KITSAP",
+        "ShipToState": "WA",
+        "ShipToPostalCode": "98110-2687",
+        "ShipToCountry": "US",
+        "JurisType": "County",
+        "JurisCode": "035",
+        "JurisName": "KITSAP",
+        "TaxType": "Sales",
+        "Tax_Description": "WA COUNTY TAX",
+        "Tax_Rate": 0,
+        "Cap": "0",
+        "Threshold": "0",
+        "TaxRuleOptions": "",
+        "TaxApplicationLevel": ""
+    },
+    {
+        "ScenarioId": 1,
+        "EffDate": "4/1/2017 12:00:00 AM",
+        "EndDate": "12/31/9999 12:00:00 AM",
+        "LocationCode": "01",
+        "TaxCode": "P0000000",
+        "ShipToCity": "BAINBRIDGE ISLAND",
+        "ShipToCounty": "KITSAP",
+        "ShipToState": "WA",
+        "ShipToPostalCode": "98110-2687",
+        "ShipToCountry": "US",
+        "JurisType": "City",
+        "JurisCode": "03736",
+        "JurisName": "BAINBRIDGE ISLAND",
+        "TaxType": "Sales",
+        "Tax_Description": "WA CITY TAX",
+        "Tax_Rate": 0.025,
+        "Cap": "0",
+        "Threshold": "0",
+        "TaxRuleOptions": "",
+        "TaxApplicationLevel": ""
+    }
 ]
-</pre>
+              </pre>
+              </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 Calculating Tax Offline Using Rate Tables
 If you just want to retrieve the tax rate for a given zip code, we've got you covered.  While zip code tax rates may not be as accurate (in fact, a zip code can have up to 20 different tax rates), the AvaTax API can produce rate tables by Zip Code OR by Street Address. Most free tax rate look-up tools only tell you the rate for a ZIP code, we do not charge for this functionality.
 
 For information and to sign up for this free service, please visit our <a class="dev-guide-link" href="http://taxratesapi.avalara.com">website</a>:
-<pre>
+<div class="mobile-table">
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>GET | https://rest.avatax.com/api/v2/taxrates/byaddress</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr> 
+            <td>
+              <pre>
 {
-  "totalRate": 0.075,
-  "rates": [
-    {
-      "rate": 0.0475,
-      "name": "NC STATE TAX",
-      "type": "State"
-    },
-    {
-      "rate": 0.0225,
-      "name": "NC COUNTY TAX",
-      "type": "County"
-    },
-    {
-      "rate": 0.005,
-      "name": "NC SPECIAL TAX",
-      "type": "Special"
-    }
-  ]
+    "totalRate": 0.09,
+    "rates": [
+        {
+            "rate": 0.065,
+            "name": "WA STATE TAX",
+            "type": "State"
+        },
+        {
+            "rate": 0.025,
+            "name": "WA CITY TAX",
+            "type": "City"
+        },
+        {
+            "rate": 0,
+            "name": "WA COUNTY TAX",
+            "type": "County"
+        }
+    ]
 }
-</pre>
+              </pre>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/calculating-tax-offline/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

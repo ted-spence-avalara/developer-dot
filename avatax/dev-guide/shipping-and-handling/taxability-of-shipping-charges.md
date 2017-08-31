@@ -33,7 +33,7 @@ Now, let's take a look at a simple transaction with shipping charges included:
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
 <ul class="dev-guide-list">
-    <li>You are shipping an item from Washington to California.</li>
+    <li>You are shipping an item from Washington to Florida.</li>
     <li>In your connector, create the following transaction:</li>
         <ul class="dev-guide-list">
             <li>Document Type: SalesInvoice</li>
@@ -50,7 +50,7 @@ Now, let's take a look at a simple transaction with shipping charges included:
             </li>
             <li>ShipTo
                 <ul class="dev-guide-list">
-                    <li>18300 Von Karman Ave, Irvine, CA 92612</li>
+                    <li>3500 Pan American Dr., Miami FL 33133</li>
                 </ul>
             </li>
         </li>
@@ -100,16 +100,16 @@ Now, let's take a look at a simple transaction with shipping charges included:
       "postalCode": "98110"
     },
     "shipTo": {
-      "line1": "18300 Von Karman Ave",
-      "city": "Irvine",
-      "region": "CA",
+      "line1": "3500 Pan American Dr.",
+      "city": "Miami",
+      "region": "FL",
       "country": "US",
-      "postalCode": "92612"
+      "postalCode": "33133"
     }
   },
   "lines": [
     {
-      "number": "Line 1",
+      "number": "1",
       "quantity": 10,
       "amount": 100,
       "taxCode": "P0000000",
@@ -117,7 +117,7 @@ Now, let's take a look at a simple transaction with shipping charges included:
       "description": "Taxable Gizmo"
     },
     {
-      "number": "Line 2",
+      "number": "2",
       "quantity": 1,
       "amount": 5,
       "taxCode": "FR020100",
@@ -131,6 +131,7 @@ Now, let's take a look at a simple transaction with shipping charges included:
     </div>
 </div>
 </div>
+So you can see that adding a freight charge to a transaction is no different from adding another item to the transaction. One item to consider is how you will associate the freight tax code with the freight charge within your application. For certified integrations, the merchant must be able to update this tax code, depending on how they ship their goods. 
 
 Now let's take a look at the transaction when we ship an item that is non-taxable in California:
 <div class="dev-guide-test" id="test2">
@@ -138,7 +139,7 @@ Now let's take a look at the transaction when we ship an item that is non-taxabl
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
 <ul class="dev-guide-list">
-    <li>You are shipping an item from Washington to California.</li>
+    <li>You are shipping an item from Washington to Florida.</li>
     <li>In your connector, create the following transaction:</li>
         <ul class="dev-guide-list">
             <li>Document Type: SalesInvoice</li>
@@ -154,7 +155,7 @@ Now let's take a look at the transaction when we ship an item that is non-taxabl
             </li>
             <li>ShipTo
                 <ul class="dev-guide-list">
-                    <li>18300 Von Karman Ave, Irvine, CA 92612</li>
+                    <li>3500 Pan American Dr., Miami FL 33133</li>
                 </ul>
             </li>
         </li>
@@ -191,7 +192,7 @@ Now let's take a look at the transaction when we ship an item that is non-taxabl
                 <pre>
 {
   "type": "SalesInvoice",
-  "code": "Chapter-7-Test-1",
+  "code": "Chapter-7-Test-2",
   "companyCode": "DEVGUIDE",
   "date": "2017-06-15",
   "customerCode": "ABC",
@@ -204,11 +205,11 @@ Now let's take a look at the transaction when we ship an item that is non-taxabl
       "postalCode": "92612"
     },
     "shipTo": {
-      "line1": "18300 Von Karman Ave",
-      "city": "Irvine",
-      "region": "CA",
+      "line1": "3500 Pan American Dr.",
+      "city": "Miami",
+      "region": "FL",
       "country": "US",
-      "postalCode": "92612"
+      "postalCode": "33133"
     }
   },
   "lines": [
@@ -225,7 +226,7 @@ Now let's take a look at the transaction when we ship an item that is non-taxabl
       "quantity": 1,
       "amount": 5,
       "taxCode": "FR020100",
-      "itemCode": "Shipping",
+      "itemCode": "Shipping"
     }
   ]
 }
@@ -235,14 +236,15 @@ Now let's take a look at the transaction when we ship an item that is non-taxabl
     </div>
 </div>
 </div>
+In the previous example the freight was taxable, however this time the freight was exempt. This is because in this particular jurisdiction the taxability of the freight will follow the taxability of the items on the invoice. So, if the items being shipped are exempt, so is the freight. 
 
-You can see that in California, for this freight code, the taxability of the freight depends on the taxability of the items being shipped. Let's take a look a the behavior when we have more than one item being shipped and the taxability of the items is different:
+Now, let's take a look a the behavior when we have more than one item being shipped and the taxability of the items is different:
 <div class="dev-guide-test" id="test3">
     <div class="dev-guide-test-heading">Test Case - 7.1.3</div>
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
 <ul class="dev-guide-list">
-    <li>You are shipping an item from Washington to California.</li>
+    <li>You are shipping an item from Washington to Florida.</li>
     <li>In your connector, create the following transaction:</li>
         <ul class="dev-guide-list">
             <li>Document Type: SalesInvoice</li>
@@ -259,7 +261,7 @@ You can see that in California, for this freight code, the taxability of the fre
             </li>
             <li>ShipTo
                 <ul class="dev-guide-list">
-                    <li>18300 Von Karman Ave, Irvine, CA 92612</li>
+                    <li>3500 Pan American Dr., Miami FL 33133</li>
                 </ul>
             </li>
         </li>
@@ -318,12 +320,13 @@ You can see that in California, for this freight code, the taxability of the fre
       "postalCode": "98110"
     },
     "shipTo": {
-      "line1": "18300 Von Karman Ave",
-      "city": "Irvine",
-      "region": "CA",
+      "line1": "3500 Pan American Dr.",
+      "city": "Miami",
+      "region": "FL",
       "country": "US",
-      "postalCode": "92612"
-    },
+      "postalCode": "33133"
+    }
+},
     "lines": [
       {
         "number": "1",
@@ -348,8 +351,7 @@ You can see that in California, for this freight code, the taxability of the fre
         "taxCode": "FR020100",
         "itemCode": "Shipping"
       }
-    ],
-  }
+    ]
 }
                 </pre>
             </li>

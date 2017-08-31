@@ -36,10 +36,8 @@ Once the service connection has been restored, the tax can be transmitted to Ava
 <ul class="dev-guide-list">
   <li>Use a tax override of <code>TaxAmount</code> to reflect the estimated tax.</li>
   <li>Use <code>TaxIncluded</code> to back-calculate the correct tax amount from the total (including estimated tax) charged to the customer.</li>
-  <li>Allow AvaTax to recalculate the tax amount, and absorb any additional payment of taxes.
-</li>
-  <li>
-Transactions can be loaded with the standard calculation method or by using our batch import functionality directly in the Admin Console.</li>
+  <li>Allow AvaTax to recalculate the tax amount, and absorb any additional payment of taxes.</li>
+  <li>Transactions can be loaded with the standard calculation method or by using our batch import functionality directly in the Admin Console.</li>
 </ul>
 
 <ul class="pager">
