@@ -43,7 +43,7 @@ Avalara maintains and publishes SDKs for our current REST v2 API for the followi
             <td>JavaScript</td>
             <td><a href="https://www.npmjs.com/package/avatax"><img src="https://img.shields.io/npm/v/avatax.svg?style=plastic" title="npm"></a>
                 </td>
-            <td><a href="https://travis-ci.org/avadev/AvaTax-REST-V2-JS-SDK"><img src="https://api.travis-ci.org/avadev/AvaTax-REST-V2-JRE-SDK.svg?branch=master&style=plastic" title="Travis CI" alt="Travis CI"></a></td>
+            <td><a href="https://travis-ci.org/avadev/AvaTax-REST-V2-JS-SDK"><img src="https://api.travis-ci.org/avadev/AvaTax-REST-V2-JS-SDK.svg?branch=master&style=plastic" title="Travis CI" alt="Travis CI"></a></td>
             <td><a href="https://github.com/avadev/AvaTax-REST-V2-JS-SDK">AvaTax-REST-V2-JS-SDK</a></td>
         </tr>
         <tr>

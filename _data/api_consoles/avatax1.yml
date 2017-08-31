@@ -2,4 +2,27 @@
 nav_link:
     title: Avatax REST API
     path: /api-reference/avatax/rest/v1
+<<<<<<< HEAD
 older_api: true
+=======
+product: avaTax
+endpoint_hashes:
+    - name: Calculate Tax and Record a Document
+      link: '/#getTax'
+    - name: Void a Document
+      link: '/#cancelTax'
+    - name: Estimate Tax
+      link: '/#estimateTax'
+    - name: Validate an Address
+      link: '/#validateAddress'
+
+nav_links:
+  - title: Overview
+    path: /avatax
+  - title: Use cases
+    path: /avatax/use-cases
+  - title: Developer guide
+    path: /avatax/dev-guide/getting-started-with-avatax/
+  - title: API references
+    path: /api-reference/avatax/rest/v2
+>>>>>>> 21b80dd66b04318a78deea98946f2d9da1491f67
