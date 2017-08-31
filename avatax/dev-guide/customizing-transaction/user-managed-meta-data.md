@@ -107,7 +107,7 @@ Let's build out final test transaction using everything that we've covered in th
 </ul>
 <h4>Assertions</h4>
 <ul class="dev-guide-list">
-    <li>The taxable amount should be $100.00 with a total tax amount of $8.58.</li>
+    <li>The taxable amount should be $100.00 with a total tax amount of $7.76.</li>
     <li>Line1 should have a total tax amount of $5.04, while Line 2 has 2.72.</li>
     <li>Both lines should be sourced in California with the following jurisdictions:
         <ul class="dev-guide-list">
