@@ -32,7 +32,7 @@ Here's a comparison of the two AvaTax APIs:
 			<tr>
 				<td>Data Formatting</td>
 				<td><a href="https://en.wikipedia.org/wiki/XML">XML</a> conforming to <a href="https://en.wikipedia.org/wiki/Web_Services_Description_Language">WSDL</a></td>
-				<td><a href="https://en.wikipedia.org/wiki/JSON">JSON</a> conforming to the [Microsoft REST Guidelines](https://github.com/Microsoft/api-guidelines)</td>
+				<td><a href="https://en.wikipedia.org/wiki/JSON">JSON</a> conforming to the <a href="https://github.com/Microsoft/api-guidelines">Microsoft REST Guidelines</a></td>
 			</tr>
 			<tr>
 				<td>Language Support</td>
@@ -133,7 +133,9 @@ Here's a quick look at a few critical features and how they compare between REST
 	</table>
 </div>
 
-<h2>What to Choose?</h2>
+<h2>Free to Choose</h2>
 
-We hope this information helps you decide which API is right for you.  If you have feedback or comments, please reach out to us at <a href="https://community.avalara.com/avalara">https://community.avalara.com/avalara</a>
+We hope this information helps you decide which API is right for you.  You are welcome to use the SOAP API, the REST API, or both!
+
+If you have feedback or comments, please reach out to us at <a href="https://community.avalara.com/avalara">https://community.avalara.com/avalara</a>
 
