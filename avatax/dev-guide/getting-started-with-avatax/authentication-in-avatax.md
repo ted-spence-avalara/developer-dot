@@ -153,6 +153,7 @@ As you’ll notice, license key and basic authentication are very similar in pra
 </ul>
 
 <h3>Bearer Token Authentication</h3>
+
 AvaTax is currently implementing support for OAuth 2.0 based bearer token authentication.  To make use of the OAuth bearer token feature, please contact your account manager.
 
 <ul class="pager">
