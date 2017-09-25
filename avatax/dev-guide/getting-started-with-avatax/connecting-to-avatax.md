@@ -75,7 +75,7 @@ Let's spend a few minutes explaining how Sandbox and Production relate to each o
             <tr>
                 <td>Tax Filing</td>
                 <td>Sandbox data is never reported to a tax authority; so you can test your transactions without worrying about accidentally reporting transactions.</td>
-                <td>Transactions that are marked <code class="highlight-rouge">Committed</code> in production can be reported on a tax filing using the Avalara Managed Returns Service.</td>
+                <td>Transactions that are marked <code>Committed</code> in production can be reported on a tax filing using the Avalara Managed Returns Service.</td>
             </tr>
             <tr>
                 <td>Updates</td>
