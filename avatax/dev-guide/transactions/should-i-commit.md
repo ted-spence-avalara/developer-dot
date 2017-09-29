@@ -110,7 +110,7 @@ Now we'll take a look at how the transaction we just created looks in AvaTax. To
 
 <img class="dev-guide-pic" src="/avatax/dev-guide/transactions/Transaction-Detail.png" style="border: solid 2px orange; width: 80%"/>
 
-We'll talk more about reconciliation in <a class="dev-guide-link" href="/avatax/dev-guide/reconciliation/">Chapter 4 - Reconciliation</a>.
+You can use the AvaTax website to review and reconcile transactions - we'll cover that topic more in <a class="dev-guide-link" href="/avatax/dev-guide/reconciliation/">Chapter 4 - Reconciliation</a>.  For now, let's continue onwards to learn about other types of transactions besides sales.
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/transactions/invoice-lines/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
