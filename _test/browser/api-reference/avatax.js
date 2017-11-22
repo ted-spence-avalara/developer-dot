@@ -85,31 +85,24 @@ module.exports = {
             });
     },
     'API Reference: AvaTax: SOAP (verify number of endpoints)': function(browser) {
-        expectedNumberOfApiEndpoints = 16;
+        expectedNumberOfApiEndpoints = 15;
 
         browser
             .initialize(browser.globals.baseURL + '/api-reference/avatax/soap/methods/postTax/')
             .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints);
     },
     'API Reference: AvaTax: BatchSvc SOAP (verify number of endpoints)': function(browser) {
-        expectedNumberOfApiEndpoints = 14;
+        expectedNumberOfApiEndpoints = 13;
 
         browser
             .initialize(browser.globals.baseURL + '/api-reference/avatax/batch/soap/methods/batchFetch/')
             .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints);
     },
     'API Reference: AvaTax: AccountSvc SOAP (verify number of endpoints)': function(browser) {
-        expectedNumberOfApiEndpoints = 7;
+        expectedNumberOfApiEndpoints = 6;
 
         browser
             .initialize(browser.globals.baseURL + '/api-reference/avatax/account/soap/methods/isAuthorized/')
-            .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints);
-    },
-    'API Reference: AvaTax: Onboarding (verify number of endpoints)': function(browser) {
-        expectedNumberOfApiEndpoints = 13;
-
-        browser
-            .initialize(browser.globals.baseURL + '/api-reference/onboarding/methods/getAccount/')
             .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints);
     },
     'API Console: AvaTax: REST v2 Swagger Links': function(browser) {
