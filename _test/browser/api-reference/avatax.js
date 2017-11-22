@@ -22,7 +22,7 @@ module.exports = {
         /* eslint-enable quotes */
         /* eslint-enable quote-props */
 
-        expectedNumberOfApiEndpoints = 9;
+        expectedNumberOfApiEndpoints = 8;
 
         browser
             .initialize(browser.globals.baseURL + '/api-reference/avatax/rest/v1/methods/getTax/')
