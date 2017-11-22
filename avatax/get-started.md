@@ -21,9 +21,9 @@ Here's how to request a free sandbox trial account today:
 
 <div class="avaform-wrapper"></div>
 
-<h4><img src="/public/images/blog/orange-box-3-sm.png" alt="3" /> Visit the Customer Portal</h4>
+<h4><img src="/public/images/blog/orange-box-3-sm.png" alt="3" /> Visit the AvaTax Website</h4>
 
-To calculate tax correctly, we'll need to know a few things about your company.  Fortunately, Avalara's Customer Portal provides a streamlined onboarding process that helps you configure your company quickly and easily.  Visit <a target="_blank" href="https://sandbox.admin.avalara.com">Avalara Customer Portal for Sandbox Accounts</a> and walk through the five minute setup process.
+To calculate tax correctly, we'll need to know a few things about your company.  Fortunately, the AvaTax Website provides a streamlined onboarding process that helps you configure your company quickly and easily.  Visit <a target="_blank" href="https://sandbox.admin.avalara.com">AvaTax Website for Sandbox Accounts</a> and walk through the five minute setup process.
 
 <h4><img src="/public/images/blog/orange-box-4-sm.png" alt="4" /> Calculate Tax</h4>
 

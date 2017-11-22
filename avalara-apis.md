@@ -90,7 +90,7 @@ doctype: overview
     </div>
     <div class="col-md-7 col-md-offset-3">
         <h2>Prepare and file AvaTax-integrated returns</h2>
-        <p>Avalara Returns is a fully-managed solution that incorporates a Treasury solution for simple payment, guaranteed on-time filing, audit support, and notice management. There are currently no APIs available for Avalara Returns – data is populated from AvaTax transactions and returns are managed by the merchant through the provided Customer Portal. <a href="http://www.avalara.com/products/returns/">Learn more about Avalara Returns</a>.
+        <p>Avalara Returns is a fully-managed solution that incorporates a Treasury solution for simple payment, guaranteed on-time filing, audit support, and notice management. There are currently no APIs available for Avalara Returns – data is populated from AvaTax transactions and returns are managed by the merchant through the provided <a href="https://admin.avalara.com">AvaTax Website</a>. <a href="http://www.avalara.com/products/returns/">Learn more about Avalara Returns</a>.
         </p>
         <div class="pageTitle">
             <img src="/public/images/Avalara_logo.svg" alt="Avalara">
