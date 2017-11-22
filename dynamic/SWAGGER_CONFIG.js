@@ -49,16 +49,6 @@ export default {
         path: 'excise/api-reference/tax-determination/v5_22_0',
         product: 'excise'
     },
-    'landedcost.json': {
-        name: 'LandedCost',
-        path: 'landedcost/api-reference/v3',
-        product: 'landedcost'
-    },
-    'onboarding.yaml': {
-        name: 'Legacy Onboarding API',
-        path: 'avatax/api-reference/onboarding/v1',
-        product: 'avaTax'
-    },
     'trustfile/api.yaml': {
         name: 'Trustfile - Core',
         path: 'trustfile/api-reference/core/v3',
