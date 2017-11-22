@@ -13,8 +13,6 @@ avaform: 1
   Want to know how the API looks? Make some requests to either <a href="/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/"> Calculate Tax</a> or <a href="/api-reference/avatax/rest/v2/methods/Addresses/ResolveAddress/">Validate an Address</a>. See how different inputs produce different tax calcluation results, and see what kind of tax information you can expect to get back.
 </div>
 
-<!--{% include get-started-console.html %}-->
-
 <h4 id="signup"><img src="/public/images/blog/orange-box-2-sm.png" alt="2" /> Create an AvaTax Account</h4>
 
 To get started, we'll first set you up with an AvaTax <strong>Sandbox</strong> account.  This account will allow you to use advanced AvaTax functionality in the <strong>U.S. and Canada only</strong>, in an environment called <strong>Sandbox</strong>.  Because this is a sandbox, you can experiment all you like and your test data will be kept separate from your production accounts.

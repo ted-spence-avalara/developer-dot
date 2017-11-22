@@ -74,10 +74,10 @@ nav: tests
 				<td>Run a test transaction with more than one line, where each line has more than one quantity.</td>
 				<td>
 					<ul class="normal">
-						<li>Depending on your integration scope, the transaction should be saved to the AvaTax Admin Console</li>
+						<li>Depending on your integration scope, the transaction should be saved to the <a href="https://admin.avalara.com">AvaTax Website</a></li>
 						<li>The lines should transmit the specified quantity</li>
 						<li>The lines should show extended amount</li>
-						<li>Any shipping/miscellaneous charges should be reflected as additional line items in the transaction record on the AvaTax Admin Console</li>
+						<li>Any shipping/miscellaneous charges should be reflected as additional line items in the transaction record on the AvaTax Website</li>
 						<li>All information identified above in the customer record and item record should be saved in the transaction</li>
 					</ul>
 				</td>
@@ -94,7 +94,7 @@ nav: tests
 			<tr>
 				<td>Process a partial return (for a taxable customer, and then a tax exempt customer), and then another partial return associated with the same order/invoice.</td>
 				<td>
-					The return should be recorded on the AvaTax Admin Console with the following:
+					The return should be recorded on the AvaTax Website with the following:
 					<ul class="normal">
 						<li>Negative (extended) amounts, and positive quantities reflecting the returned quantities and amounts, thus calculating negative liability</li>
 						<li>Document Date of the date when the return was processed, but a Tax Date that reflects the date of the original invoice (note: this is not possible in the REST API v1)</li>
@@ -106,7 +106,7 @@ nav: tests
 			</tr>
 			<tr>
 				<td>Take a transaction through the entire document lifecycle of an order/invoice etc.</td>
-				<td>The transaction should follow the lifecycle logically in the AvaTax Admin console, ending with a committed transaction on the AvaTax Admin Console.</td>
+				<td>The transaction should follow the lifecycle logically in the AvaTax Website, ending with a committed transaction.</td>
 				<td>
 					<a href="/avatax/use-cases">Sample Workflows</a><br /><br />
 					<a href="http://www.youtube.com/watch?v=6465JvR3lNk">Transaction Lifecycle (Video)</a>
@@ -114,7 +114,7 @@ nav: tests
 			</tr>
 			<tr>
 				<td>Take a return through its entire document lifecycle.</td>
-				<td>The transaction should follow the lifecycle logically in the AvaTax Admin console, ending with a committed return transaction on the AvaTax Admin Console.</td>
+				<td>The transaction should follow the lifecycle logically in the AvaTax Website, ending with a committed return transaction.</td>
 				<td><a href="/avatax/use-cases">Sample Workflows</a></td>
 			</tr>
 			<tr>
@@ -129,7 +129,7 @@ nav: tests
 	</table>
 </div>
     <h4>Tax Compliance Edge Cases:</h4>
-    <p>Sales tax calculation can create a number of different interesting edge cases. Make sure your connector's calculation agrees with a calculation on the Admin Console for the following use cases:</p>
+    <p>Sales tax calculation can create a number of different interesting edge cases. Make sure your connector's calculation agrees with a calculation on the AvaTax Website for the following use cases:</p>
     <ul class="normal">
         <li>An order with some taxable items (with no tax code, or a taxable tax code), some nontaxable items(using tax code NT, or another nontaxable code), and a shipping line (using tax code FR)
             <ul class="normal">
@@ -138,7 +138,7 @@ nav: tests
                 <li>In Arkansas, the shipping line should be partially taxable</li>
             </ul>
         </li>
-        <li>An order in Tennessee with a line item with a quantity of one and an amount above $1600 should match the calculation in the Admin Console (pay particular attention to the jurisdictional breakout).</li>
+        <li>An order in Tennessee with a line item with a quantity of one and an amount above $1600 should match the calculation in the AvaTax Website (pay particular attention to the jurisdictional breakout).</li>
         <li>An order in any state with Entity/Use Code (CustomerUsageType) of N (indicating a Local Government exemption) should not be fully exempt from sales tax.</li>
     </ul>
 </div>

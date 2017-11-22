@@ -22,7 +22,7 @@ Also see [REST Error Codes](/avatax/errors) for errors in the REST v2 API.
 			<tr>
 				<td valign="top" width="168"><strong>CompanyNotFoundError </strong></td>
 				<td valign="top" width="245">Company not found. Verify the CompanyCode.</td>
-				<td valign="top" width="195">An unknown CompanyCode was specified. All companies must be configured using the Admin console.</td>
+				<td valign="top" width="195">An unknown CompanyCode was specified. All companies must be configured using the <a href="https://admin.avalara.com">AvaTax Website</a>.</td>
 			</tr>
 			<tr>
 				<td valign="top" width="168"><strong>DocStatusError </strong></td>

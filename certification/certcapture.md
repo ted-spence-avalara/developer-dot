@@ -60,7 +60,7 @@ nav: certification
 		</tr>
 		<tr>
 			<td>Suggested</td>
-			<td>CertCapture Admin Console Link</td>
+			<td>CertCapture Website Link</td>
 			<td>Link to the CertCapture Application Dashboard <a href="https://app.certcapture.com/logins/login">https://app.certcapture.com/logins/login</a></td>
 		</tr>
 	</tbody>

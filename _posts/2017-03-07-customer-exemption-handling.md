@@ -128,7 +128,7 @@ Here's what the response looks like.  Notice that the `totalExempt` amount is po
 
 And here's what it looks like once it reaches our admin console:
 
-<img src="/public/images/blog/exemption-admin-console.png" alt="Exemption detail in admin consoleDocument Result for Certificate" height="296" width = "600" />
+<img src="/public/images/blog/exemption-admin-console.png" alt="Exemption detail in admin console" height="296" width = "600" />
 
 One caveat to note:  The use of the ExemptionNo field works by designating the EntityUseCode `L-Other` on the engine's back end.  You may notice that, in some states like Hawaii, a sale with an `exemptionNo` attached still has some tax; this occurs because some states don't allow certain types of exemptions, or they may tax exempt transactions at a different rate.
 
@@ -207,7 +207,7 @@ So for the moment let's imagine that we have chosen to use the code `G`, meaning
 }
 ```
 
-Here's what that looks like in our admin console:
+Here's what that looks like in our [AvaTax Website](https://admin.avalara.com):
 
 <img src="/public/images/blog/exemption-detail-admin-console.png" alt="Exemption detail in admin consoleDocument Result for Certificate" height="344" width = "600" />
 
