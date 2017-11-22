@@ -12,9 +12,6 @@ doctype: overview
           <li><a href="#compliance">Compliance document management</a></li>
           <li><a href="#returns-filing">Returns and filing</a></li>
       </ul>
-      <ul class="pipe padding-bottom">
-          <li><a href="/avatax/dev-guide/">AvaTax Developer Guide</a></li>
-      </ul>
   </div>
 </div>
 <div class="row border-top">
@@ -37,9 +34,6 @@ doctype: overview
           {% endfor %}
           </ul>
         {% endif %}
-        <div class="row">
-            <div class="col-md-12"><h2>Real-time tax calculation and electronic invoices supporting transactions created by ERPs, CRMs, POS and Shopping Cart Applications.</h2></div>
-        </div>
         <h2>Fees and taxes for telecommunications</h2>
         <p>The Avalara AvaTax for Communications API helps you quickly determine taxes for telecommunication services, as well as VoIP, internet services, satellite TV, and other communications services. <a href="/communications">Learn more about the Communications Tax API</a></p>
         <div class="pageTitle">
@@ -66,19 +60,6 @@ doctype: overview
           {% endfor %}
           </ul>
         {% endif %}
-        <h2>Duties and fees for international sales</h2>
-        <p>The Landed Cost  Rate and Calculation API allows to you lookup rates for commodities, and determine estimated landed cost totals for an invoice. <a href="/landedcost">Learn more about the Landed Cost API.</a></p>
-        <div class="pageTitle">
-            <img src="/public/images/Avalara_logo.svg" alt="Avalara">
-            <span>LandedCost</span>
-         </div>
-         {% if site.data.api_consoles.landed_cost.nav_links %}
-             <ul class="pipe padding-bottom">
-             {% for api_console_hash in site.data.api_consoles.landed_cost.nav_links %}
-                 <li><a href="{{api_console_hash.path}}">{{api_console_hash.title}}</a></li>
-             {% endfor %}
-             </ul>
-         {% endif %}
     </div>
 </div>
 <div class="row border-top bg-fill padding-bottom">
