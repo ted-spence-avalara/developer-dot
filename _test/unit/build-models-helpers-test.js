@@ -2,13 +2,10 @@
 
 import {expect} from 'chai';
 import {
-    hashNewDefinitions,
     combineAllOf,
     concatenateName,
     getDefName,
-    addMethodToDef,
-    addMethodToAllDefs,
-    setupDefMethodSets
+    addMethodToDef
 } from '../../dynamic/build-models-helpers';
 
 describe('build-models-helpers', () => {
