@@ -33,9 +33,9 @@ This article is about the December 2017 monthly update to the AvaTax API.
     </table>
 </div>
 
-<h3>Cyber Monday Performance Tuning</h3>
+<h3>Performance Tuning</h3>
 
-During the months since the [17.9 Patch Notes](/blog/2017/09/22/AvaTax-17-9-patch-notes), our team has been hard at work tuning the performance of AvaTax for their once-a-year sales events.  In the months since our September release, we have made a variety of improvements:
+During the months since the [17.9 Patch Notes](/blog/2017/09/22/AvaTax-17-9-patch-notes), our team has been hard at work tuning the performance of AvaTax for the once-a-year sales events that happen in November.  Here's a summary of the improvements that have been made since the September release:
 
 <ul class="normal">
 	<li>Reduced the impact of calling the <a href="/api-reference/avatax/rest/v2/methods/Transactions/GetTransactionByCode/">GetTransactionByCode API</a> and <a href="/api-reference/avatax/rest/v2/methods/Transactions/GetTransactionByCodeAndType/">GetTransactionByTypeAndCode API</a>.  This change improved performance for customers whose products used a mix of calls to these APIs alongside creating new transactions.</li>
@@ -45,7 +45,7 @@ During the months since the [17.9 Patch Notes](/blog/2017/09/22/AvaTax-17-9-patc
 	<li>Improved performance for the free <a href="/api-reference/avatax/rest/v2/methods/Free/TaxRatesByPostalCode/">TaxRatesByPostalCode API</a>.</li>
 </ul>
 
-These changes were released gradually during the October and November timeframe, and we think you'll see some improvements to your tax calculation performance!
+These changes were released gradually during the October and November timeframe as our team prepared for Black Friday and Cyber Monday sales events.
 
 <h3>MultiDocument API Suite</h3>
 
@@ -62,10 +62,10 @@ All of this data and localized names are now available to you through the [ListC
 Now that you are able to use fully spelled out names of countries and regions in all AvaTax APIs, here are a few examples:
 
 <ul class="normal">
-	<li>You can now use <b>UNITED STATES</b> instead of <b>US</b> when referring to the United States.</li>
-	<li>You can now use <b>CALIFORNIA</b> instead of <b>CA</b> when referring to the west coast state.</li>
-	<li>You can now use <b>ZURICH</b> or <b>ZÜRICH</b> instead of <b>ZH</b> when referring to the region within Switzerland.  Character accents are optional, but supported.</li>
-	<li>You can now use <b>GERMANY</b> or <b>DEUTSCHLAND</b> or <B>ALLEMAGNE</B> instead of <b>DE</b> to refer to the republic of Germany.  The same country name is available in certain formally recognized linguistic variants.</li>
+	<li>You can now use <b>UNITED STATES</b> as well as <b>US</b> when referring to the United States.</li>
+	<li>You can now use <b>CALIFORNIA</b> as well as <b>CA</b> when referring to the west coast state.</li>
+	<li>You can now use <b>ZURICH</b> or <b>ZÜRICH</b> as well as <b>ZH</b> when referring to the region within Switzerland.  Character accents are optional, but supported.</li>
+	<li>You can now use <b>GERMANY</b> or <b>DEUTSCHLAND</b> or <B>ALLEMAGNE</B> as well as <b>DE</b> to refer to the Republic of Germany.  The same country name is available in certain formally recognized linguistic variants.</li>
 </ul>
 
 <h3>Changes to CreateTransaction</h3>
