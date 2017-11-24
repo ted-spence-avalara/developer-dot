@@ -11,7 +11,7 @@ doctype: blog
 disqus: 1
 ---
 
-This article is about the August 2017 monthly update to the AvaTax API.
+This article is about the September 2017 monthly update to the AvaTax API.
 
 <div class="mobile-table">
     <table class="styled-table">
