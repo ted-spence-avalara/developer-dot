@@ -23,7 +23,7 @@ The transaction you provided contains too many lines.
       "message": "This multi-company transaction is too large.",
       "description": "Your transaction contained -0- different combinations of company and location.  The maximum number of different combinations allowed is -1-.",
       "faultCode": "Server",
-      "helpLink": "http://developer.avalara.com/avatax/errors/TooManyTransactionLines",
+      "helpLink": "/avatax/errors/TooManyTransactionLines",
       "severity": "Error"
     }
   ]

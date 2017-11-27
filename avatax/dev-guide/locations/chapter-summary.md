@@ -29,8 +29,8 @@ We recommend that a connector provide the following functionality:
 
 Optionally, you can include additional features if you choose:
 <ul class="dev-guide-list">
-    <li>You can allow customers to synchronize their location database between your platform and the AvaTax database using the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Locations/CreateLocations/">CreateLocations</a> / <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Locations/UpdateLocation/">UpdateLocation API</a>.</li>
-    <li>You can allow customers to fill out addresses for their transactions rapidly using the locationCode parameter of the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/">CreateTransaction Model</a>.</li>
+    <li>You can allow customers to synchronize their location database between your platform and the AvaTax database using the <a class="dev-guide-link" href="/api-reference/avatax/rest/v2/methods/Locations/CreateLocations/">CreateLocations</a> / <a class="dev-guide-link" href="/api-reference/avatax/rest/v2/methods/Locations/UpdateLocation/">UpdateLocation API</a>.</li>
+    <li>You can allow customers to fill out addresses for their transactions rapidly using the locationCode parameter of the <a class="dev-guide-link" href="/api-reference/avatax/rest/v2/models/CreateTransactionModel/">CreateTransaction Model</a>.</li>
 </ul>
 
 These optional features are available but are not required for certified connectors.

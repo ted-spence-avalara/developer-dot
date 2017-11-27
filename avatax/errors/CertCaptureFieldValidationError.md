@@ -23,7 +23,7 @@ You called an exemption certificate API with an invalid value.
       "message": "CertCapture API request has an invalid field '-0-'",
       "description": "-1-",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/CertCaptureFieldValidationError",
+      "helpLink": "/avatax/errors/CertCaptureFieldValidationError",
       "severity": "Error"
     }
   ]

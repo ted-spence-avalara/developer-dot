@@ -99,7 +99,7 @@ We're really proud of the world-leading AvaTax platform, and we hope you'll have
 
 <ul class="normal">
     <li>Read our <a href="/blog">Developer Blog</a> for up-to-date news and articles about the great features of AvaTax</li>
-    <li>Ready to upgrade to a production account?  Please <a href="https://www.avalara.com/contact-us/?referrer=&lastReferrer=developer.avalara.com">contact the sales department</a> anytime and we'll be happy to help you out.</li>
+    <li>Ready to upgrade to a production account?  Please <a href="https://www.avalara.com/contact-us/">contact the sales department</a> anytime and we'll be happy to help you out.</li>
     <li>Want to develop a certified connector?  Visit our <a href="/certification/">Certified Avalara Integration</a> page today and get started!</li>
     <li>Want more information about all the great API features in AvaTax?  Visit the <a href="/api-reference/avatax/rest/v2/">online AvaTax API reference</a> now!</li>
     <li>Have a question about the API, or want to share your success story?  Visit the <a href="https://community.avalara.com/avalara">AvaTax Developer Community</a> and ask questions and share tips and tricks with other developers from around the world!</li>

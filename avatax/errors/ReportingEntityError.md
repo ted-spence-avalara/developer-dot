@@ -23,7 +23,7 @@ You attempted to use a Returns API on a company not designated to file returns.
       "message": "In order to perform this operation your company must be setup as a reporting entity.",
       "description": "The company -0- is not a reporting entity.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/ReportingEntityError",
+      "helpLink": "/avatax/errors/ReportingEntityError",
       "severity": "Error"
     }
   ]

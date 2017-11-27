@@ -14,7 +14,7 @@ AvaTax is a full service engine for calculating transactional taxes, including s
 
 <h2>Orders vs Invoices</h2>
 
-Our customers require both the ability to <a href="http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/">estimate tax for a transaction</a>, and to record the actual tax for that transaction.  Many customers use AvaTax as a way to predict taxes before taking action - for example, showing "Estimated Tax" on a web storefront.  Other customers use AvaTax to calculate taxes only at the moment the transaction occurs - for example, when recording a sale in their accounting system.
+Our customers require both the ability to <a href="/blog/2016/11/04/estimating-tax-with-rest-v2/">estimate tax for a transaction</a>, and to record the actual tax for that transaction.  Many customers use AvaTax as a way to predict taxes before taking action - for example, showing "Estimated Tax" on a web storefront.  Other customers use AvaTax to calculate taxes only at the moment the transaction occurs - for example, when recording a sale in their accounting system.
 
 In AvaTax, an "Order" represents a temporary transaction that is not saved, whereas an "Invoice" represents a permanent transaction that will be maintained.  Think about these documents like you are a salesperson:
 

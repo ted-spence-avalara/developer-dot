@@ -23,7 +23,7 @@ You specified a tax type that does not exist.
       "message": "TaxType not found.",
       "description": "-0- Please provide a tax type that exists.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidTaxType",
+      "helpLink": "/avatax/errors/InvalidTaxType",
       "severity": "Error"
     }
   ]

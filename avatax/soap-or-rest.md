@@ -10,7 +10,7 @@ disqus: 1
 
 Avalara provides multiple versions of the AvaTax API.  We originally built AvaTax using SOAP in 2004, and it's stood the test of time, with thousands of customers using it every day.  In 2016, Avalara chose to build a completely new REST API that works off the same code and data while also including modern standards: We implemented the [OpenAPI specification](https://www.openapis.org/) (also known as Swagger) throughout the API, and we chose to adopt [Microsoft's REST guidelines](https://github.com/Microsoft/api-guidelines) to make our service immediately familiar to users of the standard.
 
-If you're starting a new project today, we encourage you to use REST.  Our developer documentation for REST is world-class, and we've written the [AvaTax Developer Guide](https://developer.avalara.com/avatax/dev-guide/getting-started-with-avatax) to help you learn the ins and outs of AvaTax.  If you wrote software in the past that used SOAP, your product will continue to be supported and you can freely mix and match code that uses REST and SOAP.
+If you're starting a new project today, we encourage you to use REST.  Our developer documentation for REST is world-class, and we've written the [AvaTax Developer Guide](/avatax/dev-guide/getting-started-with-avatax) to help you learn the ins and outs of AvaTax.  If you wrote software in the past that used SOAP, your product will continue to be supported and you can freely mix and match code that uses REST and SOAP.
 
 Here's a comparison of the two AvaTax APIs:
 
@@ -41,13 +41,13 @@ Here's a comparison of the two AvaTax APIs:
 			</tr>
 			<tr>
 				<td>Documentation</td>
-				<td><a href="https://developer.avalara.com/api-reference/avatax/soap/">Hand-written documentation</a> in Avalara developer website.</td>
-				<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/">Detailed, comprehensive API reference</a> and a full 11-chapter <a href="https://developer.avalara.com/avatax/dev-guide/getting-started-with-avatax">AvaTax Developer Guide</a> available online</td>
+				<td><a href="/api-reference/avatax/soap/">Hand-written documentation</a> in Avalara developer website.</td>
+				<td><a href="/api-reference/avatax/rest/v2/methods/Transactions/">Detailed, comprehensive API reference</a> and a full 11-chapter <a href="/avatax/dev-guide/getting-started-with-avatax">AvaTax Developer Guide</a> available online</td>
 			</tr>
 			<tr>
 				<td>Software Development Kits</td>
-				<td>Legacy <a href="https://developer.avalara.com/sdk/soap/">AvaTax SOAP software development kits</a> are available.  Updates are infrequent.</td>
-				<td><a href="https://developer.avalara.com/sdk/">AvaTax REST Software Development Kits</a> are updated monthly, and available for download via your favorite package manager.</td>
+				<td>Legacy <a href="/sdk/soap/">AvaTax SOAP software development kits</a> are available.  Updates are infrequent.</td>
+				<td><a href="/sdk/">AvaTax REST Software Development Kits</a> are updated monthly, and available for download via your favorite package manager.</td>
 			</tr>
 			<tr>
 				<td>Functionality</td>
@@ -77,57 +77,57 @@ Here's a quick look at a few critical features and how they compare between REST
 			<tr>
 				<td><a href="/avatax/address-validation">Address validation</a></td>
 				<td><a href="/api-reference/avatax/soap/methods/validateAddress">ValidateAddress</a></td>
-				<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Addresses/ResolveAddressPost/">ResolveAddress</a></td>
+				<td><a href="/api-reference/avatax/rest/v2/methods/Addresses/ResolveAddressPost/">ResolveAddress</a></td>
 			</tr>
 			<tr>
 				<td>Tax calculation</td>
 				<td><a href="/api-reference/avatax/soap/methods/getTax">GetTax</a></td>
-				<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/">CreateTransaction</a></td>
+				<td><a href="/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/">CreateTransaction</a></td>
 			</tr>
 			<tr>
 				<td><a href="/avatax/voiding-documents">Voiding documents</a></td>
 				<td><a href="/api-reference/avatax/soap/methods/cancelTax">CancelTax</a></td>
-				<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/VoidTransaction/">VoidTransaction</a></td>
+				<td><a href="/api-reference/avatax/rest/v2/methods/Transactions/VoidTransaction/">VoidTransaction</a></td>
 			</tr>
 			<tr>
 				<td><a href="/avatax/reportable-transactions">Committing a document</a></td>
 				<td><a href="/api-reference/avatax/soap/methods/postTax">PostTax</a></td>
-				<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CommitTransaction/">CommitTransaction</a></td>
+				<td><a href="/api-reference/avatax/rest/v2/methods/Transactions/CommitTransaction/">CommitTransaction</a></td>
 			</tr>
 			<tr>
 				<td>Retrieve document history</td>
 				<td><a href="/api-reference/avatax/soap/methods/getTaxHistory">GetTaxHistory</a></td>
-				<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/AuditTransaction/">AuditTransaction</a></td>
+				<td><a href="/api-reference/avatax/rest/v2/methods/Transactions/AuditTransaction/">AuditTransaction</a></td>
 			</tr>
 			<tr>
 				<td>Modify committed transaction records</td>
 				<td><a href="/api-reference/avatax/soap/methods/adjustTax">AdjustTax</a></td>
-				<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/AdjustTransaction/">AdjustTransaction</a></td>
+				<td><a href="/api-reference/avatax/rest/v2/methods/Transactions/AdjustTransaction/">AdjustTransaction</a></td>
 			</tr>
 			<tr>
 				<td>Invite customer to upload exemption certificates</td>
 				<td>AvaCert2Svc - CertificateRequestInitiate</td>
-				<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/CertExpressInvites/CreateCertExpressInvitation/">CreateCertExpressInvitation</a></td>
+				<td><a href="/api-reference/avatax/rest/v2/methods/CertExpressInvites/CreateCertExpressInvitation/">CreateCertExpressInvitation</a></td>
 			</tr>
 			<tr>
 				<td>Preview Exemption Certificate Image</td>
 				<td>AvaCert2Svc - CertificateImageGet</td>
-				<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Certificates/DownloadCertificateImage/">DownloadCertificateImage</a></td>
+				<td><a href="/api-reference/avatax/rest/v2/methods/Certificates/DownloadCertificateImage/">DownloadCertificateImage</a></td>
 			</tr>
 			<tr>
 				<td>Check if customer is exempt</td>
 				<td>Not Available</td>
-				<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Customers/ListValidCertificatesForCustomer/">ListValidCertificatesForCustomer</a></td>
+				<td><a href="/api-reference/avatax/rest/v2/methods/Customers/ListValidCertificatesForCustomer/">ListValidCertificatesForCustomer</a></td>
 			</tr>
 			<tr>
 				<td>Free Tax Rates by Postal Code</td>
 				<td>Not Available</td>
-				<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Free/TaxRatesByPostalCode/">TaxRatesByPostalCode</a></td>
+				<td><a href="/api-reference/avatax/rest/v2/methods/Free/TaxRatesByPostalCode/">TaxRatesByPostalCode</a></td>
 			</tr>
 			<tr>
 				<td>Offline Tax Content API</td>
 				<td>Not Available</td>
-				<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/TaxContent/BuildTaxContentFile/">BuildTaxContentFile</a></td>
+				<td><a href="/api-reference/avatax/rest/v2/methods/TaxContent/BuildTaxContentFile/">BuildTaxContentFile</a></td>
 			</tr>
 		</tbody>
 	</table>

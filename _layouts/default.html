@@ -16,7 +16,6 @@
     {% assign ogtitle = page.ogtitle | default:page.title %}
     <meta property="og:title" content="{% if ogtitle %}{{ogtitle}} | {% endif %}Avalara Developer" />
     <meta property="og:type" content="article" />
-    <!--<meta property="og:url" content="https://developer.avalara.com/" />-->
     <meta property="og:site_name" content="Avalara Developer Network" />
     <meta property="og:description" content="{{ page.ogdescription | default:default_desc }}"/>
     
@@ -208,7 +207,7 @@
                 </ul>
 
                 
-                <a href="https://developer.avalara.com/avatax/signup/" class="btn btn-primary btn-signup">Sign up</a>
+                <a href="/avatax/signup/" class="btn btn-primary btn-signup">Sign up</a>
 
             </div>
         </nav>

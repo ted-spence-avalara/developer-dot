@@ -23,7 +23,7 @@ Avalara's Certificates service requires extra information to create an exposure 
       "message": "Required Field is missing.",
       "description": "To create exposure zone, name and tag are required.",
       "faultCode": "Server",
-      "helpLink": "http://developer.avalara.com/avatax/errors/MissingFieldToCreateExposureZone",
+      "helpLink": "/avatax/errors/MissingFieldToCreateExposureZone",
       "severity": "Error"
     }
   ]

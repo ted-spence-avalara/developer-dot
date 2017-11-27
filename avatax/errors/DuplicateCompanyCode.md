@@ -23,7 +23,7 @@ You cannot create two companies with the same company code.
       "message": "The company code '-0-' has already been defined.",
       "description": "Please select a different company code.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/DuplicateCompanyCode",
+      "helpLink": "/avatax/errors/DuplicateCompanyCode",
       "severity": "Error"
     }
   ]

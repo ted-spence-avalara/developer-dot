@@ -23,7 +23,7 @@ You attempted to call the Reporting API with an incorrect field value.
       "message": "The parameter -0- with value -1- is invalid and causes -2- error.",
       "description": "Please provide a valid value for parameter -0- - Required: -3-, Type: -4--5-.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/IncorrectFieldValue",
+      "helpLink": "/avatax/errors/IncorrectFieldValue",
       "severity": "Error"
     }
   ]

@@ -26,8 +26,8 @@ Shortly after we begin our monthly release, I begin drafting notes from all of t
 Since all our work requires lots of design, validation, testing, and documentation, it's normal for the scope of a release to change over time.  As we get closer to the release date and our scope becomes clear, we write customer-oriented patch notes and publish them about two to three weeks before the release date.  These patch notes are written for a target audience of AvaTax developers and they help communicate what's changing and how it affects them.  Whenever possible, we list changes to each endpoint explicitly.  For reference, here's a few of our recent release patch notes:
 
 <ul class="normal">
-    <li><a href="http://developer.avalara.com/blog/2016/12/30/rest-v2-17-1-patch-notes/">January 2.17.1 Release</a></li>
-    <li><a href="http://developer.avalara.com/blog/2016/11/22/rest-v2-16-12-patch-notes/">December 2.16.12 Release</a></li>
+    <li><a href="/blog/2016/12/30/rest-v2-17-1-patch-notes/">January 2.17.1 Release</a></li>
+    <li><a href="/blog/2016/11/22/rest-v2-16-12-patch-notes/">December 2.16.12 Release</a></li>
 </ul>
 
 You may notice that these patch notes are occasionally updated after publication.  If there are last minute changes affecting a release, we'll publish new information to indicate when and how the article changed.
@@ -48,7 +48,7 @@ After each release has launched to Sandbox and been available for testing for a 
 
 <h2>Updates to our SDK libraries</h2>
 
-Avalara maintains a number of SDK libraries for commonly used programming languages.  Each of these SDK libraries is automatically updated each month with the latest interfaces and documentation.  Each software development kit is automatically generated each month based on the <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/">official API documentation for REST v2</a>, and many of them are available in package management systems like NuGet or Maven.  The current list of SDKs available is here:
+Avalara maintains a number of SDK libraries for commonly used programming languages.  Each of these SDK libraries is automatically updated each month with the latest interfaces and documentation.  Each software development kit is automatically generated each month based on the <a href="/api-reference/avatax/rest/v2/">official API documentation for REST v2</a>, and many of them are available in package management systems like NuGet or Maven.  The current list of SDKs available is here:
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -65,7 +65,7 @@ Avalara maintains a number of SDK libraries for commonly used programming langua
         <td>C#</td>
         <td><a href="https://www.nuget.org/packages/Avalara.AvaTax/"><img src="https://img.shields.io/nuget/v/Avalara.AvaTax.svg?style=plastic" title="NuGet" alt="NuGet"/></a></td>
         <td><a href="https://github.com/avadev/AvaTax-REST-V2-DotNet-SDK">AvaTax-REST-V2-DotNet-SDK</a></td>
-        <td><a href="http://developer.avalara.com/blog/2016/12/05/csharp-nuget-library">Article</a></td>
+        <td><a href="/blog/2016/12/05/csharp-nuget-library">Article</a></td>
       </tr>
       <tr>
         <td>Java</td>

@@ -135,7 +135,7 @@ As you'll notice, license key and basic authentication are very similar in pract
 
 <h3>I got an error message - what does it mean?</h3>
 
-If you are working on authentication and you received an error message, here's a breakdown of <a href="http://developer.avalara.com/avatax/errors/">all REST v2 error codes and how to interpret them</a>.
+If you are working on authentication and you received an error message, here's a breakdown of <a href="/avatax/errors/">all REST v2 error codes and how to interpret them</a>.
 
 <h3>Recommendations</h3>
 

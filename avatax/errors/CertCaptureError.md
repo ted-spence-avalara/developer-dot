@@ -23,7 +23,7 @@ The Avalara CertCapture service reported an error during the API call.
       "message": "CertCapture API returned error",
       "description": "-0-.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/CertCaptureError",
+      "helpLink": "/avatax/errors/CertCaptureError",
       "severity": "Error"
     }
   ]

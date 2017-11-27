@@ -21,7 +21,7 @@ In each chapter, we cover everything from how to obtain your <a href="/avatax/si
     <li>How can you ensure that your application can still calculate tax when you've lost connection to the internet? We have the best practices for <a href="/avatax/dev-guide/calculating-tax-offline/">calculating tax offline</a>.</li>
 </ul>
 
-The guide can direct you to the correct <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/">API reference</a> page for every function, so you can work at your own pace. Each chapter also includes test cases you can use to check if your software is working correctly.
+The guide can direct you to the correct <a href="/api-reference/avatax/rest/v2/">API reference</a> page for every function, so you can work at your own pace. Each chapter also includes test cases you can use to check if your software is working correctly.
 
 <h3>Connector developers</h3>
 

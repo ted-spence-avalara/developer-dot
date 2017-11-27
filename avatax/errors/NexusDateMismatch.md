@@ -23,7 +23,7 @@ You declared nexus on a date when that nexus was not available.
       "message": "Nexus not available on dates specified.",
       "description": "The Nexus for Country: -0-, Region: -1-, JurisCode: -2-, JurisTypeId: -3-, JurisName: -4-, ShortName: -5-, SignatureCode: -6-, StateAssignedNo: -7- was only valid from -8- to -9-.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/NexusDateMismatch",
+      "helpLink": "/avatax/errors/NexusDateMismatch",
       "severity": "Error"
     }
   ]

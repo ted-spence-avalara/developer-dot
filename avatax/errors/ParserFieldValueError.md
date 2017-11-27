@@ -23,7 +23,7 @@ You attempted to search for a value that is not a correct value type.
       "message": "Error parsing $filter parameter.",
       "description": "The field named '-0-' is type -1- and cannot be compared to '-2-'",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/ParserFieldValueError",
+      "helpLink": "/avatax/errors/ParserFieldValueError",
       "severity": "Error"
     }
   ]
@@ -36,4 +36,4 @@ This error occurs if you attempt to search for a decimal value, but you provide 
     
 In this case, TotalAmount is expected to be a decimal field, but you provided a string.  Because this string cannot be converted to a decimal field, AvaTax throws this error.
 
-For more information on filtering, please read <a href="http://developer.avalara.com/avatax/filtering-in-rest/">Filtering In REST</a>
+For more information on filtering, please read <a href="/avatax/filtering-in-rest/">Filtering In REST</a>

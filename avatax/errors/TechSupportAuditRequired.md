@@ -23,7 +23,7 @@ To make this API call, you must provide tech support audit requirements.
       "message": "Tech Support users must satisfy audit requirements.",
       "description": "A tech support user may only call APIs if they provide all mandatory audit headers.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/TechSupportAuditRequired",
+      "helpLink": "/avatax/errors/TechSupportAuditRequired",
       "severity": "Error"
     }
   ]

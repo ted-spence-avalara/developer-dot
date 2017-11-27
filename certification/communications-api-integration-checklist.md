@@ -17,7 +17,7 @@ nav: certification
     background-color: #ffffff; }
 </style>
 
-<p>AvaTax for Communications API Integration Checklist to have your integration <a href="http://developer.avalara.com/certification/"> certified by Avalara</a> we have outlined the areas of integration that are necessary to ensure a stable and robust customer experience using AvaTax for Communication with your application. To be certified for Avalara AvaTax for Communications, all of the items with an R in the Required column listed below are required elements that must be present in your integration.</p>
+<p>AvaTax for Communications API Integration Checklist to have your integration <a href="/certification/"> certified by Avalara</a> we have outlined the areas of integration that are necessary to ensure a stable and robust customer experience using AvaTax for Communication with your application. To be certified for Avalara AvaTax for Communications, all of the items with an R in the Required column listed below are required elements that must be present in your integration.</p>
 
 <h4>Certified for Avalara AvaTax for Communications</h4>
 
@@ -179,7 +179,7 @@ nav: certification
 </div>
 
 <h4>Populate Transaction structure</h4>
-<p>See <a href = "http://developer.avalara.com/api-reference/communications/afc/">AvaTax for Comms documentation</a> for a description of the fields and how they should be set.</p>
+<p>See <a href = "/api-reference/communications/afc/">AvaTax for Comms documentation</a> for a description of the fields and how they should be set.</p>
 <div class="mobile-table">
 <table class="styled-table">
 <tr>
@@ -248,7 +248,7 @@ nav: certification
 </div>
 
 <h4>Populate Transaction structure</h4>
-<p>See <a href = "http://developer.avalara.com/api-reference/communications/afc/">AvaTax for Comms documentation</a> for a description of the fields and how they should be set.</p>
+<p>See <a href = "/api-reference/communications/afc/">AvaTax for Comms documentation</a> for a description of the fields and how they should be set.</p>
 <div class="mobile-table">
 <table class="styled-table">
 <tr>
@@ -367,7 +367,7 @@ nav: certification
 </div>
 
 <h4>Populate Transaction structure</h4>
-<p>See <a href = "http://developer.avalara.com/api-reference/communications/afc/">AvaTax for Comms documentation</a> for a description of the fields and how they should be set.</p>
+<p>See <a href = "/api-reference/communications/afc/">AvaTax for Comms documentation</a> for a description of the fields and how they should be set.</p>
 <div class="mobile-table">
 <table class="styled-table">
 <tr>
@@ -407,7 +407,7 @@ nav: certification
 </div>
 
 <h4>Populate Transaction structure</h4>
-<p>See <a href = "http://developer.avalara.com/api-reference/communications/afc/">AvaTax for Comms documentation</a> for a description of the fields and how they should be set.</p>
+<p>See <a href = "/api-reference/communications/afc/">AvaTax for Comms documentation</a> for a description of the fields and how they should be set.</p>
 <div class="mobile-table">
 <table class="styled-table">
 <tr>

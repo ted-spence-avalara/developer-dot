@@ -23,7 +23,7 @@ You specified an invalid refund type.
       "message": "Refund type is not valid",
       "description": "-0- is not a valid refund type.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidRefundType",
+      "helpLink": "/avatax/errors/InvalidRefundType",
       "severity": "Error"
     }
   ]

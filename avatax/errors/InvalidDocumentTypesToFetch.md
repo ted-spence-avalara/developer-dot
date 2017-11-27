@@ -23,7 +23,7 @@ Temporary documents cannot be fetched from the API.
       "message": "Document with type of -0- is a temporary document, and can not be fetched.",
       "description": "Please call /api/v2/companies/transactions/types to fetch again.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidDocumentTypesToFetch",
+      "helpLink": "/avatax/errors/InvalidDocumentTypesToFetch",
       "severity": "Error"
     }
   ]

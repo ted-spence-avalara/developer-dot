@@ -51,7 +51,7 @@ First, let’s get the correct URL for AvaTax and verify that we can contact it.
 	</table>  
 </div>
 
-If you’re just getting started and you’re not sure which to choose, pick Sandbox – REST.  You can get a [free trial account](https://developer.avalara.com/avatax/signup/) right now and make use of the REST interface immediately.
+If you’re just getting started and you’re not sure which to choose, pick Sandbox – REST.  You can get a [free trial account](/avatax/signup/) right now and make use of the REST interface immediately.
 
 Now that you’ve selected the URL for your AvaTax API server, can you view that page in your web browser?  Here’s what you should see:
 

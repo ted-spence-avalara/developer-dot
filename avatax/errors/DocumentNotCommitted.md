@@ -23,7 +23,7 @@ You attempted to lock a transaction (aka Document) that was not committed.
       "message": "Only committed documents can be locked.",
       "description": "Document -0- was in status -1- and cannot be locked.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/DocumentNotCommitted",
+      "helpLink": "/avatax/errors/DocumentNotCommitted",
       "severity": "Error"
     }
   ]

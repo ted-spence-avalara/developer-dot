@@ -23,7 +23,7 @@ You attempted to read information about an account that does not exist.
       "message": "Account could not be found.",
       "description": "The account -0- does not exist, or you do not have the rights to view it.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/AccountInvalidException",
+      "helpLink": "/avatax/errors/AccountInvalidException",
       "severity": "Error"
     }
   ]

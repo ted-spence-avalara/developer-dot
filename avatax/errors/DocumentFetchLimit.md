@@ -23,7 +23,7 @@ You attempted to fetch more than 1000 transaction documents at a time.
       "message": "Requested too many transaction documents.",
       "description": "You have requested -0- transaction documents.  This API supports requests only up to 1000 transaction documents.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/DocumentFetchLimit",
+      "helpLink": "/avatax/errors/DocumentFetchLimit",
       "severity": "Error"
     }
   ]

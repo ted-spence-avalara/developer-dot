@@ -23,7 +23,7 @@ If an object has been deleted, you may not modify it further after its deletion.
       "message": "Object cannot be modified.",
       "description": "You cannot modify an object with an inactive / deleted flag.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/CannotModifyDeletedObjects",
+      "helpLink": "/avatax/errors/CannotModifyDeletedObjects",
       "severity": "Error"
     }
   ]

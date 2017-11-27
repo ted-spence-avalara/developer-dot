@@ -85,7 +85,7 @@ At the end of the builder, you call `.Create();`.  This function assembles the o
 <ul class="normal">
     <li>The <code class="highlight-rouge">AvaTaxClient</code> you created above.</li>
     <li>The <code class="highlight-rouge">CompanyCode</code> of the company that created this transaction.</li>
-    <li>The <code class="highlight-rouge">DocumentType</code> of this transaction - for more information on document types, see <a href="http://developer.avalara.com/blog/2016/11/18/types-of-transactions/">my previous article on Types of Transactions.</a></li>
+    <li>The <code class="highlight-rouge">DocumentType</code> of this transaction - for more information on document types, see <a href="/blog/2016/11/18/types-of-transactions/">my previous article on Types of Transactions.</a></li>
     <li>The <code class="highlight-rouge">CustomerCode</code> of the customer who requested this transaction.  Customer codes are necessary to check for certain exemption cases; for example, when a customer has set up an exemption certificate for certain types of transactions.  As long as you make sure that each customer has their own unique customer code, any value will be fine here.</li>
 </ul>
 

@@ -23,7 +23,7 @@ The specified location code does not exist.
       "message": "The location code was not found.",
       "description": "The location code -2- could not be found within company -1- and account -0-.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/AddressLocationNotFound",
+      "helpLink": "/avatax/errors/AddressLocationNotFound",
       "severity": "Error"
     }
   ]
@@ -65,5 +65,5 @@ Some steps to check:
 <ul class="normal">
     <li>Did you use the correct company code when creating the transaction?</li>
     <li>Did you use the correct location code?</li>
-    <li>Can you fetch the location using the <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Locations/QueryLocations/">QueryLocations API</a>?</li>
+    <li>Can you fetch the location using the <a href="/api-reference/avatax/rest/v2/methods/Locations/QueryLocations/">QueryLocations API</a>?</li>
 </ul>

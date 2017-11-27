@@ -45,11 +45,11 @@ Avalara partners that use the Onboarding API to integrate with customers should 
 
 <h3>TaxContent API Improvements</h3>
 
-The <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/TaxContent/">TaxContent API</a> has been extended to support custom tax rules and multiple tax rate records.
+The <a href="/api-reference/avatax/rest/v2/methods/TaxContent/">TaxContent API</a> has been extended to support custom tax rules and multiple tax rate records.
 
 <h3>Support for E-Waste Fees</h3>
 
-AvaTax can now support tax calculation for electronic waste disposal!  For example, to calculate E-Waste fees for a 60" television, please call the <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/">CreateTransaction</a> API with the following parameters:
+AvaTax can now support tax calculation for electronic waste disposal!  For example, to calculate E-Waste fees for a 60" television, please call the <a href="/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/">CreateTransaction</a> API with the following parameters:
 
 ```json
 {

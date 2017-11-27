@@ -9,7 +9,7 @@ disqus: 1
 
 <h2>Batch File Reference</h2>
 
-To learn how to use batch files, visit this page: <a href="http://developer.avalara.com/blog/2016/10/24/batch-transaction-upload-in-rest-v2/">Batch Transaction Upload in REST v2</a>
+To learn how to use batch files, visit this page: <a href="/blog/2016/10/24/batch-transaction-upload-in-rest-v2/">Batch Transaction Upload in REST v2</a>
 
 <h3>Batch File Limitations</h3>
 
