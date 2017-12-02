@@ -23,7 +23,7 @@ Your company has not been configured for exemption certificates.
       "message": "This company has not been configured for CertCapture.",
       "description": "The company '-0-' is not found in CertCapture system.",
       "faultCode": "Server",
-      "helpLink": "http://developer.avalara.com/avatax/errors/CertCaptureNotConfiguredError",
+      "helpLink": "/avatax/errors/CertCaptureNotConfiguredError",
       "severity": "Error"
     }
   ]

@@ -83,7 +83,7 @@ Error Message objects have been rewritten to match Microsoft's updated Error Mes
         "message": "One or more parameters in your request were incorrect.",
         "description": "The value '-0-' is not a valid 'id'.",
         "faultCode": "Client",
-        "helpLink": "http://developer.avalara.com/avatax/errors/ModelStateInvalid",
+        "helpLink": "/avatax/errors/ModelStateInvalid",
         "severity": "Error"
       }
     ]
@@ -91,7 +91,7 @@ Error Message objects have been rewritten to match Microsoft's updated Error Mes
 }
 ```
 
-You can preview a list of error messages recognized by AvaTax REST v2 on the <a href="http://developer.avalara.com/avatax/errors/">http://developer.avalara.com/avatax/errors/</a> page.
+You can preview a list of error messages recognized by AvaTax REST v2 on the <a href="/avatax/errors/">/avatax/errors/</a> page.
 
 <h3>Client Identification</h3>
 

@@ -23,7 +23,7 @@ Exposure zones must have unique names.
       "message": "Existing exposure zone -0-",
       "description": "The name of exposure zone should be unique.",
       "faultCode": "Server",
-      "helpLink": "http://developer.avalara.com/avatax/errors/ConflictingExposureZone",
+      "helpLink": "/avatax/errors/ConflictingExposureZone",
       "severity": "Error"
     }
   ]

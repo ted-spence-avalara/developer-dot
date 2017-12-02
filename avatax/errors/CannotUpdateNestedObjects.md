@@ -23,7 +23,7 @@ In AvaTax REST, you can create objects with nested children, but you cannot upda
       "message": "Nested objects may not be updated.",
       "description": "Please update each object using a separate API call.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/CannotUpdateNestedObjects",
+      "helpLink": "/avatax/errors/CannotUpdateNestedObjects",
       "severity": "Error"
     }
   ]

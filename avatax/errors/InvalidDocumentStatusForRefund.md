@@ -23,7 +23,7 @@ The AvaTax Refund API is only available on committed documents.
       "message": "Document is not in a status to process refund",
       "description": "The document status is -0-, we can only process refund on committed document.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidDocumentStatusForRefund",
+      "helpLink": "/avatax/errors/InvalidDocumentStatusForRefund",
       "severity": "Error"
     }
   ]

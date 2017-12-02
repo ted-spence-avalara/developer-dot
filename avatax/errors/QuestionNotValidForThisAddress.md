@@ -23,7 +23,7 @@ One of the questions you answered is not valid for this address.
       "message": "Question is not valid for this address.",
       "description": "Each jurisdiction has separate registration rules for business locations.  The question -0- is not valid in this jurisdiction.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/QuestionNotValidForThisAddress",
+      "helpLink": "/avatax/errors/QuestionNotValidForThisAddress",
       "severity": "Error"
     }
   ]

@@ -16,7 +16,6 @@
     {% assign ogtitle = page.ogtitle | default:page.title %}
     <meta property="og:title" content="{% if ogtitle %}{{ogtitle}} | {% endif %}Avalara Developer" />
     <meta property="og:type" content="article" />
-    <!--<meta property="og:url" content="https://developer.avalara.com/" />-->
     <meta property="og:site_name" content="Avalara Developer Network" />
     <meta property="og:description" content="{{ page.ogdescription | default:default_desc }}"/>
     
@@ -81,8 +80,8 @@
                                         <li><a href="{{api_console_hash.path}}">{{api_console_hash.title}}</a></li>
                                         {% endfor %}
                                         <br/>
-                                        <li><a href="/avatax/dev-guide/">Developer Guide</a></li>
-                                        <li><a href="/avatax/get-started">Set up your AvaTax sandbox</a></li>
+                                        <li><a href="/avatax/use-cases">Use Cases</a></li>
+                                        <li><a href="/avatax/get-started">Start your AvaTax free trial now!</a></li>
                                     </ul>
                                     {% endif %} {% if site.data.api_consoles.communications.nav_links %}
                                     <h4>Avalara Communications</h4>
@@ -95,13 +94,6 @@
                                     <h4>Avalara Excise</h4>
                                     <ul class="pipe">
                                         {% for api_console_hash in site.data.api_consoles.excise.nav_links %}
-                                        <li><a href="{{api_console_hash.path}}">{{api_console_hash.title}}</a></li>
-                                        {% endfor %}
-                                    </ul>
-                                    {% endif %} {% if site.data.api_consoles.landed_cost.nav_links %}
-                                    <h4>Avalara LandedCost</h4>
-                                    <ul class="pipe">
-                                        {% for api_console_hash in site.data.api_consoles.landed_cost.nav_links %}
                                         <li><a href="{{api_console_hash.path}}">{{api_console_hash.title}}</a></li>
                                         {% endfor %}
                                     </ul>
@@ -216,7 +208,7 @@
                 </ul>
 
                 
-                <a href="https://developer.avalara.com/avatax/signup/" class="btn btn-primary btn-signup">Sign up</a>
+                <a href="/avatax/signup/" class="btn btn-primary btn-signup">Free Trial</a>
 
             </div>
         </nav>

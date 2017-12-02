@@ -14,7 +14,7 @@ imgsrc: /public/images/blog/DevDot_ResetLisenceKey.png
 # Using The REST API To Build a Connector
 
 Avalara’s new [REST API
-v2 ](https://developer.avalara.com/api-reference/avatax/rest/v2/)now offers a
+v2 ](/api-reference/avatax/rest/v2/)now offers a
 wide variety of functionality for integrating ERP systems with AvaTax.
 In the new REST API, you can now add companies, estimate tax on the fly,
 validate addresses, and more! For today’s article, we will focus on
@@ -39,7 +39,7 @@ API calls. 
 ## Basic Authentication
 
 To get started, let’s
-[authenticate ](http://developer.avalara.com/avatax/authentication-in-rest/)
+[authenticate ](/avatax/authentication-in-rest/)
 against the API. We will need an account ID and license key from AvaTax.
 We can get the license key on the [Avalara Admin Console
 website](https://admin-avatax.avalara.net/login.aspx?ReturnUrl=%2f) as

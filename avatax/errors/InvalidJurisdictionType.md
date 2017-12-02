@@ -23,7 +23,7 @@ You specified a jurisdiction type that is not recognized.
       "message": "Invalid jurisdiction type.",
       "description": "The value '-0-' is not a valid Avalara-recognized jurisdiction type.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidJurisdictionType",
+      "helpLink": "/avatax/errors/InvalidJurisdictionType",
       "severity": "Error"
     }
   ]

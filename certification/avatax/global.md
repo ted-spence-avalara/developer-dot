@@ -59,8 +59,8 @@ nav: certification
 		</tr>
 		<tr>
 			<td>N</td>
-			<td>AvaTax Admin Console link</td>
-			<td>Link to <a href="https://admin-avatax.avalara.net/login.aspx">AvaTax production Admin Console</a></td>
+			<td>AvaTax Website link</td>
+			<td>Link to the <a href="https://admin.avalara.com">AvaTax Website</a></td>
 		</tr>
 	</tbody>
 </table>

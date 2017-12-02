@@ -23,7 +23,7 @@ You specified an invalid value for a field.
       "message": "The field '-0-' has an incorrect value.",
       "description": "The value '-1-' for the field '-0-' is invalid.  Acceptable values are: -2-.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidEnumValue",
+      "helpLink": "/avatax/errors/InvalidEnumValue",
       "severity": "Error"
     }
   ]

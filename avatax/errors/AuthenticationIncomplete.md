@@ -23,7 +23,7 @@ Your API call did not contain authentication information.
       "message": "Authentication Incomplete.",
       "description": "You must provide an Authorization header of the type Basic or Bearer to authenticate correctly.  -0-",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/AuthenticationIncomplete",
+      "helpLink": "/avatax/errors/AuthenticationIncomplete",
       "severity": "Exception"
     }
   ]

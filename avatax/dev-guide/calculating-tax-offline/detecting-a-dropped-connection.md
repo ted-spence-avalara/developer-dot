@@ -28,7 +28,7 @@ When you receive an error message from AvaTax, the best practice is to display t
         "number": 4,
         "message": "Document with ID 'TESTINGCO - 100' not found.",
         "faultCode": "Client",
-        "helpLink": "http://developer.avalara.com/avatax/errors/EntityNotFoundError",
+        "helpLink": "/avatax/errors/EntityNotFoundError",
         "severity": "Error"
       }
     ]

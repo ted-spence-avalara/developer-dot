@@ -23,7 +23,7 @@ Your bearer token does not have a provisioned AvaTax account.
       "message": "Unable to retrieve Avalara user ID.",
       "description": "The account associated with this request is not authorized to make AvaTax API calls. Please contact your CAM and verify that you have a valid AvaTax subscription.",
       "faultCode": "Server",
-      "helpLink": "http://developer.avalara.com/avatax/errors/RetrieveUserError",
+      "helpLink": "/avatax/errors/RetrieveUserError",
       "severity": "Error"
     }
   ]

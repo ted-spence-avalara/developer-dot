@@ -23,7 +23,7 @@ A certificate must have either a filename, a PDF file attachment, or one JPG ima
       "message": "The field -0- is missing.",
       "description": "The field -0- is required to -1- -2-.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/MissingRequiredFields",
+      "helpLink": "/avatax/errors/MissingRequiredFields",
       "severity": "Error"
     }
   ]

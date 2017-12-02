@@ -13,7 +13,7 @@ disqus: 1
 
 One of the most common questions we get from our point-of-sale customers is about the need to operate in a disconnected environment, while maintaining the same level of accuracy of a connected environment. Many businesses can face periods of intermittent internet connectivity, preventing live calls to our tax engine. Some businesses wish to operate entirely disconnected. In either scenario, businesses require the means to calculate tax locally.
 
-Today, we'll walk through a new API launching in the [AvaTax 2.16.12 release](http://developer.avalara.com/blog/2016/11/22/rest-v2-16-12-patch-notes/) - an API that generates a tax content file that can be consumed by a merchant's point-of-sale (POS) application, supporting its native tax functionality. The data in the API response, at a minimum, will contain tax jurisdiction, tax rate and product/service taxability information for each Tax Code and brick & mortar store Location configured in your AvaTax account.
+Today, we'll walk through a new API launching in the [AvaTax 2.16.12 release](/blog/2016/11/22/rest-v2-16-12-patch-notes/) - an API that generates a tax content file that can be consumed by a merchant's point-of-sale (POS) application, supporting its native tax functionality. The data in the API response, at a minimum, will contain tax jurisdiction, tax rate and product/service taxability information for each Tax Code and brick & mortar store Location configured in your AvaTax account.
 
 ### The Point-of-Sale Tax Content File
 
@@ -299,7 +299,7 @@ But what if you only want to include a couple of Locations or Tax Codes? Or mayb
 }
 ```
 
-Or, even easier, you can request the data file for one location at a time using the [individual location point-of-sale data API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/TaxContent/BuildTaxContentFileForLocation/):
+Or, even easier, you can request the data file for one location at a time using the [individual location point-of-sale data API](/api-reference/avatax/rest/v2/methods/TaxContent/BuildTaxContentFileForLocation/):
 
 `GET /api/v2/companies/12345/locations/56789/pointofsaledata`
 

@@ -23,7 +23,7 @@ The certificate system could not link the two objects as requested.
       "message": "Failed to add -0-.",
       "description": "-1-",
       "faultCode": "Server",
-      "helpLink": "http://developer.avalara.com/avatax/errors/AddRelationshipsError",
+      "helpLink": "/avatax/errors/AddRelationshipsError",
       "severity": "Error"
     }
   ]

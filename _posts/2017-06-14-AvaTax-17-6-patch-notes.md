@@ -53,7 +53,7 @@ The AvaTax TaxContent API (formerly known as the point-of-sale API) has been ren
 
 <h3>Updated field on TransactionModel</h3>
 
-For consistency of naming between the [CreateTransactionModel](https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/) and the [TransactionModel](https://developer.avalara.com/api-reference/avatax/rest/v2/models/TransactionModel/) objects, we have unified the naming of the field `reportingLocationCode`.  The name "Reporting Location Code" was chosen because it better communicates the function of the field - it allows companies who perform location-based filing to select the location-based tax return on which a transaction will be reported.
+For consistency of naming between the [CreateTransactionModel](/api-reference/avatax/rest/v2/models/CreateTransactionModel/) and the [TransactionModel](/api-reference/avatax/rest/v2/models/TransactionModel/) objects, we have unified the naming of the field `reportingLocationCode`.  The name "Reporting Location Code" was chosen because it better communicates the function of the field - it allows companies who perform location-based filing to select the location-based tax return on which a transaction will be reported.
 
 The old field, `locationCode`, will continue to exist but has been deprecated.  Please adjust your code to use `reportingLocationCode`.
 
@@ -74,15 +74,15 @@ A variety of improvements to the returns filing functionality in AvaTax:
 
 <ul class="normal">
     <li>Significant performance improvements for fetching large volumes of transactions.</li>
-    <li>It is now possible to call <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateOrAdjustTransaction/">CreateOrAdjustTransaction</a> on a transaction that was previously cancelled.  Doing so will create a new transaction with a code matching the old transaction's code.</li>
-    <li>Activating your account using the <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Accounts/ActivateAccount/">ActivateAccount API</a> now triggers a welcome email.</li>
-    <li>The fields <code class="highlight-rouge">FirstName</code> and <code class="highlight-rouge">LastName</code> on <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/UserModel/">UserModel</a> are now required.</li>
+    <li>It is now possible to call <a href="/api-reference/avatax/rest/v2/methods/Transactions/CreateOrAdjustTransaction/">CreateOrAdjustTransaction</a> on a transaction that was previously cancelled.  Doing so will create a new transaction with a code matching the old transaction's code.</li>
+    <li>Activating your account using the <a href="/api-reference/avatax/rest/v2/methods/Accounts/ActivateAccount/">ActivateAccount API</a> now triggers a welcome email.</li>
+    <li>The fields <code class="highlight-rouge">FirstName</code> and <code class="highlight-rouge">LastName</code> on <a href="/api-reference/avatax/rest/v2/models/UserModel/">UserModel</a> are now required.</li>
     <li>Improvements to the Address Resolution API behavior for jurisdictions with complex taxability.</li>
-    <li>Documentation for the <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Free/">Free TaxRates APIs</a> updated.</li>
-    <li>Calling <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/">CreateTransaction</a> using a SalesOrder transaction type now correctly preserves the <code class="highlight-rouge">ItemCode</code> and <code class="highlight-rouge">Quantity</code> fields.</li>
-    <li>Improved error messages when calling <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Nexus/CreateNexus/">CreateNexus</a>.  If you use the <code class="highlight-rouge">LocalNexusTypeId</code> or <code class="highlight-rouge">HasLocalNexus</code> values on the <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/NexusModel/">NexusModel</a> object, you will receive an error if they are incorrectly configured.</li>
-    <li>When using the <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Accounts/SetAccountConfiguration/">SetAccountConfiguration API</a>, you will receive an error message if you attempt to set a taxability override code to a value that conflicts with a system code.</li>
-    <li>It is no longer possible to <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Registrar/CreateUsers/">CreateUser</a> for a user with a role of "CompanyAdmin" or "CompanyUser" without correctly assigning them to a company.</li>
+    <li>Documentation for the <a href="/api-reference/avatax/rest/v2/methods/Free/">Free TaxRates APIs</a> updated.</li>
+    <li>Calling <a href="/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/">CreateTransaction</a> using a SalesOrder transaction type now correctly preserves the <code class="highlight-rouge">ItemCode</code> and <code class="highlight-rouge">Quantity</code> fields.</li>
+    <li>Improved error messages when calling <a href="/api-reference/avatax/rest/v2/methods/Nexus/CreateNexus/">CreateNexus</a>.  If you use the <code class="highlight-rouge">LocalNexusTypeId</code> or <code class="highlight-rouge">HasLocalNexus</code> values on the <a href="/api-reference/avatax/rest/v2/models/NexusModel/">NexusModel</a> object, you will receive an error if they are incorrectly configured.</li>
+    <li>When using the <a href="/api-reference/avatax/rest/v2/methods/Accounts/SetAccountConfiguration/">SetAccountConfiguration API</a>, you will receive an error message if you attempt to set a taxability override code to a value that conflicts with a system code.</li>
+    <li>It is no longer possible to <a href="/api-reference/avatax/rest/v2/methods/Registrar/CreateUsers/">CreateUser</a> for a user with a role of "CompanyAdmin" or "CompanyUser" without correctly assigning them to a company.</li>
     <li>Fixed many unhandled exceptions for various edge cases.</li>
 </ul>
 

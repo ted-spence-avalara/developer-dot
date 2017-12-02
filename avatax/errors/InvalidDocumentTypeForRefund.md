@@ -23,7 +23,7 @@ The document you attempted to refund was not a SalesInvoice.
       "message": "Invalid document type to process refund",
       "description": "The document type is -0-, we can only process refund on SalesInvoice document.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidDocumentTypeForRefund",
+      "helpLink": "/avatax/errors/InvalidDocumentTypeForRefund",
       "severity": "Error"
     }
   ]

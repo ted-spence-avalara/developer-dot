@@ -23,7 +23,7 @@ Your API call contained an incorrectly structured object.
       "message": "Validation Error.",
       "description": "The data you supplied in the '-0-' could not be successfully parsed.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/ValidationException",
+      "helpLink": "/avatax/errors/ValidationException",
       "severity": "Exception"
     }
   ]

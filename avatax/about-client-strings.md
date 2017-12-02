@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Overview
+title: About Client Strings
 product: avaTax
 doctype: use_cases
 nav: apis

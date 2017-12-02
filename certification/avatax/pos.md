@@ -38,7 +38,7 @@ nav: certification
 <h3>Business Process Flow - Tax Content Request</h3>
 <p>The AvaTax tax content request process is defined as follows:</p>
 <ol class="normal">
-<li>Merchant configures its AvaTax account via the Admin Console:</li>
+<li>Merchant configures its AvaTax account via the AvaTax Website:</li>
 	<ul class="normal">
 	<li>Define nexus selections</li>
 	<li>Setup each brick & mortar store location as Location Code</li>

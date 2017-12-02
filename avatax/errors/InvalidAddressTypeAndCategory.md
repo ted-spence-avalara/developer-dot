@@ -23,7 +23,7 @@ When creating a location, you must specify a compatible AddressType and AddressC
       "message": "Invalid AddressType and AddressCategory combination.",
       "description": "-0- -1-",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidAddressTypeAndCategory",
+      "helpLink": "/avatax/errors/InvalidAddressTypeAndCategory",
       "severity": "Error"
     }
   ]

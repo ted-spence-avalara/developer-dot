@@ -23,7 +23,7 @@ You provided an invalid parameter to the address resolution endpoint.
       "message": "Address Text case must either be null or one of predefined enum.",
       "description": "Address text case is invalid '-0-'.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidAddressTextCase",
+      "helpLink": "/avatax/errors/InvalidAddressTextCase",
       "severity": "Error"
     }
   ]

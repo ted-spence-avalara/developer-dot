@@ -25,11 +25,11 @@ If you are having difficulting deciding where to start, check out our <a href="/
 
 Here are links to download a few of our SDKs:
 <ul class="normal">
-    <li><a href="https://www.nuget.org/packages/Avalara.AvaTax/?referrer=&lastReferrer=developer.avalara.com&sessionId=1499361473802">AvaTax C# SDK</a></li>
-    <li><a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.avalara.avatax%22?referrer=&lastReferrer=developer.avalara.com&sessionId=1499361473802">AvaTax JRE SDK</a></li>
-    <li><a href="https://packagist.org/packages/avalara/avataxclient?referrer=&lastReferrer=developer.avalara.com&sessionId=1499361473802">AvaTax PHP SDK</a></li>
-    <li><a href="https://rubygems.org/gems/avatax?referrer=&lastReferrer=developer.avalara.com&sessionId=1499361473802">AvaTax Ruby SDK</a></li>
-    <li><a href="https://www.npmjs.com/package/avatax?referrer=&lastReferrer=developer.avalara.com&sessionId=1499361473802">AvaTax JavaScript SDK</a></li>
+    <li><a href="https://www.nuget.org/packages/Avalara.AvaTax/">AvaTax C# SDK</a></li>
+    <li><a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.avalara.avatax%22">AvaTax JRE SDK</a></li>
+    <li><a href="https://packagist.org/packages/avalara/avataxclient">AvaTax PHP SDK</a></li>
+    <li><a href="https://rubygems.org/gems/avatax">AvaTax Ruby SDK</a></li>
+    <li><a href="https://www.npmjs.com/package/avatax">AvaTax JavaScript SDK</a></li>
 </ul>
 If you are interested in working with SDKs, make sure to checkout our <a href="/sdk/">AvaTax SDKs</a> and our <a href="/sdk/soap/">SOAP SDKs</a>. 
 </div>

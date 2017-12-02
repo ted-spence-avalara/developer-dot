@@ -23,7 +23,7 @@ When adding parameters to your CreateTransactionModel, you must use a valid para
       "message": "The parameter '-0-' is not a valid parameter.",
       "description": "For a full list of valid parameters, please use the /api/v2/definitions/parameters endpoint.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidParameter",
+      "helpLink": "/avatax/errors/InvalidParameter",
       "severity": "Error"
     }
   ]

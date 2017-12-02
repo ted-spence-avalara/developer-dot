@@ -23,7 +23,7 @@ You submitted a refund percentage lower than 0% or higher than 100%
       "message": "Provide percentage for refund is out of range.",
       "description": "Provided percentage is: -0-.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/RefundPercentageOutOfRange",
+      "helpLink": "/avatax/errors/RefundPercentageOutOfRange",
       "severity": "Error"
     }
   ]
