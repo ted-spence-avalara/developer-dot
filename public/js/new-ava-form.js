@@ -1,14 +1,14 @@
 function insertAvaForm()
 {
-    $(".avaform-wrapper").append("<div style='margin: 20px 20px 20px 20px; padding: 20px 20px 20px 20px;'><label>Request a Free AvaTax Sandbox Account</label><form><div class='form-group'><label for='name'>First Name / Given Name</label><input type='text' class='form-control' id='firstName' placeholder=''></div><div class='form-group'><label for='name'>Last Name / Family Name</label><input type='text' class='form-control' id='lastName' placeholder=''></div><div class='form-group'><label for='email'>Email Address</label><input type='email' class='form-control' id='email' placeholder='user@example.org'></div><div class='form-group'><label for='company'>Company</label><input type='text' class='form-control' id='company' placeholder='Company Name'></div><div class='form-group'><label for='phone'>Phone</label><input type='tel' class='form-control' id='phone' aria-describedby='emailHelp' placeholder='Phone Number'></div><button type='button' id='submit' class='btn btn-primary' onclick='return submitShort();'>Submit</button></form><br/><div id='ava-form-alert' class='alert alert-warning fade in' style='display: none;'><span id='ava-form-info'></span></div></div>");
+    $(".avaform-wrapper").append("<div style='margin: 20px 20px 20px 20px; padding: 20px 20px 20px 20px;'><label>Request a Free AvaTax Sandbox Account</label><form><div class='form-group'><label for='name'>First Name / Given Name</label><input type='text' class='form-control' id='firstName' placeholder=''></div><div class='form-group'><label for='name'>Last Name / Family Name</label><input type='text' class='form-control' id='lastName' placeholder=''></div><div class='form-group'><label for='email'>Email Address</label><input type='email' class='form-control' id='email' placeholder='user@example.org'></div><div class='form-group'><label for='company'>Company</label><input type='text' class='form-control' id='company' placeholder='Company Name'></div><div class='form-group'><label for='website'>Website</label><input type='text' class='form-control' id='website' placeholder='Optional'></div><div class='form-group'><label for='phone'>Phone</label><input type='tel' class='form-control' id='phone' aria-describedby='emailHelp' placeholder='Phone Number'></div><button type='button' id='submit' class='btn btn-primary' onclick='return submitShort();'>Submit</button></form><br/><div id='ava-form-alert' class='alert alert-warning fade in' style='display: none;'><span id='ava-form-info'></span></div></div>");
 }
 
 function submitShort()
 {
-    return submitForm($('#firstName').val(), $('#lastName').val(), $('#email').val(), $('#company').val(), $('#phone').val(), $('#ava-form-info'), $('#ava-form-alert'));
+    return submitForm($('#firstName').val(), $('#lastName').val(), $('#email').val(), $('#company').val(), $('#website').val(), $('#phone').val(), $('#ava-form-info'), $('#ava-form-alert'));
 }
 
-function submitForm(fn, ln, e, c, p, outputElement, alertElement)
+function submitForm(fn, ln, e, c, w, p, outputElement, alertElement)
 {
     alertElement.hide();
     var payload = {
@@ -16,6 +16,7 @@ function submitForm(fn, ln, e, c, p, outputElement, alertElement)
         lastName: ln,
         email: e,
         company: c,
+        website: w,
         phone: p
     };
     $.ajax({
