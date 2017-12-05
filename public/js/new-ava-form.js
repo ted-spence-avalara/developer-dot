@@ -20,7 +20,7 @@ function submitForm(fn, ln, e, c, w, p, outputElement, alertElement)
         phone: p
     };
     $.ajax({
-        url: 'https://sandbox-rest.avatax.com/api/v2/accounts/freetrials/request',
+        url: 'https://rest.avatax.com/api/v2/accounts/freetrials/request',
         data: JSON.stringify(payload),
         contentType: 'application/json',
         beforeSend: function() {
