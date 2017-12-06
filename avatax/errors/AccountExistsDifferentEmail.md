@@ -23,7 +23,7 @@ An account with this username already exists.
       "message": "User already exists in Avalara Identity but with a different email address.",
       "description": "User -0- already exists in Avalara Identity but with a different email address.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/AccountExistsDifferentEmail",
+      "helpLink": "http://developer.avalara.com/avatax/errors/AccountExistsDifferentEmail",
       "severity": "Error"
     }
   ]

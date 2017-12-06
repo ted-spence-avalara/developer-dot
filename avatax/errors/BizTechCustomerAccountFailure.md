@@ -23,7 +23,7 @@ The Avalara business technology service could not create the account you request
       "message": "Customer Account creation failed.",
       "description": "The customer account could not be created through BizTech service for the account '-0-' at '-1-'.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/BizTechCustomerAccountFailure",
+      "helpLink": "http://developer.avalara.com/avatax/errors/BizTechCustomerAccountFailure",
       "severity": "Error"
     }
   ]

@@ -23,7 +23,7 @@ Companies participating in Streamlined Sales Tax may not override addresses in S
       "message": "Cannot create JurisdictionOverride for SST state -0-",
       "description": "SST states are not allowed to create JurisdictionOverides.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/SSTOverridesNotAvailable",
+      "helpLink": "http://developer.avalara.com/avatax/errors/SSTOverridesNotAvailable",
       "severity": "Error"
     }
   ]

@@ -23,7 +23,7 @@ A problem was detected with Avalara Identity.
       "message": "The Avalara Identity Server failed to authenticate your request.",
       "description": "Revalidate your request and try again.  -0-",
       "faultCode": "Server",
-      "helpLink": "/avatax/errors/IdentityServerError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/IdentityServerError",
       "severity": "Exception"
     }
   ]

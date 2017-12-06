@@ -23,7 +23,7 @@ You attempted to retrieve data with a "$filter" parameter that contained syntax 
       "message": "Error parsing $filter parameter.",
       "description": "The filter contained a string value that was not properly terminated: -0-",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/ParserUnterminatedValueError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/ParserUnterminatedValueError",
       "severity": "Error"
     }
   ]

@@ -23,7 +23,7 @@ You attempted to refund a line item that did not exist in the original transacti
       "message": "The specified line -0- for refund is out of range.",
       "description": "The Specified line does not exist in original transaction.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/LineNoOutOfRange",
+      "helpLink": "http://developer.avalara.com/avatax/errors/LineNoOutOfRange",
       "severity": "Error"
     }
   ]

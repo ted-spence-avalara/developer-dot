@@ -21,9 +21,9 @@ You specified a date outside of the allowable range.
       "code": "InvalidDateRangeError",
       "number": 81,
       "message": "Invalid date range.",
-      "description": "The -0- has to be between -1- and -2-.",
+      "description": "The '-0-' has to be between '-1-' and '-2-'.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/InvalidDateRangeError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidDateRangeError",
       "severity": "Error"
     }
   ]

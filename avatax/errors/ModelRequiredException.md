@@ -23,7 +23,7 @@ You called an API that requires an object, but you did not provide an object.
       "message": "A required model was not provided.",
       "description": "Please verify that your request included a request body in valid JSON format.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/ModelRequiredException",
+      "helpLink": "http://developer.avalara.com/avatax/errors/ModelRequiredException",
       "severity": "Exception"
     }
   ]

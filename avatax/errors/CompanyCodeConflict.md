@@ -23,7 +23,7 @@ The company code in the URL of your API call did not match the company code of t
       "message": "You attempted to create a transaction at the wrong URL.",
       "description": "You attempted to create a transaction for company '-1-' using the URL for company '-0-'.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/CompanyCodeConflict",
+      "helpLink": "http://developer.avalara.com/avatax/errors/CompanyCodeConflict",
       "severity": "Error"
     }
   ]

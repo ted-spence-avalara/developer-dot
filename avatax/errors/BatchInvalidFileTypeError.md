@@ -23,7 +23,7 @@ You uploaded a batch file with an incorrect file type.
       "message": "Compressed archive file contained wrong file type",
       "description": "The BatchFile '-1-' had a compressed file of type '-0-'.  Compressed files can only contain CSV, XLS, XLSX, XML, POSTED, and UNPOSTED file types.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/BatchInvalidFileTypeError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/BatchInvalidFileTypeError",
       "severity": "Error"
     }
   ]

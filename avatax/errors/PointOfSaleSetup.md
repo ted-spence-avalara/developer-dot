@@ -23,7 +23,7 @@ Invalid parameter provided in the Point-Of-Sale file request.
       "message": "Invalid point-of-sale data file request.",
       "description": "The value -0- in your data file request was invalid or unrecognized.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/PointOfSaleSetup",
+      "helpLink": "http://developer.avalara.com/avatax/errors/PointOfSaleSetup",
       "severity": "Error"
     }
   ]

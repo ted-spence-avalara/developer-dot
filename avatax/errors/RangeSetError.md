@@ -23,7 +23,7 @@ You attempted to set a value that was not permitted.
       "message": "-1- must be one of the following: -2-.",
       "description": "-0-",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/RangeSetError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/RangeSetError",
       "severity": "Error"
     }
   ]

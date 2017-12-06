@@ -23,7 +23,7 @@ You attempted to search for a value that is not a correct value type.
       "message": "Error parsing $filter parameter.",
       "description": "The field named '-0-' is type -1- and cannot be compared to '-2-'",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/ParserFieldValueError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/ParserFieldValueError",
       "severity": "Error"
     }
   ]

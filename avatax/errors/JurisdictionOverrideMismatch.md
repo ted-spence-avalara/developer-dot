@@ -23,7 +23,7 @@ An address override cannot be created for this jurisdiction.
       "message": "The jurisdiction you provided cannot be found.",
       "description": "Please use /api/v2/definitions/jurisdictionsnearaddress to determine nearby jurisdictions for use in overrides.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/JurisdictionOverrideMismatch",
+      "helpLink": "http://developer.avalara.com/avatax/errors/JurisdictionOverrideMismatch",
       "severity": "Error"
     }
   ]

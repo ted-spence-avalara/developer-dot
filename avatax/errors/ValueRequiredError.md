@@ -23,7 +23,7 @@ You submitted a request and did not provide a value in a required field.
       "message": "Field -0- is required.",
       "description": "Please provide a value for field -0-.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/ValueRequiredError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/ValueRequiredError",
       "severity": "Error"
     }
   ]

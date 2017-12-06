@@ -23,7 +23,7 @@ A certificate must have be stored in only one format: filename, PDF, or images.
       "message": "Fields are conflicting",
       "description": "When creating certificate, you can only specify filename OR pdf OR images.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/ConflictingFields",
+      "helpLink": "http://developer.avalara.com/avatax/errors/ConflictingFields",
       "severity": "Error"
     }
   ]

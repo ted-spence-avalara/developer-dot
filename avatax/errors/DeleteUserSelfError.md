@@ -23,7 +23,7 @@ A user account may not call DELETE on the user itself.
       "message": "Profile can't be deleted.",
       "description": "You can't delete your own profile. Contact your account administrator for help. -0-",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/DeleteUserSelfError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/DeleteUserSelfError",
       "severity": "Error"
     }
   ]

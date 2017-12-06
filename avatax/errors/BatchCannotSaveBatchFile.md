@@ -23,7 +23,7 @@ AvaTax cannot save the batch file.
       "message": "Batch file could not be saved",
       "description": "The file '-0-' could not be saved.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/BatchCannotSaveBatchFile",
+      "helpLink": "http://developer.avalara.com/avatax/errors/BatchCannotSaveBatchFile",
       "severity": "Error"
     }
   ]

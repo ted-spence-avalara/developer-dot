@@ -23,7 +23,7 @@ You provided an incomplete address to an AvaTax API.
       "message": "The address value was incomplete.",
       "description": "The address value -0- was incomplete.  You must provide either a valid postal code, line1 + city + region, or latitude + longitude.  For international transactions outside of US/CA, only a country code is required.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/AddressIncomplete",
+      "helpLink": "http://developer.avalara.com/avatax/errors/AddressIncomplete",
       "severity": "Error"
     }
   ]

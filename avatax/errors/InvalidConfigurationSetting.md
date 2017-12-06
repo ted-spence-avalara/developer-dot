@@ -23,7 +23,7 @@ The configuration setting you specified is invalid.
       "message": "The configuration setting you provided was not recognized.",
       "description": "The setting -0-.-1- is invalid.  The category -0- is defined by Avalara and only specific names are recognized.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/InvalidConfigurationSetting",
+      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidConfigurationSetting",
       "severity": "Error"
     }
   ]

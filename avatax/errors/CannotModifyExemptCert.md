@@ -23,7 +23,7 @@ Exemption certificates cannot be modified using the Company API.
       "message": "Modify exempt certificate with company is not allowed",
       "description": "Exempt certificate can't be modified using Company endpoints",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/CannotModifyExemptCert",
+      "helpLink": "http://developer.avalara.com/avatax/errors/CannotModifyExemptCert",
       "severity": "Error"
     }
   ]

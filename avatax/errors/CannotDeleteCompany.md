@@ -23,7 +23,7 @@ You attempted to delete a company with committed transactions.
       "message": "A company with committed documents cannot be deleted.",
       "description": "The company -0- has committed documents and therefore cannot be deleted.  Void any committed documents and try again.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/CannotDeleteCompany",
+      "helpLink": "http://developer.avalara.com/avatax/errors/CannotDeleteCompany",
       "severity": "Error"
     }
   ]

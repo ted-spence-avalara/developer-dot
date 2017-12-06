@@ -23,7 +23,7 @@ The specified location code does not exist.
       "message": "The location code was not found.",
       "description": "The location code -2- could not be found within company -1- and account -0-.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/AddressLocationNotFound",
+      "helpLink": "http://developer.avalara.com/avatax/errors/AddressLocationNotFound",
       "severity": "Error"
     }
   ]

@@ -23,7 +23,7 @@ Your IP address has not been approved.
       "message": "The IP Address of the machine is not whitelisted to use this API.",
       "description": "You have attempted to contact an API that is available to specially invited partners and developers only.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/InvalidIPAddress",
+      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidIPAddress",
       "severity": "Error"
     }
   ]
