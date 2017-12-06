@@ -23,7 +23,7 @@ Your Basic authorization header was not encoded correctly.
       "message": "Incorrect Base header format.",
       "description": "The Basic header must be in the format 'Basic (Base64Encoded(value))' where Value is either 'username' + ':' + 'password' or 'accountid' + ':' + 'licensekey'.  -0-",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/BasicAuthIncorrect",
+      "helpLink": "/avatax/errors/BasicAuthIncorrect",
       "severity": "Exception"
     }
   ]

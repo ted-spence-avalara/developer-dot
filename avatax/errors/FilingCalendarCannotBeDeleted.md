@@ -23,7 +23,7 @@ A filing calendar cannot be deleted once in use.
       "message": "Unable to delete this filing calendar",
       "description": "There is a current approved worksheet for this filing calendar.  Filing calendars cannot be deleted with an approved worksheet associated with it.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/FilingCalendarCannotBeDeleted",
+      "helpLink": "/avatax/errors/FilingCalendarCannotBeDeleted",
       "severity": "Error"
     }
   ]

@@ -23,7 +23,7 @@ The Avalara Communications Client ID value associated with your account is inval
       "message": "ClientId field for Communications configuration has a bad value.",
       "description": "Client ID value must be an integer greater than 0 in order to create a Communications configuration.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/CommsConfigClientIdBadValue",
+      "helpLink": "/avatax/errors/CommsConfigClientIdBadValue",
       "severity": "Error"
     }
   ]

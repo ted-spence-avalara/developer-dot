@@ -24,7 +24,7 @@ In summary, you should be able to:
 <div class="dev-guide-certification">
 <div class="dev-guide-certification-heading"><a href="/certification/avatax/use-tax/">Certification Requirements</a></div>
 <div class="dev-guide-certification-content">
-Please see the following link for a comprehensive listing of <a class="dev-guide-link" href="https://developer.avalara.com/certification/avatax/use-tax/">requirements for Use Tax Certification</a>.
+Please see the following link for a comprehensive listing of <a class="dev-guide-link" href="/certification/avatax/use-tax/">requirements for Use Tax Certification</a>.
 </div>
 </div>
 

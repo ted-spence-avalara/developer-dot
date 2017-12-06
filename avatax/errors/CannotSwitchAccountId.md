@@ -23,7 +23,7 @@ You may not change the accountId value on a company.
       "message": "Switching accountId during company update is not allowed!",
       "description": "The accountId '-0-' in your request does not match with the one for company to be updated.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/CannotSwitchAccountId",
+      "helpLink": "/avatax/errors/CannotSwitchAccountId",
       "severity": "Error"
     }
   ]

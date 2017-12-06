@@ -11,8 +11,8 @@ As a general rule, if the product is taxable, somebody has to pay the tax. If th
 <ul class="normal">
 	<li>DocType: For consumer use transactions, use DocType PurchaseOrder (for quote-type and unsaved transactions) or PurchaseInvoice (for transactions that should be saved in AvaTax). This will trigger the tax paid vs. accrued tax logic outlined below, and make sure these transactions appear on the correct reports.</li>
 	<li>TaxOverrideAmount: All consumer use tax transactions should have a TaxOverrideAmount (at either the document level or all lines) indicating the amount of tax already paid to the vendor. If no tax was paid to the vendor, the TaxOverrideAmount should be zero. AvaTax will calculate the tax and report on the difference between the tax calculated and the tax you have already paid to the vendor.</li>
-	<li>Reporting: Consumer use transactions are available in a separate reporting bucket than Sales/Seller's Use transactions - you'll find them under the Standard Consumer Use Tax Reports in the Admin Console.</li>
+	<li>Reporting: Consumer use transactions are available in a separate reporting bucket than Sales/Seller's Use transactions - you'll find them under the Standard Consumer Use Tax Reports in the <a href="https://admin.avalara.com">AvaTax Website</a>.</li>
 </ul>
-For more information on Consumer Use Tax reporting and implications, check out the <a href="https://developer.avalara.com/certification/avatax/use-tax/">Certification Requirements</a>.
+For more information on Consumer Use Tax reporting and implications, check out the <a href="/certification/avatax/use-tax/">Certification Requirements</a>.
 
 <hr />

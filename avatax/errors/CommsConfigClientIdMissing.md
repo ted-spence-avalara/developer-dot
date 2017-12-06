@@ -23,7 +23,7 @@ You attempted to call a Communications tax API, but your client ID value is miss
       "message": "Missing ClientId field for Communications configuration.",
       "description": "Client ID is required in order to create a Communications configuration.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/CommsConfigClientIdMissing",
+      "helpLink": "/avatax/errors/CommsConfigClientIdMissing",
       "severity": "Error"
     }
   ]

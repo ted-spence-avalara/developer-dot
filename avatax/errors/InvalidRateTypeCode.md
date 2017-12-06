@@ -23,7 +23,7 @@ This rate type is not valid in the country provided.
       "message": "You specified an invalid rateTypeCode.",
       "description": "The rateTypeCode '-1-' was not found in country '-0-'.  For a full list of RateType objects, call `/api/v2/definitions/ratetypes`.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidRateTypeCode",
+      "helpLink": "/avatax/errors/InvalidRateTypeCode",
       "severity": "Error"
     }
   ]

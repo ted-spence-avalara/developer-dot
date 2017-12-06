@@ -23,7 +23,7 @@ You attempted to create a duplicate TaxCode object.
       "message": "Taxcode -0- already exists.",
       "description": "This tax code already exists in Avatax and cannot be duplicated. Please designate a different tax code identifier.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/DuplicateSystemTaxCode",
+      "helpLink": "/avatax/errors/DuplicateSystemTaxCode",
       "severity": "Error"
     }
   ]

@@ -37,9 +37,9 @@ This article is about the February 2017 monthly update to the AvaTax REST v2 API
 
 Avalara is pleased to announce the freely available REST v2 TaxRates API!  The TaxRates API provides basic tax functionality for no cost.
 
-You also now have available an API that creates a [free 30-day trial of AvaTax Professional](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Free/RequestFreeTrial/).  This free trial account comes with no obligations and allows you to experiment with a fully featured version of Avalara AvaTax.  After 30 days, you may continue to use the free TaxRates API or you can upgrade to a full account.
+You also now have available an API that creates a [free 30-day trial of AvaTax Professional](/api-reference/avatax/rest/v2/methods/Free/RequestFreeTrial/).  This free trial account comes with no obligations and allows you to experiment with a fully featured version of Avalara AvaTax.  After 30 days, you may continue to use the free TaxRates API or you can upgrade to a full account.
 
-For more information on using the free TaxRates API, please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/).
+For more information on using the free TaxRates API, please see [Estimating Tax with REST v2](/blog/2016/11/04/estimating-tax-with-rest-v2/).
 
 <h2>Onboarding API in REST v2</h2>
 
@@ -67,7 +67,7 @@ The managed returns APIs are available by invitation only.
 
 <h2>Friendly Authentication in Swagger</h2>
 
-We have updated to the latest release of [API Documentation](https://developer.avalara.com/api-reference/avatax/rest/v2/)!  You can tell we upgraded because the new color is Orange.  One great side effect of the latest update is that we now support browser-based authentication both via Avalara Identity and username/password credentials!  Here's how it will work.
+We have updated to the latest release of [API Documentation](/api-reference/avatax/rest/v2/)!  You can tell we upgraded because the new color is Orange.  One great side effect of the latest update is that we now support browser-based authentication both via Avalara Identity and username/password credentials!  Here's how it will work.
 
 First, you click the `Authorize` button in the top right of the API reference screen.
 

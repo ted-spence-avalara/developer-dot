@@ -23,7 +23,7 @@ Your account does not currently have a default company.
       "message": "Your account does not have a default company.",
       "description": "Please create a company within your account and mark it as the default company, then retry your API call.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/NoDefaultCompany",
+      "helpLink": "/avatax/errors/NoDefaultCompany",
       "severity": "Error"
     }
   ]

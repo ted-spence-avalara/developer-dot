@@ -70,8 +70,8 @@ These changes affect temporary document types only.  Temporary document types ar
 The AvaTax 30-day free trial now includes Landed Cost functionality.  Try it out now!  For more information about how to use Landed Cost to handle importing products across borders, please see the blog series:
 
 <ul class="normal">
-    <li><a href="http://developer.avalara.com/blog/2016/10/13/landedcost-with-rest-v2">LandedCost Basics</a></li>
-    <li><a href="http://developer.avalara.com/blog/2016/12/15/landed-cost-who-pays">Landed Cost - Delivered At Place vs Delivered Duty Paid</a></li>
+    <li><a href="/blog/2016/10/13/landedcost-with-rest-v2">LandedCost Basics</a></li>
+    <li><a href="/blog/2016/12/15/landed-cost-who-pays">Landed Cost - Delivered At Place vs Delivered Duty Paid</a></li>
 </ul>
 
 <h3>Returns API Improvements</h3>

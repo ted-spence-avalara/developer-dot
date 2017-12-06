@@ -23,7 +23,7 @@ Your $filter value has a mismatched open parenthesis / close parenthesis.
       "message": "Error parsing $filter.",
       "description": "The $filter value '-0-' had an uneven number of open parenthesis '(' and close parenthesis ')'.  Please check your query and try again.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/OpenClauseException",
+      "helpLink": "/avatax/errors/OpenClauseException",
       "severity": "Error"
     }
   ]

@@ -23,7 +23,7 @@ An account tied to this email address already exists.
       "message": "An account with this email already exists.",
       "description": "Unable to create a new account for email address '-0-'.  That email address is already associated with an existing account.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/AccountExists",
+      "helpLink": "/avatax/errors/AccountExists",
       "severity": "Error"
     }
   ]

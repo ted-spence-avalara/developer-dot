@@ -16,10 +16,9 @@
     {% assign ogtitle = page.ogtitle | default:page.title %}
     <meta property="og:title" content="{% if ogtitle %}{{ogtitle}} | {% endif %}Avalara Developer" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://developer.avalara.com/" />
     <meta property="og:site_name" content="Avalara Developer Network" />
     <meta property="og:description" content="{{ page.ogdescription | default:default_desc }}"/>
-
+    
     <link rel="apple-touch-icon" sizes="57x57" href="/public/images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/public/images/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/public/images/favicon/apple-icon-72x72.png">
@@ -81,8 +80,8 @@
                                         <li><a href="{{api_console_hash.path}}">{{api_console_hash.title}}</a></li>
                                         {% endfor %}
                                         <br/>
-                                        <li><a href="/avatax/dev-guide/">Developer Guide</a></li>
-                                        <li><a href="/avatax/get-started">Set up your AvaTax sandbox</a></li>
+                                        <li><a href="/avatax/use-cases">Use Cases</a></li>
+                                        <li><a href="/avatax/get-started">Start your AvaTax free trial now!</a></li>
                                     </ul>
                                     {% endif %} {% if site.data.api_consoles.communications.nav_links %}
                                     <h4>Avalara Communications</h4>
@@ -95,20 +94,6 @@
                                     <h4>Avalara Excise</h4>
                                     <ul class="pipe">
                                         {% for api_console_hash in site.data.api_consoles.excise.nav_links %}
-                                        <li><a href="{{api_console_hash.path}}">{{api_console_hash.title}}</a></li>
-                                        {% endfor %}
-                                    </ul>
-                                    {% endif %} {% if site.data.api_consoles.landed_cost.nav_links %}
-                                    <h4>Avalara LandedCost</h4>
-                                    <ul class="pipe">
-                                        {% for api_console_hash in site.data.api_consoles.landed_cost.nav_links %}
-                                        <li><a href="{{api_console_hash.path}}">{{api_console_hash.title}}</a></li>
-                                        {% endfor %}
-                                    </ul>
-                                    {% endif %} {% if site.data.api_consoles.avataxbr.nav_links %}
-                                    <h4>Avalara AvaTax Brazil</h4>
-                                    <ul class="pipe">
-                                        {% for api_console_hash in site.data.api_consoles.avataxbr.nav_links %}
                                         <li><a href="{{api_console_hash.path}}">{{api_console_hash.title}}</a></li>
                                         {% endfor %}
                                     </ul>
@@ -223,7 +208,7 @@
                 </ul>
 
                 
-                <a href="https://developer.avalara.com/avatax/signup/" class="btn btn-primary btn-signup">Sign up</a>
+                <a href="/avatax/signup/" class="btn btn-primary btn-signup">Free Trial</a>
 
             </div>
         </nav>
@@ -233,7 +218,7 @@
         <div class="recent-blog-posts" id="recentPosts">
             <button class="btn btn-seconndary pull-right" onClick="{document.getElementById('recentPosts').style.display='none';}"><i class="glyphicon glyphicon-remove"></i> Close</button>
             <h1>What's new</h1>
-            <p class="whats-new"><a href="https://register.gotowebinar.com/register/6793209827763645698?elqTrackId=7278ff2427e948fba281a0b63b6b9e43&elqaid=2376&elqat=2">Sign up</a> for our next upcoming developer webinar on October 24th!</p>
+            <p class="whats-new"><a href="https://www.avalaracrush.com">Get a jumpstart on building tax compliance solutions – Register for CRUSHDC 2018 today!</a></p>
             <h2>Recent blog posts</h2>
             {% for post in site.posts limit:4 %}
             <div class="col-md-3">

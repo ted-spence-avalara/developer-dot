@@ -23,7 +23,7 @@ This error occurs when you create an object whose end date is before its effecti
       "message": "Invalid date range.",
       "description": "The effective date, -0-, is later than the end date, -1-.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/DateRangeError",
+      "helpLink": "/avatax/errors/DateRangeError",
       "severity": "Error"
     }
   ]

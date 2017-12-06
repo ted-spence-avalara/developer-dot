@@ -15,7 +15,7 @@ As part of our commitment to the [Open API initiative](https://www.openapis.org/
 
 <h3>Single Page Per Method</h3>
 
-Our new site layout features one web page for each API method in our documentation.  This makes it easy to share commonly used documentation such as the [CreateTransaction](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/), [ResolveAddress](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Addresses/ResolveAddress/), and [RefundTransaction](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/RefundTransaction/) API calls.
+Our new site layout features one web page for each API method in our documentation.  This makes it easy to share commonly used documentation such as the [CreateTransaction](/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/), [ResolveAddress](/api-reference/avatax/rest/v2/methods/Addresses/ResolveAddress/), and [RefundTransaction](/api-reference/avatax/rest/v2/methods/Transactions/RefundTransaction/) API calls.
 
 You can glance at these pages and easily determine:
 
@@ -29,7 +29,7 @@ Here's a sample of one of our API methods, RefundTransaction:
 
 <h3>Documentation for Structured Objects</h3>
 
-In AvaTax, every structured object you use or receive is called a `Model`.  Avalara has written [documentation for every model used by AvaTax](https://developer.avalara.com/api-reference/avatax/rest/v2/models/) to help you understand what each object is and how it works.  For example, if you're interested in learning about the [AddressInfo](https://developer.avalara.com/api-reference/avatax/rest/v2/models/AddressInfo/) model, you can click on the link to its documentation and easily see:
+In AvaTax, every structured object you use or receive is called a `Model`.  Avalara has written [documentation for every model used by AvaTax](/api-reference/avatax/rest/v2/models/) to help you understand what each object is and how it works.  For example, if you're interested in learning about the [AddressInfo](/api-reference/avatax/rest/v2/models/AddressInfo/) model, you can click on the link to its documentation and easily see:
 
 * The name of each member field
 * The data type (for example, string, numeric, boolean, date, or so on)
@@ -45,7 +45,7 @@ Here's a sample object that shows how you can use this documentation:
 
 <h3>Try Every API</h3>
 
-Even more exciting, you're invited to visit our developer website and try out each API interactively!  For example [ListCountries](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListCountries/) is the API that provides access to the ISO 3166 country code database.  (Avalara maintains a subscription to the ISO country code definition system so that our customers don't have to!)  You can visit the web page for the [ListCountries API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListCountries/) and click on "Try ListCountries Now".  You'll be able to click the `Submit` button and see, in just a few moments, the exact response that you would receive if you called it with your production account credentials!
+Even more exciting, you're invited to visit our developer website and try out each API interactively!  For example [ListCountries](/api-reference/avatax/rest/v2/methods/Definitions/ListCountries/) is the API that provides access to the ISO 3166 country code database.  (Avalara maintains a subscription to the ISO country code definition system so that our customers don't have to!)  You can visit the web page for the [ListCountries API](/api-reference/avatax/rest/v2/methods/Definitions/ListCountries/) and click on "Try ListCountries Now".  You'll be able to click the `Submit` button and see, in just a few moments, the exact response that you would receive if you called it with your production account credentials!
 
 This Try-It-Now functionality is available - now - for every API in Avalara's REST v2 suite.  Use it as a great way to get started and understand how the product would respond - use it as a way to preview results - or just to play around with new features before writing code against them.
 

@@ -73,8 +73,8 @@ To have your integration Certified by Avalara, we have outlined the areas of int
 		</tr>
 		<tr>
 			<td>N</td>
-			<td>AvaTax Admin Console link</td>
-			<td>Link to <a href="https://admin-avatax.avalara.net/login.aspx">AvaTax production Admin Console</a>.</td>
+			<td>AvaTax Website link</td>
+			<td>Link to the <a href="https://admin.avalara.com">AvaTax Website</a></td>
 		</tr>
 	</tbody>
 </table>
@@ -264,7 +264,9 @@ To have your integration Certified by Avalara, we have outlined the areas of int
 </table>
 
 <h3>Server Audit Clarity and Installation Requirements</h3>
-<p>Tax calculation should display a clean audit to promote an error- and overage-free user experience. These properties are not visible from the Admin Console, and show up on an Avatax-side server audit of traffic on your account. Contact us if you would like an audit report run and emailed to you.</p>
+
+Tax calculation should display a clean audit to promote an error- and overage-free user experience. These properties are not visible from the [AvaTax Website](https://admin.avalara.com), and show up on an Avatax-side server audit of traffic on your account. Contact us if you would like an audit report run and emailed to you.
+
 <table class="styled-table">
 	<thead>
 		<tr>

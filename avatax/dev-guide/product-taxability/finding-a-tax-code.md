@@ -19,12 +19,12 @@ As long as you continue using a null tax code, AvaTax will treat your products t
 You can find the correct tax code for your product in one of two ways:
 <ul class="dev-guide-list">
     <li>Look on Avalara's <a class="dev-guide-link" href="https://taxcode.avatax.avalara.com">tax code site</a></li>
-    <li>Or you could call the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListTaxCodes/">ListTaxCodes API</a> to list available tax codes</li>
+    <li>Or you could call the <a class="dev-guide-link" href="/api-reference/avatax/rest/v2/methods/Definitions/ListTaxCodes/">ListTaxCodes API</a> to list available tax codes</li>
 </ul>
 
 When you use tax codes correctly in AvaTax, you will get the correct tax rate for your transaction. Some customers will choose to enter a tax code directly when creating a transaction. 
 
-Other customers may wish to search for tax codes directly through the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListTaxCodes/">ListTaxCodes API</a>.   A common use case is to show a drop down text box.  When a customer starts typing the word <code>C</code>, your program can call <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListTaxCodes/">ListTaxCodes</a> to find all tax codes that begin with the letters that the customer has typed.  Here's how to call <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListTaxCodes/">ListTaxCodes</a>:
+Other customers may wish to search for tax codes directly through the <a class="dev-guide-link" href="/api-reference/avatax/rest/v2/methods/Definitions/ListTaxCodes/">ListTaxCodes API</a>.   A common use case is to show a drop down text box.  When a customer starts typing the word <code>C</code>, your program can call <a class="dev-guide-link" href="/api-reference/avatax/rest/v2/methods/Definitions/ListTaxCodes/">ListTaxCodes</a> to find all tax codes that begin with the letters that the customer has typed.  Here's how to call <a class="dev-guide-link" href="/api-reference/avatax/rest/v2/methods/Definitions/ListTaxCodes/">ListTaxCodes</a>:
 <pre>
 GET /api/v2/definitions/taxcodes/$filter=description startswith C
  
@@ -45,7 +45,7 @@ GET /api/v2/definitions/taxcodes/$filter=description startswith C
 
 <h3>Adding TaxCodes to your Transaction</h3>
 
-On the document line level you can pass via the <a class="dev-guide-link" href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/">CreateTransactionModel</a>. There are a few properties that allow you to identify your line categories of ItemCode, Quantity, Amount, Description, and TaxCode. The <code>ItemCode</code> are generally the value passed by your integration or web service to represent a part number, SKU or product ID for the said products or services.
+On the document line level you can pass via the <a class="dev-guide-link" href="/api-reference/avatax/rest/v2/models/CreateTransactionModel/">CreateTransactionModel</a>. There are a few properties that allow you to identify your line categories of ItemCode, Quantity, Amount, Description, and TaxCode. The <code>ItemCode</code> are generally the value passed by your integration or web service to represent a part number, SKU or product ID for the said products or services.
 
 Here's what a transaction looks like when you add tax codes to a line:
 <div class="dev-guide-test" id="test2">

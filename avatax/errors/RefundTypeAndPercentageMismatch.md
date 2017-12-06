@@ -23,7 +23,7 @@ You specified a `Full` refund, but the percentage parameter was not null.
       "message": "Refund type and refund percentage are mismatch.",
       "description": "The refund type is -0-, but the refund percentage is -1-. For full refund, the refund percentage must be null or 100, while for partial refund, the percentage must be between 1 and 100.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/RefundTypeAndPercentageMismatch",
+      "helpLink": "/avatax/errors/RefundTypeAndPercentageMismatch",
       "severity": "Error"
     }
   ]

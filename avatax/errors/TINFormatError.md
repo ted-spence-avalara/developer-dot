@@ -23,7 +23,7 @@ The U.S. Taxpayer Identification Number you provided is not in a recognized form
       "message": "Taxpayer ID Number (TIN) is not in the correct format.",
       "description": "The TIN is a nine digit number. Acceptable formats: 123456789, 12-3456789, 123-456-789, and 123-45-6789.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/TINFormatError",
+      "helpLink": "/avatax/errors/TINFormatError",
       "severity": "Error"
     }
   ]

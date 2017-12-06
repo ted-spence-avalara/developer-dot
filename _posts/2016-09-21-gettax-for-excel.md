@@ -40,7 +40,7 @@ The function signature of GetTax is as follows:
         shipToLine1 As String, shipToLine2 As String, shipToLine3 As String, shipToCity As String, shipToRegion As String, shipToCountry As String, shipToPostalCode As String, _
         lineHeaders As Range, lineItems As Range) As String
 
-The GetTax call, when invoked, performs the web request against the <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/">REST v2 APIs</a> resulting in your calculated invoice appearing on your AvaTax console:
+The GetTax call, when invoked, performs the web request against the <a href="/api-reference/avatax/rest/v2/">REST v2 APIs</a> resulting in your calculated invoice appearing on your AvaTax console:
 
 <center><img src="/public/images/adminconsole.png" alt="Admin Console Screenshot" style="width: 100%;"/><br/><br/><br/></center>
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Cancel Transactions
+title: Voiding Documents
 product: avaTax
 doctype: use_cases
 nav: apis
@@ -74,7 +74,7 @@ The Response will be a detailed summary of this action of the following structur
 }
 ```
 
-You'll notice this transaction has now been cancelled as it states in the response: `"status": "Cancelled"`. Also, when viewed in the Admin Console the transaction will now be Voided under your companies transactions tab. This will allow for the transaction to be included in any reports you might wish to file.
+You'll notice this transaction has now been cancelled as it states in the response: `"status": "Cancelled"`. Also, when viewed in the [AvaTax Website](https://admin.avalara.com) the transaction will now be Voided under your companies transactions tab. This will allow for the transaction to be included in any reports you might wish to file.
 
 ### Using DocDeleted
 
@@ -151,4 +151,4 @@ Now that we've run through a couple of example requests using the REST API, here
 	</table>
 </div>
 
-Further reference on the request/response parameters can be found <a href="http://developer.avalara.com/api-reference/avatax/rest/v2/Transactions/#ApiV2CompaniesByCompanyCodeTransactionsByTransactionCodeVoidPost"> in our API references.</a>
+Further reference on the request/response parameters can be found <a href="/api-reference/avatax/rest/v2/Transactions/#ApiV2CompaniesByCompanyCodeTransactionsByTransactionCodeVoidPost"> in our API references.</a>

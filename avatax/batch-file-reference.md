@@ -9,7 +9,7 @@ disqus: 1
 
 <h2>Batch File Reference</h2>
 
-To learn how to use batch files, visit this page: <a href="http://developer.avalara.com/blog/2016/10/24/batch-transaction-upload-in-rest-v2/">Batch Transaction Upload in REST v2</a>
+To learn how to use batch files, visit this page: <a href="/blog/2016/10/24/batch-transaction-upload-in-rest-v2/">Batch Transaction Upload in REST v2</a>
 
 <h3>Batch File Limitations</h3>
 
@@ -21,7 +21,7 @@ To learn how to use batch files, visit this page: <a href="http://developer.aval
 </ul>
 
 <h3>These are the REST v2 supported Batch File Types</h3>
-<i> Download CSV Batch Templates Here (Many of these are also available in the Admin Console):</i>
+<i> Download CSV Batch Templates:</i>
 <ul class="normal">
     <li><a href="https://raw.githubusercontent.com/Avalara/developer-dot/master/_batchtemplates/ImportItemsTemplate.csv" download>ItemImport</a> - refers to a batch type used for uploading multiple items and their respective tax codes at once.</li>
     <li><a href="https://raw.githubusercontent.com/Avalara/developer-dot/master/_batchtemplates/ImportCompanyLocationsTemplate.csv" download>CompanyLocationImport</a> - refers to a batch type used to upload multiple company locations at once.</li>
@@ -208,7 +208,7 @@ The following fields correspond to the same fields in the CreateTransactionModel
             <tr>
                 <td>TaxCode</td>
                 <td>Text, up to 25 characters</td>
-                <td>The AvaTax tax code or custom tax code associated with the item or SKU used on the document line. TaxCode is not needed if ItemCode (column K) is mapped to a tax code in the AvaTax Admin Console for your company.</td>
+                <td>The AvaTax tax code or custom tax code associated with the item or SKU used on the document line. TaxCode is not needed if ItemCode (column K) is mapped to a tax code in the <a href="https://admin.avalara.com">AvaTax Website</a> for your company.</td>
                 <td><pre>P0000000</pre></td>
             </tr>
             <tr>
@@ -223,7 +223,7 @@ The following fields correspond to the same fields in the CreateTransactionModel
                 <td>ItemCode</td>
                 <td>Text, up to 50 characters</td>
                 <td>The item code or SKU that identifies the product, service, or charge.
-                If ItemCode is mapped to an AvaTax System tax code or custom tax code in the AvaTax Admin Console (Organization tab, Items sub-menu), importing a transaction that uses this field triggers system or custom tax rules. ItemCode is required only if the company (CompanyCode, column E) is in the Streamlined Sales Tax Project (SSTP) and the state of origin (OrigRegion, column AA) or destination (DestRegion, column V) is also in the SSTP.</td>
+                If ItemCode is mapped to an AvaTax System tax code or custom tax code in the <a href="https://admin.avalara.com">AvaTax Website</a>, importing a transaction that uses this field triggers system or custom tax rules. ItemCode is required only if the company (CompanyCode, column E) is in the Streamlined Sales Tax Project (SSTP) and the state of origin (OrigRegion, column AA) or destination (DestRegion, column V) is also in the SSTP.</td>
                 <td><pre>AB-124123DEF</pre></td>
             </tr>
             <tr>
@@ -314,7 +314,7 @@ The following fields correspond to the same fields in the CreateTransactionModel
             <tr>
                 <td>LocationCode</td>
                 <td>Alphanumeric text, up to 50 characters</td>
-                <td>The LocationCode identifies the sales location (outlet) for the document line. Use this field if you have set up that sales location's address in the AvaTax Admin Console.</td>
+                <td>The LocationCode identifies the sales location (outlet) for the document line. Use this field if you have set up that sales location's address in the <a href="https://admin.avalara.com">AvaTax Website</a>.</td>
                 <td><pre>DEF001</pre></td>
             </tr>
             <tr>

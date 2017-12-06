@@ -23,7 +23,7 @@ Compressed files uploaded to the Batch service must contain exactly one file.
       "message": "Compressed archive did not contain one file.",
       "description": "The compressed archive file -0- did not contain exactly one file when uncompressed.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/BatchZipMustContainOneFileError",
+      "helpLink": "/avatax/errors/BatchZipMustContainOneFileError",
       "severity": "Error"
     }
   ]

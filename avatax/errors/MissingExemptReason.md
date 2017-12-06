@@ -23,7 +23,7 @@ A certificate must have an exemption reason.
       "message": "Exempt reason Field is missing.",
       "description": "To create a certificate, exempt reason is required.",
       "faultCode": "Server",
-      "helpLink": "http://developer.avalara.com/avatax/errors/MissingExemptReason",
+      "helpLink": "/avatax/errors/MissingExemptReason",
       "severity": "Error"
     }
   ]

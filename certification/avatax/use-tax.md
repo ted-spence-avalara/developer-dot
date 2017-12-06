@@ -72,8 +72,8 @@ Upon completion of the purchase of Avalara services and the activation of its Av
 		</tr>
 		<tr>
 			<td>Suggested</td>
-			<td>Avalara Admin Console/Portal Link</td>
-			<td>Provide a link to the Avalara portal</td>
+			<td>AvaTax Website Link</td>
+			<td>Link to the <a href="https://admin.avalara.com">AvaTax Website</a></td>
 		</tr>
 		
 	</tbody>

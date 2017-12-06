@@ -16,7 +16,7 @@ When you’re calculating tax on returns or credit memos through the API, there 
 </ul>
 Return Invoice or Credit Memo processing is largely a business practice that the developer and the business manager need to map out prior to coding or moving forward to a production environment. A thorough understanding of the API's GetTaxRequest members and document states is key to developing an architecture suitable for processing returns in your development.
 
-For the example provided below, we will process a return invoice on the following sales invoice, as seen on the Admin Console:
+For the example provided below, we will process a return invoice on the following sales invoice, as seen on the [AvaTax Website](https://admin.avalara.com):
 
 <img src="/public/images/devdot/ProductReturns_Invoice.svg" alt="Invoice" width="100%" />
 

@@ -24,7 +24,7 @@ The LandedCost calculator currently supports two situations:
 
 <h2>How do you submit DDP?</h2>
 
-For this example, we'll say that the Seller, is responsible. That means we'll use the code "DDP". This parameter is attached to the main body of the transaction, and it's called `AvaTax.LandedCost.Incoterms`.  You may notice that this is the exact same transaction as we used in our <a href="http://developer.avalara.com/blog/2016/10/13/landedcost-with-rest-v2/">previous blog post</a>, except that we've simply changed the `Incoterms` value to be `DDP`.
+For this example, we'll say that the Seller, is responsible. That means we'll use the code "DDP". This parameter is attached to the main body of the transaction, and it's called `AvaTax.LandedCost.Incoterms`.  You may notice that this is the exact same transaction as we used in our <a href="/blog/2016/10/13/landedcost-with-rest-v2/">previous blog post</a>, except that we've simply changed the `Incoterms` value to be `DDP`.
 
 `POST /api/v2/transactions/create`
 

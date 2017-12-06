@@ -23,7 +23,7 @@ The API you attempted to call resulted in an unhandled exception within Avalara 
       "message": "An invalid exception handler routine has been detected.",
       "description": "This error has been logged and reported to Avalara system administrators.  No action is required.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/UnhandledException",
+      "helpLink": "/avatax/errors/UnhandledException",
       "severity": "Exception"
     }
   ]

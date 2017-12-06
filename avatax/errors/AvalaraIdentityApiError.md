@@ -23,7 +23,7 @@ A server configuration problem has been detected.
       "message": "Unexpected Avalara Identity error.",
       "description": "Unexpected Avalara Identity error:-0-.",
       "faultCode": "Server",
-      "helpLink": "http://developer.avalara.com/avatax/errors/AvalaraIdentityApiError",
+      "helpLink": "/avatax/errors/AvalaraIdentityApiError",
       "severity": "Error"
     }
   ]

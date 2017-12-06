@@ -23,7 +23,7 @@ The value you provided in the `$filter` parameter was incorrect.
       "message": "Error parsing $filter.",
       "description": "The $filter value '-0-' had an invalid leading or trailing conjunction.  Please check your query and try again.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/LeadingOrTrailingException",
+      "helpLink": "/avatax/errors/LeadingOrTrailingException",
       "severity": "Error"
     }
   ]

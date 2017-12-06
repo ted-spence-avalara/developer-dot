@@ -12,9 +12,6 @@ doctype: overview
           <li><a href="#compliance">Compliance document management</a></li>
           <li><a href="#returns-filing">Returns and filing</a></li>
       </ul>
-      <ul class="pipe padding-bottom">
-          <li><a href="/avatax/dev-guide/">AvaTax Developer Guide</a></li>
-      </ul>
   </div>
 </div>
 <div class="row border-top">
@@ -33,21 +30,6 @@ doctype: overview
         {% if site.data.api_consoles.avatax11.nav_links %}
           <ul class="pipe padding-bottom">
           {% for api_console_hash in site.data.api_consoles.avatax11.nav_links %}
-              <li><a href="{{api_console_hash.path}}">{{api_console_hash.title}}</a></li>
-          {% endfor %}
-          </ul>
-        {% endif %}
-        <div class="row">
-            <div class="col-md-12"><h2>Real-time tax calculation and electronic invoices supporting transactions created by ERPs, CRMs, POS and Shopping Cart Applications.</h2></div>
-        </div>
-        <p>Explore the API before you build. Automate tax calculation for sales, purchases and withholdings on payments and receipts.<a href="/avataxbr/">Get started with the AvaTax Brazil API now.</a></p>
-        <div class="pageTitle">
-            <img src="/public/images/Avalara_logo.svg" alt="Avalara">
-            <span>AvaTax Brazil</span>
-         </div>
-        {% if site.data.api_consoles.avataxbr.nav_links %}
-          <ul class="pipe padding-bottom">
-          {% for api_console_hash in site.data.api_consoles.avataxbr.nav_links %}
               <li><a href="{{api_console_hash.path}}">{{api_console_hash.title}}</a></li>
           {% endfor %}
           </ul>
@@ -78,19 +60,6 @@ doctype: overview
           {% endfor %}
           </ul>
         {% endif %}
-        <h2>Duties and fees for international sales</h2>
-        <p>The Landed Cost  Rate and Calculation API allows to you lookup rates for commodities, and determine estimated landed cost totals for an invoice. <a href="/landedcost">Learn more about the Landed Cost API.</a></p>
-        <div class="pageTitle">
-            <img src="/public/images/Avalara_logo.svg" alt="Avalara">
-            <span>LandedCost</span>
-         </div>
-         {% if site.data.api_consoles.landed_cost.nav_links %}
-             <ul class="pipe padding-bottom">
-             {% for api_console_hash in site.data.api_consoles.landed_cost.nav_links %}
-                 <li><a href="{{api_console_hash.path}}">{{api_console_hash.title}}</a></li>
-             {% endfor %}
-             </ul>
-         {% endif %}
     </div>
 </div>
 <div class="row border-top bg-fill padding-bottom">
@@ -121,7 +90,7 @@ doctype: overview
     </div>
     <div class="col-md-7 col-md-offset-3">
         <h2>Prepare and file AvaTax-integrated returns</h2>
-        <p>Avalara Returns is a fully-managed solution that incorporates a Treasury solution for simple payment, guaranteed on-time filing, audit support, and notice management. There are currently no APIs available for Avalara Returns – data is populated from AvaTax transactions and returns are managed by the merchant through the provided Customer Portal. <a href="http://www.avalara.com/products/returns/">Learn more about Avalara Returns</a>.
+        <p>Avalara Returns is a fully-managed solution that incorporates a Treasury solution for simple payment, guaranteed on-time filing, audit support, and notice management. There are currently no APIs available for Avalara Returns – data is populated from AvaTax transactions and returns are managed by the merchant through the provided <a href="https://admin.avalara.com">AvaTax Website</a>. <a href="http://www.avalara.com/products/returns/">Learn more about Avalara Returns</a>.
         </p>
         <div class="pageTitle">
             <img src="/public/images/Avalara_logo.svg" alt="Avalara">

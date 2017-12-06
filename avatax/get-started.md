@@ -13,8 +13,6 @@ avaform: 1
   Want to know how the API looks? Make some requests to either <a href="/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/"> Calculate Tax</a> or <a href="/api-reference/avatax/rest/v2/methods/Addresses/ResolveAddress/">Validate an Address</a>. See how different inputs produce different tax calcluation results, and see what kind of tax information you can expect to get back.
 </div>
 
-<!--{% include get-started-console.html %}-->
-
 <h4 id="signup"><img src="/public/images/blog/orange-box-2-sm.png" alt="2" /> Create an AvaTax Account</h4>
 
 To get started, we'll first set you up with an AvaTax <strong>Sandbox</strong> account.  This account will allow you to use advanced AvaTax functionality in the <strong>U.S. and Canada only</strong>, in an environment called <strong>Sandbox</strong>.  Because this is a sandbox, you can experiment all you like and your test data will be kept separate from your production accounts.
@@ -23,9 +21,9 @@ Here's how to request a free sandbox trial account today:
 
 <div class="avaform-wrapper"></div>
 
-<h4><img src="/public/images/blog/orange-box-3-sm.png" alt="3" /> Visit the Customer Portal</h4>
+<h4><img src="/public/images/blog/orange-box-3-sm.png" alt="3" /> Visit the AvaTax Website</h4>
 
-To calculate tax correctly, we'll need to know a few things about your company.  Fortunately, Avalara's Customer Portal provides a streamlined onboarding process that helps you configure your company quickly and easily.  Visit <a target="_blank" href="https://sandbox.admin.avalara.com">Avalara Customer Portal for Sandbox Accounts</a> and walk through the five minute setup process.
+To calculate tax correctly, we'll need to know a few things about your company.  Fortunately, the AvaTax Website provides a streamlined onboarding process that helps you configure your company quickly and easily.  Visit <a target="_blank" href="https://sandbox.admin.avalara.com">AvaTax Website for Sandbox Accounts</a> and walk through the five minute setup process.
 
 <h4><img src="/public/images/blog/orange-box-4-sm.png" alt="4" /> Calculate Tax</h4>
 
@@ -101,7 +99,7 @@ We're really proud of the world-leading AvaTax platform, and we hope you'll have
 
 <ul class="normal">
     <li>Read our <a href="/blog">Developer Blog</a> for up-to-date news and articles about the great features of AvaTax</li>
-    <li>Ready to upgrade to a production account?  Please <a href="https://www.avalara.com/contact-us/?referrer=&lastReferrer=developer.avalara.com">contact the sales department</a> anytime and we'll be happy to help you out.</li>
+    <li>Ready to upgrade to a production account?  Please <a href="https://www.avalara.com/contact-us/">contact the sales department</a> anytime and we'll be happy to help you out.</li>
     <li>Want to develop a certified connector?  Visit our <a href="/certification/">Certified Avalara Integration</a> page today and get started!</li>
     <li>Want more information about all the great API features in AvaTax?  Visit the <a href="/api-reference/avatax/rest/v2/">online AvaTax API reference</a> now!</li>
     <li>Have a question about the API, or want to share your success story?  Visit the <a href="https://community.avalara.com/avalara">AvaTax Developer Community</a> and ask questions and share tips and tricks with other developers from around the world!</li>

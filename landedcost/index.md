@@ -39,7 +39,9 @@ doctype: overview
             </div>
             <div class="col-md-7 col-md-offset-5 padding-top">
                 <ul class="pipe">
-                    <li><a href="/api-reference/landedcost/">API references</a></li>
+                    <li>Use the <a href="/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/">CreateTransaction API</a></li>
+					<li>Customize <a href="/blog/2016/10/13/landedcost-with-rest-v2">Landed Cost Parameters</a></li>
+					<li>Read more about Landed Cost</li>
                 </ul>
             </div>
             <div class="col-md-7 col-md-offset-5 padding-top">

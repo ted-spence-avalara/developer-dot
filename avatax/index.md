@@ -35,15 +35,6 @@ doctype: overview
     </div>
   </div>
 </div>
-<div class="row padding-top padding-bottom">
-  <div class="col-md-6 col-md-offset-3 text-center">
-    <h1 class="h1p">Learn what the AvaTax API can do for you</h1>
-    <ul class="pipe">
-        <li><a href="/avatax/use-cases">Use cases</a></li>
-        <li><a href="/api-reference/avatax/rest/v1">API references</a></li>
-    </ul>
-  </div>
-</div>
 <div class="row border-top padding-top hidden-xs">
   <div class="col-md-8 col-md-offset-2 text-center">
     <div class="row">
@@ -57,7 +48,7 @@ doctype: overview
             <h4 class="text-left">Integration testing resources</h4>
         </div>
         <div class="col-md-3">
-            <h4 class="text-left">Building a certified integration has benefits</h4>
+            <h4 class="text-left">Certified integration benefits</h4>
         </div>
     </div>
     <div class="row">
@@ -74,15 +65,21 @@ doctype: overview
             <p class="text-left">Ready to take the final step? Certify your integration to receive sales and marketing support from Avalara.</p>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-3">
+			<p><a href="/avatax/dev-guide/">The AvaTax Developer Guide makes getting started easy!</a></p>
+        </div>
+        <div class="col-md-3">
+			<p><a href="/sdk">Save time with the AvaTax SDK, available in five languages!</a></p>
+        </div>
+        <div class="col-md-3">
+			<p><a href="/api-reference/avatax/rest/v2">Try out the AvaTax API with our interactive 'Try-It-Now' feature!</a></p>
+        </div>
+        <div class="col-md-3">
+			<p><a href="/certification/avatax">Check your connector against the online certification checklist!</a></p>
+        </div>
+    </div>
   </div>
 </div>
-<div class="row padding-top padding-bottom" >
-  <div class="col-md-8 col-md-offset-2 text-center">
-    <h1 class="h1p">Fast and easy integration with AvaTax</h1>
-    <ul class="pipe" >
-        <li><a href="/tests/testing-your-integration">Test your integration</a></li>
-        <li><a href="/certification/avatax/">Integration Checklists</a></li>
-            </ul>
-  </div>
  
 </div>

@@ -23,7 +23,7 @@ The date value you provided was incorrectly formatted.
       "message": "Dates are only recognized in ISO 8601 format.",
       "description": "The field '-0-' was not recognized as a valid date value.  Valid dates are in the ISO 8601 format.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/DateFormatError",
+      "helpLink": "/avatax/errors/DateFormatError",
       "severity": "Error"
     }
   ]

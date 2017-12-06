@@ -23,7 +23,7 @@ A tax transaction must have both an origin and a destination address.
       "message": "Transactions are missing -0- addresses. Only -1- addresses are provided",
       "description": "-2- must have both an origin and destination address.  The origin addresses are either 'ShipFrom' or 'PointOfOrderAcceptance'. The destination addresses are either 'ShipTo' or 'PointOfOrderOrigin'.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/NotEnoughAddressesInfo",
+      "helpLink": "/avatax/errors/NotEnoughAddressesInfo",
       "severity": "Error"
     }
   ]

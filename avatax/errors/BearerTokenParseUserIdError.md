@@ -23,7 +23,7 @@ The bearer token you provided could not be parsed.
       "message": "Unable to parse Avalara user ID.",
       "description": "The Avalara User ID could not be parsed during Avalara Identity validation.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/BearerTokenParseUserIdError",
+      "helpLink": "/avatax/errors/BearerTokenParseUserIdError",
       "severity": "Error"
     }
   ]

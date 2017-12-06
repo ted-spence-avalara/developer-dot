@@ -23,7 +23,7 @@ The effective date for your filing request is not valid.
       "message": "Invalid Effective Date",
       "description": "The effective date in the Filing Request is invalid.  Please call the cycle safe api to view valid effective dates.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidEffectiveDate",
+      "helpLink": "/avatax/errors/InvalidEffectiveDate",
       "severity": "Error"
     }
   ]

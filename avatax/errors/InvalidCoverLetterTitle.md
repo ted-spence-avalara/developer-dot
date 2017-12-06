@@ -23,7 +23,7 @@ THe cover letter you specified for this CertExpress invitation was not found.
       "message": "Invalid cover letter title: -0-.",
       "description": "To send a CertExpress invitation, a valid cover letter title is needed. You can get a list of available cover letter at api/v2/definitions/coverletters.",
       "faultCode": "Server",
-      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidCoverLetterTitle",
+      "helpLink": "/avatax/errors/InvalidCoverLetterTitle",
       "severity": "Error"
     }
   ]

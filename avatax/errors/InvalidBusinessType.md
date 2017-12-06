@@ -23,7 +23,7 @@ The business type field on the ECMS record is invalid.
       "message": "The field 'businessTypeId' has an incorrect value.",
       "description": "The value '-0-' is invalid.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidBusinessType",
+      "helpLink": "/avatax/errors/InvalidBusinessType",
       "severity": "Error"
     }
   ]

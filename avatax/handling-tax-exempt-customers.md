@@ -17,7 +17,7 @@ Depending on how you store your customer information, there are several ways you
 </li>
 	<li>CustomerUsageType (Entity/Use Codes)
 <ul class="normal">
-	<li>This is also available in the GetTaxRequest at the document and line levels. It allows you to exempt a transaction by passing a pre-coded exemption reason (see values below), or you can create custom reasons with <a href="https://help.avalara.com/000_AvaTax_Calc/000AvaTaxCalc_User_Guide/051_Select_AvaTax_System_Tax_Codes/Add_Tax_Rules?origin=deflection#Add_an_exempt_entity_tax_rule">custom rules in the admin console</a>. This at least provides a way of explaining the reason for the exemption, but any certificates will still be managed manually by the user.</li>
+	<li>This is also available in the GetTaxRequest at the document and line levels. It allows you to exempt a transaction by passing a pre-coded exemption reason (see values below), or you can create custom reasons with <a href="https://help.avalara.com/000_AvaTax_Calc/000AvaTaxCalc_User_Guide/051_Select_AvaTax_System_Tax_Codes/Add_Tax_Rules?origin=deflection#Add_an_exempt_entity_tax_rule">custom rules on the AvaTax Website</a>. This at least provides a way of explaining the reason for the exemption, but any certificates will still be managed manually by the user.</li>
 </ul>
 </li>
 </ul>
@@ -25,7 +25,7 @@ Depending on how you store your customer information, there are several ways you
 <ul class="normal">
 	<li>AvaTax Exemption Certificate Management System (ECMS)
 <ul class="normal">
-	<li>This is a certificate management tool available to all customers on the Admin Console. Certificates are imported to the admin console directly as placeholder records for a real certificate maintained by you on file. Certificates are matched to the CustomerCode in the GetTaxRequests, and transactions are exempted where appropriate.</li>
+	<li>This is a certificate management tool available to all customers on the AvaTax Website. Certificates are imported to AvaTax directly as placeholder records for a real certificate maintained by you on file. Certificates are matched to the CustomerCode in the GetTaxRequests, and transactions are exempted where appropriate.</li>
 </ul>
 </li>
 	<li><a href="/certcapture/">Avalara CertCapture API</a>
@@ -59,7 +59,7 @@ CustomerUsageType (or Entity/Use Code) is a value that can be passed at the docu
 MED1. US Medical Device Excise Tax with exempt sales tax
 MED2. US Medical Device Excise Tax with taxable sales tax
 
-You can modify the behavior of these codes (and create your own codes) with tax rules in the admin console.
+You can modify the behavior of these codes (and create your own codes) with tax rules in the [AvaTax Website](https://admin.avalara.com).
 
 Note that you only need to pass the single-letter code as the CustomerUsageType to trigger the exemption behavior.
 

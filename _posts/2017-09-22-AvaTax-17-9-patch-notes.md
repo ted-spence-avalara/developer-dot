@@ -11,7 +11,7 @@ doctype: blog
 disqus: 1
 ---
 
-This article is about the August 2017 monthly update to the AvaTax API.
+This article is about the September 2017 monthly update to the AvaTax API.
 
 <div class="mobile-table">
     <table class="styled-table">
@@ -37,13 +37,13 @@ This article is about the August 2017 monthly update to the AvaTax API.
 
 Avalara customers are requested to read the Avalara terms and conditions by visiting the [AvaTax website for production](https://admin.avalara.com) or the [AvaTax website for Sandbox](https://sandbox.admin.avalara.com).
 
-The [AccountResetLicenseKey API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Accounts/AccountResetLicenseKey/) will now return an `AccountInNewStatusException` error if your account has not yet been activated by reading terms and conditions on the AvaTax website.  Please note that resetting your license key will invalidate all previous license keys for your account.  AvaTax will send an email to all active account administrators for your account notifying you that the license key was reset.
+The [AccountResetLicenseKey API](/api-reference/avatax/rest/v2/methods/Accounts/AccountResetLicenseKey/) will now return an `AccountInNewStatusException` error if your account has not yet been activated by reading terms and conditions on the AvaTax website.  Please note that resetting your license key will invalidate all previous license keys for your account.  AvaTax will send an email to all active account administrators for your account notifying you that the license key was reset.
 
-Activating your account using the [ActivateAccount API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Accounts/ActivateAccount/) will no longer automatically generate a license key.  
+Activating your account using the [ActivateAccount API](/api-reference/avatax/rest/v2/methods/Accounts/ActivateAccount/) will no longer automatically generate a license key.  
 
 <h3>Asynchronous Reporting API</h3>
 
-In order to ensure reliable performance of report generation using the [Reporting API in REST](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Reports/), we have enforced a rate limit on report requests so that concurrency issues do not delay or block report generation.  
+In order to ensure reliable performance of report generation using the [Reporting API in REST](/api-reference/avatax/rest/v2/methods/Reports/), we have enforced a rate limit on report requests so that concurrency issues do not delay or block report generation.  
 
 The Reporting API has been split up as follows:
 
@@ -55,11 +55,11 @@ The synchronous reporting API has been deprecated.
 
 <h3>Improvements to the CreateTransaction API</h3>
 
-A variety of improvements were made to the [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).  
+A variety of improvements were made to the [CreateTransaction API](/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).  
 
 <ul class="normal">
     <li>Improved performance and reduced data store usage provide more consistent performance, even during busy hours</li>
-    <li>Updated documentation helps to explain how it relates to [CreateOrAdjustTransaction](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateOrAdjustTransaction/) so users can more freely decide between the two APIs.</li>
+    <li>Updated documentation helps to explain how it relates to [CreateOrAdjustTransaction](/api-reference/avatax/rest/v2/methods/Transactions/CreateOrAdjustTransaction/) so users can more freely decide between the two APIs.</li>
     <li>The field Description will now be returned correctly when getting estimates using the SalesOrder transaction type.</li>
     <li>Customized error message for when you use only destination or origin address types with a transaction.</li>
     <li>The SalesOrder transaction type now supports $include=SummaryOnly.</li>

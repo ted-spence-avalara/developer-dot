@@ -81,11 +81,11 @@ An example of the incorrect result and updated result is shown here:
 
 Avalara now provides a data file API for customers with offline point-of-sale systems.  This new API is available to calculate current tax rates for each physical location within the company, in CSV, JSON, and XML file formats.
 
-More information on the Point-Of-Sale data API is available on <a href="http://developer.avalara.com/blog/2016/11/28/point-of-sale-data-api/">the Developer Blog</a>.
+More information on the Point-Of-Sale data API is available on <a href="/blog/2016/11/28/point-of-sale-data-api/">the Developer Blog</a>.
 
 <h3>API Documentation Updates</h3>
 
-The <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/">automatically generated API documentation for AvaTax</a> has been updated with comments and explanations for each API call.  These explanations can help guide you through unfamiliar APIs and explain how they are intended to be used.
+The <a href="/api-reference/avatax/rest/v2/">automatically generated API documentation for AvaTax</a> has been updated with comments and explanations for each API call.  These explanations can help guide you through unfamiliar APIs and explain how they are intended to be used.
 
 <h3>GET /api/v2/definitions/countries</h3>
 

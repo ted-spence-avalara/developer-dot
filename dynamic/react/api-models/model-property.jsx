@@ -31,6 +31,12 @@ const BuildLinkOrType = ({modelName, p, propName}) => {
         return p.items.$ref ? buildExternalLink(p.items.$ref, true) : <div>{'Array['}{p.items.type}{']'}</div>;
     default:
         if (p.format) {
+            if (p.format === 'date-time') {
+                if (p['x-date-type']) {
+                    return <span>{p['x-date-type']}<br/></span>;
+                }
+                return <span>{p.format}<br/></span>;
+            }
             return <span>{p.format}<br/></span>;
         }
         if (p.enum) {
@@ -55,9 +61,10 @@ const ModelProperty = ({modelName, name, prop, requiredProps = []}) => {
     return (
         <tr>
             <td>{name}</td>
+
             <td>
                 <BuildLinkOrType modelName={modelName} p={prop} propName={name} />
-                <span>{requiredProps.includes('name') ? 'Required' : 'Optional'}<br/></span>
+                <span>{requiredProps.includes(name) ? 'Required' : 'Optional'}<br/></span>
                 {prop.readOnly ? <span>{'Read Only'}<br/></span> : null}
                 {prop.hasOwnProperty('maxLength') ? <span>{`Max Length: ${prop.maxLength}`}<br/></span> : null}
                 {prop.hasOwnProperty('minLength') ? <span>{`Min Length: ${prop.minLength}`}<br/></span> : null}
@@ -69,7 +76,10 @@ const ModelProperty = ({modelName, name, prop, requiredProps = []}) => {
                         <br />
                         <b>{'Example:'}</b>
                         <br />
-                        <pre className='highlight'>{typeof prop.example !== 'object' ? prop.example.toString() : JSON.stringify(prop.example, null, 4).replace(/'/g, '')}</pre>
+                        {prop.format === 'date-time' && prop['x-date-type'] === 'date-only' ?
+                            <pre className='highlight'>{prop.example.toString().split('T')[0]}</pre> :
+                            <pre className='highlight'>{typeof prop.example !== 'object' ? prop.example.toString() : JSON.stringify(prop.example, null, 4).replace(/'/g, '')}</pre>
+                        }
                     </span> : null
                 }
             </td>

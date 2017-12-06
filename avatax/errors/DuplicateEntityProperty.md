@@ -23,7 +23,7 @@ You attempted to create an object with a duplicate name or code.
       "message": "Object is a duplicate of an existing object.",
       "description": "The -0- has an identity conflict with an existing object. Please rename the object and try again.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/DuplicateEntityProperty",
+      "helpLink": "/avatax/errors/DuplicateEntityProperty",
       "severity": "Error"
     }
   ]
