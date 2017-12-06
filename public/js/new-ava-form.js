@@ -23,8 +23,7 @@ function submitForm(fn, ln, e, c, p, outputElement, alertElement)
         email: e,
         company: c,
         phone: p,
-        CampaignID: c_id
-        
+        campaign: c_id        
     };
 
     console.log("payload = ", payload);
