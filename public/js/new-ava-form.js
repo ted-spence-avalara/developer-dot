@@ -23,7 +23,7 @@ function submitForm(fn, ln, e, c, p, outputElement, alertElement)
         email: e,
         company: c,
         phone: p,
-        campaignId: c_id
+        CampaignID: c_id
         
     };
 
