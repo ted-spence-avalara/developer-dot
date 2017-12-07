@@ -48,12 +48,12 @@ try {
 
 A dropped connection will produce a different kind of error - for example, AspNetCore produces an <code>WinHttpException</code> when a connection is dropped using HttpClient.  Our task is to identify how our operating system or programming language exposes a connection error.  Once you have identified this error, your code must trap the exception and ensure that you can respond correctly and prevent the exception from being exposed to the end user.
 
-But how do we test this code?  If a connection interruption is an unpredictable occurrence, how can you evaluate it?  AvaTax provides an interesting feature called <code>ForcedTimeout</code>.  This feature is intended to allow you to fine-tune your client-side timeout logic, and reliably cause a timeout that you can use for integration testing.
+But how do we test this code?  If a connection interruption is an unpredictable occurrence, how can you evaluate it?  AvaTax provides an interesting feature called <code>ForceTimeout</code>.  This feature is intended to allow you to fine-tune your client-side timeout logic, and reliably cause a timeout that you can use for integration testing.
 
-When you use the <code>ForcedTimeout</code> feature, AvaTax will do the following:
+When you use the <code>ForceTimeout</code> feature, AvaTax will do the following:
 <ul class="dev-guide-list">
     <li>Delay for 30 seconds</li>
-    <li>Throw an error of type ForcedTimeoutError</li>
+    <li>Throw an error of type ForceTimeoutError</li>
 </ul>
 
 We recommend that your application should select an appropriate timeout value for your needs.  We cannot tell you exactly what timeout value is best for you; but in our experience, interactive web applications tend to have a shorter timeout and desktop accounting programs tend to have a longer timeout.  Here's the test you should be able to execute:
@@ -62,7 +62,7 @@ We recommend that your application should select an appropriate timeout value fo
 <div class="dev-guide-test-content">
 <h4>Setup</h4>
 <ul class="dev-guide-list">
-    <li>Call CreateTransaction with the option $include=ForcedTimeout</li>
+    <li>Call CreateTransaction with the option $include=ForceTimeout</li>
 </ul>
 
 <h4>Assertions</h4>
