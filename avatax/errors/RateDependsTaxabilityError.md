@@ -23,7 +23,7 @@ You created a tax rule with a RateDepends option, but that rule is not a Taxabil
       "message": "RateDepends option is only valid for TaxRuleType 4 (Taxability Rule).",
       "description": "-0- -1- -2- -3- -4- -5-",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/RateDependsTaxabilityError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/RateDependsTaxabilityError",
       "severity": "Error"
     }
   ]

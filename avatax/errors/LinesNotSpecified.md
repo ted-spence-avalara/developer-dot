@@ -23,7 +23,7 @@ You attempted to create a transaction with zero lines.
       "message": "No lines specified.",
       "description": "You must provide at least one line to the API.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/LinesNotSpecified",
+      "helpLink": "http://developer.avalara.com/avatax/errors/LinesNotSpecified",
       "severity": "Error"
     }
   ]

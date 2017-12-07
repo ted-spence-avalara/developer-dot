@@ -23,7 +23,7 @@ You specified a tax code type that is not recognized by Avalara.
       "message": "The TaxCodeType -0- is not valid.",
       "description": "Please call /api/v2/definitions/taxcodetypes for a list of valid taxcodetypes.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/InvalidTaxCodeType",
+      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidTaxCodeType",
       "severity": "Error"
     }
   ]

@@ -23,7 +23,7 @@ You attempted to modify a company that does not exist.
       "message": "Company could not be found.",
       "description": "The company -0- does not exist, or you do not have the rights to view it.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/CompanyInvalidException",
+      "helpLink": "http://developer.avalara.com/avatax/errors/CompanyInvalidException",
       "severity": "Error"
     }
   ]

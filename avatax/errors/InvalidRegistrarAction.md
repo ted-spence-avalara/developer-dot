@@ -23,7 +23,7 @@ The action you attempted is restricted.
       "message": "You may not create users with this security role / account combination.",
       "description": "You are not allowed to create users in the account -0- with security role -1-.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/InvalidRegistrarAction",
+      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidRegistrarAction",
       "severity": "Error"
     }
   ]

@@ -23,7 +23,7 @@ You attempted to add a line with a conflicting line number.
       "message": "The line to be added has already existed.",
       "description": "Line -0- exists. You can't add an existing line to existing transaction.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/LineAlreadyExists",
+      "helpLink": "http://developer.avalara.com/avatax/errors/LineAlreadyExists",
       "severity": "Error"
     }
   ]

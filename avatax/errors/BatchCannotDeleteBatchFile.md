@@ -23,7 +23,7 @@ Batch file deletion is not allowed.
       "message": "Batch file could not be deleted",
       "description": "The file '-0-' could not be deleted.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/BatchCannotDeleteBatchFile",
+      "helpLink": "http://developer.avalara.com/avatax/errors/BatchCannotDeleteBatchFile",
       "severity": "Error"
     }
   ]

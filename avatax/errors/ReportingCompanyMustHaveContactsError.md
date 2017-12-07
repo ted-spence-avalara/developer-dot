@@ -23,7 +23,7 @@ A company that is designated to report taxes must have at least one designated c
       "message": "Contact information missing.",
       "description": "A reporting company must have at least one contact when it is moved out of InProgress status.  -0-",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/ReportingCompanyMustHaveContactsError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/ReportingCompanyMustHaveContactsError",
       "severity": "Error"
     }
   ]

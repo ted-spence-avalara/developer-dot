@@ -23,7 +23,7 @@ You attempted to act on, retrieve, update, or delete an object that does not exi
       "message": "-0- not found.",
       "description": "The -0- with ID '-1-' was not found.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/EntityNotFoundError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/EntityNotFoundError",
       "severity": "Error"
     }
   ]

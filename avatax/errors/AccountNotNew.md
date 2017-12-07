@@ -23,7 +23,7 @@ Only accounts in 'New' status may be activated.
       "message": "The account is not new",
       "description": "Unable to activate account '-0-'.  The account is not new.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/AccountNotNew",
+      "helpLink": "http://developer.avalara.com/avatax/errors/AccountNotNew",
       "severity": "Error"
     }
   ]

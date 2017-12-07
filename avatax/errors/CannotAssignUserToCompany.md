@@ -23,7 +23,7 @@ Only Company-level users may be assigned to a company.
       "message": "Security role cannot be assigned to a company.",
       "description": "The user -0- cannot be assigned to company -1-, because that user has security role -2-.  Only CompanyAdmin and CompanyUser level users can be joined to a company.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/CannotAssignUserToCompany",
+      "helpLink": "http://developer.avalara.com/avatax/errors/CannotAssignUserToCompany",
       "severity": "Error"
     }
   ]

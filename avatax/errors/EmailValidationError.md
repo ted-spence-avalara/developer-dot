@@ -23,7 +23,7 @@ You attempted to provide an email address that does not conform to email address
       "message": "Invalid email address.",
       "description": "The specified email address '-0-' was not valid.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/EmailValidationError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/EmailValidationError",
       "severity": "Error"
     }
   ]

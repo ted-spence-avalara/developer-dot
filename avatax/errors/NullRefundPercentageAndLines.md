@@ -23,7 +23,7 @@ You attempted to create a refund but did not specify the percentage or lines.
       "message": "Refund percentage and refund line can not both be null",
       "description": "For refund type -0-, either refund percentage or refund lines should be specified",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/NullRefundPercentageAndLines",
+      "helpLink": "http://developer.avalara.com/avatax/errors/NullRefundPercentageAndLines",
       "severity": "Error"
     }
   ]

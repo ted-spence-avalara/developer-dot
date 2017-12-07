@@ -20,10 +20,10 @@ One of the strings you uploaded to the server is too long and cannot be saved.
     {
       "code": "StringLengthError",
       "number": 13,
-      "message": "Field -0- has an invalid length.",
-      "description": "Field -0- must be between -1- and -2- characters in length.",
+      "message": "Field '-0-' has an invalid length.",
+      "description": "Field '-0-' must be between -1- and -2- characters in length.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/StringLengthError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/StringLengthError",
       "severity": "Error"
     }
   ]

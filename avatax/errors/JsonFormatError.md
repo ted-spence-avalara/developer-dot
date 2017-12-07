@@ -23,7 +23,7 @@ The JSON you sent with your request was invalid.
       "message": "The request body did not contain valid JSON.",
       "description": "At line -1- position -2-: -0-",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/JsonFormatError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/JsonFormatError",
       "severity": "Error"
     }
   ]

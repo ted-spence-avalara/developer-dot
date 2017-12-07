@@ -23,7 +23,7 @@ You attempted to modify an account that does not exist.
       "message": "Account not found.",
       "description": "The AccountId: -0- doesn't exist. Please provide an account that exists.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/AccountDoesNotExist",
+      "helpLink": "http://developer.avalara.com/avatax/errors/AccountDoesNotExist",
       "severity": "Error"
     }
   ]

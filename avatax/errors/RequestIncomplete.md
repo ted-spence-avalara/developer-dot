@@ -23,7 +23,7 @@ Your API request contained unprintable characters or was incomplete.
       "message": "Request is incomplete",
       "description": "The request was cancelled before completed or an unprintable character was included in the body",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/RequestIncomplete",
+      "helpLink": "http://developer.avalara.com/avatax/errors/RequestIncomplete",
       "severity": "Error"
     }
   ]

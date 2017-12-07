@@ -23,7 +23,7 @@ You provided a filter with your query, but did not specify any criteria.
       "message": "Error parsing $filter.",
       "description": "The $filter value '-0-' did not have any parseable criteria.  To fetch all objects, omit the $filter parameter or leave it empty.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/NoFilterCriteriaException",
+      "helpLink": "http://developer.avalara.com/avatax/errors/NoFilterCriteriaException",
       "severity": "Error"
     }
   ]

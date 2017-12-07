@@ -23,7 +23,7 @@ A company can only be activated when it has a valid tax profile.
       "message": "Active companies must have a tax profile.",
       "description": "To activate this company, set its HasProfile to true, or assign it to a parent company with a tax profile.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/CannotActivateCompany",
+      "helpLink": "http://developer.avalara.com/avatax/errors/CannotActivateCompany",
       "severity": "Error"
     }
   ]

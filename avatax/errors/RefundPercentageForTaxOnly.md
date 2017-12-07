@@ -23,7 +23,7 @@ You attempted to create a TaxOnly refund for a partial percentage.
       "message": "If refund type is TaxOnly, refund percentage should be null",
       "description": "If refund type is TaxOnly, refund percentage should be null.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/RefundPercentageForTaxOnly",
+      "helpLink": "http://developer.avalara.com/avatax/errors/RefundPercentageForTaxOnly",
       "severity": "Error"
     }
   ]

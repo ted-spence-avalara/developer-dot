@@ -23,7 +23,7 @@ You attempted to create a tax transaction with no lines.
       "message": "Transactions must have at least one line.",
       "description": "The CreateTransactionModel object must have an element called 'lines', with at least one valid line record.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/MissingLine",
+      "helpLink": "http://developer.avalara.com/avatax/errors/MissingLine",
       "severity": "Error"
     }
   ]

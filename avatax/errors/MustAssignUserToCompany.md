@@ -23,7 +23,7 @@ Company level users must be assigned to a company within this account.
       "message": "Company users must be assigned to a company.",
       "description": "The user -0- is of security role -1-, which must be assigned to company.  Please set the companyId value to the ID of a company.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/MustAssignUserToCompany",
+      "helpLink": "http://developer.avalara.com/avatax/errors/MustAssignUserToCompany",
       "severity": "Error"
     }
   ]
