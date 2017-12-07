@@ -14,9 +14,11 @@ disqus: 1
 
 Tax codes can change the rates charged on a transaction - but did you know they also affect a product's taxability?
 
-Some jurisdictions choose not to tax certain types of products or services.  In those cases, the transactions will flag certain line items as <code>exempt</code>.  This doesn't mean that the customer has provided an exemption certificate; it means that the tax authority in question has decided that this type of product is exempt from this tax.
+Some jurisdictions choose not to tax certain types of products or services.  In those cases, the transactions will flag certain line items as <code>nontaxable</code>.
 
-The word "Exempt" is often confusing here.  Some jurisdictions use the terminology "Exempt", whereas others use the word "Deductible", or they may simply say that the tax rate is zero for that particular product.  In each case, the end result is the same: this product does not have transactional tax applied to it.
+Generally speaking, items are <code>nontaxable</code> and customers are <code>exempt</code>.  When a tax authority has decided that a type of product is "exempt" from a tax, this actually means this type of product is <code>nontaxable</code>.  Transactions are only <code>exempt</code> when a customer has provided an exemption certificate and flagged as exempt.
+
+The word "exempt" is often confusing here.  Some jurisdictions use the terminology "exempt" when referring to products and services, whereas others use the word "deductible" or "non-taxable", or they may simply say that the tax rate is zero for that particular product.  In each case, the end result is the same: this product or service does not have transactional tax applied to it.
 
 <h3>Jurisdiction Taxability</h3>
 
@@ -71,7 +73,7 @@ The state of Washington does not have a tax for carbonated juice beverages as of
                     <li>TaxCode PF050101</li>
                 </ul>
             </li>
-        </ul> 
+        </ul>
     <li>Calculate tax for your transaction using AvaTax.</li>
 </ul>
 <h4>Assertions</h4>
@@ -88,7 +90,7 @@ The state of Washington does not have a tax for carbonated juice beverages as of
         <i id="icon-up" class="glyphicon glyphicon-chevron-down"></i><i id="icon-down" class="glyphicon glyphicon-chevron-right"></i>
         <label for="checkbox_toggle1"><h4>Expected API Call</h4></label>
         <ul class="dev-guide-dropdown-content">
-            <li> 
+            <li>
                 <pre>
 {
   "type": "SalesInvoice",
@@ -142,7 +144,7 @@ Let's now try that same transaction in a different address.  The state of New Yo
                     <li>14 Wall Street, New York, NY 10005</li>
                 </ul>
             </li>
-        </ul> 
+        </ul>
     <li>Calculate tax for your transaction using AvaTax.</li>
 </ul>
 <h4>Assertions</h4>
@@ -159,7 +161,7 @@ Let's now try that same transaction in a different address.  The state of New Yo
         <i id="icon-up" class="glyphicon glyphicon-chevron-down"></i><i id="icon-down" class="glyphicon glyphicon-chevron-right"></i>
         <label for="checkbox_toggle2"><h4>Expected API Call</h4></label>
         <ul class="dev-guide-dropdown-content">
-            <li> 
+            <li>
                 <pre>
 {
   "type": "SalesInvoice",
