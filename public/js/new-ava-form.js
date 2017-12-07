@@ -10,14 +10,23 @@ function submitShort()
 
 function submitForm(fn, ln, e, c, p, outputElement, alertElement)
 {
+
+    var c_id = 'organic';
+    if(AvaTag.getCombinedData()["CampaignID"]) {
+        c_id = AvaTag.getCombinedData()["CampaignID"];
+    }
+    console.log("c_id = " + c_id);
     alertElement.hide();
     var payload = {
         firstName: fn,
         lastName: ln,
         email: e,
         company: c,
-        phone: p
+        phone: p,
+        campaign: c_id        
     };
+
+    console.log("payload = ", payload);
     $.ajax({
         url: 'https://sandbox-rest.avatax.com/api/v2/accounts/freetrials/request',
         data: JSON.stringify(payload),
