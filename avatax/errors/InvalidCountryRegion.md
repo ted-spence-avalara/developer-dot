@@ -23,7 +23,7 @@ You specified a country/region that was not recognized by the ISO 3166 country/r
       "message": "Invalid country and region combination.",
       "description": "The region '-1-' is not a recognized region within country '-0-'.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/InvalidCountryRegion",
+      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidCountryRegion",
       "severity": "Error"
     }
   ]

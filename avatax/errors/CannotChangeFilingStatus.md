@@ -23,7 +23,7 @@ The requested filing status change is invalid.
       "message": "Filing status cannot be changed to the requested value.",
       "description": "You may not change from -0- to -1-.  Only specific filing status changes are permitted.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/CannotChangeFilingStatus",
+      "helpLink": "http://developer.avalara.com/avatax/errors/CannotChangeFilingStatus",
       "severity": "Error"
     }
   ]

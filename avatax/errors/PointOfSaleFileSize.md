@@ -23,7 +23,7 @@ The Point-Of-Sale API cannot build this file dynamically.
       "message": "File too large to calculate.",
       "description": "You have requested a file with -0- records; this file is too large to calculate via the API.  Please contact support to request a periodic data feed.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/PointOfSaleFileSize",
+      "helpLink": "http://developer.avalara.com/avatax/errors/PointOfSaleFileSize",
       "severity": "Error"
     }
   ]

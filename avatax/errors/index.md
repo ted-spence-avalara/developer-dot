@@ -80,6 +80,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>One of the strings you uploaded to the server is too long and cannot be saved.</td>
 		</tr>		
         <tr>
+			<td>14</td>
+			<td><a href="MaxStringLengthError">MaxStringLengthError</a></td>
+			<td>The string you provided was too long for the field.</td>
+		</tr>		
+        <tr>
 			<td>15</td>
 			<td><a href="EmailValidationError">EmailValidationError</a></td>
 			<td>You attempted to provide an email address that does not conform to email address standards.</td>
@@ -565,6 +570,51 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>A tax transaction must have both an origin and a destination address.</td>
 		</tr>		
         <tr>
+			<td>177</td>
+			<td><a href="ReportNotInitiated">ReportNotInitiated</a></td>
+			<td>This report has not yet been created.</td>
+		</tr>		
+        <tr>
+			<td>178</td>
+			<td><a href="FailedToBuildReport">FailedToBuildReport</a></td>
+			<td>The report request you submitted could not be processed.</td>
+		</tr>		
+        <tr>
+			<td>179</td>
+			<td><a href="ReportNotFinished">ReportNotFinished</a></td>
+			<td>This report is not yet completed.</td>
+		</tr>		
+        <tr>
+			<td>180</td>
+			<td><a href="FailedToUploadReport">FailedToUploadReport</a></td>
+			<td>A server error prevented the report file from being uploaded.</td>
+		</tr>		
+        <tr>
+			<td>181</td>
+			<td><a href="FailedToDownloadReport">FailedToDownloadReport</a></td>
+			<td>A server error prevented the report file from being downloaded.</td>
+		</tr>		
+        <tr>
+			<td>182</td>
+			<td><a href="MalformedFilterException">MalformedFilterException</a></td>
+			<td>The `$filter` parameter could not be parsed.</td>
+		</tr>		
+        <tr>
+			<td>183</td>
+			<td><a href="ExpectedConjunctionError">ExpectedConjunctionError</a></td>
+			<td>The `$filter` criteria in your API request was missing a conjunction.</td>
+		</tr>		
+        <tr>
+			<td>184</td>
+			<td><a href="CriteriaNotSupportedError">CriteriaNotSupportedError</a></td>
+			<td>Your `$filter` parameter contains criteria that are not supported.</td>
+		</tr>		
+        <tr>
+			<td>185</td>
+			<td><a href="CompanyAccountAndParentAccountMismatch">CompanyAccountAndParentAccountMismatch</a></td>
+			<td>This operation is not permitted in technical support.</td>
+		</tr>		
+        <tr>
 			<td>200</td>
 			<td><a href="BatchSalesAuditMustBeZippedError">BatchSalesAuditMustBeZippedError</a></td>
 			<td>Sales audit files must be uploaded in ZIP or RAR formats.</td>
@@ -593,6 +643,16 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>205</td>
 			<td><a href="BatchCannotDeleteBatchFile">BatchCannotDeleteBatchFile</a></td>
 			<td>Batch file deletion is not allowed.</td>
+		</tr>		
+        <tr>
+			<td>206</td>
+			<td><a href="BatchMustContainOneFile">BatchMustContainOneFile</a></td>
+			<td>This batch object must contain only one file.</td>
+		</tr>		
+        <tr>
+			<td>207</td>
+			<td><a href="MissingBatchFileContent">MissingBatchFileContent</a></td>
+			<td>The batch object must contain a file to be processed.</td>
 		</tr>		
         <tr>
 			<td>250</td>
@@ -700,6 +760,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>The address you provided was incomplete.</td>
 		</tr>		
         <tr>
+			<td>318</td>
+			<td><a href="InvalidPostalCode">InvalidPostalCode</a></td>
+			<td>The postal code you provided could not be found.</td>
+		</tr>		
+        <tr>
 			<td>400</td>
 			<td><a href="BadDocumentFetch">BadDocumentFetch</a></td>
 			<td>This error indicates that you have provided an incorrect "$include" value to the GET /api/v2/companies/{0}/transactions endpoint.</td>
@@ -793,6 +858,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>708</td>
 			<td><a href="RefundPercentageOutOfRange">RefundPercentageOutOfRange</a></td>
 			<td>You submitted a refund percentage lower than 0% or higher than 100%</td>
+		</tr>		
+        <tr>
+			<td>709</td>
+			<td><a href="RefundPercentageMissing">RefundPercentageMissing</a></td>
+			<td>You specified a refund type of percentage, but did not specify the percentage.</td>
 		</tr>		
         <tr>
 			<td>800</td>
@@ -936,13 +1006,58 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 		</tr>		
         <tr>
 			<td>1301</td>
-			<td><a href="TooManyTransactionLines">TooManyTransactionLines</a></td>
-			<td>The transaction you provided contains too many lines.</td>
+			<td><a href="TooManyTransactions">TooManyTransactions</a></td>
+			<td>The MultiDocument transaction you attempted to create is too complex.</td>
 		</tr>		
         <tr>
 			<td>1302</td>
 			<td><a href="OnlyTaxDateOverrideIsAllowed">OnlyTaxDateOverrideIsAllowed</a></td>
 			<td>Multi-company transactions may only override tax dates.</td>
+		</tr>		
+        <tr>
+			<td>1303</td>
+			<td><a href="TransactionAlreadyExists">TransactionAlreadyExists</a></td>
+			<td>This transaction already exists and cannot be overwritten.</td>
+		</tr>		
+        <tr>
+			<td>1305</td>
+			<td><a href="DateMismatch">DateMismatch</a></td>
+			<td>The values in your verify call did not match the transaction.</td>
+		</tr>		
+        <tr>
+			<td>1306</td>
+			<td><a href="InvalidDocumentStatusForVerify">InvalidDocumentStatusForVerify</a></td>
+			<td>Documents can only be verified from the `Saved` or `Posted` statuses.</td>
+		</tr>		
+        <tr>
+			<td>1307</td>
+			<td><a href="TotalAmountMismatch">TotalAmountMismatch</a></td>
+			<td>The values in your verify call did not match the transaction.</td>
+		</tr>		
+        <tr>
+			<td>1308</td>
+			<td><a href="TotalTaxMismatch">TotalTaxMismatch</a></td>
+			<td>The values in your verify call did not match the transaction.</td>
+		</tr>		
+        <tr>
+			<td>1309</td>
+			<td><a href="InvalidDocumentStatusForCommit">InvalidDocumentStatusForCommit</a></td>
+			<td>Documents can only be committed from the `Saved` or `Posted` statuses.</td>
+		</tr>		
+        <tr>
+			<td>1310</td>
+			<td><a href="InvalidDocumentType">InvalidDocumentType</a></td>
+			<td>A document could not be found with the specified type.</td>
+		</tr>		
+        <tr>
+			<td>1313</td>
+			<td><a href="TransactionIsCommitted">TransactionIsCommitted</a></td>
+			<td>This API can only modify transactions that are not yet committed.</td>
+		</tr>		
+        <tr>
+			<td>1313</td>
+			<td><a href="TransactionIsCommitted">TransactionIsCommitted</a></td>
+			<td>This API can only modify transactions that are not yet committed.</td>
 		</tr>		
         <tr>
 			<td>1400</td>
@@ -968,4 +1083,9 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>1404</td>
 			<td><a href="AccountInNewStatusException">AccountInNewStatusException</a></td>
 			<td>You may not obtain a license key until you have accepted Avalara's terms and conditions.</td>
+		</tr>		
+        <tr>
+			<td>1405</td>
+			<td><a href="WorksheetException">WorksheetException</a></td>
+			<td>An error occurred in the Liability Worksheet calculation service.</td>
 		</tr></tbody></table>

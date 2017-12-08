@@ -23,7 +23,7 @@ You attempted to set a value that must be within a range, but your value was out
       "message": "Field -1- is out of bounds.",
       "description": "-1- is expected to be between -2- and -3-.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/RangeError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/RangeError",
       "severity": "Error"
     }
   ]

@@ -23,7 +23,7 @@ You attempted to create a nexus in a tax authority that is underneath a parent t
       "message": "To declare nexus here, you must also declare nexus for -0-.",
       "description": "Nexus without parent: Country: -1-, Region: -2-, JurisTypeId: -3-",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/ParentNexusNotFound",
+      "helpLink": "http://developer.avalara.com/avatax/errors/ParentNexusNotFound",
       "severity": "Error"
     }
   ]

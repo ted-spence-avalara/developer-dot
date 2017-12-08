@@ -23,7 +23,7 @@ A remote server AvaTax depends on is not working.
       "message": "A remote server did not respond to this request.",
       "description": "The server at '-0-' responded with error code '-1-'.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/RemoteServerError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/RemoteServerError",
       "severity": "Error"
     }
   ]

@@ -23,7 +23,7 @@ You provided a value in the PDF or image file fields, but the value was empty.
       "message": "Pdf or Image files are empty",
       "description": "If you'd like to upload a PDF or image file, please upload a valid one.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/InvalidPdfOrImageFile",
+      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidPdfOrImageFile",
       "severity": "Error"
     }
   ]

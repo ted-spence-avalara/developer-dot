@@ -23,7 +23,7 @@ The specified jurisdiction could not be found.
       "message": "Tax jurisdiction not found.",
       "description": "-0- -1- -2- -3-",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/JurisdictionNotFoundError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/JurisdictionNotFoundError",
       "severity": "Error"
     }
   ]

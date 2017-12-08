@@ -20,10 +20,10 @@ The API you called does not support transaction code overloading.
     {
       "code": "MultiDocumentTypesError",
       "number": 314,
-      "message": "Mutliple document types exist for the company '-0-' with the document code '-1-'",
+      "message": "Multiple documents exist matching the company '-0-' and code '-1-'",
       "description": "Please call /api/v2/companies/transactions/types to fetch again.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/MultiDocumentTypesError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/MultiDocumentTypesError",
       "severity": "Error"
     }
   ]

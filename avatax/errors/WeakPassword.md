@@ -23,7 +23,7 @@ The password you specified does not meet minimum complexity requirements.
       "message": "Password did not meet complexity requirements.",
       "description": "Please try again with a longer password, or add uppercase/lowercase/numbers/symbols.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/WeakPassword",
+      "helpLink": "http://developer.avalara.com/avatax/errors/WeakPassword",
       "severity": "Error"
     }
   ]

@@ -23,7 +23,7 @@ The Free Trial API is not available on this server.
       "message": "Free trials are not currently available.",
       "description": "The AvaTax Free Trial API is not currently available on this server.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/FreeTrialNotAvailable",
+      "helpLink": "http://developer.avalara.com/avatax/errors/FreeTrialNotAvailable",
       "severity": "Error"
     }
   ]

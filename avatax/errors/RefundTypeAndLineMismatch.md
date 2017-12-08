@@ -23,7 +23,7 @@ You specified a `Full` refund, but the lines parameter was not null.
       "message": "Lines for refund do not match with refund type",
       "description": "There are -0- lines for refund, and the refund type is -1-. If refund type is full, refund lines should be null.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/RefundTypeAndLineMismatch",
+      "helpLink": "http://developer.avalara.com/avatax/errors/RefundTypeAndLineMismatch",
       "severity": "Error"
     }
   ]

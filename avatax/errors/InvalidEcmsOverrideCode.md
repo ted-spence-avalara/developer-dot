@@ -23,7 +23,7 @@ The EcmsOverrideCode value you supplied conflicts with a system-defined code.
       "message": "EcmsOverrideCode is invalid.",
       "description": "EcmsOverrideCode is conflicting with existing EntityUseCode.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/InvalidEcmsOverrideCode",
+      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidEcmsOverrideCode",
       "severity": "Error"
     }
   ]

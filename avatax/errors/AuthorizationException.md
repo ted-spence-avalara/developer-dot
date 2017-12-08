@@ -23,7 +23,7 @@ Your account is not authorized to call this API.
       "message": "Authorization failed.",
       "description": "This service or operation is not authorized for this account or user.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/AuthorizationException",
+      "helpLink": "http://developer.avalara.com/avatax/errors/AuthorizationException",
       "severity": "Exception"
     }
   ]

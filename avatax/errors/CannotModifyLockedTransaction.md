@@ -23,7 +23,7 @@ A locked transaction may not be modified.
       "message": "Modifying a locked document is not allowed.",
       "description": "Document -0- is locked. Modification is not allowed.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/CannotModifyLockedTransaction",
+      "helpLink": "http://developer.avalara.com/avatax/errors/CannotModifyLockedTransaction",
       "severity": "Error"
     }
   ]

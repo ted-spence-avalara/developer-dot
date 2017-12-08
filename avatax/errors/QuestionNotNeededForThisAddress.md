@@ -23,7 +23,7 @@ No jursidiction-specific questions are relevant for this location.
       "message": "No question is needed for this address.",
       "description": "Please remove location setting model to proceed.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/QuestionNotNeededForThisAddress",
+      "helpLink": "http://developer.avalara.com/avatax/errors/QuestionNotNeededForThisAddress",
       "severity": "Error"
     }
   ]

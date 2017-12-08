@@ -10,6 +10,12 @@ function submitShort()
 
 function submitForm(fn, ln, e, c, w, p, outputElement, alertElement)
 {
+
+    var c_id = 'organic';
+    if(AvaTag.getCombinedData()["CampaignID"]) {
+        c_id = AvaTag.getCombinedData()["CampaignID"];
+    }
+    console.log("c_id = " + c_id);
     alertElement.hide();
     var payload = {
         firstName: fn,
@@ -17,7 +23,8 @@ function submitForm(fn, ln, e, c, w, p, outputElement, alertElement)
         email: e,
         company: c,
         website: w,
-        phone: p
+        phone: p,
+        campaign: c_id        
     };
 
     $.ajax({

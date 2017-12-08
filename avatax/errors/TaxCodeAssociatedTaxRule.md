@@ -23,7 +23,7 @@ This tax code cannot be deleted because it is in use.
       "message": "Cannot delete tax code associated to tax rule.",
       "description": "The Tax Code '-0-' is associated with a tax rule and cannot be deleted.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/TaxCodeAssociatedTaxRule",
+      "helpLink": "http://developer.avalara.com/avatax/errors/TaxCodeAssociatedTaxRule",
       "severity": "Error"
     }
   ]

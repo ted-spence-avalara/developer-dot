@@ -23,7 +23,7 @@ A problem occurred when you attempted to create a transaction through AvaTax.
       "message": "Placeholder - will be overwritten by the actual error",
       "description": "Placeholder - will be overwritten by the actual error",
       "faultCode": "Server",
-      "helpLink": "/avatax/errors/GetTaxError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/GetTaxError",
       "severity": "Error"
     }
   ]

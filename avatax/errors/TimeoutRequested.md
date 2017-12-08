@@ -23,7 +23,7 @@ You requested a timeout error from the AvaTax API.
       "message": "You requested a timeout error for this API call.",
       "description": "You passed the parameter `$include=-0-` to this API.  The `ForceTimeout` include option simulates a timeout error to make tests easier.  To stop receiving this error code, remove the word `ForceTimeout`.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/TimeoutRequested",
+      "helpLink": "http://developer.avalara.com/avatax/errors/TimeoutRequested",
       "severity": "Error"
     }
   ]

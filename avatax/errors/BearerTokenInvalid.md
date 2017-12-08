@@ -23,7 +23,7 @@ The Bearer Token that you used for authentication was not valid.
       "message": "The Bearer token you provided was not recognized by Avalara Identity.",
       "description": "If you have received a bearer token from Avalara Identity, this token may have expired.  Please contact Avalara Identity and request a refreshed token.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/BearerTokenInvalid",
+      "helpLink": "http://developer.avalara.com/avatax/errors/BearerTokenInvalid",
       "severity": "Exception"
     }
   ]

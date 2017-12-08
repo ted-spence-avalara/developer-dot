@@ -23,7 +23,7 @@ This filing calendar overlaps with another calendar.
       "message": "Requested filing calendar overlaps with an active filing calendar",
       "description": "Filing Calendar -0- for -1- is active for the requested effective dates of the new filing calendar.  Please obsolete the current calendar before approving the new one.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/OverlappingFilingCalendar",
+      "helpLink": "http://developer.avalara.com/avatax/errors/OverlappingFilingCalendar",
       "severity": "Error"
     }
   ]
