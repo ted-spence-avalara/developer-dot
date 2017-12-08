@@ -23,7 +23,7 @@ You attempted to request an object from AvaTax that you are not permitted to see
       "message": "An object visibility exception occurred.",
       "description": "The following object URL was flagged as not visible: -0-",
       "faultCode": "Server",
-      "helpLink": "/avatax/errors/VisibilityError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/VisibilityError",
       "severity": "Exception"
     }
   ]

@@ -23,7 +23,7 @@ The password you have chosen is a commonly-guessed password and cannot be used.
       "message": "Password is a common password.",
       "description": "This password showed up on a list of commonly used passwords.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/CommonPassword",
+      "helpLink": "http://developer.avalara.com/avatax/errors/CommonPassword",
       "severity": "Error"
     }
   ]

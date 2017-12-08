@@ -23,7 +23,7 @@ The RateDepends option is only valid for countries in the European Union.
       "message": "RateDepends option is only valid for countries in European Union.",
       "description": "-0-",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/RateDependsEuropeError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/RateDependsEuropeError",
       "severity": "Error"
     }
   ]

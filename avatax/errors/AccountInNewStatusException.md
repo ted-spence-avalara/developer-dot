@@ -23,7 +23,7 @@ You may not obtain a license key until you have accepted Avalara's terms and con
       "message": "Account is in New Status.",
       "description": "The Account '-0-' is in 'New' status. You must activate the account by reading and accepting Avalara's terms and conditions before resetting the license key. Please call ActivateAccount to enable license keys.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/AccountInNewStatusException",
+      "helpLink": "http://developer.avalara.com/avatax/errors/AccountInNewStatusException",
       "severity": "Error"
     }
   ]

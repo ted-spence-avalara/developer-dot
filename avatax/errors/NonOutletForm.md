@@ -23,7 +23,7 @@ This form does not permit Outlet or Location-based reporting.
       "message": "Form does not permit per-location reporting.",
       "description": "The form '-0-' uses location-reporting rule '-1-', which does not permit per-location reporting.  Please resubmit your request without a `locationCode` value to file once for all locations.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/NonOutletForm",
+      "helpLink": "http://developer.avalara.com/avatax/errors/NonOutletForm",
       "severity": "Error"
     }
   ]

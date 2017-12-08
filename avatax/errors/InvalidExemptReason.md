@@ -22,8 +22,8 @@ The exemption reason you specified cannot be found.
       "number": 1211,
       "message": "Invalid exempt reason: -0-.",
       "description": "To create a certificate, a valid exempt reason is required.",
-      "faultCode": "Server",
-      "helpLink": "/avatax/errors/InvalidExemptReason",
+      "faultCode": "Client",
+      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidExemptReason",
       "severity": "Error"
     }
   ]

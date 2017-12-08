@@ -20,10 +20,10 @@ A multi-company transaction was partially created.
     {
       "code": "TransactionNotCancelled",
       "number": 1300,
-      "message": "Some transaction was not cancelled during roll back",
-      "description": "Uncancelled transactions are -0-.",
+      "message": "An error occurred that prevented the transaction from being cancelled properly.",
+      "description": "The list of uncancelled transactions are -0-.",
       "faultCode": "Server",
-      "helpLink": "/avatax/errors/TransactionNotCancelled",
+      "helpLink": "http://developer.avalara.com/avatax/errors/TransactionNotCancelled",
       "severity": "Error"
     }
   ]

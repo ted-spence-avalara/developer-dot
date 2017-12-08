@@ -23,7 +23,7 @@ The jurisdiction override feature is only available in the United States.
       "message": "Jurisdiction overrides are not available in this country.",
       "description": "The Jurisdiction Override feature is available in the United States only.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/CountryOverridesNotAvailable",
+      "helpLink": "http://developer.avalara.com/avatax/errors/CountryOverridesNotAvailable",
       "severity": "Error"
     }
   ]

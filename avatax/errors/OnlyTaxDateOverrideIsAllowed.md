@@ -22,8 +22,8 @@ Multi-company transactions may only override tax dates.
       "number": 1302,
       "message": "Invalid TaxOverride at document level",
       "description": "Only TaxDate override is allowed for multi transactions.",
-      "faultCode": "Server",
-      "helpLink": "/avatax/errors/OnlyTaxDateOverrideIsAllowed",
+      "faultCode": "Client",
+      "helpLink": "http://developer.avalara.com/avatax/errors/OnlyTaxDateOverrideIsAllowed",
       "severity": "Error"
     }
   ]

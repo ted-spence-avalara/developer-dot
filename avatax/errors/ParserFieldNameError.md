@@ -23,7 +23,7 @@ You attempted to search on a field that does not exist or cannot be searched.
       "message": "Error parsing request parameters.",
       "description": "The field named '-0-' could not be found.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/ParserFieldNameError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/ParserFieldNameError",
       "severity": "Error"
     }
   ]

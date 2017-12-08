@@ -23,7 +23,7 @@ When creating transactions, you must at a minimum provide an origin and destinat
       "message": "Transactions must have both an origin and destination address.",
       "description": "The line -0- must have both an origin and destination address.  You must either assign a 'SingleLocation' address or both a 'ShipFrom' and a 'ShipTo' address.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/MissingAddress",
+      "helpLink": "http://developer.avalara.com/avatax/errors/MissingAddress",
       "severity": "Error"
     }
   ]

@@ -23,7 +23,7 @@ The default location for a company must be a physical-type location rather than 
       "message": "The default outlet/location must be a Location Type and not a Salesperson Type.",
       "description": "-0- -1-",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/DefaultCompanyLocation",
+      "helpLink": "http://developer.avalara.com/avatax/errors/DefaultCompanyLocation",
       "severity": "Error"
     }
   ]

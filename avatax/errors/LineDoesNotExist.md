@@ -23,7 +23,7 @@ You attempted to remove a line that did not exist.
       "message": "The line to be removed does not exist.",
       "description": "Line -0- does not exist. You can't remove a line that does not exist.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/LineDoesNotExist",
+      "helpLink": "http://developer.avalara.com/avatax/errors/LineDoesNotExist",
       "severity": "Error"
     }
   ]

@@ -22,8 +22,8 @@ The Certificate service was unable to parse a filter parameter in your query.
       "number": 1212,
       "message": "Filtering operation is not supported",
       "description": "The API -0- does not currently support the -1- filter command.",
-      "faultCode": "Server",
-      "helpLink": "/avatax/errors/InvalidCertCaptureOperation",
+      "faultCode": "Client",
+      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidCertCaptureOperation",
       "severity": "Error"
     }
   ]

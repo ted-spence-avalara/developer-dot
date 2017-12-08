@@ -22,8 +22,8 @@ Avalara's Certificate service requires that all certificates have one exposure z
       "number": 1207,
       "message": "The exposure zone is missing",
       "description": "Certificate must have at least one exposure zone to become valid.",
-      "faultCode": "Server",
-      "helpLink": "/avatax/errors/MissingExposureZone",
+      "faultCode": "Client",
+      "helpLink": "http://developer.avalara.com/avatax/errors/MissingExposureZone",
       "severity": "Error"
     }
   ]

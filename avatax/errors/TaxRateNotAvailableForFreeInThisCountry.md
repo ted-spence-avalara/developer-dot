@@ -23,7 +23,7 @@ The Free TaxRates API is only available in the US.
       "message": "You are trying to get tax rate for free at -0-. It is only available at US for now",
       "description": "Tax rate is not available for free for this countries",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/TaxRateNotAvailableForFreeInThisCountry",
+      "helpLink": "http://developer.avalara.com/avatax/errors/TaxRateNotAvailableForFreeInThisCountry",
       "severity": "Error"
     }
   ]

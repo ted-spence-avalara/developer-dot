@@ -23,7 +23,7 @@ The TaxRate content file for the date you specified does not exist.
       "message": "The TaxRates file for date -0- does not exist.",
       "description": "Please use api/v2/taxratesbyzipcode/build/{date} API to build the file first.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/RequestedFileNotExist",
+      "helpLink": "http://developer.avalara.com/avatax/errors/RequestedFileNotExist",
       "severity": "Error"
     }
   ]

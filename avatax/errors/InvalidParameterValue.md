@@ -23,7 +23,7 @@ When adding parameters to your CreateTransactionModel, you must specify a parame
       "message": "The parameter '-0-' expects a value of type '-2-'.",
       "description": "You provided the value '-1-', which is not a valid '-2-'.",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/InvalidParameterValue",
+      "helpLink": "http://developer.avalara.com/avatax/errors/InvalidParameterValue",
       "severity": "Error"
     }
   ]

@@ -23,7 +23,7 @@ You attempted to reset a password but you did not provide a correct old password
       "message": "Invalid password.",
       "description": "-0-",
       "faultCode": "Client",
-      "helpLink": "/avatax/errors/OldPasswordInvalid",
+      "helpLink": "http://developer.avalara.com/avatax/errors/OldPasswordInvalid",
       "severity": "Error"
     }
   ]
