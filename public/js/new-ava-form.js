@@ -3,46 +3,28 @@ function insertAvaForm() {
 }
 
 function submitShort() {
-    return submitForm(
-      $('#firstName').val(),
-      $('#lastName').val(),
-      $('#email').val(),
-      $('#company').val(),
-      $('#website').val(),
-      $('#phone').val(),
-      $('#street-address').val(),
-      $('#city').val(),
-      $('#region').val(),
-      $('#country').val(),
-      $('#postal-code').val(),
-      $('#ava-form-info'),
-      $('#ava-form-alert')
-    );
-}
-
-function submitForm(fn, ln, e, c, w, p, l, cty, r, cc, pc, outputElement, alertElement) {
-
     var c_id = 'organic';
 
+    // AvaTag is a marketing feature that gathers informaton and persists it across site visits
     if (AvaTag.getCombinedData()['CampaignID']) {
         c_id = AvaTag.getCombinedData()['CampaignID'];
     }
     // console.log("c_id = " + c_id);
-    alertElement.hide();
+    $('#ava-form-alert').hide();
     var payload = {
-        firstName: fn,
-        lastName: ln,
-        email: e,
-        company: c,
-        website: w,
-        phone: p,
+        firstName: $('#firstName').val(),
+        lastName: $('#lastName').val(),
+        email: $('#email').val(),
+        company: $('#company').val(),
+        website: $('#website').val(),
+        phone: $('#phone').val(),
         campaign: c_id,
         companyAddress: {
-            line: l,
-            city: cty,
-            region: r,
-            country: cc,
-            postalCode: pc
+            line: $('#street-address').val(),
+            city: $('#city').val(),
+            region: $('#region').val(),
+            country: $('#country').val(),
+            postalCode: $('#postal-code').val()
         }
     };
 
@@ -56,17 +38,17 @@ function submitForm(fn, ln, e, c, w, p, l, cty, r, cc, pc, outputElement, alertE
         },
         error: function(err) {
             var avataxerror = $.parseJSON(err.responseText);
-            outputElement.html(avataxerror.error.message);
-            alertElement.attr('class', 'alert alert-warning fade in');
+            $('#ava-form-info').html(avataxerror.error.message);
+            $('#ava-form-alert').attr('class', 'alert alert-warning fade in');
             $('#submit').prop('disabled', false);
-            alertElement.show();
+            $('#ava-form-alert').show();
         },
         dataType: 'json',
         success: function(data) {
-            outputElement.html('Success!  Your account credentials have been sent to <strong>' + data.accountDetailsEmailedTo + '</strong>.');
-            alertElement.attr('class', 'alert alert-success fade in');
+            $('#ava-form-info').html('Success!  Your account credentials have been sent to <strong>' + data.accountDetailsEmailedTo + '</strong>.');
+            $('#ava-form-alert').attr('class', 'alert alert-success fade in');
             $('#submit').prop('disabled', false);
-            alertElement.show();
+            $('#ava-form-alert').show();
             // console.log(data);
         },
         type: 'POST'
