@@ -134,6 +134,54 @@ Here are the details for each field included in a Tax Content API response:
 	</table>  
 </div>
 
+<h2>Consuming Tax Content</h2>
+
+In order to calculate tax locally, you'll need to implement logic in your native POS application that can correctly interpret and calculate tax using the data from the Tax Content API. The next sections will review common uses cases for leveraging the Tax Content API results to calculate tax locally.
+
+<h3>Thresholds & Caps</h3>
+
+This section is about interpreting Cap & Threshold values included in Tax Content API results. By the end of this section, you will learn the following
+
+<ul class="dev-guide-list">
+  <li>How to interpret Threshold and Cap values</li>
+  <li>How to interpret TaxRule Options associated with Cap and Threshold values.</li>
+</ul>
+
+<h4>Thresholds</h4>
+
+<h5>Assertions</h5>
+
+Address: 82 Smith St, Providence, RI 02903-1105<br/>
+Tax Code(s): PC040100
+
+<h5>Expected API Result</h5>
+
+<pre>
+[
+  {
+      "ScenarioId": 1,
+      "EffDate": "12/1/2013 12:00:00 AM",
+      "EndDate": "12/31/9999 12:00:00 AM",
+      "LocationCode": "RI001",
+      "TaxCode": "PC040100",
+      "ShipToCity": "Providence",
+      "ShipToCounty": "PROVIDENCE",
+      "ShipToState": "RI",
+      "ShipToPostalCode": "02903-1105",
+      "ShipToCountry": "US",
+      "JurisType": "State",
+      "JurisName": "RHODE ISLAND",
+      "TaxType": "Sales",
+      "Tax_Description": "RI STATE TAX",
+      "Tax_Rate": 0.07,
+      "Cap": "0",
+      "Threshold": "250.000000",
+      "TaxRuleOptions": "",
+      "TaxApplicationLevel": ""
+  }
+]
+</pre>
+
 <h2>Old Content Persists Below</h2>
 
 Here's how this task works:
