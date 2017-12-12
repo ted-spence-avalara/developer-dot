@@ -36,3 +36,5 @@ models
 
 # put all scripts for local development here
 tmp
+
+package-lock.json
