@@ -9,7 +9,7 @@ doctype: overview
 <div class="row bg-map">
   <div class="col-md-6 col-md-offset-3 text-center">
     <h1 class="h1p">Real-time tax calculation for financial applications</h1>
-    <h1>Try free for 30 days with an Avalara AvaTax sandbox account</h1>
+    <h1>Try free for 60 days with an Avalara AvaTax sandbox account</h1>
   </div>
   <div class="col-xs-offset-2 col-xs-8 text-center btn-callout"><a href="/avatax/signup" role="button">Get a Free Trial Account Now</a></div>
 </div>
@@ -81,5 +81,5 @@ doctype: overview
     </div>
   </div>
 </div>
- 
+
 </div>

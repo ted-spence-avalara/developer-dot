@@ -10,7 +10,7 @@ disqus: 1
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/calculating-tax-offline/detecting-a-dropped-connection"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/avatax/dev-guide/calculating-tax-offline/reconcile-transactions-after-outage/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/avatax/dev-guide/calculating-tax-offline/tax-content-api/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 After your application detects a timeout, it must next make a decision whether to retry the transaction or fallback to a default tax rate.  We cannot recommend which specific approach will be right for your program, but we can encourage you to consider a few key risks when retrying a transaction:
@@ -105,5 +105,5 @@ Next, let's look at how you can reconcile a transaction after your outage is res
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/calculating-tax-offline/detecting-a-dropped-connection"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/avatax/dev-guide/calculating-tax-offline/reconcile-transactions-after-outage/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/avatax/dev-guide/calculating-tax-offline/tax-content-api/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

@@ -28,7 +28,7 @@ Your software should be able to pass these integration tests:
 <ul class="dev-guide-list">
   <li><a class="dev-guide-link" href="/avatax/dev-guide/calculating-tax-offline/detecting-a-dropped-connection/#test1">11.1.1- Detecting a Dropped Connection</a></li>
   <li><a class="dev-guide-link" href="/avatax/dev-guide/calculating-tax-offline/retry-or-fallback/#test2">11.2.1 - Retry or Fallback</a></li>
-  <li><a class="dev-guide-link" href="/avatax/dev-guide/calculating-tax-offline/reconcile-transactions-after-outage/#test3">11.3.1 - Reconcile Transactions After Outage</a></li>
+  <li><a class="dev-guide-link" href="/avatax/dev-guide/calculating-tax-offline/reconcile-transactions-after-outage/#test3">11.4.1 - Reconcile Transactions After Outage</a></li>
 </ul>
 
 <ul class="pager">
