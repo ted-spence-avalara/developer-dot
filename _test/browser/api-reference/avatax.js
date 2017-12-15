@@ -47,7 +47,7 @@ module.exports = {
         // NOTE: THESE NOW ALL EXIST ON SUB 'TAG' PAGES
 
         expectedNumberOfApiEndpoints = 34;
-        const expectedNumberOfSubTags = 5;
+        const expectedNumberOfSubTags = 7;
 
         const expectedRequest = {accountId: 123456789, confirmResetLicenseKey: true};
 
