@@ -1,18 +1,18 @@
 ---
 layout: default
-title: Get Started
+title: AvaTax Free Trial
 product: avaTax
 doctype: documentation
 avaform: 1
 ---
 
-<h4 id="signup">Sign up for an AvaTax Sandbox Account</h4>
+<h4 id="signup">Sign up for an AvaTax Free Trial Account</h4>
 
 <div class="half">
 <ul>
-    <li>To get started, we’ll first set you up with an AvaTax Sandbox account. This account will allow you to use advanced AvaTax functionality in the <strong>U.S. and Canada only</strong>, in an environment called Sandbox. To access full AvaTax Pro System Tax Code functionality or Global Nexus Jurisdictions, please <a href="http://www.avalara.com/contact-us/">contact sales</a> to inquire about a paid development account.</li>
+    <li>To get started, we’ll first set you up with an AvaTax account. This account will allow you to get started right away using our production environment, including access to the full AvaTax Pro System Tax Code functionality and Global Nexus Jurisdictions.</li>
     <br />
-    <li>This sandbox account is for evaluation only and is initially active for 60 days, but you can request an extension if needed. You will need to add company profile and tax profile information to calculate sales tax. Because this is a sandbox, you can experiment all you like and your test data will be kept separate from your production accounts.</li>
+    <li>This account is initially active for 60 days, but you can request an extension if needed. You will need to add company profile and tax profile information to calculate sales tax. If you decide to purchase a subscription at a later date, it can be added directly to this account so that no data migration is required.</li>
 </ul>
 <div class="avaform-wrapper"></div>
 
