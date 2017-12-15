@@ -105,19 +105,19 @@ nav: home
         </div>
         <div class="row border-top">
           <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 text-center">
-          <h2 class="text-left">Try it free for 60 days with an <br />Avalara AvaTax sandbox account</h2>
+          <h2 class="text-left">Try it free for 60 days with an <br />Avalara AvaTax free trial</h2>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
             <p class="text-left">
-              You'll be set up with an <a href="/avatax/get-started#signup">AvaTax Basic subscription</a> which lets you calculate taxes in the U.S. and Canada only.<br />
-              Please <a href="mailto:sales@avalara.com">contact us</a> if you need to request an extension, evaluate our global tax calculation or other compliance services.<br />
+              This account will allow you to get started right away using our production environment,<br /> including access to the full AvaTax Pro System Tax Code functionality and Global Nexus Jurisdictions.<br />
+              Please <a href="mailto:sales@avalara.com">contact us</a> if you need to request an extension or evaluate other compliance services.<br />
             </p>
           </div>
         </div>
         <div class="row margin-top">
-          <div class="col-md-12 text-center btn-callout"><a href="/avatax/signup" role="button">Setup a free sandbox account</a></div>
+          <div class="col-md-12 text-center btn-callout"><a href="/avatax/signup" role="button">Setup an AvaTax free trial</a></div>
         </div>
     </div>
 </div>
