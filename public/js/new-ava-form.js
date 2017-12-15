@@ -30,7 +30,7 @@ function submitShort() {
 
     // console.log("payload = ", JSON.stringify(payload));
     $.ajax({
-        url: 'https://sandbox-rest.avatax.com/api/v2/accounts/freetrials/request',
+        url: 'https://rest.avatax.com/api/v2/accounts/freetrials/request',
         data: JSON.stringify(payload),
         contentType: 'application/json',
         beforeSend: function() {
