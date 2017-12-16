@@ -6,7 +6,6 @@ module.exports = {
     'after': function(browser) {
         browser.end();
     },
-
     'Enums: REST v2: Methods - Query String': function(browser) {
         const methodURL = `${browser.globals.baseURL}/api-reference/avatax/rest/v2/methods/Addresses/ResolveAddress/`;
         const enumURL = `${browser.globals.baseURL}/api-reference/avatax/rest/v2/methods/Addresses/enums/ResolveAddress%20>%20textCase/`;
@@ -22,7 +21,6 @@ module.exports = {
         browser
             .navigateToUrl('h1 a', '.endpoint-summary', methodURL);
     },
-
     'Enums: REST v2: Models - Request Body': function(browser) {
         const modelURL = `${browser.globals.baseURL}/api-reference/avatax/rest/v2/models/AccountModel/`;
         const enumURL = `${browser.globals.baseURL}/api-reference/avatax/rest/v2/models/enums/AccountStatusId/`;

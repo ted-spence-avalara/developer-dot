@@ -264,7 +264,7 @@
         },
         "/api/v2/addresses/resolve": {
             "get": {
-                "tags": ["Accounts"],
+                "tags": ["Addresses"],
                 "summary": "Retrieve geolocation information for a specified address",
                 "description": "Resolve an address against Avalara's address-validation system.  If the address can be resolved, this API \r\nprovides the latitude and longitude of the resolved location.  The value 'resolutionQuality' can be used \r\nto identify how closely this address can be located.  If the address cannot be clearly located, use the \r\n'messages' structure to learn more about problems with this address.\r\nThis is the same API as the POST /api/v2/addresses/resolve endpoint.\r\nBoth verbs are supported to provide for flexible implementation.",
                 "operationId": "ResolveAddress",
@@ -386,7 +386,7 @@
                 ]
             },
             "post": {
-                "tags": ["Accounts"],
+				"tags": ["Addresses"],
                 "summary": "Retrieve geolocation information for a specified address",
                 "description": "Resolve an address against Avalara's address-validation system.  If the address can be resolved, this API \r\nprovides the latitude and longitude of the resolved location.  The value 'resolutionQuality' can be used \r\nto identify how closely this address can be located.  If the address cannot be clearly located, use the \r\n'messages' structure to learn more about problems with this address.\r\nThis is the same API as the GET /api/v2/addresses/resolve endpoint.\r\nBoth verbs are supported to provide for flexible implementation.",
                 "operationId": "ResolveAddressPost",
