@@ -170,7 +170,6 @@ export default (fileName, apiName, apiPath, product) => {
                     /* eslint-enable no-console */
                     throw new Error('Error parsing swaggerDoc');
                 }
-
                 const buildHtml = (tagName, initialState, disqus) => {
                     const endpoint = initialState.apiEndpoints.length ? initialState.apiEndpoints[0] : null;
 
@@ -250,6 +249,7 @@ ${(disqus) ? '{% include disqus.html %}' : ''}`
                             // description: tag.description
                         };
                     });
+
 
                     saveMethodsIndex(apiName, `${apiPath}/methods`, product, tagLinks);
 
