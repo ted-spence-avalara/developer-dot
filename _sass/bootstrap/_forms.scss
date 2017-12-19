@@ -116,6 +116,10 @@ input.form-control::placeholder {
   font-style: italic;
 }
 
+input.required {
+  border-color: #ff383880;
+}
+
 .form-control {
   display: block;
   width: 100%;
