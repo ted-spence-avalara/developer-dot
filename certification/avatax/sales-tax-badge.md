@@ -10,7 +10,7 @@ doctype: integration_checklists
     </div>
     <div class="col-sm-8 padding-top">
       <h2>Avalara AvaTax Sales Tax Badge Requirements</h2>
-     <!-- <h3>Do we want to say anything here?</h3>-->
+     <!--<h3>Do we want to say anything here?</h3>-->
       
       <hr>
 
