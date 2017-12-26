@@ -164,6 +164,16 @@ var fixDropDownMenuLargePosition = function() {
     }, 100);
 };
 
+function getCompareDate() {
+  var d = new Date(),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+  if (month.length < 2) month = '0' + month;
+  if (day.length < 2) day = '0' + day;
+  return [year, month, day].join('');
+}
+
 $(document).ready(function() {
     fixApiRefNav();
 
@@ -171,6 +181,18 @@ $(document).ready(function() {
     showHdrSearchForm();
 
     fixDropDownMenuLargePosition();
+
+    $('[webinar-hide-before]').each(function() {
+      if ($(this).attr('webinar-hide-before') > getCompareDate()) {
+        $(this).hide();
+      }
+    });
+
+    $('[webinar-hide-after]').each(function() {
+      if ($(this).attr('webinar-hide-after') <= getCompareDate()) {
+        $(this).hide();
+      }
+    });
 
     // When we show the section nav on xs/sm, clear the main content below the nav
     $('.sm-section-nav').on('shown.bs.dropdown', function() {
