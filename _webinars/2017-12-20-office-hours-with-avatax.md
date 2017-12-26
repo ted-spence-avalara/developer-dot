@@ -1,7 +1,7 @@
 ---
-layout: post
+layout: webinar
 title: "December Office Hours with AvaTax"
-date: 2012-12-20 11:00
+date: 2017-12-20 11:00
 author: ted.spence
 comments: true
 product: avatax

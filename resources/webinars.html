@@ -1,13 +1,12 @@
 ---
 layout: page
 title: Upcoming AvaTax Developer Webinars
-blog_breadcrumb: 1
 nav: webinars
 product: webinars
 ---
 <div class="container">
     <div class="row">
-        {% for post in paginator.posts %}
+        {% for post in site.webinars reversed %}
         <div class="col-md-5">
             <div class="blog-preview">
                 <div class="gradient"></div>
@@ -20,24 +19,7 @@ product: webinars
                     <a href="{{ post.url }}" class="btn btn-blog">Read More</a>
                 </div>
             </div>
-       </div>        
+       </div>
     {% endfor %}
     </div>
 </div>
-
-
-<h5>
-    <ul class="blog-pagination">
-        {% if paginator.previous_page %}
-        <li><a href="{{ paginator.previous_page_path }}" class="previous">Newer</a></li>
-        {% else %}
-        <li class="previous">Newer</li>
-        {% endif %}
-        <li class="page_number">Page {{ paginator.page }} of {{ paginator.total_pages }}</li>
-        {% if paginator.next_page %}
-        <li><a href="{{ paginator.next_page_path }}" class="next">Older</a></li>
-        {% else %}
-        <li class="next">Older</li>
-        {% endif %}
-    </ul>
-</h5>
