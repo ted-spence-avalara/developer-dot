@@ -9,8 +9,8 @@ doctype: integration_checklists
       <img src="/public/images/devdot/badges/Comms.png" class="img-responsive" alt="Avalara Certified Solution">
     </div>
     <div class="col-sm-8 padding-top">
-      <h2>Avalara AvaTax Use Tax Badge Requirements</h2>
-      <h3>Do we want to say anything here?</h3>
+      <h2>Avalara AvaTax Communications Badge Requirements</h2>
+      <!--<h3>Do we want to say anything here?</h3>-->
       
       <hr>
         <h3>Administration/Utilities Integration</h3>
@@ -25,7 +25,7 @@ doctype: integration_checklists
                 </p>
                 
             <h5>Validate Company specific data in AFC transactional inputs. - <em>Required</em></h5>
-                <p class="badgerequirement">You should have the ability to pass through all types of inputs through with transactions:
+                <p class="badgerequirement">You should have the ability to pass through all types of inputs through with transactions:</p>
                     <ul class="normal">
                         <li>Service Class: Primary Local or Primary Long Distance.</li>
                         <li>Regulated or Unregulated.</li>
@@ -36,8 +36,7 @@ doctype: integration_checklists
                         <li>Sale Type.</li>
                         <li>Company Idnetifier.</li>
                     </ul>
-                Display the correct pcode for the jurisdiction.
-                </p>
+                <p class="badgerequirement">Display the correct pcode for the jurisdiction.</p>
             
             <h5>Validate execution of base calculate tax function. - <em>Required</em></h5>
                 <p class="badgerequirement">You should be able to submit basic transactions with required data values. For example, ability to calculate taxes using CalcTaxesWithPcode API call and get correct tax results.<br>
@@ -101,36 +100,4 @@ doctype: integration_checklists
                 Ability to distinguish between these exceptions and how to handle these:<br>
                 Display error code
                 </p>
-                
-                
-                
-                
-                
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
       

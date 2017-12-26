@@ -10,7 +10,7 @@ doctype: integration_checklists
     </div>
     <div class="col-sm-8 padding-top">
       <h2>Avalara AvaTax Document Management Badge Requirements</h2>
-      <h3>Do we want to say anything here?</h3>
+      <!--<h3>Do we want to say anything here?</h3>-->
       
       <hr>
         <h3>Administration/Utilities Integration</h3>
@@ -50,7 +50,7 @@ doctype: integration_checklists
                     <li>Customer number (unique customer identifier)</li>
                     <li>Customer Name</li>
                     <li>Mailing Address</li>
-                    <li>Option for Additional-Ship To Zonez on customer record.</li>
+                    <li>Option for Additional-Ship To Zones on customer record.</li>
                     <li>Email address</li>
                   </ul>
                 </p>
@@ -81,97 +81,4 @@ doctype: integration_checklists
             
             <h5>Revoke Existing Certificate - <em>Suggested</em></h5>
                 <p class="badgerequirement">Optional function to revoke/unlink an existing certificate from a customer record.</p>
-                
-                
-                
-                
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
+ 

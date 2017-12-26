@@ -1,6 +1,6 @@
 ---
 layout: default
-title: AvaTax Point of Sale Badge* Requirements
+title: AvaTax Point of Sale Badge Requirements
 product: avaTax
 doctype: integration_checklists
 ---
@@ -9,8 +9,8 @@ doctype: integration_checklists
       <img src="/public/images/devdot/badges/PointofSale.png" class="img-responsive" alt="Avalara Certified Solution">
     </div>
     <div class="col-sm-8 padding-top">
-      <h2>Avalara AvaTax Point of Sale Badge* Requirements</h2>
-      <h3>Do we want to say anything here?</h3>
+      <h2>Avalara AvaTax Point of Sale Badge Requirements</h2>
+      <h3>Preresiquite - Avalara Certified for Sales Tax Badge</h3>
       
       <hr>
       <h3>Tax Content Request - Disconnected</h3>
@@ -26,7 +26,7 @@ doctype: integration_checklists
             
         <h5>Capture Tax Content response and transform content into application compatible format - <em>Required</em></h5>
             <p class="badgerequirement">The transformation requirement mandates making the Tax Content response, in either JSON, CSV or XML format, and convert it into the import-ready format for tax content, including:
-                <ul>
+                <ul class="normal">
                     <li>Transform Tax Jurisdiction content to application tax schedule/tax item format</li>
                     <li>Transform Tax Rate content to application tax schedule/tax item format</li>
                     <li>Transform Tax Code content to application product/service taxability format</li>
@@ -45,7 +45,7 @@ doctype: integration_checklists
         <h5>Schedule Tax Content Request job - <em>Required</em></h5>
             <p class="badgerequirement">Suggest leveraging existing application scheduling functionality when available</p>
     <hr>
-       <h3>Transaction Upload - Disconnected <--CHECK THIS SECTION, LOOKS TO BE DUPLICATED CONTENT</h3>     
+       <h3>Transaction Upload - Disconnected <code><--CHECK THIS SECTION, LOOKS TO BE DUPLICATED CONTENT</code></h3>     
         <h5>Send API tax content request with required data elements   - <em>Required</em></h5>
             <p class="badgerequirement">
                 <ul class="normal">
@@ -99,26 +99,3 @@ doctype: integration_checklists
             
         <h5>Calculate tax applying tiered tax - <em>Required</em></h5>
             <p class="badgerequirement">Tennessee $1,600/$3,200 tiers – Tax Code P0000000</p>
-            
-            
-    <p><small>* Indicates Sales Tax Badge must be awarded before supplemntal badge is awarded</small></p>
-    
-    
-            
-        <h5>XXXXX  - <em>XXXXX</em></h5>
-            <p class="badgerequirement">XXXXX</p>
-            
-        <h5>XXXXX  - <em>XXXXX</em></h5>
-            <p class="badgerequirement">XXXXX</p>
-            
-        <h5>XXXXX  - <em>XXXXX</em></h5>
-            <p class="badgerequirement">XXXXX</p>
-            
-        <h5>XXXXX  - <em>XXXXX</em></h5>
-            <p class="badgerequirement">XXXXX</p>
-            
-        <h5>XXXXX  - <em>XXXXX</em></h5>
-            <p class="badgerequirement">XXXXX</p>
-            
-        <h5>XXXXX  - <em>XXXXX</em></h5>
-            <p class="badgerequirement">XXXXX</p>

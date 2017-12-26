@@ -10,7 +10,7 @@ doctype: integration_checklists
     </div>
     <div class="col-sm-8 padding-top">
       <h2>Avalara AvaTax Address Validation Badge Requirements</h2>
-      <h3>Do we want to say anything here?</h3>
+      <!--<h3>Do we want to say anything here?</h3>-->
       
       <hr>
         <h3>Administration/Utilities Integration</h3>
@@ -25,6 +25,7 @@ doctype: integration_checklists
                 
             <h5>Disable address validation during order entry option - <em>Conditional</em></h5>
                 <p class="badgerequirement">The Seller should be able to disable or enable address validation during order entry in the config screen.</p>
+                <p class="badgerequirement"><code>How is this conditional? What is the trigger for this to be a requirement?</code></p>
             
             <h5>Have an option to return Address Validation results in upper or lower case - <em>Suggested</em></h5>
                 <p class="badgerequirement">Avalara Address Validation provides an option for the returning results in upper or lower case.</p>
@@ -54,54 +55,3 @@ doctype: integration_checklists
         <h3>Server Audit Clarity</h3>
             <h5>Pass connector identifier information via the TaxSvc.Profile.Client property   - <em>Required</em></h5>
                 <p class="badgerequirement">Integrations must include information about the connector, such as name, version, and company name, as a signature to each transaction. EXAMPLE: TaxSvc.Profile.Client = “Dynamics AX,9.0,MyApp for AX by ACME INC,1.0”</p>
-                
-                
-                
-                
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-                
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>
-            
-            <h5>XXXXX  - <em>XXXXX</em></h5>
-                <p class="badgerequirement">XXXXX</p>

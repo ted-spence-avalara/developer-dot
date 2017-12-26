@@ -23,13 +23,13 @@ doctype: integration_checklists
         <h5>Shipping - <em>Required</em></h5>
             <p class="badgerequirement">Cost of shipping with appropriate Avalara Goods and Service code.</p>
             
-        <h5>IsSellerImporterOfRecord - <em>Suggested/Conditional</em></h5>
+        <h5>IsSellerImporterOfRecord - <em>Suggested Conditional</em></h5>
             <p class="badgerequirement">Setting is defaulted and set in Sellers AvaTax Tax Profile; however there are use cases where Sellers will may want to provide a transactional option by Buyer or even at an individual transaction level to over ride the Tax Profile settings.</p>
-            
-        <h5>net_weight (aka Unit) - <em>Required Conditional</em></h5>
+
+        <h5>net_weight (aka Unit) - <em>Required / Conditional</em></h5>
             <p class="badgerequirement">Required if the tariff code requires it as a specific unit of measure to determine the customs duty rate (sometimes the rate is assessed per the weight)</p>
             
-        <h5>mass_unit (aka Unit of Measure) - <em>Required Conditional</em></h5>
+        <h5>mass_unit (aka Unit of Measure) - <em>Required / Conditional</em></h5>
             <p class="badgerequirement">Required if the tariff code requires it as a specific unit of measure to determine the customs duty rate (sometimes the rate is assessed per the weight)</p>
             
         <h5>Pref program indicator - <em>Suggested</em></h5>
@@ -37,27 +37,10 @@ doctype: integration_checklists
             
         <h5>Express ship method - <em>Suggested</em></h5>
             <p class="badgerequirement">If shipment method selected is an express shipment, set flag true.<br>
-                "name": "AvaTax.LandedCost.Express",<br>
+               <code> "name": "AvaTax.LandedCost.Express",<br>
                 "dataType": "Boolean",<br>
-                "description": "Is Shipping method."
+                "description": "Is Shipping method."</code>
             </p>
             
         <h5>Preference Program - <em>Suggested</em></h5>
             <p class="badgerequirement">NAFTA is currently the only trade preference supported. This is only one trade preference program per HS Country combination.</p>
-            
-            
-            
-            
-            
-            
-        <h5>XXXXX  - <em>XXXXX</em></h5>
-            <p class="badgerequirement">XXXXX</p>
-            
-        <h5>XXXXX  - <em>XXXXX</em></h5>
-            <p class="badgerequirement">XXXXX</p>
-            
-        <h5>XXXXX  - <em>XXXXX</em></h5>
-            <p class="badgerequirement">XXXXX</p>
-            
-        <h5>XXXXX  - <em>XXXXX</em></h5>
-            <p class="badgerequirement">XXXXX</p>

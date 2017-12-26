@@ -21,10 +21,10 @@ doctype: integration_checklists
             <p class="badgerequirement">Is the merchant/seller the importer of record for this transaction.</p>
             
         <h5>EU VAT Simplification Support  - <em>Suggested</em></h5>
-            <p class="badgerequirement">Yes/No toggle? <-- WHAT DO WE PUT HERE?</p>
+            <p class="badgerequirement"><code>Yes/No toggle? <-- WHAT DO WE PUT HERE?</code></p>
             
         <h5>Global Tax Calc - Handling Place of supply   - <em>Suggested</em></h5>
-            <p class="badgerequirement">Yes/No toggle? <-- WHAT DO WE PUT HERE?</p>
+            <p class="badgerequirement"><code>Yes/No toggle? <-- WHAT DO WE PUT HERE?</code></p>
     <hr>
        
        <h3>Additional Requirements – Transaction Processing Integration</h3>    
@@ -45,28 +45,3 @@ doctype: integration_checklists
             
         <h5>EU Invoice Messaging  - <em>Suggested</em></h5>
             <p class="badgerequirement">Option to display messaging returned by the AvaTax engine on customer invoice.</p>
-            
-      
-      
-      
-      
-      
-      
-      
-        <h5>XXXXX  - <em>XXXXX</em></h5>
-            <p class="badgerequirement">XXXXX</p>
-            
-        <h5>XXXXX  - <em>XXXXX</em></h5>
-            <p class="badgerequirement">XXXXX</p>
-            
-        <h5>XXXXX  - <em>XXXXX</em></h5>
-            <p class="badgerequirement">XXXXX</p>
-            
-        <h5>XXXXX  - <em>XXXXX</em></h5>
-            <p class="badgerequirement">XXXXX</p>
-            
-        <h5>XXXXX  - <em>XXXXX</em></h5>
-            <p class="badgerequirement">XXXXX</p>
-            
-        <h5>XXXXX  - <em>XXXXX</em></h5>
-            <p class="badgerequirement">XXXXX</p>
