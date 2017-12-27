@@ -1,28 +1,9 @@
-var $searchForm = $('.hdr-search-form');
+
 var $searchFormCloseBtn = $searchForm.find('.close');
 var $searchFormIcon = $('.hdr-search-icon');
 var $searchInput = $searchForm.find('input[type="search"]');
 
-var submitHdrSearch = function() {
-    $searchForm.on('submit', function(e) {
-        e.preventDefault();
-        $searchForm.addClass('submitted');
 
-        $searchInput.parents('.form-group').removeClass('has-error').removeClass('has-feedback');
-        if (!$searchInput.val()) {
-            $searchInput.parents('.form-group').addClass('has-error').addClass('has-feedback');
-        } else {
-            var newurl = '/search/?q=' + encodeURIComponent($searchInput.val());
-            var product = $('body').attr('data-product');
-            var filterSite = $('#filterSite').is(':checked');
-
-            if (!filterSite && product) {
-                newurl += '&product=' + encodeURIComponent(product);
-            }
-            window.location.href = newurl;
-        }
-    });
-};
 var showHdrSearchForm = function() {
     $searchFormIcon.on('click', function() {
         $searchFormIcon.addClass('hidden');
@@ -115,7 +96,6 @@ var handleSearch = function() {
         });
     }
 
-    var $searchPageForm = $('.search-form');
 
     $('#query').on('input', function() {
         if ($searchPageForm.hasClass('submitted') && !$(this).val()) {
