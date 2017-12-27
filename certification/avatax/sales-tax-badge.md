@@ -6,7 +6,7 @@ doctype: integration_checklists
 ---
  <div class="row padding-top padding bottom">
     <div class="col-sm-2">
-      <img src="/public/images/devdot/badges/SalesTax.png" class="img-responsive" alt="Avalara Certified Solution">
+      <img src="/public/images/devdot/badges/SALESTAX.svg" class="img-responsive" alt="Avalara Certified Solution">
     </div>
     <div class="col-sm-8 padding-top">
       <h2>Avalara AvaTax Sales Tax Badge Requirements</h2>
@@ -142,7 +142,7 @@ doctype: integration_checklists
 
         <h5>Exemption Number - <em>Conditional</em></h5>
             <p class="badgerequirement">Value that is sent to AvaTax for Exemption Number</p>
-            <p class="badgerequirement"><code>Why is this conditional? We need an explanation.</code></p>
+            <p class="badgerequirement"><small>Required if CustomerUsageType/Entity Use Code exemption functionality is not present.</small></p>
         
         <h5>Line Number - <em>Required</em></h5>
             <p class="badgerequirement">Value that is sent to AvaTax for the Line Number</p>
@@ -209,10 +209,10 @@ doctype: integration_checklists
             <p class="badgerequirement">Required if origin (ship-from, warehouse) address can be managed at the item line level</p>
             
         <h5>Include Point of Order Origin in GetTax request  - <em>Conditional</em></h5>
-            <p class="badgerequirement"><code>Why is this conditional, needs description</code></p>
+            <p class="badgerequirement">Required if Point of Order Origin field is available in the source application.</p>
             
         <h5>Include Point of Order Acceptance in GetTax request  - <em>Conditional</em></h5>
-            <p class="badgerequirement"><code>Why is this conditional, needs description</code></p>
+            <p class="badgerequirement">Required if the Point of Order Acceptance is available in the source application</p>
             
         <h5>Latitude/Longitude Support  - <em>Suggested</em></h5>
             <p class="badgerequirement">If host application captures GPS coordinates with Addresses; for US addresses, pass the Lat and Long along with Address. This is especially useful in situations where a location or service site can only be pinpointed by geo location.</p>

@@ -6,7 +6,7 @@ doctype: integration_checklists
 ---
  <div class="row padding-top padding bottom">
     <div class="col-sm-2">
-      <img src="/public/images/devdot/badges/AddressValidation.png" class="img-responsive" alt="Avalara Certified Solution">
+      <img src="/public/images/devdot/badges/AddressValidation.svg" class="img-responsive" alt="Avalara Certified Solution">
     </div>
     <div class="col-sm-8 padding-top">
       <h2>Avalara AvaTax Address Validation Badge Requirements</h2>
@@ -25,7 +25,7 @@ doctype: integration_checklists
                 
             <h5>Disable address validation during order entry option - <em>Conditional</em></h5>
                 <p class="badgerequirement">The Seller should be able to disable or enable address validation during order entry in the config screen.</p>
-                <p class="badgerequirement"><code>How is this conditional? What is the trigger for this to be a requirement?</code></p>
+                <p class="badgerequirement"><small>If address validation is automatic, mercahnt must have option to disable this function.</small></p>
             
             <h5>Have an option to return Address Validation results in upper or lower case - <em>Suggested</em></h5>
                 <p class="badgerequirement">Avalara Address Validation provides an option for the returning results in upper or lower case.</p>

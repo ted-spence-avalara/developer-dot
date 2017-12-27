@@ -6,12 +6,11 @@ doctype: integration_checklists
 ---
  <div class="row padding-top padding bottom">
     <div class="col-sm-2">
-      <img src="/public/images/devdot/badges/Generic.png" class="img-responsive" alt="Avalara Certified Solution">
+      <img src="/public/images/devdot/badges/USETAX.svg" class="img-responsive" alt="Avalara Certified Solution">
     </div>
     <div class="col-sm-8 padding-top">
       <h2>Avalara AvaTax Use Tax Badge Requirements</h2>
-      <h3>Do we want to say anything here?</h3>
-      
+
       <hr>
       <h3>Administration/Utilities Integration</h3>
         <h5>AvaTax Configuration Window - <em>Required</em></h5>
@@ -36,7 +35,7 @@ doctype: integration_checklists
                             <li>Lookup Code from AvaTax</li>
                         </ul>
                     </li>
-                </ul
+                </ul>
             </p>
             
         <h5>AvaTax Test Connect Button - <em>Required</em></h5>
@@ -67,18 +66,19 @@ doctype: integration_checklists
             
         <h5>Merchant/User Exemption - <em>Required</em></h5>
             <p class="badgerequirement">One or the other parameter is required, although Entity/Use code is preferred.
-            <ul class="normal">
-                <li>Entity/Use Code:
-                    <ul class="normal">
-                        <li>Assign an Avalara Entity/Use Code to the merchant/user (an Entity/Use Code defines the reason for the sales tax exemption, Reseller, Manufacturer, Government Entity, Charitable Organization, etc.).</li>
-                        <li>Must include our standard list and be user-definable to add additional items.</li>
-                    </ul>
-                <li>Exemption Number:
-                    <ul class="normal">
-                        <li>-	Identify a field to map the exemption certificate number of the merchant/user of the application to the “ExemptionNo” field in Avalara.</li>
-                    </ul>
-                </li>
-            </ul>
+                <ul class="normal">
+                    <li>Entity/Use Code:
+                        <ul class="normal">
+                            <li>Assign an Avalara Entity/Use Code to the merchant/user (an Entity/Use Code defines the reason for the sales tax exemption, Reseller, Manufacturer, Government Entity, Charitable Organization, etc.).</li>
+                            <li>Must include our standard list and be user-definable to add additional items.</li>
+                        </ul>
+                    </li>
+                    <li>Exemption Number:
+                        <ul class="normal">
+                            <li>Identify a field to map the exemption certificate number of the merchant/user of the application to the “ExemptionNo” field in Avalara.</li>
+                        </ul>
+                    </li>
+                </ul>
             </p>
     <hr>
     
@@ -115,8 +115,8 @@ doctype: integration_checklists
         <h5>Avalara Tax Code Assignment - Item/SKU - <em>Required</em></h5>
             <p class="badgerequirement">Provide an attribute to associate an Avalara Tax Code to an item/SKU. Overrides default Tax Code at item/product group level. Search for a specific tax codeDownload a list of the standard system tax codes</p>
             
-        <h5>UPC  - <em>Required</em></h5>
-            <p class="badgerequirement">See note in Administration/Utilities Integration section. If the user elects to use AvaTax UPC, Ensure that the appropriate field containing UPC data is mapped to the ItemCode parameter formatted as: <UPC:>+<UPC Data>. Example: “UPC:1234567890000”. by formatting the value with “UPC:” identifier, our engine can pick up the UPC code, and the user can avoid mapping a tax code for that item. If no UPC data is available still default to the regular ItemCode mapping.</p>
+        <h5>UPC - <em>Required</em></h5>
+            <p class="badgerequirement">See note in Administration/Utilities Integration section. If the user elects to use AvaTax UPC, Ensure that the appropriate field containing UPC data is mapped to the ItemCode parameter formatted as: <code>&lt;UPC:&gt;+&lt;UPC Data&gt;</code>. Example: <code>UPC:1234567890000</code>. by formatting the value with <code>UPC:</code> identifier, our engine can pick up the UPC code, and the user can avoid mapping a tax code for that item. If no UPC data is available still default to the regular ItemCode mapping.</p>
             <p><small>NOTE:  the UPC functionality is a premium upgrade to the Avalara AvaTax subscription providing taxability decision (taxable vs. non-taxable) without requiring an Avalara Tax Code assignment.</small></p>
     <hr>
     
@@ -200,7 +200,7 @@ doctype: integration_checklists
                         <ul class="normal">
                             <li>Accept the difference between AvaTax calculated tax and vendor-charged tax (only if AvaTax is a larger amount than vendor-charged tax)</li>
                             <li>Accept Avatax calculated Use Tax in total</li>
-                            <li>Edit the use tax amount to a desired amount, including $0.00<li>
+                            <li>Edit the use tax amount to a desired amount, including $0.00</li>
                         </ul>
                     </li>
                 </ul>
@@ -241,6 +241,7 @@ doctype: integration_checklists
                     <li>Exemption Number - overrides header level Exemption Number</li>
                     <li>Reference 1</li>
                     <li>Reference 2</li>
+                </ul>
             </p>
             
         <h5>Latitude/Longitude - <em>Suggested</em></h5>
@@ -259,12 +260,3 @@ doctype: integration_checklists
             
         <h5>Demonstrate and document installation of software – Install Shield or equivalent where applicable - <em>Required</em></h5>
             <p class="badgerequirement">Customers should have an easy and trouble free installation of the software.</p>
-            
-            
-            
-            
-        <h5>XXXXX  - <em>XXXXX</em></h5>
-            <p class="badgerequirement">XXXXX</p>
-            
-        <h5>XXXXX  - <em>XXXXX</em></h5>
-            <p class="badgerequirement">XXXXX</p>

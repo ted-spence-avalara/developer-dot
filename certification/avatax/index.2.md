@@ -24,6 +24,8 @@ doctype: certification
 		    <div class="col-sm-2">
 		       <a href="point-of-sale-badge"><img src="/public/images/devdot/badges/POINTOFSALE.svg" class="img-responsive" alt="Point of Sale Badge"></a>
 		    </div>
+		 </div>
+		 <div class="row">
 		    <div class="col-sm-2">
 		       <a href="customs-duty-and-import-tax-badge"><img src="/public/images/devdot/badges/LANDEDCOST.svg" class="img-responsive" alt="Landed Cost Badge"></a>
 		    </div>

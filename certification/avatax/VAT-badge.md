@@ -6,11 +6,11 @@ doctype: integration_checklists
 ---
  <div class="row padding-top padding bottom">
     <div class="col-sm-2">
-      <img src="/public/images/devdot/badges/VAT.png" class="img-responsive" alt="Avalara Certified Solution">
+      <img src="/public/images/devdot/badges/VAT.SVG" class="img-responsive" alt="Avalara Certified Solution">
     </div>
     <div class="col-sm-8 padding-top">
       <h2>Avalara AvaTax VAT Badge Requirements</h2>
-      <h3>Do we want to say anything here?</h3>
+      <h3>Preresiquite - Avalara Certified for Sales Tax</h3>
       
       <hr>
       <h3>Additional Requirements - Customer Record Integration</h3>
@@ -37,10 +37,10 @@ doctype: integration_checklists
         <h5>Currency Code  - <em>Required</em></h5>
             <p class="badgerequirement">Transaction currency code – AvaTax needs to know the currency the document is transacted in, not the default currency information.</p>
             
-        <h5>Ship-to address, including country code  - <em>required</em></h5>
+        <h5>Ship-to address, including country code  - <em>Required</em></h5>
             <p class="badgerequirement">Ship-to address must contain country code.</p>
             
-        <h5>Ship-from address, including country code  - <em>required</em></h5>
+        <h5>Ship-from address, including country code  - <em>Required</em></h5>
             <p class="badgerequirement">Ship-from address must include country code.</p>
             
         <h5>EU Invoice Messaging  - <em>Suggested</em></h5>

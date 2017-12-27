@@ -6,11 +6,11 @@ doctype: integration_checklists
 ---
  <div class="row padding-top padding bottom">
     <div class="col-sm-2">
-      <img src="/public/images/devdot/badges/LandedCost.png" class="img-responsive" alt="Avalara Certified Solution">
+      <img src="/public/images/devdot/badges/CustomsDutyImportTax.svg" class="img-responsive" alt="Avalara Certified Solution">
     </div>
     <div class="col-sm-8 padding-top">
       <h2>Avalara AvaTax Customs Duty & Import Tax Badge Requirements</h2>
-      <h3>Do we want to say anything here?</h3>
+      <h3>Preresiquite - Avalara Certified for Sales Tax</h3>
       
       <hr>
       <h3>Additional Requirements</h3>
