@@ -29,7 +29,6 @@ sections: [
 ]
 
 gems:
-    - algoliasearch-jekyll
     - jekyll-paginate
 
 algolia:
