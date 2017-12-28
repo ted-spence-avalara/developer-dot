@@ -8,8 +8,6 @@ product: avatax
 doctype: webinar
 ---
 
-<center><h2><a href="https://register.gotowebinar.com/register/2719809517923376642">Sign up for the final AvaTax Webinar of 2017 happening on December 20th!</a></h2></center>
-
 Avalara’s crack team of engineers receives dozens of questions a week from the developers using our APIs, SDKs and documentation, and we want to answer as many as we can.
 
 So, we’re setting aside our next free webinar to hold a special open, hour-long Q&A session where developers will get the chance to ask Avalara’s Ted Spence, Bob Erdman and Aaron Robles anything that happens to be top of  mind as we head into the New Year.
@@ -20,4 +18,4 @@ Ted, Bob and Aaron can answer all these questions and more, so be sure to regist
 
 We’re looking forward to your questions!
 
-<center><h3><a href="https://register.gotowebinar.com/register/2719809517923376642">Sign up now!</a></h3></center>
+</i>Recording coming soon</i>
