@@ -16,5 +16,6 @@ Have you ever wanted to meet AvaTax developers and talk about your latest projec
 	<li>Event: Developer Office Hours</li>
 	<li>Date: January 2nd</li>
 	<li>Time: 10:00 AM - 10:30 AM Pacific</li>
-	<li><a href="https://event.on24.com/wcc/r/1574448/52A06891BD560A19650B8C56EB7FE6A5">Sign Up Now</a></li>
 </ul>
+
+<p class="btn-callout"><a href="https://event.on24.com/wcc/r/1574448/52A06891BD560A19650B8C56EB7FE6A5" role="button">Sign Up Now</a></p>

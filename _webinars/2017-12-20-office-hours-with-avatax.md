@@ -18,4 +18,4 @@ Ted, Bob and Aaron can answer all these questions and more, so be sure to regist
 
 We’re looking forward to your questions!
 
-</i>Recording coming soon</i>
+<i>Recording coming soon</i>
