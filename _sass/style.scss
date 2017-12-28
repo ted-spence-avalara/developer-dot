@@ -196,6 +196,12 @@ color: $Medium-grey;
     }
 }
 
+.language-json {
+  @media(min-width: $screen-md-min) {
+      width: $screen-sm-max;
+  }
+}
+
 .slash {
     color: $Disabled;
 }
@@ -675,7 +681,7 @@ footer {
 
 .mobile-table {
     @media only screen and (max-width: 480px) {
-       overflow-x: auto; 
+       overflow-x: auto;
     }
 }
 
