@@ -39,7 +39,7 @@ doctype: integration_checklists
                 <p class="badgerequirement">Define CertCapture request timeout length, CertCapture best practices prescribes default setting of 300ms.</p>
             
             <h5>CertCapture Admin Console Link  - <em>Suggested</em></h5>
-                <p class="badgerequirement">Link to the CertCapture Application Dashboard</p>
+                <p class="badgerequirement">Link to the CertCapture Application Dashboard.</p>
          <hr>
          
           <h3>Customer Record Integration</h3>
@@ -50,7 +50,7 @@ doctype: integration_checklists
                     <li>Customer number (unique customer identifier)</li>
                     <li>Customer Name</li>
                     <li>Mailing Address</li>
-                    <li>Option for Additional-Ship To Zones on customer record.</li>
+                    <li>Option for Additional-Ship To Zones on customer record</li>
                     <li>Email address</li>
                   </ul>
                 </p>
@@ -62,10 +62,10 @@ doctype: integration_checklists
                 <p class="badgerequirement">Retrieve and display exemption certificate information associated with a customer record.<br>
                 The displayed information must include:
                   <ul class="normal">
-                    <li>exempt state</li>
-                    <li>exempt reason</li>
-                    <li>certificate expiration date</li>
-                    <li>if existing AvaTax Integration - Optional identify exempt reason on customer record</li>
+                    <li>Exempt state</li>
+                    <li>Exempt reason</li>
+                    <li>Certificate expiration date</li>
+                    <li>If existing AvaTax Integration - Optional identify exempt reason on customer record</li>
                     <li>No existing AvaTax Integration - Required identify exempt reason on customer record</li>
                   </ul>
                 </p>

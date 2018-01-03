@@ -25,7 +25,7 @@ doctype: integration_checklists
                 
             <h5>Disable address validation during order entry option - <em>Conditional</em></h5>
                 <p class="badgerequirement">The Seller should be able to disable or enable address validation during order entry in the config screen.</p>
-                <p class="badgerequirement"><small>If address validation is automatic, mercahnt must have option to disable this function.</small></p>
+                <p class="badgerequirement"><small>If address validation is automatic, merchant must have option to disable this function.</small></p>
             
             <h5>Have an option to return Address Validation results in upper or lower case - <em>Suggested</em></h5>
                 <p class="badgerequirement">Avalara Address Validation provides an option for the returning results in upper or lower case.</p>
@@ -46,10 +46,10 @@ doctype: integration_checklists
                 Origin Address</p>
             
             <h5>Send optional line (detail) level data elements – Destination address - <em>Suggested</em></h5>
-                <p class="badgerequirement">If items are being shipped to multiple destinations</p>
+                <p class="badgerequirement">If items are being shipped to multiple destinations.</p>
                 
             <h5>Send optional line (detail) level data elements – Origin address - <em>Suggested</em></h5>
-                <p class="badgerequirement">If items are being shipped from multiple locations</p>
+                <p class="badgerequirement">If items are being shipped from multiple locations.</p>
         <hr>
         
         <h3>Server Audit Clarity</h3>

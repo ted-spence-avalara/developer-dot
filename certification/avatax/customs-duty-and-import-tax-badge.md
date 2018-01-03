@@ -27,10 +27,10 @@ doctype: integration_checklists
             <p class="badgerequirement">Setting is defaulted and set in Sellers AvaTax Tax Profile; however there are use cases where Sellers will may want to provide a transactional option by Buyer or even at an individual transaction level to over ride the Tax Profile settings.</p>
 
         <h5>net_weight (aka Unit) - <em>Required / Conditional</em></h5>
-            <p class="badgerequirement">Required if the tariff code requires it as a specific unit of measure to determine the customs duty rate (sometimes the rate is assessed per the weight)</p>
+            <p class="badgerequirement">Required if the tariff code requires it as a specific unit of measure to determine the customs duty rate (sometimes the rate is assessed per the weight).</p>
             
         <h5>mass_unit (aka Unit of Measure) - <em>Required / Conditional</em></h5>
-            <p class="badgerequirement">Required if the tariff code requires it as a specific unit of measure to determine the customs duty rate (sometimes the rate is assessed per the weight)</p>
+            <p class="badgerequirement">Required if the tariff code requires it as a specific unit of measure to determine the customs duty rate (sometimes the rate is assessed per the weight).</p>
             
         <h5>Pref program indicator - <em>Suggested</em></h5>
             <p class="badgerequirement">Only required if the customer knows that the item qualifies for a preference program. <strong>We currently only support preference program NAFTA</strong>. This indicator will tell our calculator to use the NAFTA preferred customs duty rate rather than the standard duty rate in the calculation.</p>

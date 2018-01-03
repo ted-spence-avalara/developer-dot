@@ -28,5 +28,5 @@ doctype: integration_checklists
             <p class="badgerequirement">More information about <a href="http://developer.avalara.com/avatax/handling-return-invoices?referrer=&lastReferrer=developer.avalara.com&sessionId=1492193784937">handling returns</a>.</p>
             
       <h5>Tax Override / Tax Amount - <em>Suggested</em></h5>
-            <p class="badgerequirement">Process returns using tax override / Tax amount</p>
+            <p class="badgerequirement">Process returns using tax override / Tax amount.</p>
             

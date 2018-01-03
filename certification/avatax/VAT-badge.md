@@ -6,7 +6,7 @@ doctype: integration_checklists
 ---
  <div class="row padding-top padding bottom">
     <div class="col-sm-2">
-      <img src="/public/images/devdot/badges/VAT.SVG" class="img-responsive" alt="Avalara Certified Solution">
+      <img src="/public/images/devdot/badges/VATLF.png" class="img-responsive" alt="Avalara Certified Solution">
     </div>
     <div class="col-sm-8 padding-top">
       <h2>Avalara AvaTax VAT Badge Requirements</h2>

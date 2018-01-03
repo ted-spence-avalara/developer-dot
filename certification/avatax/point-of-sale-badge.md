@@ -10,7 +10,7 @@ doctype: integration_checklists
     </div>
     <div class="col-sm-8 padding-top">
       <h2>Avalara AvaTax Point of Sale Badge Requirements</h2>
-      <h3>Preresiquite - Avalara Certified for Sales Tax Badge</h3>
+      <h3>Preresiquite - Avalara Certified for Sales Tax</h3>
       
       <hr>
       
@@ -100,20 +100,20 @@ doctype: integration_checklists
             </p>
             
         <h5>Load application-compatible tax content into application and distribute to store locations - <em>Required</em></h5>
-            <p class="badgerequirement">Suggest leveraging existing application import and distribution functionality when available</p>
+            <p class="badgerequirement">Suggest leveraging existing application import and distribution functionality when available.</p>
             
         <h5>Store AvaTax Location Codes associated with merchant's brick & mortar sites in application - <em>Required</em></h5>
-            <p class="badgerequirement">Location Codes retrieved by integration for use in Tax Content request</p>
+            <p class="badgerequirement">Location Codes retrieved by integration for use in Tax Content request.</p>
             
         <h5>Store AvaTax Tax Codes selected by merchant in application - <em>Required</em></h5>
-            <p class="badgerequirement">Tax Codes retrieved by integration for use in Tax Content request</p>
+            <p class="badgerequirement">Tax Codes retrieved by integration for use in Tax Content request.</p>
             
         <h5>Schedule Tax Content Request job - <em>Required</em></h5>
-            <p class="badgerequirement">Suggest leveraging existing application scheduling functionality when available</p>
+            <p class="badgerequirement">Suggest leveraging existing application scheduling functionality when available.</p>
     <hr>
        <h3>Transaction Upload - Disconnected </h3>     
         <h5>Capture complete sales transaction and transform into AvaTax transaction import format - <em>Required</em></h5>
-            <p class="badgerequirement">The following link provides comprehensive set of information concerning AvaTax transaction import - <a href="https://help.avalara.com/000_Avalara_AvaTax/Add_or_Import_Transactions" target="_blank">Add or Import Transactions</a></p>
+            <p class="badgerequirement">The following link provides comprehensive set of information concerning AvaTax transaction import - <a href="https://help.avalara.com/000_Avalara_AvaTax/Add_or_Import_Transactions" target="_blank">Add or Import Transactions.</a></p>
             
         <h5>Submit transaction import file to AvaTax service for upload - <em>Required</em></h5>
             <p class="badgerequirement">
@@ -130,7 +130,7 @@ doctype: integration_checklists
     
        <h3>Transaction Upload – Disconnected</h3>
         <h5>Capture complete sales transaction and transform into AvaTax transaction import format - <em>Required</em></h5>
-            <p class="badgerequirement">The following link provides comprehensive set of information concerning AvaTax transaction import - <a href="https://help.avalara.com/000_Avalara_AvaTax/Manage_Transactions/Add_or_Import_Transactions" target="_blank">Avalara Help Center - Add or Import Transactions</a></p>
+            <p class="badgerequirement">The following link provides comprehensive set of information concerning AvaTax transaction import - <a href="https://help.avalara.com/000_Avalara_AvaTax/Manage_Transactions/Add_or_Import_Transactions" target="_blank">Avalara Help Center - Add or Import Transactions.</a></p>
             
         <h5>Submit transaction import file to AvaTax service for upload - <em>Required</em></h5>
             <p class="badgerequirement">
@@ -144,7 +144,7 @@ doctype: integration_checklists
             </p>
             
         <h5>Schedule transaction upload job - <em>Required</em></h5>
-            <p class="badgerequirement">Suggest leveraging existing application scheduling functionality when available</p>
+            <p class="badgerequirement">Suggest leveraging existing application scheduling functionality when available.</p>
     <hr>
     
        <h3>Tax Calculation Tests - Disconnected</h3>

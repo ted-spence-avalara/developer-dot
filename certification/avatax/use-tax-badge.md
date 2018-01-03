@@ -42,7 +42,7 @@ doctype: integration_checklists
             <p class="badgerequirement">Provide a button for a user to test the connection to the AvaTax service and verify the AvaTax credentials. This is an important element to allow for successful setup and troubleshooting of the AvaTax service. Optional: display license key expiration date upon successful connection response.</p>
             
         <h5>Document Committing Control - <em>Required</em></h5>
-            <p class="badgerequirement">A singular control must exist in the Configuration Dialog Window to turn on/off committing of documents. In order for this connector to be used in conjunction with other integration to AvaTax, the user must be able to control which connector is used for committing documents. Typically, this exists as a checkbox or radio button.From a technical standpoint
+            <p class="badgerequirement">A singular control must exist in the Configuration Dialog Window to turn on/off committing of documents. In order for this connector to be used in conjunction with other integration to AvaTax, the user must be able to control which connector is used for committing documents. Typically, this exists as a checkbox or radio button. From a technical standpoint
                 <ul class="normal">
                     <li>Suppress any non-getTax calls (i.e. cancelTax, postTax)</li>
                     <li>Ensure that Commit = False on all GetTax calls.</li>
@@ -53,16 +53,16 @@ doctype: integration_checklists
             <p class="badgerequirement">A singular control must exist in the Configuration Dialog Window to turn on/off the Avalara Use Tax Calculation service independently of any other Avalara product or service. Typically, this exists as a checkbox or radio button.</p>
             
         <h5>User Implementation Guide - <em>Required</em></h5>
-            <p class="badgerequirement">The user Implementation Guide should contain screenshots and information allowing the end user to configure for Avalara Use Tax including where the company code is entered, where the credentials are entered and where tax codes can be mapped within the application.</p>
+            <p class="badgerequirement">The User Implementation Guide should contain screenshots and information allowing the end user to configure for Avalara Use Tax including where the company code is entered, where the credentials are entered and where tax codes can be mapped within the application.</p>
             
         <h5>Enable Logging - <em>Required</em></h5>
             <p class="badgerequirement">The user must have an option to enable detailed AvaTax transaction logging within the application, including capture of round-trip processing time. Users should have a means to download these detailed log files.</p>
             
         <h5>Link to Admin Console - <em>Required</em></h5>
-            <p class="badgerequirement">Link to AvaTax Production Admin Console</p>
+            <p class="badgerequirement">Link to AvaTax Production Admin Console.</p>
             
         <h5>Enable AvaTax UPC - <em>Required</em></h5>
-            <p class="badgerequirement">When set to true: pass in UPC code into the Avalara ItemCode on the line level of the requests to our service. When UPC is unavailable, default to ItemCode. When set to false: use the default ItemCode mapping. See Product Master Management for more details. NOTE: Alternately, UPC can be enabled on the item level. See Product Master Management</p>
+            <p class="badgerequirement">When set to true: pass in UPC code into the Avalara ItemCode on the line level of the requests to our service. When UPC is unavailable, default to ItemCode. When set to false: use the default ItemCode mapping. See Product Master Management for more details. NOTE: Alternately, UPC can be enabled on the item level. See Product Master Management.</p>
             
         <h5>Merchant/User Exemption - <em>Required</em></h5>
             <p class="badgerequirement">One or the other parameter is required, although Entity/Use code is preferred.
@@ -90,7 +90,7 @@ doctype: integration_checklists
             <p class="badgerequirement">True/False self assessment. Implement appropriate business logic to determine when to self assess. Be sure to include the following:
                 <ul class="normal">
                     <li>When self assessing, ensure that transactions are committed to the Avalara Admin Console</li>
-                    <li>-	When not self assessing, do not commit transaction to the Admin Console</li>
+                    <li>When NOT self assessing, do not commit transaction to the Admin Console</li>
                 </ul>
             In the case of Global Use Tax assessment, commit all transactions regardless of the vendor.
             </p>
@@ -104,20 +104,20 @@ doctype: integration_checklists
     
        <h3>Product Master Management</h3>
         <h5>Item Code   - <em>Required</em></h5>
-            <p class="badgerequirement">Identify item/service/charge code (number, ID) to pass to the AvaTax service. If the customer has access to UPC, they should be able to prepend UPC to the code and have it come across in the item code field. If there is no UPC, it should fall back to SKU. (See UPC requirements below and in the Administration & Utilities Integration section) For PurchaseInvoices not associated with a PurchaseOrder, you may not have access to the ItemCode from the client application. In that case, simply use the GL account number/cost center identifier.</p>
+            <p class="badgerequirement">Identify item/service/charge code (number, ID) to pass to the AvaTax service. If the customer has access to UPC, they should be able to prepend UPC to the code and have it come across in the item code field. If there is no UPC, it should fall back to SKU. (See UPC requirements in the Administration & Utilities Integration section) For Purchase Invoices not associated with a Purchase Order, you may not have access to the ItemCode from the client application. In that case, simply use the GL account number/cost center identifier.</p>
             
         <h5>Item Description   - <em>Required</em></h5>
             <p class="badgerequirement">Identify item/service/charge description to pass to the AvaTax service with a human-readable description or item name.</p>
             
         <h5>Avalara Tax Code Assignment – Group - <em>Conditional</em></h5>
-            <p class="badgerequirement">When the Product Master provides functionality to group items/products in the product catalog. Associate an Avalara Tax Code to an item group/product group/commodity code. The Tax Code assignment becomes the default for all items/products in the group. Search for a specific tax codeDownload a list of the standard system tax codes</p>
+            <p class="badgerequirement">When the Product Master provides functionality to group items/products in the product catalog. Associate an Avalara Tax Code to an item group/product group/commodity code. The Tax Code assignment becomes the default for all items/products in the group. Search for a specific tax codeDownload a list of the standard system tax codes.</p>
             
         <h5>Avalara Tax Code Assignment - Item/SKU - <em>Required</em></h5>
-            <p class="badgerequirement">Provide an attribute to associate an Avalara Tax Code to an item/SKU. Overrides default Tax Code at item/product group level. Search for a specific tax codeDownload a list of the standard system tax codes</p>
+            <p class="badgerequirement">Provide an attribute to associate an Avalara Tax Code to an item/SKU. Overrides default Tax Code at item/product group level. Search for a specific tax code. Download a list of the standard system tax codes.</p>
             
         <h5>UPC - <em>Required</em></h5>
-            <p class="badgerequirement">See note in Administration/Utilities Integration section. If the user elects to use AvaTax UPC, Ensure that the appropriate field containing UPC data is mapped to the ItemCode parameter formatted as: <code>&lt;UPC:&gt;+&lt;UPC Data&gt;</code>. Example: <code>UPC:1234567890000</code>. by formatting the value with <code>UPC:</code> identifier, our engine can pick up the UPC code, and the user can avoid mapping a tax code for that item. If no UPC data is available still default to the regular ItemCode mapping.</p>
-            <p><small>NOTE:  the UPC functionality is a premium upgrade to the Avalara AvaTax subscription providing taxability decision (taxable vs. non-taxable) without requiring an Avalara Tax Code assignment.</small></p>
+            <p class="badgerequirement">See note in Administration/Utilities Integration section. If the user elects to use AvaTax UPC, Ensure that the appropriate field containing UPC data is mapped to the ItemCode parameter formatted as: <code>&lt;UPC:&gt;+&lt;UPC Data&gt;</code>. Example: <code>UPC:1234567890000</code>. By formatting the value with <code>UPC:</code> identifier, our engine can pick up the UPC code, and the user can avoid mapping a tax code for that item. If no UPC data is available still default to the regular ItemCode mapping.</p>
+            <p><small>NOTE:  The UPC functionality is a premium upgrade to the Avalara AvaTax subscription providing taxability decision (taxable vs. non-taxable) without requiring an Avalara Tax Code assignment.</small></p>
     <hr>
     
        <h3>General Ledger Account Master Management</h3>
@@ -159,7 +159,7 @@ doctype: integration_checklists
                     <li>Tax Code</li>
                     <li>Entit/Use Code</li>
                     <li>Revenue account<br>
-                        <p>Revenue Account references for purchase order/invoices represent the general ledger account number associated with the purchase</p>
+                        <p>Revenue Account references for purchase order/invoices represent the general ledger account number associated with the purchase.</p>
                     </li>
                 </ul>
             </p>
@@ -192,15 +192,15 @@ doctype: integration_checklists
                     <li>The user is provided a display including:
                         <ul class="normal">
                             <li>Vendor-charged tax</li>
-                            <li>AvaTaxx calculated tax</li>
-                            <li>Difference between cahrged and calculated tax</li>
+                            <li>AvaTax calculated tax</li>
+                            <li>Difference between charged and calculated tax</li>
                         </ul>
                     </li>
                     <li>The user is presented the following options:
                         <ul class="normal">
                             <li>Accept the difference between AvaTax calculated tax and vendor-charged tax (only if AvaTax is a larger amount than vendor-charged tax)</li>
-                            <li>Accept Avatax calculated Use Tax in total</li>
-                            <li>Edit the use tax amount to a desired amount, including $0.00</li>
+                            <li>Accept AvaTax calculated Use Tax in total</li>
+                            <li>Edit the Use Tax amount to a desired amount, including $0.00</li>
                         </ul>
                     </li>
                 </ul>
@@ -210,17 +210,17 @@ doctype: integration_checklists
             <p class="badgerequirement">AvaTax calculated tax is returned, and the user is presented with the following options:
                 <ul class="normal">
                     <li>Accept AvaTax calculated Use Tax in total</li>
-                    <li>Edit the use tax amount to a desired amount, including $0.00</li>
+                    <li>Edit the Use Tax amount to a desired amount, including $0.00</li>
                 </ul>
             </p>
             
         <h5>Committing Invoices for Vendor Liability Assessment: Purchase Invoices - <em>Required</em></h5>
             <p class="badgerequirement">Ensure purchase invoices are committed/posted for reporting appropriately after they are finalized.</p>
             
-        <h5>Create use tax accrual: Purchase Invoices - <em>Required</em></h5>
-            <p class="badgerequirement">Generate use tax accrual journal entry lines for completed purchase invoices<br>
+        <h5>Create Use Tax accrual: Purchase Invoices - <em>Required</em></h5>
+            <p class="badgerequirement">Generate use tax accrual journal entry lines for completed purchase invoices.<br>
             <strong>Debit</strong> - create debit lines for each assessed line recording use tax amount and associated general ledger number sourced from purchase invoice line.<br>
-            <strong>Credit</strong> - create summary credit line for total use tax assessment charged to liability (Use Tax Payable) general ledger account number
+            <strong>Credit</strong> - create summary credit line for total use tax assessment charged to liability (Use Tax Payable) general ledger account number.
             </p>
             
         <h5>CancelTax Call - <em>Required</em></h5>
@@ -245,7 +245,7 @@ doctype: integration_checklists
             </p>
             
         <h5>Latitude/Longitude - <em>Suggested</em></h5>
-            <p class="badgerequirement">Latitude/Longitude coordinates can be sent in lieu of a postal address</p>
+            <p class="badgerequirement">Latitude/Longitude coordinates can be sent in lieu of a postal address.</p>
     <hr>
     
        <h3>Server Audit/Clarity</h3>
