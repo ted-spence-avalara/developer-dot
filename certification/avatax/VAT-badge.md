@@ -20,11 +20,13 @@ doctype: integration_checklists
         <h5>Is Seller Importer of Record  - <em>Required</em></h5>
             <p class="badgerequirement">Is the merchant/seller the importer of record for this transaction.</p>
             
+        <!-- Commenting out the following criteria until expanded VAT capabilities are rolled out.
         <h5>EU VAT Simplification Support  - <em>Suggested</em></h5>
             <p class="badgerequirement"><code>Yes/No toggle? <-- WHAT DO WE PUT HERE?</code></p>
             
         <h5>Global Tax Calc - Handling Place of supply   - <em>Suggested</em></h5>
             <p class="badgerequirement"><code>Yes/No toggle? <-- WHAT DO WE PUT HERE?</code></p>
+            End Comment -->
     <hr>
        
        <h3>Additional Requirements – Transaction Processing Integration</h3>    
