@@ -9,10 +9,11 @@ layout: default
     <h1>{{ page.title }}{% if page.subtitle %}<small>{{ page.subtitle }}</small>{% endif %}</h1>
     <p class="byline">By {{page.author}} | {{ page.date | date: "%B %d, %Y"}}</p>
     <p class="blog-content">{{ content }}</p>
-    <p class="btn-callout"><a href="/blog" role="button">Back to posts</a></p>
     <div>
         {% include blog_subscribe.html %}
     </div>
+    <p class="btn-callout"><a href="/blog" role="button">Back to posts</a></p>
+    
 </div>
 
     
