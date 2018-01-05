@@ -36,5 +36,8 @@ doctype: archive
             {% endfor %}
             </div>
         </div>
+        {% if page.title == "patch notes" %}
+        <div>{% include patch_notes_subscription.html %}</div>
+        {% endif %}
     </main>
 </section>
