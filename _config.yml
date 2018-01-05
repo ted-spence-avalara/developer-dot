@@ -50,7 +50,6 @@ future: true
 
 # Exclude non-site files
 exclude: [node_modules, dynamic, LICENSE, README.md, package.json, s3_website.yml, Gemfile, Gemfile.lock, _test, scripts]
-include: ['_webinars']
 
 # Use the kramdown Markdown renderer
 markdown: kramdown
@@ -76,7 +75,7 @@ excerpt_separator: <!--more-->
 collections:
   webinars:
     output: true
-    permalink: /_webinars/:name
+    permalink: /webinars/:year/:month/:day
 
 ## Jekyll Archives configuration
 jekyll-archives:
