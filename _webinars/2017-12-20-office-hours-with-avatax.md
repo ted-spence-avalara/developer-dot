@@ -17,5 +17,4 @@ Want to know how to handle occasional network timeouts when calling AvaTax? Need
 Ted, Bob and Aaron can answer all these questions and more, so be sure to register for the final developer webinar of the year, which will be held at 11 a.m. PT to noon PT on Wednesday, Dec. 20.
 
 We’re looking forward to your questions!
-
-<i>Recording coming soon</i>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Cht-UI6wUpI" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
