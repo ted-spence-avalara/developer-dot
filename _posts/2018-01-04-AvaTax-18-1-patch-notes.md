@@ -23,12 +23,12 @@ This article is about the January 2018 monthly update to the AvaTax API.
         <tr>
             <td>Sandbox</td>
             <td><a href="https://sandbox-rest.avatax.com">https://sandbox-rest.avatax.com</a></td>
-            <td>2018-01-16</td>
+            <td>2018-01-17</td>
         </tr>
         <tr>
             <td>Production</td>
             <td><a href="https://rest.avatax.com">https://rest.avatax.com</a></td>
-            <td>2018-01-22</td>
+            <td>2018-01-24</td>
         </tr>
     </table>
 </div>
@@ -91,6 +91,7 @@ The following changes affect the [CreateTransaction API](/api-reference/avatax/r
 <h3>Other Improvements and Bug Fixes</h3>
 
 <ul class="normal">
+  <li>Added definitions API for unit of measurement and measurement types</li>
   <li>Improvements to US postal code validation logic for <a href="/api-reference/avatax/rest/v2/methods/Free/TaxRatesByAddress/">TaxRatesByAddress</a> and other APIs, fixing an unhandled exception that occurred in some cases.</li>
   <li>Free trial emails now direct you to the updated <a href="https://admin.avalara.com">AvaTax Website</a></li>
   <li>Fixed an issue affecting SST customers when using <a href="">RefundTransaction</a> for percentage-based discounts</li>
