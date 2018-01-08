@@ -111,7 +111,7 @@ The following changes affect the [CreateTransaction API](/api-reference/avatax/r
   <li>Fixed an unhandled exception that occurred when accessing logon data during a cache refresh cycle.</li>
   <li>Fixed an unhandled exception when providing complex query structures using the $filter parameter.</li>
   <li>Fixed an unhandled exception in the report API.</li>
-  <li>Fixed unhandled exception on cache load of ISO country data</li>
+  <li>Fixed an unhandled exception on cache load of ISO country data.</li>
 </ul>
 
 -- Ted Spence, Director, AvaTax Core Engine
