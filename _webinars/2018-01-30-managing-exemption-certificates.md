@@ -14,4 +14,12 @@ Our new integrated API provides full support for information about customers, ce
 
 Come join us to learn more about how to manage exemption certificates with special guest Bob Maidens, manager of Avalara's exemption certificate team.
 
+<ul class="normal">
+	<li>Webinar: Managing Exemption Certificates</li>
+	<li>Date: 2018-01-30</li>
+	<li>Time: 10:00 AM Pacific</li>
+	<li>Duration: 30 minutes</li>
+	<li>Signup: <a href="https://attendee.gotowebinar.com/register/6259899416306237442">Register now</a></li>
+</ul>
+
 <p class="btn-callout"><a href="https://attendee.gotowebinar.com/register/6259899416306237442" role="button">Sign Up Now</a></p>
