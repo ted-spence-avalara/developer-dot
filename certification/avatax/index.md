@@ -9,8 +9,8 @@ doctype: certification
       <img src="/public/images/devdot/badges/GENERIC.svg" class="img-responsive" alt="Avalara Certified Solution">
     </div>
     <div class="col-sm-10 padding-top">
-      <h2>Which Badges are right for your customers?</h2>
-      <h3>Integration must demonstrate requirements to achieve the Badge</h3>
+      <h2>Avalara Awards Certification via Functional Badges</h2>
+      <h3>Below are the available badges. Click on a badge for requirements necessary to achieve certification.</h3>
 		 <div class="row">
 		    <div class="col-sm-2">
 		      <a href="sales-tax-badge"><img src="/public/images/devdot/badges/SALESTAX.svg" class="img-responsive" alt="Sales Tax Badge"></a>
@@ -30,6 +30,9 @@ doctype: certification
 		       <a href="customs-duty-and-import-tax-badge"><img src="/public/images/devdot/badges/CustomsDutyImportTax.svg" class="img-responsive" alt="Landed Cost Badge"></a>
 		    </div>
 		  </div>
+		 <div calss="row">
+		<p><small>*VAT - Supports B2B transactions. Ask your certification contact for an update on expanded functionality.</small></p>
+		</div>
 <hr>
 		<div class="row padding-bottom">
 		    <div class="col-sm-2">
