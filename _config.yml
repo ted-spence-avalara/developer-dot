@@ -76,7 +76,7 @@ excerpt_separator: <!--more-->
 collections:
   webinars:
     output: true
-    permalink: /_webinars/:name
+    permalink: /webinars/:year/:month/:day/
 
 ## Jekyll Archives configuration
 jekyll-archives:
