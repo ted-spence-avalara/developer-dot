@@ -2,7 +2,6 @@
 layout: webinar
 title: Office Hours with AvaTax - Finding the Right Tax Codes with AvaTax
 date: 2018-01-23 10:00
-author: Ron Paul
 comments: true
 product: avatax
 doctype: webinar

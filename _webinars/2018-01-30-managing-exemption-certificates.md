@@ -2,7 +2,6 @@
 layout: webinar
 title: January AvaTax Developer Webinar - Managing Exemption Certificates
 date: 2018-01-30 10:00
-author: Ted Spence and Bob Maidens
 comments: true
 product: avatax
 doctype: webinar
