@@ -59,9 +59,9 @@ When you declare your company as the importer of record, many customs, duties, a
 
 For customers calculating international taxes, or taxes that apply when products are shipped cross border, you should review how your code sets this value.
 
-<h3>Item Attributes</h3>
+<h3>Coming Soon: Item Attributes</h3>
 
-As AvaTax grows to handle new tax types and new content types, correct tax calculation will  require more information about products in order to determine their taxability across a variety of different laws.  To store this information, we are extending the [Items APIs](/api-reference/avatax/rest/v2/methods/Items/) to include attributes.
+As AvaTax grows to handle new tax types and new content types, correct tax calculation will require more information about products in order to determine their taxability across a variety of different laws.  To store this information, we will be extending the [Items APIs](/api-reference/avatax/rest/v2/methods/Items/) to include attributes.
 
 These attributes will be automatically loaded and processed by AvaTax whenever you calculate tax on a product.  By using the Item system, you can offload the complexity of tax laws onto your accounting department and avoid having to update your software every time the tax classification data for your product catalog changes.
 
@@ -70,10 +70,12 @@ Here's how it works:
 <ul class="normal">
   <li>Your software should call the <a href="/api-reference/avatax/rest/v2/methods/Items/CreateItems/">CreateItems API</a> for each product in your catalog.  You can call this API on demand any time a new product is first handled.</li>
   <li>Your accounting or compliance teams can manage the tax data and custom item attributes for each item using the <a href="https://admin.avalara.com/">AvaTax Website</a>.  Any items they don't configure will be calculated as tangible personal property; but any items that need special tax treatment can be managed as needed in the friendly AvaTax website user interface.</li>
-  <li>When you call the <a href="">CreateTransaction API</a>, your software only has to pass the <code class="rouge">itemCode</code> parameter for each line item.  If your compliance team has updated any tax information for this product, AvaTax will automatically use it - without any code changes!</li>
+  <li>When you call the <a href="/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/">CreateTransaction API</a>, your software only has to pass the <code class="rouge">itemCode</code> parameter for each line item.  If your compliance team has updated any tax information for this product, AvaTax will automatically use it - without any code changes!</li>
 </ul>
 
 The item attribute system allows you to keep the complexity where it belongs: fully in control of your accounting / compliance department.  You'll never have to update your software again to customize your product catalog!
+
+Please be on the lookout for more announcements about Item Attributes during Q1 2018 as we move more complex tax logic into the item system and simplify the AvaTax API!
 
 <h3>TaxContent API Improvements</h3>
 
