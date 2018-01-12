@@ -73,6 +73,14 @@ Here's a list of filters supported in REST v2:
     </table>
 </div>
 
+<h2>Filtering Against Normalized Data</h2>
+
+In some cases, the AvaTax API provides post-processing, normalization, and standardization of data.  AvaTax only stores normalized and validated data in order to ensure consistency.  For example, the AvaTax [CreateLocation API](/api-reference/avatax/rest/v2/methods/Locations/CreateLocations/) allows you to provide a full length country name and region name; but internally, we validate all country and region names against the International Standards Organization's ISO 3166 database.
+
+This means that if you provide your country name as "United States", we convert it to the two character ISO 3166 code `US`.  Someone else who calls the country "The United States Of America" or "U.S.A." will also be normalized to `US`.  In each case, only the value `US` is stored; we do not keep track of the original value pre-normalization.
+
+When searching the database using `$filter`, you can only search against the normalized data.  This means that you must always say `$filter=country eq US`.  Because each search goes against the normalized data, you'll always get the correct results across your entire data set.
+
 <h2>Avalara-Specific Filters</h2>
 
 The following filters are not defined in the Microsoft standard, but are available in the Avalara REST v2 API:
