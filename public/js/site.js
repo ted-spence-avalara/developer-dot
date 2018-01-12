@@ -30,14 +30,14 @@ $(document).ready(function()
     fixDropDownMenuLargePosition();
 
     $('[webinar-hide-before]').each(function() {
-      if ($(this).attr('webinar-hide-before') > getCompareDate()) {
-        $(this).hide();
+      if ($(this).attr('webinar-hide-before') <= getCompareDate()) {
+        $(this).show();
       }
     });
 
     $('[webinar-hide-after]').each(function() {
-      if ($(this).attr('webinar-hide-after') <= getCompareDate()) {
-        $(this).hide();
+      if ($(this).attr('webinar-hide-after') > getCompareDate()) {
+        $(this).show();
       }
     });
 
