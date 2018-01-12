@@ -13,6 +13,8 @@ disqus: 1
 
 This article is about the January 2018 monthly update to the AvaTax API.
 
+UPDATED 2018-01-12 - More information about importer of record added.
+
 <div class="mobile-table">
     <table class="styled-table">
         <tr>
@@ -44,6 +46,16 @@ Avalara is updating the Landed Cost tax calculation engine with new features and
   <li>Support for company distance threshold data for EU VAT tax calculation</li>
   <li>Support for Mini-One-Stop-Shop metadata for EU VAT customers</li>
 </ul>
+
+<h3>Importer of Record</h3>
+
+In AvaTax 18.1, Avalara will re-introduce the "Importer of Record" system for identifying companies obligated to pay certain value-added and customs/tariff/duty taxes.  This feature has been present in AvaTax for a while, but we are improving and upcating our documentation to clarify its purpose and utility.
+
+The Importer of Record field will be available in both the [CreateTransaction API](/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/) and the [CreateNexus API](/api-reference/avatax/rest/v2/methods/Nexus/CreateNexus/).  You can choose whether a company is considered the importer of record either by configuring the company's nexus settings, or during each individual transaction by setting the flag on the [CreateTransactionModel](/api-reference/avatax/rest/v2/models/CreateTransactionModel/).  Additionally, a company configuration value that controls how these fields behave will be available in the [SetCompanyConfiguration API](/api-reference/avatax/rest/v2/methods/Companies/SetCompanyConfiguration/).
+
+When you declare your company as the importer of record, many customs, duties, and value-added taxes will apply to your company.  If you are not the importer of record, those taxes will not apply to your company.
+
+For customers calculating international taxes, or taxes that apply when products are shipped cross border, you should review how your code sets this value.
 
 <h3>Item Attributes</h3>
 
