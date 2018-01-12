@@ -11,10 +11,10 @@ disqus: 1
 </ul>
 Welcome to the AvaTax Developer Guide!
 
-AvaTax is a real-time tax calculation for financial applications. This guide is intended for education use on how to incorporate your system with AvaTax.
+AvaTax is a real-time tax calculation for financial applications. This guide is intended for educational use on how to incorporate your system with AvaTax. Should you require offline access to the the AvaTax API Developer Guide, it is also available as an <a href="../../public/misc/AvaTax-API-Developer-Guide.pdf" target="_blank">eBook download</a>.
 
 
-Copyright © 2017 Avalara Inc. All rights reserved.
+Copyright © 2018 Avalara Inc. All rights reserved.
 
 
 
