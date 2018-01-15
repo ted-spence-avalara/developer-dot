@@ -19,7 +19,7 @@ doctype: certification
 		      <a href="refunds-credit-memos-badge"><img src="/public/images/devdot/badges/Refunds.SVG" class="img-responsive" alt="Refunds Badge"></a>
 		    </div>
 		    <div class="col-sm-2">
-		      <a href="VAT-badge"><img src="/public/images/devdot/badges/VATLF.png" class="img-responsive" alt="VAT Badge"></a>
+		      <a href="VAT-badge"><img src="/public/images/devdot/badges/VAT.SVG" class="img-responsive" alt="VAT Badge"></a>
 		    </div>
 		    <div class="col-sm-2">
 		       <a href="point-of-sale-badge"><img src="/public/images/devdot/badges/POINTOFSALE.svg" class="img-responsive" alt="Point of Sale Badge"></a>
@@ -31,7 +31,7 @@ doctype: certification
 		    </div>
 		  </div>
 		 <div calss="row">
-		<p><small>*VAT - Supports B2B transactions. Ask your certification contact for an update on expanded functionality.</small></p>
+		<p><small>*Avalara is expanding VAT functionality available within the AvaTax service. The complete set of requirements needed to achieve the VAT badge are in progress.</small></p>
 		</div>
 <hr>
 		<div class="row padding-bottom">
