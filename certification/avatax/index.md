@@ -29,12 +29,6 @@ doctype: certification
 		    <div class="col-sm-2">
 		       <a href="customs-duty-and-import-tax-badge"><img src="/public/images/devdot/badges/CustomsDutyImportTax.svg" class="img-responsive" alt="Landed Cost Badge"></a>
 		    </div>
-		  </div>
-		 <div calss="row">
-		<p><small>*Avalara is expanding VAT functionality available within the AvaTax service. The complete set of requirements needed to achieve the VAT badge are in progress.</small></p>
-		</div>
-<hr>
-		<div class="row padding-bottom">
 		    <div class="col-sm-2">
 		       <a href="use-tax-badge"><img src="/public/images/devdot/badges/USETAX.svg" class="img-responsive" alt="Use Tax Badge"></a>
 		    </div>
@@ -44,6 +38,9 @@ doctype: certification
 		    <div class="col-sm-2">
 		       <a href="document-management-badge"><img src="/public/images/devdot/badges/DocumentManagement.svg" class="img-responsive" alt="Document Management Badge"></a>
 		    </div>
+		  </div>
+
+		<div class="row padding-bottom">
 		    <div class="col-sm-2">
 		      <a href="communication-badge"><img src="/public/images/devdot/badges/COMMS.svg" class="img-responsive" alt="Communications Badge"></a>
 		    </div>
