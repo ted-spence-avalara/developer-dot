@@ -10,7 +10,7 @@ doctype: integration_checklists
     </div>
     <div class="col-sm-8 padding-top">
       <h2>Avalara AvaTax Customs Duty & Import Tax Badge Requirements</h2>
-      <h3>Preresiquite - Avalara Certified for Sales Tax</h3>
+      <h3>Prerequisite - Avalara Certified for Sales Tax</h3>
       
       <hr>
       <h3>Additional Requirements</h3>

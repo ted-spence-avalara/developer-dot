@@ -10,7 +10,7 @@ doctype: integration_checklists
     </div>
     <div class="col-sm-8 padding-top">
       <h2>Avalara AvaTax VAT Badge Requirements</h2>
-      <h3>Preresiquite - Avalara Certified for Sales Tax</h3>
+      <h3>Prerequisite - Avalara Certified for Sales Tax</h3>
 		<p><small>*Avalara is expanding VAT functionality available within the AvaTax service. The complete set of requirements needed to achieve the VAT badge are in progress.</small></p>
 
       
