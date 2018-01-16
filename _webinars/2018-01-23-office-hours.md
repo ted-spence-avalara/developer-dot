@@ -19,7 +19,6 @@ We'll spend the first 15 minutes talking about how the AvaTax API allows you to 
 	<li>Date: 2018-01-23</li>
 	<li>Time: 10:00 AM Pacific</li>
 	<li>Duration: 30 minutes</li>
-	<li>Signup: <a href="https://attendee.gotowebinar.com/register/6259899416306237442">Register now</a></li>
 </ul>
 
 <p class="btn-callout"><a href="https://attendee.gotowebinar.com/register/2844076329108782594" role="button">Sign Up Now</a></p>

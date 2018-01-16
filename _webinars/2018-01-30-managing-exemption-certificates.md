@@ -17,8 +17,7 @@ Come join us to learn more about how to manage exemption certificates with speci
 	<li>Webinar: Managing Exemption Certificates</li>
 	<li>Date: 2018-01-30</li>
 	<li>Time: 10:00 AM Pacific</li>
-	<li>Duration: 30 minutes</li>
-	<li>Signup: <a href="https://attendee.gotowebinar.com/register/6259899416306237442">Register now</a></li>
+	<li>Duration: 60 minutes</li>
 </ul>
 
 <p class="btn-callout"><a href="https://attendee.gotowebinar.com/register/6259899416306237442" role="button">Sign Up Now</a></p>
