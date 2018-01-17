@@ -34,7 +34,7 @@ doctype: integration_checklists
                         <li>Facilities Based.</li>
                         <li>Franchise.</li>
                         <li>Sale Type.</li>
-                        <li>Company Idnetifier.</li>
+                        <li>Company Identifier.</li>
                     </ul>
                 <p class="badgerequirement">Display the correct pcode for the jurisdiction.</p>
             
