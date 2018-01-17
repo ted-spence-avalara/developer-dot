@@ -9,7 +9,7 @@ doctype: integration_checklists
       <img src="/public/images/devdot/badges/COMMS.svg" class="img-responsive" alt="Avalara Certified Solution">
     </div>
     <div class="col-sm-8 padding-top">
-      <h2>Avalara AvaTax Communications Badge Requirements</h2>
+      <h2>Avalara Communications Badge Requirements</h2>
       <!--<h3>Do we want to say anything here?</h3>-->
       
       <hr>
