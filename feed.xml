@@ -13,7 +13,7 @@ layout: null
       <item>
         <title>{{ post.title | xml_escape }}</title>
         <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date: "%Y-%m-%d" }}</pubDate>
+        <pubDate>{{ post.date | date: "%a, %d %b %Y %T +0000" }}</pubDate>
         <link>{{ post.url | prepend: site.baseurl | prepend: host }}</link>
         <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: host }}</guid>
         {% for tag in post.tags %}
