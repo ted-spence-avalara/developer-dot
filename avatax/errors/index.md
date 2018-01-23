@@ -615,6 +615,31 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>This operation is not permitted in technical support.</td>
 		</tr>		
         <tr>
+			<td>186</td>
+			<td><a href="InvalidFileContentType">InvalidFileContentType</a></td>
+			<td>The file content type could not be determined correctly.</td>
+		</tr>		
+        <tr>
+			<td>188</td>
+			<td><a href="EcmsDisabled">EcmsDisabled</a></td>
+			<td>The ECMS configuration value for this account does not permit exemption certificates.</td>
+		</tr>		
+        <tr>
+			<td>189</td>
+			<td><a href="UnknownConjunctionError">UnknownConjunctionError</a></td>
+			<td>You attempted to use an invalid conjunction in your filter.</td>
+		</tr>		
+        <tr>
+			<td>190</td>
+			<td><a href="NoLinesDiscounted">NoLinesDiscounted</a></td>
+			<td>You attempted to specify a discount, but did not identify any lines to discount.</td>
+		</tr>		
+        <tr>
+			<td>191</td>
+			<td><a href="FailedToDelete">FailedToDelete</a></td>
+			<td>You attempted to delete an object that was in use.</td>
+		</tr>		
+        <tr>
 			<td>200</td>
 			<td><a href="BatchSalesAuditMustBeZippedError">BatchSalesAuditMustBeZippedError</a></td>
 			<td>Sales audit files must be uploaded in ZIP or RAR formats.</td>
@@ -836,8 +861,8 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 		</tr>		
         <tr>
 			<td>704</td>
-			<td><a href="NullRefundPercentageAndLines">NullRefundPercentageAndLines</a></td>
-			<td>You attempted to create a refund but did not specify the percentage or lines.</td>
+			<td><a href="RefundLinesRequired">RefundLinesRequired</a></td>
+			<td>Your RefundTransaction API call was missing necessary information.</td>
 		</tr>		
         <tr>
 			<td>705</td>
@@ -998,6 +1023,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>1215</td>
 			<td><a href="InvalidCoverLetterTitle">InvalidCoverLetterTitle</a></td>
 			<td>THe cover letter you specified for this CertExpress invitation was not found.</td>
+		</tr>		
+        <tr>
+			<td>1216</td>
+			<td><a href="AccountNotProvisioned">AccountNotProvisioned</a></td>
+			<td>The automatic provisioning process for exemption certificates failed.</td>
 		</tr>		
         <tr>
 			<td>1300</td>
