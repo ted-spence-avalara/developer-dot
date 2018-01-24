@@ -15,6 +15,8 @@ This article is about the January 2018 monthly update to the AvaTax API.
 
 UPDATED 2018-01-12 - More information about importer of record added.
 
+UPDATED 2018-01-23 - Updated release date.
+
 <div class="mobile-table">
     <table class="styled-table">
         <tr>
@@ -30,7 +32,7 @@ UPDATED 2018-01-12 - More information about importer of record added.
         <tr>
             <td>Production</td>
             <td><a href="https://rest.avatax.com">https://rest.avatax.com</a></td>
-            <td>2018-01-24</td>
+            <td>2018-01-29 (UPDATED)</td>
         </tr>
     </table>
 </div>

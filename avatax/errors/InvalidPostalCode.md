@@ -20,8 +20,8 @@ The postal code you provided could not be found.
     {
       "code": "InvalidPostalCode",
       "number": 318,
-      "message": "The postal code is invalid.",
-      "description": "You have attempted to get the tax rates for an invalid postal code. Please provide a valid postal code.",
+      "message": "The postal code is invalid: -0-.",
+      "description": "You have attempted to get the tax rates for an invalid postal code -0-. Please provide a valid postal code.",
       "faultCode": "Client",
       "helpLink": "http://developer.avalara.com/avatax/errors/InvalidPostalCode",
       "severity": "Error"
