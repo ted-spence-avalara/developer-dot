@@ -1,0 +1,12 @@
+---
+layout: webinar
+title: Office Hours with AvaTax - Measuring AvaTax API Performance
+date: 2018-02-27 10:00
+comments: true
+product: avatax
+doctype: webinar
+---
+
+In the latest installment of Office Hours with AvaTax, Avalara's Director of Engineering Operations, Scott Hawley, will talk about how Avalara keeps track of API performance as well as what tools are available to developers to monitor API performance.
+
+<p class="btn-callout"><a href="https://attendee.gotowebinar.com/register/8485376921930209795" role="button">Sign Up Now</a></p>
