@@ -166,49 +166,24 @@
                     <li class="resources dropdown dropdown-large hidden-xs">
                         <a class="dropdown-toggle" data-toggle="dropdown"><span class="text-uppercase">Resources</span> <b class="caret"></b></a>
                         <ul class="dropdown-menu dropdown-menu-large">
-                            <li><a href="/blog">Developer Blog</a></li>
-                            <li><a href="/resources/webinars">Webinars</a></li>
-                            <!--<li><a href="/resources/preferred-developers">Preferred developers</a></li>-->
-                            <li><a href="https://community.avalara.com/avalara/category_sets/developers">Help Forum</a></li>
-                            <!--<li><a href="http://www.info.avalara.com/avalaradevcentral">Developer Webinar Series</a></li>-->
-                            <li><a href="https://avalaracommunity.force.com/partnerlaunch" target="_blank">Avalara Launch Center</a></li>
+                          <li><a href="/resources/support">Developer Support Options</a></li>
+                          <li><a href="/blog/patch-notes">API Patch Notes</a></li>
+                          <li><a href="/blog">Developer Blog</a></li>
+                          <li><a href="/resources/webinars">Webinars</a></li>
+                          <!--<li><a href="/resources/preferred-developers">Preferred developers</a></li>-->
+                          <li><a href="https://community.avalara.com/avalara/category_sets/developers">Help Forum</a></li>
+                          <li><a href="https://avalaracommunity.force.com/partnerlaunch" target="_blank">Avalara Launch Center</a></li>
                         </ul>
                     </li>
+                    <li class="resources visible-xs-block"><a href="/resources/support"><span class="text-uppercase">Developer Support Options</span></a></li>
+                    <li class="resources visible-xs-block"><a href="/blog/patch-notes"><span class="text-uppercase">API Patch Notes</span></a></li>
                     <li class="resources visible-xs-block"><a href="/blog"><span class="text-uppercase">Developer Blog</span></a></li>
-                    <li class="resources visible-xs-block"><a href="/resources/preferred-developers"><span class="text-uppercase">Preferred developers</span></a></li>
+                    <!--<li class="resources visible-xs-block"><a href="/resources/preferred-developers"><span class="text-uppercase">Preferred developers</span></a></li>-->
                     <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Help Forum</span></a></li>
-                    <li class="resources visible-xs-block"><a href="/search"><span class="text-uppercase">Search</span></a></li>
-                    <li class="hdr-search-icon hidden-xs">
-                        <i class="mouse glyphicon glyphicon-search mouse"></i>
-                    </li>
-                    <form class="hdr-search-form horizontal hidden-xs hidden">
-                        <div class="row">
-                            {% if product_name %}
-                            <div class="col-md-9"><label><input type="checkbox" id="filterSite"> Search entire site</label></div>
-                            <div class="col-md-3">
-                                <button type="button" class="close" aria-label="Close"><span>&times;</span></button>
-                            </div>
-                            {% else %}
-                            <div class="col-md-12">
-                                <button type="button" class="close" aria-label="Close"><span>&times;</span></button>
-                            </div>
-                            {% endif %}
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-9">
-                                <input class="form-control" type="search" {% if product_name %}placeholder="Search Developer / {{product_name | capitalize}}" {% else %}placeholder="Search" {% endif %}>
-                                <span class="form-control-feedback">!</span>
-                            </div>
-                            <div class="form-group col-md-3">
-                                <input type="submit" class="btn btn-primary" value="Search">
-                            </div>
-                        </div>
-                    </form>
+                    <li class="resources visible-xs-block"><a href="https://avalaracommunity.force.com/partnerlaunch"><span class="text-uppercase">Avalara Launch Center</span></a></li>
                 </ul>
 
-
                 <a href="/avatax/signup/" class="btn btn-primary btn-signup">Free Trial</a>
-
             </div>
         </nav>
     </header>
@@ -290,10 +265,10 @@
 
 
         <ul class="social">
-            <li class="twitter"><a href="https://twitter.com/avadev">Twitter</a></li>
-            <li class="facebook"><a href="https://www.facebook.com/avalara">Facebook</a></li>
-            <li class="linkedin"><a href="https://www.linkedin.com/company/avalara">LinkedIn</a></li>
-            <li class="youtube"><a href="https://www.youtube.com/user/Avalara1">Youtube</a></li>
+            <li class="twitter"><a target="_blank" href="https://twitter.com/avadev">Twitter</a></li>
+            <li class="facebook"><a target="_blank" href="https://www.facebook.com/avalara">Facebook</a></li>
+            <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company/avalara">LinkedIn</a></li>
+            <li class="youtube"><a target="_blank" href="https://avlr.co/avadev">Youtube</a></li>
         </ul>
         {% if page.api_console == 1 %}
             {% for api_console_hash in site.data.api_consoles %}
@@ -317,7 +292,7 @@
 
 
         <ul class="legal">
-            <li>&copy; 2017 Avalara, Inc. All rights reserved</li>
+            <li>&copy; 2018 Avalara, Inc. All rights reserved</li>
             <li><a href="https://www.avalara.com/site-terms/">Terms of use</a></li>
             <li><a href="https://www.avalara.com/privacy-policy/">Privacy policy</a></li>
         </ul>
