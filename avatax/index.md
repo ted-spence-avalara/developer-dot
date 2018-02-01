@@ -81,5 +81,3 @@ doctype: overview
     </div>
   </div>
 </div>
-
-</div>
