@@ -20,4 +20,4 @@ Come join us to learn more about how to manage exemption certificates with speci
 	<li>Duration: 60 minutes</li>
 </ul>
 
-<p class="btn-callout"><a href="https://attendee.gotowebinar.com/register/6259899416306237442" role="button">Sign Up Now</a></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QdNUWwSZjoQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
