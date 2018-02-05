@@ -43,7 +43,6 @@ doctype: overview
             <div class="col-md-7 col-md-offset-5 padding-top">
                 <ul>
                     <li><a href="https://github.com/Avalara/Communications-Developer-Content/" target="_blank">API documentation</a></li>
-                    <li><a href="/api-reference/communications/afc-rest">API reference</a></li>
                 </ul>
             </div>
             <div class="col-md-7 col-md-offset-5 padding-top">
