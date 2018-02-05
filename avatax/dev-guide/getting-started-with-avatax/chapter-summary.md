@@ -21,7 +21,7 @@ In this chapter you’ve learned how you can get started using the AvaTax API
 </ul>
 
 <div class="dev-guide-certification">
-<div class="dev-guide-certification-heading"><a href="/certification/avatax/use-tax/">Certification Requirements</a></div>
+<div class="dev-guide-certification-heading"><a href="/certification/avatax/sales-tax-badge/">Certification Requirements</a></div>
 <div class="dev-guide-certification-content">
 AvaTax Configuration - The AvaTax Configuration Dialog window must allow the user to specify the configuration/connection information.
 <ul class="dev-guide-list">
@@ -30,7 +30,7 @@ AvaTax Configuration - The AvaTax Configuration Dialog window must allow the use
 <li>Service URL</li>
 <li>Company Code</li>
 </ul>
-Test Connection button - Tests the connection to the AvaTax service and verifies the AvaTax credentials. This is an important element to allow for successful troubleshooting of the AvaTax service. Optional – display license key expiration date upon successful connection response.
+Test Connection button - Tests the connection to the AvaTax service and verifies the AvaTax credentials. This is an important element to allow for successful troubleshooting of the AvaTax service.
 </div>
 </div>
 

@@ -20,7 +20,7 @@ Because you have read this chapter, you should now know:
 </ul>
 
 <div class="dev-guide-certification">
-<div class="dev-guide-certification-heading"><a href="/certification/avatax/use-tax/">Document Management Certification Requirements</a></div>
+<div class="dev-guide-certification-heading"><a href="/certification/avatax/document-management-badge/">Document Management Certification Requirements</a></div>
 <div class="dev-guide-certification-content">
     <ul class="dev-guide-list">
         <li>Customer Code - Identify customer code (number, ID) to pass to the AvaTax service. Typically this is an account name, customer name, or email address on file for the customer.</li>
@@ -34,7 +34,7 @@ Because you have read this chapter, you should now know:
 </div>
 
 <div class="dev-guide-certification">
-<div class="dev-guide-certification-heading"><a href="/certification/avatax/use-tax/">AvaTax Certification Requirements</a></div>
+<div class="dev-guide-certification-heading"><a href="/certification/avatax/sales-tax-badge/">AvaTax Certification Requirements</a></div>
 <div class="dev-guide-certification-content">
     <ul class="dev-guide-list">
         <li>Exemption Number - Customer record field populating exemption number in an AvaTax transaction. This is used for tracking those customers who have tax exempt transactions.</li>
