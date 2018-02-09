@@ -11,7 +11,7 @@ disqus: 1
   <li>{{ page.title }}</li>
 {% endfor %}
 
-New to AvaTax?  Please read the [AvaTax Developer Guide]().  This document explains everything about using AvaTax, from connecting to the API to how to calculate tax offline when your Internet connection goes down.
+New to AvaTax?  Please read the [AvaTax Developer Guide](/avatax/dev-guide/).  This document explains everything about using AvaTax, from connecting to the API to how to calculate tax offline when your Internet connection goes down.
 
 If you're eager to get started, the best place to begin is:
 
