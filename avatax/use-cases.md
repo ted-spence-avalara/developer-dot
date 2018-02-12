@@ -11,14 +11,15 @@ disqus: 1
   <li>{{ page.title }}</li>
 {% endfor %}
 
-# Understanding AvaTax
-
-New to AvaTax?  Please read the [AvaTax Developer Guide]().  This document explains everything about using AvaTax, from connecting to the API to how to calculate tax offline when your Internet connection goes down.
+New to AvaTax?  Please read the [AvaTax Developer Guide](/avatax/dev-guide/).  This document explains everything about using AvaTax, from connecting to the API to how to calculate tax offline when your Internet connection goes down.
 
 If you're eager to get started, the best place to begin is:
-* Sign up for a [free trial of AvaTax](/avatax/signup) online
-* Download an [AvaTax Software Development Kit](/sdk) to save time
-* Visit the [AvaTax Website](https://admin.avalara.com) to configure your tax profile
+
+<ul class="normal">
+  <li>Sign up for a <a href="/avatax/signup">free trial of AvaTax</a> online</li>
+  <li>Download an <a href="/sdk">AvaTax Software Development Kit</a> to save time</li>
+  <li>Visit the <a href="https://admin.avalara.com">AvaTax Website</a> to configure your tax profile</li>
+</ul>
 
 ## Online Store or Selling Page
 
@@ -41,4 +42,3 @@ In addition to the workflows above, there are additional document types and proc
 * If invoices or returns are voided, that cancellation needs to be communicated to AvaTax with a CancelTax call.
 
 If you're ready to start some testing, you may want to review the full [AvaTax REST API Reference](/api-reference/avatax/rest/v2/).  You can also continue reading the Developer Guide - it has great information on how to [calculate tax for shipping and handling](/avatax/dev-guide/shipping-and-handling), how to [process customer exemption certificates](/avatax/dev-guide/exemptions/exemption-certificate), and more!
-
