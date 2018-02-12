@@ -2,6 +2,7 @@
 layout: webinar
 title: Office Hours with AvaTax - How to Certify a Connector
 date: 2018-03-20 10:00
+author: Ted Spence, Bob Erdman, Sara Simrell
 comments: true
 product: avatax
 doctype: webinar

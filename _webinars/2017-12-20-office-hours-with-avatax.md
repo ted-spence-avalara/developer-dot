@@ -2,7 +2,7 @@
 layout: webinar
 title: "December Office Hours with AvaTax"
 date: 2017-12-20 11:00
-author: ted.spence
+author: Ted Spence, Bob Erdman, Aaron Robles
 comments: true
 product: avatax
 doctype: webinar

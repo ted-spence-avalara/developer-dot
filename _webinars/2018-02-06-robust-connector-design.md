@@ -2,6 +2,7 @@
 layout: webinar
 title: Office Hours with AvaTax - Robust Connector Design
 date: 2018-02-06 10:00
+author: Ted Spence and Charlie Morrisette
 comments: true
 product: avatax
 doctype: webinar

@@ -2,6 +2,7 @@
 layout: webinar
 title: Office Hours with AvaTax - Handling Refunds in AvaTax
 date: 2018-03-13 10:00
+author: Ted Spence and John Lamberton
 comments: true
 product: avatax
 doctype: webinar

@@ -2,6 +2,7 @@
 layout: webinar
 title: February AvaTax Developer Webinar - Cross Border Taxes
 date: 2018-02-22 10:30
+author: Ted Spence and Amy Morgan
 comments: true
 product: avatax
 doctype: webinar

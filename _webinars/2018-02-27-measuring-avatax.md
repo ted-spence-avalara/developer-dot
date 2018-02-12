@@ -2,6 +2,7 @@
 layout: webinar
 title: Office Hours with AvaTax - Measuring AvaTax API Performance
 date: 2018-02-27 10:00
+author: Ted Spence and Scott Hawley
 comments: true
 product: avatax
 doctype: webinar
