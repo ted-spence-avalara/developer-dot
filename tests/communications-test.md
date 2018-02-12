@@ -1,21 +1,10 @@
 ---
 layout: page
-title: Communications Certification
+title: Avalara for Communications Test Cases
 product: communications
-doctype: integration_checklists
-nav: certification
+doctype: test_your_integration
+nav: tests
 ---
-
-<style>
-.styled-table {
-  border-collapse: collapse;}
-  .styled-table tbody {
-    background-color: #f5f6fa; }
-    .styled-table tbody td {
-      border-top: 1px solid #ffff; }
-  .styled-table tbody {
-    background-color: #ffffff; }
-</style>
 
 Depending on the scope of your integration and your business practice, your test cases
 will vary. For development partners, many of these are requirements for certification. If
