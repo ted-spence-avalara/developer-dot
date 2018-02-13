@@ -2,6 +2,7 @@
 layout: webinar
 title: Office Hours with AvaTax – Introduction to the AvaTax API
 date: 2018-02-20 10:00
+author: Ted Spence and Angel Person
 comments: true
 product: avatax
 doctype: webinar

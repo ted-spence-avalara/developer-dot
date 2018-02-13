@@ -2,6 +2,7 @@
 layout: webinar
 title: Office Hours with AvaTax - AvaTax API Design
 date: 2018-03-06 10:00
+author: Ted Spence and Rohit Ghule
 comments: true
 product: avatax
 doctype: webinar
