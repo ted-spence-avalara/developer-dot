@@ -197,8 +197,9 @@
         {% if page.nav=="home" %}
         <div class="recent-blog-posts" id="recentPosts">
             <button class="btn btn-seconndary pull-right" onClick="{document.getElementById('recentPosts').style.display='none';}"><i class="glyphicon glyphicon-remove"></i> Close</button>
-            <h1>What's new</h1>
-            <p class="whats-new"><a href="https://www.avalaracrush.com">Get a jumpstart on building tax compliance solutions – Register for CRUSHDC 2018 today!</a></p>
+            <a href="http://www.avalaracrush.com/?CampaignID=7010b000001DprL" target="_blank">                
+                <img src="/public/images/crush-banner.png" alt="Get a jumpstart on building tax compliance solutions – Register for CRUSHDC 2018 today!" style="height: 100%; width: 100%; object-fit: cover; overflow: hidden;" />
+            </a>
             <h2>Recent blog posts</h2>
             {% for post in site.posts limit:4 %}
             <div class="col-md-3">
