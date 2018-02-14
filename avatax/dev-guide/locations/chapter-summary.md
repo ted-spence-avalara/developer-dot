@@ -15,7 +15,7 @@ disqus: 1
 
 In this chapter, you've learned how to use location codes to enable your software to use locations for tax transaction reporting.
 <div class="dev-guide-certification">
-  <div class="dev-guide-certification-heading"><a href="/certification/avatax/use-tax/">Certification Requirements</a></div>
+  <div class="dev-guide-certification-heading"><a href="/certification/avatax/sales-tax-badge/">Certification Requirements</a></div>
   <div class="dev-guide-certification-content">
 Avalara-certified connectors must support the ability to set a reporting location code on a transaction.
   </div>

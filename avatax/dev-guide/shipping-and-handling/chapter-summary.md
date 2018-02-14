@@ -28,7 +28,7 @@ Optionally, you can include additional features if you choose:
 These optional features are available but are not required for certified connectors.
 
 <div class="dev-guide-certification">
-<div class="dev-guide-certification-heading"><a href="/certification/avatax/use-tax/">Certification Requirements</a></div>
+<div class="dev-guide-certification-heading"><a href="/certification/avatax/sales-tax-badge/">Certification Requirements</a></div>
 <div class="dev-guide-certification-content">
 Freight Items must be transmitted separately - Freight Items must be sent to AvaTax as a separate line item with appropriate tax code
 </div>

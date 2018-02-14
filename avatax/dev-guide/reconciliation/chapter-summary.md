@@ -21,7 +21,7 @@ In this chapter, you've seen all the features available in AvaTax for designing 
 </ul>
 
 <div class="dev-guide-certification">
-<div class="dev-guide-certification-heading"><a href="/certification/avatax/use-tax/">Certification Requirements</a></div>
+<div class="dev-guide-certification-heading"><a href="/certification/avatax/sales-tax-badge/">Certification Requirements</a></div>
 <div class="dev-guide-certification-content">
 AvaTax Certified Connectors must ensure that transactions are processed through a logical document lifecycle
     <ul class="dev-guide-list">

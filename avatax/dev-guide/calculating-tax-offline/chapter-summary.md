@@ -15,7 +15,7 @@ disqus: 1
 Consuming sales tax related services can be considered mission-critical, especially when making calculation queries through the AvaTax product. As a cloud-based Software-as-a-Service provider, Avalara understands the need to ensure that our services are available continuously and respond in a timely manner.  Avalara’s Server Status can be viewed publicly at <a class="dev-guide-link" href="status.avalara.com<">status.avalara.com</a>. This page outlines the availability of the service, current performance in terms of response time and a historical view of the availability for the past week.
 
 <div class="dev-guide-certification">
-<div class="dev-guide-certification-heading"><a href="/certification/avatax/use-tax/">Certification Requirements</a></div>
+<div class="dev-guide-certification-heading"><a href="/certification/avatax/point-of-sale-badge/">Certification Requirements</a></div>
 <div class="dev-guide-certification-content">
     <ul class="dev-guide-list">
       <li>Your software must be able to handle a timeout and retry the transaction.</li>

@@ -15,7 +15,7 @@ disqus: 1
 In this chapter, you've learned how to identify your products by type and ensure that customers get the correct tax rate and taxability regardless of what products or services they sell.
 
 <div class="dev-guide-certification">
-<div class="dev-guide-certification-heading"><a href="/certification/avatax/use-tax/">Certification Requirements</a></div>
+<div class="dev-guide-certification-heading"><a href="/certification/avatax/sales-tax-badge/">Certification Requirements</a></div>
 <div class="dev-guide-certification-content">
 As a connector developer, you are required to do the following:
   <ul class="dev-guide-list">

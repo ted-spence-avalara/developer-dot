@@ -22,7 +22,7 @@ In this chapter you've learned ways in which you can customize your transactions
 </ul>
 
 <div class="dev-guide-certification">
-<div class="dev-guide-certification-heading"><a href="/certification/avatax/use-tax/">Certification Requirements</a></div>
+<div class="dev-guide-certification-heading"><a href="/certification/avatax/sales-tax-badge/">Certification Requirements</a></div>
 <div class="dev-guide-certification-content">
 AvaTax Certified Connectors must include the following information when calling the service for a tax calculation.
 The connector must show the following:
