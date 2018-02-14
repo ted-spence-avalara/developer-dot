@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-The document type is an immutable property. 
+The document type is an immutable property.
 
 ## Example
 
@@ -32,6 +32,4 @@ The document type is an immutable property.
 
 ## Explanation
 
-Document type is a permanent property of the document object. This cannot be adjusted. 
-
-Some of the fields that can be adjusted include date, description, and lines.
+Document type is a permanent property of the document object. This cannot be adjusted. If you wish to change the document type, void the existing document and create a new document.

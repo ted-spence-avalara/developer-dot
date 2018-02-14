@@ -640,6 +640,31 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>You attempted to delete an object that was in use.</td>
 		</tr>		
         <tr>
+			<td>192</td>
+			<td><a href="CircularCompanyHierarchies">CircularCompanyHierarchies</a></td>
+			<td>Creating this company as submitted would result in a circular hierarchical reference.</td>
+		</tr>		
+        <tr>
+			<td>193</td>
+			<td><a href="DuplicateEntry">DuplicateEntry</a></td>
+			<td>The key or name already exists.</td>
+		</tr>		
+        <tr>
+			<td>194</td>
+			<td><a href="DuplicateFieldNameInOrderBy">DuplicateFieldNameInOrderBy</a></td>
+			<td>A sort or order filter criteria for this request was repeated.</td>
+		</tr>		
+        <tr>
+			<td>195</td>
+			<td><a href="CannotAdjustDocumentType">CannotAdjustDocumentType</a></td>
+			<td>The document type is an immutable property.</td>
+		</tr>		
+        <tr>
+			<td>196</td>
+			<td><a href="UserNoAccess">UserNoAccess</a></td>
+			<td>This user has a security role that blocks usage of this service.</td>
+		</tr>		
+        <tr>
 			<td>200</td>
 			<td><a href="BatchSalesAuditMustBeZippedError">BatchSalesAuditMustBeZippedError</a></td>
 			<td>Sales audit files must be uploaded in ZIP or RAR formats.</td>
@@ -891,8 +916,8 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 		</tr>		
         <tr>
 			<td>800</td>
-			<td><a href="TaxRateNotAvailableForFreeInThisCountry">TaxRateNotAvailableForFreeInThisCountry</a></td>
-			<td>The Free TaxRates API is only available in the US.</td>
+			<td><a href="MustUseCreateTransaction">MustUseCreateTransaction</a></td>
+			<td>The free tax rates API applies only to transactions within the United States.</td>
 		</tr>		
         <tr>
 			<td>900</td>
@@ -1080,9 +1105,9 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>A document could not be found with the specified type.</td>
 		</tr>		
         <tr>
-			<td>1313</td>
-			<td><a href="TransactionIsCommitted">TransactionIsCommitted</a></td>
-			<td>This API can only modify transactions that are not yet committed.</td>
+			<td>1312</td>
+			<td><a href="MultiDocumentPartiallyLocked">MultiDocumentPartiallyLocked</a></td>
+			<td>A MultiDocument was partially locked for reporting.</td>
 		</tr>		
         <tr>
 			<td>1313</td>

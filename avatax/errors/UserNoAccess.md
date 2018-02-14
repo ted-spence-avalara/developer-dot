@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-This user has a security role that blocks usage of this service. 
+This user has a security role that blocks usage of this service.
 
 ## Example
 
@@ -32,4 +32,4 @@ This user has a security role that blocks usage of this service.
 
 ## Explanation
 
-You attempted to use a service for which your security role is not allowed. Please contact your customer support representative if you think this message is in error. 
+You attempted to use a service for which your security role is not allowed. Your customer support representative can change your access level from "NoAccess" to "AccountUser" in order to grant you access to AvaTax.

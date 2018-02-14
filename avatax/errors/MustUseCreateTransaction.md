@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-The free tax rates API applies only to transactions within the United States. 
+The free tax rates API applies only to transactions within the United States.
 
 ## Example
 
@@ -32,4 +32,4 @@ The free tax rates API applies only to transactions within the United States.
 
 ## Explanation
 
-For tax rates in countries other than the United States, CreateTransaction() must be used.
+For tax rates in countries other than the United States, CreateTransaction() must be used. You can find the documentation for the CreateTransaction API here: https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/

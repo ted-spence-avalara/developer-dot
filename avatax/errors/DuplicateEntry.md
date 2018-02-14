@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-The key already exists. The key must be unique.
+The key or name already exists.
 
 ## Example
 
@@ -32,6 +32,4 @@ The key already exists. The key must be unique.
 
 ## Explanation
 
-AvaTax allows users to designate custom keys for their own objects, such as TaxRules. 
-
-Attempting to use the same key more than once for the same object type results in this error. 
+Objects must be uniquely named and identified. In most cases, two objects cannot have the same code or name. Please check your object, ensure the name and code are unique, and try your API call again.
