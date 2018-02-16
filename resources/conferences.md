@@ -10,16 +10,16 @@ The conference contains two days full of training sessions where you'll learn al
 
 <p class="btn-callout"><a href="https://www.avalaracrush.com/events/crush-dc-2018/registration-67b6e698ed174ce7bb0b602320e448d3.aspx" role="button">Sign up to attend CRUSH DC 2018 now!</a></p>
 
-## Thursday, May 10
+## Thursday, May 10, 2018
 
 <div class="mobile-table">
     <table class="styled-table">
         <thead>
         <tr>
-            <th>Time</th>
-            <th>Topic</th>
-            <th>Presenter</th>
-            <th>Description</th>
+            <th width="15%">Time</th>
+            <th width="15%">Topic</th>
+            <th width="15%">Presenter</th>
+            <th width="55%">Description</th>
         </tr>
         </thead>
         <tbody>
@@ -59,16 +59,16 @@ The conference contains two days full of training sessions where you'll learn al
 
 <p class="btn-callout"><a href="https://www.avalaracrush.com/events/crush-dc-2018/registration-67b6e698ed174ce7bb0b602320e448d3.aspx" role="button">Sign up to attend CRUSH DC 2018 now!</a></p>
 
-## Friday, May 11
+## Friday, May 11, 2018
 
 <div class="mobile-table">
     <table class="styled-table">
         <thead>
         <tr>
-            <th>Time</th>
-            <th>Topic</th>
-            <th>Presenter</th>
-            <th>Description</th>
+            <th width="15%">Time</th>
+            <th width="15%">Topic</th>
+            <th width="15%">Presenter</th>
+            <th width="55%">Description</th>
         </tr>
         </thead>
         <tbody>
