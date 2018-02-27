@@ -2,7 +2,7 @@
 layout: post
 title: The CRUSH DC Business Case
 description: The CRUSH DC Business Case for Avalara CRUSH Conference - Sales Tax Developer Track, Washington, DC May 9-11, 2018.
-date: 2018-02-27 13:00
+date: 2018-02-27 15:00
 author: Tela Andrews
 comments: true
 categories: [avatax, CRUSH, conference]
