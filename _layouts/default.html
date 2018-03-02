@@ -191,8 +191,9 @@
                     <li class="resources visible-xs-block"><a href="https://community.avalara.com/avalara/category_sets/developers"><span class="text-uppercase">Help Forum</span></a></li>
                     <li class="resources visible-xs-block"><a href="https://avalaracommunity.force.com/partnerlaunch"><span class="text-uppercase">Avalara Launch Center</span></a></li>
                 </ul>
-
+                {% if page.title != "Thank You" %}
                 <a href="/avatax/signup/" class="btn btn-primary btn-signup">Free Trial</a>
+                {% endif %}
             </div>
         </nav>
     </header>
