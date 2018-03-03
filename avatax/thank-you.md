@@ -5,22 +5,47 @@ product: avaTax
 doctype: 
 nav: thankyou
 ---
+<style type="text/css">
+	td {
+		padding-right: 10px;
+		}
+	.circle {
+		border-radius: 50%;
+		width: 10px;
+		height: 10px;
+		background-color: #ff6600; 
+		}
+</style>
+
 <div>
-	<h2>Thank You for signing up!</h2>
+	<h1>Thank You for signing up!</h1>
 	We've made it easy for you to get started with the AvaTax API.  Follow these steps to start calculating tax in just a few minutes.
-	<ol style="list-style-type: none;">
-		<li><h3>Get Your Credentials</h3>
-		You'll get an email with your API credentials.</li>
 
-		<li><h3>Calculate Tax Now</h3>
-			<a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/"><b>Try</b></a> a tax calculation using the Create Transaction API.</li>
+	<table>
+	
+		<tr>
+			<td><p class="circle"></p></td>
+			<td><h3>Get Your Credentials</h3>
+		You'll get an email with your API credentials.</td>
+		</tr>
+		<tr>
+			<td><p class="circle"></p></td>
+			<td><h3>Calculate Tax Now</h3>
+			<a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/"><b>Try</b></a> a tax calculation using the Create Transaction API.</td>
+		</tr>
+		<tr>
+			<td><p class="circle"></p></td>
+			<td><h3>Download an SDK</h3>
+			<a href="https://developer.avalara.com/sdk/"><b>Accelerate</b></a> your project with a free SDK in your project language.</td>
+		</tr>
+		<tr>
+			<td><p class="circle"></p></td>
+			<td><h3 class="tableinfo">Read the Developer Guide</h3>
+			<a href="https://developer.avalara.com/avatax/dev-guide/"><b>Get Started</b></a> with an in-depth guide to the API.</td>
+		</tr>
 
-		<li><h3>Read the Developer Guide</h3>
-			<a href="https://developer.avalara.com/avatax/dev-guide/"><b>Get Started</b></a> with an in-depth guide to the API.</li>
 
-		<li><h3>Download an SDK</h3>
-			<a href="https://developer.avalara.com/sdk/"><b>Accelerate</b></a> your project with a free SDK in your project language.</li>
-	</ol>
+	</table>
 
 	<h3>More Support for Your Project</h3>
 
