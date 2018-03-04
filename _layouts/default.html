@@ -13,11 +13,19 @@
     {% assign default_desc = "API solutions for end-to-end tax compliance" %}
     <meta name="description" content="{{ default_desc }}">
 
+    <link rel="canonical" href="{{ page.url | prepend: site.url }}">
+
     {% assign ogtitle = page.ogtitle | default:page.title %}
     <meta property="og:title" content="{% if ogtitle %}{{ogtitle}} | {% endif %}Avalara Developer" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Avalara Developer Network" />
     <meta property="og:description" content="{{ page.ogdescription | default:default_desc }}"/>
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="{%if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:site" content="@avalara" />
+    <meta name="twitter:card" content="summary">
 
     <link rel="apple-touch-icon" sizes="57x57" href="/public/images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/public/images/favicon/apple-icon-60x60.png">
@@ -42,7 +50,6 @@
     <!-- Adobe Dynamic Tab Manager Tag Manager -->
     <script src="https://assets.adobedtm.com/bc10a2a9cf337c664f8f74e778a1987125aea184/satelliteLib-0387aefee1ddb8b2a9db7e4165c8d84dc0de8621.js"></script>
     <!-- End Adobe Dynamic Tab Manager Tag Manager -->
-    {% seo %}
 </head>
 {% assign post_count = site.posts|size %} {% if page.product %} {% assign product_name = page.product %} {% elsif layout.product %} {% assign product_name = layout.product %}{% else %} {% if page.api_name %} {% assign product_name = page.api_name %} {% endif %} {% endif %}
 

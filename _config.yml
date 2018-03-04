@@ -14,20 +14,6 @@ google_analytics_id: ''
 #   2 - show only if posts are present
 navigation: 2
 
-
-plugins_dir:
-  - jekyll-seo-tag. # generate cannoical url, twitter card, og, etc
-
-# jekyll seo params start
-twitter:
-    username: avalara
-
-facebook:
-    publisher: https://www.facebook.com/avalara/
-
-logo: /public/images/Avalara_logo.svg
-# jekyll seo params end
-
 host: 0.0.0.0
 
 # URL to source code, used in _includes/footer.html
