@@ -113,6 +113,6 @@ Address Resolution and Transactions both use the same code.  When you call `/api
 
 The address validation logic follows the flow chart below:
 
-<img src="/public/images/devdot/DevDot_TaxCallDiagram.svg" width="100%" alt="Address resolution during tax calculation" />
+<img src="/public/images/devdot/DevDot_TaxCallDiagram.png" width="100%" alt="Address resolution during tax calculation" />
 
 Even in the case that an address cannot be fully resolved, AvaTax will use the best available geocoding information for tax calculation purposes.  While a fully validated street address is always better and more accurate, taxing jurisdictions can usually be determined if city, state and zip code are provided.

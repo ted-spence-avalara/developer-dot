@@ -23,7 +23,7 @@ If you're eager to get started, the best place to begin is:
 
 ## Online Store or Selling Page
 
-<img src="/public/images/devdot/DevDot_ECOMMdiagram.svg" alt="Avalara AvaTax Ecommerce Diagram" width="100%" />
+<img src="/public/images/devdot/DevDot_ECOMMdiagram.png" alt="Avalara AvaTax Ecommerce Diagram" width="100%" />
 
 * When your customer opens a shopping cart and puts an item in it, you should call the [CreateTransaction API](/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/) with `type` set to `SalesOrder`. This will get you a tax calculation based on your shipping address and the customer's destination address, but it will not record a permanent transaction, so you won't have to do any cleanup for abandoned carts.
 * When the customer finalizes the order, call CreateTransaction again with `type` set to `SalesInvoice`.  This will record the transaction permanently and allow you to fetch it back later with the [GetTransaction API](/api-reference/avatax/rest/v2/methods/Transactions/GetTransactionByCodeAndType/).
@@ -31,7 +31,7 @@ If you're eager to get started, the best place to begin is:
 
 ## Accounting or ERP System
 
-<img src="/public/images/devdot/DevDot_ERPdiagram.svg" alt="Avalara AvaTax ERP Diagram" width="100%" />
+<img src="/public/images/devdot/DevDot_ERPdiagram.png" alt="Avalara AvaTax ERP Diagram" width="100%" />
 
 In addition to the workflows above, there are additional document types and processes to account for.
 
