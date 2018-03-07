@@ -21,7 +21,7 @@ CRUSH Digital Edition allows accounting professionals to access some of the expe
 
 **Interested in attending the premier event for transaction tax professionals in person?** Join us at CRUSH DC where we’ll share our vision for mastering tax trends over three days of networking, tech demos, learning labs, and knowledge sharing led by partners and experts from around the world. With the option of nine different session tracks, and over 100 sessions, we will dive into future trends, industry changes, and anticipated developments that affect the field of tax compliance, earning you up to 13.5 CPE hours.  For more information visit [www.avalaracrush.com](https://www.avalaracrush.com).
 
-<p class="btn-callout"><a href="https://www.avalaracrush.com/events/crush-dc-2018/registration-67b6e698ed174ce7bb0b602320e448d3.aspx" role="button">Sign up to attend CRUSH DC 2018 now!</a></p>
+<p class="btn-callout"><a href="http://www.avalaracrush.com/events/crush-dc-2018/event-summary-67b6e698ed174ce7bb0b602320e448d3.aspx" role="button">Learn more about CRUSH DC 2018 now!</a></p>
 
 ## Digital Edition Sessions
 
@@ -203,4 +203,4 @@ The CRUSHDC 2018 Digital Edition includes self-study courses you can use at any 
   </table>
 </div>
 
-<p class="btn-callout"><a href="https://www.avalaracrush.com/events/crush-dc-2018/registration-67b6e698ed174ce7bb0b602320e448d3.aspx" role="button">Sign up to attend CRUSH DC 2018 now!</a></p>
+<p class="btn-callout"><a href="http://www.avalaracrush.com/events/crush-dc-2018/event-summary-67b6e698ed174ce7bb0b602320e448d3.aspx" role="button">Learn more about CRUSH DC 2018 now!</a></p>
