@@ -99,17 +99,3 @@ nav: certification
 <div class="row padding-top">
     <div class="col-sm-offset-3 col-sm-6 text-center btn-callout"><a href="/avatax/get-started" role="button">Get started</a></div>
 </div>
-
-
-  <div class="row padding top">
-    <div class="col-md-offset-2 col-sm-2">
-      One of three columns
-    </div>
-    <div class="col-md-2">
-      One of three columns
-    </div>
-    <div class="col-md-2">
-      One of three columns
-    </div>
-  </div>
-
