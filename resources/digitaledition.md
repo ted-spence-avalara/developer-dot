@@ -1,8 +1,9 @@
 ---
 layout: page
-title: CRUSH Digital Edition
 nav: resources
 ---
+
+<img src="/public/images/crushdc_digital.png" width="512" height="171" alt="CRUSHDC 2018 Digital Edition" />
 
 CRUSH Digital Edition allows accounting professionals to access some of the expert content available at this year’s premier event for transaction tax professionals, CRUSH DC. Join one of our many webinars presented by industry experts and Avalara leadership on topics related to sales tax compliance and future trends, as well as tips and techniques on how to bring more value to client relationships and build your compliance practice. For each webinar you attend, you’ll also earn free CPE credit. CRUSH Digital Edition is a sample of what you could experience if you were joining us at CRUSH DC, including webinars on state and local tax regulation updates, managing an audit, and compliance for ecommerce or omnichannel environments. The largest tax compliance conference of its kind, CRUSH brings together the experts, technology, and peers to provide support for all aspects of your compliance.
 
@@ -35,7 +36,7 @@ CRUSH Digital Edition allows accounting professionals to access some of the expe
     </tr>
     <tr>
       <td>How to Start the Sales and Use Tax Conversation with a Client</td>
-      <td>Monika Miles, Miles Consulting</td>
+      <td><img src="/public/images/crushdc_silver.png" width="30" height="30" align="right" alt="CRUSHDC 2018 Silver Sponsor" />Monika Miles, Miles Consulting</td>
       <td>February 26th, 2018</td>
       <td>9:00 AM MST</td>
       <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UC3GpEAL">CPAacademy.org</a></td>
@@ -56,7 +57,7 @@ CRUSH Digital Edition allows accounting professionals to access some of the expe
     </tr>
     <tr>
       <td>Ecommerce Essentials #3:  Taxability Determinations and Sourcing Rules for Online Sales</td>
-      <td>Joni Johnson-Powe, Taxnologi</td>
+      <td><img src="/public/images/crushdc_silver.png" width="30" height="30" align="right" alt="CRUSHDC 2018 Silver Sponsor" />Joni Johnson-Powe, Taxnologi</td>
       <td>March 6th, 2018</td>
       <td>10:00 AM MST</td>
       <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UEUc8EAH">CPAacademy.org</a></td>
@@ -70,7 +71,7 @@ CRUSH Digital Edition allows accounting professionals to access some of the expe
     </tr>
     <tr>
       <td>Audit: Avoid It, or Else Navigate Like a Pro</td>
-      <td>Monika Miles, Miles Consulting</td>
+      <td><img src="/public/images/crushdc_silver.png" width="30" height="30" align="right" alt="CRUSHDC 2018 Silver Sponsor" />Monika Miles, Miles Consulting</td>
       <td>March 8th, 2018</td>
       <td>2:00 PM EST</td>
       <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UEbJSEA1">CPAacademy.org</a></td>
@@ -91,7 +92,7 @@ CRUSH Digital Edition allows accounting professionals to access some of the expe
     </tr>
     <tr>
       <td>Ecommerce Essentials #4:  Sales Taxes Tips for Market Place Sellers (EBay, Amazon, Shopify, CrateJoy)</td>
-      <td>Joni Johnson-Powe, Taxnologi</td>
+      <td><img src="/public/images/crushdc_silver.png" width="30" height="30" align="right" alt="CRUSHDC 2018 Silver Sponsor" />Joni Johnson-Powe, Taxnologi</td>
       <td>March 20th, 2018</td>
       <td>9:00 AM MST</td>
       <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UEUmxEAH">CPAacademy.org</a></td>
@@ -112,7 +113,7 @@ CRUSH Digital Edition allows accounting professionals to access some of the expe
     </tr>
     <tr>
       <td>Audit: Avoid It, or Else Navigate Like a Pro</td>
-      <td>Monika Miles, Miles Consulting</td>
+      <td><img src="/public/images/crushdc_silver.png" width="30" height="30" align="right" alt="CRUSHDC 2018 Silver Sponsor" />Monika Miles, Miles Consulting</td>
       <td>March 29th, 2018</td>
       <td>8:00 AM MST</td>
       <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UEbbDEAT">CPAacademy.org</a></td>
@@ -126,7 +127,7 @@ CRUSH Digital Edition allows accounting professionals to access some of the expe
     </tr>
     <tr>
       <td>Ecommerce Essentials #1 All Things Nexus- What Does it Mean, How Does it Work, and Who Should Care</td>
-      <td>Joni Johnson-Powe, Taxnologi</td>
+      <td><img src="/public/images/crushdc_silver.png" width="30" height="30" align="right" alt="CRUSHDC 2018 Silver Sponsor" />Joni Johnson-Powe, Taxnologi</td>
       <td>May 4th, 2018</td>
       <td>8:00 AM MST</td>
       <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UBwtEEAT">CPAacademy.org</a></td>
@@ -166,7 +167,7 @@ The CRUSHDC 2018 Digital Edition includes self-study courses you can use at any 
     </tr>
     <tr>
       <td>How to Start the Sales and Use Tax Conversation with a Client</td>
-      <td>Monika Miles, Miles Consulting</td>
+      <td><img src="/public/images/crushdc_silver.png" width="30" height="30" align="right" alt="CRUSHDC 2018 Silver Sponsor" />Monika Miles, Miles Consulting</td>
       <td><a href="https://www.cpaacademy.org/self_study_show/a0D4400000SMQsuEAH">CPAacademy.org</a></td>
     </tr>
     <tr>
