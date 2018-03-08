@@ -79,11 +79,8 @@ function submitShort() {
             // console.log('response: ', err);
         },
         dataType: 'json',
-        success: function(data) {
-            $('#ava-form-info').html('Success!  Your account credentials have been sent to <strong>' + data.accountDetailsEmailedTo + '</strong>.');
-            $('#ava-form-alert').attr('class', 'alert alert-success fade in');
-            $('#submit').prop('disabled', false);
-            $('#ava-form-alert').show();
+        success: function() {
+            window.location.replace("https://developer.avalara.com/avatax/thank-you/")
             // console.log('response: ', data);
         },
         type: 'POST'
