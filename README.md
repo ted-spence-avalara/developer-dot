@@ -132,11 +132,12 @@ Fetching: bundler-1.13.5.gem (100%)
 Successfully installed bundler-1.13.5
 18 gems installed
 ```
-Finally, to download all of the developer dependencies specific to the developer-dot site, you will need to generate a `node_modules` folder inside your local repository by using an `npm install` command. Be sure to run the `npm install` inside the same directory that the `packages.json` file is located.
+Finally, to download all of the developer dependencies specific to the developer-dot site, you will need to generate a `node_modules` folder inside your local repository by using an `npm install` command. You will also need to run `bundle isntall` to install the Jekyll dependancies. Be sure to run the `npm install` inside the same directory that the `packages.json` file is located.
 
 ```
 $ cd yourWorkingRepoDirectory/
 $ npm install
+$ bundle install
 ```
 
 It might take some time to install all the dependencies inside the folder but they're critical to running the site locally using the same formatting that shows up currently on the developer site. Once completed there should be a node_modules folder added to your directory.
@@ -189,7 +190,11 @@ or
 
 `$ npm run dev`
 
-Though, depending on your changes and the method you've used to change them, you might need to build or rebuild the site before running the above commands:
+or
+
+`$ bundle exec jekyll serve`
+
+Though, depending on your changes and the method you've used to change them, or if the CSS stylesheet is not loading, you might need to build or rebuild the site before running the above commands:
 
 `$ npm run build`
 
