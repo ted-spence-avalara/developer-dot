@@ -132,7 +132,7 @@ Fetching: bundler-1.13.5.gem (100%)
 Successfully installed bundler-1.13.5
 18 gems installed
 ```
-Finally, to download all of the developer dependencies specific to the developer-dot site, you will need to generate a `node_modules` folder inside your local repository by using an `npm install` command. You will also need to run `bundle isntall` to install the Jekyll dependancies. Be sure to run the `npm install` inside the same directory that the `packages.json` file is located.
+Finally, to download all of the developer dependencies specific to the developer-dot site, you will need to generate a `node_modules` folder inside your local repository by using an `npm install` command. You will also need to run `bundle install` to install the Jekyll dependancies. Be sure to run the `npm install` inside the same directory that the `packages.json` file is located.
 
 ```
 $ cd yourWorkingRepoDirectory/
