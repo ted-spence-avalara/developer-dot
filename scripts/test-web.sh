@@ -8,6 +8,7 @@ jekyllTrap="echo 'Killing jekyll...' && pkill -f jekyll"
 trap "$jekyllTrap" ERR INT
 
 if [[ "$@" != *"--skip-initial-build"* ]]; then
+    bundle install
     bundle exec jekyll build
 fi
 bundle exec jekyll serve --detach --skip-initial-build
