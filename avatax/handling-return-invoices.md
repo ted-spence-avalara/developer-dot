@@ -22,7 +22,7 @@ For the example provided below, we will process a return invoice on the followin
 
 With the following line items:
 
-<img src="/public/images/devdot/ProductReturns_Lineitems.svg" alt="Line Items" width="100%" />
+<img src="/public/images/devdot/ProductReturns_Lineitems.png" alt="Line Items" width="100%" />
 
 As you address returns processing, keep in mind that:
 
@@ -40,7 +40,7 @@ As you address returns processing, keep in mind that:
 </li>
 </ol>
 <blockquote><strong>Note:</strong> you can use a DocCode once per DocType. A DocStatusError will result if you attempt to commit a second document with the same DocType and DocCode</blockquote>
-<img src="/public/images/devdot/ProductReturns_Invoiceandreturn.svg" alt="Invoice and Return" width="100%" />
+<img src="/public/images/devdot/ProductReturns_Invoiceandreturn.png" alt="Invoice and Return" width="100%" />
 <ol start="2">
 	<li>Set the DocDate to the date when the return is being processed (not the date of the original order).</li>
 	<li>Set the TaxOverride.TaxDate to reflect the original order date (this will override the date used for tax calculation so that the same taxes are calculated as were on the original order).
