@@ -86,3 +86,7 @@ jekyll-archives:
     category: archive-tag
   permalinks:
     category: 'blog/:name/'
+
+url: "https://developer.avalara.com"
+plugins_dir:
+  - jekyll-sitemap
