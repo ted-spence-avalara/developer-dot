@@ -39,6 +39,8 @@ The AvaTax March release will provide a two-week period where the March release 
 
 The AvaTax API team will host a [developer webinar to discuss the March release](https://attendee.gotowebinar.com/register/8135505725963625219) on Monday, March 19th, 2018, at 10:00 AM Pacific time.  If you would like to ask questions about the AvaTax API 18.3 release, please sign up and join us for a lively discussion of the changes to the AvaTax API.  The webinar will conclude with a 15 minute Q&A session for developers to ask any questions about this release cycle.
 
+<p class="btn-callout"><a href="https://attendee.gotowebinar.com/register/8135505725963625219" role="button">Register for AvaTax API 18.3 Webinar</a></p>
+
 <h3>Exemption Certificates API</h3>
 
 Improvements to the [exemption certificate system](/api-reference/avatax/rest/v2/methods/Certificates/) in the March release include general performance improvements, provisioning improvements, and some API quality changes.
@@ -48,7 +50,7 @@ The provisioning model for exemption certificates has been updated.  Each compan
 <ul class="normal">
   <li>Corrected bugs that caused incorrect pagination when performing multi-page queries against exemption certificates and customer data.</li>
   <li>Corrected a bug that prevented certain certificates with extension data in them from being retrieved.</li>
-  <li>Improved documentation for CertExpressInvites to better explain request link functionality.</li>
+  <li>Improved documentation for <a href="/api-reference/avatax/rest/v2/methods/CertExpressInvites/">CertExpressInvites</a> to better explain the <code class="highlight-rouge">requestLink</code> field.</li>
   <li>Added new "Customer Type" data fields for customer objects.</li>
 </ul>
 
@@ -67,20 +69,20 @@ The provisioning model for exemption certificates has been updated.  Each compan
 Changes made to the [Transaction API suite](/api-reference/avatax/rest/v2/methods/Transactions/) in the March release include:
 
 <ul class="normal">
-  <li>Corrected a bug that caused TaxDate values to be returned incorrectly for certain sales orders / estimates</li>
+  <li>Corrected a bug that caused <code class="highlight-rouge">taxDate</code> on <a href="/api-reference/avatax/rest/v2/models/TransactionModel/">TransactionModel</a> objects to be returned incorrectly for certain sales orders / estimates.</li>
   <li>Deprecated the field <code class="highlight-rouge">customerVendorCode</code> and renamed as <code class="highlight-rouge">customerCode</code> for consistency with other APIs.  The old field will continue to be supported but we encourage users to switch to the new consistently named field instead.</li>
-  <li>Corrected an issue that could cause an unhandled exception in <a href="/api-reference/avatax/rest/v2/methods/Transactions/CreateOrAdjustTransaction/">CreateOrAdjustTransaction</a></li>
-  <li>Support for the fully-spelled-out JurisdictionTypeId value is now present in the transaction model</li>
+  <li>Corrected an issue that could cause an unhandled exception in <a href="/api-reference/avatax/rest/v2/methods/Transactions/CreateOrAdjustTransaction/">CreateOrAdjustTransaction API</a>.</li>
+  <li>Support for the fully-spelled-out <code class="highlight-rouge">jurisdictionTypeId</code> value is now present in the transaction model.</li>
   <li>Improved documentation for the reportingLocationCode field to explain how it differs from other location code functionality.  For more information about reporting location codes, please read the <a href="/avatax/dev-guide/locations/location-based-reporting/">Developer Guide chapter on location based reporting</a>.</li>
-  <li>Fixed a bug that affected APIs retrieving a single transaction with an unspecified document type value</li>
+  <li>Fixed a bug that affected APIs retrieving a single transaction with an unspecified document type value.</li>
   <li>Updated logic for fetching transactions to permit fetching the last version of a cancelled transaction.</li>
-  <li>The RefundTransaction API now includes an option for recalculating taxes based on the most recent tax laws for a state as of the date of the original sale.  This option is mandatory for customers using Streamlined Sales Tax.</li>
+  <li>The <a href="/api-reference/avatax/rest/v2/methods/Transactions/RefundTransaction/">RefundTransaction API</a> now includes an option for recalculating taxes based on the most recent tax laws for a state as of the date of the original sale.  This option is mandatory for customers using Streamlined Sales Tax.</li>
   <li>Added a custom error message when attempting to void an already-voided or cancelled transaction.  Please note that void and cancel are synonyms in AvaTax.</li>
 </ul>
 
 <h3>Nexus Behavior Changes</h3>
 
-To ensure consistency in a company's tax profile, changes have been made to the nexus declaration system.  If you attempt to declare a nexus in a smaller jurisdiction (for example, a city) without having declared nexus in a parent jurisdiction (for example, the state where the city is located) you will receive a more detailed error.
+To ensure consistency in a company's tax profile, changes have been made to the [Nexus API suite](/api-reference/avatax/rest/v2/methods/Nexus/).  If you attempt to declare a nexus in a smaller jurisdiction (for example, a city) without having declared nexus in a parent jurisdiction (for example, the state where the city is located) you will receive a more detailed error.
 
 This behavior is also being extended to handle nexus deletion, end-date changes, and updates.
 
@@ -106,14 +108,14 @@ Existing accounts can change these settings by visiting [https://admin.avalara.c
   <li>Added support for the Admin website to provide a better experience when creating new usernames.</li>
   <li>Improved documentation for batch upload processing times.</li>
   <li>Corrected a bug in the TaxRule API that presented an unexpected error message when creating with the new JurisdictionTypeId value.</li>
-  <li>Corrected documentation for "code" parameter in the MultiDocument API suite.</li>
+  <li>Corrected documentation for <code class="highlight-rouge">code</code> parameter in the MultiDocument API suite.</li>
   <li>The user browse API will now automatically hide your license key user.  This license key user is known as the "Anonymous User" since it represents API calls that have occurred using the company's license key authentication.</li>
-  <li>Improved error messages when a user attempts to use a $filter command against a field that is non-filterable.</li>
+  <li>Improved error messages when a user attempts to use a <code class="highlight-rouge">$filter</code> command against a field that is non-filterable.</li>
   <li>Corrected a bug that failed to return three character alphabetic codes for ISO3166 countries.</li>
-  <li>Correction to multi document API suites related to "Any" document codes.</li>
+  <li>Correction to multi document API suites related to <code class="highlight-rouge">Any</code> document types.</li>
   <li>Corrected a general bug in multi-page pagination that affected some in-memory cached datasets.</li>
   <li>Custom error message for inserting a new subscription with a different service type.</li>
-  <li>Ensure System field is blank when fetching harmonized tariff system code sections.</li>
+  <li>Ensure <code class="highlight-rouge">system</code> field is blank when fetching harmonized tariff system code sections.</li>
   <li>Corrected an issue that incorrectly flagged some landed cost transactions as errors instead.</li>
   <li>Added new entity use codes for new types of exempt categories.</li>
   <li>Ability to search using filter text against harmonized tariff system codes.</li>
