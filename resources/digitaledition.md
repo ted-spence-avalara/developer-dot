@@ -35,55 +35,6 @@ CRUSH Digital Edition allows accounting professionals to access some of the expe
       <th>Registration Link</th>
     </tr>
     <tr>
-      <td>How to Start the Sales and Use Tax Conversation with a Client</td>
-      <td><img src="/public/images/crushdc_silver.png" width="30" height="30" align="right" alt="CRUSHDC 2018 Silver Sponsor" />Monika Miles, Miles Consulting</td>
-      <td>February 26th, 2018</td>
-      <td>9:00 AM MST</td>
-      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UC3GpEAL">CPAacademy.org</a></td>
-    </tr>
-    <tr>
-      <td>Amazon’s Decision to Disclose FBA Seller Details in MA: What CPAs Need to Know to Advise Their Clients</td>
-      <td>Sylvia Dion, DionPrieto</td>
-      <td>March 1st, 2018</td>
-      <td>10:00 AM MST</td>
-      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UnMq3EAF">CPAacademy.org</a></td>
-    </tr>
-    <tr>
-      <td>Tax Reform – How Does It Impact Your Business Clients</td>
-      <td>Joshua Wu, Strasburger Attorneys</td>
-      <td>March 5th, 2018</td>
-      <td>10:00 AM MST</td>
-      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UDxUeEAL">CPAacademy.org</a></td>
-    </tr>
-    <tr>
-      <td>Ecommerce Essentials #3:  Taxability Determinations and Sourcing Rules for Online Sales</td>
-      <td><img src="/public/images/crushdc_silver.png" width="30" height="30" align="right" alt="CRUSHDC 2018 Silver Sponsor" />Joni Johnson-Powe, Taxnologi</td>
-      <td>March 6th, 2018</td>
-      <td>10:00 AM MST</td>
-      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UEUc8EAH">CPAacademy.org</a></td>
-    </tr>
-    <tr>
-      <td>8 Tips to Running the 100%  Virtual Firm</td>
-      <td>Marjorie Adams, Fourlane</td>
-      <td>March 7th, 2018</td>
-      <td>10:00 AM MST</td>
-      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000TZ5urEAD">CPAacademy.org</a></td>
-    </tr>
-    <tr>
-      <td>Audit: Avoid It, or Else Navigate Like a Pro</td>
-      <td><img src="/public/images/crushdc_silver.png" width="30" height="30" align="right" alt="CRUSHDC 2018 Silver Sponsor" />Monika Miles, Miles Consulting</td>
-      <td>March 8th, 2018</td>
-      <td>2:00 PM EST</td>
-      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UEbJSEA1">CPAacademy.org</a></td>
-    </tr>
-    <tr>
-      <td>Sales and Use Tax for Digital Products and Services </td>
-      <td>Joe Endres, Hodgson Russ Attorneys</td>
-      <td>March 9th, 2018</td>
-      <td>8:00 AM MST</td>
-      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UnR6fEAF">CPAacademy.org</a></td>
-    </tr>
-    <tr>
       <td>Sales Tax Exemptions for Manufacturers</td>
       <td>Mark Loyd, Bingham Greenbaum Doll</td>
       <td>March 12th, 2018</td>
@@ -91,25 +42,39 @@ CRUSH Digital Edition allows accounting professionals to access some of the expe
       <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UDw7PEAT">CPAacademy.org</a></td>
     </tr>
     <tr>
-      <td>Ecommerce Essentials #4:  Sales Taxes Tips for Market Place Sellers (EBay, Amazon, Shopify, CrateJoy)</td>
+      <td>Ecommerce Essentials:  Sales Taxes Tips for Market Place Sellers (EBay, Amazon, Shopify, CrateJoy)</td>
       <td><img src="/public/images/crushdc_silver.png" width="30" height="30" align="right" alt="CRUSHDC 2018 Silver Sponsor" />Joni Johnson-Powe, Taxnologi</td>
       <td>March 20th, 2018</td>
       <td>9:00 AM MST</td>
       <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UEUmxEAH">CPAacademy.org</a></td>
     </tr>
     <tr>
-      <td> Amazon’s Decision to Disclose FBA Seller Details in MA: What CPAs Need to Know to Advise Their Clients</td>
+      <td>Amazon’s Decision to Disclose FBA Seller Details in MA: What CPAs Need to Know to Advise Their Clients</td>
       <td>Sylvia Dion, DionPrieto</td>
       <td>March 22nd, 2018</td>
       <td>10:00 AM MST</td>
       <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UnMq3EAF">CPAacademy.org</a></td>
     </tr>
     <tr>
-      <td>8 Tips to Running the 100%  Virtual Firm</td>
-      <td>Marjorie Adams, Fourlane</td>
-      <td>March 29th, 2018</td>
+      <td>How to Make Money Doing Sales Tax Returns</td>
+      <td>Andrew Johnson, Peisner Johnson</td>
+      <td>March 27th, 2018</td>
+      <td>9:00 AM MST</td>
+      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UqX8MEAV">CPAacademy.org</a></td>
+    </tr>
+    <tr>
+      <td>Sales Tax Hot Topics for CPAs -SALT Issues Affecting Your Clients Today</td>
+      <td><img src="/public/images/crushdc_silver.png" width="30" height="30" align="right" alt="CRUSHDC 2018 Silver Sponsor" />Monika Miles, Miles Consulting</td>
+      <td>March 27th, 2018</td>
+      <td>2:00 PM MST</td>
+      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000Upc7sEAB">CPAacademy.org</a></td>
+    </tr>
+    <tr>
+      <td>Sales and Use Tax Traps</td>
+      <td>Mark Stone, Sales Tax Defense LLC</td>
+      <td>March 28th, 2018</td>
       <td>10:00 AM MST</td>
-      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000TZ5urEAD">CPAacademy.org</a></td>
+      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UpdXQEAZ">CPAacademy.org</a></td>
     </tr>
     <tr>
       <td>Audit: Avoid It, or Else Navigate Like a Pro</td>
@@ -119,11 +84,46 @@ CRUSH Digital Edition allows accounting professionals to access some of the expe
       <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UEbbDEAT">CPAacademy.org</a></td>
     </tr>
     <tr>
+      <td>8 Tips to Running the 100%  Virtual Firm</td>
+      <td>Marjorie Adams, Fourlane</td>
+      <td>March 29th, 2018</td>
+      <td>10:00 AM MST</td>
+      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000TZ5urEAD">CPAacademy.org</a></td>
+    </tr>
+    <tr>
       <td>Make Sales Tax a Strategy, not an Afterthought</td>
       <td>Judy Vorndran, Tax Ops</td>
       <td>April 3rd, 2018</td>
       <td>10:00 AM MST</td>
       <td><a href="https://www.cpaacademy.org/webinars/a0D4400000Uo1j1EAB">CPAacademy.org</a></td>
+    </tr>
+    <tr>
+      <td>Salestaxmageddon: The Day After</td>
+      <td>Brian Weaver, Brian Weaver Consulting LLC</td>
+      <td>April 4th, 2018</td>
+      <td>11:00 AM MST</td>
+      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UqekJEAR">CPAacademy.org</a></td>
+    </tr>
+    <tr>
+      <td>How to Start the Sales and Use Tax Conversation with a Client</td>
+      <td><img src="/public/images/crushdc_silver.png" width="30" height="30" align="right" alt="CRUSHDC 2018 Silver Sponsor" />Monika Miles, Miles Consulting</td>
+      <td>April 24th, 2018</td>
+      <td>10:00 AM MST</td>
+      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000Uqdc6EAB">CPAacademy.org</a></td>
+    </tr>
+    <tr>
+      <td>The Future of Accounting</td>
+      <td>Danetha Doe, Danetha Doe Consulting Group</td>
+      <td>April 25th, 2018</td>
+      <td>12:00 PM MST</td>
+      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UqcWhEAJ">CPAacademy.org</a></td>
+    </tr>
+    <tr>
+      <td>How to Make Money Doing Sales Tax Returns</td>
+      <td>Andrew Johnson, Peisner Johnson</td>
+      <td>April 25th, 2018</td>
+      <td>1:00 PM MST</td>
+      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UqXDvEAN">CPAacademy.org</a></td>
     </tr>
     <tr>
       <td>Ecommerce Essentials #1 All Things Nexus- What Does it Mean, How Does it Work, and Who Should Care</td>
@@ -133,6 +133,34 @@ CRUSH Digital Edition allows accounting professionals to access some of the expe
       <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UBwtEEAT">CPAacademy.org</a></td>
     </tr>
     <tr>
+      <td>How to Start the Sales and Use Tax Conversation with a Client</td>
+      <td><img src="/public/images/crushdc_silver.png" width="30" height="30" align="right" alt="CRUSHDC 2018 Silver Sponsor" />Monika Miles, Miles Consulting</td>
+      <td>May 9th, 2018</td>
+      <td>8:00 AM MST</td>
+      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UqdfEEAR">CPAacademy.org</a></td>
+    </tr>
+  </table>
+</div>
+
+## Sessions During CRUSHDC 2018
+
+<div class="mobile-table">
+  <table class="styled-table">
+    <tr>
+      <th>Webinar Topic</th>
+      <th>Presenter</th>
+      <th>Webinar Date</th>
+      <th>Session Time</th>
+      <th>Registration Link</th>
+    </tr>
+    <tr>
+      <td>Small Practice, Big Dreams: Elevate your Brand, Grow Your Practice</td>
+      <td>Stacy Kildal, Kildal Services</td>
+      <td>May 10th, 2018</td>
+      <td>9:00 AM MST</td>
+      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000Uq28HEAR">CPAacademy.org</a></td>
+    </tr>
+    <tr>
       <td>Cryptocurrency - How Does It Impact Your Firm and Your  Clients</td>
       <td>Matthew May, Acuity</td>
       <td>May 10th, 2018</td>
@@ -140,11 +168,11 @@ CRUSH Digital Edition allows accounting professionals to access some of the expe
       <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UDKGeEAP">CPAacademy.org</a></td>
     </tr>
     <tr>
-      <td>Make Sales Tax a Strategy, not an Afterthought</td>
-      <td>Judy Vorndran, Tax Ops</td>
-      <td>May 17th, 2018</td>
-      <td>9:00 AM MST</td>
-      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000Uo1zFEAR">CPAacademy.org</a></td>
+      <td>The Riches are in the Niches</td>
+      <td>Danetha Doe, Danetha Doe Consulting Group</td>
+      <td>May 11th, 2018</td>
+      <td>11:00 AM MST</td>
+      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000Uqd4jEAB">CPAacademy.org</a></td>
     </tr>
   </table>
 </div>
