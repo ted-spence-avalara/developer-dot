@@ -157,7 +157,7 @@ Account ID/license key and username/password authentication are very similar in 
     </li>
     <li>Disadvantages:
         <ul class="dev-guide-list">
-            <li>There is only one license key for each company.</li>
+            <li>There is only one license key for each account.</li>
             <li>Revoking your license key will cause all API calls with the old license key to fail.</li>
             <li>It is not possible to identify individual users taking an action when license key authentication is used.</li>
         </ul>
