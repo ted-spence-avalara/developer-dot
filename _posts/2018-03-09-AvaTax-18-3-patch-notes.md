@@ -39,7 +39,7 @@ The AvaTax March release will provide a two-week period where the March release 
 
 The AvaTax API team will host a [developer webinar to discuss the March release](https://attendee.gotowebinar.com/register/8135505725963625219) on Monday, March 19th, 2018, at 10:00 AM Pacific time.  If you would like to ask questions about the AvaTax API 18.3 release, please sign up and join us for a lively discussion of the changes to the AvaTax API.  The webinar will conclude with a 15 minute Q&A session for developers to ask any questions about this release cycle.
 
-<p class="btn-callout"><a href="https://attendee.gotowebinar.com/register/8135505725963625219" role="button">Register for AvaTax API 18.3 Webinar</a></p>
+<p class="btn-callout"><a href="https://attendee.gotowebinar.com/register/8135505725963625219" role="button">Register for AvaTax API 18.3 Release Preview Webinar</a></p>
 
 <h3>Exemption Certificates API</h3>
 
