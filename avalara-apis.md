@@ -22,7 +22,7 @@ doctype: overview
         <div class="row">
             <div class="col-md-12"><h2>Calculate sales &amp; sellers use tax, consumer use, and value-added tax (VAT)</h2></div>
         </div>
-        <p>Calculate transactional taxes with rooftop-level accuracy and real-time product taxability information using our AvaTax RESTful API, or SOAP API, which include class wrappers (adapters) for a variety of languages to assist in calling the web service. <a href="/avatax/get-started#signup">Get started with the AvaTax API now.</a></p>
+        <p>Calculate transactional taxes with rooftop-level accuracy and real-time product taxability information using our AvaTax RESTful API, or SOAP API, which include class wrappers (adapters) for a variety of languages to assist in calling the web service. <a href="/avatax/signup">Get started with the AvaTax API now.</a></p>
         <div class="pageTitle">
             <img src="/public/images/Avalara_logo.svg" alt="Avalara">
             <span>AvaTax</span>

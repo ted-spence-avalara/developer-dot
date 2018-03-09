@@ -16,7 +16,7 @@ avaform: 1
 </ul>
 <div class="avaform-wrapper"></div>
 
-If you are having difficulty deciding where to start, check out our <a href="/avatax/get-started">getting started guide</a>. A few other good resources are the following blog posts:
+If you are having difficulty deciding where to start, check out our <a href="/avatax/signup">getting started guide</a>. A few other good resources are the following blog posts:
 <ul class="normal">
     <li><a href="/blog/2016/09/30/getting-started-with-avalara-apis/">Getting Started With Avalara's APIs</a></li>
     <li><a href="/blog/2016/10/04/getting-started-with-avatax-rest-v2/">Getting Started with AvaTax REST v2</a></li>

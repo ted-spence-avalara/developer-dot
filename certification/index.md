@@ -97,5 +97,5 @@ nav: certification
     </div>
 </div>
 <div class="row padding-top">
-    <div class="col-sm-offset-3 col-sm-6 text-center btn-callout"><a href="/avatax/get-started" role="button">Get started</a></div>
+    <div class="col-sm-offset-3 col-sm-6 text-center btn-callout"><a href="/avatax/signup" role="button">Get started</a></div>
 </div>

@@ -44,7 +44,7 @@ nav: home
           </div>
         </div>
         <div class="row margin-top">
-          <div class="col-md-12 text-center btn-callout"><a href="/avatax/get-started" role="button">Try the API</a></div>
+          <div class="col-md-12 text-center btn-callout"><a href="/avatax/signup" role="button">Try the API</a></div>
         </div>
         <div class="row bg-white border-top padding-bottom">
           <div class="col-md-6 col-md-offset-3 text-center">
