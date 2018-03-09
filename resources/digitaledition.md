@@ -5,7 +5,7 @@ nav: resources
 
 <img src="/public/images/crushdc_digital.png" width="512" height="171" alt="CRUSHDC 2018 Digital Edition" />
 
-CRUSH Digital Edition allows accounting professionals to access some of the expert content available at this year’s premier event for transaction tax professionals, CRUSH DC. Join one of our many webinars presented by industry experts and Avalara leadership on topics related to sales tax compliance and future trends, as well as tips and techniques on how to bring more value to client relationships and build your compliance practice. For each webinar you attend, you’ll also earn free CPE credit. CRUSH Digital Edition is a sample of what you could experience if you were joining us at CRUSH DC, including webinars on state and local tax regulation updates, managing an audit, and compliance for ecommerce or omnichannel environments. The largest tax compliance conference of its kind, CRUSH brings together the experts, technology, and peers to provide support for all aspects of your compliance.
+CRUSH Digital Edition gives accounting professionals access just some of the expert content available at this year’s premier live event for transaction tax professionals, CRUSH DC. Join one of our many webinars presented by industry experts as shown on the list below, and get free CPE credit for each webinar.
 
 **Join our CRUSH Digital Edition webinar series to learn more about these hot topics:**
 
@@ -19,7 +19,7 @@ CRUSH Digital Edition allows accounting professionals to access some of the expe
   <li>Drop ship & fulfillment implications</li>
 </ul>
 
-**Interested in attending the premier event for transaction tax professionals in person?** Join us at CRUSH DC where we’ll share our vision for mastering tax trends over three days of networking, tech demos, learning labs, and knowledge sharing led by partners and experts from around the world. With the option of nine different session tracks, and over 100 sessions, we will dive into future trends, industry changes, and anticipated developments that affect the field of tax compliance, earning you up to 13.5 CPE hours.  For more information visit [www.avalaracrush.com](https://www.avalaracrush.com).
+**Interested in attending the premier event for transaction tax professionals in person?** Join us at CRUSH DC where we’ll share our vision for mastering tax trends over three days of networking, tech demos, and knowledge sharing led by partners and experts from around the world. For more information visit [www.avalaracrush.com](https://www.avalaracrush.com) and quote promo code **CPA5**.
 
 <p class="btn-callout"><a href="http://www.avalaracrush.com/events/crush-dc-2018/event-summary-67b6e698ed174ce7bb0b602320e448d3.aspx" role="button">Learn more about CRUSH DC 2018 now!</a></p>
 
