@@ -221,7 +221,7 @@ paths:
 securityDefinitions:
   basic_auth:
     type: basic
-    description: "You will not be able to make web service calls until you have received an active account number and license key via email, or a username and password from the [sandbox registration](/avatax/get-started). Authentication is in the format `Basic [account number]:[license key]` encoded to Base64, as per basic access authentication. For example: `Authorization: Basic a2VlcG1vdmluZzpub3RoaW5nMnNlZWhlcmU=`"
+    description: "You will not be able to make web service calls until you have received an active account number and license key via email, or a username and password from the [sandbox registration](/avatax/signup). Authentication is in the format `Basic [account number]:[license key]` encoded to Base64, as per basic access authentication. For example: `Authorization: Basic a2VlcG1vdmluZzpub3RoaW5nMnNlZWhlcmU=`"
 definitions:
   CancelTaxRequest:
     required:

@@ -19,7 +19,7 @@ Want to try out AvaTax before you buy?  As of the February release, AvaTax now o
 
 Starting a small business?  Want tax rates without all the hassle?  Avalara now offers a free TaxRates API that is available for all addresses in the United States.  This API is ready to use, requires no setup at all, and provides rates and boundaries based on the same advanced tax content that Avalara uses to provide its enterprise service, AvaTax.
 
-You should keep in mind, though, that without the advanced setup and configuration features provided by the enterprise AvaTax service, you will encounter some differences from what an enterprise customer would experience.  Our sales and support team is always onhand to help you improve your tax determination; if you're curious about the advanced tax determination features, please [reach out today](https://www.avalara.com/get-started).
+You should keep in mind, though, that without the advanced setup and configuration features provided by the enterprise AvaTax service, you will encounter some differences from what an enterprise customer would experience.  Our sales and support team is always onhand to help you improve your tax determination; if you're curious about the advanced tax determination features, please [reach out today](https://www.avalara.com/signup).
 
 Here's how to get started!
 
@@ -82,7 +82,7 @@ The free TaxRates API was designed to be as simple and easy to use as possible, 
     <li>Businesses may have "nexus" in some US states, but not in others.  According to the ruling in <a href="https://en.wikipedia.org/wiki/Quill_Corp._v._North_Dakota">Quill vs North Dakota</a>, companies without nexus are not required to charge sales or use taxes in states where they do not have nexus.  The free TaxRates API assumes that you have nexus in any address; the enterprise AvaTax product allows you to configure your nexus declarations precisely in both state and local jurisdictions</li>
     <li>Some jurisdictions in the United States provide multiple tax rates that vary by the type of product.  The TaxRates API assumes that you are always selling tangible personal property; the AvaTax enterprise service allows you to configure thousands of different product types and to get reliable tax determination for all of them.</li>
     <li>When it comes time to file your taxes, the enterprise AvaTax service provides full integration with Avalara's Managed Returns Service.  We can handle your tax returns for you automatically, and ensure that you remit exactly what you collected.  You can always <a href="https://www.avalara.com/products/sales-and-use-tax/returns/">talk to an Avalara Returns Compliance specialist</a> anytime for more information on how to file your tax returns quickly and reliably.</li>
-    <li>There are lots of other differences - and if you're interested in precise tax determination, please <a href="https://www.avalara.com/get-started">request a demo</a> and we'd be happy to show you how AvaTax can help your business.</li>
+    <li>There are lots of other differences - and if you're interested in precise tax determination, please <a href="https://www.avalara.com/signup">request a demo</a> and we'd be happy to show you how AvaTax can help your business.</li>
 </ul>
 
 <h2></h2>

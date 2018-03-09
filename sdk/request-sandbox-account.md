@@ -14,4 +14,4 @@ This sandbox account is for evaluation only and is initially active for 60 days,
 
 Once you've requested your account, visit the <a target="_blank" href="https://sandbox.admin.avalara.com">AvaTax Website</a> to walk through the quick introduction and set up your company's tax profile!
 
-For more information about calling AvaTax and using your new development account, check out our <a href="/avatax/get-started">getting started guide</a>.
+For more information about calling AvaTax and using your new development account, check out our <a href="/avatax/signup">getting started guide</a>.

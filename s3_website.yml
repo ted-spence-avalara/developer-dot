@@ -14,7 +14,9 @@ ignore_on_server:
 treat_zero_length_objects_as_redirects: true
 
 redirects:
-  form: /avatax/get-started
+  form: /avatax/signup
+  get-started/: /avatax/signup
+  signup/: /avatax/signup
   api-documentation: /avalara-apis
   api-documentation/avatax16: /avalara-apis
   api-documentation/avatax-15-api: /avatax
@@ -63,7 +65,7 @@ redirects:
   api-documentation/avatax-15-api/designing-your-integration/api-integration-checklist/avalara-avatax-with-returns: /certification/avatax/returns
   api-documentation/avatax-15-api/designing-your-integration/api-integration-checklist/avalara-avatax-for-use-tax: /certification/avatax/use-tax
   api-documentation/avatax-15-api/designinÉr-integration/api-integration-checklist/avalara-avatax-for-point-of-sale: /avatax/certification
-  api-documentation/avatax-15-api/getting-started: avatax/get-started
+  api-documentation/avatax-15-api/getting-started: avatax/signup
   api-documentation/avatax-15-api/getting-started/logins: avatax/logins
   api-documentation/avatax-15-api/become-a-certified-partner: /certification
   api-documentation/certcapture-api: /certcapture
@@ -112,15 +114,15 @@ redirects:
   certification/preferred-developers: /resources/preferred-developers
   wp-content/apireference/master: /avatax/api-reference
   wp-content/apireference/master/index.html: /api-reference/avatax/soap/
-  resources/getting-started/:  /avatax/get-started
+  resources/getting-started/:  /avatax/signup
   api-docs/api-reference:  /api-reference/avatax/rest/v2
   api-docs/best-practices/technical-notes/ssl-certificates:  /avatax/ssl-certificates
-  api-get-started:  /avatax/get-started
+  api-get-started:  /avatax/signup
   api-docs/certcapture-api:  /certcapture
   api-docs/best-practices/document-lifecycle:  /avatax/use-cases
   api-docs/best-practices/api-integration-checklist:  /avatax/certification
-  api-get-started:  /avatax/get-started
-  api-get-started/:  /avatax/get-started
+  api-get-started:  /avatax/signup
+  api-get-started/:  /avatax/signup
   api-docs/best-practices/:  /avatax
   api-docs/best-practices:  /avatax
   api-docs/soap/finding-your-companyid:  /avatax/finding-your-companyid
@@ -134,8 +136,8 @@ redirects:
   resources/frequently-asked-questions:  /avatax
   api-docs/soap/soap-or-rest:  /avatax/soap-or-rest
   api-docs/designing-your-integration/soap-or-rest:  /avatax/soap-or-rest
-  getting-started/:  /avatax/get-started
-  free-trial/:  /avatax/get-started
+  getting-started/:  /avatax/signup
+  free-trial/:  /avatax/signup
   api-docs/best-practices/messages-results-and-errors/common-errors:  /avatax/common-errors
   api-docs/soap/making-direct-soap-calls:  /api-reference/avatax/soap
   api-docs/best-practices/technical-notes/profile-client-property:  /api-reference/avatax/rest/v2
@@ -221,7 +223,7 @@ redirects:
   api-docs/rest/certcapture-api:  /certcapture
   api-docs/api-reference/soap-php/:  /api-reference/avatax/soap
   api-docs/rest/resources/tax/taxsummary:  /api-reference/avatax/rest/v2
-  resources/api-get-started:  /avatax/get-started
+  resources/api-get-started:  /avatax/signup
   api-docs/rest/resources/tax/get/tax-get/sample-xml-request-successful/:  /api-reference/avatax/rest/v2
   api-docs/api-reference/soap-java/posttax/feed:  /api-reference/avatax/soap
   api-docs/rest/resources/address-validation:  /api-reference/avatax/rest/v2
@@ -317,7 +319,7 @@ redirects:
   api-docs/api-reference/soap-php/adjusttax/feed:  /api-reference/avatax/soap
   api-docs/rest/resources/tax/get/ver-post:  /api-reference/avatax/rest/v2
   api-docs/api-reference/rest-curl/gettax/trackback/:  /api-reference/avatax/rest/v2
-  api-get-started/feed:  /avatax/get-started
+  api-get-started/feed:  /avatax/signup
   api-docs/rest/resources/tax/get/ver-get/sample-request-unsuccessful:  /api-reference/avatax/rest/v2
   api-docs/rest/resources/tax/get/ver-get/sample-json-request-successful:  /api-reference/avatax/rest/v2
   api-docs/api-reference/posttax-and-committax/feed/feed:  /api-reference/avatax/soap
@@ -511,7 +513,7 @@ redirects:
   api-docs/best-practices/document-lifecycle/canceltax:  /avatax/use-cases
   api-docs/best-practices/technical-notes:  /avatax/
   we-heart-open-source/:  /
-  free-trial/:  /avatax/get-started
+  free-trial/:  /avatax/signup
   api-docs/api-reference/soap-php/images/navbar.png:  /api-reference/avatax/soap
   api-docs/rest/resources/tax/summary/:  /api-reference/avatax/rest/v2
   api-docs/api-reference/rest-curl/administrator/index.php:  /api-reference/avatax/rest/v2
@@ -521,7 +523,8 @@ redirects:
   api-docs/rest/resources/tax/get/tax-post/response/taxdetail/:  /api-reference/avatax/rest/v2
   api-docs/best-practices/document-lifecycle/ping:  /avatax/use-cases
   api-docs/rest/resources/tax/get/ver-post/response/feed/feed:  /api-reference/avatax/rest/v2
-  api-get-started\':  /avatax/get-started
+  api-get-started\':  /avatax/signup
+  api-signup\': avatax/signup
   api-docs/rest/resources/tax/get/ver-post/feed:  /api-reference/avatax/rest/v2
   api-docs/rest/resources/accessing-resources/feed/:  /api-reference/avatax/rest/v2
   api-docs/rest/resources/tax/get/ver-get/sample-xml-request-successful/feed:  /api-reference/avatax/rest/v2
@@ -575,7 +578,7 @@ redirects:
   api-documentation/avatax-16-api/designing-your-integration:  /avalara-apis
   api-reference/avatax15.php:  /api-reference/avatax/rest/v2
   wp-content/apireference/master/:  /api-reference/avatax/soap
-  get-started/:  /avatax/get-started
+  get-started/:  /avatax/signup
   api-documentation/avatax-16-api/administrator/index.php:  /avalara-apis
   api-docs/designing-your-integration/handling-return-invoices: /avatax/handling-return-invoices
   api-docs/designing-your-integration/handling-return-invoices/invoice-and-return:  /avatax/handling-return-invoices
@@ -585,7 +588,7 @@ redirects:
   wp-content/apireference/master//wp-admin/includes/themes.php:  /api-reference/avatax/rest/v2
   wp-content/apireference/master/wp-content/plugins/wp-ecommerce-shop-styling/includes/download.php:  /api-reference/avatax/rest/v2
   api-documentation/avatax-16-api/api-docs/api-sample-code:  /avalara-apis
-  api-get-started.:  /avatax/get-started
+  api-get-started.:  /avatax/signup
   wp-content/apireference/master:  /api-reference/avatax/rest/v2
   api-docs/rest/resources/tax/get/ver-post/line/:  /api-reference/avatax/rest/v2
   api-documentation/avatax-15-api/avatax-15-rest-api-reference:  /api-reference/avatax/rest/v2
