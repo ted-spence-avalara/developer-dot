@@ -7,18 +7,6 @@ nav: resources
 
 CRUSH Digital Edition gives accounting professionals access just some of the expert content available at this year’s premier live event for transaction tax professionals, CRUSH DC. Join one of our many webinars presented by industry experts as shown on the list below, and get free CPE credit for each webinar.
 
-**Join our CRUSH Digital Edition webinar series to learn more about these hot topics:**
-
-<ul class="normal">
-  <li>Ecommerce compliance including Amazon FBA matters</li>
-  <li>Managing a client audit</li>
-  <li>State and local tax regulation updates</li>
-  <li>Omni channel compliance</li>
-  <li>Automation</li>
-  <li>Value pricing models</li>
-  <li>Drop ship & fulfillment implications</li>
-</ul>
-
 **Interested in attending the premier event for transaction tax professionals in person?** Join us at CRUSH DC where we’ll share our vision for mastering tax trends over three days of networking, tech demos, and knowledge sharing led by partners and experts from around the world. For more information visit [www.avalaracrush.com](https://www.avalaracrush.com) and quote promo code **CPA5**.
 
 <p class="btn-callout"><a href="http://www.avalaracrush.com/events/crush-dc-2018/event-summary-67b6e698ed174ce7bb0b602320e448d3.aspx" role="button">Learn more about CRUSH DC 2018 now!</a></p>
