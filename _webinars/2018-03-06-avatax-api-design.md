@@ -15,4 +15,6 @@ In the latest installment of Office Hours with AvaTax, Avalara’s Senior Direct
 
 Also, don't miss the next installment of [Office Hours with AvaTax at 10 a.m. PT on March 13](https://developer.avalara.com/webinars/2018/03/13/), featuring John Lamberton, a senior manager on Avalara's Engineering Team. John will discuss how AvaTax handles refund transactions.
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=MDwFmyKU75M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MDwFmyKU75M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
