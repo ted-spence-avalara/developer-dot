@@ -2,7 +2,7 @@
 layout: post
 title: AvaTax API 18.3 Patch Notes
 description: Release Notes for the March 2018 update to the AvaTax API
-date: 2018-03-09 16:00
+date: 2018-03-12 10:00
 author: Ted Spence
 comments: true
 categories: [avatax, patch notes]
@@ -23,12 +23,12 @@ This article is about the March 2018 monthly update to the AvaTax API.
         <tr>
             <td>Sandbox</td>
             <td><a href="https://sandbox-rest.avatax.com">https://sandbox-rest.avatax.com</a></td>
-            <td>2018-03-15</td>
+            <td>2018-03-14</td>
         </tr>
         <tr>
             <td>Production</td>
             <td><a href="https://rest.avatax.com">https://rest.avatax.com</a></td>
-            <td>2018-03-29</td>
+            <td>2018-03-28</td>
         </tr>
     </table>
 </div>
