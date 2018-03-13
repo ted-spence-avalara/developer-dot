@@ -45,4 +45,4 @@ You may update your C# SDK version by following these steps:
 
 6. **Your version of the AvaTax C# SDK is updated and you are good to go!**
 
-Thank for using AvaTax! Please feel free to leave comments below. If you have have questions, we would love to hear from you in the forums.
+Thank for using AvaTax! Please feel free to leave comments below. If you have have questions, we would love to hear from you in the [developer forums](https://community.avalara.com/avalara/category_sets/developers).
