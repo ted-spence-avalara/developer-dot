@@ -14,7 +14,7 @@ On the document lines that you will pass to us in the GetTaxRequest, there are a
 
 <strong>ItemCode</strong> is typically a SKU or other product ID, and usually represents individual products or services.
 
-The Line <strong>Description</strong> is a string that will elaborate more details about the product, such as name, color, size, etc.
+The <strong>Line Description</strong> is a string that will elaborate more details about the product, such as name, color, size, etc.
 <blockquote><strong>Note:</strong> If you are working within the constraints of the <strong>Streamlined Sales Tax (SST)</strong> program, you are required to provide both an ItemCode and Description for each product line on your orders. As such, we consider this to be the <strong>best practice</strong> for all clients, including those not currently participating in SST.</blockquote>
 The other product property you need to make note of on document lines is <strong>TaxCode</strong>. Subscribers to our Pro service are able to utilize our Compliance team's tax rule research by mapping <a href="https://developer.avalara.com/avatax/dev-guide/product-taxability/mapping-items-to-tax-code">AvaTax System Tax Codes</a> to their items. Your selections from this list of tax codes can be passed in the TaxCode property of each Line to allocate that product to a particular taxability category. This is generally the <strong>best practice</strong> if you can manage TaxCodes in your application.
 
