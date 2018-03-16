@@ -17,3 +17,11 @@ layout: default
     <h2>{{ page.date | date: " %A, %B %d, %Y at %I:%M %p"}}</h2>
     <p class="blog-content">{{ content }}</p>
 </div>
+
+{% if page.linkurl %}
+    <p class="btn-callout"><a href="{{ page.linkurl }}" role="button">Sign Up Now</a></p>
+{% endif %}
+
+{% if page.youtube %}
+    <iframe width="560" height="315" src="{{ page.youtube }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{% endif %}
