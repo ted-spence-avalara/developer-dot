@@ -601,3 +601,4 @@ redirects:
   api-docs/designing-your-integration/errors-and-outages/common-errors: /avatax/common-errors
   # fix for blog redirect
   blog/2017/11/17/renaming-transactions: /blog/2017/11/14/renaming-transactions
+  certification/avatax/point-of-sale-badge: /certification/avatax/tax-content-badge

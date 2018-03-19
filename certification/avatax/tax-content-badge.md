@@ -1,15 +1,15 @@
 ---
 layout: default
-title: AvaTax Point of Sale Badge Requirements
+title: AvaTax Tax Content Badge Requirements
 product: avaTax
 doctype: integration_checklists
 ---
  <div class="row padding-top padding bottom">
     <div class="col-sm-2">
-      <img src="/public/images/devdot/badges/POINTOFSALE.svg" class="img-responsive" alt="Avalara Certified Solution">
+      <img src="/public/images/devdot/badges/taxcontent.svg" class="img-responsive" alt="Avalara Certified Solution">
     </div>
     <div class="col-sm-8 padding-top">
-      <h2>Avalara AvaTax Point of Sale Badge Requirements</h2>
+      <h2>Avalara AvaTax Tax Content Badge Requirements</h2>
       <h3>Prerequisite - Avalara Certified for Sales Tax</h3>
       
       <hr>
