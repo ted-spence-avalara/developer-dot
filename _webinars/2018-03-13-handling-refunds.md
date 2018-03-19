@@ -6,9 +6,11 @@ author: Ted Spence and John Lamberton
 comments: true
 product: avatax
 doctype: webinar
+youtube: https://www.youtube.com/embed/wCeRwUiKwnk
 ---
 
 Office Hours with AvaTax - Handling Refunds in AvaTax
+
 
 Tuesday, March 13 at 10 AM Pacific Time
 
@@ -16,4 +18,3 @@ In the latest installment of Office Hours with AvaTax, Avalara’s John Lamberto
 
 Don't miss our next developer [webinar](https://developer.avalara.com/webinars/2018/03/19/) at 10 a.m. PT on Monday, March 19, where AvaTax Core Engine Director Ted Spence will discuss the latest updates to the AvaTax API: [Sign Up Here](https://developer.avalara.com/webinars/2018/03/19/)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wCeRwUiKwnk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
