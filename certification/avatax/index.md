@@ -22,7 +22,7 @@ doctype: certification
 		      <a href="VAT-badge"><img src="/public/images/devdot/badges/VAT.SVG" class="img-responsive" alt="VAT Badge"></a>
 		    </div>
 		    <div class="col-sm-2">
-		       <a href="point-of-sale-badge"><img src="/public/images/devdot/badges/POINTOFSALE.svg" class="img-responsive" alt="Point of Sale Badge"></a>
+		       <a href="tax-content-badge"><img src="/public/images/devdot/badges/taxcontent.svg" class="img-responsive" alt="Tax Content Badge"></a>
 		    </div>
 		 </div>
 		 <div class="row">
