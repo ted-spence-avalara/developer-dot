@@ -36,7 +36,7 @@ $(document).ready(function()
     });
 
     $('[webinar-hide-after]').each(function() {
-      if ($(this).attr('webinar-hide-after') > getCompareDate()) {
+      if ($(this).attr('webinar-hide-after') >= getCompareDate()) {
         $(this).show();
       }
     });
