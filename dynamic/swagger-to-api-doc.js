@@ -93,7 +93,7 @@ const saveMethodsIndex = (apiName, saveRoot, product, linksArray, methodSubsetNa
 <tr>
     <td><a href="/${encodeURIComponent(l.link)}">${l.name}</a></td>
     <td>{{"${l.summary || ''}"}}</td>
-    <td class='markdown-description'>{{"${(l.description || '').replace(/"/g, "'")}" | markdownify}}</td>
+    <td class='markdown-description'>{{"${(l.description || '').replace(/"/g, "'").split(/(\.)/)[0]}." | markdownify}}</td>
 </tr>`;
         }
         return `${accum}`;
