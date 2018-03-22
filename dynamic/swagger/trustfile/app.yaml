@@ -85,7 +85,8 @@ paths:
         * All data is expected in the request body in a flat JSON format.
         * User Fields: email firstName lastName
         * Company fields: companyName companyPhone companyLine1 companyLine2 companyLine3 companyCity companyZip companyState companyCountry
-        * transactionType 
+        * companyName cannot be more than 50 chars
+        * transactionType
         * License purchase fields: totalPrice paymentId
         * Optional Lead fields: campaignId lsmr integratorId salesUserId salesUserEmail
         * The new user will receive an email to set their password
