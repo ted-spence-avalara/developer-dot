@@ -1,7 +1,7 @@
 ---
 layout: post
 title: HS Code Search in REST
-description: AvaTax C# SDK 18.2.1.168 update to address HTTP verb case issue.
+description: How to search for HS Codes using new REST endpoints.
 date: 2018-03-13 17:00
 author: Wayne Myer
 comments: true
@@ -15,7 +15,7 @@ disqus: 1
 In this post, we will discuss how customers can use our REST API to find the appropriate Harmonized System (HS) Code for items shipped across country borders. For this example, we will search for knitted scarves shipped to Spain. Let’s walk through the process of browsing and searching for HS Codes using the new REST CrossBorder endpoints.
 
 <h2>Wait, What Are HS Codes?</h2>
-The [Harmonized System](https://en.wikipedia.org/wiki/Harmonized_System) is an internationally standardized system of names and numbers to classify physical, traded products. [HS Codes](https://developer.avalara.com/api-reference/avatax/rest/v2/models/HsCodeModel/) are a hierarchically organized taxonomy of product types, based on attributes of the product. HS Codes have many aliases including: Harmonized Tariff Codes, Nomenclature Codes, or tariff codes. Within REST and this documentation, we will refer to them simply as “HS Codes.” HS Codes are also used by countries to monitor the commodities passing across their borders, to enforce domestic regulations, perform risk assessments, collect trade statistics, and in some cases, to assess domestic taxes.
+The <a href="https://en.wikipedia.org/wiki/Harmonized_System" target="_blank">Harmonized System</a> is an internationally standardized system of names and numbers to classify physical, traded products. <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/HsCodeModel/" target="_blank">HS Codes</a> are a hierarchically organized taxonomy of product types, based on attributes of the product. HS Codes have many aliases including: Harmonized Tariff Codes, Nomenclature Codes, or tariff codes. Within REST and this documentation, we will refer to them simply as “HS Codes.” HS Codes are also used by countries to monitor the commodities passing across their borders, to enforce domestic regulations, perform risk assessments, collect trade statistics, and in some cases, to assess domestic taxes.
 
 Typically, the first four to six digits of an HS Code are the same across all countries that observe the Harmonized System. Complete, valid HS Codes are usually eight- to 13-character strings assigned to each item in an international shipment. **Warning!** Complete HS Codes (beyond the first 6 characters) are specific to the destination country. Therefore, an HS Code that applies for one country may be incorrect or non-existent for another country.
 
@@ -24,7 +24,7 @@ Starting at the top of HS Code hierarchy, there are 21 Sections. Sections are hi
 Request: `/api/v2/definitions/crossborder/sections`
 
 Abridged response:
-```
+```json
 {
   "@recordsetCount": 21,
   "value": [
@@ -44,9 +44,7 @@ Abridged response:
     "system": "",
     "effDate": "2018-01-01"
   },
-  .
-  .
-  .
+  ...
   {
     "hsCode": "XI",
     "id": 135252,
@@ -55,9 +53,7 @@ Abridged response:
     "system": "",
     "effDate": "2018-01-01"
   }
-  .
-  .
-  .
+  ...
   ```
   Section XI, “Textiles and Textile Articles.” looks like a good start for a knitted scarf, so let’s search within that Section. You may recall that HS Codes are specific to countries so we need to include the destination country to search for HS Codes. If we send a request to `/api/v2/definitions/crossborder/{country}/{hsCode}` with Spain (“ES”) as the destination country and the HS code of “XI”, we get the first-level children of Sections:
 
@@ -66,7 +62,7 @@ Abridged response:
 Request: `/api/v2/definitions/crossborder/ES/XI`
 
 Abridged Response:
-```
+```json
 {
   "@recordsetCount": 14,
   "value": [
@@ -86,9 +82,7 @@ Abridged Response:
       "system": "Integrated Tariff of the European Union",
       "effDate": "2018-01-01"
     },
-    .
-    .
-    .
+    ...
     {
       "hsCode": "60",
       "id": 133875,
@@ -105,9 +99,7 @@ Abridged Response:
       "system": "Integrated Tariff of the European Union",
       "effDate": "2018-01-01"
     }
-.
-.
-.
+...
 ```
 
 These are the first level of children of Section XI, called Chapters. Chapter 61 looks like a good start for a knitted clothing article. We will continue using this search with each new code that best describes the item.
@@ -115,7 +107,7 @@ These are the first level of children of Section XI, called Chapters. Chapter 61
 Request: `/api/v2/definitions/crossborder/ES/61`
 
 Response:
-```
+```json
 {
   "@recordsetCount": 17,
   "value": [
@@ -127,9 +119,7 @@ Response:
       "system": "Integrated Tariff of the European Union",
       "effDate": "2018-01-01"
     },
-    .
-    .
-    .
+    ...
     {
       "hsCode": "6117",
       "id": 134342,
@@ -144,12 +134,10 @@ Response:
 
 
 After two more searches, we arrive at:
-```
+```json
 {
     [
-    .
-    .
-    .
+    ...
     {
         "hsCode": "611710",
         "id": 134333,
@@ -158,16 +146,14 @@ After two more searches, we arrive at:
         "system": "Integrated Tariff of the European Union",
         "effDate": "2018-01-01"
     }
-    .
-    .
-    .
+    ...
     ]
 }
 ```
 
 <h2>Is That the Right Code?</h2>
 The HS Code of 611710 may look complete. However, I know from experience that HS Codes for European countries need to be at least ten digits long. Other countries may have requirements of 13 digits or can include alphabetical characters.  To help prevent failed requests, misclassification, or other potential errors in duty calculation, the best practice is to continue searching for HS Code children until you receive an empty response. If we search again with 611710, we get our full HS Code of 6117100000. Searching again with 6117100000 will return an empty result.
-```
+```json
 {
   "@recordsetCount": 0,
   "value": [],
@@ -182,7 +168,7 @@ This API gives you the complete “parentage” of a given HS Code. The reponse 
 Request: `/api/v2/definitions/crossborder/US}/8466935340/hierarchy`
 
 Response:
-```
+```json
 {
   "@recordsetCount": 10,
   "value": [
@@ -276,4 +262,4 @@ You may notice the branches in the ancestry above. The branch points are disting
 The red boxes denote branches, green boxes are valid HS Codes, and yellow boxes represent incomplete HS Codes. Starting at the top with code 846693, there is one immediate, complete child HS Code and one branch. Beneath 846693_branch1, there are two more information branches. When using `/api/v2/definitions/crossborder/{country}/{hsCode}`, AvaTax returns information that fits in yellow or green boxes, but not information in the red boxes. These informational nodes will only appear when querying the hierarchy of a valid HS Code.
 
 <h2>This Seems Complicated!</h2>
-HS Code classification is understandably cmplex. If you need help, Avalara can help you choose HS codes for your items for all the countries to which you ship. To learn how we can help, contact your Avalara Customer Account Manager.
+HS Code classification is understandably complex. If you need help, Avalara can help you choose HS codes for your items for all the countries to which you ship. To learn how we can help, contact your Avalara Customer Account Manager.
