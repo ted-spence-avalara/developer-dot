@@ -46,6 +46,12 @@ Avalara maintains and publishes SDKs for our current REST v2 API for the followi
             <td><a href="https://github.com/avadev/AvaTax-REST-V2-JS-SDK">AvaTax-REST-V2-JS-SDK</a></td>
         </tr>
         <tr>
+            <td>Python</td>
+            <td><a href="https://pypi.python.org/pypi/Avalara"><img src="https://img.shields.io/pypi/v/Avalara.svg" title="PyPI" alt="PyPI"/></a></td>
+            <td><a href="https://travis-ci.org/avadev/AvaTax-REST-V2-Python-SDK"><img src="https://travis-ci.org/avadev/AvaTax-REST-V2-Python-SDK.svg?branch=master" title="Travis CI" alt="Travis CI"></a></td>
+            <td><a href="https://github.com/avadev/AvaTax-REST-V2-Python-SDK">AvaTax-REST-V2-Python-SDK</a></td>
+        </tr> 
+        <tr>
             <td>PHP</td>
             <td><a href="https://packagist.org/packages/avalara/avataxclient"><img src="https://img.shields.io/packagist/v/avalara/avataxclient.svg?style=plastic" title="Maven" alt="Maven"/></a></td>
             <td><a href="https://travis-ci.org/avadev/AvaTax-REST-V2-PHP-SDK"><img src="https://api.travis-ci.org/avadev/AvaTax-REST-V2-PHP-SDK.svg?branch=master&style=plastic" title="Travis CI" alt="Travis CI"></a></td>
