@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Implementing a SendSales API 
-description: 
+title: Implementing a SendSales API
+description: Implementing a SendSales API
 date: 2018-03-23 15:00
 author: Robert Bronson
 comments: true
