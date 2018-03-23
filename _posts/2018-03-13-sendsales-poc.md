@@ -27,7 +27,7 @@ The requirements of our application are:
 
 <h2>Showcasing the New Python SDK</h2>
 
-We wanted to demonstrate our newly published  <a href="https://developer.avalara.com/sdk/">Python SDK</a> and how it interacts with the AvaTax API.  Using the SDK, I wrote a  Python script to gather the entire list of U.S. postal codes in our system.  Using that list, I created locations at each postal code.  Once I had the locations, I imported the list of desired tax codes from a separate file, and generated a tax file based off of those tax codes at each location. I tracked the time it took to generate each tax file, as well as the overall run time.
+We wanted to demonstrate our newly published  <a href="https://developer.avalara.com/sdk/">Python SDK</a> and how it interacts with the AvaTax API.  Using the SDK, we wrote a  Python script to gather the entire list of U.S. postal codes in our system.  Using that list, we created locations at each postal code.  Once we had the locations, we imported the list of desired tax codes from a separate file, and generated a tax file based off of those tax codes at each location. We tracked the time it took to generate each tax file, as well as the overall run time.
 
 <h2>Results</h2>
 
@@ -35,7 +35,7 @@ We ran the app with 50 tax codes for 50 locations to sample the performance.  T
 
 <h2>Conclusion</h2>
 
-Using an app to generate the tax rate files is a quick and easy solution for streamlining the process, and the <a href="https://developer.avalara.com/sdk/">Python SDK</a> worked flawlessly.  Now the entire tax file can be generated overnight.
+Using an app to generate the tax rate files is a quick and easy solution for streamlining the process, and the <a href="https://developer.avalara.com/sdk/">Python SDK</a> worked flawlessly.  Using this app, the entire tax file can be generated overnight.
 
 The process could be streamlined even further by importing already existing locations.  If a company had a limited number of locations it shipped to, or had a pre-prepared list of all locations, importing those into the app would further reduce run time.  For example, when importing locations to the app I was able to generate tax files averaging 0.87 seconds per file. That comes out to just under 10 hours to generate files for 41,000 locations.
 
