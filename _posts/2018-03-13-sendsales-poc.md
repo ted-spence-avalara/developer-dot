@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Implementing a SendSales API
-description: Implementing a SendSales API
+title: Tax Rates API for SendSales
+description: Use the AvaTax API to get tax rates by zip code for SendSales, such as retail sales fulfilled from your warehouse
 date: 2018-03-23 15:00
 author: Robert Bronson
 comments: true
@@ -35,7 +35,7 @@ We ran the app with 50 tax codes for 50 locations to sample the performance.  T
 
 <h2>Conclusion</h2>
 
-Using an app to generate the tax rate files is a quick and easy solution for streamlining the process, and the <a href="https://developer.avalara.com/sdk/">Python SDK</a> worked flawlessly.  Using this app, the entire tax file can be generated overnight.
+Using an app to generate the tax rate files is a quick and easy solution for streamlining the process, and the Python SDK worked flawlessly.  Using this app, the entire tax file can be generated overnight.
 
 The process could be streamlined even further by importing already existing locations.  If a company had a limited number of locations it shipped to, or had a pre-prepared list of all locations, importing those into the app would further reduce run time.  For example, when importing locations to the app I was able to generate tax files averaging 0.87 seconds per file. That comes out to just under 10 hours to generate files for 41,000 locations.
 
