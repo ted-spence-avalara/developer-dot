@@ -133,7 +133,7 @@ doctype: integration_checklists
         <h5>Header Level - Point of Order Origin - <em>Suggested</em></h5>
             <p class="badgerequirement">Value that is sent to AvaTax for PoO at the header level.</p>
                
-        <h5>Header Level - Exemption Override - <em>Required</em></h5>
+        <h5>Header Level - Exemption Override - <em>Suggested</em></h5>
             <p class="badgerequirement">Area at Invoice screen where end user can check box to override existing Tax Exemption for the client.</p>
         
         <h5>Location Code - <em>Conditional</em></h5>
