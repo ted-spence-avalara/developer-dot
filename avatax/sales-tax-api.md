@@ -66,7 +66,7 @@ default_desc: "Use the Avalara Sales Tax API to get the right tax rate for every
             <p class="text-left">Our developer guide makes it easy to get started with the most common sales tax API calls. We also offer thorough documentation in our <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/">API reference</a>.</p>
         </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-3">
             <p><a href="/avatax/dev-guide/">The AvaTax Developer Guide makes getting started easy!</a></p>
         </div>
@@ -79,6 +79,6 @@ default_desc: "Use the Avalara Sales Tax API to get the right tax rate for every
         <div class="col-md-3">
             <p><a href="/certification/avatax">Check your connector against the online certification checklist!</a></p>
         </div>
-    </div>
+    </div> -->
   </div>
 </div>
