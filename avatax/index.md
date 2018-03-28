@@ -53,7 +53,7 @@ doctype: overview
     </div>
     <div class="row">
         <div class="col-md-3">
-            <p class="text-left">Explore the API before you build. Make live API calls directly from our documentation.</p>
+            <p class="text-left">Explore the API before you build. Make live API calls directly from our documentation. Lorum ipsum dolor <a href="./sales-tax">sales tax API</a></p>
         </div>
         <div class="col-md-3">
             <p class="text-left">Get started quickly with our sample code and libraries. If you get stuck, Avalara Support and Avalara's developer community are here with answers.</p>
