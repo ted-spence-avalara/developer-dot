@@ -1,15 +1,15 @@
 ---
 layout: default
-title: AvaTax Point of Sale Badge Requirements
+title: AvaTax Tax Content Badge Requirements
 product: avaTax
 doctype: integration_checklists
 ---
  <div class="row padding-top padding bottom">
     <div class="col-sm-2">
-      <img src="/public/images/devdot/badges/POINTOFSALE.svg" class="img-responsive" alt="Avalara Certified Solution">
+      <img src="/public/images/devdot/badges/taxcontent.svg" class="img-responsive" alt="Avalara Certified Solution">
     </div>
     <div class="col-sm-8 padding-top">
-      <h2>Avalara AvaTax Point of Sale Badge Requirements</h2>
+      <h2>Avalara AvaTax Tax Content Badge Requirements</h2>
       <h3>Prerequisite - Avalara Certified for Sales Tax</h3>
       
       <hr>
@@ -28,7 +28,7 @@ doctype: integration_checklists
             <ul class="normal">
                 <li>Nexus information – nexus selections made by the merchant on its AvaTax account shall provide this information</li>
                 <li>Store Location(s) – the merchant must define each of its brick & mortar stores as AvaTax Location Codes with a Location Category of Storefront</li>
-                <li>Tax Code(s) – the merchant must select the AvaTax Tax Codes (Goods & Services Type) applicable for its product catalog<li>
+                <li>Tax Code(s) – the merchant must select the AvaTax Tax Codes (Goods & Services Type) applicable for its product catalog</li>
             </ul>
         The POS application shall call AvaTax for the tax content feed. The Development Solution Partner (DSP) is responsible for transforming the tax content data into a format compatible with the application’s tax tables and loading the transformed data into the application’s tax tables.</p>
         

@@ -19,9 +19,6 @@ doctype: integration_checklists
         <h5>Business identification No. - <em>Required</em></h5>
             <p class="badgerequirement">Also known as VAT Registration ID – This data element should be found directly on the transaction (sales order, sales invoice) header.  Some applications may not carry that information onto the transaction itself, and the connector may have to pull directly from the customer record.</p>
             
-        <h5>Is Seller Importer of Record  - <em>Required</em></h5>
-            <p class="badgerequirement">Is the merchant/seller the importer of record for this transaction.</p>
-            
         <!-- Commenting out the following criteria until expanded VAT capabilities are rolled out.
         <h5>EU VAT Simplification Support  - <em>Suggested</em></h5>
             <p class="badgerequirement"><code>Yes/No toggle? <-- WHAT DO WE PUT HERE?</code></p>
@@ -32,9 +29,6 @@ doctype: integration_checklists
     <hr>
        
        <h3>Additional Requirements – Transaction Processing Integration</h3>    
-        <h5>Business identification No.   - <em>Required</em></h5>
-            <p class="badgerequirement">Also known as VAT Registration ID – This data element should be found directly on the transaction (sales order, sales invoice) header.  Some applications may not carry that information onto the transaction itself, and the connector may have to pull directly from the customer record.</p>
-            
         <h5>Country Code (2 digit ISO code)   - <em>Required</em></h5>
             <p class="badgerequirement">The country code associated with the various addresses stored on the transaction must be sent. This information should not have to be sourced from the customer record.</p>
             
@@ -49,3 +43,6 @@ doctype: integration_checklists
             
         <h5>EU Invoice Messaging  - <em>Suggested</em></h5>
             <p class="badgerequirement">Option to display messaging returned by the AvaTax engine on customer invoice.</p>
+            
+        <h5>Is Seller Importer of Record  - <em>Suggested</em></h5>
+            <p class="badgerequirement">Is the merchant/seller the importer of record for this transaction.</p>
