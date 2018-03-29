@@ -34,7 +34,7 @@ Avalara maintains and publishes SDKs for our current REST v2 API for the followi
         </tr>
         <tr>
             <td>Java / Scala / JRE</td>
-            <td><a href="https://maven-badges.herokuapp.com/maven-central/net.avalara.avatax/avatax-rest-v2-api-java_2.11"><img src="https://maven-badges.herokuapp.com/maven-central/net.avalara.avatax/avatax-rest-v2-api-java_2.11/badge.svg?style=plastic" title="Maven" alt="Maven"/></a></td>
+            <td><a href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.avalara.avatax%22"><img src="https://img.shields.io/maven-metadata/v/http/central.maven.org/maven2/net/avalara/avatax/avatax-rest-v2-api-java_2.11/maven-metadata.xml.svg?style=plastic" title="Maven" alt="Maven"/></a></td>
             <td><a href="https://travis-ci.org/avadev/AvaTax-REST-V2-JRE-SDK"><img src="https://api.travis-ci.org/avadev/AvaTax-REST-V2-JRE-SDK.svg?branch=master&style=plastic" title="Travis CI" alt="Travis CI"></a></td>
             <td><a href="https://github.com/avadev/AvaTax-REST-V2-JRE-SDK">AvaTax-REST-V2-JRE-SDK</a></td>
         </tr>
@@ -46,8 +46,8 @@ Avalara maintains and publishes SDKs for our current REST v2 API for the followi
         </tr>
         <tr>
             <td>Python</td>
-            <td><a href="https://pypi.python.org/pypi/Avalara"><img src="https://img.shields.io/pypi/v/Avalara.svg" title="PyPI" alt="PyPI"/></a></td>
-            <td><a href="https://travis-ci.org/avadev/AvaTax-REST-V2-Python-SDK"><img src="https://travis-ci.org/avadev/AvaTax-REST-V2-Python-SDK.svg?branch=master" title="Travis CI" alt="Travis CI"></a></td>
+            <td><a href="https://pypi.python.org/pypi/Avalara"><img src="https://img.shields.io/pypi/v/Avalara.svg?style=plastic" title="PyPI" alt="PyPI"/></a></td>
+            <td><a href="https://travis-ci.org/avadev/AvaTax-REST-V2-Python-SDK"><img src="https://travis-ci.org/avadev/AvaTax-REST-V2-Python-SDK.svg?branch=master&style=plastic" title="Travis CI" alt="Travis CI"></a></td>
             <td><a href="https://github.com/avadev/AvaTax-REST-V2-Python-SDK">AvaTax-REST-V2-Python-SDK</a></td>
         </tr> 
         <tr>
