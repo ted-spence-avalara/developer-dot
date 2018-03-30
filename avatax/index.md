@@ -9,7 +9,7 @@ doctype: overview
 <div class="row bg-map">
   <div class="col-md-6 col-md-offset-3 text-center">
     <h1 class="h1p">Real-time tax calculation for financial applications</h1>
-    <h1>Try free for 60 days with an Avalara AvaTax sandbox account</h1>
+    <h1>Try the Avalara AvaTax API for free</h1>
   </div>
   <div class="col-xs-offset-2 col-xs-8 text-center btn-callout"><a href="/avatax/signup" role="button">Get a Free Trial Account Now</a></div>
 </div>
@@ -53,7 +53,7 @@ doctype: overview
     </div>
     <div class="row">
         <div class="col-md-3">
-            <p class="text-left">Explore the API before you build. Make live API calls directly from our documentation. Lorum ipsum dolor <a href="./sales-tax-api">sales tax API</a></p>
+            <p class="text-left">Explore the <a href="./sales-tax-api">sales tax API</a> before you build. Make live API calls directly from our documentation.</p>
         </div>
         <div class="col-md-3">
             <p class="text-left">Get started quickly with our sample code and libraries. If you get stuck, Avalara Support and Avalara's developer community are here with answers.</p>
