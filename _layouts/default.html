@@ -11,6 +11,9 @@
     <title>{% if page.title %}{{ page.title }} | {% endif %}Avalara Developer</title>
 
     {% assign default_desc = "API solutions for end-to-end tax compliance" %}
+    {% if page.default_desc %}
+    {% assign default_desc = page.default_desc %}
+    {% endif %}
     <meta name="description" content="{{ default_desc }}">
 
     <link rel="canonical" href="{{ page.url | prepend: site.url }}">
