@@ -14,11 +14,11 @@ disqus: 1
 
 To get started, you'll need an AvaTax account.  Avalara provides free trial accounts you can use to begin developing against AvaTax. This trial account will allow you to use advanced AvaTax functionality in the U.S. and Canada in an environment called Sandbox.  
 
-You can begin by <a class="dev-guide-link" href="/avatax/signup/">signing up for a free 30-day AvaTax sandbox account online</a>, or you can <a class="dev-guide-link" href="https://www.avalara.com/contact-us/">contact sales</a> to purchase a production account.  Once your 30-day trial is up, you can continue using our <a class="dev-guide-link" href="/api-reference/avatax/rest/v2/methods/Free/">Free TaxRates API</a> or <a class="dev-guide-link" href="https://www.avalara.com/contact-us/">contact sales to upgrade to a full account</a>. 
+You can begin by <a class="dev-guide-link" href="/avatax/signup/">signing up for a free AvaTax account online</a>, or you can <a class="dev-guide-link" href="https://www.avalara.com/contact-us/">contact sales</a> to purchase an account.  Once your free trial is up, you can continue using our <a class="dev-guide-link" href="/api-reference/avatax/rest/v2/methods/Free/">Free TaxRates API</a> or <a class="dev-guide-link" href="https://www.avalara.com/contact-us/">contact sales to upgrade to a full account</a>. 
 
 <h3>The AvaTax Website and Tax Profiles</h3>
 
-When your account is provisioned, you will receive an email inviting you to log onto the <a class="dev-guide-link" href="https://admin-development.avalara.net/">AvaTax website for sandbox</a>.  You should begin by visiting this website and following the helpful walkthrough steps to set up an account and configure its <a class="dev-guide-link" href="https://help.avalara.com/0075_Video_Studio/Sales_Tax_Basics%3A_What_Is_My_Tax_Profile%3F">tax profile</a>.  A tax profile helps AvaTax know where your company does business and where you have <b>nexus</b>.  
+When your account is provisioned, you will receive an email inviting you to log onto the <a class="dev-guide-link" href="https://admin.avalara.com/">AvaTax website</a>.  We create a basic tax profile for you when you signup for the free trial using the information you provided.  If you would like to change these settings, login to the <a class="dev-guide-link" href="https://admin.avalara.com/">AvaTax UI</a> and you’ll be able to <a class="dev-guide-link" href="https://help.avalara.com/0075_Video_Studio/Sales_Tax_Basics%3A_What_Is_My_Tax_Profile%3F">update your tax profile</a>.  A tax profile tells AvaTax where your company does business and where you have <b>nexus</b>.  
 
 It's important to understand the concept of <a  class="dev-guide-link" href="https://help.avalara.com/0075_Video_Studio/Sales_Tax_Basics%3A_What_Is_Nexus%3F">nexus</a>.  You can think of it as "a list of places where I must collect tax;" - this is an important concept for all AvaTax developers.  If you do not declare any nexus, your account will not calculate any tax!  We'll cover this topic in more detail in <a  class="dev-guide-link" href="/avatax/dev-guide/exemptions/reasons-tax-can-be-zero">Chapter 8.1 - Reasons Tax Can Be Zero</a>.
 
@@ -48,15 +48,10 @@ Let's spend a few minutes explaining how Sandbox and Production relate to each o
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>AvaTax API URL</td>
-                <td><a class="dev-guide-link" href="https://sandbox-rest.avatax.com">https://sandbox-rest.avatax.com</a></td>
-                <td><a class="dev-guide-link" href="https://rest.avatax.com">https://rest.avatax.com</a></td>
-            </tr>
              <tr>
                 <td>AvaTax Website URL</td>
-                <td><a class="dev-guide-link" href="https://admin-development.avalara.net">https://admin-development.avalara.net</a></td>
-                <td><a class="dev-guide-link" href="https://admin-avatax.avalara.net">https://admin-avatax.avalara.net</a></td>
+                <td><a class="dev-guide-link" href="https://sandbox.admin.avalara.com">https://sandbox.admin.avalara.com</a></td>
+                <td><a class="dev-guide-link" href="https://admin.avalara.com">https://admin.avalara.com</a></td>
             </tr>
             <tr>
                 <td>Tax Content</td>
@@ -134,6 +129,12 @@ The AvaTax SDK is fully open source, and you can download source code for a myri
                 <td><a href="https://www.npmjs.com/package/avatax"><img src="https://img.shields.io/npm/v/avatax.svg?style=plastic"/></a></td>
                 <td><img src="https://api.travis-ci.org/avadev/AvaTax-REST-V2-JS-SDK.svg?branch=master&style=plastic"></td>
                 <td><a class="dev-guide-link" href="https://github.com/avadev/AvaTax-REST-V2-JS-SDK">AvaTax-REST-V2-JS-SDK</a></td>
+            </tr>
+            <tr>
+                <td>Python</td>
+                <td><a href="https://pypi.python.org/pypi/PyAvaTax/1.3.8"><img src="https://img.shields.io/pypi/v/PyAvaTax.svg?style=plastic" title="PyPI" alt="PyPI"/></a></td>
+                <td><a href="https://github.com/activefrequency/pyavatax/">pyavatax</a></td>
+                <td>Supported by <a href="http://www.activefrequency.com/">Active Frequency</a></td>
             </tr>
             <tr>
                 <td>PHP</td>
