@@ -12,7 +12,7 @@ disqus: 1
   <li class="next"><a href="/avatax/dev-guide/getting-started-with-avatax/authentication-in-avatax/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-To get started, you'll need an AvaTax account.  Avalara provides free trial accounts you can use to begin developing against AvaTax. This trial account will allow you to use advanced AvaTax functionality in the U.S. and Canada in an environment called Sandbox.  
+To get started, you'll need an AvaTax account.  Avalara provides free trial accounts you can use to begin developing against AvaTax. This trial account will allow you to use advanced AvaTax functionality for locations in the U.S. and Canada.  
 
 You can begin by <a class="dev-guide-link" href="/avatax/signup/">signing up for a free AvaTax account online</a>, or you can <a class="dev-guide-link" href="https://www.avalara.com/contact-us/">contact sales</a> to purchase an account.  Once your free trial is up, you can continue using our <a class="dev-guide-link" href="/api-reference/avatax/rest/v2/methods/Free/">Free TaxRates API</a> or <a class="dev-guide-link" href="https://www.avalara.com/contact-us/">contact sales to upgrade to a full account</a>. 
 
