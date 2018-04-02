@@ -16,69 +16,6 @@ CRUSH Digital Edition gives accounting professionals access just some of the exp
 <div class="mobile-table">
   <table class="styled-table">
     <tr>
-      <th>Webinar Topic</th>
-      <th>Presenter</th>
-      <th>Webinar Date</th>
-      <th>Session Time</th>
-      <th>Registration Link</th>
-    </tr>
-    <tr>
-      <td>Sales Tax Exemptions for Manufacturers</td>
-      <td>Mark Loyd, Bingham Greenbaum Doll</td>
-      <td>March 12th, 2018</td>
-      <td>11:00 AM MST</td>
-      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UDw7PEAT">CPAacademy.org</a></td>
-    </tr>
-    <tr>
-      <td>Ecommerce Essentials:  Sales Taxes Tips for Market Place Sellers (EBay, Amazon, Shopify, CrateJoy)</td>
-      <td><img src="/public/images/crushdc_silver.png" width="30" height="30" align="right" alt="CRUSHDC 2018 Silver Sponsor" />Joni Johnson-Powe, Taxnologi</td>
-      <td>March 20th, 2018</td>
-      <td>9:00 AM MST</td>
-      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UEUmxEAH">CPAacademy.org</a></td>
-    </tr>
-    <tr>
-      <td>Amazon’s Decision to Disclose FBA Seller Details in MA: What CPAs Need to Know to Advise Their Clients</td>
-      <td>Sylvia Dion, DionPrieto</td>
-      <td>March 22nd, 2018</td>
-      <td>10:00 AM MST</td>
-      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UnMq3EAF">CPAacademy.org</a></td>
-    </tr>
-    <tr>
-      <td>How to Make Money Doing Sales Tax Returns</td>
-      <td>Andrew Johnson, Peisner Johnson</td>
-      <td>March 27th, 2018</td>
-      <td>9:00 AM MST</td>
-      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UqX8MEAV">CPAacademy.org</a></td>
-    </tr>
-    <tr>
-      <td>Sales Tax Hot Topics for CPAs -SALT Issues Affecting Your Clients Today</td>
-      <td><img src="/public/images/crushdc_silver.png" width="30" height="30" align="right" alt="CRUSHDC 2018 Silver Sponsor" />Monika Miles, Miles Consulting</td>
-      <td>March 27th, 2018</td>
-      <td>2:00 PM MST</td>
-      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000Upc7sEAB">CPAacademy.org</a></td>
-    </tr>
-    <tr>
-      <td>Sales and Use Tax Traps</td>
-      <td>Mark Stone, Sales Tax Defense LLC</td>
-      <td>March 28th, 2018</td>
-      <td>10:00 AM MST</td>
-      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UpdXQEAZ">CPAacademy.org</a></td>
-    </tr>
-    <tr>
-      <td>Audit: Avoid It, or Else Navigate Like a Pro</td>
-      <td><img src="/public/images/crushdc_silver.png" width="30" height="30" align="right" alt="CRUSHDC 2018 Silver Sponsor" />Monika Miles, Miles Consulting</td>
-      <td>March 29th, 2018</td>
-      <td>8:00 AM MST</td>
-      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UEbbDEAT">CPAacademy.org</a></td>
-    </tr>
-    <tr>
-      <td>8 Tips to Running the 100%  Virtual Firm</td>
-      <td>Marjorie Adams, Fourlane</td>
-      <td>March 29th, 2018</td>
-      <td>10:00 AM MST</td>
-      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000TZ5urEAD">CPAacademy.org</a></td>
-    </tr>
-    <tr>
       <td>Make Sales Tax a Strategy, not an Afterthought</td>
       <td>Judy Vorndran, Tax Ops</td>
       <td>April 3rd, 2018</td>
@@ -148,12 +85,26 @@ CRUSH Digital Edition gives accounting professionals access just some of the exp
       <td>9:00 AM MST</td>
       <td><a href="https://www.cpaacademy.org/webinars/a0D4400000Uq28HEAR">CPAacademy.org</a></td>
     </tr>
+     <tr>
+      <td>Avoid THESE Tax Compliance Nightmares</td>
+      <td>Dawn W. Brolin, Powerful Accounting</td>
+      <td>May 10th, 2018</td>
+      <td>12:00 PM MST</td>
+      <td>Link coming Soon!</td>
+    </tr>
     <tr>
       <td>Cryptocurrency - How Does It Impact Your Firm and Your  Clients</td>
       <td>Matthew May, Acuity</td>
       <td>May 10th, 2018</td>
       <td>1:00 PM MST</td>
       <td><a href="https://www.cpaacademy.org/webinars/a0D4400000UDKGeEAP">CPAacademy.org</a></td>
+    </tr>
+     <tr>
+      <td>Tax Reform and 2018 Updates for your Clients: Where Are We Now?</td>
+      <td>Joshua Wu, Strasburger Attorneys</td>
+      <td>May 10th, 2018</td>
+      <td>2:00 PM MST</td>
+      <td><a href="https://www.cpaacademy.org/webinars/a0D4400000Uqkz2EAB">CPAacademy.org</a></td>
     </tr>
     <tr>
       <td>The Riches are in the Niches</td>
@@ -162,7 +113,7 @@ CRUSH Digital Edition gives accounting professionals access just some of the exp
       <td>11:00 AM MST</td>
       <td><a href="https://www.cpaacademy.org/webinars/a0D4400000Uqd4jEAB">CPAacademy.org</a></td>
     </tr>
-  </table>
+    </table>
 </div>
 
 ## Self Study Courses
@@ -192,7 +143,7 @@ The CRUSHDC 2018 Digital Edition includes self-study courses you can use at any 
       <td><a href="https://www.cpaacademy.org/self_study_show/a0D4400000SMQrIEAX">CPAacademy.org</a></td>
     </tr>
     <tr>
-      <td>GYAP: White Paper Self Study</td>
+      <td>Grow Your Accounting Practice: White Paper Self Study</td>
       <td>Self Study</td>
       <td><a href="https://www.cpaacademy.org/self_study_show/a0D4400000SMZJgEAP">CPAacademy.org</a></td>
     </tr>
