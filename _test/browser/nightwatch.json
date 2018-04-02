@@ -25,7 +25,7 @@
                 "acceptSslCerts": true
             },
             "globals": {
-                "waitForConditionTimeout": 5000,
+                "waitForConditionTimeout": 15000,
                 "baseURL": "http://localhost:4000"
             }
         },
