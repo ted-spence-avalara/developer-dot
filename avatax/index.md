@@ -73,7 +73,7 @@ doctype: overview
 			<p><a href="/sdk">Save time with the AvaTax SDK, available in five languages!</a></p>
         </div>
         <div class="col-md-3">
-			<p><a href="/api-reference/avatax/rest/v2">Try out the AvaTax API with our interactive 'Try-It-Now' feature!</a></p>
+			<p><a href="/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/">Try out the AvaTax API with our interactive 'Try-It-Now' feature!</a></p>
         </div>
         <div class="col-md-3">
 			<p><a href="/certification/avatax">Check your connector against the online certification checklist!</a></p>
