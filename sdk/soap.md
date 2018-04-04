@@ -21,7 +21,7 @@ The AvaTax SOAP SDK exists for backward compatibility with older software.  User
             <tr>
                 <th>Language</th>
                 <th>Version</th>
-                <th>GitHub</th>
+                <th>GitHub/Download</th>
                 <th>Author</th>
                 <!-- removing until we have resources associated
                 <th>Resources</th> -->
@@ -90,7 +90,9 @@ The AvaTax SOAP SDK exists for backward compatibility with older software.  User
         <tr>
             <td>SalesForce Apex</td>
             <td></td>
-            <td><a href="https://github.com/avadev/AvaTax-SOAP-SF-SDK">AvaTax-SOAP-SF-SDK</a></td>
+            <td><a href="https://github.com/avadev/AvaTax-SOAP-SF-SDK">AvaTax-SOAP-SF-SDK</a>
+                <a href="{{site.url}}/public/misc/Apex-SOAP-SDK-v13670.zip">/ Download </a>
+            </td>
             <td>Avalara</td>
         </tr>
         <tr>
