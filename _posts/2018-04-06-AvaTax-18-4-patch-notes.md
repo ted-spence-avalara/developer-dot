@@ -35,21 +35,25 @@ This article is about the April 2018 monthly update to the AvaTax API.
 
 <h3>Patch Notes Webinar</h3>
 
-The AvaTax April release will launch to the Sandbox environment two weeks before the software is deployed to production. If your engineering team would like a sandbox account for testing purposes, please contact your account manager or [open a support ticket](https://help.avalara.com/Directory/Contact_Avalara/Submit_a_Case).
+The AvaTax April release will launch to the Sandbox environment two weeks before production. If your engineering team would like a sandbox account for testing purposes, please contact your account manager or [open a support ticket](https://help.avalara.com/Directory/Contact_Avalara/Submit_a_Case).
 
-The AvaTax API team hosts a [weekly developer webinar](https://developer.avalara.com/resources/webinars/) where you can ask questions about the software, the release process, or any features included in the software.  If you would like to ask questions about the AvaTax API 18.3 release, please sign up and join us for a lively discussion of the changes to the AvaTax API.
+The AvaTax API team hosts a [weekly developer webinar](https://developer.avalara.com/resources/webinars/) where you can ask questions about the software, the release process, or any features included in the software.  If you would like to ask questions about the release, please sign up and join us for a lively discussion of the AvaTax API.
 
 <h3>Marketplace Locations</h3>
 
-Customers doing business through marketplace vendors may be affected by the Washington Marketplace Fairness Act, which requires ecommerce marketplace vendors to collect and remit sales tax on your behalf.  In AvaTax 18.4, you can designate specific [Locations](/api-reference/avatax/rest/v2/methods/Locations/) as marketplace locations, and you can specify whether a marketplace collects and remits taxes for you.
+Customers doing business through marketplace vendors may be affected by the [Washington Marketplace Fairness Act](https://dor.wa.gov/marketplacefairness), which requires ecommerce marketplace facilitators to collect and remit sales tax on behalf of sellers.  In AvaTax 18.4, you can designate specific [Locations](/api-reference/avatax/rest/v2/methods/Locations/) as marketplace locations, and you can specify whether a marketplace collects and remits taxes for you.
 
-Using this technique, you would select the `reportingLocationCode` field on the [CreateTransaction API](/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/) to designate that a particular transaction came through a marketplace vendor.
+To use this feature, follow these steps:
 
-Transactions that are tagged with a `reportingLocationCode` that connects them to a marketplace vendor will be filed on your sales tax returns with the correct remittance information for the Marketplace Fairness Act.
+<ul class="normal">
+    <li>First call the [CreateLocation API]() to create a location with the `addressTypeId` field set to  `Marketplace` and choose either the `SellersRemitsTax` or `MarketplaceRemitsTax` option for the `addressCategoryId` field.</li>
+    <li>When creating transactions, select the `reportingLocationCode` field on the [CreateTransaction API](/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/) to the `locationCode` field of the marketplace location you created.</li>
+    <li>All transactions that are tagged with a `reportingLocationCode` that connects them to a location of type `Marketplace` with category `MarketplaceRemitsTax` will be filed on your sales tax returns as already remitted.</li>
+</ul>
 
 <h3>Company Code</h3>
 
-As requested by many customers, the CompanyCode field is now editable.  This field was originally marked as not-editable in order to provide compatibility with older software that expected the `code` field to be static.  Now that this field is editable, customers can correct synchronization issues more easily.
+As requested by many customers, the `companyCode` field on the [CompanyModel](/api-reference/avatax/rest/v2/models/CompanyModel/) is now editable.  This field was originally marked as not-editable in order to provide compatibility with older software that expected the `companyCode` field to be static.  Now that this field is editable, customers can make adjustments to their company's code as necessary.
 
 <h3>Feature Preview: Advanced Rules</h3>
 
