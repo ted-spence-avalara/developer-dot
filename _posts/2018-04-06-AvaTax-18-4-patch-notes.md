@@ -37,7 +37,7 @@ This article is about the April 2018 monthly update to the AvaTax API.
 
 The AvaTax April release will launch to the Sandbox environment two weeks before production. If your engineering team would like a sandbox account for testing purposes, please contact your account manager or [open a support ticket](https://help.avalara.com/Directory/Contact_Avalara/Submit_a_Case).
 
-The AvaTax API team hosts a [weekly developer webinar](https://developer.avalara.com/resources/webinars/) where you can ask questions about the software, the release process, or any features included in the software.  If you would like to ask questions about the release, please sign up and join us for a lively discussion of the AvaTax API.
+The AvaTax API team hosts a [weekly developer webinar](https://developer.avalara.com/resources/webinars/) where you can meet and talk to the developers directly.  If you would like to ask questions about the release, please sign up and join us for a lively discussion of the AvaTax API.
 
 <h3>Marketplace Locations</h3>
 
@@ -55,11 +55,19 @@ To use this feature, follow these steps:
 
 As requested by many customers, the `companyCode` field on the [CompanyModel](/api-reference/avatax/rest/v2/models/CompanyModel/) is now editable.  This field was originally marked as not-editable in order to provide compatibility with older software that expected the `companyCode` field to be static.  Now that this field is editable, customers can make adjustments to their company's code as necessary.
 
-<h3>Feature Preview: Advanced Rules</h3>
+<h3>ISO3166 Regions</h3>
 
-AvaTax now includes a full scripting language for modifying your tax calculations progammatically.  This feature allows complex tax scenarios to be handled through a flexible and powerful engine that can help improve your compliance.
+Based on research from our international teams, we have added additional information to our ISO3166 database indicating which countries require `region` codes to be present in their postal addresses.  This information is available by calling the [ListCountries API](/api-reference/avatax/rest/v2/methods/Definitions/ListCountries/).
 
-Advanced Rules is now available by invitation for preview customers.
+AvaTax APIs that take ISO3166 country and region codes as input have been updated to make the `region` field optional for countries that do not require it for mailing addresses.
+
+<h3>RequestFreeTrial API Changes</h3>
+
+The AvaTax [RequestFreeTrial API](/api-reference/avatax/rest/v2/methods/Free/RequestFreeTrial/) has been updated to request that the user read and accept Avalara's terms and conditions prior to creating a free trial.
+
+<h3>RequestNewAccount API Changes</h3>
+
+The [RequestNewAccount API](/api-reference/avatax/rest/v2/methods/Onboarding/RequestNewAccount/) for partner account creation has been updated with the latest corporate policies for password complexity.  Partners are strongly encouraged to leave the `userPassword` field blank; in which case users will receive an invitation email to create their password via the Avalara Identity user interface.
 
 <h3>New API: DeclareNexusByAddress</h3>
 
@@ -67,19 +75,11 @@ Based on feedback from customers, declaring nexus correctly can be a challenge. 
 
 To simplify the process of declaring nexus, we provide a new API, DeclareNexusByAddress.  This API allows you to provide an array listing all of the places of business for your software plus their dates, and it will identify and create all the appropriate nexus objects for your company.
 
-<h3>ISO3166 Regions</h3>
+<h3>Feature Preview: Advanced Rules</h3>
 
-Based on research from our international teams, we have added additional information to our ISO3166 database indicating which countries require `region` codes to be present in their postal addresses.  This information is available by calling the [ListCountries API](/api-reference/avatax/rest/v2/methods/Definitions/ListCountries/).
+AvaTax now includes a scripting language that can be used to apply complex rules to tax calculations progammatically.  This feature allows complex tax scenarios to be handled through a flexible and powerful engine that can help improve your compliance process.
 
-AvaTax APIs that take as input the ISO3166 country and region codes have been updated to make the region code field optional for countries that do not require it for mailing addresses.
-
-<h3>Free Trial Update</h3>
-
-The AvaTax [RequestFreeTrial API](/api-reference/avatax/rest/v2/methods/Free/RequestFreeTrial/) has been updated to request that the user read and accept Avalara's terms and conditions prior to creating a free trial.
-
-<h3>Onboarding API</h3>
-
-The [RequestNewAccount API](/api-reference/avatax/rest/v2/methods/Onboarding/RequestNewAccount/) for partner account creation has been updated with the latest corporate policies for password complexity.  Partners are strongly encouraged to leave the `userPassword` field blank; in which case users will receive an invitation email to create their password via the Avalara Identity user interface.
+Advanced Rules is now available by invitation for preview customers.
 
 <h3>Other Fixes and Improvements</h3>
 
