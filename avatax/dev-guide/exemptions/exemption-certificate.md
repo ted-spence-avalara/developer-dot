@@ -19,7 +19,7 @@ An Exemption Certificate provides information about the buyer or customer, and t
     <li>If they have a direct pay certificate.</li>
 </ul>
 
-In these cases, the seller must document the exemption certificate and be able to produce information about that certificate in the event of an audit.  The AvaTax <a class="dev-guide-link" href="http://docs.certcapture6xrest.apiary.io">Certificate APIs</a> provide an easy way to manage exemption certificates - and they will automatically link to your CertCapture and CertExpress accounts!
+In these cases, the seller must document the exemption certificate and be able to produce information about that certificate in the event of an audit.  The AvaTax <a class="dev-guide-link" href="http://docs.certcapture6xrest.apiary.io">Certificate APIs</a> provide an easy way to manage exemption certificates - and they will automatically link to your CertCapture and CertExpress accounts! Please note that the end points discussed here only work if you have a CertCapture linked to your AvaTax account. If you are calling the sandbox endpoints then you will be interacting with the CertCapture sandbox environment. This will not interact with customers and certificates you add directly to your admin console. 
 
 <h3>Exemption Certificate User Interface</h3>
 
