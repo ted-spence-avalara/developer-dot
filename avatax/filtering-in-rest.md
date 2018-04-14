@@ -107,17 +107,17 @@ The following filters are not defined in the Microsoft standard, but are availab
             <tr>
                 <td>Contains</td>
                 <td><pre>name contains 'Bob'</pre></td>
-                <td>Matches all records whose value contains the specified filter string.  To represent an apostrophe, use two apostrophe characters in a row, for example <span class="highlight-rouge">'Bob''s Hardware'</span>.</td>
+                <td>Matches all records whose value contains the specified filter string.</td>
             </tr>
             <tr>
                 <td>StartsWith</td>
                 <td><pre>name startswith 'Bob'</pre></td>
-                <td>Matches all records whose value begins with the specified filter string.  To represent an apostrophe, use two apostrophe characters in a row, for example <span class="highlight-rouge">'Bob''s Hardware'</span>.</td>
+                <td>Matches all records whose value begins with the specified filter string.</td>
             </tr>
             <tr>
                 <td>EndsWith</td>
                 <td><pre>name endswith 'Bob'</pre></td>
-                <td>Matches all records whose value ends with the specified filter string.  To represent an apostrophe, use two apostrophe characters in a row, for example <span class="highlight-rouge">'Bob''s Hardware'</span>.</td>
+                <td>Matches all records whose value ends with the specified filter string.</td>
             </tr>
             <tr>
                 <td>Is Null / Is Not Null</td>
@@ -140,6 +140,20 @@ taxDate eq '2016-01-01' or taxDate eq '2016-01-02'
 (firstName = 'bob' or firstName = 'alice') and lastName = 'smith'
 </pre>
 
+
+<h2>Using Apostrophe or Quotation</h2>
+
+To include apostrophe in the filtering value, use a single apostrophe sign inside double quotes: 
+<pre>name contains "Bob's shop"</pre>
+Or a two apostrophe sign inside single quote: 
+<pre>name contains 'Bob''s shop'</pre>
+
+To include quotation in the filtering value, use double quotes inside single quotes: 
+<pre>'Bob''s "special" recipe'</pre>
+Or use two double quotation inside double quotations: 
+<pre>"Bob's ""special"" recipe"</pre>
+
+
 <h2>Complex Examples</h2>
 
 Now let's put it all together, shall we?
@@ -150,7 +164,7 @@ This example retrieves all companies with a name begins with the letters 'Bob' a
 
 <pre>GET /api/v2/companies/123/transactions?$filter=taxDate between '2016-01-01' and '2016-02-01' and status eq committed</pre>
 
-Matches all records where the taxDate is in the month of January and the record's status is 'committed'.</td>
+Matches all records where the taxDate is in the month of January and the record's status is 'committed'.
 
 <pre>GET /api/v2/locations$filter=(country eq 'US' and region eq 'CA') or (country eq 'CA')</pre>
 
