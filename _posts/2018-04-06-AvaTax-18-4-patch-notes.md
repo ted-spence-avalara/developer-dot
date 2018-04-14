@@ -23,7 +23,7 @@ This article is about the April 2018 monthly update to the AvaTax API.
         <tr>
             <td>Sandbox</td>
             <td><a href="https://sandbox-rest.avatax.com">https://sandbox-rest.avatax.com</a></td>
-            <td>2018-04-11</td>
+            <td>2018-04-16 (revised)</td>
         </tr>
         <tr>
             <td>Production</td>
@@ -32,6 +32,8 @@ This article is about the April 2018 monthly update to the AvaTax API.
         </tr>
     </table>
 </div>
+
+<b>UPDATED 2018-04-12:</b> The sandbox release date has been adjusted to April 16, 2018.
 
 <h3>Patch Notes Webinar</h3>
 
