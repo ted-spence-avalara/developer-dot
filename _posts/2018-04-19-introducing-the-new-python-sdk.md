@@ -183,9 +183,7 @@ Note: Only *Sandbox credentials* should be used for testing, as the test case wi
 
 ### Question or suggestion
 
-User feedbacks are highly valued here at Avalara, we want to ensure the best experience for every customer using our services. If you have any concern or question regarding this SDK or AvaTax in general, please post your queston/suggestion on our [Developer Relation Forum](https://community.avalara.com/avalara/category_sets/developers) as we will reply to you in a timely manner.
+I hope this has helped you see how the Python SDK can help simplify your tax processing work. At Avalara we highly value user feedback, we want to ensure the best experience for every customer using our services. If you have any concern or question regarding this SDK or AvaTax in general, please post your queston/suggestion on our [Developer Relation Forum](https://community.avalara.com/avalara/category_sets/developers) as we will reply to you in a timely manner.
 If you wish to contribute to this SDK, please fork the [repository](https://github.com/avadev/AvaTax-REST-V2-Python-SDK) and submit your pull request from the forked version. We are happy to review your contribution, and merge them if all checks has passed!
 
-
-I hope this has helped you see how the Python SDK can help simplify your tax processing work.  With each AvaTax REST V2 release, we will update our SDKs with the new method, or parameter added from that release. 
 
