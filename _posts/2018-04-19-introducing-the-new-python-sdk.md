@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AvaTax Python SDK available on PyPI
+title: AvaTax Python SDK now available!
 date: 2018-04-19 11:00
 author: Han Bao
 comments: true
@@ -61,20 +61,20 @@ Create a new AvaTaxClient object:
                           'my test machine',
                           'sandbox')
 ```
-The client constructor takes four string parameters, in squence they are `app_name(required)`, `app_version(required)`, `achine_name(optional)`, and `environment(required)`. 
+The client constructor takes four string parameters. In squence they are `app_name(required)`, `app_version(required)`, `achine_name(optional)`, and `environment(required)`. 
 The app_name, app_version, machine_name will be use to construct the [Client Header](https://developer.avalara.com/avatax/client-headers/) associated with each calls made by this client. Which will be return within the response object to help you keep track of the API calls.
 The `environment` variable can be either `"sandbox"` or `production`, they corresponds to the two different environment AvaTax service has.
-If you are a regular or free trial customer please use `"production"`. If you don't have an account, you can sign up for a free trail account on our [developer site](https://developer.avalara.com/avatax/signup/), this will be a production account as well.
+If you are an AvaTax API free trail customer or have already purchased an AvaTax API subscription please use `"production"`. If you don't have an account, you can sign up for a free trail account on our [developer site](https://developer.avalara.com/avatax/signup/), this will be a production account as well.
 If you wish to obtain a Sandbox account, please contact your [Customer Account Manager](https://help.avalara.com/Frequently_Asked_Questions/Avalara_AvaTax_FAQ/How_do_I_get_access_to_our_development%2F%2Fsandbox_account%3F)
 
 <br/>
 **<u>Ping the service</u>**
 
-Now we have a client object, we can ping the AvaTax REST V2 server to ensure connectivity.
+Now that we have a client object, we can ping the AvaTax REST V2 server to ensure connectivity.
 ```
   response = client.ping()
 
-  # to view respnse text
+  # to view the HTTP respnse text
   print(response.text())
 
   # to view json version of the response
@@ -91,20 +91,20 @@ Note that the response from all REST calls made using this SDK will be [Request]
 <br />
 **<u>Add credentials to your client object</u>**
 
-Unlike `ping`, most methods in our REST V2 API requires you to be authenticated in order to associate those information provided by you with your account.
+Unlike `ping`, most methods in our REST V2 API require you to be authenticated to associate the information you provided to your account.
 To find out if a method requires authentication, visit our [API Reference](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/) page.
 To add credential on the current client object:
 ```
   client = client.add_credentials('USERNAME/ACCOUNT_ID', 'PASSWORD/LICENSE_KEY')
 ```
-The `add_credential` method will hash your username/password, or account_id/license_key pair and attach to every call made by your client object, meaning you only have to add credential once to each client you prepare to use.
+The `add_credential` method will hash your username/password, or account_id/license_key pair and attach to every call made by your client object, meaning you only have to add credential once to each client you are using.
 
-To verify that you have added a valid credential, simply call the `ping` method again, this time in the response text you should see "authenticated: true".
+To verify that you have added a valid credential, simply call the `ping` method again, this time in the response text you should see "authenticated: true" in the response text.
 
 <br />
 **<u>To create a transaction using your client object</u>**
 
-Now our client object is authenticated, we can call the create_transaction method which calls the [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/)
+Now that our client object is authenticated, we can call the create_transaction method which calls the [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/)
 ```
   transaction_response = client.create_transaction(tax_document)
   print(transaction_reaponse.text())
@@ -131,23 +131,23 @@ Now our client object is authenticated, we can call the create_transaction metho
       'type': 'SalesInvoice'}
 
 ```  
-The create_transaction method takes in a model, in python it's a dictionary type object. Which you will fill out to include all of your transaction information. In this case, we are using the [TransactionModel](https://developer.avalara.com/api-reference/avatax/rest/v2/models/TransactionModel/)
+The create_transaction method takes a model (a dictionary type object), which should include all of your transaction information. In this case, we are using the [TransactionModel](https://developer.avalara.com/api-reference/avatax/rest/v2/models/TransactionModel/)
 For information on other models use by AvaTax APIs, visit our information page [here](https://developer.avalara.com/api-reference/avatax/rest/v2/models)
 
 
 ### To use other API methods
 
 Like our SDKs in other languages, the Python SDK includes all methods offered by the AvaTax REST V2 API. To find a mehtod corresponding to a specific API endpoint, simply visit this [code page](https://github.com/avadev/AvaTax-REST-V2-Python-SDK/blob/master/src/client_methods.py)
-To learn more about integrating our REST API into your system, visit our [developer guide](https://developer.avalara.com/avatax/dev-guide/getting-started-with-avatax/) that contains information on using the powerful features offered by our API.
+To learn more about integrating our REST API into your system, visit our [developer guide](https://developer.avalara.com/avatax/dev-guide/getting-started-with-avatax/) which contains information on using the powerful features offered by our API.
 
 
 ### To use the transaction builder
 
-We realize that having to format the TransactionModel can be complicated and time consuming, thus we created a tool called Transaction Builder to help you put together a transaction model, and create it!
+We realize that having to format the TransactionModel can be complicated and time consuming thus we created a tool called Transaction Builder to help you put together a transaction model, and create it!
 First import the transaction builder constructor into your name space:
 ```from transaction_builder import TransactionBuilder```
 
-Then, let's create a transaction builder object:
+Then, create a transaction builder object:
 ```
   tb = TransactionBuilder(client, "DEFAULT", "SalesInvoice", "ABC")
 ```
@@ -159,9 +159,9 @@ The builder takes four required parameters, in sequence they are
 <li> The customer code, an unique code identifying the customer that requested this transaction. </li>
 </ul>
 
-Now you are free to add transaction details to this object, by using methods like `with_address`, `with_line`, `with_parameter`.
+Now you are free to add transaction details to this object, by using methods such as  `with_address`, `with_line`, `with_parameter`.
 For a fulll list of transaction builder methods available and the parameters they take in, visit the [code page](https://github.com/avadev/AvaTax-REST-V2-Python-SDK/blob/master/src/transaction_builder_methods.py)
-In the end, you may call the `create` method on your builder object, which will call the CreateTransaction API with the transaction model you have build so far, and return back the response.
+In the end, you may call the `create` method on your builder object, which will call the CreateTransaction API with the transaction model you have built so far, and return back the response.
 
 
 ### Setup Testing Credentials
