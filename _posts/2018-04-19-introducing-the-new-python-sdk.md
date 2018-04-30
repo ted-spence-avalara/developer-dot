@@ -62,7 +62,8 @@ Create a new AvaTaxClient object:
                           'sandbox')
 ```
 The client constructor takes four string parameters. In squence they are `app_name(required)`, `app_version(required)`, `achine_name(optional)`, and `environment(required)`. 
-The app_name, app_version, machine_name will be use to construct the [Client Header](https://developer.avalara.com/avatax/client-headers/) associated with each calls made by this client. Which will be return within the response object to help you keep track of the API calls.
+The app_name, app_version, machine_name will be use to construct the [Client Header](https://developer.avalara.com/avatax/client-headers/) associated with each calls made by this client. Which will be return within the response object to help you keep track of the API calls. 
+
 The `environment` variable can be either `"sandbox"` or `production`, they corresponds to the two different environment AvaTax service has.
 If you are an AvaTax API free trail customer or have already purchased an AvaTax API subscription please use `"production"`. If you don't have an account, you can sign up for a free trail account on our [developer site](https://developer.avalara.com/avatax/signup/), this will be a production account as well.
 If you wish to obtain a Sandbox account, please contact your [Customer Account Manager](https://help.avalara.com/Frequently_Asked_Questions/Avalara_AvaTax_FAQ/How_do_I_get_access_to_our_development%2F%2Fsandbox_account%3F)
@@ -144,7 +145,7 @@ To learn more about integrating our REST API into your system, visit our [develo
 ### To use the transaction builder
 
 We realize that having to format the TransactionModel can be complicated and time consuming thus we created a tool called Transaction Builder to help you put together a transaction model, and create it!
-First import the transaction builder constructor into your name space:
+First import the transaction builder constructor into your name space: <br />
 ```from transaction_builder import TransactionBuilder```
 
 Then, create a transaction builder object:
@@ -152,12 +153,12 @@ Then, create a transaction builder object:
   tb = TransactionBuilder(client, "DEFAULT", "SalesInvoice", "ABC")
 ```
 The builder takes four required parameters, in sequence they are
-<ul>
-<li> The client object </li>
-<li> Company name(created through AvaTax portal or by calling [CreateCompany API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Companies/CreateCompanies/)) </li>
-<li> The type of transaction, a [full list](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/) of options. </li>
-<li> The customer code, an unique code identifying the customer that requested this transaction. </li>
-</ul>
+
+1. The client object 
+2. Company name(created through AvaTax portal or by calling [CreateCompany API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Companies/CreateCompanies/)) 
+3. The type of transaction, a [full list](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/) of options. 
+4. The customer code, an unique code identifying the customer that requested this transaction. 
+
 
 Now you are free to add transaction details to this object, by using methods such as  `with_address`, `with_line`, `with_parameter`.
 For a fulll list of transaction builder methods available and the parameters they take in, visit the [code page](https://github.com/avadev/AvaTax-REST-V2-Python-SDK/blob/master/src/transaction_builder_methods.py)
