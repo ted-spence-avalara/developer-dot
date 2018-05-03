@@ -28,14 +28,15 @@ function tableBody(attr) {
     });
 
     return Object.keys(values).reduce((html, k) => {
-        let temp = values[k].split("`");
-        temp.map(w=>{
-            if(!/\s/g.test(w)){
+        let temp = values[k].split('`');
+
+        temp.map(w => {
+            if (!/\s/g.test(w)) {
                 temp[temp.indexOf(w)] = '<code class="markdown">' + w + '</code>';
-            };
+            }
         });
 
-        temp = temp.join(" ");
+        temp = temp.join(' ');
 
         return `${html}
         <tr>
