@@ -28,12 +28,12 @@ The AvaTax SOAP SDK exists for backward compatibility with older software.  User
             </tr>
         </thead>
         <tbody>
-        <tr>
+        <!-- <tr>
             <td>C#</td>
             <td><a href="https://www.nuget.org/packages/Avalara.AvaTax.SoapClient/"><img src="https://img.shields.io/nuget/v/Avalara.AvaTax.SoapClient.svg?style=plastic" title="NuGet" alt="NuGet"/></a></td>
             <td><a href="https://github.com/avadev/AvaTax-SOAP-NET-SDK">AvaTax-SOAP-NET-SDK</a></td>
             <td>Avalara</td>
-            </tr>
+        </tr> -->
         <tr>
             <td>Python</td>
             <td></td>
@@ -45,19 +45,19 @@ The AvaTax SOAP SDK exists for backward compatibility with older software.  User
             <td><a href="https://www.npmjs.com/package/avatax"><img src="https://img.shields.io/npm/v/npm.svg?style=plastic" title="NPM" alt="NPM"/></a></td>
             <td><a href="https://github.com/Matter-and-Form/node-avatax">node-avatax</a></td>
             <td>Supported by Daniel Hritzkiv of <a href="https://matterandform.net/">Matter and Form</a></td>
-            </tr>
+        </tr>
         <tr>
             <td>PHP</td>
             <td><a href="https://packagist.org/packages/avalara/avatax"><img src="https://img.shields.io/packagist/v/avalara/avatax.svg?style=plastic" title="Packagist" alt="Packagist"/></a></td>
             <td><a href="https://github.com/avadev/AvaTax-SOAP-PHP-SDK">AvaTax-SOAP-PHP-SDK</a></td>
             <td>Avalara</td>
-            </tr>
+        </tr>
         <tr>
             <td>Perl</td>
             <td><a href="https://metacpan.org/release/WebService-Avalara-AvaTax"><img src="https://img.shields.io/cpan/v/WebService-Avalara-AvaTax.svg?style=plastic" title="CPAN" alt="CPAN"/></a></td>
             <td><a href="https://github.com/mjgardner/WebService-Avalara-AvaTax">WebService-Avalara-AvaTax</a></td>
             <td>Supported by Mark Gardner of <a href="http://www.ziprecruiter.com"><img src="/public/images/blog/ziprecruiter_logo.png" alt="ziprecruiter.com" width="98" height="25" /></a></td>
-            </tr>
+        </tr>
         <tr>
             <td>SalesForce Apex</td>
             <td></td>
