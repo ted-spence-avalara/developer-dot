@@ -12,8 +12,9 @@ function writeHtml(dir, fileName, html) {
 
         try {
             fs.writeFileSync(path.join(dir, `${fileName}.html`), html);
-        } catch(e) {
-            console.log(`\x1b[31mFailed to write enum ${fileName}: ${e} \x1b[0m`);}
+        } catch (e) {
+            console.log(`\x1b[31mFailed to write enum ${fileName}: ${e} \x1b[0m`);
+        }
     });
 }
 
