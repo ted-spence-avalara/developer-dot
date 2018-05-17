@@ -39,8 +39,10 @@ script:
   - npm run lint
   - npm run test
   - docker-compose up --abort-on-container-exit --exit-code-from server
+
 after_success:
   - if [ -n "$secret_key" ] && [ "$TRAVIS_BRANCH" == "master" ]; then bucket_name=developer.avalara.com s3_website push; fi
+  - if [ "$TRAVIS_BRANCH" == "staging" ]; then chmod +x ./scripts/staging-robots.sh; fi
 
 before_deploy:
   - find _site -iname "*.html" -exec sed -i -e 's/=\"\//=\"\/developer-dot\//g' {} \;
