@@ -42,7 +42,7 @@ script:
 
 after_success:
   - if [ -n "$secret_key" ] && [ "$TRAVIS_BRANCH" == "master" ]; then bucket_name=developer.avalara.com s3_website push; fi
-  - if [ "$TRAVIS_BRANCH" == "staging" ]; then chmod +x ./scripts/staging-robots.sh; fi
+  - if [ "$TRAVIS_BRANCH" == "staging" ]; then bash ./scripts/staging-robots.sh; fi
 
 before_deploy:
   - find _site -iname "*.html" -exec sed -i -e 's/=\"\//=\"\/developer-dot\//g' {} \;
