@@ -2,6 +2,14 @@ language: ruby
 rvm:
   - 2.2
 
+env:
+  global:
+    - staging_bucket=staging-developer.avalara
+    - staging_cloudfront=E1VB4YGCMCEIX2
+    - prod_bucket=developer.avalara.com
+    - prod_cloudfront=E14INHTPGUUPMC
+    - cloudfront_distro=prod_cloudfront
+
 services:
   - docker
 
@@ -41,8 +49,14 @@ script:
   - docker-compose up --abort-on-container-exit --exit-code-from server
 
 after_success:
-  - if [ -n "$secret_key" ] && [ "$TRAVIS_BRANCH" == "master" ]; then bucket_name=developer.avalara.com s3_website push; fi
+  # - if [ -n "$secret_key" ] && [ "$TRAVIS_BRANCH" == "master" ]; then bucket_name=developer.avalara.com s3_website push; fi
   - if [ "$TRAVIS_BRANCH" == "staging" ]; then bash ./scripts/staging-robots.sh; fi
+  - if [ -n "$secret_key" ] && [ "$TRAVIS_BRANCH" == "master" ];
+      then cloudfront_distro=$prod_cloudfront; bucket_name=$prod_bucket s3_website push;
+    fi
+  - if [ -n "$secret_key" ] && [ "$TRAVIS_BRANCH" == "staging" ];
+      then cloudfront_distro=$staging_cloudfront; bucket_name=$staging_bucket s3_website push;
+    fi
 
 before_deploy:
   - find _site -iname "*.html" -exec sed -i -e 's/=\"\//=\"\/developer-dot\//g' {} \;
