@@ -43,6 +43,7 @@ before_script:
   - export JAVA_OPTS="-Xmx1G"
   - echo $JAVA_OPTS
   - alias java="java -Xmx1G"
+  - if [ "$TRAVIS_BRANCH" == "staging" ]; then bash ./scripts/staging-robots.sh; fi
 script:
   - npm run lint
   - npm run test
@@ -50,13 +51,13 @@ script:
 
 after_success:
   # - if [ -n "$secret_key" ] && [ "$TRAVIS_BRANCH" == "master" ]; then bucket_name=developer.avalara.com s3_website push; fi
-  - if [ "$TRAVIS_BRANCH" == "staging" ]; then bash ./scripts/staging-robots.sh; fi
+
   - if [ -n "$secret_key" ] && [ "$TRAVIS_BRANCH" == "master" ];
-      then ENV=production s3_website push;
+      then bucket_name=developer.avalara.com s3_website push;
     fi
   - if [ -n "$secret_key" ] && [ "$TRAVIS_BRANCH" == "staging" ];
       then
-      ENV=staging s3_website push;
+      bucket_name=staging-developer.avalara s3_website push;
     fi
 
 before_deploy:
