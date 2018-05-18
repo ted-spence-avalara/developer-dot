@@ -1,12 +1,12 @@
 ---
 layout: webinar
 title: Office Hours with AvaTax – Ask our Engineers Anything!
-date: 2018-05-15 10:00
+date: 2018-05-29 10:00
 author: Ted Spence
 comments: true
 product: avatax
 doctype: webinar
-linkurl: https://offers.avalara.com/officehourswithavataxmay15/
+linkurl: https://simplify.avalara.com/officehourswithavataxmay29/
 ---
 
 Office Hours with AvaTax – Ask our Engineers Anything!
