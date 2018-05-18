@@ -1,8 +1,22 @@
 s3_id: <%= ENV['access_key'] %>
 s3_secret: <%= ENV['secret_key'] %>
-s3_bucket: <%= ENV['bucket_name'] %>
+# s3_bucket: <%= ENV['bucket_name'] %>
 
-cloudfront_distribution_id: <% ENV['cloudfront_distro'] %>
+
+<%
+  if ENV['ENV'] == 'staging'
+    @s3_bucket = 'staging-developer.avalara'
+    @cloudfront_id = 'E1VB4YGCMCEIX2'
+  else
+    @s3_bucket = 'developer.avalara.com'
+    @cloudfront_id = 'E14INHTPGUUPMC'
+  end 
+%>
+
+s3_bucket: <% @s3_bucket %>
+
+
+cloudfront_distribution_id: <% @cloudfront_id %>
 cloudfront_wildcard_invalidation: true
 
 exclude_from_upload:
