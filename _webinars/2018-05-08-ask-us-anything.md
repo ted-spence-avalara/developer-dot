@@ -6,7 +6,7 @@ author: Ted Spence
 comments: true
 product: avatax
 doctype: webinar
-youtube: 
+youtube: "https://www.youtube.com/embed/xRtB-7JG-cI"
 ---
 
 Office Hours with AvaTax – Python SDK for AvaTax API
