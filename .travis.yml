@@ -50,7 +50,6 @@ script:
   - docker-compose up --abort-on-container-exit --exit-code-from server
 
 after_success:
-  # - if [ -n "$secret_key" ] && [ "$TRAVIS_BRANCH" == "master" ]; then bucket_name=developer.avalara.com s3_website push; fi
 
   - if [ -n "$secret_key" ] && [ "$TRAVIS_BRANCH" == "master" ];
       then cloudfront_distro=$prod_cloudfront; bucket_name=$prod_bucket s3_website push;
