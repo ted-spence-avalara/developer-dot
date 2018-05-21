@@ -51,10 +51,10 @@ script:
 
 after_success:
 
-  - if [ -n "$secret_key" ] && [ "$TRAVIS_BRANCH" == "master" ];
+  - if [ -n "$secret_key" ] && [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ];
       then cloudfront_distro=$prod_cloudfront; bucket_name=$prod_bucket s3_website push;
     fi
-  - if [ -n "$secret_key" ] && [ "$TRAVIS_BRANCH" == "staging" ];
+  - if [ -n "$secret_key" ] && [ "$TRAVIS_BRANCH" == "staging" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ];
       then cloudfront_distro=$staging_cloudfront; bucket_name=$staging_bucket s3_website push;
     fi
 
