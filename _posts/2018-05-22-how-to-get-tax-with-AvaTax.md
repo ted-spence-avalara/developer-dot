@@ -2,7 +2,7 @@
 layout: post
 title: How to Get Tax
 date: 2018-05-22 18:00
-author: Jeff Meisner and Wayne Myer
+author: Wayne Myer
 comments: true
 categories: [avatax, howto]
 product: avatax
@@ -10,8 +10,9 @@ doctype: blog
 disqus: 1
 ---
 
-You need to calculate sales tax, but it’s complicated stuff. In Indiana, marshmallows are taxed but marshmallow cream is not. In Texas, boots, belts, and hats are tax-free, but belt buckles are taxed. And in New York, bagels are tax-free, unless, of course, they are sliced. Oh, but it gets worse. Adding to the already insane complexity, the same address can be subject to multiple tax jurisdictions with different rates for different items in your shipment. 
 <h2>Boots, belts and bagels — which ones are tax-free? Here’s how to find out using Avalara’s sales tax API!</h2>
+You need to calculate sales tax, but it’s complicated stuff. In Indiana, marshmallows are taxed but marshmallow cream is not. In Texas, boots, belts, and hats are tax-free, but belt buckles are taxed. And in New York, bagels are tax-free, unless, of course, they are sliced. Oh, but it gets worse. Adding to the already insane complexity, the same address can be subject to multiple tax jurisdictions with different rates for different items in your shipment. 
+
 Calculating sales tax accurately is crucial to your business. Charging too little exposes your company to liability and penalties. Charging too much sales tax makes your business less competitive and can lead to abandoned sales. 
 
 And the risks of getting it wrong are daunting – take the example of <a href="https://www.bizjournals.com/portland/news/2012/01/04/mattress-world-sunk-by-washington-tax.html" target="_blank">Mattress World</a>, which was sunk by sales tax compliance issues. Fortunately, Avalara is here to help. Not only do we have a tax engine that is constantly updated with the latest tax rules for thousands of jurisdictions across the globe, we have an API that makes building tax compliance solutions quick, easy and accurate.
