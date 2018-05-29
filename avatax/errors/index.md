@@ -135,11 +135,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>You attempted to change passwords for a user who is not permitted to change their password.</td>
 		</tr>		
         <tr>
-			<td>25</td>
-			<td><a href="CannotChangeCompanyCode">CannotChangeCompanyCode</a></td>
-			<td>The company code for a company is set when the company is created and may not be changed.</td>
-		</tr>		
-        <tr>
 			<td>26</td>
 			<td><a href="DateFormatError">DateFormatError</a></td>
 			<td>The date value you provided was incorrectly formatted.</td>
@@ -665,6 +660,21 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>This user has a security role that blocks usage of this service.</td>
 		</tr>		
         <tr>
+			<td>197</td>
+			<td><a href="InvalidEntry">InvalidEntry</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>198</td>
+			<td><a href="TransactionAlreadyCancelled">TransactionAlreadyCancelled</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>199</td>
+			<td><a href="QueryParameterOutOfRange">QueryParameterOutOfRange</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
 			<td>200</td>
 			<td><a href="BatchSalesAuditMustBeZippedError">BatchSalesAuditMustBeZippedError</a></td>
 			<td>Sales audit files must be uploaded in ZIP or RAR formats.</td>
@@ -766,8 +776,8 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 		</tr>		
         <tr>
 			<td>309</td>
-			<td><a href="AddressIncomplete">AddressIncomplete</a></td>
-			<td>You provided an incomplete address to an AvaTax API.</td>
+			<td><a href="InvalidAddress">InvalidAddress</a></td>
+			<td>The address you provided was incomplete.</td>
 		</tr>		
         <tr>
 			<td>310</td>
@@ -806,13 +816,18 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 		</tr>		
         <tr>
 			<td>317</td>
-			<td><a href="InvalidAddress">InvalidAddress</a></td>
-			<td>The address you provided was incomplete.</td>
+			<td><a href="InvalidPostalCode">InvalidPostalCode</a></td>
+			<td>The postal code you provided could not be found.</td>
 		</tr>		
         <tr>
 			<td>318</td>
-			<td><a href="InvalidPostalCode">InvalidPostalCode</a></td>
-			<td>The postal code you provided could not be found.</td>
+			<td><a href="InvalidSubscriptionDescription">InvalidSubscriptionDescription</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>319</td>
+			<td><a href="InvalidSubscriptionTypeId">InvalidSubscriptionTypeId</a></td>
+			<td>TBD</td>
 		</tr>		
         <tr>
 			<td>400</td>
@@ -920,6 +935,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>The free tax rates API applies only to transactions within the United States.</td>
 		</tr>		
         <tr>
+			<td>801</td>
+			<td><a href="MustAcceptTermsAndConditions">MustAcceptTermsAndConditions</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
 			<td>900</td>
 			<td><a href="FilingCalendarCannotBeDeleted">FilingCalendarCannotBeDeleted</a></td>
 			<td>A filing calendar cannot be deleted once in use.</td>
@@ -938,16 +958,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>903</td>
 			<td><a href="OverlappingFilingCalendar">OverlappingFilingCalendar</a></td>
 			<td>This filing calendar overlaps with another calendar.</td>
-		</tr>		
-        <tr>
-			<td>1000</td>
-			<td><a href="QuestionNotNeededForThisAddress">QuestionNotNeededForThisAddress</a></td>
-			<td>No jursidiction-specific questions are relevant for this location.</td>
-		</tr>		
-        <tr>
-			<td>1001</td>
-			<td><a href="QuestionNotValidForThisAddress">QuestionNotValidForThisAddress</a></td>
-			<td>One of the questions you answered is not valid for this address.</td>
 		</tr>		
         <tr>
 			<td>1100</td>
@@ -981,13 +991,13 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 		</tr>		
         <tr>
 			<td>1202</td>
-			<td><a href="CertCaptureFieldValidationError">CertCaptureFieldValidationError</a></td>
-			<td>You called an exemption certificate API with an invalid value.</td>
+			<td><a href="CertificatesFieldInvalid">CertificatesFieldInvalid</a></td>
+			<td>TBD</td>
 		</tr>		
         <tr>
 			<td>1203</td>
-			<td><a href="CertCaptureError">CertCaptureError</a></td>
-			<td>The Avalara CertCapture service reported an error during the API call.</td>
+			<td><a href="CertificatesError">CertificatesError</a></td>
+			<td>TBD</td>
 		</tr>		
         <tr>
 			<td>1204</td>
@@ -996,8 +1006,8 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 		</tr>		
         <tr>
 			<td>1205</td>
-			<td><a href="CertCaptureNotConfiguredError">CertCaptureNotConfiguredError</a></td>
-			<td>Your company has not been configured for exemption certificates.</td>
+			<td><a href="CertificatesNotSetup">CertificatesNotSetup</a></td>
+			<td>TBD</td>
 		</tr>		
         <tr>
 			<td>1206</td>
@@ -1031,8 +1041,8 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 		</tr>		
         <tr>
 			<td>1212</td>
-			<td><a href="InvalidCertCaptureOperation">InvalidCertCaptureOperation</a></td>
-			<td>The Certificate service was unable to parse a filter parameter in your query.</td>
+			<td><a href="InvalidExemptionOperation">InvalidExemptionOperation</a></td>
+			<td>TBD</td>
 		</tr>		
         <tr>
 			<td>1213</td>
@@ -1053,6 +1063,21 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>1216</td>
 			<td><a href="AccountNotProvisioned">AccountNotProvisioned</a></td>
 			<td>The automatic provisioning process for exemption certificates failed.</td>
+		</tr>		
+        <tr>
+			<td>1217</td>
+			<td><a href="InvalidRequestContentType">InvalidRequestContentType</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1218</td>
+			<td><a href="ExemptionPaginationLimits">ExemptionPaginationLimits</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1219</td>
+			<td><a href="ExemptionSortLimits">ExemptionSortLimits</a></td>
+			<td>TBD</td>
 		</tr>		
         <tr>
 			<td>1300</td>
@@ -1143,4 +1168,79 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>1405</td>
 			<td><a href="WorksheetException">WorksheetException</a></td>
 			<td>An error occurred in the Liability Worksheet calculation service.</td>
+		</tr>		
+        <tr>
+			<td>1406</td>
+			<td><a href="InvalidAccountOverride">InvalidAccountOverride</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1407</td>
+			<td><a href="AccountOverrideNotAuthorized">AccountOverrideNotAuthorized</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1408</td>
+			<td><a href="ParserFieldNotQueryableError">ParserFieldNotQueryableError</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1409</td>
+			<td><a href="UsernameRequired">UsernameRequired</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1410</td>
+			<td><a href="InvalidAuditMessage">InvalidAuditMessage</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1500</td>
+			<td><a href="CannotDeleteParentBeforeChildNexus">CannotDeleteParentBeforeChildNexus</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1501</td>
+			<td><a href="NexusChildDateMismatch">NexusChildDateMismatch</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1600</td>
+			<td><a href="AdvancedRuleBadScript">AdvancedRuleBadScript</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1601</td>
+			<td><a href="AdvancedRuleBadCsvTable">AdvancedRuleBadCsvTable</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1602</td>
+			<td><a href="AdvancedRuleRequestRuleError">AdvancedRuleRequestRuleError</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1603</td>
+			<td><a href="AdvancedRuleResponseRuleError">AdvancedRuleResponseRuleError</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1604</td>
+			<td><a href="AdvancedRuleNotApproved">AdvancedRuleNotApproved</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1700</td>
+			<td><a href="InvalidDocumentStatusToAddOrDeleteLines">InvalidDocumentStatusToAddOrDeleteLines</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1701</td>
+			<td><a href="TaxRuleRequiresNexus">TaxRuleRequiresNexus</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1800</td>
+			<td><a href="UnsupportedFileFormat">UnsupportedFileFormat</a></td>
+			<td>TBD</td>
 		</tr></tbody></table>

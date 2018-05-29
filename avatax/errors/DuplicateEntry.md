@@ -21,7 +21,7 @@ The key or name already exists.
       "code": "DuplicateEntry",
       "number": 193,
       "message": "The object is a duplicate of an existing object.",
-      "description": "The object that you are trying to create already exists. Please check your input data.",
+      "description": "The object that you are trying to create already exists. Each -0- object must have a unique identity. The identity of a -0- is determined by the fields: -1-.",
       "faultCode": "Client",
       "helpLink": "http://developer.avalara.com/avatax/errors/DuplicateEntry",
       "severity": "Error"
