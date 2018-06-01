@@ -6,7 +6,8 @@ import createLogger from 'redux-logger';
 import {Provider} from 'react-redux';
 import userManager from './user-manager';
 
-import Oidc from 'oidc-client';
+// import Oidc from 'oidc-client';
+const Oidc = require('oidc-client');
 
 import reducer from './reducers/reducer';
 import App from './app';
