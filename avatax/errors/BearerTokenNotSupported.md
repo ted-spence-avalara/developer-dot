@@ -21,7 +21,7 @@ Bearer Token authentication is not yet supported with this API.
       "code": "BearerTokenNotSupported",
       "number": 41,
       "message": "This API does not yet support bearer token authentication.",
-      "description": "Avalara is working to establish bearer token authentication throughout all APIs and services.  The API that you have called does not yet support bearer token authentication.  To call this API, please use username:password or accountid:licensekey authentication.",
+      "description": "Avalara is working to establish bearer token authentication throughout all APIs and services.  The API that you have called does not yet support bearer token authentication.  To call this API, please username:password or accountid:licensekey authentication.",
       "faultCode": "Server",
       "helpLink": "http://developer.avalara.com/avatax/errors/BearerTokenNotSupported",
       "severity": "Error"
