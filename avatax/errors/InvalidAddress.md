@@ -1,7 +1,7 @@
 ---
 layout: page
 title: InvalidAddress
-number: 317
+number: 309
 categories: [AvaTax Error Codes]
 disqus: 1
 ---
@@ -19,7 +19,7 @@ The address you provided was incomplete.
   "details": [
     {
       "code": "InvalidAddress",
-      "number": 317,
+      "number": 309,
       "message": "The address value was incomplete.",
       "description": "The address value -0- was incomplete.  You must provide either a valid line + region + country + postal code.",
       "faultCode": "Client",
