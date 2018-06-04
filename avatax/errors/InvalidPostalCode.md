@@ -1,7 +1,7 @@
 ---
 layout: page
 title: InvalidPostalCode
-number: 318
+number: 317
 categories: [AvaTax Error Codes]
 disqus: 1
 ---
@@ -19,7 +19,7 @@ The postal code you provided could not be found.
   "details": [
     {
       "code": "InvalidPostalCode",
-      "number": 318,
+      "number": 317,
       "message": "The postal code is invalid: -0-.",
       "description": "You have attempted to get the tax rates for an invalid postal code -0-. Please provide a valid postal code.",
       "faultCode": "Client",
