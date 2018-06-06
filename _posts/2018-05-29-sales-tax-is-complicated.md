@@ -19,12 +19,9 @@ What’s the best way to handle that complexity and save your organization from 
 
 Our answer? The Avalara API.
 
-<img src="/public/images/AvaTaxApiInfographic.png" usemap="#image-map" style="width: 100%;" />
-<map name="image-map">
-    <area target="_blank" alt="Download the whitepaper" title="Download the whitepaper" href="https://simplify.avalara.com/avatax-api/" coords="2506,6495,1648,6289" shape="rect">
-    <area target="_blank" alt="Download the whitepaper" title="Download the whitepaper" href="https://avlr.co/apiwhitepaper" coords="1732,6532,2439,6576" shape="rect">
-    <area target="_blank" alt="free API trial" title="free API trial" href="https://developer.avalara.com/avatax/signup/" coords="2086,6620,3172,6668" shape="rect">
-</map>
+<a href="https://simplify.avalara.com/avatax-api/" target="_blank">
+    <img src="/public/images/AvaTaxApiInfographic.png" alt="Download the Avalara AvaTax whitepaper." style="width: 100%;" />
+</a>
 
 The API provides comprehensive tax coverage, fast performance, strong developer support and is highly customizable.
 
