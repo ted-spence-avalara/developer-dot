@@ -37,7 +37,7 @@ Avalara provides a variety of free and premium support options for customers and
 <div class="support-option">
   <h4><a href="https://www1.avalara.com/us/en/products/professional-services.html">Contact Avalara Professional Services</a></h4>
   <ul class="normal">
-    <li>Problems that require complex tax and legal advice can be handled by Avalara's professional services team.</li>
+    <li>Problems that require more complex advice can be handled by Avalara's professional services team.</li>
     <li>Your customer account manager can help match you up with the right team in professional services.</li>
     <li>The professional services team can provide custom solutions tailored to your needs.</li>
   </ul>

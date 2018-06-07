@@ -44,7 +44,7 @@ The AvaTax release schedule includes a preview period where the latest software 
 
 <h3>TaxContent API Improvements</h3>
 
-The TaxContent API suite now supports using custom tax cod values.  To use custom tax codes, you must create items within your company tied to those custom tax codes.
+The TaxContent API suite now supports using custom tax code values.  To use custom tax codes, you must create items within your company tied to those custom tax codes.
 
 Documentation for the TaxContent API suite has been extended to clarify timeout behavior.  The TaxContent API may take a number of minutes to calculate tax for all the scenarios specified in the combination of locations and tax codes.  Please note that long running API calls may cause routers or other network connections to drop.
 
