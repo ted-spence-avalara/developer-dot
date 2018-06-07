@@ -46,6 +46,8 @@ The AvaTax release schedule includes a preview period where the latest software 
 
 Avalara doesn't just provide tax rates, we help our customers monitor their tax compliance process.  Our newest API, the Notifications API, tracks issues that have been discovered by our automated monitoring solutions.  The API will allow you to fetch notifications - messages related to your company's tax filings, nexus declarations, exemption certificates, and more.  These notifications will be available both on the AvaTax Website as well as via the API directly.
 
+Avalara plans to begin delivering notifications via this API in 3Q 2018.  Please be on the lookout for more information in future patch notes.
+
 <h3>Exemption Certificates</h3>
 
 Based on feedback from customers and partners, we are standardizing our support for exemption certificates in our Sandbox environment.  Avalara will track your exemption certificates separately in production and in sandbox, so you can be sure that your testing data won't ever impact your production data.
