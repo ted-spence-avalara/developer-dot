@@ -11,7 +11,7 @@ disqus: 1
   <li class="previous"><a href="/avatax/dev-guide/getting-started-with-avatax/troubleshooting/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/avatax/dev-guide/getting-started-with-avatax/chapter-summary/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
-To use AvaTax, you must configure your company and set up your tax profile.  You can configure your company on the <a class="dev-guide-link" href="https://admin-avatax.avalara.net/">AvaTax website</a> or by using the API directly.
+To use AvaTax, you must configure your company and set up your tax profile.  You can configure your company on the <a class="dev-guide-link" href="https://admin.avalara.com/">AvaTax website</a> or by using the API directly.
 
 If you are building a connector that links up to AvaTax, you don't have to do any work to setup a company.  Your customers will log onto AvaTax and follow the company setup steps themselves.  No work necessary!
 
