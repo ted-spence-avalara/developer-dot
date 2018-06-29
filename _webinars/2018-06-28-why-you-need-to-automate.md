@@ -1,7 +1,7 @@
 ---
 layout: webinar
 title: Monthly Developer Webinar – Why You Need to Automate Sales Tax Now
-date: 2018-06-28 14:00
+date: 2018-08-07 10:00
 author: Wayne Myer
 comments: true
 product: avatax
