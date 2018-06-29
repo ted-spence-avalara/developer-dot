@@ -1,7 +1,7 @@
 ---
 layout: webinar
 title: Monthly Developer Webinar – Why Your Shopping Cart Needs To Speak Sales Tax
-date: 2018-06-28 15:00
+date: 2018-08-21 10:00
 author: Wayne Myer
 comments: true
 product: avatax
