@@ -6,7 +6,7 @@ author: Wayne Myer
 comments: true
 product: avatax
 doctype: webinar
-linkurl: https://https://simplify.avalara.com/sales-tax-shopping-cart/?CampaignID=7010b000001XyeL
+linkurl: https://simplify.avalara.com/sales-tax-shopping-cart/?CampaignID=7010b000001XyeL
 ---
 
 Monthly Developer Webinar: Why your shopping cart needs to speak sales tax 
