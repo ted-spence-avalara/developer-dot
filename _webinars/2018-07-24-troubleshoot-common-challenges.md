@@ -6,7 +6,7 @@ author: Wayne Myer
 comments: true
 product: avatax
 doctype: webinar
-linkurl: https://attendee.gotowebinar.com/register/6491732546380938499
+linkurl: https://offers.avalara.com/julydevwebinar/?CampaignID=7010b000001Y0dw
 ---
 
 Monthly Developer Webinar: Need to get up and running on Avalara quickly? Here’s how to troubleshoot common challenges with our API!
