@@ -1,0 +1,849 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "v2",
+		"title": "Saas Pro",
+		"description": "APIs to interface with communications tax engine.<br />To authenticate, set request header parameter <code>api_key</code> to Base64 encoded <code>UserId:Password</code>.<br />Users with access to multiple clients must also set request header parameters for <code>client_id</code> and <code>client_profile_id</code>.",
+		"termsOfService": "None"
+	},
+	"basePath": "/",
+	"paths": {
+		"/api/v2/geo/Geocode": {
+			"post": {
+				"tags": ["Jurisdiction Determination"],
+				"summary": "Geocodes one or multiple addresses and/or lat/long coordinate pairs.",
+				"operationId": "ApiV2GeoGeocodePost",
+				"consumes": ["application/json",
+				"text/json",
+				"application/json-patch+json"],
+				"produces": ["text/plain",
+				"application/json",
+				"text/json"],
+				"parameters": [{
+					"name": "geocodeRequests",
+					"in": "body",
+					"description": "List of addresses and/or lat/long coordinate pairs to geocode.",
+					"required": false,
+					"schema": {
+						"type": "array",
+						"items": {
+							"$ref": "#/definitions/GeocodeRequest"
+						}
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/GeocodeResult"
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/api/v2/afc/CalcTaxes": {
+			"post": {
+				"tags": ["Tax Calculation"],
+				"summary": "Performs tax calculations on all invoices and line items within the request body.",
+				"operationId": "ApiV2AfcCalcTaxesPost",
+				"consumes": ["application/json",
+				"text/json",
+				"application/json-patch+json"],
+				"produces": ["text/plain",
+				"application/json",
+				"text/json"],
+				"parameters": [{
+					"name": "request",
+					"in": "body",
+					"description": "CalcTaxesRequest object containing invoices to process and data required \r\n            for performing tax calculations.",
+					"required": false,
+					"schema": {
+						"$ref": "#/definitions/CalcTaxesRequest"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/CalcTaxesResponse"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/api/v2/afc/Commit": {
+			"post": {
+				"tags": ["Tax Calculation"],
+				"summary": "Commits or un-commits a document code.",
+				"operationId": "ApiV2AfcCommitPost",
+				"consumes": ["application/json",
+				"text/json",
+				"application/json-patch+json"],
+				"produces": ["text/plain",
+				"application/json",
+				"text/json"],
+				"parameters": [{
+					"name": "request",
+					"in": "body",
+					"description": "CommitRequest object containing document code and optional field data to override in reports.",
+					"required": false,
+					"schema": {
+						"$ref": "#/definitions/CommitRequest"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/CommitResponse"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		}
+	},
+	"definitions": {
+		"GeocodeRequest": {
+			"type": "object",
+			"properties": {
+				"ref": {
+					"type": "string"
+				},
+				"cass": {
+					"type": "boolean"
+				},
+				"lat": {
+					"format": "double",
+					"type": "number"
+				},
+				"long": {
+					"format": "double",
+					"type": "number"
+				},
+				"addr": {
+					"type": "string"
+				},
+				"city": {
+					"type": "string"
+				},
+				"st": {
+					"type": "string"
+				},
+				"zip": {
+					"type": "string"
+				}
+			}
+		},
+		"GeocodeResult": {
+			"type": "object",
+			"properties": {
+				"ref": {
+					"type": "string"
+				},
+				"cass": {
+					"$ref": "#/definitions/Address"
+				},
+				"cBlk": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"cTrc": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"cnty": {
+					"type": "string"
+				},
+				"feat": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"fips": {
+					"type": "string"
+				},
+				"inc": {
+					"type": "boolean"
+				},
+				"jur": {
+					"type": "string"
+				},
+				"lat": {
+					"format": "double",
+					"type": "number"
+				},
+				"long": {
+					"format": "double",
+					"type": "number"
+				},
+				"pcd": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"scr": {
+					"format": "double",
+					"type": "number"
+				},
+				"err": {
+					"type": "string"
+				}
+			}
+		},
+		"Address": {
+			"type": "object",
+			"properties": {
+				"addr": {
+					"type": "string"
+				},
+				"city": {
+					"type": "string"
+				},
+				"st": {
+					"type": "string"
+				},
+				"zip": {
+					"type": "string"
+				}
+			}
+		},
+		"CalcTaxesRequest": {
+			"type": "object",
+			"properties": {
+				"cmpn": {
+					"$ref": "#/definitions/CompanyData"
+				},
+				"inv": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Invoice"
+					}
+				},
+				"ovr": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/TaxOverride"
+					}
+				},
+				"sovr": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/SafeHarborOverride"
+					}
+				}
+			}
+		},
+		"CompanyData": {
+			"type": "object",
+			"properties": {
+				"bscl": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"svcl": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"fclt": {
+					"type": "boolean"
+				},
+				"frch": {
+					"type": "boolean"
+				},
+				"reg": {
+					"type": "boolean"
+				},
+				"excl": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Exclusion"
+					}
+				},
+				"idnt": {
+					"type": "string"
+				}
+			}
+		},
+		"Invoice": {
+			"type": "object",
+			"properties": {
+				"doc": {
+					"type": "string"
+				},
+				"cmmt": {
+					"type": "boolean"
+				},
+				"bill": {
+					"$ref": "#/definitions/Location"
+				},
+				"cust": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"lfln": {
+					"type": "boolean"
+				},
+				"date": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"exms": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/TaxExemption"
+					}
+				},
+				"itms": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/LineItem"
+					}
+				},
+				"invm": {
+					"type": "boolean"
+				},
+				"dtl": {
+					"type": "boolean"
+				},
+				"summ": {
+					"type": "boolean"
+				},
+				"opt": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/KeyValuePair"
+					}
+				}
+			}
+		},
+		"TaxOverride": {
+			"type": "object",
+			"properties": {
+				"loc": {
+					"$ref": "#/definitions/Location"
+				},
+				"scp": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"tid": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"lvl": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"lvlExm": {
+					"type": "boolean"
+				},
+				"brkt": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/TaxBracket"
+					}
+				}
+			}
+		},
+		"SafeHarborOverride": {
+			"type": "object",
+			"properties": {
+				"sh": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"old": {
+					"format": "double",
+					"type": "number"
+				},
+				"new": {
+					"format": "double",
+					"type": "number"
+				}
+			}
+		},
+		"Exclusion": {
+			"type": "object",
+			"properties": {
+				"ctry": {
+					"type": "string"
+				},
+				"st": {
+					"type": "string"
+				},
+				"excl": {
+					"type": "boolean"
+				}
+			}
+		},
+		"Location": {
+			"type": "object",
+			"properties": {
+				"cnty": {
+					"type": "string"
+				},
+				"ctry": {
+					"type": "string"
+				},
+				"int": {
+					"type": "boolean"
+				},
+				"geo": {
+					"type": "boolean"
+				},
+				"pcd": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"npa": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"fips": {
+					"type": "string"
+				},
+				"addr": {
+					"type": "string"
+				},
+				"city": {
+					"type": "string"
+				},
+				"st": {
+					"type": "string"
+				},
+				"zip": {
+					"type": "string"
+				}
+			}
+		},
+		"TaxExemption": {
+			"type": "object",
+			"properties": {
+				"frc": {
+					"type": "boolean"
+				},
+				"loc": {
+					"$ref": "#/definitions/Location"
+				},
+				"tpe": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"lvl": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"cat": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"LineItem": {
+			"type": "object",
+			"properties": {
+				"ref": {
+					"type": "string"
+				},
+				"from": {
+					"$ref": "#/definitions/Location"
+				},
+				"to": {
+					"$ref": "#/definitions/Location"
+				},
+				"chg": {
+					"format": "double",
+					"type": "number"
+				},
+				"line": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"loc": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"min": {
+					"format": "double",
+					"type": "number"
+				},
+				"sale": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"plsp": {
+					"format": "double",
+					"type": "number"
+				},
+				"incl": {
+					"type": "boolean"
+				},
+				"pror": {
+					"format": "double",
+					"type": "number"
+				},
+				"brdg": {
+					"$ref": "#/definitions/BridgeData"
+				},
+				"tran": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"serv": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"dbt": {
+					"type": "boolean"
+				},
+				"adj": {
+					"type": "boolean"
+				},
+				"adjm": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"disc": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"opt": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/KeyValuePair"
+					}
+				},
+				"prop": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"KeyValuePair": {
+			"type": "object",
+			"properties": {
+				"key": {
+					"type": "string"
+				},
+				"val": {
+					"type": "string"
+				}
+			}
+		},
+		"TaxBracket": {
+			"type": "object",
+			"properties": {
+				"rate": {
+					"format": "double",
+					"type": "number"
+				},
+				"max": {
+					"format": "double",
+					"type": "number"
+				}
+			}
+		},
+		"BridgeData": {
+			"type": "object",
+			"properties": {
+				"proc": {
+					"type": "boolean"
+				},
+				"rtrn": {
+					"type": "boolean"
+				},
+				"prts": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/BridgeParticipant"
+					}
+				}
+			}
+		},
+		"BridgeParticipant": {
+			"type": "object",
+			"properties": {
+				"ref": {
+					"type": "string"
+				},
+				"loc": {
+					"$ref": "#/definitions/Location"
+				}
+			}
+		},
+		"CalcTaxesResponse": {
+			"type": "object",
+			"properties": {
+				"inv": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/InvoiceResult"
+					}
+				},
+				"err": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Error"
+					}
+				}
+			}
+		},
+		"InvoiceResult": {
+			"type": "object",
+			"properties": {
+				"doc": {
+					"type": "string"
+				},
+				"itms": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/LineItemResult"
+					}
+				},
+				"summ": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/SummarizedTax"
+					}
+				},
+				"err": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Error"
+					}
+				}
+			}
+		},
+		"Error": {
+			"type": "object",
+			"properties": {
+				"code": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"msg": {
+					"type": "string"
+				}
+			}
+		},
+		"LineItemResult": {
+			"type": "object",
+			"properties": {
+				"ref": {
+					"type": "string"
+				},
+				"base": {
+					"format": "double",
+					"type": "number"
+				},
+				"txs": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Tax"
+					}
+				},
+				"brdg": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/BridgeParticipantResult"
+					}
+				},
+				"err": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Error"
+					}
+				}
+			}
+		},
+		"SummarizedTax": {
+			"type": "object",
+			"properties": {
+				"max": {
+					"format": "double",
+					"type": "number"
+				},
+				"min": {
+					"format": "double",
+					"type": "number"
+				},
+				"tchg": {
+					"format": "double",
+					"type": "number"
+				},
+				"calc": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"cat": {
+					"type": "string"
+				},
+				"cid": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"name": {
+					"type": "string"
+				},
+				"exm": {
+					"format": "double",
+					"type": "number"
+				},
+				"lns": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"pcd": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"rate": {
+					"format": "double",
+					"type": "number"
+				},
+				"sur": {
+					"type": "boolean"
+				},
+				"tax": {
+					"format": "double",
+					"type": "number"
+				},
+				"lvl": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"tid": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Tax": {
+			"type": "object",
+			"properties": {
+				"bill": {
+					"type": "boolean"
+				},
+				"cmpl": {
+					"type": "boolean"
+				},
+				"tm": {
+					"format": "double",
+					"type": "number"
+				},
+				"calc": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"cat": {
+					"type": "string"
+				},
+				"cid": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"name": {
+					"type": "string"
+				},
+				"exm": {
+					"format": "double",
+					"type": "number"
+				},
+				"lns": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"min": {
+					"format": "double",
+					"type": "number"
+				},
+				"pcd": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"rate": {
+					"format": "double",
+					"type": "number"
+				},
+				"sur": {
+					"type": "boolean"
+				},
+				"tax": {
+					"format": "double",
+					"type": "number"
+				},
+				"lvl": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"tid": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"BridgeParticipantResult": {
+			"type": "object",
+			"properties": {
+				"ref": {
+					"type": "string"
+				},
+				"tran": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"serv": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"txs": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Tax"
+					}
+				},
+				"err": {
+					"type": "string"
+				}
+			}
+		},
+		"CommitRequest": {
+			"type": "object",
+			"properties": {
+				"doc": {
+					"type": "string"
+				},
+				"cmmt": {
+					"type": "boolean"
+				},
+				"opt": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/KeyValuePair"
+					}
+				}
+			}
+		},
+		"CommitResponse": {
+			"type": "object",
+			"properties": {
+				"ok": {
+					"type": "boolean"
+				},
+				"err": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Error"
+					}
+				}
+			}
+		}
+	},
+	"securityDefinitions": {
+
+	}
+}
