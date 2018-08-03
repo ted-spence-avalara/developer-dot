@@ -13,6 +13,9 @@
 			"url": "https://www.avalara.com/terms-of-use/"
 		}
 	},
+	"host": "sandbox-rest.avatax.com",
+	"x-production-host": "rest.avatax.com",
+	"schemes": ["https"],
 	"basePath": "/",
 	"paths": {
 		"/api/v2/accounts": {
@@ -23959,7 +23962,7 @@
 					"description": "A list of exemption certficates that apply to this customer.  You can fetch this data by specifying \r\n`$include=certificates` when calling a customer fetch API.",
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/CertificateModel"
+						
 					}
 				},
 				"customFields": {
@@ -40487,7 +40490,7 @@
 	"securityDefinitions": {
 		"OauthSecurity": {
 			"flow": "implicit",
-			"authorizationUrl": "https://identity.avalara.com/connect/authorize?response_type=id_token token&scope=avatax_api avatax openid profile&nonce=9ece0102-ed07-4451-a7f9-1abbe6b20831&",
+			"authorizationUrl": "https://ai-sbx.avlr.sh/connect/authorize?response_type=id_token token&scope=avatax_api avatax openid profile&nonce=aad18261-8a6a-45d2-972b-c25c9fc135fe&",
 			"type": "oauth2",
 			"description": "A bearer token provided by the Avalara Identity server."
 		},
@@ -40502,10 +40505,10 @@
 	"x-ApiType": "REST",
 	"x-avalara-version": "18.7.1-223",
 	"x-api-proxy": {
-		"route": "https://e3zwcxla5k.execute-api.us-west-2.amazonaws.com/prod/",
+		"route": "https://xp0wfn7roi.execute-api.us-west-2.amazonaws.com/production/proxy",
 		"key": {
 			"name": "api-key",
-			"location": "api-proxy-key/key"
+			"location": "v2-devdot-keys/devdot-proxy-key"
 		}
 	}
 }
