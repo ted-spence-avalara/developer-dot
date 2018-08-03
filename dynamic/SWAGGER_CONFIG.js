@@ -24,14 +24,14 @@ export default {
         path: 'api-reference/avatax/soap',
         product: 'avaTax'
     },
-    'communications/afc-swagger-v1.json': {
+    'communications/v1.json': {
         name: 'Communications REST v1',
-        path: 'api-reference/communications/afc/v1',
+        path: 'api-reference/communications/v1',
         product: 'communications'
     },
-    'communications/afc-swagger-v2.json': {
+    'communications/v2.json': {
         name: 'Communications REST v2',
-        path: 'api-reference/communications/afc/v2',
+        path: 'api-reference/communications/v2',
         product: 'communications'
     },
     'excise/5_18_0.yaml': {
