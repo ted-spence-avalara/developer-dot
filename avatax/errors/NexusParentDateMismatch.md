@@ -21,7 +21,7 @@ You declared nexus on a date when that nexus was not available.
       "code": "NexusParentDateMismatch",
       "number": 159,
       "message": "Nexus out of date range with parent.",
-      "description": "The Nexus for Country: -0-, Region: -1-, JurisCode: -2-, JurisTypeId: -3-, JurisName: -4-, ShortName: -5-, SignatureCode: -6-, StateAssignedNo: -7- did not have nexus in -8- on -9-.",
+      "description": "The Nexus for Country: -0-, Region: -1-, JurisCode: -2-, JurisTypeId: -3-, JurisName: -4-, ShortName: -5-, SignatureCode: -6-, StateAssignedNo: -7-, EffectiveDate: -8-, EndDate: -9- has conflicting effective dates with its parent.",
       "faultCode": "Client",
       "helpLink": "http://developer.avalara.com/avatax/errors/NexusParentDateMismatch",
       "severity": "Error"

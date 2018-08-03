@@ -1,7 +1,7 @@
 ---
 layout: page
-title: RangeError
-number: 6
+title: OutOfRange
+number: 118
 categories: [AvaTax Error Codes]
 disqus: 1
 ---
@@ -14,16 +14,16 @@ You attempted to set a value that must be within a range, but your value was out
 
 ```json
 {
-  "code": "RangeError",
+  "code": "OutOfRange",
   "target": "Unknown",
   "details": [
     {
-      "code": "RangeError",
-      "number": 6,
-      "message": "Field -0- is out of bounds.",
-      "description": "-0- is expected to be between -1- and -2-.",
+      "code": "OutOfRange",
+      "number": 118,
+      "message": "The request is out of range.",
+      "description": "Please ensure the request is between -0- and -1-.",
       "faultCode": "Client",
-      "helpLink": "http://developer.avalara.com/avatax/errors/RangeError",
+      "helpLink": "http://developer.avalara.com/avatax/errors/OutOfRange",
       "severity": "Error"
     }
   ]
