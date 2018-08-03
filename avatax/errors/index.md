@@ -275,9 +275,24 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>You specified a date outside of the allowable range.</td>
 		</tr>		
         <tr>
+			<td>99</td>
+			<td><a href="InvalidAdjustmentType">InvalidAdjustmentType</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
 			<td>100</td>
 			<td><a href="DeleteInformation">DeleteInformation</a></td>
 			<td>This message represents information provided about an object that was deleted.</td>
+		</tr>		
+        <tr>
+			<td>118</td>
+			<td><a href="OutOfRange">OutOfRange</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>119</td>
+			<td><a href="UnspecifiedTimeZone">UnspecifiedTimeZone</a></td>
+			<td>TBD</td>
 		</tr>		
         <tr>
 			<td>120</td>
@@ -615,6 +630,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>The file content type could not be determined correctly.</td>
 		</tr>		
         <tr>
+			<td>187</td>
+			<td><a href="RequestTooLarge">RequestTooLarge</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
 			<td>188</td>
 			<td><a href="EcmsDisabled">EcmsDisabled</a></td>
 			<td>The ECMS configuration value for this account does not permit exemption certificates.</td>
@@ -662,17 +682,17 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>197</td>
 			<td><a href="InvalidEntry">InvalidEntry</a></td>
-			<td>This field is invalid.</td>
+			<td>Invalid entry.</td>
 		</tr>		
         <tr>
 			<td>198</td>
 			<td><a href="TransactionAlreadyCancelled">TransactionAlreadyCancelled</a></td>
-			<td>This transaction has already been cancelled.</td>
+			<td>The transaction has already been cancelled</td>
 		</tr>		
         <tr>
 			<td>199</td>
 			<td><a href="QueryParameterOutOfRange">QueryParameterOutOfRange</a></td>
-			<td>This query parameter is out of range</td>
+			<td>The query parameter is out of range.</td>
 		</tr>		
         <tr>
 			<td>200</td>
@@ -827,7 +847,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>319</td>
 			<td><a href="InvalidSubscriptionTypeId">InvalidSubscriptionTypeId</a></td>
-			<td>SubscriptionTypeId cannot be 0</td>
+			<td>Invalid subscription TypeId.</td>
 		</tr>		
         <tr>
 			<td>400</td>
@@ -992,12 +1012,12 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1202</td>
 			<td><a href="CertificatesFieldInvalid">CertificatesFieldInvalid</a></td>
-			<td>Certificates API request has an invalid field</td>
+			<td>The certificate API request has an invalid field.</td>
 		</tr>		
         <tr>
 			<td>1203</td>
 			<td><a href="CertificatesError">CertificatesError</a></td>
-			<td>Certificates API returned error</td>
+			<td>The certificate API has returned an error.</td>
 		</tr>		
         <tr>
 			<td>1204</td>
@@ -1007,7 +1027,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1205</td>
 			<td><a href="CertificatesNotSetup">CertificatesNotSetup</a></td>
-			<td>This company has not been configured with this certificate</td>
+			<td>The company has not been configured with this certificate.</td>
 		</tr>		
         <tr>
 			<td>1206</td>
@@ -1067,17 +1087,32 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1217</td>
 			<td><a href="InvalidRequestContentType">InvalidRequestContentType</a></td>
-			<td>The request content type is invalid</td>
+			<td>Invalid request content type in the request.</td>
 		</tr>		
         <tr>
 			<td>1218</td>
 			<td><a href="ExemptionPaginationLimits">ExemptionPaginationLimits</a></td>
-			<td>AvaTax exemption data does not support this type of pagination</td>
+			<td>AvaTax exemption data does not support this type of pagination.</td>
 		</tr>		
         <tr>
 			<td>1219</td>
 			<td><a href="ExemptionSortLimits">ExemptionSortLimits</a></td>
-			<td>AvaTax exemption data does not support sorting by more than one field</td>
+			<td>AvaTax exemption data does not support sorting by more than one field.</td>
+		</tr>		
+        <tr>
+			<td>1220</td>
+			<td><a href="CustomerCantBeBothShipToAndBillTo">CustomerCantBeBothShipToAndBillTo</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1221</td>
+			<td><a href="BillToCustomerExpected">BillToCustomerExpected</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1222</td>
+			<td><a href="ShipToCustomerExpected">ShipToCustomerExpected</a></td>
+			<td>TBD</td>
 		</tr>		
         <tr>
 			<td>1300</td>
@@ -1150,16 +1185,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>The Avalara Communications Client ID value associated with your account is invalid.</td>
 		</tr>		
         <tr>
-			<td>1402</td>
-			<td><a href="BizTechCustomerAccountFailure">BizTechCustomerAccountFailure</a></td>
-			<td>The Avalara business technology service could not create the account you requested.</td>
-		</tr>		
-        <tr>
-			<td>1403</td>
-			<td><a href="BizTechOpportunityCreationFailure">BizTechOpportunityCreationFailure</a></td>
-			<td>The Avalara business technology service could not find the opportunity you specified.</td>
-		</tr>		
-        <tr>
 			<td>1404</td>
 			<td><a href="AccountInNewStatusException">AccountInNewStatusException</a></td>
 			<td>You may not obtain a license key until you have accepted Avalara's terms and conditions.</td>
@@ -1172,75 +1197,95 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1406</td>
 			<td><a href="InvalidAccountOverride">InvalidAccountOverride</a></td>
-			<td>The AccountOverride format is not valid</td>
+			<td>Invalid AccountOverride format.</td>
 		</tr>		
         <tr>
 			<td>1407</td>
 			<td><a href="AccountOverrideNotAuthorized">AccountOverrideNotAuthorized</a></td>
-			<td>This role is not authorized to do account override actions</td>
+			<td>The current role you are in does not permit account override function</td>
 		</tr>		
         <tr>
 			<td>1408</td>
 			<td><a href="ParserFieldNotQueryableError">ParserFieldNotQueryableError</a></td>
-			<td>This field is not queryable</td>
+			<td>This field is not queryable.</td>
 		</tr>		
         <tr>
 			<td>1409</td>
 			<td><a href="UsernameRequired">UsernameRequired</a></td>
-			<td>You must provide a username with your request</td>
+			<td>A username is required</td>
 		</tr>		
         <tr>
 			<td>1410</td>
 			<td><a href="InvalidAuditMessage">InvalidAuditMessage</a></td>
-			<td>The audit message provided in request header contains invalid characters</td>
+			<td>Please review your audit message and ensure no special characters are used.</td>
 		</tr>		
         <tr>
 			<td>1500</td>
 			<td><a href="CannotDeleteParentBeforeChildNexus">CannotDeleteParentBeforeChildNexus</a></td>
-			<td>The nexus can't be deleted because child nexus exists</td>
+			<td>The nexus cannot be deleted due to child nexus tied to it.</td>
 		</tr>		
         <tr>
 			<td>1501</td>
 			<td><a href="NexusChildDateMismatch">NexusChildDateMismatch</a></td>
-			<td>Nexus out of date range with its children</td>
+			<td>Nexus out of date range with its children.</td>
+		</tr>		
+        <tr>
+			<td>1502</td>
+			<td><a href="RemoteValidationError">RemoteValidationError</a></td>
+			<td>TBD</td>
 		</tr>		
         <tr>
 			<td>1600</td>
 			<td><a href="AdvancedRuleBadScript">AdvancedRuleBadScript</a></td>
-			<td>The advanced rule script contained errors</td>
+			<td>Advanced Rule script provided contained errors.</td>
 		</tr>		
         <tr>
 			<td>1601</td>
 			<td><a href="AdvancedRuleBadCsvTable">AdvancedRuleBadCsvTable</a></td>
-			<td>The advanced rule table did not contain valid CSV</td>
+			<td>The advanced rule table did not contain valid CSV file.</td>
 		</tr>		
         <tr>
 			<td>1602</td>
 			<td><a href="AdvancedRuleRequestRuleError">AdvancedRuleRequestRuleError</a></td>
-			<td>Your advanced rule failed to execute</td>
+			<td>Advanced rule failed to execute.</td>
 		</tr>		
         <tr>
 			<td>1603</td>
 			<td><a href="AdvancedRuleResponseRuleError">AdvancedRuleResponseRuleError</a></td>
-			<td>Your advanced rule failed to execute</td>
+			<td>Failed to execute the advanced rule script.</td>
 		</tr>		
         <tr>
 			<td>1604</td>
 			<td><a href="AdvancedRuleNotApproved">AdvancedRuleNotApproved</a></td>
-			<td>The advanced rule script has not been approved</td>
+			<td>The advanced rule script has not been approved.</td>
 		</tr>		
         <tr>
 			<td>1700</td>
 			<td><a href="InvalidDocumentStatusToAddOrDeleteLines">InvalidDocumentStatusToAddOrDeleteLines</a></td>
-			<td>This document is voided, cannot add or delete lines</td>
+			<td>This document is voided, cannot add or delete lines.</td>
 		</tr>		
         <tr>
 			<td>1701</td>
 			<td><a href="TaxRuleRequiresNexus">TaxRuleRequiresNexus</a></td>
-			<td>You must declare nexus in -0- before creating this tax rule</td>
+			<td>Nexus is not declared in this region, therefore no tax rule can be created.</td>
+		</tr>		
+        <tr>
+			<td>1702</td>
+			<td><a href="UPCCodeNotUnique">UPCCodeNotUnique</a></td>
+			<td>TBD</td>
 		</tr>		
         <tr>
 			<td>1800</td>
 			<td><a href="UnsupportedFileFormat">UnsupportedFileFormat</a></td>
-			<td>he requested output file format is invalid</td>
+			<td>The requested output file format is invalid.</td>
+		</tr>		
+        <tr>
+			<td>1801</td>
+			<td><a href="UnsupportedOutputFileType">UnsupportedOutputFileType</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1802</td>
+			<td><a href="ConcurrentApiCallIsNotAllowed">ConcurrentApiCallIsNotAllowed</a></td>
+			<td>TBD</td>
 		</tr></tbody></table>

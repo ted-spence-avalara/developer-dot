@@ -20,8 +20,8 @@ You specified an out-of-bounds field value.
     {
       "code": "RangeCompareError",
       "number": 7,
-      "message": "Field -1- is out of bounds.",
-      "description": "-1- is expected to be -2- -3-.",
+      "message": "Field -0- is out of bounds.",
+      "description": "-0- is expected to be -1- -2-.",
       "faultCode": "Client",
       "helpLink": "http://developer.avalara.com/avatax/errors/RangeCompareError",
       "severity": "Error"
