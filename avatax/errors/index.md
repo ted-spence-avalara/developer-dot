@@ -277,7 +277,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>99</td>
 			<td><a href="InvalidAdjustmentType">InvalidAdjustmentType</a></td>
-			<td>TBD</td>
+			<td>The adjustment type record permits only a specified list of values.</td>
 		</tr>		
         <tr>
 			<td>100</td>
@@ -287,12 +287,12 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>118</td>
 			<td><a href="OutOfRange">OutOfRange</a></td>
-			<td>TBD</td>
+			<td>You attempted to set a value that must be within a range, but your value was outside of the range.</td>
 		</tr>		
         <tr>
 			<td>119</td>
 			<td><a href="UnspecifiedTimeZone">UnspecifiedTimeZone</a></td>
-			<td>TBD</td>
+			<td>You specified a date/time value without a timezone.</td>
 		</tr>		
         <tr>
 			<td>120</td>
@@ -632,7 +632,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>187</td>
 			<td><a href="RequestTooLarge">RequestTooLarge</a></td>
-			<td>TBD</td>
+			<td>The request you submitted was too large to process.</td>
 		</tr>		
         <tr>
 			<td>188</td>
@@ -1102,17 +1102,17 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1220</td>
 			<td><a href="CustomerCantBeBothShipToAndBillTo">CustomerCantBeBothShipToAndBillTo</a></td>
-			<td>TBD</td>
+			<td>An AvaTax customer record can be either a BillTo customer address or a ShipTo customer address, but not both.</td>
 		</tr>		
         <tr>
 			<td>1221</td>
 			<td><a href="BillToCustomerExpected">BillToCustomerExpected</a></td>
-			<td>TBD</td>
+			<td>The API call you made requires a BillTo customer as a parameter, but you used a ShipTo customer.</td>
 		</tr>		
         <tr>
 			<td>1222</td>
 			<td><a href="ShipToCustomerExpected">ShipToCustomerExpected</a></td>
-			<td>TBD</td>
+			<td>The API call you made expects a ShipTo customer record, but you supplied a BillTo customer instead.</td>
 		</tr>		
         <tr>
 			<td>1300</td>
@@ -1232,7 +1232,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1502</td>
 			<td><a href="RemoteValidationError">RemoteValidationError</a></td>
-			<td>TBD</td>
+			<td>The AvaTax API encountered an internal error and could not continue.</td>
 		</tr>		
         <tr>
 			<td>1600</td>
@@ -1272,7 +1272,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1702</td>
 			<td><a href="UPCCodeNotUnique">UPCCodeNotUnique</a></td>
-			<td>TBD</td>
+			<td>A single UPC code can be defined only once for each company.</td>
 		</tr>		
         <tr>
 			<td>1800</td>
@@ -1282,10 +1282,10 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1801</td>
 			<td><a href="UnsupportedOutputFileType">UnsupportedOutputFileType</a></td>
-			<td>TBD</td>
+			<td>You must specify either CSV or JSON file formats.</td>
 		</tr>		
         <tr>
 			<td>1802</td>
 			<td><a href="ConcurrentApiCallIsNotAllowed">ConcurrentApiCallIsNotAllowed</a></td>
-			<td>TBD</td>
+			<td>You have exceeded the number of concurrent requests for this API call.</td>
 		</tr></tbody></table>
