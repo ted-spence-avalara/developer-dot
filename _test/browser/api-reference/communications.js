@@ -1,5 +1,5 @@
-const NUMAPIS = 3;
-let expectedNumberOfApiEndpoints;
+//const NUMAPIS = 3;
+//let expectedNumberOfApiEndpoints;
 
 module.exports = {
     'before': function(browser) {
@@ -8,7 +8,7 @@ module.exports = {
 
     'after': function(browser) {
         browser.end();
-    },
+    }//,
 
 //    'API Reference: Communications: REST v1 (verify number of endpoints)': function(browser) {
 //        expectedNumberOfApiEndpoints = 30;
