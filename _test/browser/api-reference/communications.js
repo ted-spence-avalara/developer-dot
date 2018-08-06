@@ -11,7 +11,7 @@ module.exports = {
     },
 
     'API Reference: Communications: REST v1 (verify number of endpoints)': function(browser) {
-        expectedNumberOfApiEndpoints = 30;
+        expectedNumberOfApiEndpoints = 31;
 
         browser
             .initialize(browser.globals.baseURL + '/api-reference/communications/v1/methods/ApiV1ApplicationAFCDatabaseEngineVersionGet/')
