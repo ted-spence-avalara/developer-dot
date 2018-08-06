@@ -18,7 +18,7 @@ module.exports = {
             .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints);
     },
     'API Reference: Communications: REST v2 (verify number of endpoints)': function(browser) {
-        expectedNumberOfApiEndpoints = 3;
+        expectedNumberOfApiEndpoints = 4;
 
         browser
             .initialize(browser.globals.baseURL + '/api-reference/communications/v2/methods/ApiV2AfcCalcTaxesPost/')
