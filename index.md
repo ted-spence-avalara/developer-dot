@@ -15,14 +15,14 @@ nav: home
 
         <div class="row text-center padding-bottom">
             <!-- Developer Guide Block -->
-            <div style="float: left; width: 48%; text-align: center; background-image:url(/public/images/buildwithapi.png); background-position: center; background-size: cover;">
+            <div style="float: left; width: 48%; text-align: center; background-image:url(/public/images/buildwithapi.png); background-position: center; background-size: contain; background-repeat: no-repeat;">
                 <h3 style="margin-top: 70px;">Build with the AvaTax API</h3>
                 <h3 style="margin-top: 220px;">Build an integration for your custom software</h3>
                 <h3><a href="/avatax/dev-guide/">Read the AvaTax Developer Guide</a></h3>
             </div>
 
             <!-- Partner DSP Block -->
-            <div style="float: right; width: 48%; text-align: center; background-image:url(/public/images/developer-partner.png); background-position: center; background-size: cover;">
+            <div style="float: right; width: 48%; text-align: center; background-image:url(/public/images/developer-partner.png); background-position: center; background-size: contain; background-repeat: no-repeat;">
                 <h3 style="margin-top: 70px;">Be an Avalara Development Solution Partner</h3>
                 <h3 style="margin-top: 220px;">Add our tax automation to your application</h3>
                 <h3><a href="/partners/">Learn about Avalara’s Partner Program</a></h3>
