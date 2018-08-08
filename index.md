@@ -9,7 +9,7 @@ nav: home
         <div class="row">
             <!-- Headline -->
             <div class="col-md-8 col-md-offset-2 text-center">
-                <h2>Tax compliance done right.  Featuring the world-class AvaTax API.</h2>
+                <h2>Tax compliance done right with Avalara's API</h2>
             </div>
         </div>
 
