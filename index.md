@@ -16,28 +16,28 @@ nav: home
         <div class="row text-center">
             <!-- Developer Guide Block -->
             <div style="float: left; width: 45%; margin-right: 20px; text-align: center; background-image:url(/public/images/buildwithapi.png); background-position: center; background-size: cover;">
-                <h3 style="margin-top: 110px;">Build with the AvaTax API</h3>
-                <h3 style="margin-top: 210px;">Build an integration for your custom software</h3>
+                <h3 style="margin-top: 90px;">Build with the AvaTax API</h3>
+                <h3 style="margin-top: 200px;">Build an integration for your custom software</h3>
                 <h3><a href="/avatax/dev-guide/">Read the AvaTax Developer Guide</a></h3>
             </div>
 
             <!-- Partner DSP Block -->
             <div style="float: left; width: 45%; margin-left: 20px; text-align: center; background-image:url(/public/images/developer-partner.png); background-position: center; background-size: cover;">
-                <h3 style="margin-top: 110px;">Be an Avalara Development Solution Partner</h3>
-                <h3 style="margin-top: 210px;">Add our tax automation to your application</h3>
+                <h3 style="margin-top: 90px;">Be an Avalara Development Solution Partner</h3>
+                <h3 style="margin-top: 200px;">Add our tax automation to your application</h3>
                 <h3><a href="/certification/">Learn about Avalara’s Partner Program</a></h3>
             </div>
         </div>
 
-        <div class="row margin-top">
-          <div class="col-md-12 text-center btn-callout"><a href="/avatax/signup" role="button">Try the API</a></div>
-        </div>
-
-        <div class="row bg-white border-top padding-bottom">
-          <div class="col-md-6 col-md-offset-3 text-center">
-            <h1>Avalara is all about tax compliance</h1>
-            <h5><a href="/avalara-apis">API solutions</a></h5>
-          </div>
+        <div class="row bg-white border-top padding-bottom margin-top text-center">
+            <h2>AvaTax Software Development Kits</h2>
+            <a href="https://www.nuget.org/packages/Avalara.AvaTax/"><img src="/public/images/sdk-csharp.png" style="margin: 10px;"/></a>
+            <a href="https://packagist.org/packages/avalara/avataxclient"><img src="/public/images/sdk-php.png" style="margin: 10px;"/></a>
+            <a href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.avalara.avatax%22"><img src="/public/images/sdk-java.png" style="margin: 10px;"/></a>
+            <a href="https://www.npmjs.com/package/avatax"><img src="/public/images/sdk-javascript.png" style="margin: 10px;"/></a>
+            <a href="https://rubygems.org/gems/avatax"><img src="/public/images/sdk-ruby.png" style="margin: 10px;"/></a>
+            <a href="https://pypi.python.org/pypi/Avalara"><img src="/public/images/sdk-python.png" style="margin: 10px;"/></a>
+            <div style="float: left;" class="col-md-12 text-center btn-callout"><a href="/avatax/signup" role="button">Try the API</a></div>
         </div>
 
         <div class="row bg-white padding-top">
