@@ -8,13 +8,24 @@ nav: home
     <div class="bg-map col-md-12">
         <div class="row">
           <div class="col-md-8 col-md-offset-2 text-center">
-            <h1 class="h1pp ">Bring real-time tax calculation to your financial application</h1>
-            <img id="this_image" src="/public/images/homepage_hero.svg" alt="Welcome to the Avalara Developer Portal" />
-                <style>
-                    #this_image {
-                        padding-bottom: 30px;
-                    }
-                </style>
+            <h2>Tax compliance done right.</h2>
+            <h2>Now featuring the world-class AvaTax API.</h2>
+
+            <!-- Developer Guide Block -->
+            <div style="Display: Block; width: 50%;">
+                <p style="align: center">Build with the AvaTax API</p>
+                <img style="max-width: 100%; height: auto" src="/public/images/buildwithapi.png" alt="Build with the AvaTax API" />
+                <p style="align: center">Build an integration for your custom software</p>
+                <p style="align: center">Read the AvaTax Developer Guide</p>
+            </div>
+
+            <!-- Partner DSP Block -->
+            <div style="Display: Block; width: 50%;">
+                <p style="align: center">Be an Avalara Development Solution Partner</p>
+                <img style="max-width: 100%; height: auto" src="/public/images/dsp.png" alt="Be an Avalara Development Solution Partner" />
+                <p style="align: center">Add our tax automation to your application</p>
+                <p style="align: center">Learn about Avalara’s Partner Program</p>
+            </div>
           </div>
         </div>
         <div class="row hidden-xs">
