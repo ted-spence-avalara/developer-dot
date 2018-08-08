@@ -11,7 +11,7 @@ product: blog
 doctype: blog
 disqus: 1
 ---
-<center><img src="/images/calculating-tax-included.jpg" height="300" width="75%"/></center>
+<center><img src="/public/images/blog/calculating-tax-included.jpg" height="300" width="75%"/></center>
 
 It can be a huge bother to make a purchase with cash, and wind up with a pocketful of unwanted pennies due to sales tax.  In most cases, sales taxes require you to charge unusual amounts, and those amounts change whenever tax rates are adjusted.  For today's article, let's discuss a feature of AvaTax that allows you to simplify the dollar value charged to your customers.
 
@@ -25,7 +25,7 @@ Some companies choose to simplify their sales by charging a flat $100 rate - but
 
 Now, let's introduce the TaxIncluded parameter.  When you set TaxIncluded to true, AvaTax will perform slightly different math.  Instead of calculating the tax on top of the purchase amount, the tax is calculated to ensure that the final amount equals $100 directly.  This chart shows how the tax is compiled for each option:
 
-<img src="/images/calculating-taax-included.png"/>
+<img src="/public/images/blog/calculating-tax-included-graph.png"/>
 
 
 The end result is that you still calculate the correct tax rate, but the store knows the revenue amount when the sale is made, with no month-end finagling. The store keeps $92.81, and remits $7.19 of tax - which reflects the correct tax rate of 7.75%.
