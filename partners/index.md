@@ -15,8 +15,7 @@ doctype: overview
 <div class="row bg-white padding-top border-bottom border-top">
     <div class="col-md-8 col-md-offset-2 text-center ">
         <img src="/public/images/launchpad.png" alt="Developer Partner Program Launchpad" />
-        <p>Questions about partnering?</p>
-        <p><a href="mailto:DSPQuestions@avalara.com">Contact Avalara's business development management team.</a></p>
+        <p>Questions about partnering?      <a href="mailto:DSPQuestions@avalara.com">Contact Avalara's Business Development Managers</a></p>
     </div>
 </div>
 
@@ -26,12 +25,12 @@ doctype: overview
     <p>Avalara’s global solutions grow with your business. Plug into our up-to-date tax engine and leave those inaccurate tax rate tables behind for good.</p>
   </div>
   <div class="col-sm-2 col-sm-offset-1 col-md-offset-1 col-md-2 text-center">
-    <h3>Build Quickly</h3>
+    <h3>Build quickly</h3>
     <p>Great documentation, SDKs, endpoints and test scenarios so you can build the integration fast and easy.</p>
   </div>
   <div class="col-sm-2 col-sm-offset-1 col-md-offset-1 col-md-2 text-center">
-    <h3>Reliable and Fast</h3>
-    <p>Avalara’s solution can handle massive transaction volumes and has lighting fast response times.</p>
+    <h3>Reliable and fast</h3>
+    <p>Avalara’s solution can handle massive transaction volumes and has lightning-fast response times.</p>
   </div>
 </div>
 
@@ -43,14 +42,10 @@ doctype: overview
 
             <h2 class="text-left">Launch in three easy steps:</h2>
             <ul class="normal">
-                <li class="text-left"><b>Kick off</b> the project and connect with Partner Launch. They’ll set you up with a development schedule and recommend next steps for a quick build.</li>
-
-                <li class="text-left"><b>Engage</b> with us while you code. We’ll be right there to advise and keep your team on track.</li>
-         
-                <li class="text-left"><b>Certify</b> your integration. We’ll set up a time to walk through the integration and get clients live.</li>
+                <li class="text-left" style="margin-bottom: 12px;"><b>Kick off</b> the project and connect with Partner Launch. They’ll set you up with a development schedule and recommend next steps for a quick build.</li>
+                <li class="text-left" style="margin-bottom: 12px;"><b>Engage</b> with us while you code. We’ll be right there to advise and keep your team on track.</li>
+                <li class="text-left" style="margin-bottom: 12px;"><b>Certify</b> your integration. We’ll set up a time to walk through the integration and get clients live.</li>
             </ul>
-
-            <div class="col-md-12 text-center btn-callout"><a href="mailto:DSPQuestions@avalara.com" role="button">Contact Avalara Now</a></div>
         </div>
         <div style="float: right; width: 48%;">
             <img style="width: 100%; height: auto;" src="/public/images/becomeapartner.png">
