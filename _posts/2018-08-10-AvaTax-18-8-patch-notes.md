@@ -51,7 +51,7 @@ Adding more documentation to clarify pagination for large data sets.
 <h3>Other Fixes and Improvements</h3>
 
 <ul class="normal">
-    <li>Fix bug with RequestNewAccount API that caused a custom email to hide certain fields.</li>
+    <li>Fix bug with RequestNewAccount API that caused a custom email to hide certain fields</li>
     <li>Corrected issue where createdDate and createdUser were not correctly set when calling Update APIs</li>
     <li>Fix inaccurate error message when creating CompanyUser for a company you can't see</li>
     <li>Ensure RateTypeId is always a string to avoid Enum issues</li>
