@@ -40,11 +40,11 @@ The AvaTax release schedule includes a preview period where the latest software 
 
 <h3>API Documentation Updates</h3>
 
-Avalara has updated to the latest revision of Swagger / OpenAPI.  For customers who make use of our automated swagger documentation, you may see a different user interface.
+Avalara has updated to the latest revision of Swagger / OpenAPI.  For customers who make use of our automated swagger documentation, you may see a different user interface for the Swagger UI.
 
 Clarified documentation for the process of declaring Nexus.  Updated the documentation for `NexusModel` to clarify which fields are user-selectable and which fields must be loaded from a previous call to `ListNexus`.
 
-Improved documentation for the TaxContent API and for offline tax calculation logic to emphasize best practices.  Avalara recommends downloading offline tax content once per day, and only downloading tax rate data for the current day. Customers that download offline tax content for time periods further in the future than the upcoming 24 hour period should be aware that rates may change.
+Improved documentation for the TaxContent API and for offline tax calculation logic to emphasize best practices.  Avalara recommends downloading offline tax content once per day, and only downloading tax rate data for the current day. Customers that download offline tax content for time periods further in the future than the upcoming 24 hour period should be aware that rates may change unpredictably due to legislative updates.
 
 Adding more documentation to clarify pagination for large data sets.
 
