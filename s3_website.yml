@@ -18,7 +18,8 @@ treat_zero_length_objects_as_redirects: true
 redirects:
   form: /avatax/signup
   get-started/: /avatax/signup
-  signup/: /avatax/signup
+  signup/: https://buy.avalara.com/signup?partner=API
+  avatax/signup: https://buy.avalara.com/signup?partner=API
   api-documentation: /avalara-apis
   api-documentation/avatax16: /avalara-apis
   api-documentation/avatax-15-api: /avatax
