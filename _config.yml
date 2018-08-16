@@ -28,7 +28,7 @@ sections: [
     ['post', 'Posts']
 ]
 
-gems:
+plugins:
     - jekyll-paginate
 
 
