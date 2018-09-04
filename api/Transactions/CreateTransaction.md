@@ -151,6 +151,7 @@ TBD
 POST https://sandbox-rest.avatax.com/api/v2/transactions/create
 {% endhighlight %}
 <p>Request Body:</p>
+<p style="margin-left: 50px;"><i>Main article: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel">CreateTransactionModel</a></i></p>
 {% highlight json %}
 {
   "lines": [
@@ -195,11 +196,13 @@ POST https://sandbox-rest.avatax.com/api/v2/transactions/create
         <h3 class="clickable" style="display: inline-block;">Example Response</h3>
     </div>
     <div class="collapse" id="example-response">
+<p style="margin-left: 50px;"><i>Main article: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/TransactionModel">TransactionModel</a></i></p>
+
 
 {% highlight json %}
 {
   "id": 123456789,
-  "code": "f7ca63c3-d155-4a40-8088-b8cd1cbaa0b7",
+  "code": "5a0d03b6-642c-4880-8334-f2b76f32b805",
   "companyId": 12345,
   "date": "2018-09-04",
   "status": "Committed",

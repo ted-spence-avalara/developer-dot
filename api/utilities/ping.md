@@ -137,6 +137,8 @@ GET https://sandbox-rest.avatax.com/api/v2/utilities/ping
         <h3 class="clickable" style="display: inline-block;">Example Response</h3>
     </div>
     <div class="collapse" id="example-response">
+<p style="margin-left: 50px;"><i>Main article: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/PingResultModel">PingResultModel</a></i></p>
+
 
 {% highlight json %}
 {
