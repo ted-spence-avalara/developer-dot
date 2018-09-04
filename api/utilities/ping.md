@@ -37,7 +37,8 @@ disqus: 1
     </tr>
     <tr>
         <th>RESPONSE BODY</th>
-        <td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/PingResultModel">PingResultModel</a></td>
+<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/PingResultModel">PingResultModel</a></td>
+
     </tr>
 </table>
 
@@ -95,7 +96,7 @@ For more information on the uptime of AvaTax, please see [Avalara's AvaTax Statu
         <div class="documentation-expand-icon rotate" id="try-it-now-icon" style="display: inline-block; margin-right: 5px;">
             <svg id="Layer_1" version="1.1" viewBox="0 0 512 512" width="24px" x="0px" xml:space="preserve" y="0px" style="display: block; margin: auto;"><g transform="rotate(0 256 256)"><g><path d="M254.8,5.9c-139,0-252,113.1-252,252s113.1,252,252,252s252-113.1,252-252S393.8,5.9,254.8,5.9z M254.8,454 c-108.1,0-196-88-196-196s87.9-196,196-196s196,88,196,196S362.9,454,254.8,454z"></path><polygon points="254.8,269.4 172.5,187.1 132.9,226.7 254.8,348.6 376.8,226.7 337.2,187.1"></polygon></g></g></svg>
         </div>
-        <h3 class="clickable" style="display: inline-block;">Example Request</h3>
+        <h3 class="clickable" style="display: inline-block;">Try It Now</h3>
     </div>
     <div class="collapse" id="try-it-now">
 
@@ -105,7 +106,7 @@ TBD
 </div>
 
 <div>
-    <div class="try-it-now-header" data-target="#example-request" data-toggle="collapse" OnClick="$('#example-request').toggleClass('rotate');">
+    <div class="try-it-now-header" data-target="#example-request" data-toggle="collapse" OnClick="$('#example-request-icon').toggleClass('rotate');">
         <div class="documentation-expand-icon rotate" id="example-request-icon" style="display: inline-block; margin-right: 5px;">
             <svg id="Layer_1" version="1.1" viewBox="0 0 512 512" width="24px" x="0px" xml:space="preserve" y="0px" style="display: block; margin: auto;"><g transform="rotate(0 256 256)"><g><path d="M254.8,5.9c-139,0-252,113.1-252,252s113.1,252,252,252s252-113.1,252-252S393.8,5.9,254.8,5.9z M254.8,454 c-108.1,0-196-88-196-196s87.9-196,196-196s196,88,196,196S362.9,454,254.8,454z"></path><polygon points="254.8,269.4 172.5,187.1 132.9,226.7 254.8,348.6 376.8,226.7 337.2,187.1"></polygon></g></g></svg>
         </div>
@@ -115,14 +116,16 @@ TBD
 
     <p>HTTP Request:</p>
     
-`GET https://sandbox-rest.avatax.com/api/v2/utilities/ping`
+{% highlight markdown %}
+GET https://sandbox-rest.avatax.com/api/v2/utilities/ping
+{% endhighlight %}
 
 
     </div>
 </div>
 
 <div>
-    <div class="try-it-now-header" data-target="#example-response" data-toggle="collapse" OnClick="$('#example-response').toggleClass('rotate');">
+    <div class="try-it-now-header" data-target="#example-response" data-toggle="collapse" OnClick="$('#example-response-icon').toggleClass('rotate');">
         <div class="documentation-expand-icon rotate" id="example-response-icon" style="display: inline-block; margin-right: 5px;">
             <svg id="Layer_1" version="1.1" viewBox="0 0 512 512" width="24px" x="0px" xml:space="preserve" y="0px" style="display: block; margin: auto;"><g transform="rotate(0 256 256)"><g><path d="M254.8,5.9c-139,0-252,113.1-252,252s113.1,252,252,252s252-113.1,252-252S393.8,5.9,254.8,5.9z M254.8,454 c-108.1,0-196-88-196-196s87.9-196,196-196s196,88,196,196S362.9,454,254.8,454z"></path><polygon points="254.8,269.4 172.5,187.1 132.9,226.7 254.8,348.6 376.8,226.7 337.2,187.1"></polygon></g></g></svg>
         </div>
@@ -146,7 +149,7 @@ TBD
 </div>
 
 <div>
-    <div class="try-it-now-header" data-target="#curl-example" data-toggle="collapse" OnClick="$('#curl-example').toggleClass('rotate');">
+    <div class="try-it-now-header" data-target="#curl-example" data-toggle="collapse" OnClick="$('#curl-example-icon').toggleClass('rotate');">
         <div class="documentation-expand-icon rotate" id="curl-example-icon" style="display: inline-block; margin-right: 5px;">
             <svg id="Layer_1" version="1.1" viewBox="0 0 512 512" width="24px" x="0px" xml:space="preserve" y="0px" style="display: block; margin: auto;"><g transform="rotate(0 256 256)"><g><path d="M254.8,5.9c-139,0-252,113.1-252,252s113.1,252,252,252s252-113.1,252-252S393.8,5.9,254.8,5.9z M254.8,454 c-108.1,0-196-88-196-196s87.9-196,196-196s196,88,196,196S362.9,454,254.8,454z"></path><polygon points="254.8,269.4 172.5,187.1 132.9,226.7 254.8,348.6 376.8,226.7 337.2,187.1"></polygon></g></g></svg>
         </div>
