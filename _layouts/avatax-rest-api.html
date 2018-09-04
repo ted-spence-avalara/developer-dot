@@ -1,0 +1,150 @@
+---
+layout: default
+---
+{% if page.blog_breadcrumb == 1 or page.doctype == 'blog' %}
+{% include blog_breadcrumb.html %}
+{% endif %}
+
+<div id="the-nav" class="nav-wrapper hidden-xs hidden-sm api-ref-nav" style="height: 100%; overflow-y: auto;">
+    <ul class="api-ref-side-nav nav nav-pills nav-stacked">
+        <li>
+            <a href="/api-reference/avatax/rest/v2">Avatax REST API</a>
+            <!-- not quite sure how to do boolean algebra in liquid syntax -->
+            <div style="padding-left:10px;">
+                <ul class="api-ref-side-nav-active nav nav-pills nav-stacked sub-nav">
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Accounts">Accounts</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Addresses">Addresses</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/AdvancedRules">AdvancedRules</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/AvaFileForms">AvaFileForms</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Batches">Batches</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/CertExpressInvites">CertExpressInvites</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Certificates">Certificates</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Companies">Companies</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Contacts">Contacts</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Customers">Customers</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Definitions">Definitions</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/DistanceThresholds">DistanceThresholds</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/FilingCalendars">FilingCalendars</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Filings">Filings</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Free">Free</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/FundingRequests">FundingRequests</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Items">Items</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/JurisdictionOverrides">JurisdictionOverrides</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Locations">Locations</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/MultiDocument">MultiDocument</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Nexus">Nexus</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Notices">Notices</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Notifications">Notifications</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Onboarding">Onboarding</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Registrar">Registrar</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Reports">Reports</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Settings">Settings</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Subscriptions">Subscriptions</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/TaxCodes">TaxCodes</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/TaxContent">TaxContent</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/TaxRules">TaxRules</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Transactions">Transactions</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Upcs">Upcs</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Users">Users</a>
+                    </li>
+                    <li>
+                        <a style="overflow: hidden" href="/api-reference/avatax/rest/v2/methods/Utilities">Utilities</a>
+                    </li>
+                    <li>
+                        <a style="color:#ff6600; overflow: hidden;" href="/api-reference/avatax/rest/v2/models">Models</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <a href="/api-reference/avatax/soap">Avatax SOAP API</a>
+            <!-- not quite sure how to do boolean algebra in liquid syntax -->
+        </li>
+        <li class="older-api">
+            Older APIs
+            <div style="padding-left:10px;">
+                <ul class="api-ref-side-nav-active nav nav-pills nav-stacked sub-nav">
+                    <li>
+                        <a href="/api-reference/avatax/account/soap">Avatax AccountSvc SOAP API</a>
+                        <!-- not quite sure how to do boolean algebra in liquid syntax -->
+                    </li>
+                    <li>
+                        <a href="/api-reference/avatax/rest/v1">Legacy REST API</a>
+                        <!-- not quite sure how to do boolean algebra in liquid syntax -->
+                    </li>
+                    <li>
+                        <a href="/api-reference/avatax/batch/soap">Avatax BatchSvc SOAP API</a>
+                        <!-- not quite sure how to do boolean algebra in liquid syntax -->
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>

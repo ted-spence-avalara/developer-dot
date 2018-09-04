@@ -4,9 +4,9 @@ title: Ping API
 date: 2018-06-05 13:00
 author: Ted Spence
 comments: true
-categories: [avatax, howto]
+categories: [avatax, api]
 product: avatax
-doctype: blog
+doctype: avatax-rest-api
 disqus: 1
 ---
 
