@@ -1,33 +1,33 @@
 ---
 layout: page
-title: Ping API
+title: CreateCertificates API
 date: 2018-09-04
 comments: true
 categories: [avatax, api]
 product: avatax
 doctype: api-references
-api-category: Utilities
-api: Ping
+api-category: Certificates
+api: CreateCertificates
 disqus: 1
 ---
 
 <table class="styled-table">
     <tr>
         <th>PURPOSE</th>
-        <td>Tests connectivity and version of the service</td>
+        <td>Create certificates for this company</td>
     </tr>
     <tr>
         <th>HTTP VERB</th>
-        <td><code class="highlight-rouge">GET</code></td>
+        <td><code class="highlight-rouge">POST</code></td>
     </tr>
     <tr>
         <th>URL (SANDBOX)</th>
-        <td>https://sandbox-rest.avatax.com/api/v2/utilities/ping</td>
+        <td>https://sandbox-rest.avatax.com/api/v2/companies/{companyId}/certificates</td>
 
     </tr>
     <tr>
         <th>URL (PRODUCTION)</th>
-        <td>https://rest.avatax.com/api/v2/utilities/ping</td>
+        <td>https://rest.avatax.com/api/v2/companies/{companyId}/certificates</td>
 
     </tr>
     <tr>
@@ -36,28 +36,30 @@ disqus: 1
     </tr>
     <tr>
         <th>RESPONSE BODY</th>
-<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/PingResultModel">PingResultModel</a></td>
+<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/List<CertificateModel>">List<CertificateModel></a></td>
 
     </tr>
 </table>
 
 ## Description
 
-<p>Check connectivity to AvaTax and return information about the AvaTax API server.</p>
-<p>This API is intended to help you verify that your connection is working.  This API will always succeed and will
-never return a error.  It provides basic information about the server you connect to:</p>
+<p>Record one or more certificates document for this company.</p>
+<p>A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
+can contain information about a customer's eligibility for exemption from sales or use taxes based on
+criteria you specify when you store the certificate.  To view or manage your certificates directly, please
+log onto the administrative website for the product you purchased.</p>
+<p>When you create a certificate, it will be processed by Avalara and will become available for use in
+calculating tax exemptions when processing is complete.  For a certificate to be used in calculating exemptions,
+it must have the following:</p>
 <ul class="normal">
-<li><code>version</code> - The version number of the AvaTax API server that responded to your request.  The AvaTax API version number is updated once per month during Avalara's update process.</li>
-<li><code>authenticated</code> - A boolean flag indicating whether or not you sent valid credentials with your API request.</li>
-<li><code>authenticationType</code> - If you provided valid credentials to the API, this field will tell you whether you used Bearer, Username, or LicenseKey authentication.</li>
-<li><code>authenticatedUserName</code> - If you provided valid credentials to the API, this field will tell you the username of the currently logged in user.</li>
-<li><code>authenticatedUserId</code> - If you provided valid credentials to the API, this field will tell you the user ID of the currently logged in user.</li>
-<li><code>authenticatedAccountId</code> - If you provided valid credentials to the API, this field will contain the account ID of the currently logged in user.</li>
+<li>A list of exposure zones indicating where the certificate is valid</li>
+<li>A link to the customer that is allowed to use this certificate</li>
+<li>Your tax transaction must contain the correct customer code</li>
 </ul>
-<p>This API helps diagnose connectivity problems between your application and AvaTax; you may call this API even
-if you do not have verified connection credentials.  If this API fails, either your computer is not connected to
-the internet, or there is a routing problem between your office and Avalara, or the Avalara server is not available.
-For more information on the uptime of AvaTax, please see <a href="https://status.avalara.com/">Avalara's AvaTax Status Page</a>.</p>
+<p>Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+Companies that do not have this storage system set up will receive the error <code>CertCaptureNotConfiguredError</code> when they call exemption
+certificate related APIs.  To check if this company is set up, call <code>GetCertificateSetup</code>.  To request setup of the auditable document
+storage for this company, call <code>RequestCertificateSetup</code>.</p>
 
 
 
@@ -65,7 +67,7 @@ For more information on the uptime of AvaTax, please see <a href="https://status
 
 <ul class="normal">
 {% for post in site.posts %}
-   {% if post.relevantapimethods contains 'Ping' %}
+   {% if post.relevantapimethods contains 'CreateCertificates' %}
        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
    {% endif %}
 {% endfor %}
@@ -84,10 +86,24 @@ For more information on the uptime of AvaTax, please see <a href="https://status
     </thead>
     <tbody>
 <tr>
+<td>UriPath</td>
+<td><code class="highlight-rouge">companyId</code></td>
+<td>Int32, Required</td>
+<td><p>The ID number of the company recording this certificate</p>
+</td>
+</tr>
+<tr>
 <td>Header</td>
 <td><code class="highlight-rouge">X-Avalara-Client</code></td>
 <td>String, Optional</td>
 <td><p>Identifies the software you are using to call this API.  For more information on the client header, see <a href="https://developer.avalara.com/avatax/client-headers/">Client Headers</a> .</p>
+</td>
+</tr>
+<tr>
+<td>RequestBody</td>
+<td><code class="highlight-rouge">model</code></td>
+<td>List<CertificateModel>, Optional</td>
+<td><p>Certificates to be created</p>
 </td>
 </tr>
 
@@ -110,7 +126,7 @@ For more information on the uptime of AvaTax, please see <a href="https://status
             </h5>
             <div class="code-snippet-plaintext">https://sandbox-rest.avatax.com@MethodModel.URI</div>
             <h5 class="console-output-header">Method</h5>
-            <div class="code-snippet-plaintext">GET</div>
+            <div class="code-snippet-plaintext">POST</div>
             <div class="row" style="margin-bottom: 8px;">
                 <div class="col-md-6 console-req-container">
                     <h5 class="console-output-header">
@@ -119,6 +135,7 @@ For more information on the uptime of AvaTax, please see <a href="https://status
                     </h5>
                     <div class="code-snippet reqScroll">
                         <textarea id="console_input">
+
 
                         </textarea>
                     </div>
@@ -183,7 +200,12 @@ For more information on the uptime of AvaTax, please see <a href="https://status
     <h4>Request Path</h4>
     
 {% highlight markdown %}
-GET https://sandbox-rest.avatax.com/api/v2/utilities/ping
+POST https://sandbox-rest.avatax.com/api/v2/companies/{companyId}/certificates
+{% endhighlight %}
+<h4>Request Body</h4>
+<p>Documentation: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/List<CertificateModel>">List<CertificateModel></a></p>
+{% highlight json %}
+
 {% endhighlight %}
 
 
@@ -199,19 +221,11 @@ GET https://sandbox-rest.avatax.com/api/v2/utilities/ping
     </div>
     <div class="collapse" id="example-response">
     <h4>Response Body</h4>
-<p>Documentation: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/PingResultModel">PingResultModel</a></p>
+<p>Documentation: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/List<CertificateModel>">List<CertificateModel></a></p>
 
 
 {% highlight json %}
-{
-  "version": "1.0.0.0",
-  "authenticated": true,
-  "authenticationType": "UsernamePassword",
-  "authenticatedUserName": "TestUser",
-  "authenticatedUserId": 98765,
-  "authenticatedAccountId": 123456789,
-  "crmid": "1111"
-}
+
 {% endhighlight %}
 
     </div>
@@ -228,10 +242,11 @@ GET https://sandbox-rest.avatax.com/api/v2/utilities/ping
 
 {% highlight shell %}
 curl
-    -X GET
+    -X POST
     -H 'Accept: application/json'
     -H 'Authorization: Basic aHR0cHdhdGNoOmY='
-    https://sandbox-rest.avatax.com/api/v2/utilities/ping
+
+    https://sandbox-rest.avatax.com/api/v2/companies/{companyId}/certificates
 
 {% endhighlight %}
 

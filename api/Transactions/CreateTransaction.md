@@ -2,11 +2,10 @@
 layout: page
 title: CreateTransaction API
 date: 2018-09-04
-
 comments: true
 categories: [avatax, api]
 product: avatax
-doctype: avatax-rest-api
+doctype: api-references
 api-category: Transactions
 api: CreateTransaction
 disqus: 1
@@ -131,8 +130,127 @@ using the best available address location information.</p>
     </div>
     <div class="collapse" id="try-it-now">
 
-TBD
+        <div>
+            <h5 class="console-output-header">
+                <span>API Endpoint</span>
+            </h5>
+            <div class="code-snippet-plaintext">https://sandbox-rest.avatax.com@MethodModel.URI</div>
+            <h5 class="console-output-header">Method</h5>
+            <div class="code-snippet-plaintext">POST</div>
+            <div class="row" style="margin-bottom: 8px;">
+                <div class="col-md-6 console-req-container">
+                    <h5 class="console-output-header">
+                        <!-- react-text: 1205 -->Request <!-- /react-text -->
+                        <i class="glyphicon glyphicon-pencil"/>
+                    </h5>
+                    <div class="code-snippet reqScroll">
+                        <textarea id="console_input">
+{
+  "lines": [
+    {
+      "number": "1",
+      "quantity": 1.0,
+      "amount": 100.0,
+      "taxCode": "PS081282",
+      "itemCode": "Y0001",
+      "description": "Yarn"
+    }
+  ],
+  "type": "SalesInvoice",
+  "companyCode": "DEFAULT",
+  "date": "2018-09-04",
+  "customerCode": "ABC",
+  "purchaseOrderNo": "2018-09-04-001",
+  "addresses": {
+    "singleLocation": {
+      "line1": "2000 Main Street",
+      "city": "Irvine",
+      "region": "CA",
+      "country": "US",
+      "postalCode": "92614"
+    }
+  },
+  "commit": true,
+  "currencyCode": "USD",
+  "description": "Yarn"
+}
 
+                        </textarea>
+                    </div>
+                </div>
+                <div class="col-md-6 console-res-container">
+                    <h5 class="console-output-header">Response</h5>
+                    <div class="code-snippet respScroll">
+                        <pre> </pre>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button class="btn submit"> Fill with Sample Data</span>
+                <button class="btn submit" type="button">Reset</button>
+                <button class="btn btn-primary submit" type="button">Submit</button>
+            </div>
+        </div>
+
+        <div class="api-console-output">
+             <h5 class="console-output-header">
+                 <span>API Endpoint</span>
+             </h5>
+             <div class="code-snippet-plaintext">https://sandbox-rest.avatax.com/api/v2/transactions/create</div>
+             <h5 class="console-output-header">Method</h5>
+             <div class="code-snippet-plaintext">GET</div>
+             <div class="row" style="margin-bottom: 8px;">
+                 <div class="col-md-6 console-req-container">
+                     <h5 class="console-output-header">
+                         <!-- react-text: 1205 -->Request <!-- /react-text -->
+                         <i class="glyphicon glyphicon-pencil"></i>
+                     </h5>
+                     <div class="code-snippet reqScroll">
+                         <textarea id="console_input">{
+  "lines": [
+    {
+      "number": "1",
+      "quantity": 1.0,
+      "amount": 100.0,
+      "taxCode": "PS081282",
+      "itemCode": "Y0001",
+      "description": "Yarn"
+    }
+  ],
+  "type": "SalesInvoice",
+  "companyCode": "DEFAULT",
+  "date": "2018-09-04",
+  "customerCode": "ABC",
+  "purchaseOrderNo": "2018-09-04-001",
+  "addresses": {
+    "singleLocation": {
+      "line1": "2000 Main Street",
+      "city": "Irvine",
+      "region": "CA",
+      "country": "US",
+      "postalCode": "92614"
+    }
+  },
+  "commit": true,
+  "currencyCode": "USD",
+  "description": "Yarn"
+}</textarea>
+                     </div>
+                 </div>
+                 <div class="col-md-6 console-res-container">
+                     <h5 class="console-output-header">Response</h5>
+                     <div class="code-snippet respScroll">
+                         <pre> </pre>
+                     </div>
+                 </div>
+             </div>
+             <div>
+                 <button class="btn btn-secondary" style="color: #000000;" type="button">Fill with Sample Data</button>
+                 <button class="btn btn-secondary" style="color: #000000;" type="button" OnClick="$('#console-input').empty();">Reset</button>
+                 <button class="btn btn-primary" type="button">Submit</button>
+             </div>
+        </div>
+        
     </div>
 </div>
 
@@ -145,13 +263,13 @@ TBD
     </div>
     <div class="collapse" id="example-request">
 
-    <p>HTTP Request:</p>
+    <h4>Request Path</h4>
     
 {% highlight markdown %}
 POST https://sandbox-rest.avatax.com/api/v2/transactions/create
 {% endhighlight %}
-<p>Request Body:</p>
-<p style="margin-left: 50px;"><i>Main article: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel">CreateTransactionModel</a></i></p>
+<h4>Request Body</h4>
+<p>Documentation: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel">CreateTransactionModel</a></p>
 {% highlight json %}
 {
   "lines": [
@@ -196,13 +314,14 @@ POST https://sandbox-rest.avatax.com/api/v2/transactions/create
         <h3 class="clickable" style="display: inline-block;">Example Response</h3>
     </div>
     <div class="collapse" id="example-response">
-<p style="margin-left: 50px;"><i>Main article: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/TransactionModel">TransactionModel</a></i></p>
+    <h4>Response Body</h4>
+<p>Documentation: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/TransactionModel">TransactionModel</a></p>
 
 
 {% highlight json %}
 {
   "id": 123456789,
-  "code": "5a0d03b6-642c-4880-8334-f2b76f32b805",
+  "code": "8dd72408-0b42-445b-9b66-2b930d4c0bd4",
   "companyId": 12345,
   "date": "2018-09-04",
   "status": "Committed",
