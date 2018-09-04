@@ -82,9 +82,10 @@ For more information on the uptime of AvaTax, please see [Avalara's AvaTax Statu
     <tbody>
 <tr>
 <td>Header</td>
-<td>X-Avalara-Client</td>
+<td><code class="highlight-rouge">X-Avalara-Client</code></td>
 <td>TBD</td>
-<td>Identifies the software you are using to call this API.  For more information on the client header, see [Client Headers](https://developer.avalara.com/avatax/client-headers/) .</td>
+<td><p>Identifies the software you are using to call this API.  For more information on the client header, see <a href="https://developer.avalara.com/avatax/client-headers/">Client Headers</a> .</p>
+</td>
 </tr>
 
     </tbody>
