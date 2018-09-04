@@ -91,7 +91,7 @@ For more information on the uptime of AvaTax, please see [Avalara's AvaTax Statu
 
 
 <div>
-    <div class="try-it-now-header" data-target="#try-it-now" data-toggle="collapse">
+    <div class="try-it-now-header" data-target="#try-it-now" data-toggle="collapse" OnClick="$('#try-it-now-icon').toggleClass('rotate');">
         <div class="documentation-expand-icon rotate" id="try-it-now-icon" style="display: inline-block; margin-right: 5px;">
             <svg id="Layer_1" version="1.1" viewBox="0 0 512 512" width="24px" x="0px" xml:space="preserve" y="0px" style="display: block; margin: auto;"><g transform="rotate(0 256 256)"><g><path d="M254.8,5.9c-139,0-252,113.1-252,252s113.1,252,252,252s252-113.1,252-252S393.8,5.9,254.8,5.9z M254.8,454 c-108.1,0-196-88-196-196s87.9-196,196-196s196,88,196,196S362.9,454,254.8,454z"></path><polygon points="254.8,269.4 172.5,187.1 132.9,226.7 254.8,348.6 376.8,226.7 337.2,187.1"></polygon></g></g></svg>
         </div>
@@ -105,7 +105,7 @@ TBD
 </div>
 
 <div>
-    <div class="try-it-now-header" data-target="#example-request" data-toggle="collapse">
+    <div class="try-it-now-header" data-target="#example-request" data-toggle="collapse" OnClick="$('#example-request').toggleClass('rotate');">
         <div class="documentation-expand-icon rotate" id="example-request-icon" style="display: inline-block; margin-right: 5px;">
             <svg id="Layer_1" version="1.1" viewBox="0 0 512 512" width="24px" x="0px" xml:space="preserve" y="0px" style="display: block; margin: auto;"><g transform="rotate(0 256 256)"><g><path d="M254.8,5.9c-139,0-252,113.1-252,252s113.1,252,252,252s252-113.1,252-252S393.8,5.9,254.8,5.9z M254.8,454 c-108.1,0-196-88-196-196s87.9-196,196-196s196,88,196,196S362.9,454,254.8,454z"></path><polygon points="254.8,269.4 172.5,187.1 132.9,226.7 254.8,348.6 376.8,226.7 337.2,187.1"></polygon></g></g></svg>
         </div>
@@ -113,15 +113,16 @@ TBD
     </div>
     <div class="collapse" id="example-request">
 
-{% highlight json %}
-TBD
-{% endhighlight %}
+    <p>HTTP Request:</p>
+    
+`GET https://sandbox-rest.avatax.com/api/v2/utilities/ping`
+
 
     </div>
 </div>
 
 <div>
-    <div class="try-it-now-header" data-target="#Ping-console-body-response" data-toggle="collapse">
+    <div class="try-it-now-header" data-target="#example-response" data-toggle="collapse" OnClick="$('#example-response').toggleClass('rotate');">
         <div class="documentation-expand-icon rotate" id="example-response-icon" style="display: inline-block; margin-right: 5px;">
             <svg id="Layer_1" version="1.1" viewBox="0 0 512 512" width="24px" x="0px" xml:space="preserve" y="0px" style="display: block; margin: auto;"><g transform="rotate(0 256 256)"><g><path d="M254.8,5.9c-139,0-252,113.1-252,252s113.1,252,252,252s252-113.1,252-252S393.8,5.9,254.8,5.9z M254.8,454 c-108.1,0-196-88-196-196s87.9-196,196-196s196,88,196,196S362.9,454,254.8,454z"></path><polygon points="254.8,269.4 172.5,187.1 132.9,226.7 254.8,348.6 376.8,226.7 337.2,187.1"></polygon></g></g></svg>
         </div>
@@ -130,14 +131,22 @@ TBD
     <div class="collapse" id="example-response">
 
 {% highlight json %}
-TBD
+{
+  "version": "1.0.0.0",
+  "authenticated": true,
+  "authenticationType": "UsernamePassword",
+  "authenticatedUserName": "TestUser",
+  "authenticatedUserId": 98765,
+  "authenticatedAccountId": 123456789,
+  "crmid": "1111"
+}
 {% endhighlight %}
 
     </div>
 </div>
 
 <div>
-    <div class="try-it-now-header" data-target="#curl-example" data-toggle="collapse">
+    <div class="try-it-now-header" data-target="#curl-example" data-toggle="collapse" OnClick="$('#curl-example').toggleClass('rotate');">
         <div class="documentation-expand-icon rotate" id="curl-example-icon" style="display: inline-block; margin-right: 5px;">
             <svg id="Layer_1" version="1.1" viewBox="0 0 512 512" width="24px" x="0px" xml:space="preserve" y="0px" style="display: block; margin: auto;"><g transform="rotate(0 256 256)"><g><path d="M254.8,5.9c-139,0-252,113.1-252,252s113.1,252,252,252s252-113.1,252-252S393.8,5.9,254.8,5.9z M254.8,454 c-108.1,0-196-88-196-196s87.9-196,196-196s196,88,196,196S362.9,454,254.8,454z"></path><polygon points="254.8,269.4 172.5,187.1 132.9,226.7 254.8,348.6 376.8,226.7 337.2,187.1"></polygon></g></g></svg>
         </div>
@@ -146,7 +155,12 @@ TBD
     <div class="collapse" id="curl-example">
 
 {% highlight shell %}
-TBD
+curl
+    -X GET
+    -H 'Accept: application/json'
+    -H 'Authorization: Basic aHR0cHdhdGNoOmY='
+    https://sandbox-rest.avatax.com/api/v2/utilities/ping
+
 {% endhighlight %}
 
     </div>
