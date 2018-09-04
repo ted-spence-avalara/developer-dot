@@ -120,47 +120,13 @@ storage for this company, call <code>RequestCertificateSetup</code>.</p>
     </div>
     <div class="collapse" id="try-it-now">
 
-        <div>
-            <h5 class="console-output-header">
-                <span>API Endpoint</span>
-            </h5>
-            <div class="code-snippet-plaintext">https://sandbox-rest.avatax.com@MethodModel.URI</div>
-            <h5 class="console-output-header">Method</h5>
-            <div class="code-snippet-plaintext">POST</div>
-            <div class="row" style="margin-bottom: 8px;">
-                <div class="col-md-6 console-req-container">
-                    <h5 class="console-output-header">
-                        <!-- react-text: 1205 -->Request <!-- /react-text -->
-                        <i class="glyphicon glyphicon-pencil"/>
-                    </h5>
-                    <div class="code-snippet reqScroll">
-                        <textarea id="console_input">
-
-
-                        </textarea>
-                    </div>
-                </div>
-                <div class="col-md-6 console-res-container">
-                    <h5 class="console-output-header">Response</h5>
-                    <div class="code-snippet respScroll">
-                        <pre> </pre>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <button class="btn submit"> Fill with Sample Data</span>
-                <button class="btn submit" type="button">Reset</button>
-                <button class="btn btn-primary submit" type="button">Submit</button>
-            </div>
-        </div>
-
         <div class="api-console-output">
              <h5 class="console-output-header">
                  <span>API Endpoint</span>
              </h5>
-             <div class="code-snippet-plaintext">https://sandbox-rest.avatax.com/api/v2/transactions/create</div>
+             <div class="code-snippet-plaintext">https://sandbox-rest.avatax.com//api/v2/companies/{companyId}/certificates</div>
              <h5 class="console-output-header">Method</h5>
-             <div class="code-snippet-plaintext">GET</div>
+             <div class="code-snippet-plaintext">POST</div>
              <div class="row" style="margin-bottom: 8px;">
                  <div class="col-md-6 console-req-container">
                      <h5 class="console-output-header">
@@ -168,7 +134,9 @@ storage for this company, call <code>RequestCertificateSetup</code>.</p>
                          <i class="glyphicon glyphicon-pencil"></i>
                      </h5>
                      <div class="code-snippet reqScroll">
-                         <textarea id="console_input"></textarea>
+                         <textarea id="console-input-sample">
+                         </textarea>
+                         <textarea id="console_input">{ }</textarea>
                      </div>
                  </div>
                  <div class="col-md-6 console-res-container">
@@ -179,8 +147,8 @@ storage for this company, call <code>RequestCertificateSetup</code>.</p>
                  </div>
              </div>
              <div>
-                 <button class="btn btn-secondary" style="color: #000000;" type="button">Fill with Sample Data</button>
-                 <button class="btn btn-secondary" style="color: #000000;" type="button" OnClick="$('#console-input').empty();">Reset</button>
+                 <button class="btn btn-secondary" style="color: #000000;" type="button" OnClick="$('#console-input').empty().append($('#console-input-sample').text());">Fill with Sample Data</button>
+                 <button class="btn btn-secondary" style="color: #000000;" type="button" OnClick="$('#console-input').empty().append('{ }');">Reset</button>
                  <button class="btn btn-primary" type="button">Submit</button>
              </div>
         </div>
