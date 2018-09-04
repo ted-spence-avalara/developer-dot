@@ -1,12 +1,13 @@
 ---
 layout: page
 title: Ping API
-date: 2018-06-05 13:00
-author: Ted Spence
+date: 2018-09-04
+
 comments: true
 categories: [avatax, api]
 product: avatax
 doctype: avatax-rest-api
+api-category: Utilities
 api: Ping
 disqus: 1
 ---
@@ -22,11 +23,13 @@ disqus: 1
     </tr>
     <tr>
         <th>URL (SANDBOX)</th>
-        <td><a href="https://sandbox-rest.avatax.com/api/v2/utilities/ping">https://sandbox-rest.avatax.com/api/v2/utilities/ping</a></td>
+        <td>https://sandbox-rest.avatax.com/api/v2/utilities/ping</td>
+
     </tr>
     <tr>
         <th>URL (PRODUCTION)</th>
-        <td><a href="https://rest.avatax.com/api/v2/utilities/ping">https://rest.avatax.com/api/v2/utilities/ping</a></td>
+        <td>https://rest.avatax.com/api/v2/utilities/ping</td>
+
     </tr>
     <tr>
         <th>CONTENT-TYPE</th>
@@ -40,13 +43,28 @@ disqus: 1
 
 ## Description
 
-This API helps diagnose connectivity problems between your application and AvaTax; you may call this API even if you do not have verified connection credentials. The results of this API call will help you determine whether your computer can contact AvaTax via the network, whether your authentication credentials are recognized, and the roundtrip time it takes to communicate with AvaTax.
+Check connectivity to AvaTax and return information about the AvaTax API server.
+
+This API is intended to help you verify that your connection is working.  This API will always succeed and will
+never return a error.  It provides basic information about the server you connect to:
+
+* `version` - The version number of the AvaTax API server that responded to your request.  The AvaTax API version number is updated once per month during Avalara's update process.
+* `authenticated` - A boolean flag indicating whether or not you sent valid credentials with your API request.
+* `authenticationType` - If you provided valid credentials to the API, this field will tell you whether you used Bearer, Username, or LicenseKey authentication.
+* `authenticatedUserName` - If you provided valid credentials to the API, this field will tell you the username of the currently logged in user.
+* `authenticatedUserId` - If you provided valid credentials to the API, this field will tell you the user ID of the currently logged in user.
+* `authenticatedAccountId` - If you provided valid credentials to the API, this field will contain the account ID of the currently logged in user.
+
+This API helps diagnose connectivity problems between your application and AvaTax; you may call this API even 
+if you do not have verified connection credentials.  If this API fails, either your computer is not connected to 
+the internet, or there is a routing problem between your office and Avalara, or the Avalara server is not available.
+For more information on the uptime of AvaTax, please see [Avalara's AvaTax Status Page](https://status.avalara.com/).
 
 ## Relevant Blog Posts
 
 <ul class="normal">
-    <li><a href="https://developer.avalara.com/blog/2017/04/18/performance-tuning-with-avatax">Performance Tuning with AvaTax</a></li>
-    <li><a href="https://developer.avalara.com/blog/2017/05/15/troubleshooting-connectivity-problems">Troubleshooting Connectivity Problems</a></li>
+<li><a href="TBD">TBD</a></li>
+
 </ul>
 
 ## Parameters
@@ -61,78 +79,74 @@ This API helps diagnose connectivity problems between your application and AvaTa
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Header</td>
-            <td>X-Avalara-Client</td>
-            <td>Optional, string</td>
-            <td>Identifies the software you are using to call this API. For more information on the client header, see <a href="https://developer.avalara.com/avatax/client-headers/">Client Headers</a>.</td>
-        </tr>
+<tr>
+<td>Header</td>
+<td>X-Avalara-Client</td>
+<td>TBD</td>
+<td>Identifies the software you are using to call this API.  For more information on the client header, see [Client Headers](https://developer.avalara.com/avatax/client-headers/) .</td>
+</tr>
+
     </tbody>
 </table>
 
+
 <div>
-    <div class="try-it-now-header" data-target="#Ping-console-body-request" data-toggle="collapse" id="Ping-console-body">
-        <div class="documentation-expand-icon rotate" id="Ping-console-icon" style="display: inline-block; margin-right: 5px;">
+    <div class="try-it-now-header" data-target="#try-it-now" data-toggle="collapse">
+        <div class="documentation-expand-icon rotate" id="try-it-now-icon" style="display: inline-block; margin-right: 5px;">
             <svg id="Layer_1" version="1.1" viewBox="0 0 512 512" width="24px" x="0px" xml:space="preserve" y="0px" style="display: block; margin: auto;"><g transform="rotate(0 256 256)"><g><path d="M254.8,5.9c-139,0-252,113.1-252,252s113.1,252,252,252s252-113.1,252-252S393.8,5.9,254.8,5.9z M254.8,454 c-108.1,0-196-88-196-196s87.9-196,196-196s196,88,196,196S362.9,454,254.8,454z"></path><polygon points="254.8,269.4 172.5,187.1 132.9,226.7 254.8,348.6 376.8,226.7 337.2,187.1"></polygon></g></g></svg>
         </div>
         <h3 class="clickable" style="display: inline-block;">Example Request</h3>
     </div>
-    <div class="collapse" id="Ping-console-body-request">
+    <div class="collapse" id="try-it-now">
+
+TBD
+
+    </div>
+</div>
+
+<div>
+    <div class="try-it-now-header" data-target="#example-request" data-toggle="collapse">
+        <div class="documentation-expand-icon rotate" id="example-request-icon" style="display: inline-block; margin-right: 5px;">
+            <svg id="Layer_1" version="1.1" viewBox="0 0 512 512" width="24px" x="0px" xml:space="preserve" y="0px" style="display: block; margin: auto;"><g transform="rotate(0 256 256)"><g><path d="M254.8,5.9c-139,0-252,113.1-252,252s113.1,252,252,252s252-113.1,252-252S393.8,5.9,254.8,5.9z M254.8,454 c-108.1,0-196-88-196-196s87.9-196,196-196s196,88,196,196S362.9,454,254.8,454z"></path><polygon points="254.8,269.4 172.5,187.1 132.9,226.7 254.8,348.6 376.8,226.7 337.2,187.1"></polygon></g></g></svg>
+        </div>
+        <h3 class="clickable" style="display: inline-block;">Example Request</h3>
+    </div>
+    <div class="collapse" id="example-request">
 
 {% highlight json %}
-{
-  "version": "1.0.0.0",
-  "authenticated": true,
-  "authenticationType": "UsernamePassword",
-  "authenticatedUserName": "TestUser",
-  "authenticatedUserId": 98765,
-  "authenticatedAccountId": 123456789,
-  "crmid": "1111"
-}
+TBD
 {% endhighlight %}
 
     </div>
 </div>
 
 <div>
-    <div class="try-it-now-header" data-target="#Ping-console-body-response" data-toggle="collapse" id="Ping-console-body">
-        <div class="documentation-expand-icon rotate" id="Ping-console-icon-response" style="display: inline-block; margin-right: 5px;">
+    <div class="try-it-now-header" data-target="#Ping-console-body-response" data-toggle="collapse">
+        <div class="documentation-expand-icon rotate" id="example-response-icon" style="display: inline-block; margin-right: 5px;">
             <svg id="Layer_1" version="1.1" viewBox="0 0 512 512" width="24px" x="0px" xml:space="preserve" y="0px" style="display: block; margin: auto;"><g transform="rotate(0 256 256)"><g><path d="M254.8,5.9c-139,0-252,113.1-252,252s113.1,252,252,252s252-113.1,252-252S393.8,5.9,254.8,5.9z M254.8,454 c-108.1,0-196-88-196-196s87.9-196,196-196s196,88,196,196S362.9,454,254.8,454z"></path><polygon points="254.8,269.4 172.5,187.1 132.9,226.7 254.8,348.6 376.8,226.7 337.2,187.1"></polygon></g></g></svg>
         </div>
         <h3 class="clickable" style="display: inline-block;">Example Response</h3>
     </div>
-    <div class="collapse" id="Ping-console-body-response">
+    <div class="collapse" id="example-response">
 
 {% highlight json %}
-{
-  "version": "1.0.0.0",
-  "authenticated": true,
-  "authenticationType": "UsernamePassword",
-  "authenticatedUserName": "TestUser",
-  "authenticatedUserId": 98765,
-  "authenticatedAccountId": 123456789,
-  "crmid": "1111"
-}
+TBD
 {% endhighlight %}
 
     </div>
 </div>
 
 <div>
-    <div class="try-it-now-header" data-target="#Ping-console-body-curl" data-toggle="collapse" id="Ping-console-body">
-        <div class="documentation-expand-icon rotate" id="Ping-console-icon-curl" style="display: inline-block; margin-right: 5px;">
+    <div class="try-it-now-header" data-target="#curl-example" data-toggle="collapse">
+        <div class="documentation-expand-icon rotate" id="curl-example-icon" style="display: inline-block; margin-right: 5px;">
             <svg id="Layer_1" version="1.1" viewBox="0 0 512 512" width="24px" x="0px" xml:space="preserve" y="0px" style="display: block; margin: auto;"><g transform="rotate(0 256 256)"><g><path d="M254.8,5.9c-139,0-252,113.1-252,252s113.1,252,252,252s252-113.1,252-252S393.8,5.9,254.8,5.9z M254.8,454 c-108.1,0-196-88-196-196s87.9-196,196-196s196,88,196,196S362.9,454,254.8,454z"></path><polygon points="254.8,269.4 172.5,187.1 132.9,226.7 254.8,348.6 376.8,226.7 337.2,187.1"></polygon></g></g></svg>
         </div>
         <h3 class="clickable" style="display: inline-block;">Example Using CURL</h3>
     </div>
-    <div class="collapse" id="Ping-console-body-curl">
+    <div class="collapse" id="curl-example">
 
 {% highlight shell %}
-curl
-    -X GET
-    -H 'Accept: application/json'
-    -H 'Authorization: Basic aHR0cHdhdGNoOmY='
-    https://sandbox-rest.avatax.com/api/v2/utilities/ping
+TBD
 {% endhighlight %}
 
     </div>
