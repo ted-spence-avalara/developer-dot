@@ -44,22 +44,23 @@ disqus: 1
 
 ## Description
 
-Check connectivity to AvaTax and return information about the AvaTax API server.
-
-This API is intended to help you verify that your connection is working.  This API will always succeed and will
-never return a error.  It provides basic information about the server you connect to:
-
-* `version` - The version number of the AvaTax API server that responded to your request.  The AvaTax API version number is updated once per month during Avalara's update process.
-* `authenticated` - A boolean flag indicating whether or not you sent valid credentials with your API request.
-* `authenticationType` - If you provided valid credentials to the API, this field will tell you whether you used Bearer, Username, or LicenseKey authentication.
-* `authenticatedUserName` - If you provided valid credentials to the API, this field will tell you the username of the currently logged in user.
-* `authenticatedUserId` - If you provided valid credentials to the API, this field will tell you the user ID of the currently logged in user.
-* `authenticatedAccountId` - If you provided valid credentials to the API, this field will contain the account ID of the currently logged in user.
-
-This API helps diagnose connectivity problems between your application and AvaTax; you may call this API even 
-if you do not have verified connection credentials.  If this API fails, either your computer is not connected to 
+<p>Check connectivity to AvaTax and return information about the AvaTax API server.</p>
+<p>This API is intended to help you verify that your connection is working.  This API will always succeed and will
+never return a error.  It provides basic information about the server you connect to:</p>
+<ul class="normal">
+<li><code>version</code> - The version number of the AvaTax API server that responded to your request.  The AvaTax API version number is updated once per month during Avalara's update process.</li>
+<li><code>authenticated</code> - A boolean flag indicating whether or not you sent valid credentials with your API request.</li>
+<li><code>authenticationType</code> - If you provided valid credentials to the API, this field will tell you whether you used Bearer, Username, or LicenseKey authentication.</li>
+<li><code>authenticatedUserName</code> - If you provided valid credentials to the API, this field will tell you the username of the currently logged in user.</li>
+<li><code>authenticatedUserId</code> - If you provided valid credentials to the API, this field will tell you the user ID of the currently logged in user.</li>
+<li><code>authenticatedAccountId</code> - If you provided valid credentials to the API, this field will contain the account ID of the currently logged in user.</li>
+</ul>
+<p>This API helps diagnose connectivity problems between your application and AvaTax; you may call this API even
+if you do not have verified connection credentials.  If this API fails, either your computer is not connected to
 the internet, or there is a routing problem between your office and Avalara, or the Avalara server is not available.
-For more information on the uptime of AvaTax, please see [Avalara's AvaTax Status Page](https://status.avalara.com/).
+For more information on the uptime of AvaTax, please see <a href="https://status.avalara.com/">Avalara's AvaTax Status Page</a>.</p>
+
+
 
 ## Relevant Blog Posts
 
@@ -83,7 +84,7 @@ For more information on the uptime of AvaTax, please see [Avalara's AvaTax Statu
 <tr>
 <td>Header</td>
 <td><code class="highlight-rouge">X-Avalara-Client</code></td>
-<td>TBD</td>
+<td>String, Optional</td>
 <td><p>Identifies the software you are using to call this API.  For more information on the client header, see <a href="https://developer.avalara.com/avatax/client-headers/">Client Headers</a> .</p>
 </td>
 </tr>

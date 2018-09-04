@@ -44,40 +44,35 @@ disqus: 1
 
 ## Description
 
-Records a new transaction in AvaTax.
-
-A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
-sales, purchases, inventory transfer, and returns (also called refunds).
-
-The `CreateTransaction` endpoint uses the tax profile of your company to identify the correct tax rules
+<p>Records a new transaction in AvaTax.</p>
+<p>A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
+sales, purchases, inventory transfer, and returns (also called refunds).</p>
+<p>The <code>CreateTransaction</code> endpoint uses the tax profile of your company to identify the correct tax rules
 and rates to apply to all line items in this transaction.  The end result will be the total tax calculated by AvaTax based on your
-company's configuration and the data provided in this API call.
+company's configuration and the data provided in this API call.</p>
+<p>The <code>CreateTransaction</code> API will report an error if a committed transaction already exists with the same <code>code</code>.  To
+avoid this error, use the <code>CreateOrAdjustTransaction</code> API - it will create the transaction if it does not exist, or
+update it if it does exist.</p>
+<p>To generate a refund for a transaction, use the <code>RefundTransaction</code> API.</p>
+<p>The field <code>type</code> identifies the kind of transaction - for example, a sale, purchase, or refund.  If you do not specify
+a <code>type</code> value, you will receive an estimate of type <code>SalesOrder</code>, which will not be recorded.</p>
+<p>The origin and destination locations for a transaction must be identified by either address or geocode.  For address-based transactions, please
+provide addresses in the fields <code>line</code>, <code>city</code>, <code>region</code>, <code>country</code> and <code>postalCode</code>.  For geocode-based transactions, please provide the geocode
+information in the fields <code>latitude</code> and <code>longitude</code>.  If either <code>latitude</code> or <code>longitude</code> or both are null, the transaction will be calculated
+using the best available address location information.</p>
+<p>You may specify one or more of the following values in the <code>$include</code> parameter to fetch additional nested data, using commas to separate multiple values:</p>
+<ul class="normal">
+<li>Lines</li>
+<li>Details (implies lines)</li>
+<li>Summary (implies details)</li>
+<li>Addresses</li>
+<li>SummaryOnly (omit lines and details - reduces API response size)</li>
+<li>LinesOnly (omit details - reduces API response size)</li>
+<li>ForceTimeout - Simulates a timeout.  This adds a 30 second delay and error to your API call.  This can be used to test your code to ensure it can respond correctly in the case of a dropped connection.</li>
+</ul>
+<p>If you omit the <code>$include</code> parameter, the API will assume you want <code>Summary,Addresses</code>.</p>
 
-The `CreateTransaction` API will report an error if a committed transaction already exists with the same `code`.  To
-avoid this error, use the `CreateOrAdjustTransaction` API - it will create the transaction if it does not exist, or
-update it if it does exist.
 
-To generate a refund for a transaction, use the `RefundTransaction` API.
-
-The field `type` identifies the kind of transaction - for example, a sale, purchase, or refund.  If you do not specify
-a `type` value, you will receive an estimate of type `SalesOrder`, which will not be recorded.
-
-The origin and destination locations for a transaction must be identified by either address or geocode.  For address-based transactions, please
-provide addresses in the fields `line`, `city`, `region`, `country` and `postalCode`.  For geocode-based transactions, please provide the geocode
-information in the fields `latitude` and `longitude`.  If either `latitude` or `longitude` or both are null, the transaction will be calculated
-using the best available address location information.
-
-You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
-            
-* Lines
-* Details (implies lines)
-* Summary (implies details)
-* Addresses
-* SummaryOnly (omit lines and details - reduces API response size)
-* LinesOnly (omit details - reduces API response size)
-* ForceTimeout - Simulates a timeout.  This adds a 30 second delay and error to your API call.  This can be used to test your code to ensure it can respond correctly in the case of a dropped connection.
-            
-If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
 
 ## Relevant Blog Posts
 
@@ -201,7 +196,7 @@ POST https://sandbox-rest.avatax.com/api/v2/transactions/create
 {% highlight json %}
 {
   "id": 123456789,
-  "code": "8fbb46f1-5866-4df9-8200-d8920cff1baa",
+  "code": "c508b7ff-2713-45f0-8b4f-cf4a20b7757b",
   "companyId": 12345,
   "date": "2018-09-04",
   "status": "Committed",
