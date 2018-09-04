@@ -65,8 +65,11 @@ For more information on the uptime of AvaTax, please see <a href="https://status
 ## Relevant Blog Posts
 
 <ul class="normal">
-<li><a href="TBD">TBD</a></li>
-
+{% for post in site.posts %}
+   {% if post.relevantapimethods contains 'Ping' %}
+       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+   {% endif %}
+{% endfor %}
 </ul>
 
 ## Parameters

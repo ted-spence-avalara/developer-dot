@@ -77,8 +77,11 @@ using the best available address location information.</p>
 ## Relevant Blog Posts
 
 <ul class="normal">
-<li><a href="TBD">TBD</a></li>
-
+{% for post in site.posts %}
+   {% if post.relevantapimethods contains 'CreateTransaction' %}
+       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+   {% endif %}
+{% endfor %}
 </ul>
 
 ## Parameters
@@ -196,7 +199,7 @@ POST https://sandbox-rest.avatax.com/api/v2/transactions/create
 {% highlight json %}
 {
   "id": 123456789,
-  "code": "c508b7ff-2713-45f0-8b4f-cf4a20b7757b",
+  "code": "f7ca63c3-d155-4a40-8088-b8cd1cbaa0b7",
   "companyId": 12345,
   "date": "2018-09-04",
   "status": "Committed",
