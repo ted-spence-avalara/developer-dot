@@ -1000,6 +1000,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>You attempted to create a transaction with zero lines.</td>
 		</tr>		
         <tr>
+			<td>1104</td>
+			<td><a href="CannotCreateTransactionWithDeletedDataSource">CannotCreateTransactionWithDeletedDataSource</a></td>
+			<td>The selected DataSource has been deleted and cannot be used for creating a transaction.</td>
+		</tr>		
+        <tr>
 			<td>1200</td>
 			<td><a href="InvalidBusinessType">InvalidBusinessType</a></td>
 			<td>The business type field on the ECMS record is invalid.</td>
@@ -1273,6 +1278,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>1702</td>
 			<td><a href="UPCCodeNotUnique">UPCCodeNotUnique</a></td>
 			<td>A single UPC code can be defined only once for each company.</td>
+		</tr>		
+        <tr>
+			<td>1703</td>
+			<td><a href="CannotUpdateSourceOrInstance">CannotUpdateSourceOrInstance</a></td>
+			<td>The DataSource Source and Instance fields cannot be modified.</td>
 		</tr>		
         <tr>
 			<td>1800</td>
