@@ -24,6 +24,35 @@ function getCompareDate() {
   return [year, month, day].join('');
 }
 
+function ApiRequest()
+{
+    // Split Headers
+    var raw = $('#console-headers').val();
+    var lines = raw.split(/\r?\n/);
+    var h = {};
+    for (var i = 0; i < lines.length; i++) {
+        var p = lines[i].indexOf(': ');
+        if (p > 0) {
+            h[lines[i].substring(0, p)] = lines[i].substring(p+2);
+        }
+    }
+
+    // Here's our object
+    var obj = {
+        url: $('#console-server').text() + $('#console-path').text(),
+        accepts: "application/json",
+        method: $('#console-method').text(),
+        headers: h,
+        data: $('#console-input').val(),
+        success: function(result) { $('#console-output').text(JSON.stringify(result, null, 2)); },
+        error: function(result) { $('#console-output').text(JSON.stringify(result, null, 2)); }
+    };
+
+    // Don't do anything just show
+    //alert(JSON.stringify(obj));
+    $.ajax(obj);
+}
+
 $(document).ready(function()
 {
     fixApiRefNav();
