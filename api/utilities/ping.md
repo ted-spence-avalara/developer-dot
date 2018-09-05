@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Ping API
-date: 2018-09-04
+date: 2018-09-05
 comments: true
 categories: [avatax, api]
 product: avatax
@@ -36,8 +36,7 @@ disqus: 1
     </tr>
     <tr>
         <th>RESPONSE BODY</th>
-<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/PingResultModel">PingResultModel</a></td>
-
+        <td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/PingResultModel">PingResultModel</a></td>
     </tr>
 </table>
 
@@ -116,8 +115,8 @@ For more information on the uptime of AvaTax, please see <a href="https://status
                 <i class="glyphicon glyphicon-pencil"></i>
             </h5>
             <div class="code-snippet reqScroll">
-                <textarea style="height: 50px;" id="console-headers" >Authorization: Basic TEST
-X-Avalara-Client: Avalara Developer Website; 18.8; AvaTax SDK; 18.8; localhost</textarea>
+                <textarea style="height: 50px;" id="console-headers" >Authorization: (use Developer website demo credentials)
+X-Avalara-Client: Avalara Developer Website; 18.8.0; AvaTax SDK; 18.8.0; developer-console</textarea>
             </div>
             <div class="row" style="margin-bottom: 8px;">
                 <div class="col-md-6 console-req-container">
@@ -125,7 +124,7 @@ X-Avalara-Client: Avalara Developer Website; 18.8; AvaTax SDK; 18.8; localhost</
                         Request
                         <i class="glyphicon glyphicon-pencil"></i>
                     </h5>
-                    <textarea id="console-input-sample" style="display: none;">{ "sample": 1 }</textarea>
+                    <textarea id="console-input-sample" style="display: none;"></textarea>
                     <div class="code-snippet reqScroll">
                         <textarea id="console-input">{ }</textarea>
                     </div>
@@ -143,7 +142,6 @@ X-Avalara-Client: Avalara Developer Website; 18.8; AvaTax SDK; 18.8; localhost</
                  <button class="btn btn-primary" type="button" onClick="ApiRequest();">Submit</button>
              </div>
         </div>
-
     </div>
 </div>
 
@@ -157,7 +155,7 @@ X-Avalara-Client: Avalara Developer Website; 18.8; AvaTax SDK; 18.8; localhost</
     <div class="collapse" id="example-request">
 
     <h4>Request Path</h4>
-
+    
 {% highlight markdown %}
 GET https://sandbox-rest.avatax.com/api/v2/utilities/ping
 {% endhighlight %}
@@ -175,7 +173,7 @@ GET https://sandbox-rest.avatax.com/api/v2/utilities/ping
     </div>
     <div class="collapse" id="example-response">
     <h4>Response Body</h4>
-<p>Documentation: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/PingResultModel">PingResultModel</a></p>
+<p>Complete documentation: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/PingResultModel">PingResultModel</a></p>
 
 
 {% highlight json %}

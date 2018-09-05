@@ -1,7 +1,7 @@
 ---
 layout: page
 title: CreateCertificates API
-date: 2018-09-04
+date: 2018-09-05
 comments: true
 categories: [avatax, api]
 product: avatax
@@ -36,8 +36,7 @@ disqus: 1
     </tr>
     <tr>
         <th>RESPONSE BODY</th>
-<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CertificateModel">CertificateModel</a></td>
-
+        <td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CertificateModel>">Array[CertificateModel]</a></td>
     </tr>
 </table>
 
@@ -121,38 +120,44 @@ storage for this company, call <code>RequestCertificateSetup</code>.</p>
     <div class="collapse" id="try-it-now">
 
         <div class="api-console-output">
-             <h5 class="console-output-header">
-                 <span>API Endpoint</span>
-             </h5>
-             <div class="code-snippet-plaintext">https://sandbox-rest.avatax.com//api/v2/companies/{companyId}/certificates</div>
-             <h5 class="console-output-header">Method</h5>
-             <div class="code-snippet-plaintext">POST</div>
-             <div class="row" style="margin-bottom: 8px;">
-                 <div class="col-md-6 console-req-container">
-                     <h5 class="console-output-header">
-                         <!-- react-text: 1205 -->Request <!-- /react-text -->
-                         <i class="glyphicon glyphicon-pencil"></i>
-                     </h5>
-                     <div class="code-snippet reqScroll">
-                         <textarea id="console-input-sample">
-                         </textarea>
-                         <textarea id="console_input">{ }</textarea>
-                     </div>
-                 </div>
-                 <div class="col-md-6 console-res-container">
+            <h5 class="console-output-header">API Endpoint</h5>
+            <div class="row" style="margin: 10px;">
+                <div class="code-snippet-plaintext" style="display: inline;" id="console-method">POST</div>
+                <div class="code-snippet-plaintext" style="display: inline;" id="console-server">https://sandbox-rest.avatax.com</div>
+                <div class="code-snippet-plaintext" style="display: inline;" id="console-path">/api/v2/companies/{companyId}/certificates</div>
+            </div>
+            <h5 class="console-output-header">
+                Headers
+                <i class="glyphicon glyphicon-pencil"></i>
+            </h5>
+            <div class="code-snippet reqScroll">
+                <textarea style="height: 50px;" id="console-headers" >Authorization: (use Developer website demo credentials)
+X-Avalara-Client: Avalara Developer Website; 18.8.0; AvaTax SDK; 18.8.0; developer-console</textarea>
+            </div>
+            <div class="row" style="margin-bottom: 8px;">
+                <div class="col-md-6 console-req-container">
+                    <h5 class="console-output-header">
+                        Request
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </h5>
+                    <textarea id="console-input-sample" style="display: none;"></textarea>
+                    <div class="code-snippet reqScroll">
+                        <textarea id="console-input">{ }</textarea>
+                    </div>
+                </div>
+                <div class="col-md-6 console-res-container">
                      <h5 class="console-output-header">Response</h5>
                      <div class="code-snippet respScroll">
-                         <pre> </pre>
+                         <pre id="console-output"> </pre>
                      </div>
                  </div>
              </div>
              <div>
-                 <button class="btn btn-secondary" style="color: #000000;" type="button" OnClick="$('#console-input').empty().append($('#console-input-sample').text());">Fill with Sample Data</button>
-                 <button class="btn btn-secondary" style="color: #000000;" type="button" OnClick="$('#console-input').empty().append('{ }');">Reset</button>
-                 <button class="btn btn-primary" type="button">Submit</button>
+                 <button class="btn btn-secondary" style="color: #000000;" type="button" onClick="$('#console-input').empty().val($('#console-input-sample').val());">Fill with Sample Data</button>
+                 <button class="btn btn-secondary" style="color: #000000;" type="button" onClick="$('#console-input').empty().val('{ }');">Reset</button>
+                 <button class="btn btn-primary" type="button" onClick="ApiRequest();">Submit</button>
              </div>
         </div>
-
     </div>
 </div>
 
@@ -166,12 +171,12 @@ storage for this company, call <code>RequestCertificateSetup</code>.</p>
     <div class="collapse" id="example-request">
 
     <h4>Request Path</h4>
-
+    
 {% highlight markdown %}
 POST https://sandbox-rest.avatax.com/api/v2/companies/{companyId}/certificates
 {% endhighlight %}
 <h4>Request Body</h4>
-<p>Documentation: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/List<CertificateModel>">List<CertificateModel></a></p>
+<p>Complete documentation: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CertificateModel>">Array[CertificateModel]</a></p>
 {% highlight json %}
 
 {% endhighlight %}
@@ -189,7 +194,7 @@ POST https://sandbox-rest.avatax.com/api/v2/companies/{companyId}/certificates
     </div>
     <div class="collapse" id="example-response">
     <h4>Response Body</h4>
-<p>Documentation: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/List<CertificateModel>">List<CertificateModel></a></p>
+<p>Complete documentation: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CertificateModel>">Array[CertificateModel]</a></p>
 
 
 {% highlight json %}

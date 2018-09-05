@@ -1,7 +1,7 @@
 ---
 layout: page
 title: CreateTransaction API
-date: 2018-09-04
+date: 2018-09-05
 comments: true
 categories: [avatax, api]
 product: avatax
@@ -36,8 +36,7 @@ disqus: 1
     </tr>
     <tr>
         <th>RESPONSE BODY</th>
-<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/TransactionModel">TransactionModel</a></td>
-
+        <td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/TransactionModel">TransactionModel</a></td>
     </tr>
 </table>
 
@@ -130,36 +129,72 @@ using the best available address location information.</p>
     </div>
     <div class="collapse" id="try-it-now">
 
-        <div>
+        <div class="api-console-output">
+            <h5 class="console-output-header">API Endpoint</h5>
+            <div class="row" style="margin: 10px;">
+                <div class="code-snippet-plaintext" style="display: inline;" id="console-method">POST</div>
+                <div class="code-snippet-plaintext" style="display: inline;" id="console-server">https://sandbox-rest.avatax.com</div>
+                <div class="code-snippet-plaintext" style="display: inline;" id="console-path">/api/v2/transactions/create</div>
+            </div>
             <h5 class="console-output-header">
-                <span>API Endpoint</span>
+                Headers
+                <i class="glyphicon glyphicon-pencil"></i>
             </h5>
-            <div class="code-snippet-plaintext">https://sandbox-rest.avatax.com@MethodModel.URI</div>
-            <h5 class="console-output-header">Method</h5>
-            <div class="code-snippet-plaintext">POST</div>
+            <div class="code-snippet reqScroll">
+                <textarea style="height: 50px;" id="console-headers" >Authorization: (use Developer website demo credentials)
+X-Avalara-Client: Avalara Developer Website; 18.8.0; AvaTax SDK; 18.8.0; developer-console</textarea>
+            </div>
             <div class="row" style="margin-bottom: 8px;">
                 <div class="col-md-6 console-req-container">
                     <h5 class="console-output-header">
-                        <!-- react-text: 1205 -->Request <!-- /react-text -->
-                        <i class="glyphicon glyphicon-pencil"/>
+                        Request
+                        <i class="glyphicon glyphicon-pencil"></i>
                     </h5>
+                    <textarea id="console-input-sample" style="display: none;">{
+  "lines": [
+    {
+      "number": "1",
+      "quantity": 1.0,
+      "amount": 100.0,
+      "taxCode": "PS081282",
+      "itemCode": "Y0001",
+      "description": "Yarn"
+    }
+  ],
+  "type": "SalesInvoice",
+  "companyCode": "DEFAULT",
+  "date": "2018-09-05",
+  "customerCode": "ABC",
+  "purchaseOrderNo": "2018-09-05-001",
+  "addresses": {
+    "singleLocation": {
+      "line1": "2000 Main Street",
+      "city": "Irvine",
+      "region": "CA",
+      "country": "US",
+      "postalCode": "92614"
+    }
+  },
+  "commit": true,
+  "currencyCode": "USD",
+  "description": "Yarn"
+}</textarea>
                     <div class="code-snippet reqScroll">
-                        <textarea id="console_input">
-                        </textarea>
+                        <textarea id="console-input">{ }</textarea>
                     </div>
                 </div>
                 <div class="col-md-6 console-res-container">
-                    <h5 class="console-output-header">Response</h5>
-                    <div class="code-snippet respScroll">
-                        <pre> </pre>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <button class="btn submit"> Fill with Sample Data</span>
-                <button class="btn submit" type="button">Reset</button>
-                <button class="btn btn-primary submit" type="button">Submit</button>
-            </div>
+                     <h5 class="console-output-header">Response</h5>
+                     <div class="code-snippet respScroll">
+                         <pre id="console-output"> </pre>
+                     </div>
+                 </div>
+             </div>
+             <div>
+                 <button class="btn btn-secondary" style="color: #000000;" type="button" onClick="$('#console-input').empty().val($('#console-input-sample').val());">Fill with Sample Data</button>
+                 <button class="btn btn-secondary" style="color: #000000;" type="button" onClick="$('#console-input').empty().val('{ }');">Reset</button>
+                 <button class="btn btn-primary" type="button" onClick="ApiRequest();">Submit</button>
+             </div>
         </div>
     </div>
 </div>
@@ -174,12 +209,12 @@ using the best available address location information.</p>
     <div class="collapse" id="example-request">
 
     <h4>Request Path</h4>
-
+    
 {% highlight markdown %}
 POST https://sandbox-rest.avatax.com/api/v2/transactions/create
 {% endhighlight %}
 <h4>Request Body</h4>
-<p>Documentation: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel">CreateTransactionModel</a></p>
+<p>Complete documentation: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel">CreateTransactionModel</a></p>
 {% highlight json %}
 {
   "lines": [
@@ -194,9 +229,9 @@ POST https://sandbox-rest.avatax.com/api/v2/transactions/create
   ],
   "type": "SalesInvoice",
   "companyCode": "DEFAULT",
-  "date": "2018-09-04",
+  "date": "2018-09-05",
   "customerCode": "ABC",
-  "purchaseOrderNo": "2018-09-04-001",
+  "purchaseOrderNo": "2018-09-05-001",
   "addresses": {
     "singleLocation": {
       "line1": "2000 Main Street",
@@ -225,15 +260,15 @@ POST https://sandbox-rest.avatax.com/api/v2/transactions/create
     </div>
     <div class="collapse" id="example-response">
     <h4>Response Body</h4>
-<p>Documentation: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/TransactionModel">TransactionModel</a></p>
+<p>Complete documentation: <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/TransactionModel">TransactionModel</a></p>
 
 
 {% highlight json %}
 {
   "id": 123456789,
-  "code": "8dd72408-0b42-445b-9b66-2b930d4c0bd4",
+  "code": "0206ddd2-c713-473f-86b4-247b819e3b91",
   "companyId": 12345,
-  "date": "2018-09-04",
+  "date": "2018-09-05",
   "status": "Committed",
   "type": "SalesInvoice",
   "currencyCode": "USD",
@@ -263,7 +298,7 @@ POST https://sandbox-rest.avatax.com/api/v2/transactions/create
   "destinationAddressId": 123456789,
   "isSellerImporterOfRecord": false,
   "description": "Yarn",
-  "taxDate": "2018-09-03T17:00:00-07:00",
+  "taxDate": "2018-09-04T17:00:00-07:00",
   "lines": [
     {
       "id": 123456789,
@@ -285,14 +320,14 @@ POST https://sandbox-rest.avatax.com/api/v2/transactions/create
       "lineAmount": 1000.0,
       "quantity": 1.0,
       "ref1": "Note: Deliver to Bob",
-      "reportingDate": "2018-09-04",
+      "reportingDate": "2018-09-05",
       "revAccount": "",
       "sourcing": "Destination",
       "tax": 62.5,
       "taxableAmount": 1000.0,
       "taxCalculated": 62.5,
       "taxCode": "PS081282",
-      "taxDate": "2018-09-04",
+      "taxDate": "2018-09-05",
       "taxEngine": "",
       "taxOverrideType": "None",
       "taxOverrideAmount": 0.0,
@@ -384,9 +419,9 @@ curl
   ],
   "type": "SalesInvoice",
   "companyCode": "DEFAULT",
-  "date": "2018-09-04",
+  "date": "2018-09-05",
   "customerCode": "ABC",
-  "purchaseOrderNo": "2018-09-04-001",
+  "purchaseOrderNo": "2018-09-05-001",
   "addresses": {
     "singleLocation": {
       "line1": "2000 Main Street",
