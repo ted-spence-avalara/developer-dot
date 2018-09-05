@@ -36,7 +36,7 @@ disqus: 1
     </tr>
     <tr>
         <th>RESPONSE BODY</th>
-<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/List<CertificateModel>">List<CertificateModel></a></td>
+<td><a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CertificateModel">CertificateModel</a></td>
 
     </tr>
 </table>
@@ -152,7 +152,7 @@ storage for this company, call <code>RequestCertificateSetup</code>.</p>
                  <button class="btn btn-primary" type="button">Submit</button>
              </div>
         </div>
-        
+
     </div>
 </div>
 
@@ -166,7 +166,7 @@ storage for this company, call <code>RequestCertificateSetup</code>.</p>
     <div class="collapse" id="example-request">
 
     <h4>Request Path</h4>
-    
+
 {% highlight markdown %}
 POST https://sandbox-rest.avatax.com/api/v2/companies/{companyId}/certificates
 {% endhighlight %}

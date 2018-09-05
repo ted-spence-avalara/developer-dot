@@ -111,7 +111,10 @@ For more information on the uptime of AvaTax, please see <a href="https://status
                 <div class="code-snippet-plaintext" style="display: inline;" id="console-server">https://sandbox-rest.avatax.com</div>
                 <div class="code-snippet-plaintext" style="display: inline;" id="console-path">/api/v2/utilities/ping</div>
             </div>
-            <h5 class="console-output-header">Headers</h5>
+            <h5 class="console-output-header">
+                Headers
+                <i class="glyphicon glyphicon-pencil"></i>
+            </h5>
             <div class="code-snippet reqScroll">
                 <textarea style="height: 50px;" id="console-headers" >Authorization: Basic TEST
 X-Avalara-Client: Avalara Developer Website; 18.8; AvaTax SDK; 18.8; localhost</textarea>
