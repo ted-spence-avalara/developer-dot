@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Filtering in AvaTax REST v2
+title: Filtering in AvaTax REST
 product: avaTax
 doctype: use_cases
 nav: apis
@@ -9,7 +9,7 @@ disqus: 1
 
 <h2>Filter Operation Symbols</h2>
 
-Filter operations are used to test the value of a field and return only those records where the test is true.
+Filter operations are used to test the value of a field and return only those records where the test is true.  When combined with pagination, filtering can allow you to select a subset of records and browse through all information stored in AvaTax in a performant, consistent manner.
 
 Avalara supports the following filtering operations defined in the <a href="https://github.com/Microsoft/api-guidelines/blob/master/Guidelines.md#97-filtering">Microsoft REST API Guidelines</a>.  Please note that in addition to the normal method of naming these operations, we also support symbols - but to use those symbols, you must properly URL encode your query string.  To avoid URL encoding problems, we encourage you to use the Microsoft syntax wherever possible.
 
@@ -22,6 +22,20 @@ Filters are present all throughout the AvaTax REST v2 API.  You can use filters 
 In this example, calling `GET /api/v2/companies` is an API call that returns all companies in your account.  However, the `$filter=region eq 'CA'` adds a test: the API call will only return those companies who have a field `region` with value `CA`.
 
 As you can imagine, there's a lot you can do with filtering.  Let's walk through the basics.
+
+<h3>Using Pagination</h3>
+
+AvaTax supports pagination using the `$top` and `$skip` parameters.  These allow you to handle pagination within your own software and to only fetch those records that need to be shown, avoiding the overhead of processing any information that is not desired.
+
+<ul class="normal">
+    <li>The <code class="highlight-rouge">$top</code> parameter controls how many records should be returned.  You can think of this as your "page size".  If you pass in a value of 50, then you will receive only the first fifty records matching your filter.</li>
+    <li>The <code class="highlight-rouge">$skip</code> parameter controls how many records you skip before first returning results.  If you pass in a value of 100, AvaTax will only begin returning results after the first 100 records have been skipped.</li>
+    <li>For example, if you are currently showing page 3 of records, and your page size is 100, then you would pass in the values <code class="highlight-rouge">$top=100&skip=200</code>.  This skips the first 100 records on page one, the second 100 records on page two, then shows the next 100 records on page three.</li>
+</ul>
+
+Pagination results are returned in the `@recordsetCount` and `@nextLink` variables.  Regardless of your page size, the total number of records that match your filter is returned in the `@recordsetCount` variable.  To determine the number of pages of information available, divide the `@recordsetCount` value by the `$top` value, rounding up.  This would allow you to display a link that allows the user to click on the specified page number and move to it directly.
+
+Alternatively, if you simply want to allow the user to click a "Next" button to jump directly one page, you can use the `@nextLink` variable.  That variable contains the URL that you could hit to get the next page immediately following the current one.
 
 <h3>Filter Criteria</h3>
 
