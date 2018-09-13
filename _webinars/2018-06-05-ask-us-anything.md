@@ -1,18 +1,16 @@
 ---
 layout: webinar
-title: Office Hours with AvaTax – Ask our Engineers Anything!
+title: Office Hours with AvaTax – How to Performance Tune Avalara’s API
 date: 2018-06-05 10:00
 author: Ted Spence
 comments: true
 product: avatax
 doctype: webinar
-linkurl: http://simplify.avalara.com/officehourswithavataxjune5/
+youtube: https://www.youtube.com/embed/C5eFJXVQzNs
 ---
 
-Office Hours with AvaTax – Ask our Engineers Anything!
+Office Hours with AvaTax – How to Performance Tune Avalara’s API
 
-Avalara’s crack team of engineers receives dozens of questions every week from developers using our platform, and we want to answer as many as we can. So, we’ve set up a 30-minute series of webinars called Office Hours with AvaTax that takes place at 10 a.m. PT every Tuesday.
+Tuesday, June 5, 2018 at 10:00 AM Pacific Time
 
-Need help estimating tax, reconciling transactions or exemption certificates? Do you have questions about product taxability, calculating tax offline and handling refunds?  If so, Office Hours is your opportunity to ask our expert team of engineers and developers any questions that may be top of your mind about the AvaTax platform.
-
-Sign Up Now
+In the latest installment of Office Hours with AvaTax, Avalara's Director of the AvaTax API Team, Ted Spence, covers tips and tricks developer teams can use to performance tune the AvaTax API.

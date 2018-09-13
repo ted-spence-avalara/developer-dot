@@ -6,17 +6,11 @@ author: Wayne Myer
 comments: true
 product: avatax
 doctype: webinar
-linkurl: https://offers.avalara.com/julydevwebinar/?CampaignID=7010b000001Y0dw
+youtube: https://www.youtube.com/embed/OAj71QFLA50
 ---
 
-Monthly Developer Webinar: Need to get up and running on Avalara quickly? Here’s how to troubleshoot common challenges with our API!
+How to Troubleshoot Common Challenges When Using the Avalara API
 
-Learning a new platform can be tough, especially where something as complex as transactional tax is concerned. We get that. The good news is, Avalara’s Engineering Team is here to help. We’d like to invite you and your dev team to attend a 60-minute webinar where some of our best engineers will address the most common issues developers run into with Avalara’s API, including:
+Tuesday, July 24, 2018 at 10:00 AM Pacific Time
 
-•	Authentication  
-•	Inconsistent tax results  
-•	Result size and filtering  
-•	Address resolution, why it's important, and how it relates to tax results  
-•	Connection issues  
-•	Latency issues  
-•	Introduction to resiliency
+Wayne Myer, a software engineer on Avalara's Developer Relations Team, walks through the most common pitfalls developers run into when using our sales tax API - authentication, inconsistent tax results and more.
