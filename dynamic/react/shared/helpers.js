@@ -35,7 +35,7 @@ const hasExampleData = (type, paramObj = {}) => {
 // Func to recurse through a postBodySchema and return true if any properties have an isExcluded property of `true`
 const hasExcludedProperties = (postBodySchema) => {
     // catch crash
-    if (typeof postBodySchema === "undefined") {
+    if (typeof postBodySchema === 'undefined') {
         return false;
     }
     // If an object or array has an isExcluded of `true`, then our work is done. If it's a 'primitive' object (string, number, bool) return its value regardless
