@@ -7,16 +7,29 @@ doctype: use_cases
 disqus: 1
 ---
 
-This demo shows how AvaTax can calculate tax on your transactions.
-
-## Map
-
 <div>
      <iframe width="1000" height="400" frameborder="0" src="https://www.bing.com/maps/embed?h=400&w=1000&cp=47.60755096295242~-122.35010620117188&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8" scrolling="no">
      </iframe>
 </div>
 
-## Demo
+## Shortcuts
+
+<div>
+    Choose a common product or service:
+    <select id="dropdown-products">
+        <option value="P0000000">Tangible Personal Property</option>
+        <option value="FR010000">Shipping</option>
+    </select>
+
+    Use a pre-selected address:
+    <select id="dropdown-addresses">
+        <option>Select from a list...</option>
+        <option value="2000 Main Street, Irvine, CA 92614">Irvine, California</option>
+        <option value="255 S. King Street, Seattle, WA 98104">Seattle, Washington</option>
+    </select>
+</div>
+
+## API Details
 
 <div class="api-console-output">
     <h5 class="console-output-header">API Endpoint</h5>
