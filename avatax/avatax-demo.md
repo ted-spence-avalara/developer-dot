@@ -9,19 +9,14 @@ disqus: 1
 
 This demo shows how AvaTax can calculate tax on your transactions.
 
-## Relevant Blog Posts
+## Map
 
-<ul class="normal">
-{% for post in site.posts %}
-   {% if post.relevantapimethods contains 'CreateTransaction' %}
-       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-   {% endif %}
-{% endfor %}
-</ul>
+<div>
+     <iframe width="1000" height="400" frameborder="0" src="https://www.bing.com/maps/embed?h=400&w=1000&cp=47.60755096295242~-122.35010620117188&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8" scrolling="no">
+     </iframe>
+</div>
 
 ## Demo
-
-
 
 <div class="api-console-output">
     <h5 class="console-output-header">API Endpoint</h5>
