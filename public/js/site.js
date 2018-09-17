@@ -24,6 +24,36 @@ function getCompareDate() {
   return [year, month, day].join('');
 }
 
+function ApiRequest()
+{
+    // Split Headers
+    var raw = $('#console-headers').val();
+    var lines = raw.split(/\r?\n/);
+    var h = {};
+    for (var i = 0; i < lines.length; i++) {
+        var p = lines[i].indexOf(': ');
+        if (p > 0) {
+            h[lines[i].substring(0, p)] = lines[i].substring(p+2);
+        }
+    }
+
+    // Here's our object
+    var obj = {
+        url: $('#console-server').text() + $('#console-path').text(),
+        accepts: "application/json",
+        type: $('#console-method').text(),
+        headers: h,
+        data: $('#console-input').val(),
+        dataType: "json",
+        contentType: "application/json",
+        success: function(result) { $('#console-output').text(JSON.stringify(result, null, 2)); },
+        error: function(result) { $('#console-output').text("HTTP Error: " + result.status + "\n\n" + JSON.stringify(result, null, 2)); }
+    };
+
+    // Execute the request
+    $.ajax(obj);
+}
+
 $(document).ready(function()
 {
     fixApiRefNav();
