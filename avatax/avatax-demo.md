@@ -6,11 +6,14 @@ product: avatax
 doctype: use_cases
 disqus: 1
 ---
+<div id="demoMap" style="height:250px"></div>
+<script src="OpenLayers.js"></script>
+<script>
+    map = new OpenLayers.Map("demoMap");
+    map.addLayer(new OpenLayers.Layer.OSM());
+    map.zoomToMaxExtent();
+</script>
 
-<div>
-     <iframe width="1000" height="400" frameborder="0" src="https://www.bing.com/maps/embed?h=400&w=1000&cp=47.60755096295242~-122.35010620117188&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8" scrolling="no">
-     </iframe>
-</div>
 
 ## Shortcuts
 
