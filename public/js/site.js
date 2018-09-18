@@ -26,6 +26,10 @@ function getCompareDate() {
 
 function ApiRequest()
 {
+    $("#console-output").empty().val();
+    $(".loading-pulse").css('display', 'block'); 
+
+
     // Split Headers
     var raw = $('#console-headers').val();
     var lines = raw.split(/\r?\n/);
@@ -52,6 +56,8 @@ function ApiRequest()
 
     // Execute the request
     $.ajax(obj);
+
+    $(".loading-pulse").css('display', 'none'); 
 }
 
 $(document).ready(function()
