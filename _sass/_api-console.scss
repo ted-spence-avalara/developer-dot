@@ -280,4 +280,8 @@ $pulse-duration: 750ms;
     animation-delay: ($pulse-duration / 1.5);
   }
 }
+
+#console-input {
+    color: greenyellow,
+}
 // END CONSOLE LOADER CSS
