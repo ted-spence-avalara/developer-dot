@@ -86,7 +86,7 @@ X-Avalara-Client: Avalara Developer Website; 18.8.0; AvaTax SDK; 18.8.0; develop
         <div class="col-md-6 console-res-container">
              <h5 class="console-output-header">Response</h5>
              <div class="code-snippet respScroll">
-                 <pre id="console-output"> </pre>
+                 <pre id="console-output"></pre>
              </div>
          </div>
      </div>

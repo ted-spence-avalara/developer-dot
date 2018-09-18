@@ -24,26 +24,6 @@ function getCompareDate() {
   return [year, month, day].join('');
 }
 
-const buildAuth = (authFormula) => {
-    // Grab all auth variables out of authFormula str (should be in <> brackets)
-    let auth;
-
-    if (!authFormula) {
-        auth = null;
-    } else {
-        const authParams = authFormula.match(/<\w+>/g).map((key) => key.substring(1, key.length - 1)).reduce((accum, key) => ({...accum,
-            [key]: ''
-        }), {});
-
-        auth = {
-            formula: authFormula,
-            params: authParams
-        };
-    }
-
-    return auth;
-};
-
 function ApiRequest()
 {
     // Split Headers
@@ -62,7 +42,7 @@ function ApiRequest()
         url: $('#console-server').text() + $('#console-path').text(),
         accepts: "application/json",
         type: $('#console-method').text(),
-        headers: buildAuth("`Basic ${btoa(`<username>:<password>`)}`"),        ,
+        headers: h,
         data: $('#console-input').val(),
         dataType: "json",
         contentType: "application/json",
@@ -72,7 +52,6 @@ function ApiRequest()
 
     // Execute the request
     $.ajax(obj);
-    // submitApiRequest(obj)
 }
 
 $(document).ready(function()
