@@ -39,14 +39,12 @@ function buildSampleData() {
             "quantity": 1.0,
             "amount": 100.0,
             "taxCode": taxCode,
-            "itemCode": "Y0001",
             "description": description
         } ],
         "type": "SalesInvoice",
         "companyCode": "DEFAULT",
-        "date": "2018-09-05",
+        "date": "2018-09-05", 
         "customerCode": "ABC",
-        "purchaseOrderNo": "2018-09-05-001",
         "addresses": {
             "singleLocation": {
                 "line1": "2000 Main Street",
@@ -56,8 +54,6 @@ function buildSampleData() {
                 "postalCode": "92614"
             }
         },
-        "commit": true,
-        "currencyCode": "USD",
         "description": description
     };
 
@@ -105,6 +101,7 @@ function ApiRequest() {
 $(document).ready(function() {
     fixApiRefNav();
     fixDropDownMenuLargePosition();
+    fillWithSampleData();
 
     $('[webinar-hide-before]').each(function() {
       if ($(this).attr('webinar-hide-before') <= getCompareDate()) {
@@ -125,5 +122,5 @@ $(document).ready(function() {
     // When we hide the section nav on xs/sm, reset the main content next to the nav
     $('.sm-section-nav').on('hidden.bs.dropdown', function() {
         $('main').removeClass('section-nav-open');
-    });
+    });   
 });

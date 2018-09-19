@@ -16,7 +16,7 @@ disqus: 1
 
 <div>
     Choose a common product or service:
-    <select id="dropdown-products">
+    <select id="dropdown-products" onChange="fillWithSampleData();">
         <option value="P0000000" description="Tangible Personal Property">Tangible Personal Property</option>
         <option value="PF160024" description="All Sushi">All Sushi</option>
         <option value="FR010000" description="Shipping">Shipping</option>
@@ -55,34 +55,6 @@ X-Avalara-Client: Avalara Developer Website; 18.8.0; AvaTax SDK; 18.8.0; develop
                 Request
                 <i class="glyphicon glyphicon-pencil"></i>
             </h5>
-            <textarea id="console-input-sample" style="display: none;">{
-    "lines": [ {
-        "number": "1",
-        "quantity": 1.0,
-        "amount": 100.0,
-        "taxCode": "FR010000",
-        "itemCode": "Y0001",
-        "description": "Shipping"
-    } ],
-    "type": "SalesInvoice",
-    "companyCode": "DEFAULT",
-    "date": "2018-09-05",
-    "customerCode": "ABC",
-    "purchaseOrderNo": "2018-09-05-001",
-    "addresses": {
-        "singleLocation": {
-            "line1": "2000 Main Street",
-            "city": "Irvine",
-            "region": "CA",
-            "country": "US",
-            "postalCode": "92614"
-        }
-    },
-    "commit": true,
-    "currencyCode": "USD",
-    "description": "Shipping"
-}
-            </textarea>
             <div class="code-snippet reqScroll">
                 <pre id="console-input">{ }</pre>
             </div>
