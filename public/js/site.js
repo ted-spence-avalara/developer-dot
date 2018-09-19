@@ -24,8 +24,49 @@ function getCompareDate() {
   return [year, month, day].join('');
 }
 
-function ApiRequest()
-{
+function fillWithSampleData() {
+    const sampleData = buildSampleData();
+    $('#console-input').empty().text(JSON.stringify(sampleData, null, 2));
+};
+
+function buildSampleData() {
+    const taxCode = $('option:selected').val();
+    const description = $('option:selected').attr('description');
+
+    const sampleData = {
+        "lines": [ {
+            "number": "1",
+            "quantity": 1.0,
+            "amount": 100.0,
+            "taxCode": taxCode,
+            "description": description
+        } ],
+        "type": "SalesInvoice",
+        "companyCode": "DEFAULT",
+        "date": "2018-09-05", 
+        "customerCode": "ABC",
+        "addresses": {
+            "singleLocation": {
+                "line1": "2000 Main Street",
+                "city": "Irvine",
+                "region": "CA",
+                "country": "US",
+                "postalCode": "92614"
+            }
+        },
+        "description": description
+    };
+
+    return sampleData;
+}
+
+function ApiRequest() {
+    // clear the console output and display loading-pulse
+    $("#console-output").empty().val();
+    $(".loading-pulse").css('display', 'block'); 
+
+    const data = buildSampleData();
+
     // Split Headers
     var raw = $('#console-headers').val();
     var lines = raw.split(/\r?\n/);
@@ -43,7 +84,7 @@ function ApiRequest()
         accepts: "application/json",
         type: $('#console-method').text(),
         headers: h,
-        data: $('#console-input').val(),
+        data: JSON.stringify(data),
         dataType: "json",
         contentType: "application/json",
         success: function(result) { $('#console-output').text(JSON.stringify(result, null, 2)); },
@@ -52,12 +93,15 @@ function ApiRequest()
 
     // Execute the request
     $.ajax(obj);
+
+    // hide loading-pulse
+    $(".loading-pulse").css('display', 'none'); 
 }
 
-$(document).ready(function()
-{
+$(document).ready(function() {
     fixApiRefNav();
     fixDropDownMenuLargePosition();
+    fillWithSampleData();
 
     $('[webinar-hide-before]').each(function() {
       if ($(this).attr('webinar-hide-before') <= getCompareDate()) {
@@ -78,5 +122,5 @@ $(document).ready(function()
     // When we hide the section nav on xs/sm, reset the main content next to the nav
     $('.sm-section-nav').on('hidden.bs.dropdown', function() {
         $('main').removeClass('section-nav-open');
-    });
+    });   
 });

@@ -25,11 +25,13 @@ disqus: 1
 
 <div>
     Choose a common product or service:
-    <select id="dropdown-products">
-        <option value="P0000000">Tangible Personal Property</option>
-        <option value="FR010000">Shipping</option>
+    <select id="dropdown-products" onChange="fillWithSampleData();">
+        <option value="P0000000" description="Tangible Personal Property">Tangible Personal Property</option>
+        <option value="PF160024" description="All Sushi">All Sushi</option>
+        <option value="FR010000" description="Shipping">Shipping</option>
+        <option value="DM040200" description="Music - streaming / electronic download">Music - streaming / electronic download</option>
+        <option value="PC040400" description="Sports and Recreational Equipment">Sports and Recreational Equipment</option>
     </select>
-
     Use a pre-selected address:
     <select id="dropdown-addresses">
         <option>Select from a list...</option>
@@ -53,7 +55,8 @@ disqus: 1
     </h5>
     <div class="code-snippet reqScroll">
         <textarea style="height: 50px;" id="console-headers" >Authorization: (use Developer website demo credentials)
-X-Avalara-Client: Avalara Developer Website; 18.8.0; AvaTax SDK; 18.8.0; developer-console</textarea>
+X-Avalara-Client: Avalara Developer Website; 18.8.0; AvaTax SDK; 18.8.0; developer-console
+        </textarea>
     </div>
     <div class="row" style="margin-bottom: 8px;">
         <div class="col-md-6 console-req-container">
@@ -61,46 +64,20 @@ X-Avalara-Client: Avalara Developer Website; 18.8.0; AvaTax SDK; 18.8.0; develop
                 Request
                 <i class="glyphicon glyphicon-pencil"></i>
             </h5>
-            <textarea id="console-input-sample" style="display: none;">{
-    "lines": [ {
-        "number": "1",
-        "quantity": 1.0,
-        "amount": 100.0,
-        "taxCode": "PS081282",
-        "itemCode": "Y0001",
-        "description": "Yarn"
-    } ],
-    "type": "SalesInvoice",
-    "companyCode": "DEFAULT",
-    "date": "2018-09-05",
-    "customerCode": "ABC",
-    "purchaseOrderNo": "2018-09-05-001",
-    "addresses": {
-        "singleLocation": {
-            "line1": "2000 Main Street",
-            "city": "Irvine",
-            "region": "CA",
-            "country": "US",
-            "postalCode": "92614"
-        }
-    },
-    "commit": true,
-    "currencyCode": "USD",
-    "description": "Yarn"
-}</textarea>
             <div class="code-snippet reqScroll">
-                <textarea id="console-input">{ }</textarea>
+                <pre id="console-input">{ }</pre>
             </div>
         </div>
         <div class="col-md-6 console-res-container">
              <h5 class="console-output-header">Response</h5>
              <div class="code-snippet respScroll">
-                 <pre id="console-output"> </pre>
+                <div class="loading-pulse" style="display: none;"></div>
+                <pre id="console-output"></pre>
              </div>
          </div>
      </div>
      <div>
-         <button class="btn btn-secondary" style="color: #000000;" type="button" onClick="$('#console-input').empty().val($('#console-input-sample').val());">Fill with Sample Data</button>
+         <button class="btn btn-secondary" style="color: #000000;" type="button" onClick="fillWithSampleData();">Fill with Sample Data</button>
          <button class="btn btn-secondary" style="color: #000000;" type="button" onClick="$('#console-input').empty().val('{ }');">Reset</button>
          <button class="btn btn-primary" type="button" onClick="ApiRequest();">Submit</button>
      </div>
