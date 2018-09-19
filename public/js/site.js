@@ -26,6 +26,7 @@ function getCompareDate() {
 
 function ApiRequest()
 {
+    // clear the console output and display loading-pulse
     $("#console-output").empty().val();
     $(".loading-pulse").css('display', 'block'); 
 
@@ -57,6 +58,7 @@ function ApiRequest()
     // Execute the request
     $.ajax(obj);
 
+    // hide loading-pulse
     $(".loading-pulse").css('display', 'none'); 
 }
 

@@ -18,9 +18,11 @@ disqus: 1
     Choose a common product or service:
     <select id="dropdown-products">
         <option value="P0000000">Tangible Personal Property</option>
+        <option value="PF160024">All Sushi</option>
         <option value="FR010000">Shipping</option>
+        <option value="DM040200">Music - streaming / electronic download</option>
+        <option value="PC040400">Sports and Recreational Equipment</option>
     </select>
-
     Use a pre-selected address:
     <select id="dropdown-addresses">
         <option>Select from a list...</option>
