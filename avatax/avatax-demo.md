@@ -6,13 +6,19 @@ product: avatax
 doctype: use_cases
 disqus: 1
 ---
-<div id="demoMap" style="height:250px"></div>
-<script src="OpenLayers.js"></script>
-<script>
-    map = new OpenLayers.Map("demoMap");
-    map.addLayer(new OpenLayers.Layer.OSM());
-    map.zoomToMaxExtent();
+
+<script type='text/javascript'>
+    var map;
+    function GetMap() {
+        map = new Microsoft.Maps.Map('#myMap', {});
+        var layer = new Microsoft.Maps.Layer("MyPushpinLayer1");
+        layer.add(new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(47.59789, -122.33104)));
+        map.layers.insert(layer);
+    }
 </script>
+<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=Ahgp_E6MHtyMYBJPCllMKTwJk7Indytl8hVm-Boe6mbyWbcyZvVBUePMDP5OLeiH' async defer></script>
+
+ <div id="myMap" style="position:relative;width:800px;height:600px;"></div>
 
 
 ## Shortcuts
@@ -27,8 +33,8 @@ disqus: 1
     Use a pre-selected address:
     <select id="dropdown-addresses">
         <option>Select from a list...</option>
-        <option value="2000 Main Street, Irvine, CA 92614">Irvine, California</option>
-        <option value="255 S. King Street, Seattle, WA 98104">Seattle, Washington</option>
+        <option value="2000 Main Street, Irvine, CA 92614">Irvine, California</option> 
+        <option value="255 S. King Street, Seattle, WA 98104">Seattle, Washington</option> <!-- new Microsoft.Maps.Location(47.59789, -122.33104) -->
     </select>
 </div>
 
