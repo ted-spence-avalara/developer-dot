@@ -24,12 +24,39 @@ function getCompareDate() {
   return [year, month, day].join('');
 }
 
-function updateSampleData() {
-    let sampleData = $('#console-input-sample').val();
-    const taxCode = $('#cdropdown-products').val();
-    console.log('sampleData',  sampleData);
+function buildSampleData() {
+    const taxCode = $('option:selected').val();
+    const description = $('option:selected').attr('description');
 
-    console.log('taxCode', taxCode);
+    const sampleData = {
+        "lines": [ {
+            "number": "1",
+            "quantity": 1.0,
+            "amount": 100.0,
+            "taxCode": taxCode,
+            "itemCode": "Y0001",
+            "description": description
+        } ],
+        "type": "SalesInvoice",
+        "companyCode": "DEFAULT",
+        "date": "2018-09-05",
+        "customerCode": "ABC",
+        "purchaseOrderNo": "2018-09-05-001",
+        "addresses": {
+            "singleLocation": {
+                "line1": "2000 Main Street",
+                "city": "Irvine",
+                "region": "CA",
+                "country": "US",
+                "postalCode": "92614"
+            }
+        },
+        "commit": true,
+        "currencyCode": "USD",
+        "description": description
+    };
+
+    return JSON.stringify(sampleData);
 }
 
 function ApiRequest()
@@ -38,8 +65,8 @@ function ApiRequest()
     $("#console-output").empty().val();
     $(".loading-pulse").css('display', 'block'); 
 
-    const data = updateSampleData();
-
+    const data = buildSampleData();
+    console.log('DATA', typeof data);
 
     // Split Headers
     var raw = $('#console-headers').val();

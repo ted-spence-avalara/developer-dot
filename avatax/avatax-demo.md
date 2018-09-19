@@ -17,11 +17,11 @@ disqus: 1
 <div>
     Choose a common product or service:
     <select id="dropdown-products">
-        <option value="P0000000">Tangible Personal Property</option>
-        <option value="PF160024">All Sushi</option>
-        <option value="FR010000">Shipping</option>
-        <option value="DM040200">Music - streaming / electronic download</option>
-        <option value="PC040400">Sports and Recreational Equipment</option>
+        <option value="P0000000" description="Tangible Personal Property">Tangible Personal Property</option>
+        <option value="PF160024" description="All Sushi">All Sushi</option>
+        <option value="FR010000" description="Shipping">Shipping</option>
+        <option value="DM040200" description="Music - streaming / electronic download">Music - streaming / electronic download</option>
+        <option value="PC040400" description="Sports and Recreational Equipment">Sports and Recreational Equipment</option>
     </select>
     Use a pre-selected address:
     <select id="dropdown-addresses">
@@ -46,7 +46,7 @@ disqus: 1
     </h5>
     <div class="code-snippet reqScroll">
         <textarea style="height: 50px;" id="console-headers" >Authorization: (use Developer website demo credentials)
-        X-Avalara-Client: Avalara Developer Website; 18.8.0; AvaTax SDK; 18.8.0; developer-console
+X-Avalara-Client: Avalara Developer Website; 18.8.0; AvaTax SDK; 18.8.0; developer-console
         </textarea>
     </div>
     <div class="row" style="margin-bottom: 8px;">
