@@ -24,11 +24,21 @@ function getCompareDate() {
   return [year, month, day].join('');
 }
 
+function updateSampleData() {
+    let sampleData = $('#console-input-sample').val();
+    const taxCode = $('#cdropdown-products').val();
+    console.log('sampleData',  sampleData);
+
+    console.log('taxCode', taxCode);
+}
+
 function ApiRequest()
 {
     // clear the console output and display loading-pulse
     $("#console-output").empty().val();
     $(".loading-pulse").css('display', 'block'); 
+
+    const data = updateSampleData();
 
 
     // Split Headers
@@ -48,7 +58,7 @@ function ApiRequest()
         accepts: "application/json",
         type: $('#console-method').text(),
         headers: h,
-        data: $('#console-input').val(),
+        data: data,
         dataType: "json",
         contentType: "application/json",
         success: function(result) { $('#console-output').text(JSON.stringify(result, null, 2)); },

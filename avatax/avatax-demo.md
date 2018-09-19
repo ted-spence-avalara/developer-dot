@@ -46,7 +46,8 @@ disqus: 1
     </h5>
     <div class="code-snippet reqScroll">
         <textarea style="height: 50px;" id="console-headers" >Authorization: (use Developer website demo credentials)
-X-Avalara-Client: Avalara Developer Website; 18.8.0; AvaTax SDK; 18.8.0; developer-console</textarea>
+        X-Avalara-Client: Avalara Developer Website; 18.8.0; AvaTax SDK; 18.8.0; developer-console
+        </textarea>
     </div>
     <div class="row" style="margin-bottom: 8px;">
         <div class="col-md-6 console-req-container">
@@ -59,9 +60,9 @@ X-Avalara-Client: Avalara Developer Website; 18.8.0; AvaTax SDK; 18.8.0; develop
         "number": "1",
         "quantity": 1.0,
         "amount": 100.0,
-        "taxCode": "PS081282",
+        "taxCode": "FR010000",
         "itemCode": "Y0001",
-        "description": "Yarn"
+        "description": "Shipping"
     } ],
     "type": "SalesInvoice",
     "companyCode": "DEFAULT",
@@ -79,8 +80,9 @@ X-Avalara-Client: Avalara Developer Website; 18.8.0; AvaTax SDK; 18.8.0; develop
     },
     "commit": true,
     "currencyCode": "USD",
-    "description": "Yarn"
-}</textarea>
+    "description": "Shipping"
+}
+            </textarea>
             <div class="code-snippet reqScroll">
                 <textarea id="console-input">{ }</textarea>
             </div>
