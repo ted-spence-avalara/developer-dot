@@ -62,7 +62,7 @@ function buildSampleData() {
 
 function ApiRequest() {
     // clear the console output and display loading-pulse
-    $("#console-output").empty().val();
+    $("#console-output").empty();
     $(".loading-pulse").css('display', 'block'); 
 
     const data = buildSampleData();
