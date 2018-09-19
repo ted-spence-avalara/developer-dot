@@ -24,6 +24,11 @@ function getCompareDate() {
   return [year, month, day].join('');
 }
 
+function fillWithSampleData() {
+    const sampleData = buildSampleData();
+    $('#console-input').empty().text(JSON.stringify(sampleData, null, 2));
+};
+
 function buildSampleData() {
     const taxCode = $('option:selected').val();
     const description = $('option:selected').attr('description');
@@ -56,17 +61,15 @@ function buildSampleData() {
         "description": description
     };
 
-    return JSON.stringify(sampleData);
+    return sampleData;
 }
 
-function ApiRequest()
-{
+function ApiRequest() {
     // clear the console output and display loading-pulse
     $("#console-output").empty().val();
     $(".loading-pulse").css('display', 'block'); 
 
     const data = buildSampleData();
-    console.log('DATA', typeof data);
 
     // Split Headers
     var raw = $('#console-headers').val();
@@ -85,7 +88,7 @@ function ApiRequest()
         accepts: "application/json",
         type: $('#console-method').text(),
         headers: h,
-        data: data,
+        data: JSON.stringify(data),
         dataType: "json",
         contentType: "application/json",
         success: function(result) { $('#console-output').text(JSON.stringify(result, null, 2)); },
@@ -99,8 +102,7 @@ function ApiRequest()
     $(".loading-pulse").css('display', 'none'); 
 }
 
-$(document).ready(function()
-{
+$(document).ready(function() {
     fixApiRefNav();
     fixDropDownMenuLargePosition();
 

@@ -84,7 +84,7 @@ X-Avalara-Client: Avalara Developer Website; 18.8.0; AvaTax SDK; 18.8.0; develop
 }
             </textarea>
             <div class="code-snippet reqScroll">
-                <textarea id="console-input">{ }</textarea>
+                <pre id="console-input">{ }</pre>
             </div>
         </div>
         <div class="col-md-6 console-res-container">
@@ -96,7 +96,7 @@ X-Avalara-Client: Avalara Developer Website; 18.8.0; AvaTax SDK; 18.8.0; develop
          </div>
      </div>
      <div>
-         <button class="btn btn-secondary" style="color: #000000;" type="button" onClick="$('#console-input').empty().val($('#console-input-sample').val());">Fill with Sample Data</button>
+         <button class="btn btn-secondary" style="color: #000000;" type="button" onClick="fillWithSampleData();">Fill with Sample Data</button>
          <button class="btn btn-secondary" style="color: #000000;" type="button" onClick="$('#console-input').empty().val('{ }');">Reset</button>
          <button class="btn btn-primary" type="button" onClick="ApiRequest();">Submit</button>
      </div>
