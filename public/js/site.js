@@ -60,42 +60,82 @@ function buildSampleData() {
     return sampleData;
 }
 
+const proxy = {
+    "route": "https://xp0wfn7roi.execute-api.us-west-2.amazonaws.com/production/proxy",
+    "key": {
+        "name": "api-key",
+        "location": "v2-devdot-keys/devdot-proxy-key"
+    }
+}
+
 function ApiRequest() {
     // clear the console output and display loading-pulse
     $("#console-output").empty();
     $(".loading-pulse").css('display', 'block'); 
 
     const data = buildSampleData();
+    const [bucket, key] = proxy.key.location.split('/');
+
+    const keyBucket = new AWS.S3({params: {Bucket: bucket, Key: key}});
+    return keyBucket.makeUnauthenticatedRequest('getObject', {}).promise()
+    .then((bucketRes) => {
+        return fetch(proxy.route, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                apiKey: bucketRes.Body.toString(),
+                method:$('#console-method').text(),
+                route: $('#console-server').text() + $('#console-path').text(),
+               
+                postBody: JSON.stringify(data)
+            })
+        });
+    })
+    .then((rawApiRes) => {
+        return rawApiRes.json().then((body) => {
+            // hide loading-pulse
+            $(".loading-pulse").css('display', 'none'); 
+            return {
+                status: rawApiRes.status.toString(),
+                statusMessage: rawApiRes.statusText,
+                body: body
+            };
+        });
+    });
+
+     // queryString: endpoint.queryString || {},
+     // pathParams: endpoint.pathParams || {},
 
     // Split Headers
-    var raw = $('#console-headers').val();
-    var lines = raw.split(/\r?\n/);
-    var h = {};
-    for (var i = 0; i < lines.length; i++) {
-        var p = lines[i].indexOf(': ');
-        if (p > 0) {
-            h[lines[i].substring(0, p)] = lines[i].substring(p+2);
-        }
-    }
+    // var raw = $('#console-headers').val();
+    // var lines = raw.split(/\r?\n/);
+    // var h = {};
+    // for (var i = 0; i < lines.length; i++) {
+    //     var p = lines[i].indexOf(': ');
+    //     if (p > 0) {
+    //         h[lines[i].substring(0, p)] = lines[i].substring(p+2);
+    //     }
+    // }
 
     // Here's our object
-    var obj = {
-        url: $('#console-server').text() + $('#console-path').text(),
-        accepts: "application/json",
-        type: $('#console-method').text(),
-        headers: h,
-        data: JSON.stringify(data),
-        dataType: "json",
-        contentType: "application/json",
-        success: function(result) { $('#console-output').text(JSON.stringify(result, null, 2)); },
-        error: function(result) { $('#console-output').text("HTTP Error: " + result.status + "\n\n" + JSON.stringify(result, null, 2)); }
-    };
+    // var obj = {
+    //     url: $('#console-server').text() + $('#console-path').text(),
+    //     accepts: "application/json",
+    //     type: $('#console-method').text(),
+    //     headers: h,
+    //     data: JSON.stringify(data),
+    //     dataType: "json",
+    //     contentType: "application/json",
+    //     success: function(result) { $('#console-output').text(JSON.stringify(result, null, 2)); },
+    //     error: function(result) { $('#console-output').text("HTTP Error: " + result.status + "\n\n" + JSON.stringify(result, null, 2)); }
+    // };
 
     // Execute the request
-    $.ajax(obj);
+    // $.ajax(obj);
 
-    // hide loading-pulse
-    $(".loading-pulse").css('display', 'none'); 
+    
 }
 
 $(document).ready(function() {
@@ -124,3 +164,5 @@ $(document).ready(function() {
         $('main').removeClass('section-nav-open');
     });   
 });
+
+
