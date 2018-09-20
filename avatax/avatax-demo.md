@@ -7,10 +7,21 @@ doctype: use_cases
 disqus: 1
 ---
 
-<div>
-     <iframe width="1000" height="400" frameborder="0" src="https://www.bing.com/maps/embed?h=400&w=1000&cp=47.60755096295242~-122.35010620117188&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8" scrolling="no">
-     </iframe>
-</div>
+<script type='text/javascript'>
+    var map;
+    function GetMap() {
+        map = new Microsoft.Maps.Map('#myMap', {});
+        var layer = new Microsoft.Maps.Layer("MyPushpinLayer1");
+        layer.add(new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(47.59789, -122.33104)));
+        map.layers.insert(layer);
+    }
+
+    //Find address? Or use map.Find()?
+</script>
+<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=Ahgp_E6MHtyMYBJPCllMKTwJk7Indytl8hVm-Boe6mbyWbcyZvVBUePMDP5OLeiH' async defer></script>
+
+ <div id="myMap" style="position:relative;width:800px;height:600px;"></div>
+
 
 ## Shortcuts
 
@@ -26,8 +37,8 @@ disqus: 1
     Use a pre-selected address:
     <select id="dropdown-addresses">
         <option>Select from a list...</option>
-        <option value="2000 Main Street, Irvine, CA 92614">Irvine, California</option>
-        <option value="255 S. King Street, Seattle, WA 98104">Seattle, Washington</option>
+        <option value="2000 Main Street, Irvine, CA 92614">Irvine, California</option> <!-- OnChange, call GetMap() with this Location object new Microsoft.Maps.Location(33.6846603698176, -117.850629887389) -->
+        <option value="255 S. King Street, Seattle, WA 98104">Seattle, Washington</option> <!-- OnChange, call GetMap() with this new Microsoft.Maps.Location(47.59789, -122.33104) -->
     </select>
 </div>
 
