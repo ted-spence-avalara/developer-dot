@@ -79,63 +79,37 @@ function ApiRequest() {
     const keyBucket = new AWS.S3({params: {Bucket: bucket, Key: key}});
     return keyBucket.makeUnauthenticatedRequest('getObject', {}).promise()
     .then((bucketRes) => {
+
         return fetch(proxy.route, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify({
                 apiKey: bucketRes.Body.toString(),
                 method:$('#console-method').text(),
                 route: $('#console-server').text() + $('#console-path').text(),
-               
-                postBody: JSON.stringify(data)
+                queryString: {},
+                pathParams:{},
+                postBody: data
             })
+        })
+        .then((rawApiResponse) => {
+            return rawApiResponse.json().then((body) => {
+                $(".loading-pulse").css('display', 'none'); 
+                $('#console-output').text(JSON.stringify(body, null, 2));
+                
+                //TODO handle errors
+                // $('#console-output').text("HTTP Error: " + body.status + "\n\n" + JSON.stringify(result, null, 2));
+
+                return {
+                    status: rawApiResponse.status.toString(),
+                    statusMessage: rawApiResponse.statusText,
+                    body: body,
+                };
+            });
         });
     })
-    .then((rawApiRes) => {
-        return rawApiRes.json().then((body) => {
-            // hide loading-pulse
-            $(".loading-pulse").css('display', 'none'); 
-            return {
-                status: rawApiRes.status.toString(),
-                statusMessage: rawApiRes.statusText,
-                body: body
-            };
-        });
-    });
-
-     // queryString: endpoint.queryString || {},
-     // pathParams: endpoint.pathParams || {},
-
-    // Split Headers
-    // var raw = $('#console-headers').val();
-    // var lines = raw.split(/\r?\n/);
-    // var h = {};
-    // for (var i = 0; i < lines.length; i++) {
-    //     var p = lines[i].indexOf(': ');
-    //     if (p > 0) {
-    //         h[lines[i].substring(0, p)] = lines[i].substring(p+2);
-    //     }
-    // }
-
-    // Here's our object
-    // var obj = {
-    //     url: $('#console-server').text() + $('#console-path').text(),
-    //     accepts: "application/json",
-    //     type: $('#console-method').text(),
-    //     headers: h,
-    //     data: JSON.stringify(data),
-    //     dataType: "json",
-    //     contentType: "application/json",
-    //     success: function(result) { $('#console-output').text(JSON.stringify(result, null, 2)); },
-    //     error: function(result) { $('#console-output').text("HTTP Error: " + result.status + "\n\n" + JSON.stringify(result, null, 2)); }
-    // };
-
-    // Execute the request
-    // $.ajax(obj);
-
-    
 }
 
 $(document).ready(function() {
