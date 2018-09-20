@@ -257,7 +257,7 @@ Response:
 ```
 You may notice the branches in the ancestry above. The branch points are distinguishable by the empty hsCode field. The diagram below may help visualize the hierarchical nature of the 8466935340 HS Code.
 
-<img src="../../../../../images/HSCodeHierarchyExample.jpg" />
+<img src="/public/images/blog/HSCodeHierarchyExample.jpg" alt="HS Code Hierarchy Example"/>
 
 The red boxes denote branches, green boxes are valid HS Codes, and yellow boxes represent incomplete HS Codes. Starting at the top with code 846693, there is one immediate, complete child HS Code and one branch. Beneath 846693_branch1, there are two more information branches. When using `/api/v2/definitions/crossborder/{country}/{hsCode}`, AvaTax returns information that fits in yellow or green boxes, but not information in the red boxes. These informational nodes will only appear when querying the hierarchy of a valid HS Code.
 
