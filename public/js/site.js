@@ -24,40 +24,98 @@ function getCompareDate() {
   return [year, month, day].join('');
 }
 
-function ApiRequest()
-{
-    // Split Headers
-    var raw = $('#console-headers').val();
-    var lines = raw.split(/\r?\n/);
-    var h = {};
-    for (var i = 0; i < lines.length; i++) {
-        var p = lines[i].indexOf(': ');
-        if (p > 0) {
-            h[lines[i].substring(0, p)] = lines[i].substring(p+2);
-        }
-    }
+function fillWithSampleData() {
+    const sampleData = buildSampleData();
+    $('#console-input').empty().text(JSON.stringify(sampleData, null, 2));
+};
 
-    // Here's our object
-    var obj = {
-        url: $('#console-server').text() + $('#console-path').text(),
-        accepts: "application/json",
-        type: $('#console-method').text(),
-        headers: h,
-        data: $('#console-input').val(),
-        dataType: "json",
-        contentType: "application/json",
-        success: function(result) { $('#console-output').text(JSON.stringify(result, null, 2)); },
-        error: function(result) { $('#console-output').text("HTTP Error: " + result.status + "\n\n" + JSON.stringify(result, null, 2)); }
+function buildSampleData() {
+    const taxCode = $('option:selected').val();
+    const description = $('option:selected').attr('description');
+
+    const sampleData = {
+        "lines": [ {
+            "number": "1",
+            "quantity": 1.0,
+            "amount": 100.0,
+            "taxCode": taxCode,
+            "description": description
+        } ],
+        "type": "SalesInvoice",
+        "companyCode": "DEFAULT",
+        "date": "2018-09-05", 
+        "customerCode": "ABC",
+        "addresses": {
+            "singleLocation": {
+                "line1": "2000 Main Street",
+                "city": "Irvine",
+                "region": "CA",
+                "country": "US",
+                "postalCode": "92614"
+            }
+        },
+        "description": description
     };
 
-    // Execute the request
-    $.ajax(obj);
+    return sampleData;
 }
 
-$(document).ready(function()
-{
+const proxy = {
+    "route": "https://xp0wfn7roi.execute-api.us-west-2.amazonaws.com/production/proxy",
+    "key": {
+        "name": "api-key",
+        "location": "v2-devdot-keys/devdot-proxy-key"
+    }
+}
+
+function ApiRequest() {
+    // clear the console output and display loading-pulse
+    $("#console-output").empty();
+    $(".loading-pulse").css('display', 'block'); 
+
+    const data = buildSampleData();
+    const [bucket, key] = proxy.key.location.split('/');
+
+    const keyBucket = new AWS.S3({params: {Bucket: bucket, Key: key}});
+    return keyBucket.makeUnauthenticatedRequest('getObject', {}).promise()
+    .then((bucketRes) => {
+
+        return fetch(proxy.route, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                apiKey: bucketRes.Body.toString(),
+                method:$('#console-method').text(),
+                route: $('#console-server').text() + $('#console-path').text(),
+                queryString: {},
+                pathParams:{},
+                postBody: data
+            })
+        })
+        .then((rawApiResponse) => {
+            return rawApiResponse.json().then((body) => {
+                $(".loading-pulse").css('display', 'none'); 
+                $('#console-output').text(JSON.stringify(body, null, 2));
+                
+                //TODO handle errors
+                // $('#console-output').text("HTTP Error: " + body.status + "\n\n" + JSON.stringify(result, null, 2));
+
+                return {
+                    status: rawApiResponse.status.toString(),
+                    statusMessage: rawApiResponse.statusText,
+                    body: body,
+                };
+            });
+        });
+    })
+}
+
+$(document).ready(function() {
     fixApiRefNav();
     fixDropDownMenuLargePosition();
+    fillWithSampleData();
 
     $('[webinar-hide-before]').each(function() {
       if ($(this).attr('webinar-hide-before') <= getCompareDate()) {
@@ -78,5 +136,7 @@ $(document).ready(function()
     // When we hide the section nav on xs/sm, reset the main content next to the nav
     $('.sm-section-nav').on('hidden.bs.dropdown', function() {
         $('main').removeClass('section-nav-open');
-    });
+    });   
 });
+
+
