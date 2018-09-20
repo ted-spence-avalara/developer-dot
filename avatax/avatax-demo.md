@@ -51,15 +51,6 @@ disqus: 1
         <div class="code-snippet-plaintext" style="display: inline;" id="console-server">https://sandbox-rest.avatax.com</div>
         <div class="code-snippet-plaintext" style="display: inline;" id="console-path">/api/v2/transactions/create</div>
     </div>
-    <h5 class="console-output-header">
-        Headers
-        <i class="glyphicon glyphicon-pencil"></i>
-    </h5>
-    <div class="code-snippet reqScroll">
-        <textarea style="height: 50px;" id="console-headers" >Authorization: (use Developer website demo credentials)
-X-Avalara-Client: Avalara Developer Website; 18.8.0; AvaTax SDK; 18.8.0; developer-console
-        </textarea>
-    </div>
     <div class="row" style="margin-bottom: 8px;">
         <div class="col-md-6 console-req-container">
             <h5 class="console-output-header">
@@ -79,7 +70,6 @@ X-Avalara-Client: Avalara Developer Website; 18.8.0; AvaTax SDK; 18.8.0; develop
          </div>
      </div>
      <div>
-         <button class="btn btn-secondary" style="color: #000000;" type="button" onClick="fillWithSampleData();">Fill with Sample Data</button>
          <button class="btn btn-secondary" style="color: #000000;" type="button" onClick="$('#console-input').empty().val('{ }');">Reset</button>
          <button class="btn btn-primary" type="button" onClick="ApiRequest();">Submit</button>
      </div>
