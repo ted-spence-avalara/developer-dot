@@ -36,16 +36,24 @@ disqus: 1
     </select>
     Use a pre-selected address:
     <select id="dropdown-addresses">
-        <option>Select from a list...</option>
-        <option value="2000 Main Street, Irvine, CA 92614">Irvine, California</option> <!-- OnChange, call GetMap() with this Location object new Microsoft.Maps.Location(33.6846603698176, -117.850629887389) -->
-        <option value="255 S. King Street, Seattle, WA 98104">Seattle, Washington</option> <!-- OnChange, call GetMap() with this new Microsoft.Maps.Location(47.59789, -122.33104) -->
+        <option value="2000 Main Street, Irvine, CA, 92614">Irvine, CA, United States</option> <!-- OnChange, call GetMap() with this Location object new Microsoft.Maps.Location(33.6846603698176, -117.850629887389) -->
+        <option value="255 S. King Street, Seattle, WA, 98104">Seattle, WA, United States</option> <!-- OnChange, call GetMap() with this new Microsoft.Maps.Location(47.59789, -122.33104) -->
+        <option value="360 AMS Court, Green Bay, WI, 54313">Green Bay, WI, United States</option>
+        <option value="512 S Mangum Street, Durham, NC, 27701">Durham, NC, United States</option>
+        <option value="Weslayan Tower 24 Greenway Plaza, Houston, TX, 77046">Houston, TX, United States</option>
+        <option value="4304 Live Oak Lane, Rocklin, CA 95765">Rocklin, CA, United States</option>
+        <option value="6465 Greenwood Plaza Blvd, Greenwood Village, CO, 80111">Denver, CO, United States</option>
+        <option value="Lanchester House, 3rd Floor Trafalgar Place Brighton, UK, BN1 4FU">Brighton, United Kingdom</option>
+        <option value="3rd Floor, Pride Portal, Shivaji Co-operative Housing Society, Bahiratwadi, Shivajinagar, Pune, 411 016">Shivajinagar, Pune, India</option>
+        <option value="Rua Henri Dunant, 137 – 1st floor, Chacara Santo Antonio, São Paulo, SP – CEP 04709-110">São Paulo, São Paulo, Brazil</option>
+        <option value="O.L.Vrouwstraat 6 b4 1850 Grimbergen, Belgium Grimbergen">Brussels, Belgium</option>
     </select>
 </div>
 
 ## API Details
 
 <div class="api-console-output">
-    <h5 class="console-output-header">API Endpoint</h5>
+<h5 class="console-output-header">API Endpoint</h5>
     <div class="row" style="margin: 10px;">
         <div class="code-snippet-plaintext" style="display: inline;" id="console-method">POST</div>
         <div class="code-snippet-plaintext" style="display: inline;" id="console-server">https://sandbox-rest.avatax.com</div>
