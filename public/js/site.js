@@ -24,15 +24,28 @@ function getCompareDate() {
   return [year, month, day].join('');
 }
 
+function makeAddressObj(){
+    const address = $('#dropdown-addresses').find(":selected").val().split(',');
+    const addressObj = {
+        "line1": address[0],
+        "city": address[1],
+        "region": address[2],
+        "country": address[3],
+        "postalCode": address[4],
+    }
+    return addressObj;
+}
+
 function fillWithSampleData() {
     const sampleData = buildSampleData();
     $('#console-input').empty().text(JSON.stringify(sampleData, null, 2));
 };
 
 function buildSampleData() {
-    const taxCode = $('option:selected').val();
-    const description = $('option:selected').attr('description');
-
+    const taxCode = $('#dropdown-products').find(":selected").val();
+    const description = $('#dropdown-products').find(":selected").attr('description');
+    const address = makeAddressObj();
+    
     const sampleData = {
         "lines": [ {
             "number": "1",
@@ -46,13 +59,7 @@ function buildSampleData() {
         "date": "2018-09-05", 
         "customerCode": "ABC",
         "addresses": {
-            "singleLocation": {
-                "line1": "2000 Main Street",
-                "city": "Irvine",
-                "region": "CA",
-                "country": "US",
-                "postalCode": "92614"
-            }
+            "singleLocation": address,
         },
         "description": description
     };
@@ -98,7 +105,7 @@ function ApiRequest() {
             return rawApiResponse.json().then((body) => {
                 $(".loading-pulse").css('display', 'none'); 
                 $('#console-output').text(JSON.stringify(body, null, 2));
-                
+
                 //TODO handle errors
                 // $('#console-output').text("HTTP Error: " + body.status + "\n\n" + JSON.stringify(result, null, 2));
 
