@@ -24,6 +24,11 @@ function getCompareDate() {
   return [year, month, day].join('');
 }
 
+function fillWithSampleData() {
+    const sampleData = buildSampleData();
+    $('#console-input').empty().text(JSON.stringify(sampleData, null, 2));
+};
+
 function makeAddressObj(){
     const address = $('#dropdown-addresses').find(":selected").val().split(',');
     const addressObj = {
@@ -35,11 +40,6 @@ function makeAddressObj(){
     }
     return addressObj;
 }
-
-function fillWithSampleData() {
-    const sampleData = buildSampleData();
-    $('#console-input').empty().text(JSON.stringify(sampleData, null, 2));
-};
 
 function buildSampleData() {
     const taxCode = $('#dropdown-products').find(":selected").val();
@@ -73,6 +73,13 @@ const proxy = {
         "name": "api-key",
         "location": "v2-devdot-keys/devdot-proxy-key"
     }
+}
+
+//TODO make work
+function copyToClipboard() {
+    $('#console-input').select();
+
+    document.execCommand('copy');
 }
 
 function ApiRequest() {

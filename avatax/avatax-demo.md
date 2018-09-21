@@ -63,20 +63,41 @@ disqus: 1
     </div>
     <div class="row" style="margin-bottom: 8px;">
         <div class="col-md-6 console-req-container">
-            <h5 class="console-output-header">
-                Request
-                <i class="glyphicon glyphicon-pencil"></i>
+            <h5 class="console-output-header col-md-12">Request
+                <div style="float:right;">
+                    <!-- <button class="btn btn-secondary" type="submit" onClick="copyToClipboard();" style="color:#000000;">
+                        <i class="glyphicon glyphicon-copy"></i>Copy
+                    </button> -->
+                    <button class="btn btn-secondary" style="float:right;color:#000000;">
+                        <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/" style="color:#000000;" target="_blank">
+                            <i class="glyphicon glyphicon-list-alt"></i> 
+                            Docs
+                        </a>
+                    </button>
+                </div>
             </h5>
             <div class="code-snippet reqScroll">
                 <pre id="console-input">{ }</pre>
             </div>
         </div>
-        <div class="col-md-6 console-res-container">
-             <h5 class="console-output-header">Response</h5>
-             <div class="code-snippet respScroll">
+        <div class="col-md-6 console-res-container" >
+            <h5 class="console-output-header col-md-12">Response
+                <div style="float:right;">
+                    <!-- <button class="btn btn-secondary" type="submit" onClick="copyToClipboard();" style="color:#000000;">
+                        <i class="glyphicon glyphicon-copy"></i>Copy
+                    </button> -->
+                    <button class="btn btn-secondary" style="float:right;color:#000000;">
+                        <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/TransactionModel/" style="color:#000000;" target="_blank">
+                            <i class="glyphicon glyphicon-list-alt"></i> 
+                            Docs
+                        </a>
+                    </button>
+                </div>
+            </h5>
+            <div class="code-snippet respScroll">
                 <div class="loading-pulse" style="display: none;"></div>
                 <pre id="console-output"></pre>
-             </div>
+            </div>
          </div>
      </div>
      <div>
