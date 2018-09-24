@@ -13,8 +13,8 @@ disqus: 0
 There are two environments availble to you, UAT and Production:
 
 <ul class="dev-guide-list">
-  <li><b>Production</b>: <a href="https://communications.avalara.net">https://communications.avalara.net</a></li>
-  <li><b>UAT</b>: <a href="https://communicationsua.avalara.net">https://communications.avalara.net</a></li>
+  <li><b>Production</b>: <a href="https://communications.avalara.net">communications.avalara.net</a></li>
+  <li><b>UAT</b>: <a href="https://communicationsua.avalara.net">communicationsua.avalara.net</a></li>
 </ul>
 
 <h3>Endpoints</h3>
