@@ -152,6 +152,14 @@ $(document).ready(function() {
     $('.sm-section-nav').on('hidden.bs.dropdown', function() {
         $('main').removeClass('section-nav-open');
     });   
+
+    $('#dropdown-addresses').change(function(e){
+        var lat = $('#dropdown-addresses option:selected').attr('lat');
+        var long = $('#dropdown-addresses option:selected').attr('long');
+        GetMap(lat, long);
+    });
+
+    $('#dropdown-addresses').trigger('change');
 });
 
 
