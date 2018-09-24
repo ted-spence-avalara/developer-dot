@@ -16,5 +16,24 @@
         </li>
         <li {% if page.url=="/communications/dev-guide/customizing-transactions/" %}class="active" {% endif %}><a href="/communications/dev-guide/customizing-transactions/">Customizing Transactions</a>
         </li>
+        <li {% if page.url=="/communications/dev-guide/reference/" %}class="active" {% endif %}><a href="/communications/dev-guide/reference/">Reference</a>
+            {% if page.chapter=="reference" %}
+            <ol>
+                <li><a href="/communications/dev-guide/reference/calc-taxes-request/">CalcTaxes Request</a></li>
+                <li><a href="/communications/dev-guide/reference/company-data/">Company Data</a></li>
+                <li><a href="/communications/dev-guide/reference/invoice/">Invoice</a></li>
+                <li><a href="/communications/dev-guide/reference/location/">Location</a></li>
+                <li><a href="/communications/dev-guide/reference/line-item/">Line Item</a></li>
+                <li><a href="/communications/dev-guide/reference/tax-override/">Tax Override</a></li>
+                <li><a href="/communications/dev-guide/reference/safe-harbor-override/">Safe Harbor Override</a></li>
+                <li><a href="/communications/dev-guide/reference/exclusion/">Exclusion</a></li>
+                <li><a href="/communications/dev-guide/reference/exemption/">Exemption</a></li>
+                <li><a href="/communications/dev-guide/reference/tax-bracket/">Tax Bracket</a></li>
+                <li><a href="/communications/dev-guide/reference/bridge-data/">Bridge Data</a></li>
+                <li><a href="/communications/dev-guide/reference/bridge-participant/">Bridge Participant</a></li>
+                <li><a href="/communications/dev-guide/reference/key-value-pair/">Key Value Pair</a></li>
+            </ol>
+            {% endif %}
+        </li>
     </ol>
 </div>
