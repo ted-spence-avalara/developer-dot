@@ -65,10 +65,10 @@ disqus: 1
         <div class="col-md-6 console-req-container">
             <h5 class="console-output-header col-md-12">Request
                 <div style="float:right;">
-                    <button class="btn btn-secondary" type="submit" onClick="copyToClipboard('#console-input');" style="color:#000000;">
+                    <button class="btn btn-secondary" type="submit" onClick="copyToClipboard('#console-input');" style="color:#000000;margin-right:5px;">
                         <i class="glyphicon glyphicon-copy"></i>Copy
                     </button>
-                    <button class="btn btn-secondary" style="float:right;color:#000000;">
+                    <button class="btn btn-secondary" style="float:right;color:#000000;margin-right:5px;">
                         <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/" style="color:#000000;" target="_blank">
                             <i class="glyphicon glyphicon-list-alt"></i> 
                             Docs
@@ -83,10 +83,10 @@ disqus: 1
         <div class="col-md-6 console-res-container" >
             <h5 class="console-output-header col-md-12">Response
                 <div style="float:right;">
-                    <button class="btn btn-secondary" type="submit" onClick="copyToClipboard('#console-output');" style="color:#000000;">
+                    <button class="btn btn-secondary" type="submit" onClick="copyToClipboard('#console-output');" style="color:#000000;margin-right:5px;">
                         <i class="glyphicon glyphicon-copy"></i>Copy
                     </button>
-                    <button class="btn btn-secondary" style="float:right;color:#000000;">
+                    <button class="btn btn-secondary" style="float:right;color:#000000;margin-right:5px;">
                         <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/TransactionModel/" style="color:#000000;" target="_blank">
                             <i class="glyphicon glyphicon-list-alt"></i> 
                             Docs
