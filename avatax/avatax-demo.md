@@ -40,10 +40,10 @@ doctype: use_cases
         </div>
         <div class="row">
             <!-- Shortcuts -->
-            <div class="col-md-4" id="demo-shortcuts">
+            <div class="col-md-4" id="demo-shortcuts" style="max-height:835px;overflow:auto;">
                 <h3>Shortcuts</h3>
                 <div class="row">
-                    <div class="demo-shortcut-desc">Choose a common product or service:</div>
+                    <div class="demo-shortcut-desc" style="margin-top:15px;margin-bottom:5pxfont-weight:bold;font-size:20px;">Choose a common product or service:</div>
                     <form id="dropdown-products" onChange="fillWithSampleData();"> 
                         <label><input value="P0000000" name="product" type="radio" description="Tangible Personal Property" checked/> Tangible Personal Property</label><br>
                         <label><input value="PF160024" name="product" type="radio" description="All Sushi"/> All Sushi</label><br>
@@ -53,7 +53,7 @@ doctype: use_cases
                     </form>  
                 </div>
                 <div class="row">
-                    <div class="demo-shortcut-desc">Use a pre-selected address:</div>
+                    <div class="demo-shortcut-desc" style="margin-top:15px;margin-bottom:5px;font-weight:bold;font-size:20px;">Use a pre-selected address:</div>
                     <form id="dropdown-addresses" onChange="fillWithSampleData();">
                         <label><input name="address" type="radio" value="2000 Main Street,Irvine,CA,US,92614" lat="33.6846603698176" long=
                         "-117.850629887389" checked/> Irvine, CA, United States</label><br>
@@ -72,10 +72,10 @@ doctype: use_cases
                 </div>
             </div>
             <!-- API details  -->
-            <div class="col-md-8" id="demo-api-details">
+            <div class="col-md-8" id="demo-api-details" style="max-height:835px;overflow:auto;">
                 <h3>API Details</h3>
                 <!-- start api console output -->
-                <div class="console-req-container api-console-output row" id="demo-console-req">
+                <div class="console-req-container api-console-output row" id="demo-console-req" style="margin-bottom:5px;">
                     <h5 class="console-output-header">Request
                         <div style="float:right;">
                             <button class="btn btn-link" type="submit" onClick="copyToClipboard('#console-input');" style="color:#000000;margin-right:5px;display:inline;">
