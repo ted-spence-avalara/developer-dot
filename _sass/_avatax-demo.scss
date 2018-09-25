@@ -8,8 +8,20 @@
 
  #demo-api-details {
     padding: none;
+    max-height:900px;
+    overflow: auto;
+ }
+
+ h2#demo-endpoint-header{
+    margin-top: 0 !important;
  }
 
  #demo-shortcuts {
     padding: none;
+    max-height:900px;
+    overflow: auto;
+ }
+
+ #demo-console-req {
+    margin-bottom: 5px;
  }

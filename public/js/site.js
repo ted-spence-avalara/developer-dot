@@ -42,8 +42,8 @@ function makeAddressObj(){
 }
 
 function buildSampleData() {
-    const taxCode = $('#dropdown-products').find(":selected").val();
-    const description = $('#dropdown-products').find(":selected").attr('description');
+    const taxCode = $('input[type=radio][name=product]:checked').val();
+    const description = $('input[type=radio][name=product]:checked').attr('description');
     const address = makeAddressObj();
     
     const sampleData = {

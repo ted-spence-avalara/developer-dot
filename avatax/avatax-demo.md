@@ -30,27 +30,27 @@ doctype: use_cases
     <!-- settings/code container -->
     <div class="col-md-7">
         <!-- API endpoint header -->
-        <div class="row">
+        <!-- <div class="row">
             <h2 id="demo-endpoint-header" style="display:inline-block;margin:none;">API Endpoint</h2>
             <div id="demo-endpoint-contents" style="margin: 10px;display:inline-block;">
                 <div class="code-snippet-plaintext" style="display: inline;" id="console-method">POST</div>
                 <div class="code-snippet-plaintext" style="display: inline;" id="console-server">https://sandbox-rest.avatax.com</div>
                 <div class="code-snippet-plaintext" style="display: inline;" id="console-path">/api/v2/transactions/create</div>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <!-- Shortcuts -->
             <div class="col-md-4" id="demo-shortcuts">
                 <h3>Shortcuts</h3>
                 <div class="row">
                     Choose a common product or service:
-                    <select id="dropdown-products" onChange="fillWithSampleData();">
-                        <option value="P0000000" description="Tangible Personal Property">Tangible Personal Property</option>
-                        <option value="PF160024" description="All Sushi">All Sushi</option>
-                        <option value="FR010000" description="Shipping">Shipping</option>
-                        <option value="DM040200" description="Music - streaming / electronic download">Music - streaming / electronic download</option>
-                        <option value="PC040400" description="Sports and Recreational Equipment">Sports and Recreational Equipment</option>
-                    </select>  
+                    <form id="dropdown-products" > 
+                        <label><input value="P0000000" name="product" type="radio" description="Tangible Personal Property" onChange="fillWithSampleData();" checked/> Tangible Personal Property</label><br>
+                        <label><input value="PF160024" name="product" type="radio" description="All Sushi" onChange="fillWithSampleData();"/> All Sushi</label><br>
+                        <label><input value="FR010000" name="product" type="radio" description="Shipping" onChange="fillWithSampleData();"/> Shipping</label><br>
+                        <label><input value="DM040200" name="product" type="radio" description="Music - streaming / electronic download" onChange="fillWithSampleData();"/> Music - streaming / electronic download</label><br>
+                        <label><input value="PC040400" name="product" type="radio" description="Sports and Recreational Equipment" onChange="fillWithSampleData();"/> Sports and Recreational Equipment</label><br>
+                    </form>  
                 </div>
                 <div class="row">
                     Use a pre-selected address:
@@ -75,7 +75,7 @@ doctype: use_cases
             <div class="col-md-8" id="demo-api-details">
                 <h3>API Details</h3>
                 <!-- start api console output -->
-                <div class="console-req-container api-console-output row">
+                <div class="console-req-container api-console-output row" id="demo-console-req">
                     <h5 class="console-output-header">Request
                         <div style="float:right;">
                             <button class="btn btn-link" type="submit" onClick="copyToClipboard('#console-input');" style="color:#000000;margin-right:5px;display:inline;">
@@ -90,11 +90,12 @@ doctype: use_cases
                             <button class="btn btn-primary" type="button" onClick="ApiRequest();" style="display:inline;">Submit</button>
                         </div>
                     </h5>
-                    <div class="code-snippet reqScroll col-">
+                    <div class="code-snippet reqScroll">
                         <pre id="console-input">{ }</pre>
                     </div>
                 </div>
-                <div class="row console-res-container api-console-output" >
+                <!-- response output -->
+                <div class="row console-res-container api-console-output" id="demo-console-res">
                     <h5 class="console-output-header col-md-12">Response
                         <div style="float:right;">
                             <button class="btn btn-link" type="submit" onClick="copyToClipboard('#console-output');" style="color:#000000;margin-right:5px;">
