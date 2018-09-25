@@ -9,9 +9,6 @@ disqus: 1
 
 <script type='text/javascript'>
 
-   
-
-
     var map;
     function GetMap(lat, long) {
         if(lat == null || long == null) {
