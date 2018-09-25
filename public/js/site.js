@@ -30,7 +30,7 @@ function fillWithSampleData() {
 };
 
 function makeAddressObj(){
-    const address = $('#dropdown-addresses').find(":selected").val().split(',');
+    const address = $('input[type=radio][name=address]:checked').val().split(',');
     const addressObj = {
         "line1": address[0],
         "city": address[1],
@@ -154,8 +154,8 @@ $(document).ready(function() {
     });   
 
     $('#dropdown-addresses').change(function(e){
-        var lat = $('#dropdown-addresses option:selected').attr('lat');
-        var long = $('#dropdown-addresses option:selected').attr('long');
+        var lat = $('input[type=radio][name=address]:checked').attr('lat');
+        var long = $('input[type=radio][name=address]:checked').attr('long');
         GetMap(lat, long);
     });
 
