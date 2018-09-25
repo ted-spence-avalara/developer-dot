@@ -8,27 +8,46 @@ disqus: 1
 ---
 
 <script type='text/javascript'>
-
     var map;
-    function GetMap(lat, long) {
-        if(lat == null || long == null) {
-            lat = 33.6846603698176;
-            long = -117.850629887389;
-        }
-        var location  = new Microsoft.Maps.Location(lat, long);
+    
+    // function GetMap(lat, long) {
+    //     if(lat == null || long == null) {
+    //         lat = 33.6846603698176;
+    //         long = -117.850629887389;
+    //     }
         
-        map = new Microsoft.Maps.Map('#myMap', {center: location});
-        var layer = new Microsoft.Maps.Layer("MyPushpinLayer1");
-        layer.add(new Microsoft.Maps.Pushpin(location));
-        map.layers.insert(layer);
+    //     var location  = new Microsoft.Maps.Location(lat, long);        
+    //     map = new Microsoft.Maps.Map('#myMap', {center: location});
+    //     var layer = new Microsoft.Maps.Layer("MyPushpinLayer1");
+    //     layer.add(new Microsoft.Maps.Pushpin(location));
+    //     map.layers.insert(layer);
+    // }
+    
+    function GetMapWithLine(destLat, destLong, srcLat, srcLong) {
+         if(destLat == null || destLong == null) {
+            destLat = 33.6846603698176;
+            destLong = -117.850629887389;
+        }
+
+        if(srcLat == null || srcLong == null) {
+            var location  = new Microsoft.Maps.Location(destLat, destLong);        
+            map = new Microsoft.Maps.Map('#myMap', {center: location});
+            var layer = new Microsoft.Maps.Layer("MyPushpinLayer1");
+            layer.add(new Microsoft.Maps.Pushpin(location));
+            map.layers.insert(layer);
+            return;
+        }
+
+        map = new Microsoft.Maps.Map('#myMap', {});
+        var center = map.getCenter();
+        var coords = [center, new Microsoft.Maps.Location(center.latitude + 1, center.longitude + 1)];
+        var line = new Microsoft.Maps.Polyline(coords, {strokeColor: 'orange', strokeThickness: 3});
+        map.entities.push(line);
     }
-
-    //Find address? Or use map.Find()?
 </script>
-<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=Ahgp_E6MHtyMYBJPCllMKTwJk7Indytl8hVm-Boe6mbyWbcyZvVBUePMDP5OLeiH' async defer></script>
+<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMapWithLine&key=Ahgp_E6MHtyMYBJPCllMKTwJk7Indytl8hVm-Boe6mbyWbcyZvVBUePMDP5OLeiH' async defer></script>
 
- <div id="myMap" style="position:relative;width:800px;height:600px;"></div>
-
+<div id="myMap" style="position:relative;width:800px;height:600px;"></div>
 
 ## Shortcuts
 

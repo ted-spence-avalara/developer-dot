@@ -55,7 +55,7 @@ function buildSampleData() {
             "description": description
         } ],
         "type": "SalesInvoice",
-        "companyCode": "DEFAULT",
+        "companyCode": "DEMOPAGE",
         "date": "2018-09-05", 
         "customerCode": "ABC",
         "addresses": {
@@ -156,7 +156,8 @@ $(document).ready(function() {
     $('#dropdown-addresses').change(function(e){
         var lat = $('#dropdown-addresses option:selected').attr('lat');
         var long = $('#dropdown-addresses option:selected').attr('long');
-        GetMap(lat, long);
+        //GetMap(lat, long);
+        GetMapWithLine(lat, long, null, null);
     });
 
     $('#dropdown-addresses').trigger('change');
