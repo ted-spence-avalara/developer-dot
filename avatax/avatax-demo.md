@@ -25,25 +25,24 @@ doctype: use_cases
 </script>
 <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=Ahgp_E6MHtyMYBJPCllMKTwJk7Indytl8hVm-Boe6mbyWbcyZvVBUePMDP5OLeiH' async defer></script>
 
-
+<!-- API endpoint header -->
+<div class="row">
+    <h2 id="demo-endpoint-header" style="display:inline-block;">API Endpoint</h2>
+    <div id="demo-endpoint-contents" style="margin: 10px;display:inline-block;">
+        <div class="code-snippet-plaintext" style="display: inline;" id="console-method">POST</div>
+        <div class="code-snippet-plaintext" style="display: inline;" id="console-server">https://sandbox-rest.avatax.com</div>
+        <div class="code-snippet-plaintext" style="display: inline;" id="console-path">/api/v2/transactions/create</div>
+    </div>
+</div>
  <div class="row">
     <!-- settings/code container -->
     <div class="col-md-7">
-        <!-- API endpoint header -->
-        <div class="row">
-            <h2 id="demo-endpoint-header" style="display:inline-block;">API Endpoint</h2>
-            <div id="demo-endpoint-contents" style="margin: 10px;display:inline-block;">
-                <div class="code-snippet-plaintext" style="display: inline;" id="console-method">POST</div>
-                <div class="code-snippet-plaintext" style="display: inline;" id="console-server">https://sandbox-rest.avatax.com</div>
-                <div class="code-snippet-plaintext" style="display: inline;" id="console-path">/api/v2/transactions/create</div>
-            </div>
-        </div>
         <div class="row">
             <!-- Shortcuts -->
-            <div class="col-md-4" id="demo-shortcuts" style="max-height:835px;overflow:auto;">
+            <div class="col-md-4" id="demo-shortcuts" style="max-height:900px;overflow:auto;">
                 <h3>Shortcuts</h3>
                 <div class="row">
-                    <div class="demo-shortcut-desc" style="margin-top:15px;margin-bottom:5pxfont-weight:bold;font-size:20px;">Choose a common product or service:</div>
+                    <div class="demo-shortcut-desc" style="margin-top:15px;margin-bottom:5px;font-weight:bold;font-size:20px;">Choose a common product or service:</div>
                     <form id="dropdown-products" onChange="fillWithSampleData();"> 
                         <label><input value="P0000000" name="product" type="radio" description="Tangible Personal Property" checked/> Tangible Personal Property</label><br>
                         <label><input value="PF160024" name="product" type="radio" description="All Sushi"/> All Sushi</label><br>
@@ -72,7 +71,7 @@ doctype: use_cases
                 </div>
             </div>
             <!-- API details  -->
-            <div class="col-md-8" id="demo-api-details" style="max-height:835px;overflow:auto;">
+            <div class="col-md-8" id="demo-api-details" style="max-height:900px;overflow:auto;">
                 <h3>API Details</h3>
                 <!-- start api console output -->
                 <div class="console-req-container api-console-output row" id="demo-console-req" style="margin-bottom:5px;">
@@ -120,6 +119,7 @@ doctype: use_cases
     </div>
     <!-- map container -->
     <div class="col-md-5">
-        <div id="myMap" style="width:850px;height:900px;"></div>
+        <h3>Map Details</h3>
+        <div id="myMap" style="width:850px;height:835px;"></div>
     </div>
  </div>
