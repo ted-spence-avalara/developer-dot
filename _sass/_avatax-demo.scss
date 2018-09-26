@@ -1,8 +1,33 @@
-#console-output {
+#demo-console-output {
     color: #8fffa7;
 }
 
-#console-input {
+#demo-console-input {
     color: #8fffa7;
 }
 
+.demo-shortcut-desc {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.demo-city-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.demo-city-marker {
+    color: $Ava-orange;
+    padding-left: 5px;
+}
+
+.demo-city-zip {
+    padding-left: 5px;
+}
+
+.demo-address-radio {
+    height: 15px;
+    width: 15px;
+}
