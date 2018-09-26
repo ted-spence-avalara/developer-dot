@@ -10,9 +10,9 @@ doctype: blog
 disqus: 1
 ---
 
-Avalara nominated for *Nordic APIs Best Public API of 2018* – Voting starts today!
+Avalara nominated for **Nordic APIs Best Public API of 2018** – Voting starts today!
 
-Avalara has been nominated for Nordic APIs' *Best Public API of 2018* award! Nordic APIs is a prestigious, global community of API developers, and we’ve been nominated alongside the likes of NASA (the guys who put people on the moon) and Orange, a global telecom giant. Vote for Avalara between today and Oct. 24.
+Avalara has been nominated for Nordic APIs' **Best Public API of 2018** award! Nordic APIs is a prestigious, global community of API developers, and we’ve been nominated alongside the likes of NASA (the guys who put people on the moon) and Orange, a global telecom giant. Vote for Avalara between today and Oct. 24.
 
 The nomination, which was anonymous, is for the suite of [REST APIs](/api-reference/avatax/rest/v2/) that interface with Avalara AvaTax. From the Nordic APIs website: "The level of confidence and security with their API is top notch. The documentation is also really easy to follow and understand. To top it off they have phenomial [sic] developer support in the rare occasion you do need assistance."
 
