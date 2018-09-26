@@ -8,7 +8,6 @@ doctype: use_cases
 
 
 <script type='text/javascript'>
-
     var map;
     // function GetMap(lat, long) {
     //     if(lat == null || long == null) {

@@ -55,7 +55,7 @@ function buildSampleData() {
             "description": description
         } ],
         "type": "SalesInvoice",
-        "companyCode": "DEFAULT",
+        "companyCode": "DEMOPAGE",
         "date": "2018-09-05", 
         "customerCode": "ABC",
         "addresses": {
