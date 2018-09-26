@@ -65,12 +65,13 @@ doctype: use_cases
     </div>
 </div>
  <div class="row">
-    <!-- settings/code container -->
+    <!-- shortcuts & api details container -->
     <div class="col-md-7">
         <div class="row">
             <!-- Shortcuts -->
             <div class="col-md-4" id="demo-shortcuts" style="max-height:900px;overflow:auto;">
-                <h3>Shortcuts</h3>                
+                <h3>Shortcuts</h3> 
+                <!-- destination address -->
                 <div class="row">
                     <div class="demo-shortcut-desc" style="margin-top:15px;margin-bottom:5px;font-weight:bold;font-size:20px;">Select a destination address (required):</div>
                     <form id="dropdown-dest-addresses" onChange="fillWithSampleData();">
@@ -89,6 +90,7 @@ doctype: use_cases
                         <label><input name="address" type="radio" value="O.L.Vrouwstraat 6,Grimbergen,Belgium Grimbergen,BE,B-1850" lat="50.932458" long="4.372408"/> Brussels, Belgium</label><br>
                     </form>
                 </div>
+                <!-- products -->
                 <div class="row">
                     <div class="demo-shortcut-desc" style="margin-top:15px;margin-bottom:5px;font-weight:bold;font-size:20px;">Choose a common product or service:</div>
                     <form id="dropdown-products" onChange="fillWithSampleData();"> 
@@ -99,6 +101,7 @@ doctype: use_cases
                         <label><input value="PC040400" name="product" type="radio" description="Sports and Recreational Equipment" /> Sports and Recreational Equipment</label><br>
                     </form>  
                 </div>
+                <!-- source address -->
                 <div class="row">
                     <div class="demo-shortcut-desc" style="margin-top:15px;margin-bottom:5px;font-weight:bold;font-size:20px;">Select a source address (optional):</div>
                     <form id="dropdown-src-addresses" onChange="fillWithSampleData();">
@@ -118,10 +121,10 @@ doctype: use_cases
                     </form>
                 </div>
             </div>
-            <!-- API details  -->
+            <!-- end shortcut / start API details  -->
             <div class="col-md-8" id="demo-api-details" style="max-height:900px;overflow:auto;">
                 <h3>API Details</h3>
-                <!-- start api console output -->
+                <!-- request output -->
                 <div class="console-req-container api-console-output row" id="demo-console-req" style="margin-bottom:5px;">
                     <h5 class="console-output-header">Request
                         <div style="float:right;">
@@ -160,9 +163,9 @@ doctype: use_cases
                         <div class="loading-pulse" style="display: none;"></div>
                         <pre id="console-output"></pre>
                     </div>
-                </div>
-                <!-- end api console output -->
+                </div>  
             </div>
+            <!-- end api details -->
         </div>
     </div>
     <!-- map container -->
