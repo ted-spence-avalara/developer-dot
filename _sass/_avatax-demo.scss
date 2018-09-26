@@ -6,6 +6,16 @@
     color: #8fffa7;
 }
 
+#demo-shortcuts, #demo-api-details {
+    max-height: 900px;
+    overflow: auto;
+}
+
+#myMap {
+    width: 850px;
+    height: 835px;
+}
+
 .demo-shortcut-desc {
     margin-top: 15px;
     margin-bottom: 5px;
@@ -34,4 +44,8 @@
 
 .demo-address-container {
     padding: 5px 0;
+}
+
+#demo-console-req {
+    margin-bottom: 5px;
 }
