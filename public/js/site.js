@@ -41,11 +41,18 @@ function makeAddressObj(){
     return addressObj;
 }
 
+function setShipToOrSingleLocation() {
+    debugger;
+    var checked = $('input[type=radio][name=srcAddress]:checked').length > 0;
+    //
+}
+
 function buildSampleData() {
     const taxCode = $('input[type=radio][name=product]:checked').val();
     const description = $('input[type=radio][name=product]:checked').attr('description');
     const address = makeAddressObj();
-    
+    setShipToOrSingleLocation();
+
     const sampleData = {
         "lines": [ {
             "number": "1",
@@ -54,7 +61,7 @@ function buildSampleData() {
             "taxCode": taxCode,
             "description": description
         } ],
-        "type": "SalesInvoice",
+        "type": "SalesOrder",
         "companyCode": "DEMOPAGE",
         "date": "2018-09-05", 
         "customerCode": "ABC",
@@ -153,6 +160,7 @@ $(document).ready(function() {
         $('main').removeClass('section-nav-open');
     });   
 
+    //When the destination changes, fire the map script and set the lat-long.
     $('#dropdown-dest-addresses').change(function(e){
         var lat = $('input[type=radio][name=address]:checked').attr('lat');
         var long = $('input[type=radio][name=address]:checked').attr('long');
