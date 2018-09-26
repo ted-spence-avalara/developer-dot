@@ -42,7 +42,6 @@ function makeAddressObj(){
 }
 
 function setShipToOrSingleLocation() {
-    debugger;
     var checked = $('input[type=radio][name=srcAddress]:checked').length > 0;
     //
 }

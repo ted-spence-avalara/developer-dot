@@ -2,6 +2,7 @@
 layout: page
 categories: [avatax, api]
 product: avatax
+# title: "AvaTax Demo"
 doctype: use_cases
 ---
 
@@ -55,15 +56,27 @@ doctype: use_cases
 </script>
 <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMapWithLine&key=Ahgp_E6MHtyMYBJPCllMKTwJk7Indytl8hVm-Boe6mbyWbcyZvVBUePMDP5OLeiH' async defer></script>
 
-<!-- API endpoint header -->
+<!-- page header -->
 <div class="row">
-    <h2 id="demo-endpoint-header" style="display:inline-block;">API Endpoint</h2>
-    <div id="demo-endpoint-contents" style="margin: 10px;display:inline-block;">
-        <div class="code-snippet-plaintext" style="display: inline;" id="console-method">POST</div>
-        <div class="code-snippet-plaintext" style="display: inline;" id="console-server">https://sandbox-rest.avatax.com</div>
-        <div class="code-snippet-plaintext" style="display: inline;" id="console-path">/api/v2/transactions/create</div>
+    <div class="col-md-6">
+        <h1 style="margin-top:0;">AvaTax Demo</h1>
+    </div>
+    <div class="col-md-6">
+        <h2 id="demo-endpoint-header" style="display:inline-block;margin-top:0;padding-top:5px;">API Endpoint</h2>
+        <div id="demo-endpoint-contents" style="margin: 10px;display:inline-block;">
+            <div class="code-snippet-plaintext" style="display: inline;" id="console-method">POST</div>
+            <div class="code-snippet-plaintext" style="display: inline;" id="console-server">https://sandbox-rest.avatax.com</div>
+            <div class="code-snippet-plaintext" style="display: inline;" id="console-path">/api/v2/transactions/create</div>
+        </div>
+        <button class="btn btn-primary" style="display:inline;">
+            <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/" style="color:white;text-decoration:none;" target="_blank">
+                <i class="glyphicon glyphicon-list-alt"></i> 
+                Docs
+            </a>
+        </button>
     </div>
 </div>
+<!-- demo container -->
  <div class="row">
     <!-- shortcuts & api details container -->
     <div class="col-md-7">
@@ -128,6 +141,7 @@ doctype: use_cases
                 <div class="console-req-container api-console-output row" id="demo-console-req" style="margin-bottom:5px;">
                     <h5 class="console-output-header">Request
                         <div style="float:right;">
+                            <button class="btn btn-primary" type="button" onClick="ApiRequest();" style="display:inline;">Submit</button>
                             <button class="btn btn-link" type="submit" onClick="copyToClipboard('#console-input');" style="color:#000000;margin-right:5px;display:inline;">
                                 <i class="glyphicon glyphicon-copy"></i>Copy
                             </button>
@@ -137,7 +151,6 @@ doctype: use_cases
                                     Docs
                                 </a>
                             </button>
-                            <button class="btn btn-primary" type="button" onClick="ApiRequest();" style="display:inline;">Submit</button>
                         </div>
                     </h5>
                     <div class="code-snippet reqScroll">
@@ -161,7 +174,7 @@ doctype: use_cases
                     </h5>
                     <div class="code-snippet respScroll">
                         <div class="loading-pulse" style="display: none;"></div>
-                        <pre id="console-output"></pre>
+                        <pre id="console-output">{ }</pre>
                     </div>
                 </div>  
             </div>
@@ -174,3 +187,4 @@ doctype: use_cases
         <div id="myMap" style="width:850px;height:835px;"></div>
     </div>
  </div>
+ <!-- end demo container -->
