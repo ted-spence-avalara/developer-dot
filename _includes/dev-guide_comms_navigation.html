@@ -1,0 +1,39 @@
+<div id='the-nav' class='nav wrapper hidden-xs hidden-sm dev-guide-nav' style='height: 100%; overflow-y:auto;'>
+    <h3>Chapters</h3>
+    <ol>
+        <li {% if page.url=="/communications/dev-guide/getting-started/" %}class="active" {% endif %}><a href="/communications/dev-guide/getting-started/">Getting Started</a>
+            {% if page.chapter=="getting-started" %}
+            <ol>
+                <li><a href="/communications/dev-guide/getting-started/account-creation/">Account Creation</a></li>
+                <li><a href="/communications/dev-guide/getting-started/authentication/">Authentication</a></li>
+                <li><a href="/communications/dev-guide/getting-started/environments-endpoints/">Environments and Endpoints</a></li>
+            </ol>
+            {% endif %}
+        </li>
+        <li {% if page.url=="/communications/dev-guide/calculate-taxes/" %}class="active" {% endif %}><a href="/communications/dev-guide/calculate-taxes/">Calculate Taxes</a>
+        </li>
+        <li {% if page.url=="/communications/dev-guide/commit-uncommit/" %}class="active" {% endif %}><a href="/communications/dev-guide/commit-uncommit/">Commit/Uncommit</a>
+        </li>
+        <li {% if page.url=="/communications/dev-guide/customizing-transactions/" %}class="active" {% endif %}><a href="/communications/dev-guide/customizing-transactions/">Customizing Transactions</a>
+        </li>
+        <li {% if page.url=="/communications/dev-guide/reference/" %}class="active" {% endif %}><a href="/communications/dev-guide/reference/">Reference</a>
+            {% if page.chapter=="reference" %}
+            <ol>
+                <li><a href="/communications/dev-guide/reference/calc-taxes-request/">CalcTaxes Request</a></li>
+                <li><a href="/communications/dev-guide/reference/company-data/">Company Data</a></li>
+                <li><a href="/communications/dev-guide/reference/invoice/">Invoice</a></li>
+                <li><a href="/communications/dev-guide/reference/location/">Location</a></li>
+                <li><a href="/communications/dev-guide/reference/line-item/">Line Item</a></li>
+                <li><a href="/communications/dev-guide/reference/tax-override/">Tax Override</a></li>
+                <li><a href="/communications/dev-guide/reference/safe-harbor-override/">Safe Harbor Override</a></li>
+                <li><a href="/communications/dev-guide/reference/exclusion/">Exclusion</a></li>
+                <li><a href="/communications/dev-guide/reference/exemption/">Exemption</a></li>
+                <li><a href="/communications/dev-guide/reference/tax-bracket/">Tax Bracket</a></li>
+                <li><a href="/communications/dev-guide/reference/bridge-data/">Bridge Data</a></li>
+                <li><a href="/communications/dev-guide/reference/bridge-participant/">Bridge Participant</a></li>
+                <li><a href="/communications/dev-guide/reference/key-value-pair/">Key Value Pair</a></li>
+            </ol>
+            {% endif %}
+        </li>
+    </ol>
+</div>
