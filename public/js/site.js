@@ -153,10 +153,10 @@ $(document).ready(function() {
         $('main').removeClass('section-nav-open');
     });   
 
-    $('#dropdown-addresses').change(function(e){
+    $('#dropdown-dest-addresses').change(function(e){
         var lat = $('input[type=radio][name=address]:checked').attr('lat');
         var long = $('input[type=radio][name=address]:checked').attr('long');
-        GetMap(lat, long);
+        GetMapWithLine(lat, long, null, null);
     });
 
     $('#dropdown-addresses').trigger('change');
