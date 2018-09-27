@@ -2,10 +2,8 @@
 layout: page
 categories: [avatax, api]
 product: avatax
-# title: "AvaTax Demo"
 doctype: use_cases
 ---
-
 
 
 <script type='text/javascript'>
@@ -51,8 +49,8 @@ doctype: use_cases
             // destLat = 33.6846603698176; 
             // destLong = -117.850629887389; 
             map = new Microsoft.Maps.Map('#myMap', {zoom: 0}); 
-            center = map.getCenter();
-            displayToolTip(center);
+            // center = map.getCenter();
+            // displayToolTip(center);
             return;
         }  
         
@@ -65,8 +63,8 @@ doctype: use_cases
             var layer = new Microsoft.Maps.Layer("MyPushpinLayer1");
             layer.add(new Microsoft.Maps.Pushpin(location));
             map.layers.insert(layer);
-            center = map.getCenter();
-            displayToolTip(center);
+            // center = map.getCenter();
+            // displayToolTip(center);
 
             //Exit out since it is a single location.
             return; 
@@ -78,10 +76,11 @@ doctype: use_cases
         var coords = [center, new Microsoft.Maps.Location(center.latitude + 1, center.longitude + 1)];
         var line = new Microsoft.Maps.Polyline(coords, {strokeColor: 'orange', strokeThickness: 3});
         map.entities.push(line);
-        displayToolTip(center);
+        // displayToolTip(center);
     } 
 </script>
 <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMapWithLine&key=Ahgp_E6MHtyMYBJPCllMKTwJk7Indytl8hVm-Boe6mbyWbcyZvVBUePMDP5OLeiH' async defer></script>
+
 
 <!-- page header -->
 <div class="row">
@@ -116,7 +115,7 @@ doctype: use_cases
                     <div class="demo-shortcut-desc">Select a destination address (required):</div>
                     <form id="dropdown-dest-addresses" onChange="fillWithSampleData();">
                         <label class="demo-address-container">
-                            <input name="address" type="radio" value="2000 Main Street,Irvine,CA,US,92614" lat="33.6846603698176" long="-117.850629887389" class="demo-address-radio" checked/> 
+                            <input name="address" type="radio" value="2000 Main Street,Irvine,CA,US,92614" lat="33.6846603698176" long="-117.850629887389" class="demo-address-radio"/> 
                             <span class="demo-label"> Irvine</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 2000 Main Street
@@ -258,7 +257,7 @@ doctype: use_cases
                         <br>
                     </form>  
                 </div>
-                <!-- source address name="srcAddress"-->
+                <!-- source address-->
                 <div class="row">
                     <div class="demo-shortcut-desc">
                         Select a source address (optional):
@@ -396,7 +395,7 @@ doctype: use_cases
                             </button>
                         </div>
                     </h5>
-                    <div class="code-snippet reqScroll" id="demo-console-req">
+                    <div class="code-snippet reqScroll" id="demo-console-req" style="height:400px;">
                         <pre id="demo-console-input">{ }</pre>
                     </div>
                 </div>
