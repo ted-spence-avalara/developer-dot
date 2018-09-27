@@ -26,7 +26,7 @@ function getCompareDate() {
 
 function fillWithSampleData() {
     const sampleData = buildSampleData();
-    $('#console-input').empty().text(JSON.stringify(sampleData, null, 2));
+    $('#demo-console-input').empty().text(JSON.stringify(sampleData, null, 2));
 };
 
 function makeAddressObj(){
@@ -50,7 +50,7 @@ function buildSampleData() {
     const taxCode = $('input[type=radio][name=product]:checked').val();
     const description = $('input[type=radio][name=product]:checked').attr('description');
     const address = makeAddressObj();
-    setShipToOrSingleLocation();
+    // setShipToOrSingleLocation();
 
     const sampleData = {
         "lines": [ {
@@ -91,7 +91,7 @@ function copyToClipboard(element) {
 
 function ApiRequest() {
     // clear the console output and display loading-pulse
-    $("#console-output").empty();
+    $("#demo-console-output").empty();
     $(".loading-pulse").css('display', 'block'); 
 
     const data = buildSampleData();
@@ -118,7 +118,7 @@ function ApiRequest() {
         .then((rawApiResponse) => {
             return rawApiResponse.json().then((body) => {
                 $(".loading-pulse").css('display', 'none'); 
-                $('#console-output').text(JSON.stringify(body, null, 2));
+                $('#demo-console-output').text(JSON.stringify(body, null, 2));
 
                 //TODO handle errors
                 // $('#console-output').text("HTTP Error: " + body.status + "\n\n" + JSON.stringify(result, null, 2));

@@ -89,68 +89,66 @@ doctype: use_cases
                     <div class="demo-shortcut-desc">Select a destination address (required):</div>
                     <form id="dropdown-dest-addresses" onChange="fillWithSampleData();">
                         <label class="demo-address-container">
-                            <input name="address" type="radio" value="2000 Main Street,Irvine,CA,US,92614" 
-                            lat="33.6846603698176" long="-117.850629887389" class="demo-address-radio"/> 
-                            <span class="demo-city-name"> Irvine</span>
+                            <input name="address" type="radio" value="2000 Main Street,Irvine,CA,US,92614" lat="33.6846603698176" long="-117.850629887389" class="demo-address-radio" checked/> 
+                            <span class="demo-label"> Irvine</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 2000 Main Street
                             <br>
                             <span class="demo-city-zip">Irvine, CA 92614</span>
                         </label>
                         <br>
-                        <label class="demo-address-container">
-                            <input name="address" type="radio" value="255 S. King Street,Seattle,WA,US,98104" 
-                            lat="47.598100-122.331206" long="-122.331206" class="demo-address-radio"/> 
-                            <span class="demo-city-name"> Seattle</span>
+                        <label class="demo-label-container">
+                            <input name="address" type="radio" value="255 S. King Street,Seattle,WA,US,98104" lat="47.598100-122.331206" long="-122.331206" class="demo-address-radio"/> 
+                            <span class="demo-label"> Seattle</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 255 S. King Street
                             <br>
                             <span class="demo-city-zip">Seattle, WA, 98104</span>
                         </label>
                         <br> 
-                        <label class="demo-address-container">
+                        <label class="demo-label-container">
                             <input name="address" type="radio" value="360 AMS Court,Green Bay,WI,US,54313"  
                             lat="44.550886" long="-88.100548" class="demo-address-radio"> 
-                            <span class="demo-city-name"> Green Bay</span>
+                            <span class="demo-label"> Green Bay</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 360 AMS Court
                             <br>
                             <span class="demo-city-zip">Green Bay, WI 54313</span>
                         </label>
                         <br>
-                        <label class="demo-address-container">
+                        <label class="demo-label-container">
                             <input name="address" type="radio" value="512 S Mangum Street,Durham,NC,US,27701" 
                             lat="35.991727" long="-78.902647" class="demo-address-radio"/> 
-                            <span class="demo-city-name"> Durham</span>
+                            <span class="demo-label"> Durham</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 512 S Mangum Street
                             <br>
                             <span class="demo-city-zip">Durham, NC 27701</span>
                         </label>
                         <br>
-                        <label class="demo-address-container">
+                        <label class="demo-label-container">
                             <input name="address" type="radio" value="Weslayan Tower 24 Greenway Plaza,Houston,TX,US,77046" 
                             lat="29.729903" long="-95.440863" class="demo-address-radio"/> 
-                            <span class="demo-city-name"> Houston</span>
+                            <span class="demo-label"> Houston</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> Weslayan Tower 24 Greenway Plaza
                             <br>
                             <span class="demo-city-zip">Houston, TX 77046</span>
                         </label>
                         <br>
-                        <label class="demo-address-container">
+                        <label class="demo-label-container">
                             <input name="address" type="radio" value="4304 Live Oak Lane,Rocklin,CA,US,95765" 
                             lat="38.821517" long="-121.243897" class="demo-address-radio"/> 
-                            <span class="demo-city-name"> Rocklin</span>
+                            <span class="demo-label"> Rocklin</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 4304 Live Oak Lane
                             <br>
                             <span class="demo-city-zip">Rocklin, CA 95765</span>
                         </label>
                         <br>
-                        <label class="demo-address-container">
+                        <label class="demo-label-container">
                             <input name="address" type="radio" value="6465 Greenwood Plaza Blvd,Greenwood Village,CO,US,80111" lat="39.599445" long="-104.896804" class="demo-address-radio"/> 
-                            <span class="demo-city-name"> Denver</span>
+                            <span class="demo-label"> Denver</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 6465 Greenwood Plaza Blvd
                             <br>
@@ -158,19 +156,19 @@ doctype: use_cases
                         </label>
                         <br>
                         <!-- international addresses -->
-                        <label class="demo-address-container">
+                        <label class="demo-label-container">
                             <input name="address" type="radio" value="3rd Floor Trafalgar Place,Brighton,Brighton and Hove,UK,BN1 4FU" lat="50.828746" long="-0.139584" class="demo-address-radio"/> 
-                            <span class="demo-city-name"> Brighton</span>
+                            <span class="demo-label"> Brighton</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 3rd Floor Trafalgar Place
                             <br>
                             <span class="demo-city-zip">Brighton, UK BN1 4FU</span>
                         </label>
                         <br>
-                        <label class="demo-address-container">
+                        <label class="demo-label-container">
                             <input name="address" type="radio" value="Bahiratwadi Shivajinagar,Pune,Maharashtra,India,411 016" 
                             lat="18.533946" long="73.827597" class="demo-address-radio"/> 
-                            <span class="demo-city-name"> Pune</span>
+                            <span class="demo-label"> Pune</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 3rd Floor, Pride Portal 
                             <br>
@@ -179,26 +177,25 @@ doctype: use_cases
                             <span class="demo-city-zip">Pune, India 411 016</span>
                         </label>
                         <br>
-                        <label class="demo-address-container">
+                        <label class="demo-label-container">
                             <input name="address" type="radio" value="Rua Henri Dunant 137,São Paulo,SP,Brazil,04709-110" 
                             lat="-23.633102" long="-46.695348" class="demo-address-radio"/> 
-                            <span class="demo-city-name"> São Paulo</span>
+                            <span class="demo-label"> São Paulo</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> Rua Henri Dunant 137
                             <br>
                             <span class="demo-city-zip">São Paulo, Brazil 04709-110</span>
                         </label>
                         <br>
-                        <label class="demo-address-container">
+                        <label class="demo-label-container">
                             <input name="address" type="radio" value="O.L.Vrouwstraat 6,Grimbergen,Belgium Grimbergen,BE,B-1850" 
                             lat="50.932458" long="4.372408" class="demo-address-radio"/> 
-                            <span class="demo-city-name"> Brussels</span>
+                            <span class="demo-label"> Brussels</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> O.L.Vrouwstraat 6
                             <br>
                             <span class="demo-city-zip">Grimbergen, BE B-1850</span>
                         </label>
-                        <br>
                     </form>
                 </div>
                 <!-- products -->
@@ -207,91 +204,148 @@ doctype: use_cases
                         Choose a common product or service:
                     </div>
                     <form id="dropdown-products" onChange="fillWithSampleData();"> 
-                        <label>
+                        <label class="demo-label demo-label-container">
                             <input value="P0000000" name="product" type="radio" description="Tangible Personal Property" checked/> 
                             Tangible Personal Property
                         </label>
                         <br>
-                        <label>
+                        <label class="demo-label demo-label-container">
                             <input value="PF160024" name="product" type="radio" description="Sushi"/> 
                             Sushi
                         </label>
                         <br>
-                        <label>
+                        <label class="demo-label demo-label-container">
                             <input value="FR010000" name="product" type="radio" description="Shipping"/> 
                             Shipping
                         </label>
                         <br>
-                        <label>
+                        <label class="demo-label demo-label-container">
                             <input value="DM040200" name="product" type="radio" description="Music - streaming / electronic download"/> 
                             Music - streaming / electronic download
                         </label>
                         <br>
-                        <label>
+                        <label class="demo-label demo-label-container">
                             <input value="PC040400" name="product" type="radio" description="Sports and Recreational Equipment" /> 
                             Sports and Recreational Equipment
                         </label>
                         <br>
                     </form>  
                 </div>
-                <!-- source address -->
+                <!-- source address name="srcAddress"-->
                 <div class="row">
                     <div class="demo-shortcut-desc">
                         Select a source address (optional):
                     </div>
                     <form id="dropdown-src-addresses" onChange="fillWithSampleData();">
-                        <label>
+                        <label class="demo-address-container">
                             <input name="srcAddress" type="radio" value="2000 Main Street,Irvine,CA,US,92614" 
-                            lat="33.6846603698176" long="-117.850629887389" /> 
-                            Irvine, CA, United States
+                            lat="33.6846603698176" long="-117.850629887389" class="demo-address-radio"/> 
+                            <span class="demo-label"> Irvine</span>
+                            <br>
+                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 2000 Main Street
+                            <br>
+                            <span class="demo-city-zip">Irvine, CA 92614</span>
                         </label>
                         <br>
-                        <label>
-                            <input name="srcAddress" type="radio" value="255 S. King Street,Seattle,WA,US,98104" lat="47.598100-122.331206" long="-122.331206"/> 
-                            Seattle, WA, United States
+                        <label class="demo-label-container">
+                            <input name="srcAddress" type="radio" value="255 S. King Street,Seattle,WA,US,98104" 
+                            lat="47.598100-122.331206" long="-122.331206" class="demo-address-radio"/> 
+                            <span class="demo-label"> Seattle</span>
+                            <br>
+                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 255 S. King Street
+                            <br>
+                            <span class="demo-city-zip">Seattle, WA, 98104</span>
                         </label>
                         <br> 
-                        <label>
-                            <input name="srcAddress" type="radio" value="360 AMS Court,Green Bay,WI,US,54313"  lat="44.550886" long="-88.100548"> Green Bay, WI, United States
+                        <label class="demo-label-container">
+                            <input name="srcAddress" type="radio" value="360 AMS Court,Green Bay,WI,US,54313"  
+                            lat="44.550886" long="-88.100548" class="demo-address-radio"> 
+                            <span class="demo-label"> Green Bay</span>
+                            <br>
+                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 360 AMS Court
+                            <br>
+                            <span class="demo-city-zip">Green Bay, WI 54313</span>
                         </label>
                         <br>
-                        <label>
-                            <input name="srcAddress" type="radio" value="512 S Mangum Street,Durham,NC,US,27701" lat="35.991727" long="-78.902647"/> 
-                            Durham, NC, United States
+                        <label class="demo-label-container">
+                            <input name="srcAddress" type="radio" value="512 S Mangum Street,Durham,NC,US,27701" 
+                            lat="35.991727" long="-78.902647" class="demo-address-radio"/> 
+                            <span class="demo-label"> Durham</span>
+                            <br>
+                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 512 S Mangum Street
+                            <br>
+                            <span class="demo-city-zip">Durham, NC 27701</span>
                         </label>
                         <br>
-                        <label>
-                            <input name="srcAddress" type="radio" value="Weslayan Tower 24 Greenway Plaza,Houston,TX,US,77046"  lat="29.729903" long="-95.440863"/> 
-                            Houston, TX, United States
+                        <label class="demo-label-container">
+                            <input name="srcAddress" type="radio" value="Weslayan Tower 24 Greenway Plaza,Houston,TX,US,77046" 
+                            lat="29.729903" long="-95.440863" class="demo-address-radio"/> 
+                            <span class="demo-label"> Houston</span>
+                            <br>
+                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> Weslayan Tower 24 Greenway Plaza
+                            <br>
+                            <span class="demo-city-zip">Houston, TX 77046</span>
                         </label>
                         <br>
-                        <label>
-                            <input name="srcAddress" type="radio" value="4304 Live Oak Lane,Rocklin,CA,US,95765" lat="38.821517" long="-121.243897"/> Rocklin, CA, United States
+                        <label class="demo-label-container">
+                            <input name="srcAddress" type="radio" value="4304 Live Oak Lane,Rocklin,CA,US,95765" 
+                            lat="38.821517" long="-121.243897" class="demo-address-radio"/> 
+                            <span class="demo-label"> Rocklin</span>
+                            <br>
+                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 4304 Live Oak Lane
+                            <br>
+                            <span class="demo-city-zip">Rocklin, CA 95765</span>
                         </label>
                         <br>
-                        <label>
-                            <input name="srcAddress" type="radio" value="6465 Greenwood Plaza Blvd,Greenwood Village,CO,US,80111" lat="39.599445" long="-104.896804"/> 
-                            Denver, CO, United States
+                        <label class="demo-label-container">
+                            <input name="srcAddress" type="radio" value="6465 Greenwood Plaza Blvd,Greenwood Village,CO,US,80111" lat="39.599445" long="-104.896804" class="demo-address-radio"/> 
+                            <span class="demo-label"> Denver</span>
+                            <br>
+                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 6465 Greenwood Plaza Blvd
+                            <br>
+                            <span class="demo-city-zip">Greenwood Village, CO 80111</span>
                         </label>
                         <br>
                         <!-- international addresses -->
-                        <label>
-                            <input name="srcAddress" type="radio" value="3rd Floor Trafalgar Place,Brighton,Brighton and Hove,UK,BN1 4FU" lat="50.828746" long="-0.139584"/> 
-                            Brighton, United Kingdom
+                        <label class="demo-label-container">
+                            <input name="srcAddress" type="radio" value="3rd Floor Trafalgar Place,Brighton,Brighton and Hove,UK,BN1 4FU" lat="50.828746" long="-0.139584" class="demo-address-radio"/> 
+                            <span class="demo-label"> Brighton</span>
+                            <br>
+                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 3rd Floor Trafalgar Place
+                            <br>
+                            <span class="demo-city-zip">Brighton, UK BN1 4FU</span>
                         </label>
                         <br>
-                        <label>
-                            <input name="srcAddress" type="radio" value="Bahiratwadi Shivajinagar,Pune,Maharashtra,India,411 016" lat="18.533946" long="73.827597"/> Pune, India
+                        <label class="demo-label-container">
+                            <input name="srcAddress" type="radio" value="Bahiratwadi Shivajinagar,Pune,Maharashtra,India,411 016" 
+                            lat="18.533946" long="73.827597" class="demo-address-radio"/> 
+                            <span class="demo-label"> Pune</span>
+                            <br>
+                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 3rd Floor, Pride Portal 
+                            <br>
+                            <span class="demo-city-zip">Bahiratwadi, Shivajinagar</span>
+                            <br>
+                            <span class="demo-city-zip">Pune, India 411 016</span>
                         </label>
                         <br>
-                        <label>
-                            <input name="srcAddress" type="radio" value="Rua Henri Dunant 137,São Paulo,SP,Brazil,04709-110" lat="-23.633102" long="-46.695348"/> 
-                            São Paulo, São Paulo, Brazil
+                        <label class="demo-label-container">
+                            <input name="srcAddress" type="radio" value="Rua Henri Dunant 137,São Paulo,SP,Brazil,04709-110" 
+                            lat="-23.633102" long="-46.695348" class="demo-address-radio"/> 
+                            <span class="demo-label"> São Paulo</span>
+                            <br>
+                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> Rua Henri Dunant 137
+                            <br>
+                            <span class="demo-city-zip">São Paulo, Brazil 04709-110</span>
                         </label>
                         <br>
-                        <label>
-                            <input name="srcAddress" type="radio" value="O.L.Vrouwstraat 6,Grimbergen,Belgium Grimbergen,BE,B-1850" lat="50.932458" long="4.372408"/> 
-                            Brussels, Belgium
+                        <label class="demo-label-container">
+                            <input name="srcAddress" type="radio" value="O.L.Vrouwstraat 6,Grimbergen,Belgium Grimbergen,BE,B-1850" 
+                            lat="50.932458" long="4.372408" class="demo-address-radio"/> 
+                            <span class="demo-label"> Brussels</span>
+                            <br>
+                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> O.L.Vrouwstraat 6
+                            <br>
+                            <span class="demo-city-zip">Grimbergen, BE B-1850</span>
                         </label>
                     </form>
                 </div>
@@ -315,7 +369,7 @@ doctype: use_cases
                             </button>
                         </div>
                     </h5>
-                    <div class="code-snippet reqScroll">
+                    <div class="code-snippet reqScroll" id="demo-console-req">
                         <pre id="demo-console-input">{ }</pre>
                     </div>
                 </div>
@@ -334,7 +388,7 @@ doctype: use_cases
                             </button>
                         </div>
                     </h5>
-                    <div class="code-snippet respScroll">
+                    <div class="code-snippet respScroll" style="height:400px;">
                         <div class="loading-pulse" style="display: none;"></div>
                         <pre id="demo-console-output">{ }</pre>
                     </div>
