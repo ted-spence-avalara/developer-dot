@@ -137,6 +137,10 @@ $(document).ready(function() {
     fixApiRefNav();
     fixDropDownMenuLargePosition();
     fillWithSampleData();
+    // on pg load, set map pin
+    var lat = $('input[type=radio][name=address]:checked').attr('lat');
+    var long = $('input[type=radio][name=address]:checked').attr('long');
+    GetMapWithLine(lat, long, null, null);
 
     $('[webinar-hide-before]').each(function() {
       if ($(this).attr('webinar-hide-before') <= getCompareDate()) {
@@ -161,6 +165,7 @@ $(document).ready(function() {
 
     //When the destination changes, fire the map script and set the lat-long.
     $('#dropdown-dest-addresses').change(function(e){
+        debugger
         var lat = $('input[type=radio][name=address]:checked').attr('lat');
         var long = $('input[type=radio][name=address]:checked').attr('long');
         GetMapWithLine(lat, long, null, null);

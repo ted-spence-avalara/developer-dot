@@ -23,12 +23,36 @@ doctype: use_cases
     //     map.layers.insert(layer);
     // }
 
+    const infoboxTemplate = `
+        <div class="demo-infobox">
+            <h4>Getting Started</h4>
+            <p>
+                Calculating sales tax is time consuming and painful, but it doesn\'t have to be. Avalara\'s sales tax API automates the process for you! All you need to do to start making quick calculations is choose a product or service and where you\'re shipping from and to. Tinker with the options on the left, click "Submit" and watch the magic happen!
+            </p>
+        </div>
+    `;
+
+    function displayToolTip(center) {
+
+        //Create an infobox that will render in the center of the map.
+        const infobox = new Microsoft.Maps.Infobox(center, {
+            htmlContent: infoboxTemplate,
+        });
+
+        //Assign the infobox to a map instance.
+        infobox.setMap(map);
+    }
+
     function GetMapWithLine(destLat, destLong, srcLat, srcLong) { 
+        let center;
+
         
         if(destLat == null || destLong == null) { 
             // destLat = 33.6846603698176; 
             // destLong = -117.850629887389; 
             map = new Microsoft.Maps.Map('#myMap', {zoom: 0}); 
+            center = map.getCenter();
+            displayToolTip(center);
             return;
         }  
         
@@ -41,6 +65,8 @@ doctype: use_cases
             var layer = new Microsoft.Maps.Layer("MyPushpinLayer1");
             layer.add(new Microsoft.Maps.Pushpin(location));
             map.layers.insert(layer);
+            center = map.getCenter();
+            displayToolTip(center);
 
             //Exit out since it is a single location.
             return; 
@@ -48,10 +74,11 @@ doctype: use_cases
 
         //Source and destination layer (polyline) 
         map = new Microsoft.Maps.Map('#myMap', {});
-        var center = map.getCenter();
+        center = map.getCenter();
         var coords = [center, new Microsoft.Maps.Location(center.latitude + 1, center.longitude + 1)];
         var line = new Microsoft.Maps.Polyline(coords, {strokeColor: 'orange', strokeThickness: 3});
         map.entities.push(line);
+        displayToolTip(center);
     } 
 </script>
 <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMapWithLine&key=Ahgp_E6MHtyMYBJPCllMKTwJk7Indytl8hVm-Boe6mbyWbcyZvVBUePMDP5OLeiH' async defer></script>
@@ -205,27 +232,27 @@ doctype: use_cases
                     </div>
                     <form id="dropdown-products" onChange="fillWithSampleData();"> 
                         <label class="demo-label demo-label-container">
-                            <input value="P0000000" name="product" type="radio" description="Tangible Personal Property" checked/> 
+                            <input value="P0000000" name="product" type="radio" description="Tangible Personal Property" checked class="demo-address-radio"/> 
                             Tangible Personal Property
                         </label>
                         <br>
                         <label class="demo-label demo-label-container">
-                            <input value="PF160024" name="product" type="radio" description="Sushi"/> 
+                            <input value="PF160024" name="product" type="radio" description="Sushi" class="demo-address-radio"/> 
                             Sushi
                         </label>
                         <br>
                         <label class="demo-label demo-label-container">
-                            <input value="FR010000" name="product" type="radio" description="Shipping"/> 
+                            <input value="FR010000" name="product" type="radio" description="Shipping" class="demo-address-radio"/> 
                             Shipping
                         </label>
                         <br>
                         <label class="demo-label demo-label-container">
-                            <input value="DM040200" name="product" type="radio" description="Music - streaming / electronic download"/> 
+                            <input value="DM040200" name="product" type="radio" description="Music - streaming / electronic download" class="demo-address-radio"/> 
                             Music - streaming / electronic download
                         </label>
                         <br>
                         <label class="demo-label demo-label-container">
-                            <input value="PC040400" name="product" type="radio" description="Sports and Recreational Equipment" /> 
+                            <input value="PC040400" name="product" type="radio" description="Sports and Recreational Equipment" class="demo-radio" /> 
                             Sports and Recreational Equipment
                         </label>
                         <br>
