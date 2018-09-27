@@ -3,7 +3,7 @@ layout: post
 title: The Hidden Cost of "Free" Tax Tables
 description: Free tax tables may be costing you more than you think.
 relevantapimethods: TaxRatesByAddress, TaxRatesByPostalCode
-date: 2018-09-11 16:00
+date: 2018-09-27 10:00
 author: Wayne Myer
 comments: true
 categories: [avatax, sdk]
