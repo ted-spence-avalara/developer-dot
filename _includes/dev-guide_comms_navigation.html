@@ -11,10 +11,22 @@
             {% endif %}
         </li>
         <li {% if page.url=="/communications/dev-guide/calculate-taxes/" %}class="active" {% endif %}><a href="/communications/dev-guide/calculate-taxes/">Calculate Taxes</a>
+            {% if page.chapter=="calculate-taxes" %}
+            <ol>   
+                <li><a href="/communications/dev-guide/calculate-taxes/required-fields">Required Fields</a></li> 
+            </ol>
+            {% endif %}
         </li>
         <li {% if page.url=="/communications/dev-guide/commit-uncommit/" %}class="active" {% endif %}><a href="/communications/dev-guide/commit-uncommit/">Commit/Uncommit</a>
         </li>
         <li {% if page.url=="/communications/dev-guide/customizing-transactions/" %}class="active" {% endif %}><a href="/communications/dev-guide/customizing-transactions/">Customizing Transactions</a>
+            {% if page.chapter=="customizing-transactions" %}
+            <ol>
+                <li><a href="/communications/dev-guide/customizing-transactions/client-profiles/">Client Profiles</a></li>
+                <li><a href="/communications/dev-guide/customizing-transactions/customization-files/">Customization Files</a></li>
+                <li><a href="/communications/dev-guide/customizing-transactions/transaction-scenarios/">Transaction Scenarios</a></li>
+            </ol>
+            {% endif %}
         </li>
         <li {% if page.url=="/communications/dev-guide/reference/" %}class="active" {% endif %}><a href="/communications/dev-guide/reference/">Reference</a>
             {% if page.chapter=="reference" %}
@@ -31,7 +43,7 @@
                 <li><a href="/communications/dev-guide/reference/tax-bracket/">Tax Bracket</a></li>
                 <li><a href="/communications/dev-guide/reference/bridge-data/">Bridge Data</a></li>
                 <li><a href="/communications/dev-guide/reference/bridge-participant/">Bridge Participant</a></li>
-                <li><a href="/communications/dev-guide/reference/key-value-pair/">Key Value Pair</a></li>
+                <li><a href="/communications/dev-guide/reference/key-value-pair/">Key Value Pair</a></li> 
             </ol>
             {% endif %}
         </li>

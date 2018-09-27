@@ -163,5 +163,5 @@ More information about the CalcTaxesResponse can be found <a href="/communicatio
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide/commit-uncommit/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide/calculate-taxes/required-fields/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
