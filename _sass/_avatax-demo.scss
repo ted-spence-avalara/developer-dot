@@ -1,0 +1,61 @@
+#demo-console-output {
+    color: #8fffa7;
+}
+
+#demo-console-input {
+    color: #8fffa7;
+}
+
+#demo-shortcuts, #demo-api-details {
+    max-height: 900px;
+    overflow: auto;
+}
+
+#myMap {
+    width: 850px;
+    height: 835px;
+}
+
+.demo-shortcut-desc {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.demo-label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.demo-city-marker {
+    color: $Ava-orange;
+    padding-left: 15px;
+}
+
+.demo-city-zip {
+    padding-left: 20px;
+}
+
+.demo-radio {
+    height: 15px;
+    width: 15px;
+}
+
+.demo-label-container {
+    padding: 5px 0;
+}
+
+#demo-console-req {
+    margin-bottom: 5px;
+}
+
+.demo-infobox {
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    max-width: 250px;
+    max-height: 250px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size:12px;
+}

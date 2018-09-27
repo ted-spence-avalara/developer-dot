@@ -26,12 +26,31 @@ function getCompareDate() {
 
 function fillWithSampleData() {
     const sampleData = buildSampleData();
-    $('#console-input').empty().text(JSON.stringify(sampleData, null, 2));
+    $('#demo-console-input').empty().text(JSON.stringify(sampleData, null, 2));
 };
 
+function makeAddressObj(){
+    const address = $('input[type=radio][name=address]:checked').val().split(',');
+    const addressObj = {
+        "line1": address[0],
+        "city": address[1],
+        "region": address[2],
+        "country": address[3],
+        "postalCode": address[4],
+    }
+    return addressObj;
+}
+
+function setShipToOrSingleLocation() {
+    var checked = $('input[type=radio][name=srcAddress]:checked').length > 0;
+    //
+}
+
 function buildSampleData() {
-    const taxCode = $('option:selected').val();
-    const description = $('option:selected').attr('description');
+    const taxCode = $('input[type=radio][name=product]:checked').val();
+    const description = $('input[type=radio][name=product]:checked').attr('description');
+    const address = makeAddressObj();
+    // setShipToOrSingleLocation();
 
     const sampleData = {
         "lines": [ {
@@ -41,18 +60,12 @@ function buildSampleData() {
             "taxCode": taxCode,
             "description": description
         } ],
-        "type": "SalesInvoice",
-        "companyCode": "DEFAULT",
+        "type": "SalesOrder",
+        "companyCode": "DEMOPAGE",
         "date": "2018-09-05", 
         "customerCode": "ABC",
         "addresses": {
-            "singleLocation": {
-                "line1": "2000 Main Street",
-                "city": "Irvine",
-                "region": "CA",
-                "country": "US",
-                "postalCode": "92614"
-            }
+            "singleLocation": address,
         },
         "description": description
     };
@@ -68,9 +81,17 @@ const proxy = {
     }
 }
 
+function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+  }
+
 function ApiRequest() {
     // clear the console output and display loading-pulse
-    $("#console-output").empty();
+    $("#demo-console-output").empty();
     $(".loading-pulse").css('display', 'block'); 
 
     const data = buildSampleData();
@@ -97,8 +118,8 @@ function ApiRequest() {
         .then((rawApiResponse) => {
             return rawApiResponse.json().then((body) => {
                 $(".loading-pulse").css('display', 'none'); 
-                $('#console-output').text(JSON.stringify(body, null, 2));
-                
+                $('#demo-console-output').text(JSON.stringify(body, null, 2));
+
                 //TODO handle errors
                 // $('#console-output').text("HTTP Error: " + body.status + "\n\n" + JSON.stringify(result, null, 2));
 
@@ -116,6 +137,10 @@ $(document).ready(function() {
     fixApiRefNav();
     fixDropDownMenuLargePosition();
     fillWithSampleData();
+    // on pg load, set map pin
+    var lat = $('input[type=radio][name=address]:checked').attr('lat');
+    var long = $('input[type=radio][name=address]:checked').attr('long');
+    GetMapWithLine(lat, long, null, null);
 
     $('[webinar-hide-before]').each(function() {
       if ($(this).attr('webinar-hide-before') <= getCompareDate()) {
@@ -137,6 +162,16 @@ $(document).ready(function() {
     $('.sm-section-nav').on('hidden.bs.dropdown', function() {
         $('main').removeClass('section-nav-open');
     });   
+
+    //When the destination changes, fire the map script and set the lat-long.
+    $('#dropdown-dest-addresses').change(function(e){
+        debugger
+        var lat = $('input[type=radio][name=address]:checked').attr('lat');
+        var long = $('input[type=radio][name=address]:checked').attr('long');
+        GetMapWithLine(lat, long, null, null);
+    });
+
+    $('#dropdown-addresses').trigger('change');
 });
 
 
