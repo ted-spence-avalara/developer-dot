@@ -83,7 +83,8 @@ The <code>CompanyData</code> object contains information about <b>your</b> compa
     </tbody>
   </table>
 <div>
-
+<br>
+<br>
 {% highlight json %}
 // Example
 
