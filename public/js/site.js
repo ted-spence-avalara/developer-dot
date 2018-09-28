@@ -136,7 +136,7 @@ function ApiRequest() {
 $(document).ready(function() {
     fixApiRefNav();
     fixDropDownMenuLargePosition();
-    fillWithSampleData();
+    // fillWithSampleData();
 
     $('[webinar-hide-before]').each(function() {
       if ($(this).attr('webinar-hide-before') <= getCompareDate()) {
