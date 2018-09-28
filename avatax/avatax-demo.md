@@ -84,15 +84,15 @@ doctype: use_cases
 
 <!-- page header -->
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
         <h1 style="margin-top:0;">Sales Tax API Demo</h1>
     </div>
-    <div class="col-md-8">
-        <h2 id="demo-endpoint-header" style="display:inline-block;margin-top:0;padding-top:5px;padding-left:60px">CreateTransaction Endpoint</h2>
+    <div class="col-md-9">
+        <h2 id="demo-endpoint-header" style="display:inline-block;margin-top:0;padding-top:5px;padding-left:30px">CreateTransaction Endpoint</h2>
         <div id="demo-endpoint-contents" style="margin: 10px;display:inline-block;">
             <div class="code-snippet-plaintext" style="display: inline;" id="console-method">POST</div>
             <div class="code-snippet-plaintext" style="display: inline;" id="console-server">https://sandbox-rest.avatax.com</div>
-            <div class="code-snippet-plaintext" style="display: inline;" id="console-path">/api/v2/transactions/create</div>
+            <div class="code-snippet-plaintext" style="display: inline;" id="console-path">/api/v2/transactions/create?$include=summaryOnly</div>
         </div>
         <button class="btn btn-primary" style="display:inline;">
             <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/" style="color:white;text-decoration:none;" target="_blank">
@@ -274,7 +274,7 @@ doctype: use_cases
                     </form>  
                 </div>
                 <!-- source address-->
-                <div class="row">
+                <!-- <div class="row">
                     <div class="demo-label-container">
                         <span class="demo-shortcut-desc">Step 3: Where are you shipping to?</span>
                         <br>Choose a pre-selected address
@@ -348,9 +348,9 @@ doctype: use_cases
                             <br>
                             <span class="demo-city-zip">Greenwood Village, CO 80111</span>
                         </label>
-                        <br>
+                        <br> -->
                         <!-- international addresses -->
-                        <label class="demo-label-container">
+                        <!-- <label class="demo-label-container">
                             <input name="srcAddress" type="radio" value="3rd Floor Trafalgar Place,Brighton,Brighton and Hove,UK,BN1 4FU" lat="50.828746" long="-0.139584"  class="demo-radio"/> 
                             <span class="demo-label"> Brighton</span>
                             <br>
@@ -391,7 +391,7 @@ doctype: use_cases
                             <span class="demo-city-zip">Grimbergen, BE B-1850</span>
                         </label>
                     </form>
-                </div>
+                </div>  -->
             </div>
             <!-- end shortcut / start API details  -->
             <div class="col-md-8" id="demo-api-details">
