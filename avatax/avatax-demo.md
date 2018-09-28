@@ -84,11 +84,11 @@ doctype: use_cases
 
 <!-- page header -->
 <div class="row">
-    <div class="col-md-5">
-        <h1 style="margin-top:0;">AvaTax Demo</h1>
+    <div class="col-md-4">
+        <h1 style="margin-top:0;">Sales Tax API Demo</h1>
     </div>
-    <div class="col-md-7">
-        <h2 id="demo-endpoint-header" style="display:inline-block;margin-top:0;padding-top:5px;padding-left:100px">API Endpoint</h2>
+    <div class="col-md-8">
+        <h2 id="demo-endpoint-header" style="display:inline-block;margin-top:0;padding-top:5px;padding-left:60px">CreateTransaction Endpoint</h2>
         <div id="demo-endpoint-contents" style="margin: 10px;display:inline-block;">
             <div class="code-snippet-plaintext" style="display: inline;" id="console-method">POST</div>
             <div class="code-snippet-plaintext" style="display: inline;" id="console-server">https://sandbox-rest.avatax.com</div>
@@ -102,7 +102,7 @@ doctype: use_cases
         </button>
     </div>
 </div>
-<div class="row">
+<!-- <div class="row">
     <div class="col-md-7" style="padding-left:0;">
         <div class="col-md-4" style="padding-left:0;">
             <h3>Shortcuts</h3>
@@ -114,7 +114,7 @@ doctype: use_cases
     <div class="col-md-5">
         <h3>Map Details</h3>
     </div>
-</div>
+</div> -->
 <!-- demo container -->
  <div class="row">
     <!-- shortcuts & api details container -->
@@ -124,7 +124,10 @@ doctype: use_cases
             <div class="col-md-4" id="demo-shortcuts">
                 <!-- destination address -->
                 <div class="row">
-                    <div class="demo-shortcut-desc">Select a destination address (required):</div>
+                    <div class="demo-label-container">
+                        <span class="demo-shortcut-desc">Step 1: Where are you shipping from?</span>
+                        <br>Choose a pre-selected address
+                    </div>
                     <form id="dropdown-dest-addresses" onChange="fillWithSampleData();" class="demo-form">
                         <label class="demo-label-container">
                             <input name="address" type="radio" value="2000 Main Street,Irvine,CA,US,92614" lat="33.6846603698176" long="-117.850629887389"  class="demo-radio"/> 
@@ -238,8 +241,9 @@ doctype: use_cases
                 </div>
                 <!-- products -->
                 <div class="row">
-                    <div class="demo-shortcut-desc">
-                        Choose a common product or service:
+                    <div class="demo-label-container">
+                        <span class="demo-shortcut-desc">Step 2: What's being taxed?</span>
+                        <br>Choose a common product or service to calculate tax
                     </div>
                     <form id="dropdown-products" onChange="fillWithSampleData();" class="demo-form"> 
                         <label class="demo-label demo-label-container">
@@ -271,8 +275,9 @@ doctype: use_cases
                 </div>
                 <!-- source address-->
                 <div class="row">
-                    <div class="demo-shortcut-desc">
-                        Select a source address (optional):
+                    <div class="demo-label-container">
+                        <span class="demo-shortcut-desc">Step 3: Where are you shipping to?</span>
+                        <br>Choose a pre-selected address
                     </div>
                     <form id="dropdown-src-addresses" onChange="fillWithSampleData();" class="demo-form">
                         <label class="demo-label-container">
