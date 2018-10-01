@@ -1,6 +1,6 @@
 
 # Better UI Components
-## How to avoid over-engineering user interfaces through standards
+## How to avoid over-engineering user interfaces through the use of standards
 
 How did we miss it? It was right there this whole time and nobody, not for the 10 plus years that it’s been possible, seemed to use it. Somebody somewhere must have used it. Perhaps some people did, but didn’t bother to write about it. I hope that’s not true because the web community would of been better off with it. In today’s climate of hype I think it needs to be shared and embraced. Well then, what is it?
 
@@ -21,7 +21,7 @@ HTML gives us a lot. More than we give it credit for and for the things it can�
 
 Let’s use icons as a quick example. Because HTML doesn’t give us an icon tag to markup our icons, we have to design and construct our own. Several simple solutions exist. Here’s just two:
 
-```
+```html
 <i class=“fas fa-phone”></i>
 
 <i class=“icon icon-phone”></i>
@@ -34,37 +34,37 @@ Repetitive naming:
 `fa`, `icon`, and `oi` 
 
 Mixed in with other classes and the loss of clarity when this inevitably happens (or the ongoing effort required to prevent/fix it):
-```
+```html
 <i class=“icon icon-phone”></i> (original)
 <i class=“icon icon-phone foo”></i> (six weeks later)
 <i class=“bar baz icon icon-phone foo”></i> (a year later)
 ```
 The tag is unavoidable boilerplate that has no meaning:
-```
+```html
 <i class=“icon icon-phone”></i>
 <div class=“icon icon-phone”></div>
 <span class=“icon icon-phone”></span>
 ```
 Sitting next to standard elements the class-based approach just looks dumb:
-```
+```html
 <i class=“icon icon-phone”></i>
 <input type=“email” placeholder=“name@example.com" autofocus>
 ```
 What if standard elements were based on that same approach:
-```
+```html
 <div class=“input input-email input-placeholder--name@example.com input-autofocus”>
 <span class=“anchor anchor-href--example.com”>
 ```
 We would laugh at code like that, but that’s what we do for our custom stuff. We don’t have to use classes when building UI components. There’s a better way. We can design and construct our custom components with the same semantic and declarative API as standard elements. Here’s what I mean:
-```
+```html
 <i class=“icon icon-phone”>
 ```
 Becomes:
-```
+```html
 <icon name=“phone”>
 ```
 That code is 100% compatible with all browsers. It can be authored, downloaded, and parsed just like any “real” HTML because it is. Sure, it’s not a standard element and browsers won’t have any default styles that match of course, but this is not a problem at all. You can write CSS that applies to icon just as well as any of the standard tags and attributes:
-```
+```css
 icon {
   font-family: ‘My Icons’;
 }
@@ -74,7 +74,7 @@ icon[name=“phone”]:before {
 }
 ```
 Let’s take it up a notch:
-```
+```html
 <span class=“badge badge-success”>1</span>
 ```
 
