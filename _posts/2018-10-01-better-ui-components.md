@@ -2,24 +2,25 @@
 # Better UI Components
 ## How to avoid over-engineering user interfaces through the use of standards
 
-How did we miss it? It was right there this whole time and nobody, not for the 10 plus years that it’s been possible, seemed to use it. Somebody somewhere must have used it. Perhaps some people did, but didn’t bother to write about it. I hope that’s not true because the web community would of been better off with it. In today’s climate of hype I think it needs to be shared and embraced. Well then, what is it?
+How did we miss it? It was right there this whole time and nobody, not for the 10 plus years that it’s been possible, seemed to use it. Somebody somewhere must have used it. Perhaps some people did, but didn’t bother to write about it. I hope that’s not true because the web community would of been better off with it. In today’s climate of hype I think it needs to be shared and embraced before we go too far down this over-engineered path we seem to be on. Well then, what is "it"?
 
-What I’m talking about is a user interface technology that already has 100% developer adoption, is totally compatible with all browsers and tooling, has no dependencies, is very well-documented and easy to learn. It’s so good it’s an open web standard. The technology is none other than HTML and we’ve ignored its power to enable us to design, construct, and implement better UI components. Let me explain.
+What I’m talking about is a user interface technology that is so good it already has 100% developer adoption, it is totally compatible with _all_ browsers and existing tools, it has no dependencies, is very well-documented and is very easy to learn. It’s so good it’s an open web standard. The technology of course is none other than HTML and we’ve ignored its power to enable us to design, construct, and implement better UI components. Let me explain.
 
-As a reminder, HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements and their many features, like video, and improved capabilities for existing elements like autofocus, which tells the browser where to focus on page load. These new additions were built with the HTML constructs that already existed and no doubt will continue to exist, those are: tags, attributes, and nesting. Classes are all user-defined, so of course classes aren’t included. Here’s some examples of HTML elements and their semantic, declarative API:
+### HTML your way
+As a reminder, HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements and their many features, like `<video>`, and improved capabilities for existing elements like the `autofocus` attribute, which tells the browser where to focus on page load. These new additions were built with the HTML constructs that already existed and no doubt will continue to exist, those are: *tags*, *attributes*, and *nesting*. Classes are all user-defined, so of course classes aren’t included. Here’s some examples of HTML elements and their semantic, declarative API:
 
 ```html
 <h1>
 
-<a href=“” download>
+<a href="" download>
 
-<input type=“email” placeholder=“name@example.com" autofocus>
+<input type="email" placeholder="name@example.com" autofocus>
 
-<video>
+<video src="example.com/vids/cats.mp4" poster="example.com/posters/cats.jpg" autoplay loop controls>
 ```
-HTML gives us a lot. More than we give it credit for and for the things it can’t do, it gives us control to do ourselves. And that’s where we went wrong.
+HTML gives us a lot to work with. More than we give it credit for and for the things it doesn't, it gives us control to do it ourselves. And that’s where we went wrong.
 
-Let’s use icons as a quick example. Because HTML doesn’t give us an icon tag to markup our icons, we have to design and construct our own. Several simple solutions exist. Here’s just two:
+Let’s use icons as a quick example. Because HTML doesn’t give us an icon tag to markup our icons, we have to design and construct our own. Many similar approaches exist. Here’s three:
 
 ```html
 <i class=“fas fa-phone”></i>
@@ -28,36 +29,36 @@ Let’s use icons as a quick example. Because HTML doesn’t give us an icon tag
 
 <span class="oi oi-phone"></span>
 ```
-Those are fine. There is nothing wrong with that, although the use of the <i> tag is not semantic and a bit hacky, but I do like how short it is. Here’s what I don’t like:
+Those are fine. They all use classes and there is nothing wrong with that, although the use of the `<i>` tag is not semantic and a bit hacky, but I do like how short it is. Here’s what I don’t like:
 
-Repetitive naming:
+#### 1) Repetitive naming:
 `fa`, `icon`, and `oi` 
 
-Mixed in with other classes and the loss of clarity when this inevitably happens (or the ongoing effort required to prevent/fix it):
+#### 2) Mixed in with other classes and the loss of clarity when this inevitably happens (or the ongoing effort required to prevent/fix it):
 ```html
 <i class=“icon icon-phone”></i> (original)
 <i class=“icon icon-phone foo”></i> (six weeks later)
 <i class=“bar baz icon icon-phone foo”></i> (a year later)
 ```
-The tag is unavoidable boilerplate that has no meaning:
+#### 3) The tag is unavoidable boilerplate that has no meaning:
 ```html
 <i class=“icon icon-phone”></i>
 <div class=“icon icon-phone”></div>
 <span class=“icon icon-phone”></span>
 ```
-Sitting next to standard elements the class-based approach just looks dumb:
+#### 4) Sitting next to standard elements the class-based approach just looks out of place, it lacks uniformity:
 ```html
-<i class=“icon icon-phone”></i>
-<input type=“email” placeholder=“name@example.com" autofocus>
+<i class="icon icon-phone"></i>
+<input type="email" autofocus>
 ```
-What if standard elements were based on that same approach:
+What if all the standard elements were based on that same approach:
 ```html
 <div class=“input input-email input-placeholder--name@example.com input-autofocus”>
 <span class=“anchor anchor-href--example.com”>
 ```
-We would laugh at code like that, but that’s what we do for our custom stuff. We don’t have to use classes when building UI components. There’s a better way. We can design and construct our custom components with the same semantic and declarative API as standard elements. Here’s what I mean:
+Gross! We would laugh at code like that, but that’s what we do for our custom stuff. We don’t have to use classes when building UI components. There’s a better way. We can design and construct our custom components with the same semantic and declarative API as standard elements. Here’s what I mean:
 ```html
-<i class=“icon icon-phone”>
+<i class="icon icon-phone">
 ```
 Becomes:
 ```html
