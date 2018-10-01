@@ -12,15 +12,13 @@ nav: home
                 <h2>Tax compliance done right with Avalara's API</h2>
             </div>
         </div>
-
         <div class="row text-center padding-bottom">
             <!-- Developer Guide Block -->
             <div style="float: left; width: 48%; text-align: center; background-image:url(/public/images/buildwithapi.png); background-position: center; background-size: contain; background-repeat: no-repeat;">
                 <h3 style="margin-top: 70px;">Build with the AvaTax API</h3>
                 <h3 style="margin-top: 220px;">Build an integration for your custom software</h3>
-                <h3><a href="/avatax/dev-guide/">Read the AvaTax Developer Guide</a></h3>
+                <h3><a href="/avatax/avatax-demo/">Demo the API Now</a></h3>
             </div>
-
             <!-- Partner DSP Block -->
             <div style="float: right; width: 48%; text-align: center; background-image:url(/public/images/developer-partner.png); background-position: center; background-size: contain; background-repeat: no-repeat;">
                 <h3 style="margin-top: 70px;">Be an Avalara Development Solution Partner</h3>
@@ -28,7 +26,6 @@ nav: home
                 <h3><a href="/partners/">Learn about Avalara’s Partner Program</a></h3>
             </div>
         </div>
-
         <div class="row bg-white border-top padding-bottom margin-top text-center">
             <h2>AvaTax Software Development Kits</h2>
             <a href="https://www.nuget.org/packages/Avalara.AvaTax/"><img alt="AvaTax SDK for CSharp on NuGet" src="/public/images/sdk-csharp.png" style="margin: 10px;"/></a>
@@ -39,7 +36,6 @@ nav: home
             <a href="https://pypi.python.org/pypi/Avalara"><img alt="AvaTax SDK for Python on PyPI" src="/public/images/sdk-python.png" style="margin: 10px;"/></a>
             <div style="float: left;" class="col-md-12 text-center btn-callout"><a href="/avatax/signup" role="button">Try the API</a></div>
         </div>
-
         <div class="row bg-white padding-top">
           <div class="col-sm-2 col-sm-offset-2 col-md-offset-2 col-md-2 text-center">
             <a href="/avatax"><img src="/public/images/devdot/DevDotSvgGAssets_BarCode.svg" height="100" alt="sales and sellers use tax" /></a>
