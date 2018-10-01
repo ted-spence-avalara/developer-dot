@@ -1,6 +1,6 @@
 
-Better UI Components
-How to avoid over-engineering user interfaces through standards
+# Better UI Components
+## How to avoid over-engineering user interfaces through standards
 
 How did we miss it? It was right there this whole time and nobody, not for the 10 plus years that it’s been possible, seemed to use it. Somebody somewhere must have used it. Perhaps some people did, but didn’t bother to write about it. I hope that’s not true because the web community would of been better off with it. In today’s climate of hype I think it needs to be shared and embraced. Well then, what is it?
 
@@ -8,6 +8,7 @@ What I’m talking about is a user interface technology that already has 100% de
 
 As a reminder, HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements and their many features, like video, and improved capabilities for existing elements like autofocus, which tells the browser where to focus on page load. These new additions were built with the HTML constructs that already existed and no doubt will continue to exist, those are: tags, attributes, and nesting. Classes are all user-defined, so of course classes aren’t included. Here’s some examples of HTML elements and their semantic, declarative API:
 
+```html
 <h1>
 
 <a href=“” download>
@@ -15,7 +16,7 @@ As a reminder, HTML’s job is to give content structure and meaning. This is ca
 <input type=“email” placeholder=“name@example.com" autofocus>
 
 <video>
-
+```
 HTML gives us a lot. More than we give it credit for and for the things it can’t do, it gives us control to do ourselves. And that’s where we went wrong.
 
 Let’s use icons as a quick example. Because HTML doesn’t give us an icon tag to markup our icons, we have to design and construct our own. Several simple solutions exist. Here’s just two:
