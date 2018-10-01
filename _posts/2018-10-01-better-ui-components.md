@@ -21,45 +21,50 @@ HTML gives us a lot. More than we give it credit for and for the things it can�
 
 Let’s use icons as a quick example. Because HTML doesn’t give us an icon tag to markup our icons, we have to design and construct our own. Several simple solutions exist. Here’s just two:
 
+```
 <i class=“fas fa-phone”></i>
 
 <i class=“icon icon-phone”></i>
 
 <span class="oi oi-phone"></span>
-
+```
 Those are fine. There is nothing wrong with that, although the use of the <i> tag is not semantic and a bit hacky, but I do like how short it is. Here’s what I don’t like:
 
 Repetitive naming:
-fa, icon, and oi 
+`fa`, `icon`, and `oi` 
 
 Mixed in with other classes and the loss of clarity when this inevitably happens (or the ongoing effort required to prevent/fix it):
+```
 <i class=“icon icon-phone”></i> (original)
 <i class=“icon icon-phone foo”></i> (six weeks later)
 <i class=“bar baz icon icon-phone foo”></i> (a year later)
-
+```
 The tag is unavoidable boilerplate that has no meaning:
+```
 <i class=“icon icon-phone”></i>
 <div class=“icon icon-phone”></div>
 <span class=“icon icon-phone”></span>
-
+```
 Sitting next to standard elements the class-based approach just looks dumb:
+```
 <i class=“icon icon-phone”></i>
 <input type=“email” placeholder=“name@example.com" autofocus>
-
+```
 What if standard elements were based on that same approach:
+```
 <div class=“input input-email input-placeholder--name@example.com input-autofocus”>
 <span class=“anchor anchor-href--example.com”>
-
+```
 We would laugh at code like that, but that’s what we do for our custom stuff. We don’t have to use classes when building UI components. There’s a better way. We can design and construct our custom components with the same semantic and declarative API as standard elements. Here’s what I mean:
-
+```
 <i class=“icon icon-phone”>
-
+```
 Becomes:
-
+```
 <icon name=“phone”>
-
+```
 That code is 100% compatible with all browsers. It can be authored, downloaded, and parsed just like any “real” HTML because it is. Sure, it’s not a standard element and browsers won’t have any default styles that match of course, but this is not a problem at all. You can write CSS that applies to icon just as well as any of the standard tags and attributes:
-
+```
 icon {
   font-family: ‘My Icons’;
 }
@@ -67,11 +72,14 @@ icon {
 icon[name=“phone”]:before {
   content: “\u123”;
 }
-
+```
 Let’s take it up a notch:
+```
 <span class=“badge badge-success”>1</span>
+```
 
 Becomes:
+```
 <badge count=“1” status=“success”></badge>
 
 badge {
@@ -84,11 +92,11 @@ badge[count=“0”], badge[count=“”] {
 
 badge[status=“success”] { background-color: green; }
 badge[status=“alert”] { background-color: red; }
-
+```
 Here’s another:
+```
 <loader loading></loader>
-
-
+```
 
 Are you starting to see the difference? Do you sense the benefits? Designing UI components with tags and attributes is fun! But it’s also better. It’s objectively better:
 
@@ -103,21 +111,23 @@ Doing so sets you up for future improvements. Let’s get into that now
 Creating and sharing custom components is a commitment. Your components will evolve and have new capabilities added to them just like the standard ones. Let’s look at the possible evolution of a custom Alert (aka Callout) component:
 
 Original design:
+```
 <alert type=“success”>
   <p>You should try this</p>
 </alert>
-
+```
 That would look something like:
 Pretty basic component with a nice little API that uses a custom tag, familiar attribute, and supports nested content. There’s no dependencies here. No magic, no hacks, nothing proprietary, no new idioms, it’s just HTML and CSS that every dev knows and every browser supports. It’s really as if this was a standard element.
 
 It doesn’t offer much though. Let’s see if we can support an icon:
+```
 <alert type=“success”>
   <icon name=“check”></icon>
   <p>You should try this</p>
 </alert>
-
+```
 That works and adds some visual value, but it’s not the right way to design a component. Let’s get an icon without leaving it up to the implementer:
-
+```
 <alert type=“success”>
   <p>You should try this</p>
 </alert>
@@ -125,7 +135,7 @@ That works and adds some visual value, but it’s not the right way to design a 
 alert[type=“success”]:before {
    content: “\u555”;
 }
-
+```
 Starting to look like something. It’s a pretty common for alerts to disappear automatically, so let’s add support for that with a custom autodismiss attribute.
 
 <alert type=“success” autodismiss>
