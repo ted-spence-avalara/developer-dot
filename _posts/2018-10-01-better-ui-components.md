@@ -72,39 +72,44 @@ Becomes:
 ```html
 <icon name="phone"></icon>
 ```
-That code is 100% compatible with all browsers. It can be authored, downloaded, and parsed just like any “real” HTML because it is. Sure, it’s not a standard element and browsers won’t have any default styles that match of course, but this is not a problem at all. You can write CSS that applies to icon just as well as any of the standard tags and attributes:
+That code is 100% compatible with all browsers. It can be authored, downloaded, and parsed just like any “real” HTML because it is. Sure, it’s not a standard element and browsers won’t have any default styles that match of course, but this is not a problem at all. You can write CSS that applies to `icon` just like you do for any of the standard tags and attributes:
 ```css
 icon {
   font-family: ‘My Icons’;
 }
 
-icon[name=“phone”]:before {
-  content: “\u123”;
+icon[name="phone"]:before {
+  content: "\u123";
 }
 ```
 Let’s take it up a notch:
 ```html
-<span class=“badge badge-success”>1</span>
+<span class="badge badge-success">1</span>
 ```
 
 Becomes:
+```html
+<badge count="1" status="success"></badge>
 ```
-<badge count=“1” status=“success”></badge>
+With just CSS we can make a Badge with a zero count, `badge[count="0"]`, or no count at all, `badge[count=""]`, hidden. That's cool!
 
-badge {
-  border-radius: 50%;
-}
-
-badge[count=“0”], badge[count=“”] {
-  display: none; /* A Badge with a zero count or no count at all is not displayed */
-}
-
-badge[status=“success”] { background-color: green; }
-badge[status=“alert”] { background-color: red; }
-```
-Here’s another:
+Here’s some others:
 ```
 <loader loading></loader>
+
+<row>
+  <col span="6" hide="sm">...</col>
+  <col span="6 sm-12">...</col>
+</row>
+
+<card>
+  <card-feature>
+    <img> or <video>
+  </card-feature>
+  <card-body>
+    <p></p>
+  </card-body>
+</card>
 ```
 
 Are you starting to see the difference? Do you sense the benefits? Designing UI components with tags and attributes is fun! But it’s also better. It’s objectively better:
