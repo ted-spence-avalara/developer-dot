@@ -40,7 +40,7 @@ Pretty simple. They use classes to define themselves and their attributes and wh
 <i class="icon icon-phone foo"></i>  six weeks later
 <i class="bar baz icon icon-phone foo"></i>  a year later
 ```
-What is it? A `bar`? A `baz` with an `icon` or an `icon` with a `baz`?
+What is that last one? Is it a `bar` or `baz` or maybe an `icon` with a `foo`? This is messy.
 #### 3) Tags become unavoidable boilerplate with no meaning:
 ```html
 <i class="icon icon-phone"></i>
