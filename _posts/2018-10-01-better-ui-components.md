@@ -42,11 +42,11 @@ Those are fine. They all use classes and there is nothing wrong with that, altho
 ```
 #### 3) The tag is unavoidable boilerplate that has no meaning:
 ```html
-<i class=“icon icon-phone”></i>
-<div class=“icon icon-phone”></div>
-<span class=“icon icon-phone”></span>
+<i class="icon icon-phone"></i>
+<div class="icon icon-phone"></div>
+<span class="icon icon-phone"></span>
 ```
-The code looks i/div/span being dressed up in icon clothes rather than a true icon.
+The code looks like spans are being dressed up in icon clothes rather than looking like true icons.
 #### 4) Sitting next to standard elements the class-based approach just looks out of place, it lacks uniformity:
 ```html
 <i class="icon icon-phone"></i>
