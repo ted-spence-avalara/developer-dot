@@ -109,12 +109,12 @@ Here’s some others:
 
 Are you starting to see the difference? Do you sense the benefits? Designing UI components with tags and attributes is fun! But it’s also better. It’s objectively better:
 
-* Enables UI engineers to think in terms of components with high-level APIs rather than dumb elements with a list of classes
+* Enables UI engineers to implement components with high-level APIs rather than dumb elements with a list of classes
 * No more OOCSS, BEM, or similar attempts to engineer around the problems with class-based design
-* Avoids meaningless boilerplate tags in your code
-* The class attribute is rarely needed and when it is it’s not polluting your component’s design
-* Uniformity of markup because custom components will have the same declarative style as standard ones, e.g. <loader disabled> and <button disabled>
-* Using tags and attributes is officially supported, it’s how custom HTML is supposed to be done
+* Custom tags have strong semantic meaning and are easily identifiable vs. div/span with classes
+* The class attribute is still usable and when it is used it’s not polluting your component’s API
+* Uniformity of markup because custom components use tags and attributes just like standard HTML elements
+* Using custom tags and attributes is officially supported! This is how custom HTML is supposed to be done
 * Doing so sets you up for future improvements. Let’s get into that now
 
 Creating and sharing custom components is a commitment. Your components will evolve and have new capabilities added to them over time just like the standard ones. Let’s look at the possible evolution of a custom Alert (aka Callout) component:
