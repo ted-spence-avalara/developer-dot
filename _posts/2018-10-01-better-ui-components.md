@@ -114,48 +114,52 @@ Here’s some others:
 
 Are you starting to see the difference? Do you sense the benefits? Designing UI components with tags and attributes is fun! But it’s also better. It’s objectively better:
 
-Enables UI engineers to think in terms of components with high-level APIs rather than dumb elements with a list of classes
-No more OOCSS, BEM, or similar attempts to engineer around the problems with class-based design
-Avoids meaningless boilerplate tags in your code
-The class attribute is rarely needed and when it is it’s not polluting your component’s design
-Uniformity of markup because custom components will have the same declarative style as standard ones, e.g. <loader disabled> and <button disabled>
-Using tags and attributes is officially supported, it’s how custom HTML is supposed to be done
-Doing so sets you up for future improvements. Let’s get into that now
+* Enables UI engineers to think in terms of components with high-level APIs rather than dumb elements with a list of classes
+* No more OOCSS, BEM, or similar attempts to engineer around the problems with class-based design
+* Avoids meaningless boilerplate tags in your code
+* The class attribute is rarely needed and when it is it’s not polluting your component’s design
+* Uniformity of markup because custom components will have the same declarative style as standard ones, e.g. <loader disabled> and <button disabled>
+* Using tags and attributes is officially supported, it’s how custom HTML is supposed to be done
+* Doing so sets you up for future improvements. Let’s get into that now
 
-Creating and sharing custom components is a commitment. Your components will evolve and have new capabilities added to them just like the standard ones. Let’s look at the possible evolution of a custom Alert (aka Callout) component:
+Creating and sharing custom components is a commitment. Your components will evolve and have new capabilities added to them over time just like the standard ones. Let’s look at the possible evolution of a custom Alert (aka Callout) component:
 
 Original design:
-```
-<alert type=“success”>
+```html
+<alert type="success">
   <p>You should try this</p>
 </alert>
 ```
 That would look something like:
+
+
 Pretty basic component with a nice little API that uses a custom tag, familiar attribute, and supports nested content. There’s no dependencies here. No magic, no hacks, nothing proprietary, no new idioms, it’s just HTML and CSS that every dev knows and every browser supports. It’s really as if this was a standard element.
 
 It doesn’t offer much though. Let’s see if we can support an icon:
-```
-<alert type=“success”>
-  <icon name=“check”></icon>
+```html
+<alert type="success">
+  <icon name="check"></icon>
   <p>You should try this</p>
 </alert>
 ```
 That works and adds some visual value, but it’s not the right way to design a component. Let’s get an icon without leaving it up to the implementer:
-```
-<alert type=“success”>
+```html
+<alert type="success">
   <p>You should try this</p>
 </alert>
-
-alert[type=“success”]:before {
-   content: “\u555”;
+```
+```css
+alert[type="success"]:before {
+   content: "\u555";
 }
 ```
-Starting to look like something. It’s a pretty common for alerts to disappear automatically, so let’s add support for that with a custom autodismiss attribute.
-
-<alert type=“success” autodismiss>
+Starting to look like something. It's a pretty common for alerts to disappear automatically, so let's add support for that with a custom `autodismiss` attribute.
+```html
+<alert type="success" autodismiss>
   <p>You should try this</p>
 </alert> 
-
+```
+```css
 alert {
      transition: opacity 2s 4s ease-in-out;
      opacity: 1; 
@@ -164,7 +168,7 @@ alert {
 alert[autodismiss] {
     opacity: 0; 
 }
-
+```
 Not bad. We have a simple Alert component with a nice little API:
 Semantic “alert” tag
 type attribute - required - Sets the type of Alert. Types include “info”, “success”, “warn”, and “error”
