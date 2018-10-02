@@ -204,7 +204,7 @@ or maybe just
   <p>You should try this</p>
 </b-alert>
 ```
-Anyway, back to `autodismiss`. Supporting a value of seconds now requires the use of JavaScript. At this point most people go for flavor-of-the-day and write tens, even hundreds, of lines of code following whatever framework idioms and special syntax is required. That's not a problem if you're a tiny team with one app, but if you have lots of consumers of your Alert you're entering into a code contract, and the less that contract asks of the implementer the better. If we built our Alert in React for example, we would require:
+Anyway, back to `autodismiss`. Supporting a value of seconds now requires the use of JavaScript. At this point most people go for the flavor-of-the-day proceed to write tens, even hundreds, of lines of code following whatever framework idioms and special syntax is required. That's not a problem if you're a tiny team with one app, but if you have lots of consumers of your Alert you're entering into a code contract, and the less that contract asks of the implementer the better. If we built our Alert in React for example, we would require:
 * A 32kb download of React added to their site
 * Continued updates of that dependency
 * Learn React's idioms
@@ -212,4 +212,4 @@ Anyway, back to `autodismiss`. Supporting a value of seconds now requires the us
 * Set up a build pipeline which in this case just about has to be Babel plus Webpack
 * A legacy mess to refactor once React and JSX are no longer popular
 
-The same is true for any JavaScript library.
+To some degree the same is true for any JavaScript library. But we can minimize that and be better positioned for the long-term if we pick something that follows, or stays close to, Custom Elements. Here's how it could play out...
