@@ -36,9 +36,9 @@ Those are fine. They all use classes and there is nothing wrong with that, altho
 
 #### 2) Mixed in with other classes and the loss of clarity when the following inevitably happens (or the ongoing effort required to prevent/fix it):
 ```html
-<i class=“icon icon-phone”></i> <-- original
-<i class=“icon icon-phone foo”></i> <-- six weeks later
-<i class=“bar baz icon icon-phone foo”></i> <-- a year later
+<i class="icon icon-phone"></i>  original
+<i class=“icon icon-phone foo”></i>  six weeks later
+<i class=“bar baz icon icon-phone foo”></i>  a year later
 ```
 #### 3) The tag is unavoidable boilerplate that has no meaning:
 ```html
@@ -46,7 +46,7 @@ Those are fine. They all use classes and there is nothing wrong with that, altho
 <div class=“icon icon-phone”></div>
 <span class=“icon icon-phone”></span>
 ```
-The code looks like a span that's been dressed in icon clothes rather than a true icon.
+The code looks i/div/span being dressed up in icon clothes rather than a true icon.
 #### 4) Sitting next to standard elements the class-based approach just looks out of place, it lacks uniformity:
 ```html
 <i class="icon icon-phone"></i>
