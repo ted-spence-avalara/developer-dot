@@ -86,9 +86,9 @@ Becomes:
 ```html
 <badge count="1" status="success"></badge>
 ```
-With just CSS we can make a Badge with a zero count, `badge[count="0"]`, or no count at all, `badge[count=""]`, hidden. That's cool!
+With just CSS we can add a bit of intelligence to Badge so that when it has a zero count, `badge[count="0"]`, or no count at all, `badge[count=""]`, it's hidden. That's cool!
 
-Here’s some others:
+Here’s some other interesting components that use custom tags and attributes instead of classes:
 ```html
 <loader loading></loader>
 
@@ -96,15 +96,6 @@ Here’s some others:
   <col span="6" hide="sm">...</col>
   <col span="6 sm-12">...</col>
 </row>
-
-<card>
-  <card-feature>
-    <img> or <video>
-  </card-feature>
-  <card-body>
-    <p></p>
-  </card-body>
-</card>
 ```
 
 Are you starting to see the difference? Do you sense the benefits? Designing UI components with tags and attributes is fun! But it’s also better. It’s objectively better:
@@ -178,9 +169,9 @@ Although we aren't technically creating Custom Elements (more on that in a minut
 
 Prefixing is a best-practice. It solves the risk of colliding tags, it's a helpful distinguisher between standard and custom tags, and it sets you up very nicely for when JavaScript-enabled functionality is required. This custom tag approach, unlike many JavaScript libraries, scales in both directions: you can scale down to simple HTML and CSS-only components or all the way up to interactive components that respond to state changes _while maintaining the same uniform HTML interface_.
 
-Let’s see how our Alert can go from basic custom tag to interactive component without breaking changes or a shifting paradigm.
+Let's see how our Alert can go from basic custom tag to interactive component without breaking changes or a shifting paradigm.
 
-In Alert 2.0 we're adding the ability to customize the `autodismiss` duration. So, you can take the default four seconds by simple adding the attribute, or you can shorten or extend that duration by setting it's value to a number of seconds:
+In a future release of Alert we're adding the ability to customize the `autodismiss` duration. You can take the default four seconds by simply adding the attribute, or you can shorten or extend that duration by setting it's value to a number of seconds:
 
 <alert type="success" autodismiss="10">
   <p>You should try this</p>
@@ -210,3 +201,11 @@ or maybe just
   <p>You should try this</p>
 </b-alert>
 ```
+Anyway, back to `autodismiss`. Supporting a value of seconds now requires the use of JavaScript. At this point most people go for flavor-of-the-day and write tens, even hundreds, of lines of code following whatever framework idioms and special syntax is required. That's not a problem in itself, but if we have consumers of our Alert we're entering into a code contract, and the less that contract asks of the implementer the better. If we built our Alert in React, we would require:
+* A 32kb download of React added to their site
+* Continued updates of that dependency
+* Learn React's idioms
+* Learn JSX all its funny gotchas and then write your markup in JSX
+* Set up a build pipeline which in this case just about has to be Babel plus Webpack
+* A legacy mess to refactor once React and JSX are no longer popular
+
