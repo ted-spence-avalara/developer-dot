@@ -60,7 +60,9 @@ What if standard elements were based on that same approach:
 Gross! We would laugh at code like that, but that’s how we do our custom stuff. 
 
 We don’t have to use classes when building UI. There’s a better way. We can design and construct our custom components with the same semantic and declarative API as standard elements. Here’s what I mean:
-`<i class="icon icon-phone"></i>` becomes `<icon name="phone"></icon>`
+```html
+<i class="icon icon-phone"></i> becomes <icon name="phone"></icon>
+```
 That code is 100% compatible with all browsers. It can be authored, downloaded, and parsed just like any “real” HTML because it is. Sure, it’s not a standard element and browsers won’t have any default styles that match of course, but this is not a problem at all. You can write CSS that applies to `icon` just like you do for any of the standard tags and attributes:
 ```css
 icon {
