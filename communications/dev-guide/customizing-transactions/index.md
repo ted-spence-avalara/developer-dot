@@ -10,7 +10,7 @@ disqus: 0
 
 Transactions can be customized in many different ways.  This chapter will detail different aspects of customization.
 
-The first topic will be how and why to use client profiles.  Then we will move to customization files - such as overrides, exclusions, and expemptions - versus setting an exclusion or other customization within a transcation.  Finallay, we will focus on a number of scenarios.
+The first topic will be how and why to use client profiles.  Then we will move to account customizations, including customization files and AFC tax engine configuration settings.  Finallay, we will focus on a number of scenarios to help understand how a REST v2 <code>CalcTaxes</code> call can be customized.
 
 
 <ul class="pager">

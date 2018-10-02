@@ -43,10 +43,10 @@ There are two ways to send send a transaction to AFC Rest v2 without a client pr
   <li>Set <code>client_profile_id</code> to 0 in the <a href="/communications/dev-guide/getting-started/authentication/">header</a></li>
 </ul> 
 
-<h3>How to request a client profile be applied</h3>
+<h3>How to request a new client profile or changes to an existing client profile</h3>
 Contact <a href="mailto:CommunicationSupport@avalara.com">CommunicationSupport@avalara.com</a> to request a new client profile for your account.
 <ul class="dev-guide-list">
-  <li>Request the configuration changes required and any overrides, exclusions, exemptions, or bundles needed.  If you have <a href="/communications/dev-guide/customizing-transactions/account-customizations/">customizaton files</a> already, attach those files to the email.</li>
+  <li>Request the configuration changes required and any overrides, exclusions, exemptions, or bundles needed.  If you already have <a href="/communications/dev-guide/customizing-transactions/account-customizations/">customizaton files</a>, attach those files to the email.</li>
   <li>Include instructions as to whether the files should be applied to the UA, PROD or both environments</li>
   <li>If changes are needed to an existing client profile, include the <code>client_profile_id</code> to be updated</li>
   <li>Once applied, the account could take up to 24 hours to refresh with the new changes</li>
