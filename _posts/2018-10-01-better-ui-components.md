@@ -47,15 +47,20 @@ Those are fine. They all use classes and there is nothing wrong with that, altho
 <span class="icon icon-phone"></span>
 ```
 The code looks like spans are being dressed up in icon clothes rather than looking like true icons.
-#### 4) Sitting next to standard elements the class-based approach just looks out of place, it lacks uniformity:
+#### 4) Sitting next to standard elements the class-based approach looks out of place; it lacks uniformity:
 ```html
 <i class="icon icon-phone"></i>
 <input type="email" autofocus>
 ```
 What if all the standard elements were based on that same approach:
 ```html
-<div class=“input input-email input-placeholder--name@example.com input-autofocus”>
-<span class=“anchor anchor-href--example.com”>
+<input type="email" placeholder="name@example.com" autofocus>
+<a href="example.com">
+```
+vs.
+```html
+<div class="input input-email input-placeholder--name@example.com input-autofocus">
+<span class="anchor anchor-href--example.com">
 ```
 Gross! We would laugh at code like that, but that’s what we do for our custom stuff. We don’t have to use classes when building UI components. There’s a better way. We can design and construct our custom components with the same semantic and declarative API as standard elements. Here’s what I mean:
 ```html
