@@ -94,7 +94,7 @@ Becomes:
 With just CSS we can make a Badge with a zero count, `badge[count="0"]`, or no count at all, `badge[count=""]`, hidden. That's cool!
 
 Here’s some others:
-```
+```html
 <loader loading></loader>
 
 <row>
