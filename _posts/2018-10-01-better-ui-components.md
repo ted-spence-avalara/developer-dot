@@ -86,9 +86,9 @@ becomes
 ```html
 <badge count="1" type="success"></badge>
 ```
-The second one is clearly a Badge with it's own attributes, just like real elements. And with a little CSS we can add some intelligence to Badge so that when it has a zero count, i.e. `badge[count="0"] { display: none }`, or no count at all, it's hidden. Cool!
+The second one is clearly a Badge with it's own attributes, just like real elements. And with a little CSS we can add some intelligence to Badge so that when it has a zero count or no count it's hidden, i.e. `badge[count="0"], badge[count=""] { display: none }`. Cool!
 
-Here's some other interesting components that use custom tags and attributes instead of classes:
+Here's some other examples of components built with custom tags and attributes instead of classes:
 ```html
 <loader loading></loader>
 
