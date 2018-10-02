@@ -32,13 +32,13 @@ Because HTML doesn’t give us an `icon` tag to markup our site's icons, we have
 Those are fine. They all use classes and there is nothing wrong with that, although the use of the `<i>` tag is not semantic and a bit hacky, but I do like how short it is. Here’s what I don’t like:
 
 #### 1) Repetitive naming:
-`fa`, `icon`, and `oi` 
+`fa`, `icon`, and `oi` are repeated twice.
 
-#### 2) Mixed in with other classes and the loss of clarity when this inevitably happens (or the ongoing effort required to prevent/fix it):
+#### 2) Mixed in with other classes and the loss of clarity when the following inevitably happens (or the ongoing effort required to prevent/fix it):
 ```html
-<i class=“icon icon-phone”></i> (original)
-<i class=“icon icon-phone foo”></i> (six weeks later)
-<i class=“bar baz icon icon-phone foo”></i> (a year later)
+<i class=“icon icon-phone”></i> <-- original
+<i class=“icon icon-phone foo”></i> <-- six weeks later
+<i class=“bar baz icon icon-phone foo”></i> <-- a year later
 ```
 #### 3) The tag is unavoidable boilerplate that has no meaning:
 ```html
