@@ -12,7 +12,7 @@ As a reminder, HTML’s job is to give content structure and meaning. This is ca
 ```html
 <h1>
 
-<a href="" download>
+<a href="example.com" download>
 
 <input type="email" placeholder="name@example.com" autofocus>
 
@@ -29,16 +29,16 @@ Because HTML doesn’t give us an `icon` tag to markup our site's icons, we have
 
 <span class="oi oi-phone"></span>
 ```
-Those are fine. They all use classes and there is nothing wrong with that, although the use of the `<i>` tag is not semantic and a bit hacky, but I do like how short it is. Here’s what I don’t like:
+Those are fine. They all use classes and there is nothing wrong with that, although the use of the `<i>` tag is not semantic, but I do like how short it is. Here’s what I don’t like:
 
 #### 1) Repetitive naming:
 `fa`, `icon`, and `oi` are repeated twice.
 
-#### 2) Mixed in with other classes and the loss of clarity when the following inevitably happens (or the ongoing effort required to prevent/fix it):
+#### 2) Class lists mixed in with other classes and the resulting loss of clarity when the following inevitably happens (or the extra effort required to prevent it):
 ```html
-<i class="icon icon-phone"></i>  original
-<i class=“icon icon-phone foo”></i>  six weeks later
-<i class=“bar baz icon icon-phone foo”></i>  a year later
+<i class="icon icon-phone"></i>  original code
+<i class="icon icon-phone foo"></i>  six weeks later
+<i class="bar baz icon icon-phone foo"></i>  a year later
 ```
 #### 3) The tag has become unavoidable boilerplate with no meaning:
 ```html
