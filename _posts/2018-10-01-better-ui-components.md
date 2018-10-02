@@ -128,16 +128,16 @@ Original design:
 That would look something like:
 
 
-Pretty basic component with a nice little API that uses a custom tag, familiar attribute, and supports nested content. There’s no dependencies here. No magic, no hacks, nothing proprietary, no new idioms, it’s just HTML and CSS that every dev knows and every browser supports. It’s really as if this was a standard element.
+Pretty basic component with a nice little API that uses a custom tag, familiar `type` attribute, and naturally supports nested content. There are no dependencies here. No magic, no hacks, nothing proprietary, no new idioms, it's just HTML and CSS that every dev knows and every browser supports. It's really as if this was a standard element.
 
-It doesn’t offer much though. Let’s see if we can support an icon:
+It doesn't offer much though, so let’s see if we can support an icon:
 ```html
 <alert type="success">
   <icon name="check"></icon>
   <p>You should try this</p>
 </alert>
 ```
-That works and adds some visual value, but it’s not the right way to design a component. Let’s get an icon without leaving it up to the implementer:
+That works and adds some visual value, but it's not the right way to design a component. Let’s get an icon without leaving it up to the implementer:
 ```html
 <alert type="success">
   <p>You should try this</p>
@@ -148,7 +148,7 @@ alert[type="success"]:before {
    content: "\u555";
 }
 ```
-Starting to look like something. It's a pretty common for alerts to disappear automatically, so let's add support for that with a custom `autodismiss` attribute.
+Starting to look like something. It's a pretty common for alerts to disappear automatically, so let's add support for that. If this were a standard element I would guess it'd have an `autodismiss` attribute for this.
 ```html
 <alert type="success" autodismiss>
   <p>You should try this</p>
@@ -165,48 +165,48 @@ alert[autodismiss] {
 }
 ```
 Not bad. We have a simple Alert component with a nice little API:
-Semantic “alert” tag
-type attribute - required - Sets the type of Alert. Types include “info”, “success”, “warn”, and “error”
-autodismiss attribute - optional - If present, the Alert will disappear after four seconds
+* Semantic `alert` tag
+* `type` attribute - required - Sets the type of Alert. Types include "info", "success", "warn", and "error"
+* `autodismiss` attribute - optional - If present, the Alert will disappear after four seconds
+* You can nest content inside it, including other custom HTML
 
-And because it’s HTML you can nest content inside it, including other custom HTML, or nest it inside something else. 
+There is a small problem though. The problem is our tag name is not totally future-proof. There's two considerations here:
 
-There is a small problem though. The problem is our tag names are not totally future-proof. There’s two considerations here:
-The first is one day HTML might introduce tags with the same names. I pray every night before bed that whatwg will give us icon. If whatwg doesn’t, it’s still possible some other developer will. Either way there’s risk of a collision and this brings us to prefixing. 
+The first is that some day HTML might get a tag with the same name. I pray every night before bed that whatwg will give us `icon`. If whatwg doesn’t, it’s still possible some other developer will. Either way there's risk of a collision and this brings us to prefixing. 
 
-Although we aren’t technically creating Custom Elements (more on that in a minute), it’s best practice to use a prefix for custom tags. At Avalara we use s- as our prefix. The s means a lot of things. It’s short for Skylab, which is the name of our design system. But it also stands for Seattle, which is where we are; standards, because we go for standards until we actually need to introduce a dependency; semantic, because tags and attributes are and classes just can’t compare; small, because HTML and CSS can take you very far without needing to bring in something like React; and shared, because we have over 20 web apps and three times as many developers that need a common design system.
+Although we aren't technically creating Custom Elements (more on that in a minute), it’s best practice to use a prefix for custom tags. At Avalara we use `s-` as our prefix. The `s` means a lot of things. It's short for Skylab, which is the name of our design system. But it also stands for Seattle - that's where we are, standards - we go for standards until we actually need to bring in a dependency, semantic - tags with attributes are much more semantic than a span with a class list, small - HTML and a little CSS can take you very far without the need for something like React, and shared - we have over 20 web apps and three times as many developers that need a common system for implementing user interfaces.
 
-Prefixing solves the risk of colliding tags, is a helpful distinguisher between standard and custom tags, and sets you up very nicely for when JavaScript-enabled functionality is required. The custom tag approach scales in both directions - you can scale down to simple HTML and CSS only components or all the way up to interactive components that respond to state changes and if you chose something that respects web standards, i.e. Custom Elements, you get to preserve the same uniform API as all the standard HTML elements.
+Prefixing is a best-practice. It solves the risk of colliding tags, it's a helpful distinguisher between standard and custom tags, and it sets you up very nicely for when JavaScript-enabled functionality is required. This custom tag approach, unlike many JavaScript libraries, scales in both directions: you can scale down to simple HTML and CSS-only components or all the way up to interactive components that respond to state changes _while maintaining the same uniform HTML interface_.
 
-Let’s see how our Alert can go from basic custom tag to interactive component without breaking changes or shifting paradigm.
+Let’s see how our Alert can go from basic custom tag to interactive component without breaking changes or a shifting paradigm.
 
-In Alert 2.0 we’re adding the ability to set autodismiss to a custom duration. So you can take the default four seconds by adding the attribute, or you can shorten or extend that duration by setting it’s value to a number of seconds:
+In Alert 2.0 we're adding the ability to customize the `autodismiss` duration. So, you can take the default four seconds by simple adding the attribute, or you can shorten or extend that duration by setting it's value to a number of seconds:
 
-<alert type=“success” autodismiss=“10">
+<alert type="success" autodismiss="10">
   <p>You should try this</p>
 </alert>
 
-But as we’ve learned, it’s best-practice to prefix, so that really should be:
+But as we’ve learned, it's best-practice to prefix, so that really should be:
 ```html
-<s-alert type=“success” autodismiss>
+<s-alert type="success" autodismiss="10">
   <p>You should try this</p>
 </s-alert>
 ```
-If you’re the maintainer of a shared library, pick a short prefix that’s meaningful to you. Twitter’s Bootstrap, for example, would go from:
+If you're the maintainer of a shared library, pick a short prefix that's meaningful to you. Twitter's Bootstrap, for example, would go from:
 ```html
 <div class="alert alert-success">
   <p>You should try this</p>
 </div>
 ```
-To:
+to
 ```html
-<twbs-alert type=“success” >
+<twbs-alert type="success">
   <p>You should try this</p>
 </twbs-alert>
 ```
-Or maybe just:
+or maybe just
 ```html
-<b-alert type=“success” >
+<b-alert type="success">
   <p>You should try this</p>
 </b-alert>
 ```
