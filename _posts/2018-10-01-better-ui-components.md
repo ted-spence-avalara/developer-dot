@@ -62,13 +62,15 @@ vs.
 <div class="input input-email input-placeholder--name@example.com input-autofocus">
 <span class="anchor anchor-href--example.com">
 ```
-Gross! We would laugh at code like that, but that’s what we do for our custom stuff. We don’t have to use classes when building UI components. There’s a better way. We can design and construct our custom components with the same semantic and declarative API as standard elements. Here’s what I mean:
+Gross! We would laugh at code like that, but that’s what we do for our custom stuff. 
+
+We don’t have to use classes when building UI components. There’s a better way. We can design and construct our custom components with the same semantic and declarative API as standard elements. Here’s what I mean:
 ```html
-<i class="icon icon-phone">
+<i class="icon icon-phone"></i>
 ```
 Becomes:
 ```html
-<icon name=“phone”>
+<icon name="phone"></icon>
 ```
 That code is 100% compatible with all browsers. It can be authored, downloaded, and parsed just like any “real” HTML because it is. Sure, it’s not a standard element and browsers won’t have any default styles that match of course, but this is not a problem at all. You can write CSS that applies to icon just as well as any of the standard tags and attributes:
 ```css
