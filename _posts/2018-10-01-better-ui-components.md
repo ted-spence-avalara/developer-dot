@@ -172,11 +172,11 @@ Prefixing is a best-practice. It solves the risk of colliding tags, it's a helpf
 Let's see how our Alert can go from basic custom tag to interactive component without breaking changes or a shifting paradigm.
 
 In a future release of Alert we're adding the ability to customize the `autodismiss` duration. You can take the default four seconds by simply adding the attribute, or you can shorten or extend that duration by setting it's value to a number of seconds:
-
+```html
 <alert type="success" autodismiss="10">
   <p>You should try this</p>
 </alert>
-
+```
 But as we’ve learned, it's best-practice to prefix, so that really should be:
 ```html
 <s-alert type="success" autodismiss="10">
