@@ -40,7 +40,7 @@ Those are fine. They all use classes and there is nothing wrong with that, altho
 <i class=“icon icon-phone foo”></i>  six weeks later
 <i class=“bar baz icon icon-phone foo”></i>  a year later
 ```
-#### 3) The tag is unavoidable boilerplate that has no meaning:
+#### 3) The tag has become unavoidable boilerplate with no meaning:
 ```html
 <i class="icon icon-phone"></i>
 <div class="icon icon-phone"></div>
