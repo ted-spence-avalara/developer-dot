@@ -7,7 +7,7 @@ How did we miss it? It was right there this whole time and nobody, not for the 1
 What I’m talking about is a user interface technology that is so good it already has 100% developer adoption. It is also totally compatible with _all_ browsers and existing tools, it has no dependencies, is very well-documented and is very easy to learn. It’s so good it’s an open web standard. The technology of course is none other than HTML and we’ve ignored its power to enable us to design, construct, and implement better UI components. Let me explain.
 
 ### HTML your way
-As a reminder, HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements, and new attributes for their many features, to provide semantic support for content like `<video>` and `<article>`. Over the years it's also added improved capabilities for existing elements like the `autofocus` attribute, which tells the browser where to focus on page load. These new additions were built with the HTML constructs that already existed and no doubt will continue to exist, those are: *tags*, *attributes*, and *nesting*. Class is an attribute whose value is arbitray and 100% user-defined, so that's why we never have or ever will see "new" HTML classes in the spec. Here’s some examples of standard HTML elements and their semantic, declarative API:
+As a reminder, HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements to provide semantic support for content like `<video>` and `<article>`. Over the years it's also added improved capabilities for existing elements like the addition of the `autofocus` attribute, which tells the browser where to focus on page load. These additions were built with the HTML constructs that already existed and no doubt will continue to exist, those are: *tags*, *attributes*, and *nesting*. Class is an attribute whose value is arbitray and 100% user-defined, so that's why we never have or ever will see "new" HTML classes in the spec. Tags and attributes, yes, but no classes. Here are some examples of standard HTML elements and their semantic, declarative API:
 
 ```html
 <h1>
@@ -18,9 +18,9 @@ As a reminder, HTML’s job is to give content structure and meaning. This is ca
 
 <video src="example.com/vids/cats.mp4" poster="example.com/posters/cats.jpg" autoplay loop controls>
 ```
-HTML gives us a lot to work with. More than we give it credit for and for the things it doesn't, it gives us control to do it ourselves. And that’s where we went wrong. Let’s use icons as a quick example.
+HTML gives us a lot to work with. More than we give it credit for and for the things it doesn't, it gives us control to do it ourselves. And that’s where we went wrong. Let's use icons as a quick example.
 
-Because HTML doesn’t give us an `icon` tag to markup our site's icons, we have to design and construct our own solution. Many similar approaches exist. Here’s three (you'll likely recognize them):
+Because HTML doesn't give us an `icon` tag to markup our site's icons, we have to design and construct our own solution. Many similar approaches exist. Here's three (you'll likely recognize them):
 
 ```html
 <i class="fas fa-phone"></i>
@@ -29,7 +29,7 @@ Because HTML doesn’t give us an `icon` tag to markup our site's icons, we have
 
 <span class="oi oi-phone"></span>
 ```
-Those are fine. They all use classes and there is nothing wrong with that, although the use of the `<i>` tag is not semantic, but I do like how short it is. Here’s what I don’t like:
+Those are fine. They all use classes and there is nothing wrong with that, although the use of the `<i>` tag is not semantic, but I do like how short it is. Here's what I don’t like:
 
 #### 1) Repetitive naming:
 `fa`, `icon`, and `oi` are repeated twice.
@@ -59,6 +59,7 @@ What if standard elements were based on that same approach:
 ```
 Gross! We would laugh at code like that, but that’s how we do our custom stuff. 
 
+### A better way
 We don’t have to use classes when building UI. There’s a better way. We can design and construct our custom components with the same semantic and declarative API as standard elements. Here’s what I mean:
 ```html
 <i class="icon icon-phone"></i>
@@ -67,7 +68,7 @@ becomes
 ```html
 <icon name="phone"></icon>
 ```
-That code is 100% compatible with all browsers. It can be authored, downloaded, and parsed just like any “real” HTML because it is. Sure, it’s not a standard element and browsers won’t have any default styles that match of course, but this is not a problem at all. You can write CSS that applies to `icon` just like you do for any of the standard tags and attributes:
+That code is 100% compatible with all browsers. It can be authored, downloaded, and parsed just like any "real" HTML because it is. Sure, it's not a standard element and browsers won't have any default styles that match of course, but this is not a problem at all. You can write CSS that applies to `icon` just like you do for any of the standard tags and attributes:
 ```css
 icon {
   font-family: ‘My Icons’;
@@ -77,20 +78,21 @@ icon[name="phone"]:before {
   content: "\u123";
 }
 ```
-Let’s take it up a notch:
+Let's take it up a notch:
 ```html
 <span class="badge badge-success">1</span>
 ```
-
-Becomes:
+becomes
 ```html
 <badge count="1" status="success"></badge>
 ```
-With just CSS we can add a bit of intelligence to Badge so that when it has a zero count, `badge[count="0"]`, or no count at all, `badge[count=""]`, it's hidden. That's cool!
+With just CSS we can add a bit of intelligence to Badge so that when it has a zero count, `badge[count="0"]`, or no count at all, `badge[count=""]`, it's hidden. Cool!
 
-Here’s some other interesting components that use custom tags and attributes instead of classes:
+Here's some other interesting components that use custom tags and attributes instead of classes:
 ```html
 <loader loading></loader>
+
+<alert type="success">...</alert>
 
 <row>
   <col span="6" hide="sm">...</col>
@@ -108,7 +110,7 @@ Are you starting to see the difference? Do you sense the benefits? Designing UI 
 * Using custom tags and attributes is officially supported! This is how custom HTML is supposed to be done
 * Doing so sets you up for future improvements. Let’s get into that now
 
-Creating and sharing custom components is a commitment. Your components will evolve and have new capabilities added to them over time just like the standard ones. Let’s look at the possible evolution of a custom Alert (aka Callout) component:
+Creating and sharing custom components is a commitment. Your components will evolve and have new capabilities added to them over time just like the standard ones. Let's look at the possible evolution of a custom Alert component (aka Callout):
 
 Original design:
 ```html
@@ -118,6 +120,7 @@ Original design:
 ```
 That would look something like:
 
+image...
 
 Pretty basic component with a nice little API that uses a custom tag, familiar `type` attribute, and naturally supports nested content. There are no dependencies here. No magic, no hacks, nothing proprietary, no new idioms, it's just HTML and CSS that every dev knows and every browser supports. It's really as if this was a standard element.
 
@@ -128,7 +131,7 @@ It doesn't offer much though, so let’s see if we can support an icon:
   <p>You should try this</p>
 </alert>
 ```
-That works and adds some visual value, but it's not the right way to design a component. Let’s get an icon without leaving it up to the implementer:
+That works and adds some visual value, but it's not the right way to design a component. Let's get an icon without leaving it up to the implementer:
 ```html
 <alert type="success">
   <p>You should try this</p>
@@ -139,7 +142,7 @@ alert[type="success"]:before {
    content: "\u555";
 }
 ```
-Starting to look like something. It's a pretty common for alerts to disappear automatically, so let's add support for that. If this were a standard element I would guess it'd have an `autodismiss` attribute for this.
+Starting to look like something. It's pretty common for alerts to disappear automatically, so let's add support for that. If this were a standard element I would guess it'd have an `autodismiss` attribute for this, so let's give it one:
 ```html
 <alert type="success" autodismiss>
   <p>You should try this</p>
@@ -163,9 +166,9 @@ Not bad. We have a simple Alert component with a nice little API:
 
 There is a small problem though. The problem is our tag name is not totally future-proof. There's two considerations here:
 
-The first is that some day HTML might get a tag with the same name. I pray every night before bed that whatwg will give us `icon`. If whatwg doesn’t, it’s still possible some other developer will. Either way there's risk of a collision and this brings us to prefixing. 
+The first is that some day HTML might get a tag with the same name. I pray every night before bed that whatwg will give us `icon`. If whatwg doesn't, it's still possible some other developer will. Either way there's risk of a collision and this brings us to the second consideration: prefixing. 
 
-Although we aren't technically creating Custom Elements (more on that in a minute), it’s best practice to use a prefix for custom tags. At Avalara we use `s-` as our prefix. The `s` means a lot of things. It's short for Skylab, which is the name of our design system. But it also stands for Seattle - that's where we are, standards - we go for standards until we actually need to bring in a dependency, semantic - tags with attributes are much more semantic than a span with a class list, small - HTML and a little CSS can take you very far without the need for something like React, and shared - we have over 20 web apps and three times as many developers that need a common system for implementing user interfaces.
+Although we aren't technically creating Custom Elements (more on that in a minute), it's best practice to use a prefix for custom tags. At Avalara we use `s-` as our prefix. The `s` means a lot of things. It's short for Skylab, which is the name of our design system. But it also stands for Seattle - that's where we are, standards - we go for standards until we actually need to bring in a dependency, semantic - tags with attributes are much more semantic than a span with a class list, small - HTML and a little CSS can take you very far without the need for something like React, and shared - we have over 20 web apps and three times as many developers that need a common system for implementing user interfaces.
 
 Prefixing is a best-practice. It solves the risk of colliding tags, it's a helpful distinguisher between standard and custom tags, and it sets you up very nicely for when JavaScript-enabled functionality is required. This custom tag approach, unlike many JavaScript libraries, scales in both directions: you can scale down to simple HTML and CSS-only components or all the way up to interactive components that respond to state changes _while maintaining the same uniform HTML interface_.
 
@@ -201,7 +204,7 @@ or maybe just
   <p>You should try this</p>
 </b-alert>
 ```
-Anyway, back to `autodismiss`. Supporting a value of seconds now requires the use of JavaScript. At this point most people go for flavor-of-the-day and write tens, even hundreds, of lines of code following whatever framework idioms and special syntax is required. That's not a problem in itself, but if we have consumers of our Alert we're entering into a code contract, and the less that contract asks of the implementer the better. If we built our Alert in React, we would require:
+Anyway, back to `autodismiss`. Supporting a value of seconds now requires the use of JavaScript. At this point most people go for flavor-of-the-day and write tens, even hundreds, of lines of code following whatever framework idioms and special syntax is required. That's not a problem if you're a tiny team with one app, but if you have lots of consumers of your Alert you're entering into a code contract, and the less that contract asks of the implementer the better. If we built our Alert in React for example, we would require:
 * A 32kb download of React added to their site
 * Continued updates of that dependency
 * Learn React's idioms
@@ -209,3 +212,4 @@ Anyway, back to `autodismiss`. Supporting a value of seconds now requires the us
 * Set up a build pipeline which in this case just about has to be Babel plus Webpack
 * A legacy mess to refactor once React and JSX are no longer popular
 
+The same is true for any JavaScript library.
