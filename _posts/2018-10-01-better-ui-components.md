@@ -46,6 +46,7 @@ Those are fine. They all use classes and there is nothing wrong with that, altho
 <div class=“icon icon-phone”></div>
 <span class=“icon icon-phone”></span>
 ```
+The code looks like a span that's been dressed in icon clothes rather than a true icon.
 #### 4) Sitting next to standard elements the class-based approach just looks out of place, it lacks uniformity:
 ```html
 <i class="icon icon-phone"></i>
