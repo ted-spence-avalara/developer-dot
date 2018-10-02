@@ -7,19 +7,7 @@ doctype: use_cases
 
 
 <script type='text/javascript'>
-    var map;
-    // function GetMap(lat, long) {
-    //     if(lat == null || long == null) {
-    //         lat = 33.6846603698176;
-    //         long = -117.850629887389;
-    //     }
-    //     var location  = new Microsoft.Maps.Location(lat, long);
-        
-    //     map = new Microsoft.Maps.Map('#myMap', {center: location});
-    //     var layer = new Microsoft.Maps.Layer("MyPushpinLayer1");
-    //     layer.add(new Microsoft.Maps.Pushpin(location));
-    //     map.layers.insert(layer);
-    // }
+    var map;   
 
     const infoboxTemplate = `
         <div class="demo-infobox">
@@ -43,14 +31,15 @@ doctype: use_cases
 
     function GetMapWithLine(destLat, destLong, srcLat, srcLong) { 
         let center;
+        let destLocation;
 
-        
+        //Default map
         if(destLat == null || destLong == null) { 
             // destLat = 33.6846603698176; 
             // destLong = -117.850629887389; 
             map = new Microsoft.Maps.Map('#myMap', {zoom: 0}); 
             center = map.getCenter();
-            displayToolTip(center);
+            //displayToolTip(center);
             return;
         }  
         
@@ -58,25 +47,29 @@ doctype: use_cases
 
         //Single location layer (pushpin) 
         if(srcLat == null || srcLong == null) { 
-            var location  = new Microsoft.Maps.Location(destLat, destLong);         
-            map = new Microsoft.Maps.Map('#myMap', {center: location}); 
+            destLocation  = new Microsoft.Maps.Location(destLat, destLong);         
+            map = new Microsoft.Maps.Map('#myMap', {center: destLocation}); 
             var layer = new Microsoft.Maps.Layer("MyPushpinLayer1");
-            layer.add(new Microsoft.Maps.Pushpin(location));
-            map.layers.insert(layer);
+            layer.add(new Microsoft.Maps.Pushpin(destLocation));
+            map.entities.push(layer);
             center = map.getCenter();
-            displayToolTip(center);
+            //displayToolTip(center);
 
             //Exit out since it is a single location.
             return; 
         }
 
         //Source and destination layer (polyline) 
-        map = new Microsoft.Maps.Map('#myMap', {});
-        center = map.getCenter();
-        var coords = [center, new Microsoft.Maps.Location(center.latitude + 1, center.longitude + 1)];
+        center = new Microsoft.Maps.Location(Number(destLat) - Number(srcLat), Number(destLong) - Number(srcLong));
+
+        map = new Microsoft.Maps.Map('#myMap', {center: center});
+        let srcLocation = new Microsoft.Maps.Location(srcLat, srcLong);
+        destLocation = new Microsoft.Maps.Location(destLat, destLong);
+        //center = map.getCenter();
+        var coords = [srcLocation, destLocation];
         var line = new Microsoft.Maps.Polyline(coords, {strokeColor: 'orange', strokeThickness: 3});
         map.entities.push(line);
-        displayToolTip(center);
+        // displayToolTip(center);
     } 
 </script>
 <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMapWithLine&key=Ahgp_E6MHtyMYBJPCllMKTwJk7Indytl8hVm-Boe6mbyWbcyZvVBUePMDP5OLeiH' async defer></script>
@@ -274,7 +267,7 @@ doctype: use_cases
                     </form>  
                 </div>
                 <!-- source address-->
-                <!-- <div class="row">
+                <div class="row">
                     <div class="demo-label-container">
                         <span class="demo-shortcut-desc">Step 3: Where are you shipping to?</span>
                         <br>Choose a pre-selected address
@@ -348,9 +341,9 @@ doctype: use_cases
                             <br>
                             <span class="demo-city-zip">Greenwood Village, CO 80111</span>
                         </label>
-                        <br> -->
+                        <br>
                         <!-- international addresses -->
-                        <!-- <label class="demo-label-container">
+                        <label class="demo-label-container">
                             <input name="srcAddress" type="radio" value="3rd Floor Trafalgar Place,Brighton,Brighton and Hove,UK,BN1 4FU" lat="50.828746" long="-0.139584"  class="demo-radio"/> 
                             <span class="demo-label"> Brighton</span>
                             <br>
@@ -391,7 +384,7 @@ doctype: use_cases
                             <span class="demo-city-zip">Grimbergen, BE B-1850</span>
                         </label>
                     </form>
-                </div>  -->
+                </div> 
             </div>
             <!-- end shortcut / start API details  -->
             <div class="col-md-8" id="demo-api-details">
