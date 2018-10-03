@@ -110,7 +110,7 @@ doctype: use_cases
 </div>
 
 <!-- demo container -->
- <div class="row">
+<div class="row">
     <!-- shortcuts container -->
     <div class="col-md-3">
         <div id="demo-shortcuts">
@@ -440,5 +440,5 @@ doctype: use_cases
         <!-- end api details row-->
     </div>
     <!-- end map & api details container-->
- </div>
- <!-- end demo container -->
+</div>
+<!-- end demo container -->
