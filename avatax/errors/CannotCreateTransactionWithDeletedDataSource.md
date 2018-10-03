@@ -1,7 +1,7 @@
 ---
 layout: page
 title: CannotCreateTransactionWithDeletedDataSource
-number: 1104
+number: 1105
 categories: [AvaTax Error Codes]
 disqus: 1
 ---
@@ -19,7 +19,7 @@ The selected DataSource has been deleted and cannot be used for creating a trans
   "details": [
     {
       "code": "CannotCreateTransactionWithDeletedDataSource",
-      "number": 1104,
+      "number": 1105,
       "message": "The DataSource -0- has been deleted",
       "description": "A transaction cannot be created by a deleted datasource.",
       "faultCode": "Client",

@@ -20,8 +20,8 @@ Nexus out of date range with its children.
     {
       "code": "NexusChildDateMismatch",
       "number": 1501,
-      "message": "Nexus out of date range with its children.",
-      "description": "The Nexus for Country: -0-, Region: -1-, JurisCode: -2-, JurisTypeId: -3-, JurisName: -4-, ShortName: -5-, SignatureCode: -6-, StateAssignedNo: -7-, EffectiveDate: -8-, EndDate: -9- has conflicting effective dates with its children.",
+      "message": "To change nexus declarations for a state or country, you must ensure that all city or local nexus declarations are within range.",
+      "description": "Please ensure that the dates for your nexus declaration for the Country: -0-, Region: -1- match with all local jurisdictions within that state or country.  This error occurs when you have a local nexus whose dates fall outside of the boundary EffectiveDate: -8-, EndDate: -9-.",
       "faultCode": "Client",
       "helpLink": "http://developer.avalara.com/avatax/errors/NexusChildDateMismatch",
       "severity": "Error"

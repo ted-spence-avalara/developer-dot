@@ -275,6 +275,26 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>You specified a date outside of the allowable range.</td>
 		</tr>		
         <tr>
+			<td>82</td>
+			<td><a href="RuleMustHaveTaxCode">RuleMustHaveTaxCode</a></td>
+			<td>A tax rule with type ProductTaxabilityRule cannot have a null tax code or be assigned to all tax codes.</td>
+		</tr>		
+        <tr>
+			<td>83</td>
+			<td><a href="RuleTypeRestricted">RuleTypeRestricted</a></td>
+			<td>You attempted to use a restricted tax rule type.</td>
+		</tr>		
+        <tr>
+			<td>84</td>
+			<td><a href="AllJurisRuleLimits">AllJurisRuleLimits</a></td>
+			<td>The field isAllJuris cannot be set to true at this jurisdiction level.</td>
+		</tr>		
+        <tr>
+			<td>85</td>
+			<td><a href="InvalidCompanyLocationSetting">InvalidCompanyLocationSetting</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
 			<td>99</td>
 			<td><a href="InvalidAdjustmentType">InvalidAdjustmentType</a></td>
 			<td>The adjustment type record permits only a specified list of values.</td>
@@ -485,11 +505,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>You declared nexus on a date when that nexus was not available.</td>
 		</tr>		
         <tr>
-			<td>158</td>
-			<td><a href="TechSupportAuditRequired">TechSupportAuditRequired</a></td>
-			<td>To make this API call, you must provide tech support audit requirements.</td>
-		</tr>		
-        <tr>
 			<td>159</td>
 			<td><a href="NexusParentDateMismatch">NexusParentDateMismatch</a></td>
 			<td>You declared nexus on a date when that nexus was not available.</td>
@@ -593,11 +608,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>179</td>
 			<td><a href="ReportNotFinished">ReportNotFinished</a></td>
 			<td>This report is not yet completed.</td>
-		</tr>		
-        <tr>
-			<td>180</td>
-			<td><a href="FailedToUploadReport">FailedToUploadReport</a></td>
-			<td>A server error prevented the report file from being uploaded.</td>
 		</tr>		
         <tr>
 			<td>181</td>
@@ -750,11 +760,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>You attempted to set a date value that must be within a range, but your value was outside of the range.</td>
 		</tr>		
         <tr>
-			<td>253</td>
-			<td><a href="RequestedFileNotExist">RequestedFileNotExist</a></td>
-			<td>The TaxRate content file for the date you specified does not exist.</td>
-		</tr>		
-        <tr>
 			<td>300</td>
 			<td><a href="GetTaxError">GetTaxError</a></td>
 			<td>A problem occurred when you attempted to create a transaction through AvaTax.</td>
@@ -775,19 +780,9 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>When creating transactions, you must at a minimum provide an origin and destination address.</td>
 		</tr>		
         <tr>
-			<td>305</td>
-			<td><a href="InvalidParameter">InvalidParameter</a></td>
-			<td>When adding parameters to your CreateTransactionModel, you must use a valid parameter name.</td>
-		</tr>		
-        <tr>
 			<td>306</td>
 			<td><a href="InvalidParameterValue">InvalidParameterValue</a></td>
 			<td>When adding parameters to your CreateTransactionModel, you must specify a parameter of the correct type.</td>
-		</tr>		
-        <tr>
-			<td>307</td>
-			<td><a href="CompanyCodeConflict">CompanyCodeConflict</a></td>
-			<td>The company code in the URL of your API call did not match the company code of the transaction you uploaded.</td>
 		</tr>		
         <tr>
 			<td>308</td>
@@ -820,11 +815,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>You attempted to lock a transaction (aka Document) that was not committed.</td>
 		</tr>		
         <tr>
-			<td>314</td>
-			<td><a href="MultiDocumentTypesError">MultiDocumentTypesError</a></td>
-			<td>The API you called does not support transaction code overloading.</td>
-		</tr>		
-        <tr>
 			<td>315</td>
 			<td><a href="InvalidDocumentTypesToFetch">InvalidDocumentTypesToFetch</a></td>
 			<td>Temporary documents cannot be fetched from the API.</td>
@@ -848,11 +838,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>319</td>
 			<td><a href="InvalidSubscriptionTypeId">InvalidSubscriptionTypeId</a></td>
 			<td>Invalid subscription TypeId.</td>
-		</tr>		
-        <tr>
-			<td>400</td>
-			<td><a href="BadDocumentFetch">BadDocumentFetch</a></td>
-			<td>This error indicates that you have provided an incorrect "$include" value to the GET /api/v2/companies/{0}/transactions endpoint.</td>
 		</tr>		
         <tr>
 			<td>401</td>
@@ -1001,6 +986,11 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 		</tr>		
         <tr>
 			<td>1104</td>
+			<td><a href="LineDetailsDoesNotExist">LineDetailsDoesNotExist</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1105</td>
 			<td><a href="CannotCreateTransactionWithDeletedDataSource">CannotCreateTransactionWithDeletedDataSource</a></td>
 			<td>The selected DataSource has been deleted and cannot be used for creating a transaction.</td>
 		</tr>		
@@ -1013,11 +1003,6 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>1201</td>
 			<td><a href="CannotModifyExemptCert">CannotModifyExemptCert</a></td>
 			<td>Exemption certificates cannot be modified using the Company API.</td>
-		</tr>		
-        <tr>
-			<td>1202</td>
-			<td><a href="CertificatesFieldInvalid">CertificatesFieldInvalid</a></td>
-			<td>The certificate API request has an invalid field.</td>
 		</tr>		
         <tr>
 			<td>1203</td>
@@ -1295,7 +1280,27 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
 			<td>You must specify either CSV or JSON file formats.</td>
 		</tr>		
         <tr>
-			<td>1802</td>
-			<td><a href="ConcurrentApiCallIsNotAllowed">ConcurrentApiCallIsNotAllowed</a></td>
-			<td>You have exceeded the number of concurrent requests for this API call.</td>
+			<td>1900</td>
+			<td><a href="TaxProfileNotProvided">TaxProfileNotProvided</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1901</td>
+			<td><a href="InvalidTaxProfile">InvalidTaxProfile</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1902</td>
+			<td><a href="CompanyTaxProfileEntryRequired">CompanyTaxProfileEntryRequired</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>1903</td>
+			<td><a href="ErrorReadingTaxProfileEntry">ErrorReadingTaxProfileEntry</a></td>
+			<td>TBD</td>
+		</tr>		
+        <tr>
+			<td>2000</td>
+			<td><a href="TraceDataNotAvailable">TraceDataNotAvailable</a></td>
+			<td>TBD</td>
 		</tr></tbody></table>
