@@ -11,6 +11,12 @@
     overflow: auto;
 }
 
+@media (max-width: 1240px) {
+    #demo-shortcuts, #demo-api-details {
+        max-height: 450px;
+    }
+}
+
 #myMap {
     width: 850px;
     height: 835px;

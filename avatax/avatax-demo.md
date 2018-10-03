@@ -84,41 +84,35 @@ doctype: use_cases
 
 <!-- page header -->
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-lg-3 col-md-12">
         <h1 style="margin-top:0;">Sales Tax API Demo</h1>
     </div>
-    <div class="col-md-9">
-        <h2 id="demo-endpoint-header" style="display:inline-block;margin-top:0;padding-top:5px;padding-left:30px">CreateTransaction Endpoint</h2>
+    <div class="col-lg-9 col-md-12">
+        <h2 id="demo-endpoint-header" style="display:inline-block;margin-top:0;padding-top:5px;">CreateTransaction Endpoint</h2>
         <div id="demo-endpoint-contents" style="margin: 10px;display:inline-block;">
-            <div class="code-snippet-plaintext" style="display: inline;" id="console-method">POST</div>
-            <div class="code-snippet-plaintext" style="display: inline;" id="console-server">https://sandbox-rest.avatax.com</div>
-            <div class="code-snippet-plaintext" style="display: inline;" id="console-path">/api/v2/transactions/create?$include=summaryOnly</div>
+            <div class="code-snippet-plaintext" style="display: inline;" id="console-method">
+                POST
+            </div>
+            <div class="code-snippet-plaintext" style="display: inline;" id="console-server">
+                https://sandbox-rest.avatax.com
+            </div>
+            <div class="code-snippet-plaintext" style="display: inline;" id="console-path">
+                /api/v2/transactions/create?$include=summaryOnly
+            </div>
+            <button class="btn btn-primary" style="display:inline;margin-left:5px;">
+                <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/" style="color:white;text-decoration:none;" target="_blank">
+                    <i class="glyphicon glyphicon-list-alt"></i> 
+                    Docs
+                </a>
+            </button>
         </div>
-        <button class="btn btn-primary" style="display:inline;">
-            <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/" style="color:white;text-decoration:none;" target="_blank">
-                <i class="glyphicon glyphicon-list-alt"></i> 
-                Docs
-            </a>
-        </button>
     </div>
 </div>
-<!-- <div class="row">
-    <div class="col-md-7" style="padding-left:0;">
-        <div class="col-md-4" style="padding-left:0;">
-            <h3>Shortcuts</h3>
-        </div>
-        <div class="col-md-8" style="padding-left:5px;">
-            <h3>API Details</h3>
-        </div>
-    </div>
-    <div class="col-md-5">
-        <h3>Map Details</h3>
-    </div>
-</div> -->
+
 <!-- demo container -->
  <div class="row">
     <!-- shortcuts & api details container -->
-    <div class="col-md-7">
+    <div class="col-lg-7 col-md-12">
         <div class="row">
             <!-- Shortcuts -->
             <div class="col-md-4" id="demo-shortcuts">
@@ -396,7 +390,7 @@ doctype: use_cases
             <!-- end shortcut / start API details  -->
             <div class="col-md-8" id="demo-api-details">
                 <!-- request output -->
-                <div class="console-req-container api-console-output row" id="demo-console-req" >
+                <div class="console-req-container api-console-output col-lg-12 col-md-6" id="demo-console-req" >
                     <h5 class="console-output-header">Request
                         <div style="float:right;">
                             <button class="btn btn-primary" type="button" onClick="ApiRequest();" style="display:inline;">Submit</button>
@@ -416,7 +410,7 @@ doctype: use_cases
                     </div>
                 </div>
                 <!-- response output -->
-                <div class="row console-res-container api-console-output" id="demo-console-res">
+                <div class="col-lg-12 col-md-6 console-res-container api-console-output" id="demo-console-res">
                     <h5 class="console-output-header col-md-12">Response
                         <div style="float:right;">
                             <button class="btn btn-link" type="submit" onClick="copyToClipboard('#demo-console-output');" style="color:#000000;margin-right:5px;">
@@ -440,7 +434,7 @@ doctype: use_cases
         </div>
     </div>
     <!-- map container -->
-    <div class="col-md-5">
+    <div class="col-lg-5 col-md-12">
         <div id="myMap"></div>
     </div>
  </div>
