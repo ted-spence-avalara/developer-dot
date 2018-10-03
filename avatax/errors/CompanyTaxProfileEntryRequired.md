@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The import tax profile request is missing a company model and company tax profile. 
 
 ## Example
 
@@ -32,4 +32,6 @@ TBD
 
 ## Explanation
 
-TBD
+When importing a tax profile, the request must include a company model with a company tax profile.  
+
+The Tax Profile Import API is only available to Technical Support Administrator roles.

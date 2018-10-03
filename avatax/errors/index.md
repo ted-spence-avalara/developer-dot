@@ -1292,7 +1292,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1902</td>
 			<td><a href="CompanyTaxProfileEntryRequired">CompanyTaxProfileEntryRequired</a></td>
-			<td>TBD</td>
+			<td>The import tax profile request is missing a company model and company tax profile.</td>
 		</tr>		
         <tr>
 			<td>1903</td>
