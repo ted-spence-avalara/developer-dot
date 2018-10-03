@@ -105,9 +105,9 @@ The results of percentages from a traffic study can be applied by administering 
 Contact <a href="mailto:CommunicationSupport@avalara.com">CommunicationSupport@avalara.com</a> to request a new client profile for your account.
 <ul class="dev-guide-list">
   <li>Request the configuration option updates required and any overrides, exclusions, exemptions, or bundles needed.  If you alredy have customizaton files, attach the files to the email.</li>
-  <li>Include instructions as to whether the client profile should be applied to the UA for testing purposes, Production, or both environments</li>
-  <li>If changes are needed to an existing client profile, include the <code>client_profile_id</code> to be updated</li>
-  <li>Once applied, the account could take up to 24 hours to refresh with the new changes</li>
+  <li>Include instructions as to whether the client profile should be applied to Sandbox for testing purposes, Production, or both environments.</li>
+  <li>If changes are needed to an existing client profile, include the <code>client_profile_id</code> to be updated.</li>
+  <li>Once applied, the account could take up to 24 hours to refresh with the new changes.</li>
 </ul>
 
 
