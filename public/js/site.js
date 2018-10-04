@@ -96,6 +96,7 @@ function ApiRequest() {
     // clear the console output and display loading-pulse
     $("#demo-console-output").empty();
     $(".loading-pulse").css('display', 'block');
+    $("#demo-infobox-text").empty();
 
     const data = buildSampleData();
     const [bucket, key] = proxy.key.location.split('/');
@@ -121,6 +122,13 @@ function ApiRequest() {
             return rawApiResponse.json().then((body) => {
                 $(".loading-pulse").css('display', 'none');
                 $('#demo-console-output').text(JSON.stringify(body, null, 2));
+                console.log('body', body);
+                $("#demo-infobox-text").html(`
+                    <p>Subtotal: ${body.totalAmount}</p>
+                    <p>tax1: </p>
+                    <p>tax2: </p>
+                    <p>Total: ${body.totalAmount + body.totalTax}</p>
+                `);
 
                 //TODO handle errors
                 // $('#console-output').text("HTTP Error: " + body.status + "\n\n" + JSON.stringify(result, null, 2));
@@ -136,7 +144,6 @@ function ApiRequest() {
 }
 
 function accordionTrigger(currentElementId, nextElementId) {
-    console.log('accordion')
     // get accordion elements
     var currentElement = document.getElementById(currentElementId);
     var nextElement = document.getElementById(nextElementId);
