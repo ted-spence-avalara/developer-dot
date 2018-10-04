@@ -81,38 +81,12 @@ doctype: use_cases
 </script>
 <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMapWithLine&key=Ahgp_E6MHtyMYBJPCllMKTwJk7Indytl8hVm-Boe6mbyWbcyZvVBUePMDP5OLeiH' async defer></script>
 
-
-<!-- page header -->
-<div class="row">
-    <div class="col-lg-3 col-md-12">
-        <h1 style="margin-top:0;">Sales Tax API Demo</h1>
-    </div>
-    <div class="col-lg-9 col-md-12">
-        <h2 id="demo-endpoint-header" style="display:inline-block;margin-top:0;padding-top:5px;">CreateTransaction Endpoint</h2>
-        <div id="demo-endpoint-contents" style="margin: 10px;display:inline-block;">
-            <div class="code-snippet-plaintext" style="display: inline;" id="console-method">
-                POST
-            </div>
-            <div class="code-snippet-plaintext" style="display: inline;" id="console-server">
-                https://sandbox-rest.avatax.com
-            </div>
-            <div class="code-snippet-plaintext" style="display: inline;" id="console-path">
-                /api/v2/transactions/create?$include=summaryOnly
-            </div>
-            <button class="btn btn-primary" style="display:inline;margin-left:5px;">
-                <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/" style="color:white;text-decoration:none;" target="_blank">
-                    <i class="glyphicon glyphicon-list-alt"></i> 
-                    Docs
-                </a>
-            </button>
-        </div>
-    </div>
-</div>
-
 <!-- demo container -->
 <div class="row">
     <!-- shortcuts container -->
     <div class="col-md-3">
+        <!-- page header -->
+        <h1 style="margin-top:0;">Sales Tax API Demo</h1>
         <div id="demo-shortcuts">
             <!-- steps to submit -->
             <div class="row">
@@ -265,7 +239,7 @@ doctype: use_cases
                     </form> 
                 </div>
                 <!-- step 3 / ship to -->
-                <button class="accordion">Step 3: Where are you shipping to?</button>
+                <button class="accordion">Step 3: Where are you shipping to? (optional)</button>
                 <div class="panel">
                     <p>Choose a pre-selected address</p>
                     <form id="dropdown-src-addresses" onChange="fillWithSampleData();" class="demo-form">

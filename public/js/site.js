@@ -15,25 +15,25 @@ var fixDropDownMenuLargePosition = function() {
 };
 
 
-// triggers accordian effect
-var sections = document.getElementsByClassName("accordion");
-var i;
+// // triggers accordian effect
+// var sections = document.getElementsByClassName("accordion");
+// var i;
 
-for (i = 0; i < sections.length; i++) {
-    sections[i].addEventListener("click", function() {
-        // Toggle between adding and removing the "active" class,
-        // to highlight the button that controls the panel
-        this.classList.toggle("active");
+// for (i = 0; i < sections.length; i++) {
+//     sections[i].addEventListener("click", function() {
+//         // Toggle between adding and removing the "active" class,
+//         // to highlight the button that controls the panel
+//         this.classList.toggle("active");
 
-        // Toggle between hiding and showing the active panel
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
-    });
-}
+//         // Toggle between hiding and showing the active panel
+//         var panel = this.nextElementSibling;
+//         if (panel.style.display === "block") {
+//             panel.style.display = "none";
+//         } else {
+//             panel.style.display = "block";
+//         }
+//     });
+// }
 
 function getCompareDate() {
   var d = new Date(),
@@ -120,7 +120,11 @@ function ApiRequest() {
 
     const keyBucket = new AWS.S3({params: {Bucket: bucket, Key: key}});
     return keyBucket.makeUnauthenticatedRequest('getObject', {}).promise()
-    .then((bucketRes) => {        
+    .then((bucketRes) => {  
+        console.log('method', $('#console-method').text().trim());
+        console.log('route', $('#console-server').text().trim() + $('#console-path').text().trim());
+        console.log('data', data)
+              
         return fetch(proxy.route, {
             method: 'POST',
             headers: {
@@ -136,6 +140,7 @@ function ApiRequest() {
             })
         })
         .then((rawApiResponse) => {
+            console.log('rawApiResponse', rawApiResponse)
             return rawApiResponse.json().then((body) => {
                 $(".loading-pulse").css('display', 'none'); 
                 $('#demo-console-output').text(JSON.stringify(body, null, 2));
@@ -187,6 +192,26 @@ $(document).ready(function() {
     });
 
     $('#dropdown-addresses').trigger('change');
+
+    // triggers accordian effect
+    var sections = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < sections.length; i++) {
+        sections[i].addEventListener("click", function() {
+            // Toggle between adding and removing the "active" class,
+            // to highlight the button that controls the panel
+            this.classList.toggle("active");
+
+            // Toggle between hiding and showing the active panel
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
 });
 
 
