@@ -148,7 +148,7 @@ doctype: use_cases
                         Next
                     </button>
                 </div>
-                <!-- step 2 / products -->
+                <!-- step 2 / products  -->
                 <button class="accordion" id='step-two-btn'>Step 2: What's being taxed?</button>
                 <div class="panel">
                     <p>Choose a common product or service to calculate tax</p>
