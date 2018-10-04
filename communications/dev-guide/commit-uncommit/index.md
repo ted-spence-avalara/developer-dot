@@ -26,12 +26,12 @@ At any time during the reporting cycle, you may create new transactions and popu
 
 Only committed transactions are applied to, and appear in, the compliance report. Transactions tied to a <code>DocumentCode</code> with a <code>Commit</code> flag set to <code>false</code> are excluded from the compliance report at the end of the reporting cycle.
 
-It is not necessary to set the <code>Commit</code> flag immediately on a transaction.  The <code>Commit</code> flag may be set via <code>/api/v2/afc/commit</code> by passing the desired <code>DocumentCode</code> and the <code>Commit</code> flag value.  <code>/api/v2/afc/commit</code> allows you to uncommit a <code>DocumentCode</code> in the same way.  More information about the Commit request can be found <a href="/communications/dev-guide/commit-uncommit/commit-request/">here</a>. 
+It is not necessary to set the <code>Commit</code> flag immediately on a transaction.  The <code>Commit</code> flag may be set via <code>/api/v2/afc/commit</code> by passing the desired <code>DocumentCode</code> and the <code>Commit</code> flag value.  <code>/api/v2/afc/commit</code> allows you to uncommit a <code>DocumentCode</code> in the same way.  More information about the Commit request can be found <a class="dev-guide-link"  href="/communications/dev-guide/commit-uncommit/commit-request/">here</a>. 
 
 The <code>Commit</code> flag may only be changed prior to the end of the reporting cycle.  At the end of the reporting cycle, a compliance report is generated reflecting only transactions which were identified as committed. Any transactions associated with committed <code>DocumentCodes</code> included in this report are considered locked and cannot be removed, canceled, or modified going forward.
 
 <h4>Note</h4>
-After the reporting cycle, all <code>DocumentCodes</code> with <code>Commit</code> flags set to <code>true</code> are locked and cannot be modified once the compliance report is generated. You may, however, commit previously uncommitted <code>DocumentCodes</code> via the <code>/api/v2/afc/commit</code> API. To request an updated compliance report, please email <a href="mailto:CommunicationSupport@avalara.com">CommunicationSupport@avalara.com</a>.
+After the reporting cycle, all <code>DocumentCodes</code> with <code>Commit</code> flags set to <code>true</code> are locked and cannot be modified once the compliance report is generated. You may, however, commit previously uncommitted <code>DocumentCodes</code> via the <code>/api/v2/afc/commit</code> API. To request an updated compliance report, please email <a class="dev-guide-link" href="mailto:CommunicationSupport@avalara.com">CommunicationSupport@avalara.com</a>.
 
 <h3>Data Fields for Commit Feature</h3>
 The following fields must be provided within a <code>CalcTaxes</code> call in order to support the Commit feature.

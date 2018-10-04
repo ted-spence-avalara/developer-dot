@@ -107,7 +107,7 @@ The results of percentages from a traffic study can be applied by administering 
 
 
 <h3>Requesting a new client profile or changes to an existing client profile</h3>
-Contact <a href="mailto:CommunicationSupport@avalara.com">CommunicationSupport@avalara.com</a> to request a new client profile for your account.
+Contact <a class="dev-guide-link" href="mailto:CommunicationSupport@avalara.com">CommunicationSupport@avalara.com</a> to request a new client profile for your account.
 <ul class="dev-guide-list">
   <li>Request the configuration option updates required and any overrides, exclusions, exemptions, or bundles needed.  If you alredy have customizaton files, attach the files to the email.</li>
   <li>Include instructions as to whether the client profile should be applied to Sandbox for testing purposes, Production, or both environments.</li>

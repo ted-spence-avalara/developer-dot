@@ -30,23 +30,23 @@ The <code>Invoice</code> object contains information about the <b>transaction</b
         <td><code>doc</code></td>
         <td><code>[string]</code> Document Code
         <br>
-          The Document Code is a unique string that is used to <a href="/communications/dev-guide/commit-uncommit/">Commit or Uncommit</a> transactions.
+          The Document Code is a unique string that is used to <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/">Commit or Uncommit</a> transactions.
         </td>
       </tr>
       <tr>
         <td><code>cmmt</code></td>
         <td><code>[bool]</code> Commit
         <br>
-          <code>true</code>: The transaction should be <a href="/communications/dev-guide/commit-uncommit/">committed</a>
+          <code>true</code>: The transaction should be <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/">committed</a>
           <br>
-          <code>false</code>: The transaction should be <a href="/communications/dev-guide/commit-uncommit/">uncommitted</a>
+          <code>false</code>: The transaction should be <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/">uncommitted</a>
         </td>
       </tr>
       <tr>
         <td><code>bill</code></td>
-        <td><a href="/communications/dev-guide/reference/location/"><code>[Location]</code></a> Bill To Location
+        <td><a class="dev-guide-link" href="/communications/dev-guide/reference/location/"><code>[Location]</code></a> Bill To Location
           <br>
-          There are several ways to input location information. See the <a href="/communications/dev-guide/reference/location/">Location</a> section for more details.
+          There are several ways to input location information. See the <a class="dev-guide-link" href="/communications/dev-guide/reference/location/">Location</a> section for more details.
         </td>
       </tr>
       <tr>
@@ -86,16 +86,16 @@ The <code>Invoice</code> object contains information about the <b>transaction</b
       </tr>
       <tr>
         <td><code>exms</code></td>
-        <td><a href="/communications/dev-guide/reference/exemption/"><code>[Exemption]</code></a> Exemptions <i>(optional)</i>
+        <td><a class="dev-guide-link" href="/communications/dev-guide/reference/exemption/"><code>[Exemption]</code></a> Exemptions <i>(optional)</i>
           <br>
-          A list of <a href="/communications/dev-guide/reference/exemption/">Exemptions</a> to apply to this transaction.
+          A list of <a class="dev-guide-link" href="/communications/dev-guide/reference/exemption/">Exemptions</a> to apply to this transaction.
         </td>
       </tr>
       <tr>
         <td><code>itms</code></td>
-        <td><a href="/communications/dev-guide/reference/line-item/"><code>[LineItems]</code></a> Line Items
+        <td><a class="dev-guide-link" href="/communications/dev-guide/reference/line-item/"><code>[LineItems]</code></a> Line Items
           <br>
-          A list of <a href="/communications/dev-guide/reference/line-items/">Line Items</a> to process for this transaction.
+          A list of <a class="dev-guide-link" href="/communications/dev-guide/reference/line-items/">Line Items</a> to process for this transaction.
         </td>
       </tr>
     </tbody>

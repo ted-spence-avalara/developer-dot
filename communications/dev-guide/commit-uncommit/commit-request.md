@@ -14,10 +14,10 @@ disqus: 0
 </ul>
 
 <h3>The Commit Request</h3>
-The <code>Commit</code> request is used to change the <code>Commit</code> flag for a given <code>DocumentCode</code>.  Let's send a simple <code>Commit</code> call using <a href="https://www.getpostman.com">Postman</a> and inspect the results.
+The <code>Commit</code> request is used to change the <code>Commit</code> flag for a given <code>DocumentCode</code>.  Let's send a simple <code>Commit</code> call using <a class="dev-guide-link" href="https://www.getpostman.com">Postman</a> and inspect the results.
 
 <h3>Headers</h3>
-Add the following <a href="/communications/dev-guide/getting-started/authentication/">mandatory headers</a> to your request:
+Add the following <a class="dev-guide-link" href="/communications/dev-guide/getting-started/authentication/">mandatory headers</a> to your request:
 <ul class="dev-guide-list">
   <li><code>api_key</code></li>
   <li><code>client_id</code></li>
@@ -48,7 +48,7 @@ The example above assumes you have submitted transactions for the current report
 
 Next comes the Commit flag (<code>cmmt</code>). Set this flag to <code>true</code> to mark the DocumentCode (<code>doc</code>) as commited or <code>false</code> to uncommit the DocumentCode.  Reminder: this action commits or uncommits all transactions with this DocumentCode.
 
-Last is the optional <a href="/communications/dev-guide/reference/key-value-pair/">Key Value Pair</a> (<code>opt</code>).  This is where optional infomraiton about the commit batch, transactions, cutomer, etc. can be stored.
+Last is the optional <a class="dev-guide-link" href="/communications/dev-guide/reference/key-value-pair/">Key Value Pair</a> (<code>opt</code>).  This is where optional infomraiton about the commit batch, transactions, cutomer, etc. can be stored.
 
 <h3>Response</h3>
 The Commit response contains a confirmation of success or failuare:

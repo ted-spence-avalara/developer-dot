@@ -20,7 +20,7 @@ Client profiles provide a way to customize the AFC tax engine.  There can be mul
 There are a few reasons to use client profiles:
 <ul class="dev-guide-list">
   <li>Profiles are cached - this speeds up the response times on requests</li>
-  <li>The use of profiles eliminates the need to apply the same override, exclusion, etc. with each request.  Some of the customizations contained within a client profile, such as an override, can be done within an individual transaction request.  However, instead of adding the same override, exclusion, or exemption to each line, the customization files can be added to your client ID as a profile.  When the profile is <a href="/communications/dev-guide/getting-started/authentication/">specified in the header</a> with <code>client_profile_id</code>, the overrides, exclusions, etc. will automatically be applied to all transactions run using that header.</li>
+  <li>The use of profiles eliminates the need to apply the same override, exclusion, etc. with each request.  Some of the customizations contained within a client profile, such as an override, can be done within an individual transaction request.  However, instead of adding the same override, exclusion, or exemption to each line, the customization files can be added to your client ID as a profile.  When the profile is <a class="dev-guide-link" href="/communications/dev-guide/getting-started/authentication/">specified in the header</a> with <code>client_profile_id</code>, the overrides, exclusions, etc. will automatically be applied to all transactions run using that header.</li>
   <li>Multiple profiles can be created, meaning that multiple scenarios can be created and utilized.  Examples uses for multiple profiles include:
   <ul class="dev-guide-list">
     <li>Separate configurations for different aspects of your business</li>
@@ -29,10 +29,10 @@ There are a few reasons to use client profiles:
   </ul>
 
 <h3>How to apply a client profile to a session</h3>
-When <a href="/communications/dev-guide/getting-started/authentication/">authenticating</a> to REST v2, pass the desired client profile ID in the <code>client_profile_id</code> header field.
+When <a class="dev-guide-link" href="/communications/dev-guide/getting-started/authentication/">authenticating</a> to REST v2, pass the desired client profile ID in the <code>client_profile_id</code> header field.
 
 <h4>Postman example</h4>
-Add the following <a href="/communications/dev-guide/getting-started/authentication/">headers</a> to your request:
+Add the following <a class="dev-guide-link" href="/communications/dev-guide/getting-started/authentication/">headers</a> to your request:
 <ul class="dev-guide-list">
   <li><code>api_key</code></li>
   <li><code>client_id</code></li>
@@ -44,14 +44,14 @@ Add the following <a href="/communications/dev-guide/getting-started/authenticat
 <h3>How to run transactions without a profile</h3>
 There are two ways to send send a transaction to AFC Rest v2 without a client profile applied:
 <ul class="dev-guide-list">
-  <li>Do not include <code>client_profile_id</code> from the <a href="/communications/dev-guide/getting-started/authentication/">header</a>.  <code>client_profile_id</code> is an optional header field</li> 
-  <li>Set <code>client_profile_id</code> to 0 in the <a href="/communications/dev-guide/getting-started/authentication/">header</a></li>
+  <li>Do not include <code>client_profile_id</code> from the <a class="dev-guide-link" href="/communications/dev-guide/getting-started/authentication/">header</a>.  <code>client_profile_id</code> is an optional header field</li> 
+  <li>Set <code>client_profile_id</code> to 0 in the <a class="dev-guide-link" href="/communications/dev-guide/getting-started/authentication/">header</a></li>
 </ul> 
 
 <h3>How to request a new client profile or changes to an existing client profile</h3>
-Contact <a href="mailto:CommunicationSupport@avalara.com">CommunicationSupport@avalara.com</a> to request a new client profile for your account.
+Contact <a class="dev-guide-link" href="mailto:CommunicationSupport@avalara.com">CommunicationSupport@avalara.com</a> to request a new client profile for your account.
 <ul class="dev-guide-list">
-  <li>Request the configuration changes required and any overrides, exclusions, exemptions, or bundles needed.  If you already have <a href="/communications/dev-guide/customizing-transactions/account-customizations/">customizaton files</a>, attach those files to the email.</li>
+  <li>Request the configuration changes required and any overrides, exclusions, exemptions, or bundles needed.  If you already have <a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/account-customizations/">customizaton files</a>, attach those files to the email.</li>
   <li>Include instructions as to whether the files should be applied to the Sandbox, Production, or both environments.</li>
   <li>If changes are needed to an existing client profile, include the <code>client_profile_id</code> to be updated.</li>
   <li>Once applied, the account could take up to 24 hours to refresh with the new changes.</li>
