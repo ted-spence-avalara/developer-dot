@@ -8,6 +8,11 @@ nav: apis
 disqus: 0
 ---
 
+<ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/reference/calc-taxes-request/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide/reference/invoice/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
 <h3>Company Data</h3>
 
 The <code>CompanyData</code> object contains information about <b>your</b> company:
@@ -107,5 +112,6 @@ The <code>CompanyData</code> object contains information about <b>your</b> compa
 {% endhighlight %}
 
 <ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/reference/calc-taxes-request/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide/reference/invoice/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

@@ -8,6 +8,11 @@ nav: apis
 disqus: 0
 ---
 
+<ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/commit-uncommit/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide/customizing-transactions/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
 <h3>The Commit Request</h3>
 The <code>Commit</code> request is used to change the <code>Commit</code> flag for a given <code>DocumentCode</code>.  Let's send a simple <code>Commit</code> call using <a href="https://www.getpostman.com">Postman</a> and inspect the results.
 
@@ -59,5 +64,5 @@ An <code>ok</code> status of <code>true</code> means that the DocumentCode (<cod
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide/commit-uncommit/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide/customizing-transactions/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide/customizing-transactions/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

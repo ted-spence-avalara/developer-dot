@@ -8,6 +8,11 @@ nav: apis
 disqus: 0
 ---
 
+<ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/reference/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide/reference/company-data/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
 <h3>The CalcTaxes Request</h3>
 
 At the highest level, a <code>CalcTaxes</code> request is a JSON object comprised of the following:
@@ -68,5 +73,6 @@ At the highest level, a <code>CalcTaxes</code> request is a JSON object comprise
 Although the <code>CalcTaxes</code> request gives the user the flexibility to input Override/Safe Harbor Override information for each transaction, we recommend utilizing a Client Profile with a custom Override file applied. This results in better performance from the Tax Engine because your override settings are cached <i>before</i> tax calculation begins.
 
 <ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/reference/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide/reference/company-data/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

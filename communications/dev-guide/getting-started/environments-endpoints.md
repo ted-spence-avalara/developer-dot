@@ -8,6 +8,11 @@ nav: apis
 disqus: 0
 ---
 
+<ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/getting-started/authentication/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide/calculate-taxes/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
 <h3>Environments</h3>
 
 There are two environments availble to you, UAT and Production:
@@ -68,6 +73,6 @@ There are two environments availble to you, UAT and Production:
 
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide/authentication/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide/calculate-taxes/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="previous"><a href="/communications/dev-guide/getting-started/authentication/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide/calculate-taxes/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

@@ -8,6 +8,11 @@ nav: apis
 disqus: 0
 ---
 
+<ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/calculate-taxes/"><i class="glyphicon glyphicon-chevron-left"></i>Previous Chapter</a></li>
+  <li class="next"><a href="/communications/dev-guide/commit-uncommit/commit-request/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
 The process to commit documents is optional and used to identify documents that should be included in the Compliance Reports for remittance to the Department of Revenue (DoR) for tax compliance reporting. This process is often used when not all taxes being calculated are considered final for compliance reporting. When a document is considered final, a commit can be sent to finalize the document. This also allows users to commit an entire invoice by using the document code instead of calculating the taxes again when the document is determined to be final.
 
 <img src="/public/images/comms/dev-guide/comms_dev_guide_commit.png"/>
@@ -21,7 +26,7 @@ At any time during the reporting cycle, you may create new transactions and popu
 
 Only committed transactions are applied to, and appear in, the compliance report. Transactions tied to a <code>DocumentCode</code> with a <code>Commit</code> flag set to <code>false</code> are excluded from the compliance report at the end of the reporting cycle.
 
-It is not necessary to set the <code>Commit</code> flag immediately on a transaction.  The <code>Commit</code> flag may be set via <code>/api/v2/afc/commit</code> by passing the desired <code>DocumentCode</code> and the <code>Commit</code> flag value.  <code>/api/v2/afc/commit</code> allows you to uncommit a <code>DocumentCode</code> in the same way.  More information about the Commit request can be found <a href="/communiations/dev-guide/commit-uncommit/commit-request/">here</a>. 
+It is not necessary to set the <code>Commit</code> flag immediately on a transaction.  The <code>Commit</code> flag may be set via <code>/api/v2/afc/commit</code> by passing the desired <code>DocumentCode</code> and the <code>Commit</code> flag value.  <code>/api/v2/afc/commit</code> allows you to uncommit a <code>DocumentCode</code> in the same way.  More information about the Commit request can be found <a href="/communications/dev-guide/commit-uncommit/commit-request/">here</a>. 
 
 The <code>Commit</code> flag may only be changed prior to the end of the reporting cycle.  At the end of the reporting cycle, a compliance report is generated reflecting only transactions which were identified as committed. Any transactions associated with committed <code>DocumentCodes</code> included in this report are considered locked and cannot be removed, canceled, or modified going forward.
 
@@ -72,6 +77,6 @@ The following fields must be provided within a <code>CalcTaxes</code> call in or
 </div>
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide/calculate-taxes/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="previous"><a href="/communications/dev-guide/calculate-taxes/"><i class="glyphicon glyphicon-chevron-left"></i>Previous Chapter</a></li>
   <li class="next"><a href="/communications/dev-guide/commit-uncommit/commit-request/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

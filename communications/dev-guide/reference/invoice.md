@@ -8,6 +8,11 @@ nav: apis
 disqus: 0
 ---
 
+<ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/reference/company-data/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide/reference/location/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
 <h3>Invoice</h3>
 
 The <code>Invoice</code> object contains information about the <b>transaction</b>:
@@ -125,5 +130,6 @@ The <code>Invoice</code> object contains information about the <b>transaction</b
 {% endhighlight %}
 
 <ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/reference/company-data/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide/reference/location/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

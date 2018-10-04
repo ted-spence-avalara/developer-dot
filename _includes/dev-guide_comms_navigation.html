@@ -13,11 +13,16 @@
         <li {% if page.url=="/communications/dev-guide/calculate-taxes/" %}class="active" {% endif %}><a href="/communications/dev-guide/calculate-taxes/">Calculate Taxes</a>
             {% if page.chapter=="calculate-taxes" %}
             <ol>   
-                <li><a href="/communications/dev-guide/calculate-taxes/required-fields">Required Fields</a></li> 
+                <li><a href="/communications/dev-guide/calculate-taxes/required-fields/">Required Fields</a></li> 
             </ol>
             {% endif %}
         </li>
         <li {% if page.url=="/communications/dev-guide/commit-uncommit/" %}class="active" {% endif %}><a href="/communications/dev-guide/commit-uncommit/">Commit/Uncommit</a>
+            {% if page.chapter=="commit-uncommit" %}
+            <ol>   
+                <li><a href="/communications/dev-guide/commit-uncommit/commit-request/">Commit Request</a></li> 
+            </ol>
+            {% endif %}
         </li>
         <li {% if page.url=="/communications/dev-guide/customizing-transactions/" %}class="active" {% endif %}><a href="/communications/dev-guide/customizing-transactions/">Customizing Transactions</a>
             {% if page.chapter=="customizing-transactions" %}

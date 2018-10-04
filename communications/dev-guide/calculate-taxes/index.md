@@ -8,6 +8,11 @@ nav: apis
 disqus: 0
 ---
 
+<ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/getting-started"><i class="glyphicon glyphicon-chevron-left"></i>Previous Chapter</a></li>
+  <li class="next"><a href="/communications/dev-guide/calculate-taxes/required-fields/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
 <h3>Your First CalcTaxes Request</h3>
 
 Let's dive right in. We're going to send a simple <code>CalcTaxes</code> call using <a href="https://www.getpostman.com">Postman</a> and inspect the results.
@@ -162,6 +167,6 @@ Each tax amount returned contains additional infromation including:
 More information about the CalcTaxesResponse can be found <a href="/communications/dev-guide/reference/calc-taxes-response/">here</a>.
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="previous"><a href="/communications/dev-guide/getting-started"><i class="glyphicon glyphicon-chevron-left"></i>Previous Chapter</a></li>
   <li class="next"><a href="/communications/dev-guide/calculate-taxes/required-fields/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

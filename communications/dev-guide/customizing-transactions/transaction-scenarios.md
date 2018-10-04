@@ -8,6 +8,11 @@ nav: apis
 disqus: 0
 ---
 
+<ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/customizing-transactions/account-customizations/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide/reference/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
 <b>Types of Transactions</b>
 <ul class="dev-guide-list">
     <li>Calc Taxes - Canada</li>
@@ -157,6 +162,6 @@ Words here
 
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide/customizing-transactions/customization-files/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="previous"><a href="/communications/dev-guide/customizing-transactions/account-customizations/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide/reference/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

@@ -8,6 +8,11 @@ nav: apis
 disqus: 0
 ---
 
+<ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/customizing-transactions/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide/customizing-transactions/account-customizations/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
 <h3>What is a client profile?</h3>
 Client profiles provide a way to customize the AFC tax engine.  There can be multiple client profiles associated to a client.  These customizations include overrides, bundles, exclusions, and a few configurations for how tax data is returned.
 
@@ -24,7 +29,7 @@ There are a few reasons to use client profiles:
   </ul>
 
 <h3>How to apply a client profile to a session</h3>
-When <a href="/communications/dev-guide/getting-started/authentication/">authenticating</a> to Rest v2, pass the desired client profile ID in the <code>client_profile_id</code> header field.
+When <a href="/communications/dev-guide/getting-started/authentication/">authenticating</a> to REST v2, pass the desired client profile ID in the <code>client_profile_id</code> header field.
 
 <h4>Postman example</h4>
 Add the following <a href="/communications/dev-guide/getting-started/authentication/">headers</a> to your request:
