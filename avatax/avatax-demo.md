@@ -154,28 +154,45 @@ doctype: use_cases
                     <p>Choose a common product or service to calculate tax</p>
                     <form id="dropdown-products" onChange="fillWithSampleData();" class="demo-form">
                         <label class="demo-label demo-label-container">
-                            <input value="P0000000" name="product" type="checkbox" description="Tangible Personal Property" checked  class="demo-radio"/> 
-                            <span class="demo-label"> Tangible Personal Property</span>
+                            <input value="P0000000" name="product" id="p1c" type="checkbox" description="Widget" checked  class="demo-radio"/>
+                            <input value="100.00" type="text" id="p1c-amount" style="width: 50px;">
+                            <span class="demo-label"> Widgets <i>(an item not otherwise classified; taxed as tangible personal property)</i></span>
                         </label>
                         <br>
                         <label class="demo-label demo-label-container">
-                            <input value="PF160024" name="product" type="checkbox" description="Sushi"  class="demo-radio"/>
-                            <span class="demo-label"> Sushi</span>
+                            <input value="PF160024" name="product" id="p2c" type="checkbox" description="Pre-packaged Sushi"  class="demo-radio"/>
+                            <input value="15.99" type="text" id="p2c-amount" style="width: 50px;">
+                            <span class="demo-label"> Pre-packaged Sushi</span>
                         </label>
                         <br>
                         <label class="demo-label demo-label-container">
-                            <input value="FR010000" name="product" type="checkbox" description="Shipping"  class="demo-radio"/>
+                            <input value="DM040200" name="product" id="p3c" type="checkbox" description="MP3 download"  class="demo-radio"/>
+                            <input value="0.99" type="text" id="p3c-amount" style="width: 50px;">
+                            <span class="demo-label"> MP3 download</span>
+                        </label>
+                        <br>
+                        <label class="demo-label demo-label-container">
+                            <input value="PC040400" name="product" id="p4c" type="checkbox" description="Baseball Bat" class="" />
+                            <input value="40.21" type="text" id="p4c-amount" style="width: 50px;">
+                            <span class="demo-label"> Baseball Bat</span>
+                        </label>
+                        <br>
+                        <label class="demo-label demo-label-container">
+                            <input value="PC070400" name="product" id="p5c" type="checkbox" description="Color Laser Printer" class="" />
+                            <input value="199.00" type="text" id="p5c-amount" style="width: 50px;">
+                            <span class="demo-label"> Color Laser Printer</span>
+                        </label>
+                        <br>
+                        <label class="demo-label demo-label-container">
+                            <input value="SA090700" name="product" id="p6c" type="checkbox" description="Oil change service (with synthetic oil)" class="" />
+                            <input value="89.99" type="text" id="p6c-amount" style="width: 50px;">
+                            <span class="demo-label"> Oil change service (with synthetic oil)</span>
+                        </label>
+                        <br>
+                        <label class="demo-label demo-label-container">
+                            <input value="FR010000" name="product" id="p7c" type="checkbox" description="Shipping"  class="demo-radio"/>
+                            <input value="19.99" type="text" id="p7c-amount" style="width: 50px;">
                             <span class="demo-label"> Shipping</span>
-                        </label>
-                        <br>
-                        <label class="demo-label demo-label-container">
-                            <input value="DM040200" name="product" type="checkbox" description="Music - streaming / electronic download"  class="demo-radio"/>
-                            <span class="demo-label"> Music - streaming / electronic download</span>
-                        </label>
-                        <br>
-                        <label class="demo-label demo-label-container">
-                            <input value="PC040400" name="product" type="checkbox" description="Sports and Recreational Equipment" class="" />
-                            <span class="demo-label"> Sports and Recreational Equipment</span>
                         </label>
                         <br>
                     </form>
