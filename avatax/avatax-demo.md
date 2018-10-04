@@ -103,16 +103,6 @@ doctype: use_cases
                         </label>
                         <br>
                         <label class="demo-label-container">
-                            <input name="address" type="radio" value="360 AMS Court,Green Bay,WI,US,54313"  
-                            lat="44.550886" long="-88.100548"  class="demo-radio">
-                            <span class="demo-label"> Green Bay</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 360 AMS Court
-                            <br>
-                            <span class="demo-city-zip">Green Bay, WI 54313</span>
-                        </label>
-                        <br>
-                        <label class="demo-label-container">
                             <input name="address" type="radio" value="512 S Mangum Street,Durham,NC,US,27701"
                             lat="35.991727" long="-78.902647"  class="demo-radio"/>
                             <span class="demo-label"> Durham</span>
@@ -120,35 +110,6 @@ doctype: use_cases
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 512 S Mangum Street
                             <br>
                             <span class="demo-city-zip">Durham, NC 27701</span>
-                        </label>
-                        <br>
-                        <label class="demo-label-container">
-                            <input name="address" type="radio" value="Weslayan Tower 24 Greenway Plaza,Houston,TX,US,77046"
-                            lat="29.729903" long="-95.440863"  class="demo-radio"/>
-                            <span class="demo-label"> Houston</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> Weslayan Tower 24 Greenway Plaza
-                            <br>
-                            <span class="demo-city-zip">Houston, TX 77046</span>
-                        </label>
-                        <br>
-                        <label class="demo-label-container">
-                            <input name="address" type="radio" value="4304 Live Oak Lane,Rocklin,CA,US,95765"
-                            lat="38.821517" long="-121.243897"  class="demo-radio"/>
-                            <span class="demo-label"> Rocklin</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 4304 Live Oak Lane
-                            <br>
-                            <span class="demo-city-zip">Rocklin, CA 95765</span>
-                        </label>
-                        <br>
-                        <label class="demo-label-container">
-                            <input name="address" type="radio" value="6465 Greenwood Plaza Blvd,Greenwood Village,CO,US,80111" lat="39.599445" long="-104.896804"  class="demo-radio"/>
-                            <span class="demo-label"> Denver</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 6465 Greenwood Plaza Blvd
-                            <br>
-                            <span class="demo-city-zip">Greenwood Village, CO 80111</span>
                         </label>
                         <br>
                         <!-- international addresses -->
@@ -182,17 +143,10 @@ doctype: use_cases
                             <br>
                             <span class="demo-city-zip">São Paulo, Brazil 04709-110</span>
                         </label>
-                        <br>
-                        <label class="demo-label-container">
-                            <input name="address" type="radio" value="O.L.Vrouwstraat 6,Grimbergen,Belgium Grimbergen,BE,B-1850"
-                            lat="50.932458" long="4.372408"  class="demo-radio"/>
-                            <span class="demo-label"> Brussels</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> O.L.Vrouwstraat 6
-                            <br>
-                            <span class="demo-city-zip">Grimbergen, BE B-1850</span>
-                        </label>
                     </form>
+                    <button class="btn btn-primary" type="button" onClick="accordionTrigger();" style="display:block;">
+                        Next
+                    </button>
                 </div>
                 <!-- step 2 / products -->
                 <button class="accordion">Step 2: What's being taxed?</button>
@@ -225,6 +179,9 @@ doctype: use_cases
                         </label>
                         <br>
                     </form>
+                    <button class="btn btn-primary" type="button" onClick="accordionTrigger();" style="display:block;">
+                        Next
+                    </button>
                 </div>
                 <!-- step 3 / ship to -->
                 <button class="accordion">Step 3: Where are you shipping to? (optional)</button>
@@ -252,16 +209,6 @@ doctype: use_cases
                         </label>
                         <br>
                         <label class="demo-label-container">
-                            <input name="srcAddress" type="radio" value="360 AMS Court,Green Bay,WI,US,54313"  
-                            lat="44.550886" long="-88.100548"  class="demo-radio">
-                            <span class="demo-label"> Green Bay</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 360 AMS Court
-                            <br>
-                            <span class="demo-city-zip">Green Bay, WI 54313</span>
-                        </label>
-                        <br>
-                        <label class="demo-label-container">
                             <input name="srcAddress" type="radio" value="512 S Mangum Street,Durham,NC,US,27701"
                             lat="35.991727" long="-78.902647"  class="demo-radio"/>
                             <span class="demo-label"> Durham</span>
@@ -269,35 +216,6 @@ doctype: use_cases
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 512 S Mangum Street
                             <br>
                             <span class="demo-city-zip">Durham, NC 27701</span>
-                        </label>
-                        <br>
-                        <label class="demo-label-container">
-                            <input name="srcAddress" type="radio" value="Weslayan Tower 24 Greenway Plaza,Houston,TX,US,77046"
-                            lat="29.729903" long="-95.440863"  class="demo-radio"/>
-                            <span class="demo-label"> Houston</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> Weslayan Tower 24 Greenway Plaza
-                            <br>
-                            <span class="demo-city-zip">Houston, TX 77046</span>
-                        </label>
-                        <br>
-                        <label class="demo-label-container">
-                            <input name="srcAddress" type="radio" value="4304 Live Oak Lane,Rocklin,CA,US,95765"
-                            lat="38.821517" long="-121.243897"  class="demo-radio"/>
-                            <span class="demo-label"> Rocklin</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 4304 Live Oak Lane
-                            <br>
-                            <span class="demo-city-zip">Rocklin, CA 95765</span>
-                        </label>
-                        <br>
-                        <label class="demo-label-container">
-                            <input name="srcAddress" type="radio" value="6465 Greenwood Plaza Blvd,Greenwood Village,CO,US,80111" lat="39.599445" long="-104.896804"  class="demo-radio"/>
-                            <span class="demo-label"> Denver</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 6465 Greenwood Plaza Blvd
-                            <br>
-                            <span class="demo-city-zip">Greenwood Village, CO 80111</span>
                         </label>
                         <br>
                         <!-- international addresses -->
@@ -331,17 +249,10 @@ doctype: use_cases
                             <br>
                             <span class="demo-city-zip">São Paulo, Brazil 04709-110</span>
                         </label>
-                        <br>
-                        <label class="demo-label-container">
-                            <input name="srcAddress" type="radio" value="O.L.Vrouwstraat 6,Grimbergen,Belgium Grimbergen,BE,B-1850"
-                            lat="50.932458" long="4.372408"  class="demo-radio"/>
-                            <span class="demo-label"> Brussels</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> O.L.Vrouwstraat 6
-                            <br>
-                            <span class="demo-city-zip">Grimbergen, BE B-1850</span>
-                        </label>
                     </form>
+                    <button class="btn btn-primary" type="button" onClick="ApiRequest();" style="display:block;">
+                        Submit
+                    </button>
                 </div>
             </div>
         </div>
@@ -362,9 +273,6 @@ doctype: use_cases
                         Request
                     </h5>
                     <div style="display:inline-block;float:right;" class="btn-group">
-                        <button class="btn btn-primary" type="button" onClick="ApiRequest();" style="display:inline;">
-                            Submit
-                        </button>
                         <button class="btn btn-link" type="submit" onClick="copyToClipboard('#demo-console-input');" style="color:#000000;margin-right:5px;display:inline;">
                             <i class="glyphicon glyphicon-copy"></i>Copy
                         </button>
