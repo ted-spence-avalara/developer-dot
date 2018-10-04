@@ -18,10 +18,10 @@ doctype: use_cases
         </div>
     `;
 
-    function displayToolTip(center) {
+    function displayToolTip(topLeft) {
 
-        //Create an infobox that will render in the center of the map.
-        const infobox = new Microsoft.Maps.Infobox(center, {
+        //Create an infobox that will render in the top left of the map.
+        const infobox = new Microsoft.Maps.Infobox(topLeft, {
             htmlContent: infoboxTemplate,
         });
 
@@ -30,19 +30,16 @@ doctype: use_cases
     }
 
     function GetMapWithLine(destLat, destLong, srcLat, srcLong) {
-        let center;
-
+        let topLeft;
 
         if(destLat == null || destLong == null) {
             // destLat = 33.6846603698176;
             // destLong = -117.850629887389;
             map = new Microsoft.Maps.Map('#myMap', {zoom: 0});
-            center = map.getCenter();
-            displayToolTip(center);
+            topLeft = (map.getPageX(), map.getPageY());
+            displayToolTip(topLeft);
             return;
         }  
-
-
 
         //Single location layer (pushpin)
         if(srcLat == null || srcLong == null) {
@@ -50,9 +47,9 @@ doctype: use_cases
             map = new Microsoft.Maps.Map('#myMap', {center: location});
             var layer = new Microsoft.Maps.Layer("MyPushpinLayer1");
             layer.add(new Microsoft.Maps.Pushpin(location));
+            topLeft = (map.getPageX(), map.getPageY());
+            displayToolTip(topLeft);
             map.layers.insert(layer);
-            center = map.getCenter();
-            displayToolTip(center);
 
             //Exit out since it is a single location.
             return;
@@ -63,8 +60,9 @@ doctype: use_cases
         center = map.getCenter();
         var coords = [center, new Microsoft.Maps.Location(center.latitude + 1, center.longitude + 1)];
         var line = new Microsoft.Maps.Polyline(coords, {strokeColor: 'orange', strokeThickness: 3});
+        topLeft = (map.getPageX(), map.getPageY());
+        displayToolTip(topLeft);
         map.entities.push(line);
-        displayToolTip(center);
     }
 </script>
 <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMapWithLine&key=Ahgp_E6MHtyMYBJPCllMKTwJk7Indytl8hVm-Boe6mbyWbcyZvVBUePMDP5OLeiH' async defer></script>
@@ -148,7 +146,7 @@ doctype: use_cases
                         Next
                     </button>
                 </div>
-                <!-- step 2 / products  -->
+                <!-- step 2 / products -->
                 <button class="accordion" id='step-two-btn'>Step 2: What's being taxed?</button>
                 <div class="panel">
                     <p>Choose a common product or service to calculate tax</p>
