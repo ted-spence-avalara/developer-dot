@@ -14,6 +14,27 @@ var fixDropDownMenuLargePosition = function() {
     }, 100);
 };
 
+
+// triggers accordian effect
+var sections = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < sections.length; i++) {
+    sections[i].addEventListener("click", function() {
+        // Toggle between adding and removing the "active" class,
+        // to highlight the button that controls the panel
+        this.classList.toggle("active");
+
+        // Toggle between hiding and showing the active panel
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+
 function getCompareDate() {
   var d = new Date(),
       month = '' + (d.getMonth() + 1),
