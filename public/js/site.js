@@ -99,8 +99,7 @@ function ApiRequest() {
 
     const keyBucket = new AWS.S3({params: {Bucket: bucket, Key: key}});
     return keyBucket.makeUnauthenticatedRequest('getObject', {}).promise()
-    .then((bucketRes) => {
-
+    .then((bucketRes) => {        
         return fetch(proxy.route, {
             method: 'POST',
             headers: {
@@ -108,8 +107,8 @@ function ApiRequest() {
             },
             body: JSON.stringify({
                 apiKey: bucketRes.Body.toString(),
-                method:$('#console-method').text(),
-                route: $('#console-server').text() + $('#console-path').text(),
+                method:$('#console-method').text().trim(),
+                route: $('#console-server').text().trim() + $('#console-path').text().trim(),
                 queryString: {},
                 pathParams:{},
                 postBody: data
