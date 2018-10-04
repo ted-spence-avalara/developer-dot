@@ -47,28 +47,30 @@ function setShipToOrSingleLocation() {
 }
 
 function buildSampleData() {
-    const taxCode = $('input[type=radio][name=product]:checked').val();
-    const description = $('input[type=radio][name=product]:checked').attr('description');
     const address = makeAddressObj();
     // setShipToOrSingleLocation();
 
     const sampleData = {
-        "lines": [ {
-            "number": "1",
-            "quantity": 1.0,
-            "amount": 100.0,
-            "taxCode": taxCode,
-            "description": description
-        } ],
+        "lines": [],
         "type": "SalesOrder",
         "companyCode": "DEMOPAGE",
-        "date": "2018-09-05", 
+        "date": "2018-09-05",
         "customerCode": "ABC",
         "addresses": {
             "singleLocation": address,
-        },
-        "description": description
+        }
     };
+
+    // Loop through all the checked products and add one line for each
+    var lineNum = 1;
+    $('input[type=checkbox][name=product]:checked').each(function () {
+        sampleData.lines.push({
+            "number": lineNum++,
+            "amount": 100.0,
+            "taxCode": $(this).val(),
+            "description": $(this).attr('description')
+        });
+    });
 
     return sampleData;
 }
@@ -92,14 +94,14 @@ function copyToClipboard(element) {
 function ApiRequest() {
     // clear the console output and display loading-pulse
     $("#demo-console-output").empty();
-    $(".loading-pulse").css('display', 'block'); 
+    $(".loading-pulse").css('display', 'block');
 
     const data = buildSampleData();
     const [bucket, key] = proxy.key.location.split('/');
 
     const keyBucket = new AWS.S3({params: {Bucket: bucket, Key: key}});
     return keyBucket.makeUnauthenticatedRequest('getObject', {}).promise()
-    .then((bucketRes) => {  
+    .then((bucketRes) => {
         return fetch(proxy.route, {
             method: 'POST',
             headers: {
@@ -116,7 +118,7 @@ function ApiRequest() {
         })
         .then((rawApiResponse) => {
             return rawApiResponse.json().then((body) => {
-                $(".loading-pulse").css('display', 'none'); 
+                $(".loading-pulse").css('display', 'none');
                 $('#demo-console-output').text(JSON.stringify(body, null, 2));
 
                 //TODO handle errors
@@ -182,7 +184,7 @@ $(document).ready(function() {
     // When we hide the section nav on xs/sm, reset the main content next to the nav
     $('.sm-section-nav').on('hidden.bs.dropdown', function() {
         $('main').removeClass('section-nav-open');
-    });   
+    });
 
     //When the destination changes, fire the map script and set the lat-long.
     $('#dropdown-dest-addresses').change(function(e){
@@ -193,5 +195,3 @@ $(document).ready(function() {
 
     $('#dropdown-addresses').trigger('change');
 });
-
-
