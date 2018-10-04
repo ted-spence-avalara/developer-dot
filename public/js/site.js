@@ -121,10 +121,6 @@ function ApiRequest() {
     const keyBucket = new AWS.S3({params: {Bucket: bucket, Key: key}});
     return keyBucket.makeUnauthenticatedRequest('getObject', {}).promise()
     .then((bucketRes) => {  
-        console.log('method', $('#console-method').text().trim());
-        console.log('route', $('#console-server').text().trim() + $('#console-path').text().trim());
-        console.log('data', data)
-              
         return fetch(proxy.route, {
             method: 'POST',
             headers: {
@@ -132,15 +128,14 @@ function ApiRequest() {
             },
             body: JSON.stringify({
                 apiKey: bucketRes.Body.toString(),
-                method:$('#console-method').text().trim(),
-                route: $('#console-server').text().trim() + $('#console-path').text().trim(),
+                method: 'POST',
+                route: 'https://sandbox-rest.avatax.com/api/v2/transactions/create?$include=summaryOnly',
                 queryString: {},
                 pathParams:{},
                 postBody: data
             })
         })
         .then((rawApiResponse) => {
-            console.log('rawApiResponse', rawApiResponse)
             return rawApiResponse.json().then((body) => {
                 $(".loading-pulse").css('display', 'none'); 
                 $('#demo-console-output').text(JSON.stringify(body, null, 2));

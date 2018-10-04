@@ -91,8 +91,8 @@ doctype: use_cases
             <!-- steps to submit -->
             <div class="row">
                 <!-- step 1 / ship from -->
-                <button class="accordion">Step 1: Where are you shipping from?</button>
-                <div class="panel">
+                <button class="accordion active">Step 1: Where are you shipping from?</button>
+                <div class="panel" style="display:block;">
                     <p>Choose a pre-selected address</p>
                     <form id="dropdown-dest-addresses" onChange="fillWithSampleData();" class="demo-form">
                         <!-- national addresses -->
