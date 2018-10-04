@@ -397,39 +397,45 @@ doctype: use_cases
         <div class="row" id="demo-api-details">
             <!-- request output -->
             <div class="console-req-container api-console-output col-md-6" id="demo-console-req" >
-                <h5 class="console-output-header">Request
-                    <div style="float:right;">
-                        <button class="btn btn-primary" type="button" onClick="ApiRequest();" style="display:inline;">Submit</button>
+                <div class="row" style="margin-top:13px;margin-left:10px;margin-right:10px;">
+                    <h5 class="console-output-header" style="display:inline-block;margin-left:0px;">
+                        Request 
+                    </h5>
+                    <div style="display:inline-block;float:right;" class="btn-group">
+                        <button class="btn btn-primary" type="button" onClick="ApiRequest();" style="display:inline;">
+                            Submit
+                        </button>
                         <button class="btn btn-link" type="submit" onClick="copyToClipboard('#demo-console-input');" style="color:#000000;margin-right:5px;display:inline;">
                             <i class="glyphicon glyphicon-copy"></i>Copy
                         </button>
                         <button class="btn btn-link" style="display:inline;color:#000000;margin-right:5px;">
                             <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/" style="color:#000000;" target="_blank">
-                                <i class="glyphicon glyphicon-list-alt"></i> 
-                                Docs
+                                <i class="glyphicon glyphicon-list-alt"></i>Docs
                             </a>
                         </button>
                     </div>
-                </h5>
+                </div>
                 <div class="code-snippet reqScroll" id="demo-console-req" style="height:400px;">
                     <pre id="demo-console-input">{ }</pre>
                 </div>
             </div>
             <!-- response output -->
             <div class="col-md-6 console-res-container api-console-output" id="demo-console-res">
-                <h5 class="console-output-header col-md-12">Response
-                    <div style="float:right;">
-                        <button class="btn btn-link" type="submit" onClick="copyToClipboard('#demo-console-output');" style="color:#000000;margin-right:5px;">
+                <div class="row" style="margin-top:13px;margin-left:10px;margin-right:10px;">
+                    <h5 class="console-output-header" style="display:inline-block;margin-left:0px;">
+                        Response 
+                    </h5>
+                    <div style="display:inline-block;float:right;" class="btn-group">
+                        <button class="btn btn-link" type="submit" onClick="copyToClipboard('#demo-console-input');" style="color:#000000;margin-right:5px;display:inline;">
                             <i class="glyphicon glyphicon-copy"></i>Copy
                         </button>
-                        <button class="btn btn-link" style="float:right;color:#000000;margin-right:5px;">
-                            <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/TransactionModel/" style="color:#000000;" target="_blank">
-                                <i class="glyphicon glyphicon-list-alt"></i> 
-                                Docs
+                        <button class="btn btn-link" style="display:inline;color:#000000;margin-right:5px;">
+                            <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/" style="color:#000000;" target="_blank">
+                                <i class="glyphicon glyphicon-list-alt"></i>Docs
                             </a>
                         </button>
                     </div>
-                </h5>
+                </div>
                 <div class="code-snippet respScroll" style="height:400px;">
                     <div class="loading-pulse" style="display: none;"></div>
                     <pre id="demo-console-output">{ }</pre>
