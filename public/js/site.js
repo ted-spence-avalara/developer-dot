@@ -85,9 +85,10 @@ function buildSampleData() {
     // Loop through all the checked products and add one line for each
     var lineNum = 1;
     $('input[type=checkbox][name=product]:checked').each(function () {
+        // Find amount
         sampleData.lines.push({
             "number": lineNum++,
-            "amount": 100.0,
+            "amount": $('#' + $(this).attr('id') + '-amount').val(),
             "taxCode": $(this).val(),
             "description": $(this).attr('description')
         });
