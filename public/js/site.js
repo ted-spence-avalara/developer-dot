@@ -136,12 +136,25 @@ function ApiRequest() {
 
 function accordionTrigger(currentElementId, nextElementId) {
     console.log('accordion')
-    // triggers accordian effect
-    var currentElement = document.getElementsById(currentElementId);
-    var nextElement = document.getElementsById(nextElementId);
+    // get accordion elements
+    var currentElement = document.getElementById(currentElementId);
+    var nextElement = document.getElementById(nextElementId);
 
+    // toggle active class on elements
     currentElement.classList.toggle("active");
     nextElement.classList.toggle("active");
+
+    var panels = [currentElement.nextElementSibling, nextElement.nextElementSibling];
+
+    // toggle display on panels
+    panels.forEach(panel => {
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    })
+
 }
 
 $(document).ready(function() {

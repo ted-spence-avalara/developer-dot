@@ -79,7 +79,7 @@ doctype: use_cases
             <!-- steps to submit -->
             <div class="row">
                 <!-- step 1 / ship from -->
-                <button class="accordion active">Step 1: Where are you shipping from?</button>
+                <button class="accordion active" id='step-one-btn'>Step 1: Where are you shipping from?</button>
                 <div class="panel" style="display:block;">
                     <p>Choose a pre-selected address</p>
                     <form id="dropdown-dest-addresses" onChange="fillWithSampleData();" class="demo-form">
@@ -144,12 +144,12 @@ doctype: use_cases
                             <span class="demo-city-zip">São Paulo, Brazil 04709-110</span>
                         </label>
                     </form>
-                    <button class="btn btn-primary" type="button" onClick="accordionTrigger();" style="display:block;">
+                    <button class="btn btn-primary" type="button" onClick="accordionTrigger('step-one-btn', 'step-two-btn');" style="display:block;">
                         Next
                     </button>
                 </div>
                 <!-- step 2 / products -->
-                <button class="accordion">Step 2: What's being taxed?</button>
+                <button class="accordion" id='step-two-btn'>Step 2: What's being taxed?</button>
                 <div class="panel">
                     <p>Choose a common product or service to calculate tax</p>
                     <form id="dropdown-products" onChange="fillWithSampleData();" class="demo-form">
@@ -179,12 +179,12 @@ doctype: use_cases
                         </label>
                         <br>
                     </form>
-                    <button class="btn btn-primary" type="button" onClick="accordionTrigger();" style="display:block;">
+                    <button class="btn btn-primary" type="button" onClick="accordionTrigger('step-two-btn','step-three-btn');" style="display:block;">
                         Next
                     </button>
                 </div>
                 <!-- step 3 / ship to -->
-                <button class="accordion">Step 3: Where are you shipping to? (optional)</button>
+                <button class="accordion" id='step-three-btn'>Step 3: Where are you shipping to? (optional)</button>
                 <div class="panel">
                     <p>Choose a pre-selected address</p>
                     <form id="dropdown-src-addresses" onChange="fillWithSampleData();" class="demo-form">
