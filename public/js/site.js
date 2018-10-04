@@ -47,28 +47,30 @@ function setShipToOrSingleLocation() {
 }
 
 function buildSampleData() {
-    const taxCode = $('input[type=radio][name=product]:checked').val();
-    const description = $('input[type=radio][name=product]:checked').attr('description');
     const address = makeAddressObj();
     // setShipToOrSingleLocation();
 
     const sampleData = {
-        "lines": [ {
-            "number": "1",
-            "quantity": 1.0,
-            "amount": 100.0,
-            "taxCode": taxCode,
-            "description": description
-        } ],
+        "lines": [],
         "type": "SalesOrder",
         "companyCode": "DEMOPAGE",
-        "date": "2018-09-05", 
+        "date": "2018-09-05",
         "customerCode": "ABC",
         "addresses": {
             "singleLocation": address,
-        },
-        "description": description
+        }
     };
+
+    // Loop through all the checked products and add one line for each
+    var lineNum = 1;
+    $('input[type=checkbox][name=product]:checked').each(function () {
+        sampleData.lines.push({
+            "number": lineNum++,
+            "amount": 100.0,
+            "taxCode": $(this).val(),
+            "description": $(this).attr('description')
+        });
+    });
 
     return sampleData;
 }
@@ -92,7 +94,7 @@ function copyToClipboard(element) {
 function ApiRequest() {
     // clear the console output and display loading-pulse
     $("#demo-console-output").empty();
-    $(".loading-pulse").css('display', 'block'); 
+    $(".loading-pulse").css('display', 'block');
 
     const data = buildSampleData();
     const [bucket, key] = proxy.key.location.split('/');
@@ -100,7 +102,6 @@ function ApiRequest() {
     const keyBucket = new AWS.S3({params: {Bucket: bucket, Key: key}});
     return keyBucket.makeUnauthenticatedRequest('getObject', {}).promise()
     .then((bucketRes) => {
-
         return fetch(proxy.route, {
             method: 'POST',
             headers: {
@@ -108,8 +109,8 @@ function ApiRequest() {
             },
             body: JSON.stringify({
                 apiKey: bucketRes.Body.toString(),
-                method:$('#console-method').text(),
-                route: $('#console-server').text() + $('#console-path').text(),
+                method: 'POST',
+                route: 'https://sandbox-rest.avatax.com/api/v2/transactions/create?$include=summaryOnly',
                 queryString: {},
                 pathParams:{},
                 postBody: data
@@ -117,7 +118,7 @@ function ApiRequest() {
         })
         .then((rawApiResponse) => {
             return rawApiResponse.json().then((body) => {
-                $(".loading-pulse").css('display', 'none'); 
+                $(".loading-pulse").css('display', 'none');
                 $('#demo-console-output').text(JSON.stringify(body, null, 2));
 
                 //TODO handle errors
@@ -133,10 +134,49 @@ function ApiRequest() {
     })
 }
 
+function accordionTrigger(currentElementId, nextElementId) {
+    console.log('accordion')
+    // get accordion elements
+    var currentElement = document.getElementById(currentElementId);
+    var nextElement = document.getElementById(nextElementId);
+
+    // toggle active class on elements
+    currentElement.classList.toggle("active");
+    nextElement.classList.toggle("active");
+
+    var panels = [currentElement.nextElementSibling, nextElement.nextElementSibling];
+
+    // toggle display on panels
+    panels.forEach(panel => {
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    })
+
+}
+
 $(document).ready(function() {
     fixApiRefNav();
     fixDropDownMenuLargePosition();
-    // fillWithSampleData();
+
+    var sections = document.getElementsByClassName("accordion");
+    for (let i = 0; i < sections.length; i++) {
+        sections[i].addEventListener("click", function() {
+            // Toggle between adding and removing the "active" class,
+            // to highlight the button that controls the panel
+            this.classList.toggle("active");
+
+            // Toggle between hiding and showing the active panel
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
 
     $('[webinar-hide-before]').each(function() {
       if ($(this).attr('webinar-hide-before') <= getCompareDate()) {
@@ -157,7 +197,7 @@ $(document).ready(function() {
     // When we hide the section nav on xs/sm, reset the main content next to the nav
     $('.sm-section-nav').on('hidden.bs.dropdown', function() {
         $('main').removeClass('section-nav-open');
-    });   
+    });
 
     //When the destination changes, fire the map script and set the lat-long.
     $('#dropdown-dest-addresses').change(function(e){
@@ -177,5 +217,3 @@ $(document).ready(function() {
 
     $('#dropdown-addresses').trigger('change');
 });
-
-
