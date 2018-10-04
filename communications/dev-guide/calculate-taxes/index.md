@@ -72,7 +72,7 @@ The value you assign to the <code>date</code> key is important: this affects whi
 
 Inside the Invoice is a <a href="/communications/dev-guide/reference/line-item/">LineItem</a>(<code>itms</code>). This is where information like the Charge, Transaction/Service Pair, number of Lines, etc. is stored.
 
-At the bottom of the JSON object we've set the Commit flag (<code>cmmt</code>) to <code>false</code>. This is the default behavior so this line is optional, but you can set the flag to <code>true</code> if you want to commit the transaction without using the <a href="/communications/dev-guide/commit-uncommit/">Commit API</a> later.
+At the bottom of the JSON object we've set the Commit flag (<code>cmmt</code>) to <code>false</code>. This is the default behavior so this line is optional, but you can set the flag to <code>true</code> if you want to commit the transaction without using the <a href="/communications/dev-guide/commit-uncommit/commit-request/">Commit API</a> later.
 
 
 <h3>Response</h3>

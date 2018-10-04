@@ -63,7 +63,7 @@ The following fields must be provided within a <code>CalcTaxes</code> call in or
               <li>Nullable value is used in order to make field optional for backwards-compatibility purposes.</li>
               <li>Transaction will not be committed if an error occured during processing.</li>
               <li>If <code>DocumentCode</code> is provided but <code>Commit</code> is null, <code>Commit</code> will be defaulted to <code>false</code> when saving the information.</li>
-              <li>If <code>Commit</code> is <code>true</code>, <code>DocumentCode</code> must not be empty.
+              <li>If <code>Commit</code> is <code>true</code>, <code>DocumentCode</code> must not be empty.</li>
             </ul>
         </td>
       </tr>
