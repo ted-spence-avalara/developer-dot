@@ -14,6 +14,27 @@ var fixDropDownMenuLargePosition = function() {
     }, 100);
 };
 
+
+// // triggers accordian effect
+// var sections = document.getElementsByClassName("accordion");
+// var i;
+
+// for (i = 0; i < sections.length; i++) {
+//     sections[i].addEventListener("click", function() {
+//         // Toggle between adding and removing the "active" class,
+//         // to highlight the button that controls the panel
+//         this.classList.toggle("active");
+
+//         // Toggle between hiding and showing the active panel
+//         var panel = this.nextElementSibling;
+//         if (panel.style.display === "block") {
+//             panel.style.display = "none";
+//         } else {
+//             panel.style.display = "block";
+//         }
+//     });
+// }
+
 function getCompareDate() {
   var d = new Date(),
       month = '' + (d.getMonth() + 1),
@@ -99,7 +120,7 @@ function ApiRequest() {
 
     const keyBucket = new AWS.S3({params: {Bucket: bucket, Key: key}});
     return keyBucket.makeUnauthenticatedRequest('getObject', {}).promise()
-    .then((bucketRes) => {        
+    .then((bucketRes) => {  
         return fetch(proxy.route, {
             method: 'POST',
             headers: {
@@ -107,8 +128,8 @@ function ApiRequest() {
             },
             body: JSON.stringify({
                 apiKey: bucketRes.Body.toString(),
-                method:$('#console-method').text().trim(),
-                route: $('#console-server').text().trim() + $('#console-path').text().trim(),
+                method: 'POST',
+                route: 'https://sandbox-rest.avatax.com/api/v2/transactions/create?$include=summaryOnly',
                 queryString: {},
                 pathParams:{},
                 postBody: data
@@ -166,6 +187,26 @@ $(document).ready(function() {
     });
 
     $('#dropdown-addresses').trigger('change');
+
+    // triggers accordian effect
+    var sections = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < sections.length; i++) {
+        sections[i].addEventListener("click", function() {
+            // Toggle between adding and removing the "active" class,
+            // to highlight the button that controls the panel
+            this.classList.toggle("active");
+
+            // Toggle between hiding and showing the active panel
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
 });
 
 
