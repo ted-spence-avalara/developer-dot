@@ -14,27 +14,6 @@ var fixDropDownMenuLargePosition = function() {
     }, 100);
 };
 
-
-// // triggers accordian effect
-// var sections = document.getElementsByClassName("accordion");
-// var i;
-
-// for (i = 0; i < sections.length; i++) {
-//     sections[i].addEventListener("click", function() {
-//         // Toggle between adding and removing the "active" class,
-//         // to highlight the button that controls the panel
-//         this.classList.toggle("active");
-
-//         // Toggle between hiding and showing the active panel
-//         var panel = this.nextElementSibling;
-//         if (panel.style.display === "block") {
-//             panel.style.display = "none";
-//         } else {
-//             panel.style.display = "block";
-//         }
-//     });
-// }
-
 function getCompareDate() {
   var d = new Date(),
       month = '' + (d.getMonth() + 1),
@@ -153,10 +132,36 @@ function ApiRequest() {
     })
 }
 
+function accordionTrigger(currentElementId, nextElementId) {
+    console.log('accordion')
+    // triggers accordian effect
+    var currentElement = document.getElementsById(currentElementId);
+    var nextElement = document.getElementsById(nextElementId);
+
+    currentElement.classList.toggle("active");
+    nextElement.classList.toggle("active");
+}
+
 $(document).ready(function() {
     fixApiRefNav();
     fixDropDownMenuLargePosition();
-    // fillWithSampleData();
+
+    var sections = document.getElementsByClassName("accordion");
+    for (let i = 0; i < sections.length; i++) {
+        sections[i].addEventListener("click", function() {
+            // Toggle between adding and removing the "active" class,
+            // to highlight the button that controls the panel
+            this.classList.toggle("active");
+
+            // Toggle between hiding and showing the active panel
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
 
     $('[webinar-hide-before]').each(function() {
       if ($(this).attr('webinar-hide-before') <= getCompareDate()) {
@@ -187,26 +192,6 @@ $(document).ready(function() {
     });
 
     $('#dropdown-addresses').trigger('change');
-
-    // triggers accordian effect
-    var sections = document.getElementsByClassName("accordion");
-    var i;
-
-    for (i = 0; i < sections.length; i++) {
-        sections[i].addEventListener("click", function() {
-            // Toggle between adding and removing the "active" class,
-            // to highlight the button that controls the panel
-            this.classList.toggle("active");
-
-            // Toggle between hiding and showing the active panel
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-            } else {
-                panel.style.display = "block";
-            }
-        });
-    }
 });
 
 
