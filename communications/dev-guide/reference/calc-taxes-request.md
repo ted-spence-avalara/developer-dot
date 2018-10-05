@@ -8,6 +8,11 @@ nav: apis
 disqus: 0
 ---
 
+<ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/reference/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide/reference/company-data/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
 <h3>The CalcTaxes Request</h3>
 
 At the highest level, a <code>CalcTaxes</code> request is a JSON object comprised of the following:
@@ -30,12 +35,21 @@ At the highest level, a <code>CalcTaxes</code> request is a JSON object comprise
         <td>This object contains information about the <b>transaction</b></td>
       </tr>
       <tr>
+<<<<<<< HEAD
       <td><a href="/communications/dev-guide/reference/tax-override/">Override</a></td>
       <td>This object contains information about <b>tax overrides</b> you want to apply to the transaction (see <a href="#note">note</a> below)</td>
       </tr>
       <tr>
       <td><a href="/communications/dev-guide/reference/safe-harbor-override/">Safe Harbor Override</a></td>
       <td>This object contains information about <b>safe harbor overrides</b> you want to apply to the transaction (see <a href="#note">note</a> below)</td>
+=======
+      <td>Override</td>
+      <td>This object contains information about <b>tax overrides</b> you want to apply to the transaction (see <a class="dev-guide-link" href="#note">note</a> below)</td>
+      </tr>
+      <tr>
+      <td>Safe Harbor Override</td>
+      <td>This object contains information about <b>safe harbor overrides</b> you want to apply to the transaction (see <a class="dev-guide-link" href="#note">note</a> below)</td>
+>>>>>>> cd972b21980052fbec220c3323b06215b7ddadd5
       </tr>
     </tbody>
   </table>
@@ -69,5 +83,6 @@ At the highest level, a <code>CalcTaxes</code> request is a JSON object comprise
 Although the <code>CalcTaxes</code> request gives the user the flexibility to input Override/Safe Harbor Override information for each transaction, we recommend using a <a href="/communications/dev-guide/customizing-transactions/client-profiles/">Client Profile</a> with a custom override file applied. This results in better performance from the Tax Engine because your override settings are cached <i>before</i> tax calculation begins.
 
 <ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/reference/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide/reference/company-data/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

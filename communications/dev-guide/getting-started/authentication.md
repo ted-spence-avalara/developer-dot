@@ -7,6 +7,12 @@ chapter: getting-started
 nav: apis
 disqus: 0
 ---
+
+<ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/getting-started/account-creation/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide/getting-started/environments-endpoints/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
 <h3>Required Headers</h3>
 
 Three pieces of information must appear in your request header:
@@ -70,6 +76,6 @@ Our tax engine allows for additional customization when calculating taxes and we
 <div>
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide/account-creation/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="previous"><a href="/communications/dev-guide/getting-started/account-creation/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide/getting-started/environments-endpoints/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

@@ -8,13 +8,18 @@ nav: apis
 disqus: 0
 ---
 
+<ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/getting-started/authentication/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide/calculate-taxes/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
 <h3>Environments</h3>
 
 There are two environments availble to you, UAT and Production:
 
 <ul class="dev-guide-list">
-  <li><b>Production</b>: <a href="https://communications.avalara.net">communications.avalara.net</a></li>
-  <li><b>UAT</b>: <a href="https://communicationsua.avalara.net">communicationsua.avalara.net</a></li>
+  <li><b>Production</b>: <a class="dev-guide-link" href="https://communications.avalara.net">communications.avalara.net</a></li>
+  <li><b>Sandbox</b>: <a class="dev-guide-link" href="https://communicationsua.avalara.net">communicationsua.avalara.net</a></li>
 </ul>
 
 <h3>Endpoints</h3>
@@ -34,7 +39,7 @@ There are two environments availble to you, UAT and Production:
       </tr>
       <tr>
         <td><code>/api/v2/afc/commit</code></td>
-        <td><code>POST</code> Commits and Uncommits transactions. See <a href="/communications/dev-guide/commit-uncommit/">Commit/Uncommit</a> for more intormation.</td>
+        <td><code>POST</code> Commits and Uncommits transactions. See <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/">Commit/Uncommit</a> for more intormation.</td>
       </tr>
       <tr>
         <td><code>/api/v2/geo/geocode</code></td>
@@ -68,6 +73,6 @@ There are two environments availble to you, UAT and Production:
 
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide/authentication/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide/calculate-taxes/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="previous"><a href="/communications/dev-guide/getting-started/authentication/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide/calculate-taxes/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

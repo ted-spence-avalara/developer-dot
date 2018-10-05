@@ -8,6 +8,11 @@ nav: apis
 disqus: 0
 ---
 
+<ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/reference/company-data/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide/reference/location/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
 <h3>Invoice</h3>
 
 The <code>Invoice</code> object contains information about one or more <b>transactions</b>:
@@ -25,23 +30,23 @@ The <code>Invoice</code> object contains information about one or more <b>transa
         <td><code>doc</code></td>
         <td><code>[string]</code> Document Code
         <br>
-          The Document Code is a unique string that is used to <a href="/communications/dev-guide/commit-uncommit/">Commit or Uncommit</a> transactions.
+          The Document Code is a unique string that is used to <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/">Commit or Uncommit</a> transactions.
         </td>
       </tr>
       <tr>
         <td><code>cmmt</code></td>
         <td><code>[bool]</code> Commit
         <br>
-          <code>true</code>: The transaction should be <a href="/communications/dev-guide/commit-uncommit/">committed</a>
+          <code>true</code>: The transaction should be <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/">committed</a>
           <br>
-          <code>false</code>: The transaction should be <a href="/communications/dev-guide/commit-uncommit/">uncommitted</a>
+          <code>false</code>: The transaction should be <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/">uncommitted</a>
         </td>
       </tr>
       <tr>
         <td><code>bill</code></td>
-        <td><a href="/communications/dev-guide/reference/location/"><code>[Location]</code></a> Bill To Location
+        <td><a class="dev-guide-link" href="/communications/dev-guide/reference/location/"><code>[Location]</code></a> Bill To Location
           <br>
-          There are several ways to input location information. See the <a href="/communications/dev-guide/reference/location/">Location</a> section for more details.
+          There are several ways to input location information. See the <a class="dev-guide-link" href="/communications/dev-guide/reference/location/">Location</a> section for more details.
         </td>
       </tr>
       <tr>
@@ -81,16 +86,20 @@ The <code>Invoice</code> object contains information about one or more <b>transa
       </tr>
       <tr>
         <td><code>exms</code></td>
+<<<<<<< HEAD
         <td><a href="/communications/dev-guide/reference/exemption/"><code>[Exemption]</code></a> <span class="t5">optional</span> Exemptions
+=======
+        <td><a class="dev-guide-link" href="/communications/dev-guide/reference/exemption/"><code>[Exemption]</code></a> Exemptions <i>(optional)</i>
+>>>>>>> cd972b21980052fbec220c3323b06215b7ddadd5
           <br>
-          A list of <a href="/communications/dev-guide/reference/exemption/">Exemptions</a> to apply to this transaction.
+          A list of <a class="dev-guide-link" href="/communications/dev-guide/reference/exemption/">Exemptions</a> to apply to this transaction.
         </td>
       </tr>
       <tr>
         <td><code>itms</code></td>
-        <td><a href="/communications/dev-guide/reference/line-item/"><code>[LineItems]</code></a> Line Items
+        <td><a class="dev-guide-link" href="/communications/dev-guide/reference/line-item/"><code>[LineItems]</code></a> Line Items
           <br>
-          A list of <a href="/communications/dev-guide/reference/line-items/">Line Items</a> to process for this transaction.
+          A list of <a class="dev-guide-link" href="/communications/dev-guide/reference/line-items/">Line Items</a> to process for this transaction.
         </td>
       </tr>
     </tbody>
@@ -125,5 +134,6 @@ The <code>Invoice</code> object contains information about one or more <b>transa
 {% endhighlight %}
 
 <ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/reference/company-data/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide/reference/location/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

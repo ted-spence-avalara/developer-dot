@@ -8,6 +8,11 @@ nav: apis
 disqus: 0
 ---
 
+<ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/reference/calc-taxes-request/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide/reference/invoice/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
 <h3>Company Data</h3>
 
 The <code>CompanyData</code> object contains information about <b>your</b> company:
@@ -68,9 +73,9 @@ The <code>CompanyData</code> object contains information about <b>your</b> compa
       </tr>
       <tr>
         <td><code>excl</code></td>
-        <td><a href="/communications/dev-guide/reference/exclusion/"><code>[Exclusion]</code></a> Exclusions 
+        <td><a class="dev-guide-link" href="/communications/dev-guide/reference/exclusion/"><code>[Exclusion]</code></a> Exclusions 
         <br>
-        This is an array of <a href="/communications/dev-guide/reference/exclusion/">Exclusion</a> objects that identify states/provinces/territories where your company is excluded from collecting taxes. For increased performance, we suggest using a Client Profile with an Exclusion file applied.
+        This is an array of <a class="dev-guide-link" href="/communications/dev-guide/reference/exclusion/">Exclusion</a> objects that identify states/provinces/territories where your company is excluded from collecting taxes. For increased performance, we suggest using a Client Profile with an Exclusion file applied.
         </td>
       </tr>
       <tr>
@@ -107,5 +112,6 @@ The <code>CompanyData</code> object contains information about <b>your</b> compa
 {% endhighlight %}
 
 <ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/reference/calc-taxes-request/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
   <li class="next"><a href="/communications/dev-guide/reference/invoice/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
