@@ -17,7 +17,10 @@ Below are a number of use cases that show the different aspects of customizing a
 
 The following use cases are provided:
 <ul class="dev-guide-list">
-    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/simple-request">Simple Request</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/simple-request/">Simple Request</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/multi-line-request/">Multi-line Request</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/jurisdiction-determination/">Jurisdiction Determination</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/exemption/">Exemptions</a></li>
 </ul>
 
 <ul class="pager">
