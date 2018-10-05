@@ -86,11 +86,7 @@ The <code>Invoice</code> object contains information about one or more <b>transa
       </tr>
       <tr>
         <td><code>exms</code></td>
-<<<<<<< HEAD
-        <td><a href="/communications/dev-guide/reference/exemption/"><code>[Exemption]</code></a> <span class="t5">optional</span> Exemptions
-=======
         <td><a class="dev-guide-link" href="/communications/dev-guide/reference/exemption/"><code>[Exemption]</code></a> Exemptions <i>(optional)</i>
->>>>>>> cd972b21980052fbec220c3323b06215b7ddadd5
           <br>
           A list of <a class="dev-guide-link" href="/communications/dev-guide/reference/exemption/">Exemptions</a> to apply to this transaction.
         </td>

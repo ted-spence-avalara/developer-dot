@@ -35,21 +35,12 @@ At the highest level, a <code>CalcTaxes</code> request is a JSON object comprise
         <td>This object contains information about the <b>transaction</b></td>
       </tr>
       <tr>
-<<<<<<< HEAD
-      <td><a href="/communications/dev-guide/reference/tax-override/">Override</a></td>
-      <td>This object contains information about <b>tax overrides</b> you want to apply to the transaction (see <a href="#note">note</a> below)</td>
-      </tr>
-      <tr>
-      <td><a href="/communications/dev-guide/reference/safe-harbor-override/">Safe Harbor Override</a></td>
-      <td>This object contains information about <b>safe harbor overrides</b> you want to apply to the transaction (see <a href="#note">note</a> below)</td>
-=======
-      <td>Override</td>
-      <td>This object contains information about <b>tax overrides</b> you want to apply to the transaction (see <a class="dev-guide-link" href="#note">note</a> below)</td>
+        <td>Override</td>
+        <td>This object contains information about <b>tax overrides</b> you want to apply to the transaction (see <a class="dev-guide-link" href="#note">note</a> below)</td>
       </tr>
       <tr>
       <td>Safe Harbor Override</td>
       <td>This object contains information about <b>safe harbor overrides</b> you want to apply to the transaction (see <a class="dev-guide-link" href="#note">note</a> below)</td>
->>>>>>> cd972b21980052fbec220c3323b06215b7ddadd5
       </tr>
     </tbody>
   </table>
