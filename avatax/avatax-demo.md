@@ -12,7 +12,7 @@ doctype: use_cases
     const infoboxTemplate = `
         <div class="demo-infobox">
             <h4>Getting Started</h4>
-            <p id="demo-infobox-text" style="margin-top:10px;font-size:14px;">
+            <p id="demo-infobox-text">
                 Calculating sales tax is time consuming and painful, but it doesn\'t have to be. Avalara\'s sales tax API automates the process for you! All you need to do to start making quick calculations is choose a product or service and where you\'re shipping from and to. Tinker with the options on the left, click "Submit" and watch the magic happen!
             </p>
         </div>
@@ -77,7 +77,7 @@ doctype: use_cases
             <!-- steps to submit -->
             <div class="row">
                 <!-- step 1 / ship from -->
-                <button class="accordion active" id='step-one-btn'>Step 1: Where are you shipping from?</button>
+                <button class="accordion active" id='step-one-btn'>Step 1: Where are you shipping to?</button>
                 <div class="panel" style="display:block;">
                     <p>Choose a pre-selected address</p>
                     <form id="dropdown-dest-addresses" onChange="fillWithSampleData();" class="demo-form">
@@ -199,7 +199,7 @@ doctype: use_cases
                     </button>
                 </div>
                 <!-- step 3 / ship to -->
-                <button class="accordion" id='step-three-btn'>Step 3: Where are you shipping to? (optional)</button>
+                <button class="accordion" id='step-three-btn'>Step 3: Where are you shipping from? (optional)</button>
                 <div class="panel">
                     <p>Choose a pre-selected address</p>
                     <form id="dropdown-src-addresses" onChange="fillWithSampleData();" class="demo-form">
