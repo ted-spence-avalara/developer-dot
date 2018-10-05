@@ -60,7 +60,7 @@ For the body of the <code>POST</code> request, copy and paste the following exam
           "tran": 19,
           "serv": 6
         }
-      ],
+      ]
       "cmmt": false
     }
   ]
