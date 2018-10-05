@@ -15,7 +15,7 @@ disqus: 0
 
 <h3>Invoice</h3>
 
-The <code>Invoice</code> object contains information about the <b>transaction</b>:
+The <code>Invoice</code> object contains information about one or more <b>transactions</b>:
 
 <div class="mobile-table">
   <table class="styled-table">
