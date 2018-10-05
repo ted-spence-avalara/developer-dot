@@ -11,9 +11,9 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide/getting-started/">Get Started<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-Welcome to the Avalara Communications Developer Guide!
+Welcome to the Avalara for Communications Developer REST v2 Guide!
 
-This guide is intended to simplify the tax calculation process by providing developers with an overview of the Avalara for Communications REST v2 API funcationality, including:
+This guide is intended to simplify the tax calculation process by providing developers with an overview of the Avalara for Communications REST v2 API functionality, including:
 
 <ul class="dev-guide-list">
   <li>Connection and authentication</li>

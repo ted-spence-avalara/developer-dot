@@ -8,7 +8,12 @@ nav: apis
 disqus: 0
 ---
 
-<h3>Location</h3>
+<ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/reference/location/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide/reference/tax-override/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>
+
+<h3>Line Item</h3>
 
 The <code>LineItem</code> object contains <b>detailed</b> information about a <b>single transaction</b>:
 
@@ -27,12 +32,12 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
         </tr>
         <tr>
             <td><code>from</code></td>
-            <td><a href="/communications/dev-guide/reference/location/"><code>[Location]</code></a> <span class="t5">optional</span> The point of origin for the line item
+            <td><a class="dev-guide-link" href="/communications/dev-guide/reference/location/"><code>[Location]</code></a> <span class="t5">optional</span> The point of origin for the line item
             </td>
         </tr>
         <tr>
             <td><code>to</code></td>
-            <td><a href="/communications/dev-guide/reference/location/"><code>[Location]</code></a> <span class="t5">optional</span> The destination of the line item
+            <td><a class="dev-guide-link" href="/communications/dev-guide/reference/location/"><code>[Location]</code></a> <span class="t5">optional</span> The destination of the line item
             </td>
         </tr>
         <tr>
@@ -101,7 +106,7 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
             <br>
             The first part of the T/S Pair that defines the product to be taxed.
             <br>
-            For a list of transaction/service types, check out the <a href="/communications/dev-guide/gettings-started/environments-endpoints/"><code>/api/v2/afc/tspairs</code> endpoint</a>.
+            For a list of transaction/service types, check out the <a class="dev-guide-link" href="/communications/dev-guide/getting-started/environments-endpoints/"><code>/api/v2/afc/tspairs</code> endpoint</a>.
             </td>
         </tr>
         <tr>
@@ -110,7 +115,7 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
             <br>
             The second part of the T/S Pair that defines the product to be taxed.
             <br>
-            For a list of transaction/service types, check out the <a href="/communications/dev-guide/gettings-started/environments-endpoints/"><code>/api/v2/afc/tspairs</code> endpoint</a>.
+            For a list of transaction/service types, check out the <a class="dev-guide-link" href="/communications/dev-guide/getting-started/environments-endpoints/"><code>/api/v2/afc/tspairs</code> endpoint</a>.
             </td>
         </tr>
         <tr>
@@ -168,3 +173,8 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
     </tbody>
   </table>
 </div>
+
+<ul class="pager">
+  <li class="previous"><a href="/communications/dev-guide/reference/location/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide/reference/tax-override/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+</ul>

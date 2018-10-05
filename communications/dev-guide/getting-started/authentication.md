@@ -32,7 +32,7 @@ Three pieces of information must appear in your request header:
       </tr>
       <tr>
         <td><code>client_id</code></td>
-        <td>Unique identifier for your company. Avalara will provide this to you during account creation and your Client ID will be the same across all environments.</td>
+        <td>Unique identifier for your company. Avalara will provide this to you during <a class="dev-guide-link" href="/communications/dev-guide/getting-started/account-creation/">account creation</a> and your Client ID will be the same across all environments.</td>
       </tr>
       <tr>
       <td><code>Content-Type</code></td>
@@ -44,7 +44,7 @@ Three pieces of information must appear in your request header:
 
 <h3>Encode your API Key</h3>
 
-To encode a plaintext string to Base64 in Windows Powershell you can use the following script:
+To encode a plaintext string to Base64 in Windows Powershell, you can use the following script:
 
 {% highlight powershell %}
 # Encode a string to Base64

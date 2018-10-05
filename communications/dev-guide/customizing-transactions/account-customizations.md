@@ -16,19 +16,19 @@ disqus: 0
 There are two main components of account customizations:
 <ul class="dev-guide-list">
   <li>Customization files</li>
-  <li>Configuraiton options</li>
+  <li>Configuration options</li>
 </ul>
 
 One or both types of customizations can be set on a client profile.
 
-<h3>Cusomization Files</h3>
+<h3>Customization Files</h3>
 Customization files allow you to change how results are returned from the AFC tax engine or customize the way the AFC tax engine interprets your <code>CalcTaxes</code> request.  There are five types of customization files:
 <ul class="dev-guide-list">
   <li>Override file</li>
   <li>Exclusion file</li>
   <li>Exemption file</li>
   <li>Bundle file</li>
-  <li>Nexus file</li>
+  <li>Nexus file (for use with Sales and Use transactions only)</li>
 </ul>
 
 <div class="mobile-table">
@@ -60,7 +60,7 @@ Customization files allow you to change how results are returned from the AFC ta
         <td>Override</td>
         <td>Used to modify tax rates for a specified jurisdiction, alter the tax logic for transaction/ services, and add or remove taxes from transaction/services.</td>
         <td>.ovr</td>
-        <td>AFC Manager (Rate and Logic Modifider (RLM) component)</td>
+        <td>AFC Manager (Rate and Logic Modifier (RLM) component)</td>
       </tr>
       <tr>
         <td>Nexus</td>
@@ -109,7 +109,7 @@ The results of percentages from a traffic study can be applied by administering 
 <h3>Requesting a new client profile or changes to an existing client profile</h3>
 Contact <a class="dev-guide-link" href="mailto:CommunicationSupport@avalara.com">CommunicationSupport@avalara.com</a> to request a new client profile for your account.
 <ul class="dev-guide-list">
-  <li>Request the configuration option updates required and any overrides, exclusions, exemptions, or bundles needed.  If you alredy have customizaton files, attach the files to the email.</li>
+  <li>Request the configuration option updates required and any overrides, exclusions, exemptions, or bundles needed.  If you already have customization files, attach the files to the email.</li>
   <li>Include instructions as to whether the client profile should be applied to Sandbox for testing purposes, Production, or both environments.</li>
   <li>If changes are needed to an existing client profile, include the <code>client_profile_id</code> to be updated.</li>
   <li>Once applied, the account could take up to 24 hours to refresh with the new changes.</li>

@@ -71,7 +71,7 @@ For the body of the <code>POST</code> request, copy and paste the following exam
 
 In the example above, our request body begins with <a class="dev-guide-link" href="/communications/dev-guide/reference/company-data/">information that describes your company</a> (<code>cmpn</code>).
 
-Next comes the <a class="dev-guide-link" href="/communications/dev-guide/reference/invoice/">Invoice</a> (<code>inv</code>). This object contains details of the transaction(s). We've included a document code so we can <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/">commit</a> this transaction later. Our Bill To Location (<code>bill</code>) is a <a class="dev-guide-link" href="/communications/dev-guide/reference/location/">Location</a> object and can be specified in several ways. In this example we passed in a combination of Country, City, State and Zip Code, but we can also pass a single PCode, FIPS, or NPAXX value. Because we didn't specify a Street Address (<code>addr</code>), the tax engine will make a best effort guess which when determining tax jurisdiction.
+Next comes the <a class="dev-guide-link" href="/communications/dev-guide/reference/invoice/">Invoice</a> (<code>inv</code>). This object contains details of the transaction(s). We've included a document code so we can <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/">commit</a> this transaction later. Our BillTo Location (<code>bill</code>) is a <a class="dev-guide-link" href="/communications/dev-guide/reference/location/">Location</a> object and can be specified in several ways. In this example, we passed in a combination of Country, City, State and Zip Code, but we can also pass a single PCode, FIPS, or NPANXX value. Because we didn't specify a Street Address (<code>addr</code>), the tax engine will make a best effort guess a location when determining tax jurisdiction.
 
 The value you assign to the <code>date</code> key is important: this affects which rules are used by our tax engine to calculate taxes. Tax rules change frequently and our Content Team continuously updates our tax engine to reflect these changes.
 
@@ -153,10 +153,10 @@ The response contains a list of tax amounts:
 }
 {% endhighlight %}
 
-Each tax amount returned contains additional infromation including:
+Each tax amount returned contains additional information including:
 <ul class="dev-guide-list">
   <li><code>bill</code>: Is the tax <i>billable</i>? Or, can this tax be passed on to the end-customer?</li>
-  <li><code>cmpl</code>: Should the tax be included in <i>compliance</i> reporting?</li>
+  <li><code>cmpl</code>: Will this tax be included in <i>compliance</i> reporting?</li>
   <li><code>tm</code>: Taxable Measure</li>
   <li><code>cat</code>: Tax Category</li>
   <li><code>rate</code>: Tax Rate</li>

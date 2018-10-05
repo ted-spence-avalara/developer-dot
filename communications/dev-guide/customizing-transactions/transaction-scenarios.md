@@ -69,7 +69,7 @@ Words here
                 <ul class="dev-guide-list">
                     <li>Something 2
                         <ul class="dev-guide-list">
-                            <li>Sub somethihng 2</li>
+                            <li>Sub something 2</li>
                         </ul>
                     </li>
                 </ul>
@@ -93,7 +93,7 @@ Words here
 },
 "inv": [
     {
-    "doc": "TEST-VOIP INVOICE 2017.12.26:12.02 AVA",
+    "doc": "TEST-VoIP INVOICE 2017.12.26:12.02 AVA",
     "cmmt": false,
     "bill": {
         "ctry": "CAN",

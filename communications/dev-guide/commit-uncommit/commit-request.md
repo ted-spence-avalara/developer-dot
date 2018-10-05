@@ -13,6 +13,60 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide/customizing-transactions/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
+<h3>Commit Endpoint</h3>
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Endpoint</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/v2/afc/commit</code></td>
+        <td><code>POST</code> Commits and Uncommits transactions. See <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/">Commit/Uncommit</a> for more information.</td>
+      </tr>
+    </tbody>
+  </table>
+<div>
+
+<h3>Commit API Data Fields</h3>
+The following fields must be provided within a <code>Commit</code> API call in order to support the <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/">Commit/Uncommit feature</a>.
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>doc</code></td>
+        <td><code>[string]</code> DocumentCode
+            <br/> 
+            150-character max user-defined field that identifies a transaction, quote, or invoice in the calling system. The value is provided by the user when performing the tax calculation.</td>
+      </tr>
+      <tr>
+        <td><code>cmmt</code></td>
+        <td><code>[bool]</code> Commit
+        <br>
+          <code>true</code>: The transaction should be <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/">committed</a>
+          <br>
+          <code>false</code>: The transaction should be <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/">uncommitted</a>
+        </td>
+      </tr>
+      <tr>
+        <td><code>opt</code></td>
+        <td><code>[OptionalFields]</code> <span class="t5">optional</span> Key value Pair 
+        <br/>
+        List of <a class="dev-guide-link" href="/communications/dev-guide/reference/key-value-pair/">Key Value Pairs</a> to provide additional information</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <h3>The Commit Request</h3>
 The <code>Commit</code> request is used to change the <code>Commit</code> flag for a given <code>DocumentCode</code>.  Let's send a simple <code>Commit</code> call using <a class="dev-guide-link" href="https://www.getpostman.com">Postman</a> and inspect the results.
 
@@ -44,14 +98,14 @@ For the body of the <code>POST</code> request, copy and paste the following exam
 {% endhighlight %}
 
 <h4>What are we sending?</h4>
-The example above assumes you have submitted transactions for the current reporting cycle with a DocumentCode (<code>doc</code>) of "123456789" set.  This specifies the DocumentCode you want to update.
+The example above assumes you have submitted transactions for the current reporting cycle with a DocumentCode (<code>doc</code>) of "123456789".  The <code>doc</code> key identifies the DocumentCode you want to update.
 
-Next comes the Commit flag (<code>cmmt</code>). Set this flag to <code>true</code> to mark the DocumentCode (<code>doc</code>) as commited or <code>false</code> to uncommit the DocumentCode.  Reminder: this action commits or uncommits all transactions with this DocumentCode.
+Next comes the Commit flag (<code>cmmt</code>). Set this flag to <code>true</code> to mark the DocumentCode (<code>doc</code>) as committed or <code>false</code> to uncommit the DocumentCode.  <b>Reminder</b>: this action commits or uncommits all transactions with this DocumentCode.
 
-Last is the optional <a class="dev-guide-link" href="/communications/dev-guide/reference/key-value-pair/">Key Value Pair</a> (<code>opt</code>).  This is where optional infomraiton about the commit batch, transactions, cutomer, etc. can be stored.
+Last is the optional <a class="dev-guide-link" href="/communications/dev-guide/reference/key-value-pair/">Key Value Pair</a> (<code>opt</code>).  This is where optional information about the commit batch, transactions, customer, etc. can be stored.
 
 <h3>Response</h3>
-The Commit response contains a confirmation of success or failuare:
+The Commit response contains a confirmation of success or failure:
 
 {% highlight json %}
 {
@@ -59,7 +113,7 @@ The Commit response contains a confirmation of success or failuare:
 }
 {% endhighlight %}
 
-An <code>ok</code> status of <code>true</code> means that the DocumentCode (<code>doc</code>) was commited or uncommited successfully depending on the value of the Commited (<code>cmmt</code>) flag.  If <code>false</code> is returned in <code>ok</code>, an error code (<code>code</code>) and the error message (<code>msg</code>) are also returned.
+An <code>ok</code> status of <code>true</code> means that the DocumentCode (<code>doc</code>) was committed or uncommitted successfully depending on the value of the Committed (<code>cmmt</code>) flag.  If <code>false</code> is returned in the <code>ok</code> key, an error code (<code>code</code>) and the error message (<code>msg</code>) are returned.
 
 
 <ul class="pager">

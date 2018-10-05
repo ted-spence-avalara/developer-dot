@@ -15,7 +15,7 @@ disqus: 0
 
 <h3>Environments</h3>
 
-There are two environments availble to you, UAT and Production:
+There are two environments available to you, Sandbox and Production:
 
 <ul class="dev-guide-list">
   <li><b>Production</b>: <a class="dev-guide-link" href="https://communications.avalara.net">communications.avalara.net</a></li>
@@ -39,7 +39,7 @@ There are two environments availble to you, UAT and Production:
       </tr>
       <tr>
         <td><code>/api/v2/afc/commit</code></td>
-        <td><code>POST</code> Commits and Uncommits transactions. See <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/">Commit/Uncommit</a> for more intormation.</td>
+        <td><code>POST</code> Commits and Uncommits transactions. See <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/">Commit/Uncommit</a> for more information.</td>
       </tr>
       <tr>
         <td><code>/api/v2/geo/geocode</code></td>
@@ -47,7 +47,7 @@ There are two environments availble to you, UAT and Production:
       </tr>
       <tr>
         <td><code>/api/v2/afc/serviceinfo</code></td>
-        <td><code>GET</code> Server time, build version and taxengine version.</td>
+        <td><code>GET</code> Server time, build version, and tax engine version.</td>
       </tr>
       <tr>
         <td><code>/api/v2/afc/taxtype/{taxType}</code></td>
@@ -65,7 +65,7 @@ There are two environments availble to you, UAT and Production:
       </tr>
       <tr>
         <td><code>/api/v2/afc/primary/{pcode}</code></td>
-        <td><code>GET</code> Similar to the endpoint above, but works as a "best match." Returns location info for the primary jurisdiction asociated with the specified PCode.</td>
+        <td><code>GET</code> Similar to the endpoint above, but works as a "best match." Returns location info for the primary jurisdiction associated with the specified PCode.</td>
       </tr>
     </tbody>
   </table>
