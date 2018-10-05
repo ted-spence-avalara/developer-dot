@@ -92,6 +92,26 @@ function copyToClipboard(element) {
     $temp.remove();
   }
 
+function buildInfoboxHTML(body) {
+    const summaryArray = body.summary;
+
+    let taxLines = `<br>`;
+                
+    if (summaryArray.length > 0) {
+        for(let i = 0; i < summaryArray.length; i++) {
+            const item = summaryArray[i];
+            taxLines += `${item.taxName}: $${item.taxCalculated}<br>`;
+        };
+    } else {
+        const infoboxHTML = ` 
+            Subtotal: $${body.totalAmount} <br>
+            Total: $${body.totalAmount + body.totalTax}
+        `
+    }
+
+    return infoboxHTML;
+}
+
 function ApiRequest() {
     // clear the console output and display loading-pulse
     $("#demo-console-output").empty();
@@ -124,20 +144,9 @@ function ApiRequest() {
                 $(".loading-pulse").css('display', 'none');
                 $('#demo-console-output').text(JSON.stringify(body, null, 2));
 
-                let taxLines = `<br>`;
-                
-                if (body.summary.length > 0) {
-                    for(let i = 0; i < body.summary.length; i++) {
-                        const item = body.summary[i];
-                        taxLines += `${item.taxName}: $${item.taxCalculated}<br>`;
-                    };
-                }
+                const infoboxHTML = buildInfoboxHTML(body);
 
-                $("#demo-infobox-text").html(`
-                    Subtotal: $${body.totalAmount}
-                    ${taxLines}
-                    Total: $${body.totalAmount + body.totalTax}
-                `);
+                $("#demo-infobox-text").html(infoboxHTML);
 
                 //TODO handle errors
                 // $('#console-output').text("HTTP Error: " + body.status + "\n\n" + JSON.stringify(result, null, 2));

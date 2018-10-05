@@ -76,7 +76,7 @@ doctype: use_cases
         <div id="demo-shortcuts">
             <!-- steps to submit -->
             <div class="row">
-                <!-- step 1 / ship from -->
+                <!-- step 1 / ship to -->
                 <button class="accordion active" id='step-one-btn'>Step 1: Where are you shipping to?</button>
                 <div class="panel" style="display:block;">
                     <p>Choose a pre-selected address</p>
@@ -198,7 +198,7 @@ doctype: use_cases
                         Next
                     </button>
                 </div>
-                <!-- step 3 / ship to -->
+                <!-- step 3 / ship from -->
                 <button class="accordion" id='step-three-btn'>Step 3: Where are you shipping from? (optional)</button>
                 <div class="panel">
                     <p>Choose a pre-selected address</p>
