@@ -52,7 +52,7 @@ function buildSampleData() {
 
     const sampleData = {
         "lines": [],
-        "type": "SalesOrder",
+        "type": "SalesInvoice",
         "companyCode": "DEMOPAGE",
         "date": "2018-09-05",
         "customerCode": "ABC",
@@ -95,6 +95,7 @@ function copyToClipboard(element) {
 function ApiRequest() {
     // clear the console output and display loading-pulse
     $("#demo-console-output").empty();
+    // TODO: put in infobox as well
     $(".loading-pulse").css('display', 'block');
     $("#demo-infobox-text").empty();
 
@@ -123,11 +124,24 @@ function ApiRequest() {
                 $(".loading-pulse").css('display', 'none');
                 $('#demo-console-output').text(JSON.stringify(body, null, 2));
                 console.log('body', body);
+
+                let taxLines = `<br>`;
+                
+                if (body.summary.length > 0) {
+                    for(let i = 0; i < body.summary.length; i++) {
+                        const item = body.summary[i];
+                        console.log('item', item)
+                        console.log('item.taxName', item.taxName)
+                        console.log('item.taxCalculated', item.taxCalculated)
+
+                        taxLines += `${item.taxName}: $${item.taxCalculated}<br>`;
+                    };
+                }
+
                 $("#demo-infobox-text").html(`
-                    <p>Subtotal: ${body.totalAmount}</p>
-                    <p>tax1: </p>
-                    <p>tax2: </p>
-                    <p>Total: ${body.totalAmount + body.totalTax}</p>
+                    Subtotal: $${body.totalAmount}
+                    ${taxLines}
+                    Total: $${body.totalAmount + body.totalTax}
                 `);
 
                 //TODO handle errors

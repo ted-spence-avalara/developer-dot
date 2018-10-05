@@ -12,7 +12,7 @@ doctype: use_cases
     const infoboxTemplate = `
         <div class="demo-infobox">
             <h4>Getting Started</h4>
-            <p id="demo-infobox-text">
+            <p id="demo-infobox-text" style="margin-top:10px;font-size:14px;">
                 Calculating sales tax is time consuming and painful, but it doesn\'t have to be. Avalara\'s sales tax API automates the process for you! All you need to do to start making quick calculations is choose a product or service and where you\'re shipping from and to. Tinker with the options on the left, click "Submit" and watch the magic happen!
             </p>
         </div>
