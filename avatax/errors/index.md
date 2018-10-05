@@ -1297,7 +1297,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1903</td>
 			<td><a href="ErrorReadingTaxProfileEntry">ErrorReadingTaxProfileEntry</a></td>
-			<td>TBD</td>
+			<td>AvaTax was unable to parse your tax profile entry. </td>
 		</tr>		
         <tr>
 			<td>2000</td>

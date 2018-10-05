@@ -34,4 +34,4 @@ A tax profile was not included in your request.
 
 Please include a tax profile in the request body. 
 
-The Tax Profile Import API is only available to Technical Support Admin roles.
+The Tax Profile Import API is only available to Technical Support Administrator roles.

@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+AvaTax was unable to parse your tax profile entry. 
 
 ## Example
 
@@ -32,4 +32,7 @@ TBD
 
 ## Explanation
 
-TBD
+The company tax profile is missing, corrupt, incorrect type, or missing. Please check the company tax profile and try your request again. 
+
+The Tax Profile Import API is only available to Technical Support Administrator roles.
+
