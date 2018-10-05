@@ -10,7 +10,7 @@ disqus: 0
 
 <h3>Invoice</h3>
 
-The <code>Invoice</code> object contains information about the <b>transaction</b>:
+The <code>Invoice</code> object contains information about one or more <b>transactions</b>:
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -81,7 +81,7 @@ The <code>Invoice</code> object contains information about the <b>transaction</b
       </tr>
       <tr>
         <td><code>exms</code></td>
-        <td><a href="/communications/dev-guide/reference/exemption/"><code>[Exemption]</code></a> Exemptions <i>(optional)</i>
+        <td><a href="/communications/dev-guide/reference/exemption/"><code>[Exemption]</code></a> <span class="t5">optional</span> Exemptions
           <br>
           A list of <a href="/communications/dev-guide/reference/exemption/">Exemptions</a> to apply to this transaction.
         </td>

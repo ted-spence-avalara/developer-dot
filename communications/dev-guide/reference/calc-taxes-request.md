@@ -22,25 +22,26 @@ At the highest level, a <code>CalcTaxes</code> request is a JSON object comprise
     </thead>
     <tbody>
       <tr>
-        <td>Company Data</td>
+        <td><a href="/communications/dev-guide/reference/company-data/">Company Data</a></td>
         <td>This object contains information about <b>your</b> company</td>
       </tr>
       <tr>
-        <td>Invoice</td>
+        <td><a href="/communications/dev-guide/reference/invoice/">Invoice</a></td>
         <td>This object contains information about the <b>transaction</b></td>
       </tr>
       <tr>
-      <td>Override</td>
+      <td><a href="/communications/dev-guide/reference/tax-override/">Override</a></td>
       <td>This object contains information about <b>tax overrides</b> you want to apply to the transaction (see <a href="#note">note</a> below)</td>
       </tr>
       <tr>
-      <td>Safe Harbor Override</td>
+      <td><a href="/communications/dev-guide/reference/safe-harbor-override/">Safe Harbor Override</a></td>
       <td>This object contains information about <b>safe harbor overrides</b> you want to apply to the transaction (see <a href="#note">note</a> below)</td>
       </tr>
     </tbody>
   </table>
 <div>
-
+<br>
+<br>
 {% highlight json %}
 {
   "cmpn": {
@@ -65,7 +66,7 @@ At the highest level, a <code>CalcTaxes</code> request is a JSON object comprise
 {% endhighlight %}
 
 <h4 id="note">Note</h4>
-Although the <code>CalcTaxes</code> request gives the user the flexibility to input Override/Safe Harbor Override information for each transaction, we recommend utilizing a Client Profile with a custom Override file applied. This results in better performance from the Tax Engine because your override settings are cached <i>before</i> tax calculation begins.
+Although the <code>CalcTaxes</code> request gives the user the flexibility to input Override/Safe Harbor Override information for each transaction, we recommend using a <a href="/communications/dev-guide/customizing-transactions/client-profiles/">Client Profile</a> with a custom override file applied. This results in better performance from the Tax Engine because your override settings are cached <i>before</i> tax calculation begins.
 
 <ul class="pager">
   <li class="next"><a href="/communications/dev-guide/reference/company-data/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>

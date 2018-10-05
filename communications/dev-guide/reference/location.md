@@ -51,7 +51,7 @@ The <code>Location</code> object contains information about the <b>jurisdiction<
         </tr>
         <tr>
             <td><code>pcd</code></td>
-            <td><code>[int]</code> Proprietary code returned from AFC Geo service
+            <td><code>[int]</code> Proprietary code returned from our AFC Geo service
                 <br>
                 PCodes provide the <b>most accurate</b> jurisdiction determination for calculating taxes with our engine.
             </td>
