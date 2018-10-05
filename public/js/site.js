@@ -52,7 +52,7 @@ function buildSampleData() {
 
     const sampleData = {
         "lines": [],
-        "type": "SalesInvoice",
+        "type": "SalesOrder",
         "companyCode": "DEMOPAGE",
         "date": "2018-09-05",
         "customerCode": "ABC",
@@ -123,17 +123,12 @@ function ApiRequest() {
             return rawApiResponse.json().then((body) => {
                 $(".loading-pulse").css('display', 'none');
                 $('#demo-console-output').text(JSON.stringify(body, null, 2));
-                console.log('body', body);
 
                 let taxLines = `<br>`;
                 
                 if (body.summary.length > 0) {
                     for(let i = 0; i < body.summary.length; i++) {
                         const item = body.summary[i];
-                        console.log('item', item)
-                        console.log('item.taxName', item.taxName)
-                        console.log('item.taxCalculated', item.taxCalculated)
-
                         taxLines += `${item.taxName}: $${item.taxCalculated}<br>`;
                     };
                 }
