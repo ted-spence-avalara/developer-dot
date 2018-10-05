@@ -246,13 +246,14 @@ $(document).ready(function() {
         GetMapWithLine(lat, long, null, null);
     });
 
+    //When the source changes, fire the map script with source and dest lat-long.
     $('#dropdown-src-addresses').change(function(e){
-        let lat = $('input[type=radio][name=address]:checked').attr('lat');
-        let long = $('input[type=radio][name=address]:checked').attr('long');
-        let srcLat = $('input[type=radio][name=srcAddress]:checked').attr('lat');
+        let lat     = $('input[type=radio][name=address]:checked').attr('lat');
+        let long    = $('input[type=radio][name=address]:checked').attr('long');
+        let srcLat  = $('input[type=radio][name=srcAddress]:checked').attr('lat');
         let srcLong = $('input[type=radio][name=srcAddress]:checked').attr('long');
         GetMapWithLine(lat, long, srcLat, srcLong);
-    });
+    }); 
 
     $('#dropdown-addresses').trigger('change');
 });
