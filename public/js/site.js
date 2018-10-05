@@ -41,25 +41,57 @@ function makeAddressObj(){
     return addressObj;
 }
 
+function makeSrcAddressObj(){
+    const address = $('input[type=radio][name=srcAddress]:checked').val().split(',');
+    const addressObj = {
+        "line1": address[0],
+        "city": address[1],
+        "region": address[2],
+        "country": address[3],
+        "postalCode": address[4],
+    }
+    return addressObj;
+}
+
 function setShipToOrSingleLocation() {
     var checked = $('input[type=radio][name=srcAddress]:checked').length > 0;
-    //
+
+    return checked;    
 }
 
 function buildSampleData() {
     const address = makeAddressObj();
-    // setShipToOrSingleLocation();
+    const shipToAddress = setShipToOrSingleLocation();
+    let sampleData;
+    // setShipFrom()
 
-    const sampleData = {
-        "lines": [],
-        "type": "SalesOrder",
-        "companyCode": "DEMOPAGE",
-        "date": "2018-09-05",
-        "customerCode": "ABC",
-        "addresses": {
-            "singleLocation": address,
-        }
-    };
+    if(shipToAddress) {
+        const srcAddress = makeSrcAddressObj();
+
+        sampleData = {
+            "lines": [],
+            "type": "SalesOrder",
+            "companyCode": "DEMOPAGE",
+            "date": "2018-09-05",
+            "customerCode": "ABC",
+            "addresses": {
+                "shipTo": address,
+                "shipFrom": srcAddress,
+            }
+        };
+    }
+    else {
+        sampleData = {
+            "lines": [],
+            "type": "SalesOrder",
+            "companyCode": "DEMOPAGE",
+            "date": "2018-09-05",
+            "customerCode": "ABC",
+            "addresses": {
+                "singleLocation": address,
+            }
+        };
+    }
 
     // Loop through all the checked products and add one line for each
     var lineNum = 1;
@@ -209,9 +241,17 @@ $(document).ready(function() {
 
     //When the destination changes, fire the map script and set the lat-long.
     $('#dropdown-dest-addresses').change(function(e){
-        var lat = $('input[type=radio][name=address]:checked').attr('lat');
-        var long = $('input[type=radio][name=address]:checked').attr('long');
+        let lat = $('input[type=radio][name=address]:checked').attr('lat');
+        let long = $('input[type=radio][name=address]:checked').attr('long');
         GetMapWithLine(lat, long, null, null);
+    });
+
+    $('#dropdown-src-addresses').change(function(e){
+        let lat = $('input[type=radio][name=address]:checked').attr('lat');
+        let long = $('input[type=radio][name=address]:checked').attr('long');
+        let srcLat = $('input[type=radio][name=srcAddress]:checked').attr('lat');
+        let srcLong = $('input[type=radio][name=srcAddress]:checked').attr('long');
+        GetMapWithLine(lat, long, srcLat, srcLong);
     });
 
     $('#dropdown-addresses').trigger('change');
