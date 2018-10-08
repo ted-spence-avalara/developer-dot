@@ -128,7 +128,6 @@ function buildInfoboxHTML(body) {
 
     let infoboxHTML;
 
-    // let stateTax, countyTax, localTax, specialTax  = 0.00;
     let stateTax = 0.00; 
     let countyTax = 0.00; 
     let localTax = 0.00; 
@@ -296,7 +295,13 @@ $(document).ready(function() {
         let long    = $('input[type=radio][name=address]:checked').attr('long');
         let srcLat  = $('input[type=radio][name=srcAddress]:checked').attr('lat');
         let srcLong = $('input[type=radio][name=srcAddress]:checked').attr('long');
-        GetMapWithLine(lat, long, srcLat, srcLong);
+
+        // check if both address are in the US
+        let addressType = $('input[type=radio][name=address]:checked').attr('addressType') === 'national';
+        let srcType = $('input[type=radio][name=srcAddress]:checked').attr('addressType') === 'national';
+        let usAddresses = addressType && srcType
+
+        GetMapWithLine(lat, long, srcLat, srcLong, usAddresses);
     }); 
 
     $('#dropdown-addresses').trigger('change');
