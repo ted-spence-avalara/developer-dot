@@ -124,52 +124,127 @@ function copyToClipboard(element) {
   }
 
 function buildInfoboxHTML(body) {
-    const summaryArray = body.summary;
+    // const summaryArray = body.summary;
+    const summaryArray = [
+        {
+          "country": "US",
+          "region": "CA",
+          "jurisType": "State",
+          "jurisCode": "06",
+          "jurisName": "CALIFORNIA",
+          "taxAuthorityType": 45,
+          "stateAssignedNo": "",
+          "taxType": "Sales",
+          "taxName": "CA STATE TAX",
+          "rateType": "General",
+          "taxable": 100,
+          "rate": 0.06,
+          "tax": 6,
+          "taxCalculated": 6,
+          "nonTaxable": 15.99,
+          "exemption": 0
+        },
+        {
+          "country": "US",
+          "region": "CA",
+          "jurisType": "County",
+          "jurisCode": "059",
+          "jurisName": "ORANGE",
+          "taxAuthorityType": 45,
+          "stateAssignedNo": "",
+          "taxType": "Sales",
+          "taxName": "CA COUNTY TAX",
+          "rateType": "General",
+          "taxable": 100,
+          "rate": 0.0025,
+          "tax": 0.25,
+          "taxCalculated": 0.25,
+          "nonTaxable": 15.99,
+          "exemption": 0
+        },
+        {
+          "country": "US",
+          "region": "CA",
+          "jurisType": "Special",
+          "jurisCode": "EMTN0",
+          "jurisName": "ORANGE CO LOCAL TAX SL",
+          "taxAuthorityType": 45,
+          "stateAssignedNo": "30",
+          "taxType": "Sales",
+          "taxName": "CA SPECIAL TAX",
+          "rateType": "General",
+          "taxable": 100,
+          "rate": 0.01,
+          "tax": 1,
+          "taxCalculated": 1,
+          "nonTaxable": 15.99,
+          "exemption": 0
+        },
+        {
+          "country": "US",
+          "region": "CA",
+          "jurisType": "Special",
+          "jurisCode": "EMAZ0",
+          "jurisName": "ORANGE COUNTY DISTRICT TAX SP",
+          "taxAuthorityType": 45,
+          "stateAssignedNo": "037",
+          "taxType": "Sales",
+          "taxName": "CA SPECIAL TAX",
+          "rateType": "General",
+          "taxable": 100,
+          "rate": 0.005,
+          "tax": 0.5,
+          "taxCalculated": 0.5,
+          "nonTaxable": 15.99,
+          "exemption": 0
+        }
+      ];
+
     console.log('buildInfoboxHTML');
 
-    let infoboxHTML = `<br>`;
+    let infoboxHTML;
 
-    let html = `
-        AvaTax's engine can calculate tax down to the roof-top level. In this case, 
-        AvaTax returned a total tax of ${body.Tax}, which encompassed state ($xx.xx), 
-        county ($xx.xx), local ($xx.xx) and special taxing districts ($xx.xx). 
-        Feel free to continue tinkering with the options to the left to test 
-        the flexibility of the AvaTax API. Or, if you've seen enough, 
-        sign up for a 60-day API trial and production account.
-    `;
-    let stateTax, countyTax, localTax, specialTax;          
+    let stateTax = 0.00;
+    let countyTax = 0.00; 
+    let localTax = 0.00; 
+    let specialTax = 0.00;          
+    
     if (summaryArray.length > 0) {
         console.log('IF buildInfoboxHTML');
 
         for(let i = 0; i < summaryArray.length; i++) {
             const item = summaryArray[i];
-            infoboxHTML += `${item.taxName}: $${item.taxCalculated}<br>`;
+            switch (item.jurisType) {
+                case 'State':
+                    stateTax += item.taxCalculated;
+                    break;
+                case 'County':
+                    countyTax += item.taxCalculated;
+                    break;
+                case 'Local':
+                    localTax += item.taxCalculated;
+                    break;
+                case 'Special':
+                    specialTax += item.taxCalculated;
+                    break;
+                default:
+                    break;
+            }
         };
-
-        infoboxHTML = `
-            AvaTax's engine can calculate tax down to the roof-top level. In this case, 
-            AvaTax returned a total tax of <span class="demo-tax-totals">${body.totalTax}</span>, 
-            which encompassed state <span class="demo-tax-totals">($xx.xx)</span>, 
-            county <span class="demo-tax-totals">($xx.xx)</span>, 
-            local <span class="demo-tax-totals">($xx.xx)</span> 
-            and special taxing districts <span class="demo-tax-totals">($xx.xx)</span>.
-            Feel free to continue tinkering with the options to the left to test 
-            the flexibility of the AvaTax API. Or, if you've seen enough, 
-            <a href='https://developer.avalara.com/avatax/'>sign up for a 60-day API trial</a> and production account.
-        `
-    } else {
-        console.log('ELSE buildInfoboxHTML');
-        
-        infoboxHTML = `
-            AvaTax's engine can calculate tax down to the roof-top level. In this case, 
-            AvaTax returned a total tax of <span class="demo-tax-totals">${body.totalTax}</span>, 
-            which encompassed state, county, local and special taxing districts. 
-            Feel free to continue tinkering with the options to the left to test 
-            the flexibility of the AvaTax API. Or, if you've seen enough, 
-            <a href='https://developer.avalara.com/avatax/'>sign up for a 60-day API trial</a> and production account.
-        `
     }
-
+    
+    infoboxHTML = `
+        AvaTax's engine can calculate tax down to the roof-top level. In this case, 
+        AvaTax returned a total tax of <span class="demo-tax-totals">$${body.totalTax.toFixed(2)}</span>, 
+        which encompassed state <span class="demo-tax-totals">$${stateTax.toFixed(2)}</span>, 
+        county <span class="demo-tax-totals">$${countyTax.toFixed(2)}</span>, 
+        local <span class="demo-tax-totals">$${localTax.toFixed(2)}</span> 
+        and special taxing districts <span class="demo-tax-totals">$${specialTax.toFixed(2)}</span>.
+        Feel free to continue tinkering with the options to the left to test 
+        the flexibility of the AvaTax API. Or, if you've seen enough, 
+        <a href='https://developer.avalara.com/avatax/' target='_blank'>sign up for a 60-day API trial</a> 
+        and production account.
+    `
     return infoboxHTML;
 }
 
