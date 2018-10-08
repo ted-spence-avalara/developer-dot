@@ -36,10 +36,10 @@ The <code>Invoice</code> object contains information about one or more <b>transa
       <tr>
         <td><code>cmmt</code></td>
         <td><code>[bool]</code> Commit
-        <br>
-          <code>true</code>: The transaction should be <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/">committed</a>
-          <br>
-          <code>false</code>: The transaction should be <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/">uncommitted</a>
+          <ul class="dev-guide-list">
+            <li><code>true</code>: The transaction should be <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/">committed</a></li>
+            <li><code>false</code>: The transaction should be <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/">uncommitted</a></li>
+          </ul>
         </td>
       </tr>
       <tr>
@@ -64,11 +64,10 @@ The <code>Invoice</code> object contains information about one or more <b>transa
       <tr>
         <td><code>lfln</code></td>
         <td><code>[bool]</code> Lifeline
-          <br>
-          <code>true</code>: The customer is a lifeline participant
-          <br>
-          <code>false</code>: The customer is not a lifeline participant
-          <br>
+          <ul class="dev-guide-list">
+            <li><code>true</code>: The customer is a lifeline participant</li>
+            <li><code>false</code>: The customer is not a lifeline participant</li>
+          </ul>
           Lifeline is a federal program that subsidizes the cost of phone and internet for eligible customers.
         </td>
       </tr>
@@ -86,7 +85,7 @@ The <code>Invoice</code> object contains information about one or more <b>transa
       </tr>
       <tr>
         <td><code>exms</code></td>
-        <td><a class="dev-guide-link" href="/communications/dev-guide/reference/exemption/"><code>[Exemption]</code></a> Exemptions <i>(optional)</i>
+        <td><a class="dev-guide-link" href="/communications/dev-guide/reference/exemption/"><code>[Exemption]</code></a> <span class="t5">optional</span> Exemptions
           <br>
           A list of <a class="dev-guide-link" href="/communications/dev-guide/reference/exemption/">Exemptions</a> to apply to this transaction.
         </td>
@@ -102,10 +101,10 @@ The <code>Invoice</code> object contains information about one or more <b>transa
   </table>
 </div>
 <br>
-<br>
-{% highlight json %}
-// Example
 
+<h3>Example</h3>
+
+{% highlight json %}
 "inv": [
     {
       "doc": "DocumentCode12345",
