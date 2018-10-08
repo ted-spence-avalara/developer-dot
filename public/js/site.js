@@ -24,10 +24,208 @@ function getCompareDate() {
   return [year, month, day].join('');
 }
 
-$(document).ready(function()
-{
+function fillWithSampleData() {
+    const sampleData = buildSampleData();
+    $('#demo-console-input').empty().text(JSON.stringify(sampleData, null, 2));
+};
+
+function makeAddressObj(){
+    const address = $('input[type=radio][name=address]:checked').val().split(',');
+    const addressObj = {
+        "line1": address[0],
+        "city": address[1],
+        "region": address[2],
+        "country": address[3],
+        "postalCode": address[4],
+    }
+    return addressObj;
+}
+
+function makeSrcAddressObj(){
+    const address = $('input[type=radio][name=srcAddress]:checked').val().split(',');
+    const addressObj = {
+        "line1": address[0],
+        "city": address[1],
+        "region": address[2],
+        "country": address[3],
+        "postalCode": address[4],
+    }
+    return addressObj;
+}
+
+function setShipToOrSingleLocation() {
+    var checked = $('input[type=radio][name=srcAddress]:checked').length > 0;
+
+    return checked;    
+}
+
+function buildSampleData() {
+    const address = makeAddressObj();
+    const shipToAddress = setShipToOrSingleLocation();
+    let sampleData;
+    // setShipFrom()
+
+    if(shipToAddress) {
+        const srcAddress = makeSrcAddressObj();
+
+        sampleData = {
+            "lines": [],
+            "type": "SalesOrder",
+            "companyCode": "DEMOPAGE",
+            "date": "2018-09-05",
+            "customerCode": "ABC",
+            "addresses": {
+                "shipTo": address,
+                "shipFrom": srcAddress,
+            }
+        };
+    }
+    else {
+        sampleData = {
+            "lines": [],
+            "type": "SalesOrder",
+            "companyCode": "DEMOPAGE",
+            "date": "2018-09-05",
+            "customerCode": "ABC",
+            "addresses": {
+                "singleLocation": address,
+            }
+        };
+    }
+
+    // Loop through all the checked products and add one line for each
+    var lineNum = 1;
+    $('input[type=checkbox][name=product]:checked').each(function () {
+        // Find amount
+        sampleData.lines.push({
+            "number": lineNum++,
+            "amount": $('#' + $(this).attr('id') + '-amount').val(),
+            "taxCode": $(this).val(),
+            "description": $(this).attr('description')
+        });
+    });
+
+    return sampleData;
+}
+
+const proxy = {
+    "route": "https://xp0wfn7roi.execute-api.us-west-2.amazonaws.com/production/proxy",
+    "key": {
+        "name": "api-key",
+        "location": "v2-devdot-keys/devdot-proxy-key"
+    }
+}
+
+function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+  }
+
+function ApiRequest() {
+    // clear the console output and display loading-pulse
+    $("#demo-console-output").empty();
+    // TODO: put in infobox as well
+    $(".loading-pulse").css('display', 'block');
+    $("#demo-infobox-text").empty();
+
+    const data = buildSampleData();
+    const [bucket, key] = proxy.key.location.split('/');
+
+    const keyBucket = new AWS.S3({params: {Bucket: bucket, Key: key}});
+    return keyBucket.makeUnauthenticatedRequest('getObject', {}).promise()
+    .then((bucketRes) => {
+        return fetch(proxy.route, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                apiKey: bucketRes.Body.toString(),
+                method: 'POST',
+                route: 'https://sandbox-rest.avatax.com/api/v2/transactions/create?$include=summaryOnly',
+                queryString: {},
+                pathParams:{},
+                postBody: data
+            })
+        })
+        .then((rawApiResponse) => {
+            return rawApiResponse.json().then((body) => {
+                $(".loading-pulse").css('display', 'none');
+                $('#demo-console-output').text(JSON.stringify(body, null, 2));
+
+                let taxLines = `<br>`;
+                
+                if (body.summary.length > 0) {
+                    for(let i = 0; i < body.summary.length; i++) {
+                        const item = body.summary[i];
+                        taxLines += `${item.taxName}: $${item.taxCalculated}<br>`;
+                    };
+                }
+
+                $("#demo-infobox-text").html(`
+                    Subtotal: $${body.totalAmount}
+                    ${taxLines}
+                    Total: $${body.totalAmount + body.totalTax}
+                `);
+
+                //TODO handle errors
+                // $('#console-output').text("HTTP Error: " + body.status + "\n\n" + JSON.stringify(result, null, 2));
+
+                return {
+                    status: rawApiResponse.status.toString(),
+                    statusMessage: rawApiResponse.statusText,
+                    body: body,
+                };
+            });
+        });
+    })
+}
+
+function accordionTrigger(currentElementId, nextElementId) {
+    // get accordion elements
+    var currentElement = document.getElementById(currentElementId);
+    var nextElement = document.getElementById(nextElementId);
+
+    // toggle active class on elements
+    currentElement.classList.toggle("active");
+    nextElement.classList.toggle("active");
+
+    var panels = [currentElement.nextElementSibling, nextElement.nextElementSibling];
+
+    // toggle display on panels
+    panels.forEach(panel => {
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    })
+
+}
+
+$(document).ready(function() {
     fixApiRefNav();
     fixDropDownMenuLargePosition();
+
+    var sections = document.getElementsByClassName("accordion");
+    for (let i = 0; i < sections.length; i++) {
+        sections[i].addEventListener("click", function() {
+            // Toggle between adding and removing the "active" class,
+            // to highlight the button that controls the panel
+            this.classList.toggle("active");
+
+            // Toggle between hiding and showing the active panel
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
 
     $('[webinar-hide-before]').each(function() {
       if ($(this).attr('webinar-hide-before') <= getCompareDate()) {
@@ -49,4 +247,22 @@ $(document).ready(function()
     $('.sm-section-nav').on('hidden.bs.dropdown', function() {
         $('main').removeClass('section-nav-open');
     });
+
+    //When the destination changes, fire the map script and set the lat-long.
+    $('#dropdown-dest-addresses').change(function(e){
+        let lat = $('input[type=radio][name=address]:checked').attr('lat');
+        let long = $('input[type=radio][name=address]:checked').attr('long');
+        GetMapWithLine(lat, long, null, null);
+    });
+
+    //When the source changes, fire the map script with source and dest lat-long.
+    $('#dropdown-src-addresses').change(function(e){
+        let lat     = $('input[type=radio][name=address]:checked').attr('lat');
+        let long    = $('input[type=radio][name=address]:checked').attr('long');
+        let srcLat  = $('input[type=radio][name=srcAddress]:checked').attr('lat');
+        let srcLong = $('input[type=radio][name=srcAddress]:checked').attr('long');
+        GetMapWithLine(lat, long, srcLat, srcLong);
+    }); 
+
+    $('#dropdown-addresses').trigger('change');
 });
