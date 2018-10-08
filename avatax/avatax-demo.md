@@ -43,6 +43,7 @@ doctype: use_cases
 
         //Single location layer (pushpin)
         if(srcLat == null || srcLong == null) {
+
             var location  = new Microsoft.Maps.Location(destLat, destLong);         
             map = new Microsoft.Maps.Map('#myMap', {center: location});
             var layer = new Microsoft.Maps.Layer("MyPushpinLayer1");

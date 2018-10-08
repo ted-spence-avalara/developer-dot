@@ -63,7 +63,6 @@ function buildSampleData() {
     const address = makeAddressObj();
     const shipToAddress = setShipToOrSingleLocation();
     let sampleData;
-    // setShipFrom()
 
     if(shipToAddress) {
         const srcAddress = makeSrcAddressObj();
@@ -126,18 +125,48 @@ function copyToClipboard(element) {
 
 function buildInfoboxHTML(body) {
     const summaryArray = body.summary;
+    console.log('buildInfoboxHTML');
 
-    let taxLines = `<br>`;
-                
+    let infoboxHTML = `<br>`;
+
+    let html = `
+        AvaTax's engine can calculate tax down to the roof-top level. In this case, 
+        AvaTax returned a total tax of ${body.Tax}, which encompassed state ($xx.xx), 
+        county ($xx.xx), local ($xx.xx) and special taxing districts ($xx.xx). 
+        Feel free to continue tinkering with the options to the left to test 
+        the flexibility of the AvaTax API. Or, if you've seen enough, 
+        sign up for a 60-day API trial and production account.
+    `;
+    let stateTax, countyTax, localTax, specialTax;          
     if (summaryArray.length > 0) {
+        console.log('IF buildInfoboxHTML');
+
         for(let i = 0; i < summaryArray.length; i++) {
             const item = summaryArray[i];
-            taxLines += `${item.taxName}: $${item.taxCalculated}<br>`;
+            infoboxHTML += `${item.taxName}: $${item.taxCalculated}<br>`;
         };
+
+        infoboxHTML = `
+            AvaTax's engine can calculate tax down to the roof-top level. In this case, 
+            AvaTax returned a total tax of <span class="demo-tax-totals">${body.totalTax}</span>, 
+            which encompassed state <span class="demo-tax-totals">($xx.xx)</span>, 
+            county <span class="demo-tax-totals">($xx.xx)</span>, 
+            local <span class="demo-tax-totals">($xx.xx)</span> 
+            and special taxing districts <span class="demo-tax-totals">($xx.xx)</span>.
+            Feel free to continue tinkering with the options to the left to test 
+            the flexibility of the AvaTax API. Or, if you've seen enough, 
+            <a href='https://developer.avalara.com/avatax/'>sign up for a 60-day API trial</a> and production account.
+        `
     } else {
-        const infoboxHTML = ` 
-            Subtotal: $${body.totalAmount} <br>
-            Total: $${body.totalAmount + body.totalTax}
+        console.log('ELSE buildInfoboxHTML');
+        
+        infoboxHTML = `
+            AvaTax's engine can calculate tax down to the roof-top level. In this case, 
+            AvaTax returned a total tax of <span class="demo-tax-totals">${body.totalTax}</span>, 
+            which encompassed state, county, local and special taxing districts. 
+            Feel free to continue tinkering with the options to the left to test 
+            the flexibility of the AvaTax API. Or, if you've seen enough, 
+            <a href='https://developer.avalara.com/avatax/'>sign up for a 60-day API trial</a> and production account.
         `
     }
 
