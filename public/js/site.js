@@ -124,94 +124,17 @@ function copyToClipboard(element) {
   }
 
 function buildInfoboxHTML(body) {
-    // const summaryArray = body.summary;
-    const summaryArray = [
-        {
-          "country": "US",
-          "region": "CA",
-          "jurisType": "State",
-          "jurisCode": "06",
-          "jurisName": "CALIFORNIA",
-          "taxAuthorityType": 45,
-          "stateAssignedNo": "",
-          "taxType": "Sales",
-          "taxName": "CA STATE TAX",
-          "rateType": "General",
-          "taxable": 100,
-          "rate": 0.06,
-          "tax": 6,
-          "taxCalculated": 6,
-          "nonTaxable": 15.99,
-          "exemption": 0
-        },
-        {
-          "country": "US",
-          "region": "CA",
-          "jurisType": "County",
-          "jurisCode": "059",
-          "jurisName": "ORANGE",
-          "taxAuthorityType": 45,
-          "stateAssignedNo": "",
-          "taxType": "Sales",
-          "taxName": "CA COUNTY TAX",
-          "rateType": "General",
-          "taxable": 100,
-          "rate": 0.0025,
-          "tax": 0.25,
-          "taxCalculated": 0.25,
-          "nonTaxable": 15.99,
-          "exemption": 0
-        },
-        {
-          "country": "US",
-          "region": "CA",
-          "jurisType": "Special",
-          "jurisCode": "EMTN0",
-          "jurisName": "ORANGE CO LOCAL TAX SL",
-          "taxAuthorityType": 45,
-          "stateAssignedNo": "30",
-          "taxType": "Sales",
-          "taxName": "CA SPECIAL TAX",
-          "rateType": "General",
-          "taxable": 100,
-          "rate": 0.01,
-          "tax": 1,
-          "taxCalculated": 1,
-          "nonTaxable": 15.99,
-          "exemption": 0
-        },
-        {
-          "country": "US",
-          "region": "CA",
-          "jurisType": "Special",
-          "jurisCode": "EMAZ0",
-          "jurisName": "ORANGE COUNTY DISTRICT TAX SP",
-          "taxAuthorityType": 45,
-          "stateAssignedNo": "037",
-          "taxType": "Sales",
-          "taxName": "CA SPECIAL TAX",
-          "rateType": "General",
-          "taxable": 100,
-          "rate": 0.005,
-          "tax": 0.5,
-          "taxCalculated": 0.5,
-          "nonTaxable": 15.99,
-          "exemption": 0
-        }
-      ];
-
-    console.log('buildInfoboxHTML');
+    const summaryArray = body.summary;
 
     let infoboxHTML;
 
-    let stateTax = 0.00;
+    // let stateTax, countyTax, localTax, specialTax  = 0.00;
+    let stateTax = 0.00; 
     let countyTax = 0.00; 
     let localTax = 0.00; 
     let specialTax = 0.00;          
     
     if (summaryArray.length > 0) {
-        console.log('IF buildInfoboxHTML');
-
         for(let i = 0; i < summaryArray.length; i++) {
             const item = summaryArray[i];
             switch (item.jurisType) {
@@ -249,9 +172,8 @@ function buildInfoboxHTML(body) {
 }
 
 function ApiRequest() {
-    // clear the console output and display loading-pulse
+    // clear the console output/infobox and display loading-pulse
     $("#demo-console-output").empty();
-    // TODO: put in infobox as well
     $(".loading-pulse").css('display', 'block');
     $("#demo-infobox-text").empty();
 
