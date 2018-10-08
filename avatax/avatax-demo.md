@@ -35,7 +35,7 @@ doctype: use_cases
         if(destLat == null || destLong == null) {
             // destLat = 33.6846603698176;
             // destLong = -117.850629887389;
-            map = new Microsoft.Maps.Map('#myMap', {zoom: 0});
+            map = new Microsoft.Maps.Map('#myMap', {zoom: 3});
             topLeft = (map.getPageX(), map.getPageY());
             displayToolTip(topLeft);
             return;
@@ -58,11 +58,14 @@ doctype: use_cases
         //Source and destination layer (polyline)
         map = new Microsoft.Maps.Map('#myMap', {});
         center = map.getCenter();
-        var coords = [center, new Microsoft.Maps.Location(center.latitude + 1, center.longitude + 1)];
+        let srcLocation = new Microsoft.Maps.Location(srcLat, srcLong);
+        let destLocation = new Microsoft.Maps.Location(destLat, destLong);
+        var coords = [destLocation, srcLocation];
         var line = new Microsoft.Maps.Polyline(coords, {strokeColor: 'orange', strokeThickness: 3});
         topLeft = (map.getPageX(), map.getPageY());
         displayToolTip(topLeft);
         map.entities.push(line);
+        map.SetMapView(coords);
     }
 </script>
 <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMapWithLine&key=Ahgp_E6MHtyMYBJPCllMKTwJk7Indytl8hVm-Boe6mbyWbcyZvVBUePMDP5OLeiH' async defer></script>
