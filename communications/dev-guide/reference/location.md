@@ -65,7 +65,7 @@ The <code>Location</code> object contains information about the <b>jurisdiction<
             <td><code>int</code></td>
             <td><code>[bool]</code> Incorporated
                 <br>
-                <ul>
+                <ul class="dev-guide-list">
                     <li><code>true</code>: Address is within city limits</li>
                     <li><code>false</code>: Address is outside of city limits (unincorporated)</li>
                 </ul>
