@@ -28,7 +28,8 @@ The <code>Location</code> object contains information about the <b>jurisdiction<
     <tbody>
         <tr>
             <td><code>ctry</code></td>
-            <td><code>[string]</code> Country</td>
+            <td><code>[string]</code> Country
+            </td>
         </tr>
         <tr>
             <td><code>cnty</code></td>

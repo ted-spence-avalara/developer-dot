@@ -46,7 +46,7 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
             </td>
         </tr>
         <tr>
-            <td><code>lines</code></td>
+            <td><code>line</code></td>
             <td><code>[int]</code> Line Count
             </td>
         </tr>

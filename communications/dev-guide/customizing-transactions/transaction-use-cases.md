@@ -21,6 +21,12 @@ The following use cases are provided:
     <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/multi-line-request/">Multi-line Request</a></li>
     <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/jurisdiction-determination/">Jurisdiction Determination</a></li>
     <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/exemption/">Exemptions</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/inter-intrastate/">Interstate/Intrastate Determination</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/tax-override/">Tax Override</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/safe-harbor-override/">Safe Harbor Override</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/sau/">Sales and Use</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/private-line/">Private Line</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/proration/">Proration</a></li>
 </ul>
 
 <ul class="pager">

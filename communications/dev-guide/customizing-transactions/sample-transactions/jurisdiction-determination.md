@@ -22,6 +22,9 @@ Set the jurisdiction in the BillTo object (<code>bill</code>) inside the <a clas
     <li>Country, State, County, City, Zip lookup using geocoding</li>
 </ul>
 
+<h4>Note</h4>
+When specifying jurisdictions outside of the United States via country/state/county/city lookup, be sure to pass the country code ISO.  If the country code is not set, errors are generated.  For example, use <code>CAN</code> for Canada or <code>IND</code> for India.
+
 More information regarding the <code>Location</code> object can be found <a class="dev-guide-link" href="/communications/dev-guide/reference/location/">here</a>.
 
 <h3>Canadian Tax Request</h3>

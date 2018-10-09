@@ -35,7 +35,7 @@ The <code>TaxOverride</code> object allows the user to change <b>tax rates</b>:
       <tr>
         <td><code>scp</code></td>
         <td>
-          <code>[int]</code> Scope to which the override is applied:  State, County or Country
+          <code>[int]</code> Scope to which the override is applied:  Country, State, County, or City
           <ul class="dev-guide-list">
             <li><code>0</code>: Country</li>
             <li><code>1</code>: State</li>
@@ -50,7 +50,7 @@ The <code>TaxOverride</code> object allows the user to change <b>tax rates</b>:
           <code>[int]</code> Tax Type ID for the override
           <br>
           <br>
-          For a list of Tax Type IDs, see the <a class ="dev-guide-link" href="/communications/dev-guide/gettings-started/environments-endpoints/"><code>/api/v2/afc/taxtype/{taxType}</code> endpoint.</a>
+          For a list of Tax Type IDs, see the <a class ="dev-guide-link" href="/communications/dev-guide/getting-started/environments-endpoints/"><code>/api/v2/afc/taxtype/{taxType}</code> endpoint.</a>
         </td>
       </tr>
       <tr>

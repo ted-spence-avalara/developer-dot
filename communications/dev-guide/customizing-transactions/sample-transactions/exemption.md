@@ -10,7 +10,7 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide/customizing-transactions/sample-transactions/jurisdiction-determination/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide/reference/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide/customizing-transactions/sample-transactions/inter-intrastate/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 REST v2 provides a three types of exemptions:
@@ -1587,5 +1587,5 @@ Most Federal taxes are only exempted when selling to a reseller who is registere
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide/customizing-transactions/sample-transactions/jurisdiction-determination/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide/reference/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide/customizing-transactions/sample-transactions/inter-intrastate/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
