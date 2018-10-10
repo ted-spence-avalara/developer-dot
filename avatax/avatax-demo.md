@@ -16,6 +16,7 @@ doctype: use_cases
             <p id="demo-infobox-text">
                 Calculating sales tax is time consuming and painful, but it doesn\'t have to be. Avalara\'s sales tax API automates the process for you! All you need to do to start making quick calculations is choose a product or service and where you\'re shipping from and to. Tinker with the options on the left, click "Submit" and watch the magic happen!
             </p>
+            <div class="loading-pulse" style="display: none;"></div>
         </div>
     `;
 
@@ -30,7 +31,7 @@ doctype: use_cases
         infobox.setMap(map);
     }
 
-    function GetMapWithLine(destLat, destLong, srcLat, srcLong) {
+    function GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses) {
         let topLeft;
 
         if(destLat == null || destLong == null) {
@@ -44,6 +45,7 @@ doctype: use_cases
 
         //Single location layer (pushpin)
         if(srcLat == null || srcLong == null) {
+
             var location  = new Microsoft.Maps.Location(destLat, destLong);         
             map = new Microsoft.Maps.Map('#myMap', {center: location});
             var layer = new Microsoft.Maps.Layer("MyPushpinLayer1");
@@ -66,7 +68,10 @@ doctype: use_cases
         topLeft = (map.getPageX(), map.getPageY());
         displayToolTip(topLeft);
         map.entities.push(line);
-        map.SetMapView(coords);
+        map.setView({
+            center: new Microsoft.Maps.Location(srcLat + 1, destLong + 1),
+            zoom: usAddresses ? 4 : 2,
+        });
     }
 </script>
 <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMapWithLine&key=Ahgp_E6MHtyMYBJPCllMKTwJk7Indytl8hVm-Boe6mbyWbcyZvVBUePMDP5OLeiH' async defer></script>
@@ -80,14 +85,14 @@ doctype: use_cases
         <div id="demo-shortcuts">
             <!-- steps to submit -->
             <div class="row">
-                <!-- step 1 / ship from -->
+                <!-- step 1 / ship to -->
                 <button class="accordion active" id='step-one-btn'>Step 1: Where are you shipping to?</button>
                 <div class="panel" style="display:block;">
                     <p>Choose a pre-selected address</p>
                     <form id="dropdown-dest-addresses" onChange="fillWithSampleData();" class="demo-form">
                         <!-- national addresses -->
                         <label class="demo-label-container">
-                            <input name="address" type="radio" value="2000 Main Street,Irvine,CA,US,92614" lat="33.6846603698176" long="-117.850629887389"  class="demo-radio"/>
+                            <input name="address" type="radio" value="2000 Main Street,Irvine,CA,US,92614" lat="33.6846603698176" long="-117.850629887389" class="demo-radio" addressType="national"/>
                             <span class="demo-label"> Irvine</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 2000 Main Street
@@ -96,7 +101,7 @@ doctype: use_cases
                         </label>
                         <br>
                         <label class="demo-label-container">
-                            <input name="address" type="radio" value="255 S. King Street,Seattle,WA,US,98104" lat="47.598100-122.331206" long="-122.331206"  class="demo-radio"/>
+                            <input name="address" type="radio" value="255 S. King Street,Seattle,WA,US,98104" lat="47.598100-122.331206" long="-122.331206" class="demo-radio" addressType="national"/>
                             <span class="demo-label"> Seattle</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 255 S. King Street
@@ -106,7 +111,7 @@ doctype: use_cases
                         <br>
                         <label class="demo-label-container">
                             <input name="address" type="radio" value="512 S Mangum Street,Durham,NC,US,27701"
-                            lat="35.991727" long="-78.902647"  class="demo-radio"/>
+                            lat="35.991727" long="-78.902647"  class="demo-radio" addressType="national" />
                             <span class="demo-label"> Durham</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 512 S Mangum Street
@@ -116,7 +121,7 @@ doctype: use_cases
                         <br>
                         <!-- international addresses -->
                         <label class="demo-label-container">
-                            <input name="address" type="radio" value="3rd Floor Trafalgar Place,Brighton,Brighton and Hove,UK,BN1 4FU" lat="50.828746" long="-0.139584"  class="demo-radio"/>
+                            <input name="address" type="radio" value="3rd Floor Trafalgar Place,Brighton,Brighton and Hove,UK,BN1 4FU" lat="50.828746" long="-0.139584"  class="demo-radio" addressType="international"/>
                             <span class="demo-label"> Brighton</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 3rd Floor Trafalgar Place
@@ -126,7 +131,7 @@ doctype: use_cases
                         <br>
                         <label class="demo-label-container">
                             <input name="address" type="radio" value="Bahiratwadi Shivajinagar,Pune,Maharashtra,India,411 016"
-                            lat="18.533946" long="73.827597"  class="demo-radio"/>
+                            lat="18.533946" long="73.827597"  class="demo-radio" addressType="international"/>
                             <span class="demo-label"> Pune</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 3rd Floor, Pride Portal
@@ -138,7 +143,7 @@ doctype: use_cases
                         <br>
                         <label class="demo-label-container">
                             <input name="address" type="radio" value="Rua Henri Dunant 137,São Paulo,SP,Brazil,04709-110"
-                            lat="-23.633102" long="-46.695348"  class="demo-radio"/>
+                            lat="-23.633102" long="-46.695348"  class="demo-radio" addressType="international"/>
                             <span class="demo-label"> São Paulo</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> Rua Henri Dunant 137
@@ -192,7 +197,7 @@ doctype: use_cases
                         </label>
                         <br>
                         <label class="demo-label demo-label-container">
-                            <input value="FR010000" name="product" id="p7c" type="checkbox" description="Shipping"  class="demo-radio"/>
+                            <input value="FR010000" name="product" id="p7c" type="checkbox" description="Shipping"  class="demo-radio" />
                             <input value="19.99" type="text" id="p7c-amount" style="width: 50px;">
                             <span class="demo-label"> Shipping</span>
                         </label>
@@ -202,14 +207,14 @@ doctype: use_cases
                         Next
                     </button>
                 </div>
-                <!-- step 3 / ship to -->
+                <!-- step 3 / ship from -->
                 <button class="accordion" id='step-three-btn'>Step 3: Where are you shipping from? (optional)</button>
                 <div class="panel">
                     <p>Choose a pre-selected address</p>
                     <form id="dropdown-src-addresses" onChange="fillWithSampleData();" class="demo-form">
                         <label class="demo-label-container">
                             <input name="srcAddress" type="radio" value="2000 Main Street,Irvine,CA,US,92614"
-                            lat="33.6846603698176" long="-117.850629887389"  class="demo-radio"/>
+                            lat="33.6846603698176" long="-117.850629887389"  class="demo-radio" addressType="national"/>
                             <span class="demo-label"> Irvine</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 2000 Main Street
@@ -219,7 +224,7 @@ doctype: use_cases
                         <br>
                         <label class="demo-label-container">
                             <input name="srcAddress" type="radio" value="255 S. King Street,Seattle,WA,US,98104"
-                            lat="47.598100-122.331206" long="-122.331206"  class="demo-radio"/>
+                            lat="47.598100-122.331206" long="-122.331206"  class="demo-radio" addressType="national"/>
                             <span class="demo-label"> Seattle</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 255 S. King Street
@@ -229,7 +234,7 @@ doctype: use_cases
                         <br>
                         <label class="demo-label-container">
                             <input name="srcAddress" type="radio" value="512 S Mangum Street,Durham,NC,US,27701"
-                            lat="35.991727" long="-78.902647"  class="demo-radio"/>
+                            lat="35.991727" long="-78.902647"  class="demo-radio" addressType="national"/>
                             <span class="demo-label"> Durham</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 512 S Mangum Street
@@ -239,7 +244,7 @@ doctype: use_cases
                         <br>
                         <!-- international addresses -->
                         <label class="demo-label-container">
-                            <input name="srcAddress" type="radio" value="3rd Floor Trafalgar Place,Brighton,Brighton and Hove,UK,BN1 4FU" lat="50.828746" long="-0.139584"  class="demo-radio"/>
+                            <input name="srcAddress" type="radio" value="3rd Floor Trafalgar Place,Brighton,Brighton and Hove,UK,BN1 4FU" lat="50.828746" long="-0.139584"  class="demo-radio" addressType="international"/>
                             <span class="demo-label"> Brighton</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 3rd Floor Trafalgar Place
@@ -249,7 +254,7 @@ doctype: use_cases
                         <br>
                         <label class="demo-label-container">
                             <input name="srcAddress" type="radio" value="Bahiratwadi Shivajinagar,Pune,Maharashtra,India,411 016"
-                            lat="18.533946" long="73.827597"  class="demo-radio"/>
+                            lat="18.533946" long="73.827597"  class="demo-radio" addressType="international"/>
                             <span class="demo-label"> Pune</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 3rd Floor, Pride Portal
@@ -261,7 +266,7 @@ doctype: use_cases
                         <br>
                         <label class="demo-label-container">
                             <input name="srcAddress" type="radio" value="Rua Henri Dunant 137,São Paulo,SP,Brazil,04709-110"
-                            lat="-23.633102" long="-46.695348"  class="demo-radio"/>
+                            lat="-23.633102" long="-46.695348"  class="demo-radio" addressType="international"/>
                             <span class="demo-label"> São Paulo</span>
                             <br>
                             <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> Rua Henri Dunant 137

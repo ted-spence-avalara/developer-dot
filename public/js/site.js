@@ -63,7 +63,6 @@ function buildSampleData() {
     const address = makeAddressObj();
     const shipToAddress = setShipToOrSingleLocation();
     let sampleData;
-    // setShipFrom()
 
     if(shipToAddress) {
         const srcAddress = makeSrcAddressObj();
@@ -124,10 +123,56 @@ function copyToClipboard(element) {
     $temp.remove();
   }
 
+function buildInfoboxHTML(body) {
+    const summaryArray = body.summary;
+
+    let infoboxHTML;
+
+    let stateTax = 0.00; 
+    let countyTax = 0.00; 
+    let localTax = 0.00; 
+    let specialTax = 0.00;          
+    
+    if (summaryArray.length > 0) {
+        for(let i = 0; i < summaryArray.length; i++) {
+            const item = summaryArray[i];
+            switch (item.jurisType) {
+                case 'State':
+                    stateTax += item.taxCalculated;
+                    break;
+                case 'County':
+                    countyTax += item.taxCalculated;
+                    break;
+                case 'Local':
+                    localTax += item.taxCalculated;
+                    break;
+                case 'Special':
+                    specialTax += item.taxCalculated;
+                    break;
+                default:
+                    break;
+            }
+        };
+    }
+    
+    infoboxHTML = `
+        AvaTax's engine can calculate tax down to the roof-top level. In this case, 
+        AvaTax returned a total tax of <span class="demo-tax-totals">$${body.totalTax.toFixed(2)}</span>, 
+        which encompassed state <span class="demo-tax-totals">$${stateTax.toFixed(2)}</span>, 
+        county <span class="demo-tax-totals">$${countyTax.toFixed(2)}</span>, 
+        local <span class="demo-tax-totals">$${localTax.toFixed(2)}</span> 
+        and special taxing districts <span class="demo-tax-totals">$${specialTax.toFixed(2)}</span>.
+        Feel free to continue tinkering with the options to the left to test 
+        the flexibility of the AvaTax API. Or, if you've seen enough, 
+        <a href='https://developer.avalara.com/avatax/' target='_blank'>sign up for a 60-day API trial</a> 
+        and production account.
+    `
+    return infoboxHTML;
+}
+
 function ApiRequest() {
-    // clear the console output and display loading-pulse
+    // clear the console output/infobox and display loading-pulse
     $("#demo-console-output").empty();
-    // TODO: put in infobox as well
     $(".loading-pulse").css('display', 'block');
     $("#demo-infobox-text").empty();
     $("#demo-infobox-header").empty().text('Calculating...');
@@ -158,20 +203,9 @@ function ApiRequest() {
                 $('#demo-console-output').text(JSON.stringify(body, null, 2));
                 $("#demo-infobox-header").text('Result');
 
-                let taxLines = `<br>`;
-                
-                if (body.summary.length > 0) {
-                    for(let i = 0; i < body.summary.length; i++) {
-                        const item = body.summary[i];
-                        taxLines += `${item.taxName}: $${item.taxCalculated}<br>`;
-                    };
-                }
+                const infoboxHTML = buildInfoboxHTML(body);
 
-                $("#demo-infobox-text").html(`
-                    Subtotal: $${body.totalAmount}
-                    ${taxLines}
-                    Total: $${body.totalAmount + body.totalTax}
-                `);
+                $("#demo-infobox-text").html(infoboxHTML);
 
                 //TODO handle errors
                 // $('#console-output').text("HTTP Error: " + body.status + "\n\n" + JSON.stringify(result, null, 2));
@@ -263,7 +297,13 @@ $(document).ready(function() {
         let long    = $('input[type=radio][name=address]:checked').attr('long');
         let srcLat  = $('input[type=radio][name=srcAddress]:checked').attr('lat');
         let srcLong = $('input[type=radio][name=srcAddress]:checked').attr('long');
-        GetMapWithLine(lat, long, srcLat, srcLong);
+
+        // check if both address are in the US
+        let addressType = $('input[type=radio][name=address]:checked').attr('addressType') === 'national';
+        let srcType = $('input[type=radio][name=srcAddress]:checked').attr('addressType') === 'national';
+        let usAddresses = addressType && srcType
+
+        GetMapWithLine(lat, long, srcLat, srcLong, usAddresses);
     }); 
 
     $('#dropdown-addresses').trigger('change');
