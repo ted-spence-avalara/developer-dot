@@ -174,8 +174,8 @@ function ApiRequest() {
     // clear the console output/infobox and display loading-pulse
     $("#demo-console-output").empty();
     $(".loading-pulse").css('display', 'block');
-    const infoboxHidden = $('#demo-infobox').hasClass('hidden');
-    if (!infoboxHidden) {
+    const infoboxNotHidden = !$('#demo-infobox').hasClass('hidden');
+    if (infoboxNotHidden) {
         $("#demo-infobox-text").empty();
         $("#demo-infobox-header").html('Calculating...');
     }
@@ -206,7 +206,7 @@ function ApiRequest() {
                 $(".loading-pulse").css('display', 'none');
                 $('#demo-console-output').text(JSON.stringify(body, null, 2));
                 
-                if (!infoboxHidden) {
+                if (infoboxNotHidden) {
                     $("#demo-infobox-header").html('Result');
                     const infoboxHTML = buildInfoboxHTML(body);
                     $("#demo-infobox-text").html(infoboxHTML);
@@ -298,8 +298,8 @@ $(document).ready(function() {
     $('#dropdown-dest-addresses').change(function(e){
         const lat = $('input[type=radio][name=address]:checked').attr('lat');
         const long = $('input[type=radio][name=address]:checked').attr('long');
-        const infoboxHidden = $('.demo-infobox').hasClass('hidden');
-        GetMapWithLine(lat, long, null, null, null, infoboxHidden);
+        const infoboxNotHidden = !$('.demo-infobox').hasClass('hidden');
+        GetMapWithLine(lat, long, null, null, null, infoboxNotHidden);
     });
 
     //When the source changes, fire the map script with source and dest lat-long.
@@ -315,8 +315,8 @@ $(document).ready(function() {
 
         const usAddresses = addressType && srcType;
 
-        const infoboxHidden = $('.demo-infobox').hasClass('hidden');
-        GetMapWithLine(lat, long, srcLat, srcLong, usAddresses, infoboxHidden);
+        const infoboxNotHidden = !$('.demo-infobox').hasClass('hidden');
+        GetMapWithLine(lat, long, srcLat, srcLong, usAddresses, infoboxNotHidden);
     }); 
 
     $('#dropdown-addresses').trigger('change');

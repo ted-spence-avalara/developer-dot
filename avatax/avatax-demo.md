@@ -20,10 +20,9 @@ doctype: use_cases
         </div>
     `;
 
-    function displayToolTip(topLeft, infoboxHidden) {
-        if (!infoboxHidden) {
-            console.warn('displayTip', infoboxHidden)
-            topLeft = (map.getPageX(), map.getPageY());
+    function displayToolTip(infoboxNotHidden) {
+        if (infoboxNotHidden) {
+            const topLeft = (map.getPageX(), map.getPageY());
 
             //Create an infobox that will render in the top left of the map.
             const infobox = new Microsoft.Maps.Infobox(topLeft, {
@@ -37,14 +36,13 @@ doctype: use_cases
         return;
     }
 
-    function GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses, infoboxHidden) {
-        let topLeft;
+    function GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses, infoboxNotHidden) {
 
         if(destLat == null || destLong == null) {
             // destLat = 33.6846603698176;
             // destLong = -117.850629887389;
             map = new Microsoft.Maps.Map('#myMap', {zoom: 3});
-            displayToolTip(topLeft, infoboxHidden);
+            displayToolTip(infoboxNotHidden);
             return;
         }  
 
@@ -55,7 +53,7 @@ doctype: use_cases
             map = new Microsoft.Maps.Map('#myMap', {center: location});
             var layer = new Microsoft.Maps.Layer("MyPushpinLayer1");
             layer.add(new Microsoft.Maps.Pushpin(location));
-            displayToolTip(topLeft, infoboxHidden);
+            displayToolTip(infoboxNotHidden);
             map.layers.insert(layer);
 
             //Exit out since it is a single location.
@@ -69,7 +67,7 @@ doctype: use_cases
         let destLocation = new Microsoft.Maps.Location(destLat, destLong);
         var coords = [destLocation, srcLocation];
         var line = new Microsoft.Maps.Polyline(coords, {strokeColor: 'orange', strokeThickness: 3});
-        displayToolTip(topLeft);
+        displayToolTip(infoboxNotHidden);
         map.entities.push(line);
         map.setView({
             center: new Microsoft.Maps.Location(srcLat + 1, destLong + 1),
