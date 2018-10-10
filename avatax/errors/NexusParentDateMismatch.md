@@ -20,8 +20,8 @@ You declared nexus on a date when that nexus was not available.
     {
       "code": "NexusParentDateMismatch",
       "number": 159,
-      "message": "Nexus out of date range with parent.",
-      "description": "The Nexus for Country: -0-, Region: -1-, JurisCode: -2-, JurisTypeId: -3-, JurisName: -4-, ShortName: -5-, SignatureCode: -6-, StateAssignedNo: -7-, EffectiveDate: -8-, EndDate: -9- has conflicting effective dates with its parent.",
+      "message": "To declare nexus in a city or local jurisdiction, you must also declare nexus in the state or country.",
+      "description": "Please ensure that the dates for your nexus declaration match with the dates for the nexus declaration at the state or country level.  Affected nexus: JurisTypeId: -3-, JurisName: -4-, EffectiveDate: -8-, EndDate: -9- has conflicting effective dates with its parent in Country: -0-, Region: -1-.",
       "faultCode": "Client",
       "helpLink": "http://developer.avalara.com/avatax/errors/NexusParentDateMismatch",
       "severity": "Error"
