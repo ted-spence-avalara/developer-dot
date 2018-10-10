@@ -175,7 +175,7 @@ function ApiRequest() {
     $("#demo-console-output").empty();
     $(".loading-pulse").css('display', 'block');
     $("#demo-infobox-text").empty();
-    $("#demo-infobox-header").empty().text('Calculating...');
+    $("#demo-infobox-header").html('Calculating...');
 
     const data = buildSampleData();
     const [bucket, key] = proxy.key.location.split('/');
@@ -201,7 +201,7 @@ function ApiRequest() {
             return rawApiResponse.json().then((body) => {
                 $(".loading-pulse").css('display', 'none');
                 $('#demo-console-output').text(JSON.stringify(body, null, 2));
-                $("#demo-infobox-header").text('Result');
+                $("#demo-infobox-header").html('Result');
 
                 const infoboxHTML = buildInfoboxHTML(body);
 
