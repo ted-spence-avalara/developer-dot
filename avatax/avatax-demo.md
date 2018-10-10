@@ -13,33 +13,38 @@ doctype: use_cases
         <div class="demo-infobox">
             <h4 id="demo-infobox-header" style="display: inline;">Getting Started</h4>
             <i class="glyphicon glyphicon-remove" id="demo-infobox-icon" style="display: inline;float: right;padding-top:5px;" onClick="hideInfobox()"></i>
-            <p id="demo-infobox-text">
+            <p id="demo-infobox-text" style="margin-bottom:0;">
                 Calculating sales tax is time consuming and painful, but it doesn\'t have to be. Avalara\'s sales tax API automates the process for you! All you need to do to start making quick calculations is choose a product or service and where you\'re shipping from and to. Tinker with the options on the left, click "Submit" and watch the magic happen!
             </p>
             <div class="loading-pulse" style="display: none;margin-top:35px;"></div>
         </div>
     `;
 
-    function displayToolTip(topLeft) {
+    function displayToolTip(topLeft, infoboxHidden) {
+        if (!infoboxHidden) {
+            console.warn('displayTip', infoboxHidden)
+            topLeft = (map.getPageX(), map.getPageY());
 
-        //Create an infobox that will render in the top left of the map.
-        const infobox = new Microsoft.Maps.Infobox(topLeft, {
-            htmlContent: infoboxTemplate,
-        });
+            //Create an infobox that will render in the top left of the map.
+            const infobox = new Microsoft.Maps.Infobox(topLeft, {
+                htmlContent: infoboxTemplate,
+            });
 
-        //Assign the infobox to a map instance.
-        infobox.setMap(map);
+            //Assign the infobox to a map instance.
+            infobox.setMap(map);
+        }
+
+        return;
     }
 
-    function GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses) {
+    function GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses, infoboxHidden) {
         let topLeft;
 
         if(destLat == null || destLong == null) {
             // destLat = 33.6846603698176;
             // destLong = -117.850629887389;
             map = new Microsoft.Maps.Map('#myMap', {zoom: 3});
-            topLeft = (map.getPageX(), map.getPageY());
-            displayToolTip(topLeft);
+            displayToolTip(topLeft, infoboxHidden);
             return;
         }  
 
@@ -50,8 +55,7 @@ doctype: use_cases
             map = new Microsoft.Maps.Map('#myMap', {center: location});
             var layer = new Microsoft.Maps.Layer("MyPushpinLayer1");
             layer.add(new Microsoft.Maps.Pushpin(location));
-            topLeft = (map.getPageX(), map.getPageY());
-            displayToolTip(topLeft);
+            displayToolTip(topLeft, infoboxHidden);
             map.layers.insert(layer);
 
             //Exit out since it is a single location.
@@ -65,7 +69,6 @@ doctype: use_cases
         let destLocation = new Microsoft.Maps.Location(destLat, destLong);
         var coords = [destLocation, srcLocation];
         var line = new Microsoft.Maps.Polyline(coords, {strokeColor: 'orange', strokeThickness: 3});
-        topLeft = (map.getPageX(), map.getPageY());
         displayToolTip(topLeft);
         map.entities.push(line);
         map.setView({
