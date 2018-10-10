@@ -220,6 +220,11 @@ function ApiRequest() {
     })
 }
 
+function hideInfobox() {
+    console.log('HIDE INFOBOX')
+    $(".demo-infobox").css('display', 'none');
+}
+
 function accordionTrigger(currentElementId, nextElementId) {
     // get accordion elements
     var currentElement = document.getElementById(currentElementId);
