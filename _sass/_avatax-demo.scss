@@ -52,8 +52,7 @@
 .demo-infobox {
     background-color: rgba(0,0,0,0.8);
     color: white;
-    max-width: 325px;
-    min-width: 250px;
+    min-width: 325px;
     max-height: 275px;
     border-radius: 10px;
     padding: 5px 15px 15px 15px;
@@ -61,11 +60,19 @@
         color: $Ava-orange;
     }
     .demo-infobox-text {
-        margin-top: 10px;
+        margin: 5px 0 0 0;
         font-size: 14px;
     }
     a {
         color: $Ava-orange;
+    }
+
+    #demo-infobox-icon {
+        color: $Medium-grey;
+    }
+
+    #demo-infobox-icon:hover {
+        color: $Ava-orange
     }
 }
 
