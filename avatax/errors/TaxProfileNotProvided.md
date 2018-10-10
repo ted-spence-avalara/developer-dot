@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-A tax profile was not included in your request. 
+A tax profile was not included in your request.
 
 ## Example
 

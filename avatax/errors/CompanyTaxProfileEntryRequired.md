@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-The import tax profile request is missing a company model and company tax profile. 
+The import tax profile request is missing a company model and company tax profile.
 
 ## Example
 

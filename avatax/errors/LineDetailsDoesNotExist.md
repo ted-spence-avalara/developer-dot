@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The specified line detail ID cannot be found.
 
 ## Example
 
@@ -32,4 +32,6 @@ TBD
 
 ## Explanation
 
-TBD
+This error occurs when a line detail input model cannot be found. 
+
+When calling the [TagTransaction](/api/v2/companies/{companyId}/transactions/tag) API, you must specify the lines that you wish to tag.  If you specify a line ID that cannot be found, you will receive this error message.

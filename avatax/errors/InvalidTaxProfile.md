@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-TBD
+The tax profile must be a valid ZIP file.
 
 ## Example
 
@@ -32,4 +32,6 @@ TBD
 
 ## Explanation
 
-TBD
+The tax profile cannot be read.  Please check the tax profile ZIP and try your request again.
+
+The Tax Profile Import API is only available to Technical Support Administrator roles.

@@ -32,4 +32,4 @@ The trace data is not available for the date and time selected.
 
 ## Explanation
 
-Data storage and maintenance policies are subject to change. Your request and response audit logs are not immediately available. Please contact your account manager for retrieval of older trace data. 
+Data storage and maintenance policies are subject to change. Your request and response audit logs are not immediately available. Please contact your account manager for retrieval of older trace data.

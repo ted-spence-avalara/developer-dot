@@ -292,7 +292,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>85</td>
 			<td><a href="InvalidCompanyLocationSetting">InvalidCompanyLocationSetting</a></td>
-			<td>TBD</td>
+			<td>You used a company location that does not exist.</td>
 		</tr>		
         <tr>
 			<td>99</td>
@@ -987,7 +987,7 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1104</td>
 			<td><a href="LineDetailsDoesNotExist">LineDetailsDoesNotExist</a></td>
-			<td>TBD</td>
+			<td>The specified line detail ID cannot be found.</td>
 		</tr>		
         <tr>
 			<td>1105</td>
@@ -1282,12 +1282,12 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1900</td>
 			<td><a href="TaxProfileNotProvided">TaxProfileNotProvided</a></td>
-			<td>TBD</td>
+			<td>A tax profile was not included in your request.</td>
 		</tr>		
         <tr>
 			<td>1901</td>
 			<td><a href="InvalidTaxProfile">InvalidTaxProfile</a></td>
-			<td>TBD</td>
+			<td>The tax profile must be a valid ZIP file.</td>
 		</tr>		
         <tr>
 			<td>1902</td>
@@ -1297,10 +1297,10 @@ Also see [SOAP Error Codes](/avatax/common-errors) for error messages defined in
         <tr>
 			<td>1903</td>
 			<td><a href="ErrorReadingTaxProfileEntry">ErrorReadingTaxProfileEntry</a></td>
-			<td>AvaTax was unable to parse your tax profile entry. </td>
+			<td>AvaTax was unable to parse your tax profile entry.</td>
 		</tr>		
         <tr>
 			<td>2000</td>
 			<td><a href="TraceDataNotAvailable">TraceDataNotAvailable</a></td>
-			<td>TBD</td>
+			<td>The trace data is not available for the date and time selected.</td>
 		</tr></tbody></table>

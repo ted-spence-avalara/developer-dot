@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-A tax rule with type ProductTaxabilityRule cannot have a null tax code or be assigned to all tax codes. 
+A tax rule with type ProductTaxabilityRule cannot have a null tax code or be assigned to all tax codes.
 
 ## Example
 

@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-AvaTax was unable to parse your tax profile entry. 
+AvaTax was unable to parse your tax profile entry.
 
 ## Example
 
@@ -35,4 +35,3 @@ AvaTax was unable to parse your tax profile entry.
 The company tax profile is missing, corrupt, incorrect type, or missing. Please check the company tax profile and try your request again. 
 
 The Tax Profile Import API is only available to Technical Support Administrator roles.
-

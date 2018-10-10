@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-The field isAllJuris cannot be set to true at this jurisdiction level.  
+The field isAllJuris cannot be set to true at this jurisdiction level.
 
 ## Example
 
@@ -34,4 +34,4 @@ The field isAllJuris cannot be set to true at this jurisdiction level.
 
 'All Jurisdictions' tax rules are only applicable in the US and Canada, and this feature is only available for US and Canada tax rules. In the US, isAllJuris can only be true at the `State` level. In Canada, isAllJuris can only be set to true at the `Country` level. 
 
-For US tax rules, if `isAllJuris` is set to `true`, the tax rule will apply to the state, county, city, and special taxing jurisdiction levels. For Canadian tax rules, the tax rule will apply to country and state jurisdiction levels. 
+For US tax rules, if `isAllJuris` is set to `true`, the tax rule will apply to the state, county, city, and special taxing jurisdiction levels. For Canadian tax rules, the tax rule will apply to country and state jurisdiction levels.
