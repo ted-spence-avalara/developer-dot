@@ -27,6 +27,7 @@ The following use cases are provided:
     <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/sau/">Sales and Use</a></li>
     <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/private-line/">Private Line</a></li>
     <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/proration/">Proration</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/transaction-information/">Transaction Information</a></li>
 </ul>
 
 <ul class="pager">

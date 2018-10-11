@@ -15,11 +15,15 @@ disqus: 0
 
 Set the jurisdiction in the BillTo object (<code>bill</code>) inside the <a class="dev-guide-link" href="/communications/dev-guide/reference/invoice/">Invoice</a> object.  There are a number of ways to set the jurisdiction, including:
 <ul class="dev-guide-list">
-    <li>PCode (<code>pcd</code>)</li>
-    <li>FIPS (<code>fips</code>)</li>
-    <li>NPANXX (<code>npa</code>)</li>
-    <li>Country, State, County, City, Zip lookup without using geocoding</li>
-    <li>Country, State, County, City, Zip lookup using geocoding</li>
+    <li><b>PCode</b> (<code>pcd</code>): persisted numeric identifer for a taxing jurisdiction</li>
+    <li><b>Address</b>: When using an address to specify the taxing jurisdiction, the more complete the information provided the more accurate the lookup will be. For most foreign nations, other than Canada and Brazil, the Country ISO is sufficient for taxation purposes. For USA and Canada, at a minimum the Country, State and Zip Code must be provided.
+      <ul class="dev-guide-list">
+        <li>Street Address (<code>addr</code>), Country (<code>ctry</code>), State (<code>st</code>), County (<code>cnty</code>), City (<code>cty</code>), and/or Postal Code (<code>zip</code>) lookup using geocoding (<code>geo</code> = <code>true</code>)</li>
+        <li>Country (<code>ctry</code>), State (<code>st</code>), County (<code>cnty</code>), City (<code>cty</code>), and/or Postal Code (<code>zip</code>) lookup without using geocoding (<code>geo</code> = <code>false</code>)</li>
+      </ul>
+    </li>
+    <li><b>FIPS</b> (<code>fips</code>): standardized set of numeric or alphabetic codes issued by the National Institute of Standards and Technology (NIST) to ensure uniform identification of geographic entities through all federal government agencies</li>
+    <li><b>NPANXX</b> (<code>npa</code>): 6 digit numbers consisting of the area code and second 3 digits of a North American dialing plan phone number</li>
 </ul>
 
 <h4>Note</h4>

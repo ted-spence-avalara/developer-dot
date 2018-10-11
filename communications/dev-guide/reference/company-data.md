@@ -30,8 +30,8 @@ The <code>CompanyData</code> object contains information about <b>your</b> compa
         <td><code>bscl</code></td>
         <td><code>[int]</code> Business Class
           <ul class="dev-guide-list">
-            <li><code>0</code>: Incumbent Local Exchange Carrier</li>
-            <li><code>1</code>: Competitive Local Exchange Carrier</li>
+            <li><code>0</code>: Incumbent Local Exchange Carrier (ILEC)</li>
+            <li><code>1</code>: Not an ILEC</li>
           </ul>
         </td>
       </tr>

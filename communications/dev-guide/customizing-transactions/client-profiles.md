@@ -22,11 +22,11 @@ There are a few reasons to use client profiles:
   <li>Profiles are cached - this speeds up the response times on requests</li>
   <li>The use of profiles eliminates the need to apply the same override, exclusion, exemption, etc. with each request.  Some of the customizations contained within a client profile, such as an override, can be done within an individual transaction request.  However, instead of adding the same override, exclusion, or exemption to each line, a customization file can be added to your client ID as a profile.  When the profile is <a class="dev-guide-link" href="/communications/dev-guide/getting-started/authentication/">specified in the header</a> with <code>client_profile_id</code>, the overrides, exclusions, exemptions, and bundles are automatically be applied to all transactions run using that header.</li>
   <li>Multiple profiles can be created for your client ID, meaning that multiple scenarios can be created and utilized.  Examples uses for multiple profiles include:
-  <ul class="dev-guide-list">
-    <li>Separate configurations for different aspects of your business</li>
-    <li>Separate configurations for sub companies</li>
-    <li>Testing proposed configurations</li>
-  </ul>
+    <ul class="dev-guide-list">
+      <li>Separate configurations for different aspects of your business</li>
+      <li>Separate configurations for sub companies</li>
+      <li>Testing proposed configurations</li>
+    </ul></li>
 
 <h3>How to apply a client profile to a session</h3>
 When <a class="dev-guide-link" href="/communications/dev-guide/getting-started/authentication/">authenticating</a> to REST v2, pass the desired client profile ID in the <code>client_profile_id</code> header field.
