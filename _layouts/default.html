@@ -50,7 +50,7 @@
     <meta name="theme-color" content="#ffffff ">
 
     <link rel="stylesheet" href="/public/css/style.css">
-    
+
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Adobe Dynamic Tab Manager Tag Manager -->
     <script src="https://assets.adobedtm.com/bc10a2a9cf337c664f8f74e778a1987125aea184/satelliteLib-0387aefee1ddb8b2a9db7e4165c8d84dc0de8621.js"></script>
@@ -336,10 +336,7 @@
         AWS.config.region = 'us-west-2';
     </script>
 
-    {% if page.avaform == 1 %}
-    <script src="/public/js/new-ava-form.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
-    {% endif %} {% if page.search == 1 %}
+    {% if page.search == 1 %}
     <script>
         handleSearch();
     </script>
