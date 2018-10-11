@@ -174,7 +174,12 @@ function ApiRequest() {
     // clear the console output/infobox and display loading-pulse
     $("#demo-console-output").empty();
     $(".loading-pulse").css('display', 'block');
-    $("#demo-infobox-text").empty();
+    const infoboxNotHidden = !$('#demo-infobox').hasClass('hidden');
+    if (infoboxNotHidden) {
+        $("#demo-infobox-text").empty();
+        $("#demo-infobox-header").html('Calculating...');
+    }
+    
 
     const data = buildSampleData();
     const [bucket, key] = proxy.key.location.split('/');
@@ -200,11 +205,13 @@ function ApiRequest() {
             return rawApiResponse.json().then((body) => {
                 $(".loading-pulse").css('display', 'none');
                 $('#demo-console-output').text(JSON.stringify(body, null, 2));
-
-                const infoboxHTML = buildInfoboxHTML(body);
-
-                $("#demo-infobox-text").html(infoboxHTML);
-
+                
+                if (infoboxNotHidden) {
+                    $("#demo-infobox-header").html('Result');
+                    const infoboxHTML = buildInfoboxHTML(body);
+                    $("#demo-infobox-text").html(infoboxHTML);
+                }
+               
                 //TODO handle errors
                 // $('#console-output').text("HTTP Error: " + body.status + "\n\n" + JSON.stringify(result, null, 2));
 
@@ -216,6 +223,11 @@ function ApiRequest() {
             });
         });
     })
+}
+
+function hideInfobox() {
+    $(".demo-infobox").css('display', 'none');
+    $(".demo-infobox").addClass('hidden');
 }
 
 function accordionTrigger(currentElementId, nextElementId) {
@@ -284,24 +296,27 @@ $(document).ready(function() {
 
     //When the destination changes, fire the map script and set the lat-long.
     $('#dropdown-dest-addresses').change(function(e){
-        let lat = $('input[type=radio][name=address]:checked').attr('lat');
-        let long = $('input[type=radio][name=address]:checked').attr('long');
-        GetMapWithLine(lat, long, null, null);
+        const lat = $('input[type=radio][name=address]:checked').attr('lat');
+        const long = $('input[type=radio][name=address]:checked').attr('long');
+        const infoboxNotHidden = !$('.demo-infobox').hasClass('hidden');
+        GetMapWithLine(lat, long, null, null, null, infoboxNotHidden);
     });
 
     //When the source changes, fire the map script with source and dest lat-long.
     $('#dropdown-src-addresses').change(function(e){
-        let lat     = $('input[type=radio][name=address]:checked').attr('lat');
-        let long    = $('input[type=radio][name=address]:checked').attr('long');
-        let srcLat  = $('input[type=radio][name=srcAddress]:checked').attr('lat');
-        let srcLong = $('input[type=radio][name=srcAddress]:checked').attr('long');
+        const lat     = $('input[type=radio][name=address]:checked').attr('lat');
+        const long    = $('input[type=radio][name=address]:checked').attr('long');
+        const srcLat  = $('input[type=radio][name=srcAddress]:checked').attr('lat');
+        const srcLong = $('input[type=radio][name=srcAddress]:checked').attr('long');
 
         // check if both address are in the US
-        let addressType = $('input[type=radio][name=address]:checked').attr('addressType') === 'national';
-        let srcType = $('input[type=radio][name=srcAddress]:checked').attr('addressType') === 'national';
-        let usAddresses = addressType && srcType
+        const addressType = $('input[type=radio][name=address]:checked').attr('addressType') === 'national';
+        const srcType = $('input[type=radio][name=srcAddress]:checked').attr('addressType') === 'national';
 
-        GetMapWithLine(lat, long, srcLat, srcLong, usAddresses);
+        const usAddresses = addressType && srcType;
+
+        const infoboxNotHidden = !$('.demo-infobox').hasClass('hidden');
+        GetMapWithLine(lat, long, srcLat, srcLong, usAddresses, infoboxNotHidden);
     }); 
 
     $('#dropdown-addresses').trigger('change');
