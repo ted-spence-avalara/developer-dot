@@ -21,6 +21,7 @@ redirects:
   get-started/: /avatax/signup
   signup/: https://buy.avalara.com/signup?partner=API
   avatax/signup: https://buy.avalara.com/signup?partner=API
+  avatax/signup/: https://buy.avalara.com/signup?partner=API
   api-documentation: /avalara-apis
   api-documentation/avatax16: /avalara-apis
   api-documentation/avatax-15-api: /avatax
