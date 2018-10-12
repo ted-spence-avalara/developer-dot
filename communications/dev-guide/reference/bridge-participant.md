@@ -17,5 +17,5 @@ Coming Soon
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide/reference/bridge-data/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide/reference/kay-value-pair/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide/reference/key-value-pair/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

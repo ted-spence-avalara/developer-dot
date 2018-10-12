@@ -22,7 +22,7 @@ For example:
 </ul>
 
 <h4>Note</h4>
-Private Line functionality is not supported on a Tax Inclusive (<code>incl</code> set to <code>true</code>) <li><a class="dev-guide-link" href="/communications/dev-guide/reference/line-item/">line item</a>.  The following exception is thrown in the event that a <code>plsp</code> is greater than 0 while <code>incl</code> is set to <code>true</code>.  To resolve, set <code>plsp</code> to 0 or <code>incl</code> to <code>false</code>.
+Private Line functionality is not supported on a Tax Inclusive (<code>incl</code> set to <code>true</code>) <a class="dev-guide-link" href="/communications/dev-guide/reference/line-item/">line item</a>.  The following exception is thrown in the event that a <code>plsp</code> is greater than 0 while <code>incl</code> is set to <code>true</code>.  To resolve, set <code>plsp</code> to 0 or <code>incl</code> to <code>false</code>.
 
 {% highlight json %}
 {

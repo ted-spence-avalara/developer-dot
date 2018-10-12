@@ -10,7 +10,7 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide/calculate-taxes/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide/commit-uncommit/"><i class="glyphicon glyphicon-chevron-right"></i>Next Chapter</a></li>
+  <li class="next"><a href="/communications/dev-guide/commit-uncommit/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 While the <a class="dev-guide-link" href="/communications/dev-guide/reference/calc-taxes-request/">CalcTaxes request</a> has numerous fields available, only a handful are required.  
@@ -101,5 +101,5 @@ When using the <a class="dev-guide-link" href="/communications/dev-guide/referen
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide/calculate-taxes/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide/commit-uncommit/"><i class="glyphicon glyphicon-chevron-right"></i>Next Chapter</a></li>
+  <li class="next"><a href="/communications/dev-guide/commit-uncommit/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

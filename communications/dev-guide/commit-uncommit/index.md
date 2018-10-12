@@ -29,7 +29,7 @@ Only committed transactions appear in the compliance report. Transactions tied t
 It is not necessary to set the Commit flag immediately on a transaction.  The Commit flag may be set or unset using the <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/commit-request/">Commit API</a>.
 
 <h4>Note</h4>
-The Commit flag may only be changed prior to the end of the reporting cycle.  After the reporting cycle, all DocumentCodes with Commit flags set to <code>true</code> are locked and cannot be modified once the compliance report is generated. You may, however, commit previously uncommitted <code>DocumentCodes</code> via the <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/commit-request/">Commit API</a>. To request an updated compliance report, please email <a class="dev-guide-link" href="mailto:CommunicationSupport@avalara.com">CommunicationSupport@avalara.com</a>.
+The Commit flag may only be changed prior to the end of the reporting cycle.  After the reporting cycle, all DocumentCodes with Commit flags set to <code>true</code> are locked and cannot be modified once the compliance report is generated. You may, however, commit previously uncommitted <b>DocumentCodes</b> via the <a class="dev-guide-link" href="/communications/dev-guide/commit-uncommit/commit-request/">Commit API</a>. To request an updated compliance report, please email <a class="dev-guide-link" href="mailto:CommunicationSupport@avalara.com">CommunicationSupport@avalara.com</a>.
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide/calculate-taxes/"><i class="glyphicon glyphicon-chevron-left"></i>Previous Chapter</a></li>

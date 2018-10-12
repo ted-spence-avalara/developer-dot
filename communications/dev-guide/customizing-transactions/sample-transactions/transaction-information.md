@@ -10,7 +10,7 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide/customizing-transactions/sample-transactions/proration/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide/customizing-transactions/sample-transactions/exclusion/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide/reference/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 REST v2 looks at the transaction as a whole and bases the returned taxes off of the information provided.  
@@ -181,7 +181,7 @@ Transaction data defines the transaction in terms of where the transaction takes
 
 In addition to these objects, transactions can also be customized through <a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/tax-override/">Tax Overrides</a> and <a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/safe-harbor-override/">Safe Harbor Overrides</a>.
 
-<h4>Invoice keys</h4>
+<h4>Invoice Keys</h4>
 More information about <code>Invoice</code> can be found <a class="dev-guide-link" href="/communications/dev-guide/reference/invoice/">here</a>.
 
 <div class="mobile-table">
@@ -265,7 +265,7 @@ More information about <code>Invoice</code> can be found <a class="dev-guide-lin
   </table>
 </div>
 
-<h4>LineItem keys</h4>
+<h4>LineItem Keys</h4>
 More information about <code>LineItem</code> can be found <a class="dev-guide-link" href="/communications/dev-guide/reference/line-item/">here</a>.
 <div class="mobile-table">
   <table class="styled-table">
@@ -407,7 +407,7 @@ More information about <code>LineItem</code> can be found <a class="dev-guide-li
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/adjustment/">Discount Type</a></td>
         <td><code>disc</code></td>
-        <td>Identifies the discount type for an adjustment</td>
+        <td>Identifies the discount type for an adjustment
             <ul class="dev-guide-list">
                 <li><b>None</b> (<span class="t5">default</span>): discount type not applicable</li>
                 <li><b>Retail Product</b>: an amount subtracted from the original price to arrive at a lower price</li>
@@ -435,5 +435,5 @@ More information about <code>LineItem</code> can be found <a class="dev-guide-li
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide/customizing-transactions/sample-transactions/proration/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide/customizing-transactions/sample-transactions/exclusion/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide/reference/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

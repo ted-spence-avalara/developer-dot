@@ -15,13 +15,13 @@ disqus: 0
 
 There are two main components of account customizations:
 <ul class="dev-guide-list">
-  <li>Customization files</li>
-  <li>Configuration options</li>
+  <li><a class="dev-guide-link" href="#cust_files">Customization files</a></li>
+  <li><a class="dev-guide-link" href="#config_opt">Configuration options</a></li>
 </ul>
 
 One or both types of customizations can be set on a client profile.
 
-<h3>Customization Files</h3>
+<h3 id="cust_files">Customization Files</h3>
 Customization files allow you to change how results are returned from the AFC tax engine or customize the way the AFC tax engine interprets your <code>CalcTaxes</code> request.  There are five types of customization files:
 <ul class="dev-guide-list">
   <li>Override file</li>
@@ -72,7 +72,7 @@ Customization files allow you to change how results are returned from the AFC ta
   </table>
 </div>
 
-<h3>Configuration Options</h3>
+<h3 id="config_opt">Configuration Options</h3>
 Configuration options are used to modify the operation of the AFC tax engine.
 <div class="mobile-table">
   <table class="styled-table">
@@ -86,18 +86,21 @@ Configuration options are used to modify the operation of the AFC tax engine.
     <tbody>
       <tr>
         <td>Return Non-Billable</td>
-        <td>False (Default)
-            <br/>
-            True</td>
+        <td><ul class="dev-guide-list">
+              <li>False (<span class="t5">default</span>)</li>
+              <li>True</li>
+            </ul>
+        </td>
         <td>Non-billable items are compliance-only taxes or fees that are used for filing and are not passed on to the user. This option allows you to specify whether non-billable items should be included in the tax table returned by the tax calculation API functions in AFC or not.</td>
       </tr>
       <tr>
         <td>Safe Harbor TAM Override(s)</td>
-        <td>Cellular Override TAM
-            <br/>
-            VoIP Override TAM
-            <br/>
-            Paging Override TAM</td>
+        <td><ul class="dev-guide-list">
+              <li>Cellular Override TAM</li>
+              <li>VoIP Override TAM</li>
+              <li>Paging Override TAM</li>
+            </ul>
+        </td>
         <td>Safe Harbor TAM Override configuration settings allow traffic study values to be applied for a given session or account.
 The results of percentages from a traffic study can be applied by administering traffic study TAM overrides. The TAM values for Cellular, VoIP and Paging are adjusted to reflect the percentages in the traffic study.  While all all three types of TAM overrides can be set, it is possible to set only one or two of the options (Cellular, VoIP, or Paging).</td>
       </tr>

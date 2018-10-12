@@ -68,7 +68,7 @@ The following fields must be provided within a <code>Commit</code> API call in o
 </div>
 
 <h3>The Commit Request</h3>
-The <code>Commit</code> request is used to change the <code>Commit</code> flag for a given <code>DocumentCode</code>.  Let's send a simple <code>Commit</code> call using <a class="dev-guide-link" href="https://www.getpostman.com">Postman</a> and inspect the results.
+The <code>Commit</code> request is used to change the <b>Commit</b> flag for a given <b>DocumentCode</b>.  Let's send a simple <code>Commit</code> call using <a class="dev-guide-link" href="https://www.getpostman.com">Postman</a> and inspect the results.
 
 <h3>Headers</h3>
 Add the following <a class="dev-guide-link" href="/communications/dev-guide/getting-started/authentication/">mandatory headers</a> to your request:
@@ -98,7 +98,7 @@ For the body of the <code>POST</code> request, copy and paste the following exam
 {% endhighlight %}
 
 <h4>What are we sending?</h4>
-The example above assumes you have submitted transactions for the current reporting cycle with a DocumentCode (<code>doc</code>) of "123456789".  The <code>doc</code> key identifies the DocumentCode you want to update.
+The example above assumes you have submitted transactions for the current reporting cycle with a DocumentCode (<code>doc</code>) of "123456789".  The <code>doc</code> key identifies the DocumentCode you want to update.  The DocumentCode can be associated with a bill run, an invoice, a customer, or a transaction.
 
 Next comes the Commit flag (<code>cmmt</code>). Set this flag to <code>true</code> to mark the DocumentCode (<code>doc</code>) as committed or <code>false</code> to uncommit the DocumentCode.  <b>Reminder</b>: this action commits or uncommits all transactions with this DocumentCode.
 
