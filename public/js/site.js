@@ -25,6 +25,9 @@ function getCompareDate() {
 }
 
 function fillWithSampleData() {
+    const reqType = $('#req-type').val();
+    console.warn('REQ TYPE', reqType);
+    
     const sampleData = buildSampleData();
     $('#demo-console-input').empty().text(JSON.stringify(sampleData, null, 2));
 };

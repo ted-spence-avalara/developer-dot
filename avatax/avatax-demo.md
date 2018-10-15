@@ -295,6 +295,12 @@ doctype: use_cases
                     <h5 class="console-output-header" style="display:inline-block;margin-left:0px;">
                         Request
                     </h5>
+                    <div class="form-group" style="display: inline;">
+                        <select class="form-control" id="req-type" style="display: inline;width: 100px;">
+                            <option value="JSON">JSON</option>
+                            <option value="CURL">CURL</option>
+                        </select>
+                    </div>
                     <div style="display:inline-block;float:right;" class="btn-group">
                         <button class="btn btn-link" type="submit" onClick="copyToClipboard('#demo-console-input');" style="color:#000000;margin-right:5px;display:inline;">
                             <i class="glyphicon glyphicon-copy"></i>Copy
