@@ -545,12 +545,25 @@ Tax was only calculated on the first $5,000 for the county because the LineAmoun
 
 <h3>Sales Tax Holidays</h3>
 
-Many states offer annual sales tax holidays, providing a reduction or elimination of sales tax on specific categories of products for a short period of time. This section is about interpreting Tax Content API results for Sales Tax Holidays. By the end of this section, you will learn the following:
+Many states offer annual sales tax holidays, providing a reduction or elimination of sales tax on specific categories of products for a short period of time. An example of a sales tax holiday is an annual "Back-To-School" sales tax free weekend.
+
+This section is about interpreting Tax Content API results for Sales Tax Holidays. 
+
+By the end of this section, you will learn the following:
 
 <ul class="dev-guide-list">
+	<li>How to best use the tax content API to anticipate sales tax holidays</li>
   <li>How to interpret Sales Tax Holidays results</li>
   <li>How to differentiate between Sales Tax Holiday results and normal tax content results</li>
 </ul>
+
+<h4>Anticipating Sales Tax Holidays</h4>
+
+Because tax holidays are controlled be legislation, some legislation may be finalized well in advance of the actual holiday whereas other legislation will be finalized only shortly before the actual holiday.  Avalara will update its tax content to reflect sales tax holidays only after legislation has been passed and signed into law.  
+
+When using the offline tax content API, Avalara encourages you to re-download data regularly to ensure that recently passed and signed legislation will be included in your offline tax content.  Please consider the possibility of tax holidays when deciding on your download schedule.  If you pick a download frequency of once per month, for example, a sales tax holiday law that was passed and signed after your most recent download will not be reflected in your tax content file.
+
+Avalara encourages customers using offline tax content to download their tax content data once per day in the morning.  This can be implemented as a normal morning "start-up" process for your cash register or point-of-sale application.
 
 <h4>Sales Tax Holiday Results</h4>
 
@@ -562,7 +575,7 @@ DocumentDate: 8/10/2017, 8/11/2017
 
 <h5>Expected API Result</h5>
 
-Assuming nexus is configured for the state of Texas, the Tax Content API will produce the following responses for the asserted Address, Tax Code, and DocumentDates. The Tax Content API will return two records in each response that share a single ScenarioId. These results represent the taxing jurisdictions and their associated tax rules and rates that are applicable to the Location and TaxCode specified in the results. These results should be used in conjunction with one another for the specified LocationCode and TaxCode.
+Assuming nexus is configured for the state of Texas, the Tax Content API will produce the following responses for the asserted Address, Tax Code, and DocumentDates. The Tax Content API will return two records in each response that share a single `ScenarioId`. These results represent the taxing jurisdictions and their associated tax rules and rates that are applicable to the Location and `TaxCode` specified in the results. These results should be used in conjunction with one another for the specified `LocationCode` and `TaxCode`.
 
 <strong>DocumentDate: 8/10/2017</strong>
 
@@ -663,123 +676,9 @@ Assuming nexus is configured for the state of Texas, the Tax Content API will pr
 ]
 </pre>
 
-In this example, we have two API calls, one with a DocumentDate of 8/10/2017 and another with a DocumentDate of 8/11/2017. You'll notice, the results of these API calls are different. Specifically, the range of the Effective and End Dates of the second API result fall in between the Effective and End Dates of the first.
+In this example, we have two API calls, one with a `DocumentDate` of `8/10/2017` and another with a `DocumentDate` of `8/11/2017`. You'll notice the results of these API calls are different. Specifically, the range of the Effective and End Dates of the second API result fall in between the Effective and End Dates of the first.
 
-If a transaction occurred on or before 8/10/2017, the first response would be applicable because it falls outside of the date range for the SalesTax Holiday Content.
-
-<div class="mobile-table">
-	<table class="styled-table">
-		<thead>
-			<tr>
-				<th>EffDate</th>
-				<th>EndDate</th>
-				<th>JurisName</th>
-        <th>Tax_Rate</th>
-        <th>Cap</th>
-        <th>Threshold</th>
-        <th>TaxRuleOptions</th>
-			</tr>
-		</thead>
-    <tbody>
-      <tr style="background-color:#FFD;">
-        <td>8/1/2010</td>
-        <td>12/31/9999</td>
-        <td>TEXAS</td>
-        <td>0.0625</td>
-        <td>0</td>
-        <td>0</td>
-        <td></td>
-      </tr>
-      <tr style="background-color:#FFD;">
-        <td>8/1/2010</td>
-        <td>12/31/9999</td>
-        <td>CANYON</td>
-        <td>0.002</td>
-        <td>0</td>
-        <td>0</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>8/11/2017</td>
-        <td>08/13/2017</td>
-        <td>TEXAS</td>
-        <td>0.0625</td>
-        <td>0</td>
-        <td>100.00</td>
-        <td>TaxAll</td>
-      </tr>
-      <tr>
-        <td>8/11/2017</td>
-        <td>08/13/2017</td>
-        <td>CANYON</td>
-        <td>0.0625</td>
-        <td>0</td>
-        <td>100.00</td>
-        <td>TaxAll</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<br/>
-
-If a transaction occurred between 8/11/2017 and 8/13/2017, the second response would be applicable and the Threshold and TaxRuleOptions should be applied.
-
-<div class="mobile-table">
-	<table class="styled-table">
-		<thead>
-			<tr>
-				<th>EffDate</th>
-				<th>EndDate</th>
-				<th>JurisName</th>
-        <th>Tax_Rate</th>
-        <th>Cap</th>
-        <th>Threshold</th>
-        <th>TaxRuleOptions</th>
-			</tr>
-		</thead>
-    <tbody>
-      <tr>
-        <td>8/1/2010</td>
-        <td>12/31/9999</td>
-        <td>TEXAS</td>
-        <td>0.0625</td>
-        <td>0</td>
-        <td>0</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>8/1/2010</td>
-        <td>12/31/9999</td>
-        <td>CANYON</td>
-        <td>0.002</td>
-        <td>0</td>
-        <td>0</td>
-        <td></td>
-      </tr>
-      <tr style="background-color:#FFD;">
-        <td>8/11/2017</td>
-        <td>08/13/2017</td>
-        <td>TEXAS</td>
-        <td>0.0625</td>
-        <td>0</td>
-        <td>100.00</td>
-        <td>TaxAll</td>
-      </tr>
-      <tr style="background-color:#FFD;">
-        <td>8/11/2017</td>
-        <td>08/13/2017</td>
-        <td>CANYON</td>
-        <td>0.0625</td>
-        <td>0</td>
-        <td>100.00</td>
-        <td>TaxAll</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<br/>
-
-If a transaction occurred after 8/14/2017, the first response would again be applicable because it falls outside of the date range for the SalesTax Holiday Content.
+If a transaction occurred on or before `8/10/2017`, the first response would be applicable because it falls outside of the date range for the SalesTax Holiday Content.
 
 <div class="mobile-table">
 	<table class="styled-table">
@@ -836,7 +735,125 @@ If a transaction occurred after 8/14/2017, the first response would again be app
 </div>
 <br/>
 
-The Tax Content API only supports a single DocumentDate per API call, but users are able to call the API with a post-dated DocumentDate to retrieve content that will be effective in the future.
+If a transaction occurred between `8/11/2017` and `8/13/2017`, the second response would be applicable and the `Threshold` and `TaxRuleOptions` should be applied.
+
+<div class="mobile-table">
+	<table class="styled-table">
+		<thead>
+			<tr>
+				<th>EffDate</th>
+				<th>EndDate</th>
+				<th>JurisName</th>
+        <th>Tax_Rate</th>
+        <th>Cap</th>
+        <th>Threshold</th>
+        <th>TaxRuleOptions</th>
+			</tr>
+		</thead>
+    <tbody>
+      <tr>
+        <td>8/1/2010</td>
+        <td>12/31/9999</td>
+        <td>TEXAS</td>
+        <td>0.0625</td>
+        <td>0</td>
+        <td>0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>8/1/2010</td>
+        <td>12/31/9999</td>
+        <td>CANYON</td>
+        <td>0.002</td>
+        <td>0</td>
+        <td>0</td>
+        <td></td>
+      </tr>
+      <tr style="background-color:#FFD;">
+        <td>8/11/2017</td>
+        <td>08/13/2017</td>
+        <td>TEXAS</td>
+        <td>0.0625</td>
+        <td>0</td>
+        <td>100.00</td>
+        <td>TaxAll</td>
+      </tr>
+      <tr style="background-color:#FFD;">
+        <td>8/11/2017</td>
+        <td>08/13/2017</td>
+        <td>CANYON</td>
+        <td>0.0625</td>
+        <td>0</td>
+        <td>100.00</td>
+        <td>TaxAll</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br/>
+
+If a transaction occurred after `8/14/2017`, the first response would again be applicable because it falls outside of the date range for the SalesTax Holiday Content.
+
+<div class="mobile-table">
+	<table class="styled-table">
+		<thead>
+			<tr>
+				<th>EffDate</th>
+				<th>EndDate</th>
+				<th>JurisName</th>
+        <th>Tax_Rate</th>
+        <th>Cap</th>
+        <th>Threshold</th>
+        <th>TaxRuleOptions</th>
+			</tr>
+		</thead>
+    <tbody>
+      <tr style="background-color:#FFD;">
+        <td>8/1/2010</td>
+        <td>12/31/9999</td>
+        <td>TEXAS</td>
+        <td>0.0625</td>
+        <td>0</td>
+        <td>0</td>
+        <td></td>
+      </tr>
+      <tr style="background-color:#FFD;">
+        <td>8/1/2010</td>
+        <td>12/31/9999</td>
+        <td>CANYON</td>
+        <td>0.002</td>
+        <td>0</td>
+        <td>0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>8/11/2017</td>
+        <td>08/13/2017</td>
+        <td>TEXAS</td>
+        <td>0.0625</td>
+        <td>0</td>
+        <td>100.00</td>
+        <td>TaxAll</td>
+      </tr>
+      <tr>
+        <td>8/11/2017</td>
+        <td>08/13/2017</td>
+        <td>CANYON</td>
+        <td>0.0625</td>
+        <td>0</td>
+        <td>100.00</td>
+        <td>TaxAll</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br/>
+
+The Tax Content API only supports a single `DocumentDate` per API call, but users are able to call the API with a post-dated DocumentDate to retrieve content that will be effective in the future.  
+
+Keep in mind that as you download data for future dates, sales tax laws can change based on decisions made in the legislative process.  If you download data for a time period in the future and tax laws change, you would need to re-download tax content for that date in order to process the latest rates.
+
+For best practices, Avalara encourages you to re-download your tax content data once per day during your startup process.  
 
 <ul class="pager">
   <li class="previous"><a href="/avatax/dev-guide/calculating-tax-offline/retry-or-fallback/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

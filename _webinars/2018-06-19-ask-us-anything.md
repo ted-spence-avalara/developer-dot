@@ -1,18 +1,16 @@
 ---
 layout: webinar
-title: Office Hours with AvaTax – Ask our Engineers Anything!
+title: Office Hours with AvaTax – Getting the Most Out of the C# SDK for Avalara’s API
 date: 2018-06-19 10:00
 author: Ted Spence
 comments: true
 product: avatax
 doctype: webinar
-linkurl: http://simplify.avalara.com/officehourswithavataxjune19/
+youtube: https://www.youtube.com/embed/uzL5LpwUfuQ
 ---
 
-Office Hours with AvaTax – Ask our Engineers Anything!
+Office Hours with AvaTax – Getting the Most out of the C# SDK for Avalara’s API
 
-Avalara’s crack team of engineers receives dozens of questions every week from developers using our platform, and we want to answer as many as we can. So, we’ve set up a 30-minute series of webinars called Office Hours with AvaTax that takes place at 10 a.m. PT every Tuesday.
+Tuesday, June 12, 2018 at 10:00 AM Pacific Time
 
-Need help estimating tax, reconciling transactions or exemption certificates? Do you have questions about product taxability, calculating tax offline and handling refunds?  If so, Office Hours is your opportunity to ask our expert team of engineers and developers any questions that may be top of your mind about the AvaTax platform.
-
-Sign Up Now
+In the latest installment of Office Hours with AvaTax, Ted Spence, Avalara's director of the API team, covers the ins and outs of using the C# SDK for the AvaTax API.

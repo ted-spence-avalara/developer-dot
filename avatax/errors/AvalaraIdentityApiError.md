@@ -20,8 +20,8 @@ A server configuration problem has been detected.
     {
       "code": "AvalaraIdentityApiError",
       "number": 608,
-      "message": "Unexpected Avalara Identity error.",
-      "description": "Unexpected Avalara Identity error:-0-.",
+      "message": "-0-.",
+      "description": "-1-.",
       "faultCode": "Server",
       "helpLink": "http://developer.avalara.com/avatax/errors/AvalaraIdentityApiError",
       "severity": "Error"

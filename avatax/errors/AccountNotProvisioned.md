@@ -20,8 +20,8 @@ The automatic provisioning process for exemption certificates failed.
     {
       "code": "AccountNotProvisioned",
       "number": 1216,
-      "message": "AvaTax account -0- is not provisioned successfully.",
-      "description": "Automatic provisioning for this account failed, and this error has been automatically reported to Avalara for review.",
+      "message": "AvaTax company -0- is not provisioned to use CertCapture API.",
+      "description": "Please call RequestCertificateSetup API to provision the company first.",
       "faultCode": "Server",
       "helpLink": "http://developer.avalara.com/avatax/errors/AccountNotProvisioned",
       "severity": "Error"

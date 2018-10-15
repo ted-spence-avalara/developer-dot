@@ -21,7 +21,7 @@ The address you provided was incomplete.
       "code": "InvalidAddress",
       "number": 309,
       "message": "The address value was incomplete.",
-      "description": "The address value -0- was incomplete.  You must provide either a valid line + region + country + postal code.",
+      "description": "The address value -0- was incomplete. You must provide either a valid postal code, line1 + city + region, or line1 + postal code.",
       "faultCode": "Client",
       "helpLink": "http://developer.avalara.com/avatax/errors/InvalidAddress",
       "severity": "Error"

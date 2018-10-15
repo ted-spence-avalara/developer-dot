@@ -8,7 +8,7 @@ disqus: 1
 
 ## Summary
 
-The advanced rule table did not contain valid CSV file. 
+The advanced rule table did not contain valid CSV file.
 
 ## Example
 

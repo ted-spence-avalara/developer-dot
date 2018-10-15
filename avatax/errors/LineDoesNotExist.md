@@ -20,8 +20,8 @@ You attempted to remove a line that did not exist.
     {
       "code": "LineDoesNotExist",
       "number": 1102,
-      "message": "The line to be removed does not exist.",
-      "description": "Line -0- does not exist. You can't remove a line that does not exist.",
+      "message": "The line you want to modify doesn't exist.",
+      "description": "Line -0- does not exist.",
       "faultCode": "Client",
       "helpLink": "http://developer.avalara.com/avatax/errors/LineDoesNotExist",
       "severity": "Error"

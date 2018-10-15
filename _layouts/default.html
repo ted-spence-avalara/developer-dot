@@ -49,8 +49,8 @@
     <meta name="msapplication-TileImage" content="/public/images/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff ">
 
-    <link rel="stylesheet" href="/public/css/style.css"> {% if page.avaform == 1 %}
-    <link rel="stylesheet" href="https://d30qslfa084pac.cloudfront.net/common/avaform/style.css"> {% endif %}
+    <link rel="stylesheet" href="/public/css/style.css">
+
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Adobe Dynamic Tab Manager Tag Manager -->
     <script src="https://assets.adobedtm.com/bc10a2a9cf337c664f8f74e778a1987125aea184/satelliteLib-0387aefee1ddb8b2a9db7e4165c8d84dc0de8621.js"></script>
@@ -94,7 +94,7 @@
                                         {% endfor %}
                                         <br/>
                                         <li><a href="/avatax/use-cases">Use Cases</a></li>
-                                        <li><a href="/avatax/signup">Start your AvaTax free trial now!</a></li>
+                                        <li><a href="https://buy.avalara.com/signup?partner=API">Start your AvaTax free trial now!</a></li>
                                     </ul>
                                     {% endif %} {% if site.data.api_consoles.communications.nav_links %}
                                     <h4>Avalara Communications</h4>
@@ -206,7 +206,8 @@
                     <li class="resources visible-xs-block"><a href="https://offers.avalara.com/monthlydevelopernewsletter/"><span class="text-uppercase">Monthly Developer Newsletter</span></a></li>
                 </ul>
                 {% if page.title != "Thank You" %}
-                <a href="/avatax/signup/" class="btn btn-primary btn-signup">Free Trial</a>
+                <a href="https://buy.avalara.com/signup?partner=API" class="btn btn-primary btn-signup">Free Trial</a>
+                <a href="/avatax/avatax-demo/" class="btn btn-primary btn-signup">Demo API</a>
                 {% endif %}
             </div>
         </nav>
@@ -215,10 +216,7 @@
         {% if page.nav=="home" %}
         <div class="recent-blog-posts" id="recentPosts">
             <button class="btn btn-seconndary pull-right" onClick="{document.getElementById('recentPosts').style.display='none';}"><i class="glyphicon glyphicon-remove"></i> Close</button>
-            <a href="http://www.avalaracrush.com/events/crush-2019-pre-registration/event-summary-dc5dcbc0f73f4620b7eef100dc358fd7.aspx" target="_blank">                
-                <img src="/public/images/crush-2019-banner.png" alt="Get a jumpstart on building tax compliance solutions – Register for CRUSH 2019 today!" style="width: 750px; object-fit: cover; overflow: hidden; display: block; margin: 0 auto;" />
-            </a>
-            <h2>Recent blog posts</h2>
+            <h2>AvaTax Developer News</h2>
             {% for post in site.posts limit:4 %}
             <div class="col-md-3">
                 <div class="blog-preview recent-posts">
@@ -338,10 +336,7 @@
         AWS.config.region = 'us-west-2';
     </script>
 
-    {% if page.avaform == 1 %}
-    <script src="/public/js/new-ava-form.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
-    {% endif %} {% if page.search == 1 %}
+    {% if page.search == 1 %}
     <script>
         handleSearch();
     </script>
