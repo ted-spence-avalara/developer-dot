@@ -295,7 +295,7 @@ doctype: use_cases
                     <h5 class="console-output-header" style="display:inline-block;margin-left:0px;">
                         Request
                     </h5>
-                    <div class="form-group" style="display: inline;">
+                    <div class="form-group" style="display: inline;" onChange="fillWithSampleData();">
                         <select class="form-control" id="req-type" style="display: inline;width: 100px;">
                             <option value="JSON">JSON</option>
                             <option value="CURL">CURL</option>
