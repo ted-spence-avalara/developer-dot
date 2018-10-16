@@ -120,6 +120,8 @@ var transaction = new TransactionBuilder(Client, "DEMOPAGE", DocumentType.SalesO
     //         // build C# req for single location
     //         address = `.WithAddress(TransactionAddressType.SingleLocation, ${singleLocation[0]}, null, null, ${singleLocation[1]}, ${singleLocation[2]}, ${singleLocation[4]}, ${singleLocation[3]})`;
     //     }
+    // line1, null, null, city, region, zip, county
+    // amount, line#, null, tax code
 
         // build sample data for PHP
         sampleData = `// Create a new client
