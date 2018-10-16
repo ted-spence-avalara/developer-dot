@@ -28,6 +28,11 @@ The following use cases are provided:
     <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/private-line/">Private Line</a></li>
     <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/proration/">Proration</a></li>
     <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/transaction-information/">Transaction Information</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/exclusion/">Exclusions</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/commit/">Transaction-Level Commit/Uncommit</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/invoice-date/">Invoice Date</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/invoice-mode/">Invoice Mode</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/optional-fields/">Optional Fields</a></li>
 </ul>
 
 <ul class="pager">

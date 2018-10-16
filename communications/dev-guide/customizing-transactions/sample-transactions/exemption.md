@@ -48,7 +48,7 @@ REST v2 provides a three types of exemptions:
 More information about the <code>Exemption</code> object can be found <a class="dev-guide-link" href="/communications/dev-guide/reference/exemption/">here</a>.
 
 <h4>Note</h4>
-Although the <code>CalcTaxes</code> request gives the user the flexibility to input exemption information for each transaction, we recommend using a <a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/client-profiles/">Client Profile</a> with a custom exemption file applied. This results in better performance from the Tax Engine because your override settings are cached <i>before</i> tax calculation begins.
+Although the <code>CalcTaxes</code> request gives the user the flexibility to input exemption information for each transaction, we recommend using a <a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/client-profiles/">Client Profile</a> with a custom exemption file applied. This results in better performance from the Tax Engine because your exemption settings are cached <i>before</i> tax calculation begins.
 
 <h3>Category Exemption</h3>
 {% highlight json %}

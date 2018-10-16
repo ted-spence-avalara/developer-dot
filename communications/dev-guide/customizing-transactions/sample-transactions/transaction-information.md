@@ -10,7 +10,7 @@ disqus: 0
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide/customizing-transactions/sample-transactions/proration/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide/reference/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide/customizing-transactions/sample-transactions/exclusion/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
 REST v2 looks at the transaction as a whole and bases the returned taxes off of the information provided.  
@@ -120,7 +120,7 @@ Company data defines the <b>company</b> or <b>seller</b>.  Set these keys in the
 <h3>Customer Data</h3>
 Customer data defines the customer or buyer.  Set these keys in the <code>Invoice</code> or <code>Location</code> objects.  
 More information about <code>Invoice</code> can be found <a class="dev-guide-link" href="/communications/dev-guide/reference/invoice/">here</a>.
-More information about <code>Location</code> can be found <a class="dev-guide-link" href="/communications/dev-guide/reference/location/">here</a>.
+ More information about <code>Location</code> can be found <a class="dev-guide-link" href="/communications/dev-guide/reference/location/">here</a>.
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -220,12 +220,12 @@ More information about <code>Invoice</code> can be found <a class="dev-guide-lin
         <td>Identifies the location to be billed</td>
       </tr>
       <tr>
-        <td><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/transaction-date/">Transaction Date</a></td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/invoice-date/">Invoice Date</a></td>
         <td><code>date</code></td>
         <td>Date to be applied to the transaction or invoice.  Normally set to the bill date, invoice date, or call date (as applicable)</td>
       </tr>
       <tr>
-        <td><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/transaction-date/">Invoice Mode</a></td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/invoice-mode/">Invoice Mode</a></td>
         <td><code>invm</code></td>
         <td>Indicates if all line items within an invoice should be processed individually or as one invoice
             <ul class="dev-guide-list">
@@ -435,5 +435,5 @@ More information about <code>LineItem</code> can be found <a class="dev-guide-li
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide/customizing-transactions/sample-transactions/proration/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide/reference/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="next"><a href="/communications/dev-guide/customizing-transactions/sample-transactions/exclusion/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

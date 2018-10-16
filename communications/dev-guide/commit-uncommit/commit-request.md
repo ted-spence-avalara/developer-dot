@@ -13,6 +13,14 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide/customizing-transactions/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
+There are two ways to commit and uncommit DocumentCodes:
+<ul class="dev-guide-list">
+  <li>Commit API</li>
+  <li>Commit field (<code>cmmt</code>) directly in the transaction</li>
+</ul>
+
+This page covers the Commit API.  The transaction-level Commit can be found <a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/commit/">here</a>.
+
 <h3>Commit Endpoint</h3>
 <div class="mobile-table">
   <table class="styled-table">
