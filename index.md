@@ -5,52 +5,36 @@ disqus: 0
 nav: home
 ---
 <div class="row">
-    <div class="bg-map col-md-12">
+    <div class="bg-map border-top col-md-12">
         <div class="row">
-          <div class="col-md-8 col-md-offset-2 text-center">
-            <h1 class="h1pp ">Bring real-time tax calculation to your financial application</h1>
-            <img id="this_image" src="/public/images/homepage_hero.svg" alt="Welcome to the Avalara Developer Portal" />
-                <style>
-                    #this_image {
-                        padding-bottom: 30px;
-                    }
-                </style>
-          </div>
-        </div>
-        <div class="row hidden-xs">
-          <div class="col-md-4 text-center">
-            <div class="row">
-              <div class="col-md-8 col-md-offset-2">
-                  <h2 class="text-left">Accurate and fast sales tax calculation</h2>
-                  <p class="text-left">Instantaneously calculate sales tax in more than 70,000 taxing jurisdictions with our REST API.</p>
-              </div>
+            <!-- Headline -->
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <h2>Tax compliance done right with Avalara's API</h2>
             </div>
-          </div>
-          <div class="col-md-4 text-center">
-            <div class="row">
-              <div class="col-md-8 col-md-offset-2">
-                  <h2 class="text-left">Exempt the right customers for the right reasons</h2>
-                  <p class="text-left">Automatically tie your non-taxable transactions directly to the correct exemption or reseller certificate.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 text-center">
-            <div class="row">
-              <div class="col-md-8 col-md-offset-2">
-                <h2 class="text-left">Automated rules for global transactions</h2>
-                <p class="text-left">Determine accurate taxability & duties for millions of products and services in over 100 countries.</p>
-              </div>
-            </div>
-          </div>
         </div>
-        <div class="row margin-top">
-          <div class="col-md-12 text-center btn-callout"><a href="/avatax/signup" role="button">Try the API</a></div>
+        <div class="row text-center padding-bottom">
+            <!-- Developer Guide Block -->
+            <div style="float: left; width: 48%; text-align: center; background-image:url(/public/images/buildwithapi.png); background-position: center; background-size: contain; background-repeat: no-repeat;">
+                <h3 style="margin-top: 70px;">Build with the AvaTax API</h3>
+                <h3 style="margin-top: 220px;">Build an integration for your custom software</h3>
+                <h3><a href="/avatax/avatax-demo/">Demo the API Now</a></h3>
+            </div>
+            <!-- Partner DSP Block -->
+            <div style="float: right; width: 48%; text-align: center; background-image:url(/public/images/developer-partner.png); background-position: center; background-size: contain; background-repeat: no-repeat;">
+                <h3 style="margin-top: 70px;">Be an Avalara Development Solution Partner</h3>
+                <h3 style="margin-top: 220px;">Add our tax automation to your application</h3>
+                <h3><a href="/partners/">Learn about Avalara’s Partner Program</a></h3>
+            </div>
         </div>
-        <div class="row bg-white border-top padding-bottom">
-          <div class="col-md-6 col-md-offset-3 text-center">
-            <h1>Avalara is all about tax compliance</h1>
-            <h5><a href="/avalara-apis">API solutions</a></h5>
-          </div>
+        <div class="row bg-white border-top padding-bottom margin-top text-center">
+            <h2>AvaTax Software Development Kits</h2>
+            <a href="https://www.nuget.org/packages/Avalara.AvaTax/"><img alt="AvaTax SDK for CSharp on NuGet" src="/public/images/sdk-csharp.png" style="margin: 10px;"/></a>
+            <a href="https://packagist.org/packages/avalara/avataxclient"><img alt="AvaTax SDK for PHP on Packagist" src="/public/images/sdk-php.png" style="margin: 10px;"/></a>
+            <a href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.avalara.avatax%22"><img alt="AvaTax SDK for Java on Maven" src="/public/images/sdk-java.png" style="margin: 10px;"/></a>
+            <a href="https://www.npmjs.com/package/avatax"><img alt="AvaTax SDK for JavaScript on NPM" src="/public/images/sdk-javascript.png" style="margin: 10px;"/></a>
+            <a href="https://rubygems.org/gems/avatax"><img alt="AvaTax SDK for Ruby on RubyGems" src="/public/images/sdk-ruby.png" style="margin: 10px;"/></a>
+            <a href="https://pypi.python.org/pypi/Avalara"><img alt="AvaTax SDK for Python on PyPI" src="/public/images/sdk-python.png" style="margin: 10px;"/></a>
+            <div style="float: left;" class="col-md-12 text-center btn-callout"><a href="/avatax/signup" role="button">Try the API</a></div>
         </div>
         <div class="row bg-white padding-top">
           <div class="col-sm-2 col-sm-offset-2 col-md-offset-2 col-md-2 text-center">

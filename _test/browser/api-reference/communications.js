@@ -1,4 +1,4 @@
-const NUMAPIS = 3;
+const NUMAPIS = 2;
 let expectedNumberOfApiEndpoints;
 
 module.exports = {
@@ -10,25 +10,18 @@ module.exports = {
         browser.end();
     },
 
-    'API Reference: Communications: SOAP (verify number of endpoints)': function(browser) {
-        expectedNumberOfApiEndpoints = 42;
+    'API Reference: Communications: REST v1 (verify number of endpoints)': function(browser) {
+        expectedNumberOfApiEndpoints = 31;
 
         browser
-            .initialize(browser.globals.baseURL + '/api-reference/communications/afc/methods/CalcAdjWithFipsCode/')
+            .initialize(browser.globals.baseURL + '/api-reference/communications/v1/methods/ApiV1ApplicationAFCDatabaseEngineVersionGet/')
             .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints);
     },
-    'API Reference: Communications: Geocoding SOAP (verify number of endpoints)': function(browser) {
-        expectedNumberOfApiEndpoints = 5;
+    'API Reference: Communications: REST v2 (verify number of endpoints)': function(browser) {
+        expectedNumberOfApiEndpoints = 4;
 
         browser
-            .initialize(browser.globals.baseURL + '/api-reference/communications/afc-geo/methods/GeocodeLatLong/')
-            .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints);
-    },
-    'API Reference: Communications: REST (verify number of endpoints)': function(browser) {
-        expectedNumberOfApiEndpoints = 29;
-
-        browser
-            .initialize(browser.globals.baseURL + '/api-reference/communications/afc-rest/methods/ApiV1CalculateAdjustmentsPost/')
+            .initialize(browser.globals.baseURL + '/api-reference/communications/v2/methods/ApiV2AfcCalcTaxesPost/')
             .apiReference.methods.layout(NUMAPIS, expectedNumberOfApiEndpoints);
     }
 };

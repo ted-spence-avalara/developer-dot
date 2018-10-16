@@ -27,9 +27,7 @@ Here's how to get started!
 
 First, let's get you an AvaTax account.  This free AvaTax account comes with trial version of the full enterprise AvaTax suite; you can feel free to try out AvaTax or stick with the free TaxRates API.
 
-<div class="row">
- <div class="avaform-wrapper col-md-6"></div>
-</div>
+<a href="https://buy.avalara.com/signup?partner=API">Get a free trial now</a>
 
 <h2>Download the AvaTax SDK</h2>
 

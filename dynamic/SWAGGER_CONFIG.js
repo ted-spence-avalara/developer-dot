@@ -24,19 +24,14 @@ export default {
         path: 'api-reference/avatax/soap',
         product: 'avaTax'
     },
-    'communications/afc.yaml': {
-        name: 'Communications SOAP',
-        path: 'api-reference/communications/afc',
+    'communications/v1.json': {
+        name: 'Communications REST v1',
+        path: 'api-reference/communications/v1',
         product: 'communications'
     },
-    'communications/afc-geo.yaml': {
-        name: 'Communications SOAP Geocoding',
-        path: 'communications/api-reference/geocode/soap',
-        product: 'communications'
-    },
-    'communications/afc-rest.yaml': {
-        name: 'Communications REST API',
-        path: 'communications/api-reference/rest',
+    'communications/v2.json': {
+        name: 'Communications REST v2',
+        path: 'api-reference/communications/v2',
         product: 'communications'
     },
     'excise/5_18_0.yaml': {

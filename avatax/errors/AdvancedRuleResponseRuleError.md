@@ -32,4 +32,4 @@ Failed to execute the advanced rule script.
 
 ## Explanation
 
-See the error description you received for detail on the specific error with the advanced rule script. 
+See the error description you received for detail on the specific error with the advanced rule script.

@@ -32,4 +32,4 @@ AvaTax exemption data does not support this type of pagination.
 
 ## Explanation
 
-See error description in your error for full detail. 
+See error description in your error for full detail.
