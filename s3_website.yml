@@ -19,7 +19,11 @@ redirects:
   landedcost: /blog/landed-cost/
   form: /avatax/signup
   get-started/: /avatax/signup
-  signup/: /avatax/signup
+  signup/: https://buy.avalara.com/signup?partner=API
+  avatax/signup: https://buy.avalara.com/signup?partner=API
+  avatax/signup/: https://buy.avalara.com/signup?partner=API
+  sdk/request-sandbox-account/: https://buy.avalara.com/signup?partner=API
+  sdk/request-sandbox-account: https://buy.avalara.com/signup?partner=API
   api-documentation: /avalara-apis
   api-documentation/avatax16: /avalara-apis
   api-documentation/avatax-15-api: /avatax

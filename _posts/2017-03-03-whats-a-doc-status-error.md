@@ -10,7 +10,6 @@ categories: [avatax, howto, troubleshooting]
 product: blog
 doctype: blog
 disqus: 1
-avaform: 1
 ---
 
 So you're using the AvaTax API, and you attempt to create a transaction just like usual - but this time, you get a new error message: DocStatusError.  What does this error mean, and how should my code handle it?
