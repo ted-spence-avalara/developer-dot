@@ -41,7 +41,8 @@ function fillWithSampleData() {
 https://sandbox-rest.avatax.com/api/v2/transactions/create
         `;
     } else if (reqType === 'C#') {
-        let lines, address;
+        let lines = '';
+        let address;
         const shipToAddress = setShipToOrSingleLocation();
         
         // gather all product info and make into SDK friendly form
@@ -51,10 +52,12 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
             const taxCode = $(this).val();
             const description = $(this).attr('description');
             const amount = $('#' + $(this).attr('id') + '-amount').val();
-            lines += `.WithLine(${amount}, ${lineNum++}, ${taxCode}, ${description})\n`;
+            if (lineNum === 0) {
+                lines += `.WithLine(${amount}, ${lineNum++}, ${taxCode}, ${description})`; 
+            } else {
+                lines += `\n    .WithLine(${amount}, ${lineNum++}, ${taxCode}, ${description})`;
+            }
         });
-
-        console.warn('shipToAddress', shipToAddress);
 
         // check if shipFrom/To addresses
         if(shipToAddress) {
@@ -63,8 +66,7 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
             
             // build C# req for multiple addresses
             address = `.WithAddress(TransactionAddressType.ShipFrom, ${shipTo[0]}, null, null, ${shipTo[1]}, ${shipTo[2]}, ${shipTo[4]}, ${shipTo[3]})
-            .WithAddress(TransactionAddressType.ShipTo, ${shipFrom[0]}, null, null, ${shipFrom[1]}, ${shipFrom[2]}, ${shipFrom[4]}, ${shipFrom[3]})
-            `;
+    .WithAddress(TransactionAddressType.ShipTo, ${shipFrom[0]}, null, null, ${shipFrom[1]}, ${shipFrom[2]}, ${shipFrom[4]}, ${shipFrom[3]})`;
         } else {
             const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
 
@@ -78,12 +80,12 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
 var Client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox)
     .WithSecurity("MyUsername", "MyPassword");
 
-// Create a simple transaction for $100 using the fluent transaction builder
+// Create a simple transaction using the fluent transaction builder
 var transaction = new TransactionBuilder(Client, "DEMOPAGE", DocumentType.SalesOrder, "ABC")
     ${address}
     ${lines}
     .Create();
-        `;
+    `;
         
     }
     
