@@ -55,15 +55,17 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
             //const description = $(this).attr('description');
             const amount = $('#' + $(this).attr('id') + '-amount').val();
             lines += `new LineItemModel() 
-                {
-                    number = ${lineNum++},
-                    quantity = 1,
-                    amount = ${amount},
-                    taxCode = ${taxCode},
-                }`;
-            if (lineNum !== allProducts.length) {
-                lines += ',';
+        {
+            number = "${lineNum}",
+            quantity = 1,
+            amount = ${amount},
+            taxCode = "${taxCode}"
+        }`;
+            
+            if (lineNum != allProducts.length) {
+                lines += ',\n        ';
             }
+            lineNum++;
         });
 
         // check if shipFrom/To addresses
@@ -74,19 +76,19 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
             // build C# req for multiple addresses
             address = `shipFrom = new AddressLocationInfo()
         {
-            line1 = ${shipFrom[0]},
-            city = ${shipFrom[1]},
-            region = ${shipFrom[2]},
-            country = ${shipFrom[4]},
-            postalCode = ${shipFrom[3]}
+            line1 = "${shipFrom[0]}",
+            city = "${shipFrom[1]}",
+            region = "${shipFrom[2]}",
+            country = "${shipFrom[4]}",
+            postalCode = "${shipFrom[3]}"
         },
         shipTo = new AddressLocationInfo()
         {
-            line1 = ${shipTo[0]},
-            city = ${shipTo[1]},
-            region = ${shipTo[2]},
-            country = ${shipTo[4]},
-            postalCode = ${shipTo[3]}
+            line1 = "${shipTo[0]}",
+            city = "${shipTo[1]}",
+            region = "${shipTo[2]}",
+            country = "${shipTo[4]}",
+            postalCode = "${shipTo[3]}"
         }`;
         } else {
             const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
@@ -94,11 +96,11 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
             // build C# req for single location
             address = `singleLocation = new AddressLocationInfo()
             {
-                line1 = ${singleLocation[0]},
-                city = ${singleLocation[1]},
-                region = ${singleLocation[2]},
-                country = ${singleLocation[4]},
-                postalCode = ${singleLocation[3]}
+                line1 = "${singleLocation[0]}",
+                city = "${singleLocation[1]}",
+                region = "${singleLocation[2]}",
+                country = "${singleLocation[4]}",
+                postalCode = "${singleLocation[3]}"
             }`;
         }
 

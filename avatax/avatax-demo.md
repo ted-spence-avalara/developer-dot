@@ -326,7 +326,7 @@ doctype: use_cases
                         Response
                     </h5>
                     <div style="display:inline-block;float:right;" class="btn-group">
-                        <button class="btn btn-link" type="submit" onClick="copyToClipboard('#demo-console-input');" style="color:#000000;margin-right:5px;display:inline;">
+                        <button class="btn btn-link" type="submit" onClick="copyToClipboard('#demo-console-output');" style="color:#000000;margin-right:5px;display:inline;">
                             <i class="glyphicon glyphicon-copy"></i>Copy
                         </button>
                         <button class="btn btn-link" style="display:inline;color:#000000;margin-right:5px;">
