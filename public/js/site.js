@@ -51,8 +51,10 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
             const taxCode = $(this).val();
             const description = $(this).attr('description');
             const amount = $('#' + $(this).attr('id') + '-amount').val();
-            lines = `.WithLine(${amount}, ${lineNum++}, ${taxCode}, ${description})`;
+            lines += `.WithLine(${amount}, ${lineNum++}, ${taxCode}, ${description})\n`;
         });
+
+        console.warn('shipToAddress', shipToAddress);
 
         // check if shipFrom/To addresses
         if(shipToAddress) {
@@ -61,32 +63,32 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
             
             // build C# req for multiple addresses
             address = `.WithAddress(TransactionAddressType.ShipFrom, ${shipTo[0]}, null, null, ${shipTo[1]}, ${shipTo[2]}, ${shipTo[4]}, ${shipTo[3]})
-                .WithAddress(TransactionAddressType.ShipTo, ${shipFrom[0]}, null, null, ${shipFrom[1]}, ${shipFrom[2]}, ${shipFrom[4]}, ${shipFrom[3]})
+            .WithAddress(TransactionAddressType.ShipTo, ${shipFrom[0]}, null, null, ${shipFrom[1]}, ${shipFrom[2]}, ${shipFrom[4]}, ${shipFrom[3]})
             `;
         } else {
             const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
 
             // build C# req for single location
-            address += `.WithAddress(TransactionAddressType.SingleLocation, ${singleLocation[0]}, null, null, ${singleLocation[1]}, ${singleLocation[2]}, ${singleLocation[4]}, ${singleLocation[3]})`;
+            address = `.WithAddress(TransactionAddressType.SingleLocation, ${singleLocation[0]}, null, null, ${singleLocation[1]}, ${singleLocation[2]}, ${singleLocation[4]}, ${singleLocation[3]})`;
         }
 
         // build sample data for c#
         sampleData = `
-            // Create a client and set up authentication
-            var Client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox)
-                .WithSecurity("MyUsername", "MyPassword");
-            
-            // Create a simple transaction for $100 using the fluent transaction builder
-            var transaction = new TransactionBuilder(Client, "DEMOPAGE", DocumentType.SalesOrder, "ABC")
-                ${address}
-                ${lines}
-                .Create();
+// Create a client and set up authentication
+var Client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox)
+    .WithSecurity("MyUsername", "MyPassword");
+
+// Create a simple transaction for $100 using the fluent transaction builder
+var transaction = new TransactionBuilder(Client, "DEMOPAGE", DocumentType.SalesOrder, "ABC")
+    ${address}
+    ${lines}
+    .Create();
         `;
         
     }
     
     else {
-        const json = JSON.stringify(buildJSON(), null, 2)
+        const json = JSON.stringify(buildJSON(), null, 2);
         sampleData = json;
     }
 

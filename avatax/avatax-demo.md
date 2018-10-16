@@ -299,6 +299,7 @@ doctype: use_cases
                         <select class="form-control" id="req-type" style="display: inline;width: 100px;">
                             <option value="JSON">JSON</option>
                             <option value="CURL">CURL</option>
+                            <option value="C#">C# SDK</option>
                         </select>
                     </div>
                     <div style="display:inline-block;float:right;" class="btn-group">
