@@ -54,22 +54,15 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
             const taxCode = $(this).val();
             //const description = $(this).attr('description');
             const amount = $('#' + $(this).attr('id') + '-amount').val();
-            if (lineNum === allProducts.length) {
-                lines += `new LineItemModel() 
+            lines += `new LineItemModel() 
                 {
                     number = ${lineNum++},
                     quantity = 1,
                     amount = ${amount},
                     taxCode = ${taxCode},
-                }`; 
-            } else {
-                lines += `new LineItemModel() 
-                {
-                    number = ${lineNum++},
-                    quantity = 1,
-                    amount = ${amount},
-                    taxCode = ${taxCode},
-                },`;
+                }`;
+            if (lineNum !== allProducts.length) {
+                lines += ',';
             }
         });
 
@@ -79,13 +72,34 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
             const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
             
             // build C# req for multiple addresses
-            address = `.WithAddress(TransactionAddressType.ShipFrom, ${shipTo[0]}, null, null, ${shipTo[1]}, ${shipTo[2]}, ${shipTo[4]}, ${shipTo[3]})
-    .WithAddress(TransactionAddressType.ShipTo, ${shipFrom[0]}, null, null, ${shipFrom[1]}, ${shipFrom[2]}, ${shipFrom[4]}, ${shipFrom[3]})`;
+            address = `shipFrom = new AddressLocationInfo()
+        {
+            line1 = ${shipFrom[0]},
+            city = ${shipFrom[1]},
+            region = ${shipFrom[2]},
+            country = ${shipFrom[4]},
+            postalCode = ${shipFrom[3]}
+        },
+        shipTo = new AddressLocationInfo()
+        {
+            line1 = ${shipTo[0]},
+            city = ${shipTo[1]},
+            region = ${shipTo[2]},
+            country = ${shipTo[4]},
+            postalCode = ${shipTo[3]}
+        }`;
         } else {
             const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
 
             // build C# req for single location
-            address = `.WithAddress(TransactionAddressType.SingleLocation, ${singleLocation[0]}, null, null, ${singleLocation[1]}, ${singleLocation[2]}, ${singleLocation[4]}, ${singleLocation[3]})`;
+            address = `singleLocation = new AddressLocationInfo()
+            {
+                line1 = ${singleLocation[0]},
+                city = ${singleLocation[1]},
+                region = ${singleLocation[2]},
+                country = ${singleLocation[4]},
+                postalCode = ${singleLocation[3]}
+            }`;
         }
 
         // build sample data for c#
@@ -94,12 +108,23 @@ var client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTa
 
 // Setup transaction model
 var createModel = new CreateTransactionModel()
-    ${address}
-    ${lines}
+{
+    type = docType,
+    companyCode = "DEMOPAGE",
+    date = DateTime.Today,
+    customerCode = "ABC",
+    lines = new List<LineItemModel>() 
+    {
+        ${lines}
+    },
+    addresses = new AddressesModel() 
+    {
+        ${address}
+    }
+}
 
 // Create transaction
-var transaction = client.CreateTransaction(null, createModel);
-    `;
+var transaction = client.CreateTransaction(null, createModel);`;
         
     }
     
