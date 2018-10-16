@@ -24,6 +24,7 @@ function getCompareDate() {
   return [year, month, day].join('');
 }
 
+// fill demo pg request console with correct sample based on user's input
 function fillWithSampleData() {
     const reqType = $('#req-type').val();
     const noAddress = $('input[type=radio][name=srcAddress]:checked').length = 0;
@@ -75,8 +76,7 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
         }
 
         // build sample data for c#
-        sampleData = `
-// Create a client and set up authentication
+        sampleData = `// Create a client and set up authentication
 var Client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox)
     .WithSecurity("MyUsername", "MyPassword");
 
