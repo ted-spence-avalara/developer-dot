@@ -47,16 +47,29 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
         const shipToAddress = setShipToOrSingleLocation();
         
         // gather all product info and make into SDK friendly form
-        let lineNum = 0;
-        $('input[type=checkbox][name=product]:checked').each(function () {
+        let lineNum = 1;
+        const allProducts = $('input[type=checkbox][name=product]:checked');
+        allProducts.each(function () {
             // Find amount
             const taxCode = $(this).val();
-            const description = $(this).attr('description');
+            //const description = $(this).attr('description');
             const amount = $('#' + $(this).attr('id') + '-amount').val();
-            if (lineNum === 0) {
-                lines += `.WithLine(${amount}, ${lineNum++}, ${taxCode}, ${description})`; 
+            if (lineNum === allProducts.length) {
+                lines += `new LineItemModel() 
+                {
+                    number = ${lineNum++},
+                    quantity = 1,
+                    amount = ${amount},
+                    taxCode = ${taxCode},
+                }`; 
             } else {
-                lines += `\n    .WithLine(${amount}, ${lineNum++}, ${taxCode}, ${description})`;
+                lines += `new LineItemModel() 
+                {
+                    number = ${lineNum++},
+                    quantity = 1,
+                    amount = ${amount},
+                    taxCode = ${taxCode},
+                },`;
             }
         });
 
@@ -76,15 +89,16 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
         }
 
         // build sample data for c#
-        sampleData = `// Create a client and set up authentication
-var Client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox)
-    .WithSecurity("MyUsername", "MyPassword");
+        sampleData = `// Create AvaTaxClient
+var client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox).WithSecurity("MyUsername", "MyPassword");
 
-// Create a simple transaction using the fluent transaction builder
-var transaction = new TransactionBuilder(Client, "DEMOPAGE", DocumentType.SalesOrder, "ABC")
+// Setup transaction model
+var createModel = new CreateTransactionModel()
     ${address}
     ${lines}
-    .Create();
+
+// Create transaction
+var transaction = client.CreateTransaction(null, createModel);
     `;
         
     }
