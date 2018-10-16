@@ -87,9 +87,52 @@ var transaction = new TransactionBuilder(Client, "DEMOPAGE", DocumentType.SalesO
     .Create();
     `;
         
-    }
-    
-    else {
+    } else if (reqType === 'PHP') {
+    //     let lines = '';
+    //     let address;
+    //     const shipToAddress = setShipToOrSingleLocation();
+        
+    //     // gather all product info and make into SDK friendly form
+    //     let lineNum = 0;
+    //     $('input[type=checkbox][name=product]:checked').each(function () {
+    //         // Find amount
+    //         const taxCode = $(this).val();
+    //         const description = $(this).attr('description');
+    //         const amount = $('#' + $(this).attr('id') + '-amount').val();
+    //         if (lineNum === 0) {
+    //             lines += `.WithLine(${amount}, ${lineNum++}, ${taxCode}, ${description})`; 
+    //         } else {
+    //             lines += `\n    .WithLine(${amount}, ${lineNum++}, ${taxCode}, ${description})`;
+    //         }
+    //     });
+
+    //     // check if shipFrom/To addresses
+    //     if(shipToAddress) {
+    //         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
+    //         const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
+            
+    //         // build C# req for multiple addresses
+    //         address = `.WithAddress(TransactionAddressType.ShipFrom, ${shipTo[0]}, null, null, ${shipTo[1]}, ${shipTo[2]}, ${shipTo[4]}, ${shipTo[3]})
+    // .WithAddress(TransactionAddressType.ShipTo, ${shipFrom[0]}, null, null, ${shipFrom[1]}, ${shipFrom[2]}, ${shipFrom[4]}, ${shipFrom[3]})`;
+    //     } else {
+    //         const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
+
+    //         // build C# req for single location
+    //         address = `.WithAddress(TransactionAddressType.SingleLocation, ${singleLocation[0]}, null, null, ${singleLocation[1]}, ${singleLocation[2]}, ${singleLocation[4]}, ${singleLocation[3]})`;
+    //     }
+
+        // build sample data for PHP
+        sampleData = `// Create a new client
+    $client = new Avalara\AvaTaxClient('phpTestApp', '1.0', 'localhost', 'sandbox');
+    $client->withSecurity('myUsername', 'myPassword’);
+
+// Create a simple transaction using the fluent transaction builder
+$tb = new Avalara\\TransactionBuilder($client, “DEMOPAGE", Avalara\\DocumentType::C_SALESORDER, 'ABC');
+    ${address}
+    ${lines}
+    .Create();
+    `;
+    } else {
         const json = JSON.stringify(buildJSON(), null, 2);
         sampleData = json;
     }
