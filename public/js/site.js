@@ -25,8 +25,26 @@ function getCompareDate() {
 }
 
 function fillWithSampleData() {
-    const sampleData = buildSampleData();
-    $('#demo-console-input').empty().text(JSON.stringify(sampleData, null, 2));
+    const reqType = $('#req-type').val();
+    const json = JSON.stringify(buildJSON(), null, 2)
+    const noAddress = $('input[type=radio][name=srcAddress]:checked').length = 0;
+
+    let sampleData;
+    if (noAddress) {
+        return;
+    } else if (reqType === "CURL") {
+        sampleData = `-X POST
+-H 'Accept: application/json'
+-H 'Authorization: Basic aHR0cHdhdGNoOmY='
+-H 'Content-Type: application/json'
+--data '${json}'
+https://sandbox-rest.avatax.com/api/v2/transactions/create
+        `;
+    } else {
+        sampleData = json;
+    }
+
+    $('#demo-console-input').empty().text(sampleData);
 };
 
 function makeAddressObj(){
@@ -59,7 +77,7 @@ function setShipToOrSingleLocation() {
     return checked;    
 }
 
-function buildSampleData() {
+function buildJSON() {
     const address = makeAddressObj();
     const shipToAddress = setShipToOrSingleLocation();
     let sampleData;
@@ -166,7 +184,7 @@ function buildInfoboxHTML(body) {
         the flexibility of the AvaTax API. Or, if you've seen enough, 
         <a href='https://developer.avalara.com/avatax/' target='_blank'>sign up for a 60-day API trial</a> 
         and production account.
-    `
+    `;
     return infoboxHTML;
 }
 
@@ -181,7 +199,7 @@ function ApiRequest() {
     }
     
 
-    const data = buildSampleData();
+    const data = buildJSON();
     const [bucket, key] = proxy.key.location.split('/');
 
     const keyBucket = new AWS.S3({params: {Bucket: bucket, Key: key}});
