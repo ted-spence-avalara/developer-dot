@@ -24,15 +24,16 @@ function getCompareDate() {
   return [year, month, day].join('');
 }
 
+// fill demo pg request console with correct sample based on user's input
 function fillWithSampleData() {
     const reqType = $('#req-type').val();
-    const json = JSON.stringify(buildJSON(), null, 2)
     const noAddress = $('input[type=radio][name=srcAddress]:checked').length = 0;
 
     let sampleData;
     if (noAddress) {
         return;
     } else if (reqType === "CURL") {
+        const json = JSON.stringify(buildJSON(), null, 2)
         sampleData = `-X POST
 -H 'Accept: application/json'
 -H 'Authorization: Basic aHR0cHdhdGNoOmY='
@@ -40,7 +41,97 @@ function fillWithSampleData() {
 --data '${json}'
 https://sandbox-rest.avatax.com/api/v2/transactions/create
         `;
-    } else {
+    } else if (reqType === 'C#') {
+        let lines = '';
+        let address;
+        const shipToAddress = setShipToOrSingleLocation();
+        
+        // gather all product info and make into SDK friendly form
+        let lineNum = 1;
+        const allProducts = $('input[type=checkbox][name=product]:checked');
+        allProducts.each(function () {
+            // Find amount
+            const taxCode = $(this).val();
+            //const description = $(this).attr('description');
+            const amount = $('#' + $(this).attr('id') + '-amount').val();
+            lines += `new LineItemModel() 
+        {
+            number = "${lineNum}",
+            quantity = 1,
+            amount = ${amount},
+            taxCode = "${taxCode}"
+        }`;
+            
+            if (lineNum != allProducts.length) {
+                lines += ',\n        ';
+            }
+            lineNum++;
+        });
+
+        // check if shipFrom/To addresses
+        if(shipToAddress) {
+            const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
+            const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
+            
+            // build C# req for multiple addresses
+            address = `shipFrom = new AddressLocationInfo()
+        {
+            line1 = "${shipFrom[0]}",
+            city = "${shipFrom[1]}",
+            region = "${shipFrom[2]}",
+            country = "${shipFrom[4]}",
+            postalCode = "${shipFrom[3]}"
+        },
+        shipTo = new AddressLocationInfo()
+        {
+            line1 = "${shipTo[0]}",
+            city = "${shipTo[1]}",
+            region = "${shipTo[2]}",
+            country = "${shipTo[4]}",
+            postalCode = "${shipTo[3]}"
+        }`;
+        } else {
+            const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
+
+            // build C# req for single location
+            address = `singleLocation = new AddressLocationInfo()
+            {
+                line1 = "${singleLocation[0]}",
+                city = "${singleLocation[1]}",
+                region = "${singleLocation[2]}",
+                country = "${singleLocation[4]}",
+                postalCode = "${singleLocation[3]}"
+            }`;
+        }
+
+        // build sample data for c#
+        sampleData = `// Create AvaTaxClient
+var client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox).WithSecurity("MyUsername", "MyPassword");
+
+// Setup transaction model
+var createModel = new CreateTransactionModel()
+{
+    type = docType,
+    companyCode = "DEMOPAGE",
+    date = DateTime.Today,
+    customerCode = "ABC",
+    lines = new List<LineItemModel>() 
+    {
+        ${lines}
+    },
+    addresses = new AddressesModel() 
+    {
+        ${address}
+    }
+}
+
+// Create transaction
+var transaction = client.CreateTransaction(null, createModel);`;
+        
+    }
+    
+    else {
+        const json = JSON.stringify(buildJSON(), null, 2);
         sampleData = json;
     }
 
