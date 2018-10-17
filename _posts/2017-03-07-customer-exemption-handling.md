@@ -3,7 +3,7 @@ layout: post
 title: Customer Exemption Handling
 description: How should I mark items exempt using AvaTax?
 relevantapimethods: CreateTransaction
-relevantapimethods: 
+relevantapimethods:
 date: 2017-03-07 16:00
 author: Aaron Robles
 comments: true
@@ -11,7 +11,6 @@ categories: [avatax, howto, exemptions]
 product: blog
 doctype: blog
 disqus: 1
-avaform: 1
 ---
 
 You're all set to build an integration into AvaTax for your client when they bring up another facet of their business with you not previously mentioned: They need to properly calculate for the tax exempt clients as well.

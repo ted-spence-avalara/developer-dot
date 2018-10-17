@@ -47,17 +47,25 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
         const shipToAddress = setShipToOrSingleLocation();
         
         // gather all product info and make into SDK friendly form
-        let lineNum = 0;
-        $('input[type=checkbox][name=product]:checked').each(function () {
+        let lineNum = 1;
+        const allProducts = $('input[type=checkbox][name=product]:checked');
+        allProducts.each(function () {
             // Find amount
             const taxCode = $(this).val();
-            const description = $(this).attr('description');
+            //const description = $(this).attr('description');
             const amount = $('#' + $(this).attr('id') + '-amount').val();
-            if (lineNum === 0) {
-                lines += `.WithLine(${amount}, ${lineNum++}, ${taxCode}, ${description})`; 
-            } else {
-                lines += `\n    .WithLine(${amount}, ${lineNum++}, ${taxCode}, ${description})`;
+            lines += `new LineItemModel() 
+        {
+            number = "${lineNum}",
+            quantity = 1,
+            amount = ${amount},
+            taxCode = "${taxCode}"
+        }`;
+            
+            if (lineNum != allProducts.length) {
+                lines += ',\n        ';
             }
+            lineNum++;
         });
 
         // check if shipFrom/To addresses
@@ -66,26 +74,59 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
             const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
             
             // build C# req for multiple addresses
-            address = `.WithAddress(TransactionAddressType.ShipFrom, ${shipTo[0]}, null, null, ${shipTo[1]}, ${shipTo[2]}, ${shipTo[4]}, ${shipTo[3]})
-    .WithAddress(TransactionAddressType.ShipTo, ${shipFrom[0]}, null, null, ${shipFrom[1]}, ${shipFrom[2]}, ${shipFrom[4]}, ${shipFrom[3]})`;
+            address = `shipFrom = new AddressLocationInfo()
+        {
+            line1 = "${shipFrom[0]}",
+            city = "${shipFrom[1]}",
+            region = "${shipFrom[2]}",
+            country = "${shipFrom[4]}",
+            postalCode = "${shipFrom[3]}"
+        },
+        shipTo = new AddressLocationInfo()
+        {
+            line1 = "${shipTo[0]}",
+            city = "${shipTo[1]}",
+            region = "${shipTo[2]}",
+            country = "${shipTo[4]}",
+            postalCode = "${shipTo[3]}"
+        }`;
         } else {
             const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
 
             // build C# req for single location
-            address = `.WithAddress(TransactionAddressType.SingleLocation, ${singleLocation[0]}, null, null, ${singleLocation[1]}, ${singleLocation[2]}, ${singleLocation[4]}, ${singleLocation[3]})`;
+            address = `singleLocation = new AddressLocationInfo()
+            {
+                line1 = "${singleLocation[0]}",
+                city = "${singleLocation[1]}",
+                region = "${singleLocation[2]}",
+                country = "${singleLocation[4]}",
+                postalCode = "${singleLocation[3]}"
+            }`;
         }
 
         // build sample data for c#
-        sampleData = `// Create a client and set up authentication
-var Client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox)
-    .WithSecurity("MyUsername", "MyPassword");
+        sampleData = `// Create AvaTaxClient
+var client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox).WithSecurity("MyUsername", "MyPassword");
 
-// Create a simple transaction using the fluent transaction builder
-var transaction = new TransactionBuilder(Client, "DEMOPAGE", DocumentType.SalesOrder, "ABC")
-    ${address}
-    ${lines}
-    .Create();
-    `;
+// Setup transaction model
+var createModel = new CreateTransactionModel()
+{
+    type = docType,
+    companyCode = "DEMOPAGE",
+    date = DateTime.Today,
+    customerCode = "ABC",
+    lines = new List<LineItemModel>() 
+    {
+        ${lines}
+    },
+    addresses = new AddressesModel() 
+    {
+        ${address}
+    }
+}
+
+// Create transaction
+var transaction = client.CreateTransaction(null, createModel);`;
         
     } else if (reqType === 'PHP') {
     //     let lines = '';
@@ -287,7 +328,12 @@ function ApiRequest() {
     // clear the console output/infobox and display loading-pulse
     $("#demo-console-output").empty();
     $(".loading-pulse").css('display', 'block');
-    $("#demo-infobox-text").empty();
+    const infoboxNotHidden = !$('#demo-infobox').hasClass('hidden');
+    if (infoboxNotHidden) {
+        $("#demo-infobox-text").empty();
+        $("#demo-infobox-header").html('Calculating...');
+    }
+    
 
     const data = buildJSON();
     const [bucket, key] = proxy.key.location.split('/');
@@ -313,11 +359,13 @@ function ApiRequest() {
             return rawApiResponse.json().then((body) => {
                 $(".loading-pulse").css('display', 'none');
                 $('#demo-console-output').text(JSON.stringify(body, null, 2));
-
-                const infoboxHTML = buildInfoboxHTML(body);
-
-                $("#demo-infobox-text").html(infoboxHTML);
-
+                
+                if (infoboxNotHidden) {
+                    $("#demo-infobox-header").html('Result');
+                    const infoboxHTML = buildInfoboxHTML(body);
+                    $("#demo-infobox-text").html(infoboxHTML);
+                }
+               
                 //TODO handle errors
                 // $('#console-output').text("HTTP Error: " + body.status + "\n\n" + JSON.stringify(result, null, 2));
 
@@ -329,6 +377,11 @@ function ApiRequest() {
             });
         });
     })
+}
+
+function hideInfobox() {
+    $(".demo-infobox").css('display', 'none');
+    $(".demo-infobox").addClass('hidden');
 }
 
 function accordionTrigger(currentElementId, nextElementId) {
@@ -397,24 +450,27 @@ $(document).ready(function() {
 
     //When the destination changes, fire the map script and set the lat-long.
     $('#dropdown-dest-addresses').change(function(e){
-        let lat = $('input[type=radio][name=address]:checked').attr('lat');
-        let long = $('input[type=radio][name=address]:checked').attr('long');
-        GetMapWithLine(lat, long, null, null);
+        const lat = $('input[type=radio][name=address]:checked').attr('lat');
+        const long = $('input[type=radio][name=address]:checked').attr('long');
+        const infoboxNotHidden = !$('.demo-infobox').hasClass('hidden');
+        GetMapWithLine(lat, long, null, null, null, infoboxNotHidden);
     });
 
     //When the source changes, fire the map script with source and dest lat-long.
     $('#dropdown-src-addresses').change(function(e){
-        let lat     = $('input[type=radio][name=address]:checked').attr('lat');
-        let long    = $('input[type=radio][name=address]:checked').attr('long');
-        let srcLat  = $('input[type=radio][name=srcAddress]:checked').attr('lat');
-        let srcLong = $('input[type=radio][name=srcAddress]:checked').attr('long');
+        const lat     = $('input[type=radio][name=address]:checked').attr('lat');
+        const long    = $('input[type=radio][name=address]:checked').attr('long');
+        const srcLat  = $('input[type=radio][name=srcAddress]:checked').attr('lat');
+        const srcLong = $('input[type=radio][name=srcAddress]:checked').attr('long');
 
         // check if both address are in the US
-        let addressType = $('input[type=radio][name=address]:checked').attr('addressType') === 'national';
-        let srcType = $('input[type=radio][name=srcAddress]:checked').attr('addressType') === 'national';
-        let usAddresses = addressType && srcType
+        const addressType = $('input[type=radio][name=address]:checked').attr('addressType') === 'national';
+        const srcType = $('input[type=radio][name=srcAddress]:checked').attr('addressType') === 'national';
 
-        GetMapWithLine(lat, long, srcLat, srcLong, usAddresses);
+        const usAddresses = addressType && srcType;
+
+        const infoboxNotHidden = !$('.demo-infobox').hasClass('hidden');
+        GetMapWithLine(lat, long, srcLat, srcLong, usAddresses, infoboxNotHidden);
     }); 
 
     $('#dropdown-addresses').trigger('change');
