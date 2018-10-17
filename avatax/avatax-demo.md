@@ -37,7 +37,6 @@ doctype: use_cases
     }
 
     function GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses, showInfobox) {
-        console.warn('showInfobox', showInfobox)
         if(destLat == null || destLong == null) {
             // destLat = 33.6846603698176;
             // destLong = -117.850629887389;
