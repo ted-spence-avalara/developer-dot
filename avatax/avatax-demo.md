@@ -20,8 +20,8 @@ doctype: use_cases
         </div>
     `;
 
-    function displayToolTip(infoboxNotHidden) {
-        if (infoboxNotHidden) {
+    function displayToolTip(showInfobox) {
+        if (showInfobox || showInfobox === undefined) {
             const topLeft = (map.getPageX(), map.getPageY());
 
             //Create an infobox that will render in the top left of the map.
@@ -36,13 +36,13 @@ doctype: use_cases
         return;
     }
 
-    function GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses, infoboxNotHidden) {
-
+    function GetMapWithLine(destLat, destLong, srcLat, srcLong, usAddresses, showInfobox) {
+        console.warn('showInfobox', showInfobox)
         if(destLat == null || destLong == null) {
             // destLat = 33.6846603698176;
             // destLong = -117.850629887389;
             map = new Microsoft.Maps.Map('#myMap', {zoom: 3});
-            displayToolTip(infoboxNotHidden);
+            displayToolTip(showInfobox);
             return;
         }  
 
@@ -53,7 +53,7 @@ doctype: use_cases
             map = new Microsoft.Maps.Map('#myMap', {center: location});
             var layer = new Microsoft.Maps.Layer("MyPushpinLayer1");
             layer.add(new Microsoft.Maps.Pushpin(location));
-            displayToolTip(infoboxNotHidden);
+            displayToolTip(showInfobox);
             map.layers.insert(layer);
 
             //Exit out since it is a single location.
@@ -67,7 +67,7 @@ doctype: use_cases
         let destLocation = new Microsoft.Maps.Location(destLat, destLong);
         var coords = [destLocation, srcLocation];
         var line = new Microsoft.Maps.Polyline(coords, {strokeColor: 'orange', strokeThickness: 3});
-        displayToolTip(infoboxNotHidden);
+        displayToolTip(showInfobox);
         map.entities.push(line);
         map.setView({
             center: new Microsoft.Maps.Location(srcLat + 1, destLong + 1),
