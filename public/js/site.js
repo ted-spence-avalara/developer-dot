@@ -282,23 +282,26 @@ function buildInfoboxHTML(body) {
 
     let infoboxHTML;
 
+    let countryTax = 0.00;
     let stateTax = 0.00; 
     let countyTax = 0.00; 
-    let localTax = 0.00; 
+    let cityTax = 0.00; 
     let specialTax = 0.00;          
     
     if (summaryArray.length > 0) {
         for(let i = 0; i < summaryArray.length; i++) {
             const item = summaryArray[i];
             switch (item.jurisType) {
+                case 'Country':
+                    countryTax += item.taxCalculated;
                 case 'State':
                     stateTax += item.taxCalculated;
                     break;
                 case 'County':
                     countyTax += item.taxCalculated;
                     break;
-                case 'Local':
-                    localTax += item.taxCalculated;
+                case 'City':
+                    cityTax += item.taxCalculated;
                     break;
                 case 'Special':
                     specialTax += item.taxCalculated;
@@ -312,9 +315,10 @@ function buildInfoboxHTML(body) {
     infoboxHTML = `
         AvaTax's engine can calculate tax down to the roof-top level. In this case, 
         AvaTax returned a total tax of <span class="demo-tax-totals">$${body.totalTax.toFixed(2)}</span>, 
-        which encompassed state <span class="demo-tax-totals">$${stateTax.toFixed(2)}</span>, 
+        which encompassed country <span class="demo-tax-totals">$${countryTax.toFixed(2)}</span>,
+        state <span class="demo-tax-totals">$${stateTax.toFixed(2)}</span>, 
         county <span class="demo-tax-totals">$${countyTax.toFixed(2)}</span>, 
-        local <span class="demo-tax-totals">$${localTax.toFixed(2)}</span> 
+        city <span class="demo-tax-totals">$${cityTax.toFixed(2)}</span>,
         and special taxing districts <span class="demo-tax-totals">$${specialTax.toFixed(2)}</span>.
         Feel free to continue tinkering with the options to the left to test 
         the flexibility of the AvaTax API. Or, if you've seen enough, 
@@ -328,8 +332,7 @@ function ApiRequest() {
     // clear the console output/infobox and display loading-pulse
     $("#demo-console-output").empty();
     $(".loading-pulse").css('display', 'block');
-    const infoboxNotHidden = !$('#demo-infobox').hasClass('hidden');
-    if (infoboxNotHidden) {
+    if (showInfobox) {
         $("#demo-infobox-text").empty();
         $("#demo-infobox-header").html('Calculating...');
     }
@@ -360,7 +363,7 @@ function ApiRequest() {
                 $(".loading-pulse").css('display', 'none');
                 $('#demo-console-output').text(JSON.stringify(body, null, 2));
                 
-                if (infoboxNotHidden) {
+                if (showInfobox) {
                     $("#demo-infobox-header").html('Result');
                     const infoboxHTML = buildInfoboxHTML(body);
                     $("#demo-infobox-text").html(infoboxHTML);
@@ -379,9 +382,13 @@ function ApiRequest() {
     })
 }
 
+// ...no other way to keep track of state...
+let showInfobox = true;
+
 function hideInfobox() {
     $(".demo-infobox").css('display', 'none');
     $(".demo-infobox").addClass('hidden');
+    showInfobox = false
 }
 
 function accordionTrigger(currentElementId, nextElementId) {
@@ -452,8 +459,7 @@ $(document).ready(function() {
     $('#dropdown-dest-addresses').change(function(e){
         const lat = $('input[type=radio][name=address]:checked').attr('lat');
         const long = $('input[type=radio][name=address]:checked').attr('long');
-        const infoboxNotHidden = !$('.demo-infobox').hasClass('hidden');
-        GetMapWithLine(lat, long, null, null, null, infoboxNotHidden);
+        GetMapWithLine(lat, long, null, null, null, showInfobox);
     });
 
     //When the source changes, fire the map script with source and dest lat-long.
@@ -469,8 +475,7 @@ $(document).ready(function() {
 
         const usAddresses = addressType && srcType;
 
-        const infoboxNotHidden = !$('.demo-infobox').hasClass('hidden');
-        GetMapWithLine(lat, long, srcLat, srcLong, usAddresses, infoboxNotHidden);
+        GetMapWithLine(lat, long, srcLat, srcLong, usAddresses, showInfobox);
     }); 
 
     $('#dropdown-addresses').trigger('change');
