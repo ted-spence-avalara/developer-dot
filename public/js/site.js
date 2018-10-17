@@ -237,16 +237,18 @@ function buildInfoboxHTML(body) {
 
     let infoboxHTML;
 
+    let countryTax = 0.00;
     let stateTax = 0.00; 
     let countyTax = 0.00; 
     let cityTax = 0.00; 
-    let localTax = 0.00; 
     let specialTax = 0.00;          
     
     if (summaryArray.length > 0) {
         for(let i = 0; i < summaryArray.length; i++) {
             const item = summaryArray[i];
             switch (item.jurisType) {
+                case 'Country':
+                    countryTax += item.taxCalculated;
                 case 'State':
                     stateTax += item.taxCalculated;
                     break;
@@ -255,9 +257,6 @@ function buildInfoboxHTML(body) {
                     break;
                 case 'City':
                     cityTax += item.taxCalculated;
-                    break;
-                case 'Local':
-                    localTax += item.taxCalculated;
                     break;
                 case 'Special':
                     specialTax += item.taxCalculated;
@@ -271,10 +270,10 @@ function buildInfoboxHTML(body) {
     infoboxHTML = `
         AvaTax's engine can calculate tax down to the roof-top level. In this case, 
         AvaTax returned a total tax of <span class="demo-tax-totals">$${body.totalTax.toFixed(2)}</span>, 
-        which encompassed state <span class="demo-tax-totals">$${stateTax.toFixed(2)}</span>, 
+        which encompassed country <span class="demo-tax-totals">$${countryTax.toFixed(2)}</span>,
+        state <span class="demo-tax-totals">$${stateTax.toFixed(2)}</span>, 
         county <span class="demo-tax-totals">$${countyTax.toFixed(2)}</span>, 
         city <span class="demo-tax-totals">$${cityTax.toFixed(2)}</span>,
-        local <span class="demo-tax-totals">$${localTax.toFixed(2)}</span> 
         and special taxing districts <span class="demo-tax-totals">$${specialTax.toFixed(2)}</span>.
         Feel free to continue tinkering with the options to the left to test 
         the flexibility of the AvaTax API. Or, if you've seen enough, 
