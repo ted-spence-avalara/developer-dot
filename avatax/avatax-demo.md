@@ -301,6 +301,7 @@ doctype: use_cases
                             <option value="JSON">JSON</option>
                             <option value="CURL">CURL</option>
                             <option value="C#">C# SDK</option>
+                            <option value="PHP">PHP SDK</option>
                         </select>
                     </div>
                     <div style="display:inline-block;float:right;" class="btn-group">

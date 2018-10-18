@@ -128,9 +128,50 @@ var createModel = new CreateTransactionModel()
 // Create transaction
 var transaction = client.CreateTransaction(null, createModel);`;
         
-    }
-    
-    else {
+    } else if (reqType === 'PHP') {
+        let lines = '';
+        let address;
+        const shipToAddress = setShipToOrSingleLocation();
+        
+        // gather all product info and make into PHP SDK friendly form
+        let lineNum = 0;
+        $('input[type=checkbox][name=product]:checked').each(function () {
+            const taxCode = $(this).val();
+            const amount = $('#' + $(this).attr('id') + '-amount').val();
+            if (lineNum === 0) {
+                lines += `->withLine(${amount}, ${lineNum++}, null, ${taxCode})`; 
+            } else {
+                lines += `\n    ->withLine(${amount}, ${lineNum++}, null, ${taxCode})`;
+            }
+        });
+
+        // check if shipFrom/To addresses
+        if(shipToAddress) {
+            const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
+            const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
+            
+            // build PHP req for multiple addresses
+            address = `->withAddress('ShipFrom', ${shipTo[0]}, null, null, ${shipTo[1]}, ${shipTo[2]}, ${shipTo[4]}, ${shipTo[3]})
+    ->withAddress('ShipTo', ${shipFrom[0]}, null, null, ${shipFrom[1]}, ${shipFrom[2]}, ${shipFrom[4]}, ${shipFrom[3]})`;
+        } else {
+            const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
+
+            // build PHP req for single location
+            address = `withAddress('SingleLocation', ${singleLocation[0]}, null, null, ${singleLocation[1]}, ${singleLocation[2]}, ${singleLocation[4]}, ${singleLocation[3]})`;
+        }
+
+        // build sample data for PHP
+        sampleData = `// Create a new client
+$client = new Avalara\AvaTaxClient('phpTestApp', '1.0', 'localhost', 'sandbox');
+$client->withSecurity('myUsername', 'myPassword’);
+
+// Create a simple transaction using the fluent transaction builder
+$tb = new Avalara\\TransactionBuilder($client, “DEMOPAGE", Avalara\\DocumentType::C_SALESORDER, 'ABC');
+$t = $tb->${address}
+    ${lines}
+    ->create();
+    `;
+    } else {
         const json = JSON.stringify(buildJSON(), null, 2);
         sampleData = json;
     }
