@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Chapter 4.3.15 - Invoice Mode
+title: Chapter 4.3.19 - Displaying Tax Results
 product: communications
 doctype: comms_dev_guide
 chapter: customizing-transactions
@@ -9,22 +9,87 @@ disqus: 0
 ---
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide/customizing-transactions/sample-transactions/invoice-date/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide/customizing-transactions/sample-transactions/optional-fields/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="previous"><a href="/communications/dev-guide/customizing-transactions/sample-transactions/tax-inclusive/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide/reference/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-Invoice Mode allows you to group multiple line items into a single invoice.  The AFC Tax Engine applies any tax brackets or limits per invoice rather than per line item when in Invoice Mode.
+REST v2 allows you to specify the level of detail returned as part of the <a class="dev-guide-link" href="/communications/dev-guide/reference/calc-taxes-response/">CalcTaxes response</a>.  
 
-REST v2 provides the ability to process up to 10,000 <code>LineItems</code> within an invoice in Invoice Mode. Tax calculation results are summarized by jurisdiction and tax type. Optionally, the individual taxes for each line item can also be returned in the output using the <b>Return Detail</b> flag (<code>dtl</code>), but be advised that the response size may be up to a couple megabytes and may take additional time to process depending on the number of transactions in the Invoice. 
+<h3>Setting the Flags</h3>
+There are two available levels of detail set on the <a class="dev-guide-link" href="/communications/dev-guide/reference/invoice/">Invoice</a>:
+<ul class="dev-guide-list">
+    <li><b>Detailed tax details</b> (<code>dtl</code>): displays the tax details per line item</li>
+    <li><b>Summary tax details</b> (<code>summ</code>): displays a summary of all taxes returned.  InvoiceMode (<code>invm</code>) must be enabled</li>
+</ul>
 
-<h4>Note</h4>
-While the maximum number of <code>LineItems</code> is 10,000, it is recommended to keep the number of <code>LineItems</code> around <b>1,000</b> per invoice for optimal performance.
+<b>ReturnDetail</b> and/or <b>ReturnSummary</b> must be set to <code>true</code>.
 
-<h4>Note</h4>
-It is recommended to increase the timeout of your web API calls to 10 minutes although response times are expected to be much shorter even or the largest batches.
+<h4>ReturnDetail</h4>
+Setting the ReturnDetail flag (<code>dtl</code>) displays or hides the detailed taxes object (<code>txs</code>) for each LineItem in the <a class="dev-guide-link" href="/communications/dev-guide/reference/calc-taxes-response/">CalcTaxes response</a>.  InvoiceMode (<code>invm</code>) has no impact on the ReturnDetail flag.
 
-<h3>Invoice Mode Example</h3>
-In this example, the three line items are processed together as one invoice because Invoice Mode (<code>invm</code>) is set to <code>true</code>.  Also note that the tax calculation output is returned at both the line item detail level (<code>dtl</code> = <code>true</code>) and summary level (<code>sum</code> = <code>true</code>).
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>InvoiceMode Value</th>
+        <th>ReturnDetail Value</th>
+        <th>CalcTaxes Response Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="2"><code>true</code> or <code>false</code></td>
+        <td><code>true</code> (<span class="t5">default</span>)</td>
+        <td>Enables return of tax details <code>txs</code> object</td>
+      </tr>
+      <tr>
+        <td><code>false</code></td>
+        <td>Disables return of tax details <code>txs</code> object</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h4>ReturnSummary</h4>
+Setting the ReturnSummary flag (<code>summ</code>) displays or hides the summary taxes object (<code>summ</code>) for the entire Invoice in the <a class="dev-guide-link" href="/communications/dev-guide/reference/calc-taxes-response/">CalcTaxes response</a>.
+
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>InvoiceMode Value</th>
+        <th>ReturnSummary Value</th>
+        <th>CalcTaxes Response Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="2"><code>true</code></td>
+        <td><code>false</code> (<span class="t5">default</span>)</td>
+        <td>Disables return of tax summary <code>summ</code> object</td>
+      </tr>
+      <tr>
+        <td><code>true</code></td>
+        <td>Enables return of tax summary <code>summ</code> object</td>
+      </tr>
+      <tr>
+        <td><code>false</code></td>
+        <td><code>true</code> or <code>false</code></td>
+        <td>Tax summary <code>summ</code> object not returned</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>Example 1 - Summary and Detailed taxes Returned</h3>
+This example demonstrates both the Detail taxes (<code>txs</code>) and Summary taxes (<code>summ</code>) returned in the <a class="dev-guide-link" href="/communications/dev-guide/reference/calc-taxes-response/">CalcTaxes response</a>.
+
+In this sample request:
+<ul class="dev-guide-list">
+  <li>InvoiceMode, ReturnDetail, and ReturnSummary fields are all set to <code>true</code></li>
+</ul>
+
+This is the only combination of fields to return both the Detail and Summary taxes together.
 
 {% highlight json %}
 {
@@ -37,7 +102,7 @@ In this example, the three line items are processed together as one invoice beca
   },
   "inv": [
     {
-      "doc": "TEST-VOIP INVOICE 2017.12.26:12.02 AVA",
+      "doc": "DISPLAYING TAX RESULTS",
       "cmmt": false,
       "bill": {
         "cnty": "San Francisco",
@@ -53,7 +118,7 @@ In this example, the three line items are processed together as one invoice beca
       "date": "2017-05-01T12:00:00Z",
       "itms": [
         {
-          "ref": "Line Item 001 - VoIP/Access Charge",
+          "ref": "Line Item 001",
           "chg": 100,
           "line": 0,
           "sale": 1,
@@ -64,7 +129,7 @@ In this example, the three line items are processed together as one invoice beca
           "adj": false
         },
         {
-          "ref": "Line Item 002 - VoIP/Lines",
+          "ref": "Line Item 002",
           "chg": 0,
           "line": 10,
           "sale": 1,
@@ -75,7 +140,7 @@ In this example, the three line items are processed together as one invoice beca
           "adj": false
         },
         {
-          "ref": "Line Item 003 - VoIP/Equip Rental",
+          "ref": "Line Item 003",
           "chg": 25,
           "line": 0,
           "sale": 1,
@@ -88,13 +153,7 @@ In this example, the three line items are processed together as one invoice beca
       ],
       "invm": true,
       "dtl": true,
-      "summ": true,
-      "opt": [
-        {
-          "key": "1",
-          "val": "VoIP Sample Line Items Invoice ABC-ZZZ"
-        }
-      ]
+      "summ": true
     }
   ]
 }
@@ -105,10 +164,10 @@ In this example, the three line items are processed together as one invoice beca
 {
   "inv": [
     {
-      "doc": "TEST-VOIP INVOICE 2017.12.26:12.02 AVA",
+      "doc": "DISPLAYING TAX RESULTS",
       "itms": [
         {
-          "ref": "Line Item 001 - VoIP/Access Charge",
+          "ref": "Line Item 001",
           "txs": [
             {
               "bill": true,
@@ -239,7 +298,7 @@ In this example, the three line items are processed together as one invoice beca
           ]
         },
         {
-          "ref": "Line Item 002 - VoIP/Lines",
+          "ref": "Line Item 002",
           "txs": [
             {
               "bill": true,
@@ -262,7 +321,7 @@ In this example, the three line items are processed together as one invoice beca
           ]
         },
         {
-          "ref": "Line Item 003 - VoIP/Equip Rental",
+          "ref": "Line Item 003",
           "txs": [
             {
               "bill": true,
@@ -515,9 +574,22 @@ In this example, the three line items are processed together as one invoice beca
 }
 {% endhighlight %}
 
-<h3>Invoice Mode Off - Multiple LineItems</h3>
-This example demonstrates the output results for the same multi-line <code>CalcTaxes</code> request, but InvoiceMode (<code>invm</code>) set to <code>false</code>.  Note that the three LineItems are processed and results are returned individually.  No Summary-level tax results are provided in the <a class="dev-guide-link" href="/communications/dev-guide/reference/calc-taxes-response/">CalcTaxes Response</a> even though the Return Summary flag (<code>summ</code>) in the request is set to <code>true</code>.  See <a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/displaying-tax-results/">Displaying Tax Results</a> for more information.
-{% highlight json %} 
+<h3>Example 2 - Only Detail taxes Returned</h3>
+This example demonstrates the Detail taxes (<code>txs</code>) returned in the <a class="dev-guide-link" href="/communications/dev-guide/reference/calc-taxes-response/">CalcTaxes response</a>, but the Summary taxes (<code>summ</code>) suppressed.
+
+In this sample request:
+<ul class="dev-guide-list">
+  <li>ReturnDetail and ReturnSummary fields are both set to <code>true</code></li>
+  <li>InvoiceMode is set to <code>false</code></li>
+</ul>
+
+The following additional scenarios return the same results:
+<ul class="dev-guide-list">
+  <li>InvoiceMode and ReturnDetail both set to <code>true</code> but ReturnSummary set to <code>false</code></li>
+  <li>InvoiceMode and ReturnSummary both set to <code>false</code> but ReturnDetail set to <code>true</code></li>
+</ul>
+
+{% highlight json %}
 {
   "cmpn": {
     "bscl": 0,
@@ -528,7 +600,7 @@ This example demonstrates the output results for the same multi-line <code>CalcT
   },
   "inv": [
     {
-      "doc": "TEST-VOIP INVOICE 2017.12.26:12.02 AVA",
+      "doc": "DISPLAYING TAX RESULTS",
       "cmmt": false,
       "bill": {
         "cnty": "San Francisco",
@@ -544,7 +616,7 @@ This example demonstrates the output results for the same multi-line <code>CalcT
       "date": "2017-05-01T12:00:00Z",
       "itms": [
         {
-          "ref": "Line Item 001 - VoIP/Access Charge",
+          "ref": "Line Item 001",
           "chg": 100,
           "line": 0,
           "sale": 1,
@@ -555,7 +627,7 @@ This example demonstrates the output results for the same multi-line <code>CalcT
           "adj": false
         },
         {
-          "ref": "Line Item 002 - VoIP/Lines",
+          "ref": "Line Item 002",
           "chg": 0,
           "line": 10,
           "sale": 1,
@@ -566,7 +638,7 @@ This example demonstrates the output results for the same multi-line <code>CalcT
           "adj": false
         },
         {
-          "ref": "Line Item 003 - VoIP/Equip Rental",
+          "ref": "Line Item 003",
           "chg": 25,
           "line": 0,
           "sale": 1,
@@ -579,13 +651,7 @@ This example demonstrates the output results for the same multi-line <code>CalcT
       ],
       "invm": false,
       "dtl": true,
-      "summ": true,
-      "opt": [
-        {
-          "key": "1",
-          "val": "VoIP Sample Line Items Invoice ABC-ZZZ"
-        }
-      ]
+      "summ": true
     }
   ]
 }
@@ -596,10 +662,10 @@ This example demonstrates the output results for the same multi-line <code>CalcT
 {
   "inv": [
     {
-      "doc": "TEST-VOIP INVOICE 2017.12.26:12.02 AVA",
+      "doc": "DISPLAYING TAX RESULTS",
       "itms": [
         {
-          "ref": "Line Item 001 - VoIP/Access Charge",
+          "ref": "Line Item 001",
           "txs": [
             {
               "bill": true,
@@ -730,7 +796,7 @@ This example demonstrates the output results for the same multi-line <code>CalcT
           ]
         },
         {
-          "ref": "Line Item 002 - VoIP/Lines",
+          "ref": "Line Item 002",
           "txs": [
             {
               "bill": true,
@@ -753,7 +819,7 @@ This example demonstrates the output results for the same multi-line <code>CalcT
           ]
         },
         {
-          "ref": "Line Item 003 - VoIP/Equip Rental",
+          "ref": "Line Item 003",
           "txs": [
             {
               "bill": true,
@@ -817,7 +883,296 @@ This example demonstrates the output results for the same multi-line <code>CalcT
 }
 {% endhighlight %}
 
+<h3>Example 3 - Only Summary taxes Returned</h3>
+This example demonstrates the Summary taxes (<code>summ</code>) returned in the <a class="dev-guide-link" href="/communications/dev-guide/reference/calc-taxes-response/">CalcTaxes response</a>, but the Detailed taxes (<code>txs</code>) suppressed.
+
+In this sample request:
+<ul class="dev-guide-list">
+  <li>InvoiceMode and ReturnSummary set to <code>true</code> but ReturnDetail set to <code>false</code></li>
+</ul>
+
+This is the only combination of fields to return both the Detail and Summary taxes together.
+
+{% highlight json %}
+{
+  "cmpn": {
+    "bscl": 0,
+    "svcl": 0,
+    "fclt": false,
+    "frch": false,
+    "reg": false
+  },
+  "inv": [
+    {
+      "doc": "DISPLAYING TAX RESULTS",
+      "cmmt": false,
+      "bill": {
+        "cnty": "San Francisco",
+        "ctry": "USA",
+        "int": true,
+        "geo": false,
+        "city": "San Francisco",
+        "st": "CA",
+        "zip": "94102"
+      },
+      "cust": 0,
+      "lfln": false,
+      "date": "2017-05-01T12:00:00Z",
+      "itms": [
+        {
+          "ref": "Line Item 001",
+          "chg": 100,
+          "line": 0,
+          "sale": 1,
+          "incl": false,
+          "tran": 19,
+          "serv": 6,
+          "dbt": false,
+          "adj": false
+        },
+        {
+          "ref": "Line Item 002",
+          "chg": 0,
+          "line": 10,
+          "sale": 1,
+          "incl": false,
+          "tran": 19,
+          "serv": 21,
+          "dbt": false,
+          "adj": false
+        },
+        {
+          "ref": "Line Item 003",
+          "chg": 25,
+          "line": 0,
+          "sale": 1,
+          "incl": false,
+          "tran": 19,
+          "serv": 37,
+          "dbt": false,
+          "adj": false
+        }
+      ],
+      "invm": true,
+      "dtl": false,
+      "summ": true
+    }
+  ]
+}
+{% endhighlight %}
+
+<h4>Response</h4>
+{% highlight json %}
+{
+  "inv": [
+    {
+      "doc": "DISPLAYING TAX RESULTS",
+      "itms": [
+        {
+          "ref": "Line Item 001"
+        },
+        {
+          "ref": "Line Item 002"
+        },
+        {
+          "ref": "Line Item 003"
+        }
+      ],
+      "summ": [
+        {
+          "max": 2147483647,
+          "min": 0,
+          "tchg": 35.099999999999994,
+          "calc": 1,
+          "cat": "CONNECTIVITY CHARGES",
+          "cid": 5,
+          "name": "Universal Lifeline Telephone Service Charge (VoIP)",
+          "exm": 64.9,
+          "lns": 0,
+          "pcd": 253500,
+          "rate": 0.0475,
+          "sur": true,
+          "tax": 1.6672499999999997,
+          "lvl": 1,
+          "tid": 454
+        },
+        {
+          "max": 2147483647,
+          "min": 0,
+          "tchg": 35.099999999999994,
+          "calc": 1,
+          "cat": "CONNECTIVITY CHARGES",
+          "cid": 5,
+          "name": "CA Teleconnect Fund (VoIP)",
+          "exm": 64.9,
+          "lns": 0,
+          "pcd": 253500,
+          "rate": 0.0108,
+          "sur": true,
+          "tax": 0.37908,
+          "lvl": 1,
+          "tid": 452
+        },
+        {
+          "max": 2147483647,
+          "min": 0,
+          "tchg": 35.099999999999994,
+          "calc": 1,
+          "cat": "CONNECTIVITY CHARGES",
+          "cid": 5,
+          "name": "CA High Cost Fund A (VoIP)",
+          "exm": 64.9,
+          "lns": 0,
+          "pcd": 253500,
+          "rate": 0.0035,
+          "sur": true,
+          "tax": 0.12284999999999999,
+          "lvl": 1,
+          "tid": 450
+        },
+        {
+          "max": 2147483647,
+          "min": 0,
+          "tchg": 35.099999999999994,
+          "calc": 1,
+          "cat": "CONNECTIVITY CHARGES",
+          "cid": 5,
+          "name": "TRS (VoIP)",
+          "exm": 64.9,
+          "lns": 0,
+          "pcd": 253500,
+          "rate": 0.005,
+          "sur": true,
+          "tax": 0.17549999999999996,
+          "lvl": 1,
+          "tid": 217
+        },
+        {
+          "max": 2147483647,
+          "min": 0,
+          "tchg": 35.099999999999994,
+          "calc": 1,
+          "cat": "E-911 CHARGES",
+          "cid": 7,
+          "name": "E911 (VoIP)",
+          "exm": 64.9,
+          "lns": 0,
+          "pcd": 253500,
+          "rate": 0.0075,
+          "sur": false,
+          "tax": 0.26324999999999993,
+          "lvl": 1,
+          "tid": 161
+        },
+        {
+          "max": 2147483647,
+          "min": 0,
+          "tchg": 64.9,
+          "calc": 1,
+          "cat": "CONNECTIVITY CHARGES",
+          "cid": 5,
+          "name": "FUSF (VoIP)",
+          "exm": 35.099999999999994,
+          "lns": 0,
+          "pcd": 0,
+          "rate": 0.174,
+          "sur": false,
+          "tax": 11.2926,
+          "lvl": 0,
+          "tid": 162
+        },
+        {
+          "max": 2147483647,
+          "min": 0,
+          "tchg": 64.9,
+          "calc": 1,
+          "cat": "REGULATORY CHARGES",
+          "cid": 6,
+          "name": "FCC Regulatory Fee (VoIP)",
+          "exm": 35.099999999999994,
+          "lns": 0,
+          "pcd": 0,
+          "rate": 0.00302,
+          "sur": false,
+          "tax": 0.19599800000000003,
+          "lvl": 0,
+          "tid": 226
+        },
+        {
+          "max": 2147483647,
+          "min": 0,
+          "tchg": 0,
+          "calc": 4,
+          "cat": "E-911 CHARGES",
+          "cid": 7,
+          "name": "San Francisco Access line Tax (VoIP)",
+          "exm": 0,
+          "lns": 10,
+          "pcd": 377300,
+          "rate": 3.27,
+          "sur": false,
+          "tax": 32.7,
+          "lvl": 3,
+          "tid": 250
+        },
+        {
+          "max": 2147483647,
+          "min": 0,
+          "tchg": 25,
+          "calc": 1,
+          "cat": "SALES AND USE TAXES",
+          "cid": 1,
+          "name": "District Tax",
+          "exm": 0,
+          "lns": 0,
+          "pcd": 377200,
+          "rate": 0.0125,
+          "sur": false,
+          "tax": 0.3125,
+          "lvl": 2,
+          "tid": 4
+        },
+        {
+          "max": 2147483647,
+          "min": 0,
+          "tchg": 25,
+          "calc": 1,
+          "cat": "SALES AND USE TAXES",
+          "cid": 1,
+          "name": "Sales Tax",
+          "exm": 0,
+          "lns": 0,
+          "pcd": 377300,
+          "rate": 0.0125,
+          "sur": false,
+          "tax": 0.3125,
+          "lvl": 2,
+          "tid": 1
+        },
+        {
+          "max": 2147483647,
+          "min": 0,
+          "tchg": 25,
+          "calc": 1,
+          "cat": "SALES AND USE TAXES",
+          "cid": 1,
+          "name": "Sales Tax",
+          "exm": 0,
+          "lns": 0,
+          "pcd": 377300,
+          "rate": 0.06,
+          "sur": false,
+          "tax": 1.5,
+          "lvl": 1,
+          "tid": 1
+        }
+      ]
+    }
+  ]
+}
+{% endhighlight %}
+
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide/customizing-transactions/sample-transactions/invoice-date/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide/customizing-transactions/sample-transactions/optional-fields/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="previous"><a href="/communications/dev-guide/customizing-transactions/sample-transactions/tax-inclusive/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
+  <li class="next"><a href="/communications/dev-guide/reference/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>

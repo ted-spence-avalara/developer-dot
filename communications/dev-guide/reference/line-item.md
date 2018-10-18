@@ -142,18 +142,7 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
             <td><code>adjm</code></td>
             <td><code>[int]</code> Adjustment Method
                 <br>
-                <ul class="dev-guide-list">
-                        <li><code>0</code> Default. Tax brackets applied normally.</li>
-                        <li><code>1</code> Least-favorable rate to customer. Tax brackets applied to produce smallest tax refund.</li>
-                        <li><code>2</code> Most-favorable rate to customer. Tax brackets applied to produce largest tax refund.</li>
-                </ul>
-                In certain cases, when the rate of a tax will change based upon the charge or the number of lines in the transaction, clients may wish to make an adjustment at a different rate than would normally apply for the transaction. For example:
-                <br>
-                <ul class="dev-guide-list">
-                    <li>A client purchased 20 lines at a rate of $0.67 per line.</li> 
-                    <li>A credit/adjustment is created for 5 lines at a rate of $1.25 per line.</li> 
-                </ul>
-                Using the Least-favorable adjustment method, the 5 lines would be refunded at the least favorable rate for the brackets, ensuring the client was not overcompensated.
+                Always set to <code>0</code>.  The use of this field has been <b>deprecated</b>
             </td>
         </tr>
         <tr>

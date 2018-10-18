@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Chapter 4.3.12 - Exclusion
+title: Chapter 4.3.12 - Exclusions
 product: communications
 doctype: comms_dev_guide
 chapter: customizing-transactions

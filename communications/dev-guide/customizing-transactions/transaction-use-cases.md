@@ -33,6 +33,9 @@ The following use cases are provided:
     <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/invoice-date/">Invoice Date</a></li>
     <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/invoice-mode/">Invoice Mode</a></li>
     <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/optional-fields/">Optional Fields</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/adjustment/">Adjustments</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/tax-inclusive/">Tax Inclusive</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/displaying-tax-results/">Displaying Tax Results</a></li>
 </ul>
 
 <ul class="pager">

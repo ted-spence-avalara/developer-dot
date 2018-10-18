@@ -235,24 +235,24 @@ More information about <code>Invoice</code> can be found <a class="dev-guide-lin
         </td>
       </tr>
       <tr>
-        <td>Return Detail</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/displaying-tax-results/">Return Detail</a></td>
         <td><code>dtl</code></td>
         <td>Indicates if individual line item taxes should be included in response
             <ul class="dev-guide-list">
                 <li><b>True</b> (<span class="t5">default</span>): return line item level tax results</li>
                 <li><b>False</b>: do not return line item level tax results</li>
-                <li>If <code>true</code>, Return Summary must be set to <code>false</code></li>
+                <li>ReturnDetail and/or ReturnSummary must be set to <code>true</code></li>
             </ul>
         </td>
       </tr>
       <tr>
-        <td>Return Summary</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/displaying-tax-results/">Return Summary</a></td>
         <td><code>summ</code></td>
         <td>Indicates if the summarized taxes for the invoice should be included in the response
             <ul class="dev-guide-list">
                 <li><b>False</b> (<span class="t5">default</span>): do not return summarized tax results</li>
-                <li><b>True</b>: return summarized tax results</li>
-                <li>If <code>true</code>, Return Detail must be set to <code>false</code></li>
+                <li><b>True</b>: return summarized tax results when InvoiceMode (<code>invm</code> is <code>true</code></li>
+                <li>ReturnDetail and/or ReturnSummary must be set to <code>true</code></li>
             </ul>
         </td>
       </tr>
@@ -394,24 +394,16 @@ More information about <code>LineItem</code> can be found <a class="dev-guide-li
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/adjustment/">Adjustment Method</a></td>
         <td><code>adjm</code></td>
-        <td>Specifies how an adjustment should be processed
-            <ul class="dev-guide-list">
-                <li><b>Default</b> (<span class="t5">default</span>): adjustment is processed exactly like a similar charge transaction but with a negative tax result.  Standard tax brackets are applied</li>
-                <li><b>Least Favorable Rate</b>: tax brackets are applied to produce the smallest tax refund.  This is only useful for taxes with multiple tiers or brackets</li>
-                <li><b>Most Favorable Rate</b>: tax brackets are applied to produce the largest tax refund.  This is only useful for taxes with multiple tiers or brackets</li>
-            </ul>
-            <br/>
-            If unsure, use <b>Default</b>
-        </td>
+        <td>Always set to <code>0</code>.  The use of this field has been <b>deprecated</b></td>
       </tr>
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide/customizing-transactions/sample-transactions/adjustment/">Discount Type</a></td>
         <td><code>disc</code></td>
         <td>Identifies the discount type for an adjustment
             <ul class="dev-guide-list">
-                <li><b>None</b> (<span class="t5">default</span>): discount type not applicable</li>
+                <li><b>None</b> (<span class="t5">default</span>): Discount Type not applicable</li>
                 <li><b>Retail Product</b>: an amount subtracted from the original price to arrive at a lower price</li>
-                <li><b>Manufacturer Product</b>: a credit applied to the total amount reimbursed to either the retailer or the customer by the manufacturer.</li>
+                <li><b>Manufacturer Product</b>: a credit applied to the total amount reimbursed to either the retailer or the customer by the manufacturer</li>
                 <li><b>Account Level</b>: a stand-alone discount that is not applied against any service but instead as a stand-alone product</li>
                 <li><b>Subsidized</b>: a credit for telephone service where the telephone provider provides a service to a lifeline eligible customer. The credit is applied to the subscriber line charge</li>
                 <li><b>Goodwill</b>: a credit applied to customer invoices for the purpose of engendering customer goodwill. For example, compensation for a service outage</li>
