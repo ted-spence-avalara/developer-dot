@@ -133,12 +133,11 @@ var transaction = client.CreateTransaction(null, createModel);`;
         let address;
         const shipToAddress = setShipToOrSingleLocation();
         
-        // gather all product info and make into SDK friendly form
+        // gather all product info and make into PHP SDK friendly form
         let lineNum = 0;
         $('input[type=checkbox][name=product]:checked').each(function () {
             // Find amount
             const taxCode = $(this).val();
-            const description = $(this).attr('description');
             const amount = $('#' + $(this).attr('id') + '-amount').val();
             if (lineNum === 0) {
                 lines += `->withLine(${amount}, ${lineNum++}, null, ${taxCode})`; 
@@ -152,17 +151,15 @@ var transaction = client.CreateTransaction(null, createModel);`;
             const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
             const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
             
-            // build C# req for multiple addresses
+            // build PHP req for multiple addresses
             address = `->withAddress('ShipFrom', ${shipTo[0]}, null, null, ${shipTo[1]}, ${shipTo[2]}, ${shipTo[4]}, ${shipTo[3]})
     ->withAddress('ShipTo', ${shipFrom[0]}, null, null, ${shipFrom[1]}, ${shipFrom[2]}, ${shipFrom[4]}, ${shipFrom[3]})`;
         } else {
             const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
 
-            // build C# req for single location
+            // build PHP req for single location
             address = `withAddress('SingleLocation', ${singleLocation[0]}, null, null, ${singleLocation[1]}, ${singleLocation[2]}, ${singleLocation[4]}, ${singleLocation[3]})`;
         }
-    // line1, null, null, city, region, zip, county
-    // amount, line#, null, tax code
 
         // build sample data for PHP
         sampleData = `// Create a new client
@@ -329,7 +326,7 @@ function buildInfoboxHTML(body) {
 }
 
 function ApiRequest() {
-    // clear the console output/infobox and display loading-pulse
+    // clear the console output/infobox; display loading-pulse
     $("#demo-console-output").empty();
     $(".loading-pulse").css('display', 'block');
     if (showInfobox) {
