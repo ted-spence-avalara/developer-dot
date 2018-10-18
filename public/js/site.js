@@ -136,7 +136,6 @@ var transaction = client.CreateTransaction(null, createModel);`;
         // gather all product info and make into PHP SDK friendly form
         let lineNum = 0;
         $('input[type=checkbox][name=product]:checked').each(function () {
-            // Find amount
             const taxCode = $(this).val();
             const amount = $('#' + $(this).attr('id') + '-amount').val();
             if (lineNum === 0) {
@@ -326,7 +325,7 @@ function buildInfoboxHTML(body) {
 }
 
 function ApiRequest() {
-    // clear the console output/infobox; display loading-pulse
+    // clear the console output/infobox and display loading-pulse
     $("#demo-console-output").empty();
     $(".loading-pulse").css('display', 'block');
     if (showInfobox) {
