@@ -28,7 +28,7 @@ The <code>SafeHarborOverride</code> object allows the user to change <b>safe har
     <tbody>
       <tr>
         <td><code>sh</code></td>
-        <td><code>[int]</code> Safe Harbor Override Type
+        <td><code>[int]</code> <span class="t5">required</span> Safe Harbor Override Type
           <ul class="dev-guide-list">
             <li><code>1</code>: Cellular</li>
             <li><code>2</code>: VoIP</li>
@@ -38,11 +38,17 @@ The <code>SafeHarborOverride</code> object allows the user to change <b>safe har
       </tr>
       <tr>
         <td><code>old</code></td>
-        <td><code>[double]</code> Original Federal TAM</td>
+        <td><code>[double]</code> <span class="t5">required</span> Original Federal TAM
+        <br/>
+        Original Federal TAM value to override
+        </td>
       </tr>
       <tr>
         <td><code>new</code></td>
-        <td><code>[double]</code> New Federal TAM</td>
+        <td><code>[double]</code> <span class="t5">required</span> New Federal TAM
+        <br/>
+        New TAM value that will replace the original TAM value.
+        </td>
       </tr>
     </tbody>
   </table>
@@ -53,12 +59,12 @@ The <code>SafeHarborOverride</code> object allows the user to change <b>safe har
 
 {% highlight json %}
 "sovr": [
-    {
-      "sh": 1,
-      "old": 0.649,
-      "new": 0.371
-    }
-  ]
+  {
+    "sh": 1,
+    "old": 0.649,
+    "new": 0.371
+  }
+]
 {% endhighlight %}
 
 <ul class="pager">

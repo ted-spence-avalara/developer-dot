@@ -28,7 +28,6 @@ More information about <code>CompanyData</code> can be found <a class="dev-guide
 If using the <a class="dev-guide-link" href="/communications/dev-guide/reference/exclusion/">Exclusion</a> object (<code>excl</code>), the following fields are required:
 <ul class="dev-guide-list">
   <li>Country (<code>ctry</code>)</li>
-  <li>State (<code>st</code>)</li>
   <li>ExclusionOn (<code>excl</code>)</li>
 </ul>
 

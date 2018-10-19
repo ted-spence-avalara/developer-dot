@@ -28,14 +28,17 @@ The <code>TaxOverride</code> object allows the user to change <b>tax rates</b>:
     <tbody>
       <tr>
         <td><code>loc</code></td>
-        <td>
-          <a class="dev-guide-link" href="/communications/dev-guide/reference/location/"><code>[Location]</code></a>
+        <td><a class="dev-guide-link" href="/communications/dev-guide/reference/location/"><code>[Location]</code></a> <span class="t5">required</span> Override location information
+          <br>
+          There are several ways to input location information. See the <a class="dev-guide-link" href="/communications/dev-guide/reference/location/">Location</a> section for more details.
         </td>
       </tr>
       <tr>
         <td><code>scp</code></td>
         <td>
-          <code>[int]</code> Scope to which the override is applied:  Country, State, County, or City
+          <code>[int]</code> <span class="t5">required</span> Scope
+          <br/>
+          Scope to which the override is applied:  Country, State, County, or City
           <ul class="dev-guide-list">
             <li><code>0</code>: Country</li>
             <li><code>1</code>: State</li>
@@ -47,16 +50,17 @@ The <code>TaxOverride</code> object allows the user to change <b>tax rates</b>:
       <tr>
         <td><code>tid</code></td>
         <td>
-          <code>[int]</code> Tax Type ID for the override
-          <br>
-          <br>
-          For a list of Tax Type IDs, see the <a class ="dev-guide-link" href="/communications/dev-guide/getting-started/environments-endpoints/"><code>/api/v2/afc/taxtype/{taxType}</code> endpoint.</a>
+          <code>[int]</code> <span class="t5">required</span> Tax Type ID
+          <br/>
+          Tax Type to override.  For a list of Tax Type IDs, see the <a class ="dev-guide-link" href="/communications/dev-guide/getting-started/environments-endpoints/"><code>/api/v2/afc/taxtype/{taxType}</code> endpoint.</a>
         </td>
       </tr>
       <tr>
         <td><code>lvl</code></td>
         <td>
-          <code>[int]</code> Tax Level for the override
+          <code>[int]</code> <span class="t5">required</span> Tax Level ID
+          <br/>
+          Tax Level to override.
           <ul class="dev-guide-list">
             <li><code>0</code>: Federal</li>
             <li><code>1</code>: State</li>
@@ -69,6 +73,8 @@ The <code>TaxOverride</code> object allows the user to change <b>tax rates</b>:
         <td><code>lvlExm</code></td>
         <td>
           <code>[bool]</code> Level Exemptible
+          <br/>
+          Indicates if the tax can be exempted using level exemptions.
           <ul class="dev-guide-list">
             <li><code>true</code>: Level Exemptible</li>
             <li><code>false</code>: Not Level Exemptible</li>
@@ -78,7 +84,7 @@ The <code>TaxOverride</code> object allows the user to change <b>tax rates</b>:
       <tr>
         <td><code>brkt</code></td>
         <td>
-          <a class="dev-guide-link" href="/communications/dev-guide/reference/tax-bracket/"><code>[TaxBracket]</code></a>
+          <a class="dev-guide-link" href="/communications/dev-guide/reference/tax-bracket/"><code>[TaxBracket]</code></a> <span class="t5">required</span> List of <a class="dev-guide-link" href="/communications/dev-guide/reference/tax-bracket/">tax brackets</a> for the override
         </td>
       </tr>
     </tbody>
@@ -90,22 +96,21 @@ The <code>TaxOverride</code> object allows the user to change <b>tax rates</b>:
 
 {% highlight json %}
 "ovr": [
-    {
-      "loc": {
-        // Location
-      },
-      "scp": 1,
-      "tid": 25,
-      "lvl": 2,
-      "lvlExm": true,
-      "brkt": [
-        {
-          "rate": 0.25,
-          "max": 0
-        }
-      ]
-    }
-  ],
+  {
+    "loc": {
+      // Location
+    },
+    "scp": 1,
+    "tid": 25,
+    "lvl": 2,
+    "lvlExm": true,
+    "brkt": [
+      {
+        // Tax Bracket
+      }
+    ]
+  }
+]
 {% endhighlight %}
 
 <ul class="pager">

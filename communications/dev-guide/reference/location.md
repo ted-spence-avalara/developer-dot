@@ -15,7 +15,7 @@ disqus: 0
 
 <h3>Location</h3>
 
-The <code>Location</code> object contains information about the <b>jurisdiction</b>:
+The <code>Location</code> object contains information about a <b>jurisdiction</b>:
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -27,13 +27,60 @@ The <code>Location</code> object contains information about the <b>jurisdiction<
     </thead>
     <tbody>
         <tr>
+            <td><code>cnty</code></td>
+            <td><code>[string]</code> County</td>
+        </tr>
+        <tr>
             <td><code>ctry</code></td>
-            <td><code>[string]</code> Country
+            <td><code>[string]</code> Country ISO code
             </td>
         </tr>
         <tr>
-            <td><code>cnty</code></td>
-            <td><code>[string]</code> County</td>
+            <td><code>int</code></td>
+            <td><code>[bool]</code> Incorporated
+                <br/>
+                Indicates if the location is within city limits.
+                <ul class="dev-guide-list">
+                    <li><code>true</code>: Address is within city limits</li>
+                    <li><code>false</code>: Address is outside of city limits (unincorporated)</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><code>geo</code></td>
+            <td><code>[bool]</code> Geocode
+                <br/>
+                Indicates if this address should be geocoded in order to obtain taxing jurisdiction.
+                <ul class="dev-guide-list">
+                    <li><code>true</code>: Use Geo lookup</li>
+                    <li><code>false</code>: Do not use Geo lookup</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><code>pcd</code></td>
+            <td><code>[int]</code> PCode
+                <br>
+                Proprietary code returned from our AFC Geo service.  PCodes provide the <b>most accurate</b> jurisdiction determination for calculating taxes with our engine.
+            </td>
+        </tr>
+        <tr>
+            <td><code>npa</code></td>
+            <td><code>[int]</code> NPANXX 
+                <br/>
+                The first 6 digits of a phone number
+            </td>
+        </tr>
+        <tr>
+            <td><code>fips</code></td>
+            <td><code>[string]</code> FIPS code
+            <br/>
+            10-digit USAF FIPS for taxing jurisdiction
+            </td>
+        </tr>
+        <tr>
+            <td><code>addr</code></td>
+            <td><code>[string]</code> Street Address</td>
         </tr>
         <tr>
             <td><code>city</code></td>
@@ -41,36 +88,14 @@ The <code>Location</code> object contains information about the <b>jurisdiction<
         </tr>
         <tr>
             <td><code>st</code></td>
-            <td><code>[string]</code> State</td>
-        </tr>
-        <tr>
-            <td><code>addr</code></td>
-            <td><code>[string]</code> Street Address</td>
-        </tr>
-        <tr>
-            <td><code>fips</code></td>
-            <td><code>[string]</code> 10-digit USAF FIPS</td>
-        </tr>
-        <tr>
-            <td><code>npa</code></td>
-            <td><code>[int]</code> NPANXX (first 6 digits of phone number)</td>
-        </tr>
-        <tr>
-            <td><code>pcd</code></td>
-            <td><code>[int]</code> Proprietary code returned from our AFC Geo service
-                <br>
-                PCodes provide the <b>most accurate</b> jurisdiction determination for calculating taxes with our engine.
+            <td><code>[string]</code> State
+            <br/>
+            State name or abbreviation
             </td>
         </tr>
         <tr>
-            <td><code>int</code></td>
-            <td><code>[bool]</code> Incorporated
-                <br>
-                <ul class="dev-guide-list">
-                    <li><code>true</code>: Address is within city limits</li>
-                    <li><code>false</code>: Address is outside of city limits (unincorporated)</li>
-                </ul>
-            </td>
+            <td><code>zip</code></td>
+            <td><code>[string]</code> Postal Code</td>
         </tr>
     </tbody>
   </table>
@@ -80,32 +105,32 @@ The <code>Location</code> object contains information about the <b>jurisdiction<
 <h4>Street Address</h4>
 {% highlight json %}
 "bill": {
-        "ctry": "USA",
-        "addr": "11 West 53 Street",
-        "city": "Manhattan",
-        "st": "NY",
-        "zip": "10019"
+  "ctry": "USA",
+  "addr": "11 West 53 Street",
+  "city": "Manhattan",
+  "st": "NY",
+  "zip": "10019"
 }
 {% endhighlight %}
 
 <h4>FIPS code</h4>
 {% highlight json %}
 "to": {
-        "fips": "9902604301",
+  "fips": "9902604301"
 }
 {% endhighlight %}
 
 <h4>NPANXX code</h4>
 {% highlight json %}
 "to": {
-        "npa": 212200,
+  "npa": 212200
 }
 {% endhighlight %}
 
 <h4>PCode</h4>
 {% highlight json %}
 "from": {
-        "pcd": 2604301,
+  "pcd": 2604301
 }
 {% endhighlight %}
 

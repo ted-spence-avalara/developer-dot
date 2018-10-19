@@ -27,30 +27,41 @@ At the highest level, a <code>CalcTaxes</code> request is a JSON object comprise
     </thead>
     <tbody>
       <tr>
-        <td><a class="dev-guide-link" href="/communications/dev-guide/reference/company-data/">Company Data</a></td>
-        <td>This object contains information about <b>your</b> company</td>
+        <td><code>cmpn</code></td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide/reference/company-data/"><code>[CompanyData]</code></a> Company Data
+        <br>
+        This object contains information about <b>your</b> company
+        </td>
       </tr>
       <tr>
-        <td><a class="dev-guide-link" href="/communications/dev-guide/reference/invoice/">Invoice</a></td>
-        <td>This object contains information about the <b>transaction</b></td>
+        <td><code>inv</code></td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide/reference/invoice/"><code>[Invoice]</code></a> Invoice
+        <br/>
+        This object contains information about the <b>transaction</b></td>
       </tr>
       <tr>
-        <td><a class="dev-guide-link" href="/communications/dev-guide/reference/tax-override/">Override</a></td>
-        <td>This object contains information about <b>tax overrides</b> you want to apply to the transaction (see <a class="dev-guide-link" href="#note">note</a> below)</td>
+        <td><code>ovr</code></td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide/reference/tax-override/"><code>[TaxOverride]</code></a> Tax Override
+        <br/>
+        This object contains information about <b>tax overrides</b> you want to apply to the transaction (see <a class="dev-guide-link" href="#note">note</a> below)</td>
       </tr>
       <tr>
-      <td><a class="dev-guide-link" href="/communications/dev-guide/reference/safe-harbor-override/">Safe Harbor Override</a></td>
-      <td>This object contains information about <b>safe harbor overrides</b> you want to apply to the transaction (see <a class="dev-guide-link" href="#note">note</a> below)</td>
+        <td><code>sovr</code></td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide/reference/safe-harbor-override/"><code>[SafeHarborOverride]</code></a> Safe Harbor Override
+        <br/>
+        This object contains information about <b>safe harbor overrides</b> you want to apply to the transaction (see <a class="dev-guide-link" href="#note">note</a> below)</td>
       </tr>
     </tbody>
   </table>
 <div>
 <br>
-<br>
+
+<h3>Example</h3>
+
 {% highlight json %}
 {
   "cmpn": {
-      // Company Data 
+    // Company Data 
   },
   "inv": [
     {
@@ -64,7 +75,7 @@ At the highest level, a <code>CalcTaxes</code> request is a JSON object comprise
   ],
   "sovr": [
     {
-     // Safe Harbor Override
+      // Safe Harbor Override
     }
   ]
 }

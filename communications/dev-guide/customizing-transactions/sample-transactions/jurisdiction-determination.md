@@ -26,8 +26,14 @@ Set the jurisdiction in the BillTo object (<code>bill</code>) inside the <a clas
     <li><b>NPANXX</b> (<code>npa</code>): 6 digit numbers consisting of the area code and second 3 digits of a North American dialing plan phone number</li>
 </ul>
 
+There are a couple things to keep in mind if using the Geocoding functionality (<code>geo</code> set to <code>true</code>):
+<ol class="dev-guide-list">
+  <li>The geocoding is slower, but provides a more accurate jurisdiction</li>
+  <li>If the geocoding process fails, the entire <code>CalcTaxes</code> request fails as well</li>
+</ol>
+
 <h4>Note</h4>
-When specifying jurisdictions outside of the United States via country/state/county/city lookup, be sure to pass the country code ISO.  If the country code is not set, errors are generated.  For example, use <code>CAN</code> for Canada or <code>IND</code> for India.
+When specifying jurisdictions outside of the United States via country/state/county/city lookup, be sure to pass the Country ISO code.  If the country code is not set, errors are generated.  For example, use <code>CAN</code> for Canada or <code>IND</code> for India.
 
 More information regarding the <code>Location</code> object can be found <a class="dev-guide-link" href="/communications/dev-guide/reference/location/">here</a>.
 
