@@ -233,23 +233,23 @@ We can minimize the contract and be better positioned for the long-term if we pi
 * [Vue](https://vuejs.org/v2/guide/#Relation-to-Custom-Elements)
 * [Riot](https://riot.js.org), pretty close and has the best DX out there imo [try it](https://riot.js.org/play/), there's even a w3c [proposal that looks similar](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Declarative-Custom-Elements-Strawman.md)
 
-If whatever you pick enables you to compose UIs using what you already know, i.e. HTML, then I say go for it. Being able to write and maintain code like this is better than anything that currently exists or may exist in the future:
+If whatever you pick enables you to compose UIs using what you already know, i.e. HTML, then I say go for it. Being able to write and maintain code like this (I pretend to use Skylab to compose GitHub's UI) is better than anything that currently exists or may exist in the future:
 ```html
 <body>
   <nav>...</nav>
-  <x-tabs>
-    <x-tab for="code">
-      <x-icon name="code"></x-icon> Code
-    </x-tab>
+  <s-tabs>
+    <s-tab for="code">
+      <s-icon name="code"></s-icon> Code
+    </s-tab>
     <div id="code">
-      <x-editor mode="md"></x-editor>
+      <s-editor mode="md"></s-editor>
     </div>
-    <x-tab for="pull-req">
-      <x-icon name="merge"></x-icon> Pull requests <x-badge count="0"></x-badge>
-    </x-tab>
+    <s-tab for="pull-req">
+      <s-icon name="merge"></s-icon> Pull requests <s-badge count="0"></s-badge>
+    </s-tab>
     <div id="pull-req">
       ...
     </div>  
-  </x-tabs>
+  </s-tabs>
   <footer>...</footer>
 </body>
