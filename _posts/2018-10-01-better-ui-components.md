@@ -257,7 +257,7 @@ We can minimize the contract and be better positioned for the long-term if we pi
 * [Polymer](https://www.polymer-project.org/3.0/start/)
 * [Slim](http://slimjs.com/#/getting-started)
 * [Vue](https://vuejs.org/v2/guide/#Relation-to-Custom-Elements)
-* [Riot](https://riot.js.org), has the best DX out there imo [try it](https://riot.js.org/play/), there's even a w3c [proposal that looks similar](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Declarative-Custom-Elements-Strawman.md)
+* [Riot](https://riot.js.org), which has the best DX out there imo, [try it](https://riot.js.org/play/). There's even a w3c proposal out there [that takes the spec in a similar direction](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Declarative-Custom-Elements-Strawman.md)
 
 If whatever you pick enables you to compose UIs using what you already know - HTML - then it's a good choice. Being able to write and maintain standards-based markup is easier and less costly since there's nothing proprierary here that will fall out of fashion and need to be refactored:
 
