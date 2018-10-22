@@ -143,9 +143,10 @@ That would look something like:
 
 image here...
 
-Pretty basic component with a nice little custom `alert` tag, a familiar `type` attribute, and naturally supports nesting HTML inside. There are no dependencies here. Nothing to download, nothing to build. No magic, no hacks, nothing proprietary, no new idioms or special syntax, it's just HTML and CSS that every dev knows and every browser supports. It's really as if this was a standard element.
+Pretty basic component with a nice little custom `alert` tag, a familiar `type` attribute, and naturally supports nesting HTML. Please note that there are no dependencies here. There's nothing to download, no tools and nothing to build. No magic, no hacks, nothing proprietary, no new idioms or special syntax, nothing. And when it comes to building software, _nothing_ is better than something.
 
-It doesn't offer much though, so let’s see if we can support an icon:
+Our Alert doesn't offer much though, so let’s see if we can support an icon:
+_With an icon_
 ```html
 <alert type="success">
   <icon name="check"></icon>
@@ -153,6 +154,7 @@ It doesn't offer much though, so let’s see if we can support an icon:
 </alert>
 ```
 That works and adds some visual value, but it's not the right way to design a component. Let's get an icon without leaving it up to the implementer:
+_With the icon inferred_
 ```html
 <alert type="success">
   <p>You should try this</p>
@@ -167,9 +169,8 @@ alert[type="success"]:before {
 
 image here...
 
-It's starting to really look like something. It's pretty common for Alerts to disappear automatically, so let's add support for that. 
-
-If there really was an HTML `alert` element with auto-disappearing feature I could imagine it would have an `autodismiss` attribute for triggering this behavior, so let's go with that:
+It's starting to really look like something. It's pretty common for Alerts to disappear automatically, so let's add support for that. If there really was an HTML `alert` element and it had an auto-disappearing feature I could imagine it would have an `autodismiss` attribute for triggering this behavior, so let's go with that:
+_New autodismiss feature_
 ```html
 <alert type="success" autodismiss>
   <p>You should try this</p>
