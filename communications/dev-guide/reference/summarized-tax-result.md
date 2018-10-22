@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Chapter 5.18 - Detailed Tax Result
+title:  Chapter 5.20 - Summarized Tax Result
 product: communications
 doctype: comms_dev_guide
 chapter: reference
@@ -9,13 +9,12 @@ disqus: 0
 ---
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide/reference/line-item-result/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide/reference/bridge-participant-result/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="previous"><a href="/communications/dev-guide/reference/bridge-participant-result/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
 </ul>
 
-<h3>Detailed Tax Result</h3>
+<h3>Summarized Tax Result</h3>
 
-The <code>Tax</code> object contains the <b>taxes</b> generated for each <a class="dev-guide-link" href="/communications/dev-guide/reference/line-item/">line item</a>:
+The <code>SummarizedTax</code> object contains the <b>tax data</b> for summarized invoice taxes:
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -27,32 +26,24 @@ The <code>Tax</code> object contains the <b>taxes</b> generated for each <a clas
     </thead>
     <tbody>
       <tr>
-            <td><code>bill</code></td>
-            <td><code>[bool]</code> Billable
+            <td><code>max</code></td>
+            <td><code>[double]</code> Max Base
             <br/>
-            Indicates if the tax is billable to <b>your</b> customer.
-            <ul class="dev-guide-list">
-                <li><code>true</code>: Standard billable tax</li>
-                <li><code>false</code>: Non-billable tax that cannot be billed to the customer</li>
-            </ul>
+            The maximum base for the tax bracket
             </td>
         </tr>
         <tr>
-            <td><code>cmpl</code></td>
-            <td><code>[bool]</code> Compliance
+            <td><code>min</code></td>
+            <td><code>[double]</code> Min Base
             <br/>
-            Indicates if the tax is to be reported to the jurisdiction.
-            <ul class="dev-guide-list">
-                <li><code>true</code>: Standard compliance tax</li>
-                <li><code>false</code>: Non-compliance tax that should not be reported to the jurisdiction</li>
-            </ul>
+            The minimum base for the tax bracket
             </td>
         </tr>
         <tr>
-            <td><code>tm</code></td>
-            <td><code>[double]</code> Taxable Measure
+            <td><code>tchg</code></td>
+            <td><code>[double]</code> Total Charge
             <br/>
-            The basis for calculation of percentage-based taxes.  Simple transactions result in a taxable measure equal to the sale price.  However, tax-on-tax, caps, thresholds, tiers, and taxable amount modifiers can all result in taxable measures that are greater than or less than the sale price.
+            The total charge amount for the invoice
             </td>
         </tr>
         <tr>
@@ -92,10 +83,6 @@ The <code>Tax</code> object contains the <b>taxes</b> generated for each <a clas
             <td><code>[int]</code> Number of lines taxed</td>
         </tr>
         <tr>
-            <td><code>min</code></td>
-            <td><code>[double]</code> Amount of minutes taxed</td>
-        </tr>
-        <tr>
             <td><code>pcd</code></td>
             <td><code>[int]</code> PCode representing reporting tax jurisdiction</td>
         </tr>
@@ -116,7 +103,7 @@ The <code>Tax</code> object contains the <b>taxes</b> generated for each <a clas
         </tr>
         <tr>
             <td><code>tax</code></td>
-            <td><code>[double]</code> Tax Amount</td>
+            <td><code>[double]</code> Summarized Tax Amount</td>
         </tr>
         <tr>
             <td><code>lvl</code></td>
@@ -144,29 +131,27 @@ The <code>Tax</code> object contains the <b>taxes</b> generated for each <a clas
 <h3>Example</h3>
 
 {% highlight json %}
-"txs": [
+"summ": [
   {
-    "bill": true,
-    "cmpl": true,
-    "tm": 35.099999999999994,
-    "calc": 1,
-    "cat": "CONNECTIVITY CHARGES",
-    "cid": 5,
-    "name": "Universal Lifeline Telephone Service Charge (VoIP)",
-    "exm": 64.9,
-    "lns": 0,
+    "max": 2147483647,
     "min": 0,
-    "pcd": 253500,
-    "rate": 0.0475,
-    "sur": true,
-    "tax": 1.6672499999999997,
-    "lvl": 1,
-    "tid": 454
+    "tchg": 25,
+    "calc": 1,
+    "cat": "SALES AND USE TAXES",
+    "cid": 1,
+    "name": "Sales Tax",
+    "exm": 0,
+    "lns": 0,
+    "pcd": 377300,
+    "rate": 0.0125,
+    "sur": false,
+    "tax": 0.3125,
+    "lvl": 2,
+    "tid": 1
   }
 ]
 {% endhighlight %}
 
 <ul class="pager">
-  <li class="previous"><a href="/communications/dev-guide/reference/line-item-result/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
-  <li class="next"><a href="/communications/dev-guide/reference/bridge-participant-result/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
+  <li class="previous"><a href="/communications/dev-guide/reference/bridge-participant-result/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>
 </ul>

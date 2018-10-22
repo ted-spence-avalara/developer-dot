@@ -15,6 +15,8 @@ disqus: 0
 
 <h3>The CalcTaxes Request</h3>
 
+The <code>CalcTaxesRequest</code> object supports a list of transactions and override options. Actual limit varies depending on message size and your timeout values, but the standard recommendation is to process no more than 1,000 entries per request.
+
 At the highest level, a <code>CalcTaxes</code> request is a JSON object comprised of the following:
 
 <div class="mobile-table">
@@ -30,14 +32,13 @@ At the highest level, a <code>CalcTaxes</code> request is a JSON object comprise
         <td><code>cmpn</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide/reference/company-data/"><code>[CompanyData]</code></a> Company Data
         <br>
-        This object contains information about <b>your</b> company
-        </td>
+        This object contains information about <b>your</b> company or the Seller.</td>
       </tr>
       <tr>
         <td><code>inv</code></td>
         <td><a class="dev-guide-link" href="/communications/dev-guide/reference/invoice/"><code>[Invoice]</code></a> Invoice
         <br/>
-        This object contains information about the <b>transaction</b></td>
+        This object contains information about the <b>transaction</b>, including a list of invoices to be taxed.</td>
       </tr>
       <tr>
         <td><code>ovr</code></td>
