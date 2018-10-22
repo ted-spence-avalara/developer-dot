@@ -225,6 +225,7 @@ So yeah, prefixing is a best-practice. It solves the risk of colliding tags and 
 Let's see how our Alert can go from a basic custom tag with styles to interactive component without breaking changes or a shifting paradigm.
 
 In a future release of Alert let's say we're adding the ability to customize the `autodismiss` duration. You can take the default four seconds by simply adding the attribute, or you can shorten or extend that duration by setting its value to a number:
+
 _Customized autodismiss_
 ```html
 <alert type="success" autodismiss="10">
@@ -249,14 +250,14 @@ But as we've learned, it's best-practice to prefix, so that really should be:
 > ```html
 > <b-alert type="success">
 > ```
-Anyway, back to `autodismiss`. Supporting a value of seconds now requires the use of JavaScript. At this point most people go  with what they know or try the flavor-of-the-day following whatever idioms and special syntax is required. That's not a problem if you're a small team with one app, but if you have lots of consumers of your Alert component you're entering into a code contract, and the less that contract asks of the implementer the better.
+Anyway, back to `autodismiss`. Supporting a value of seconds now requires the use of JavaScript. At this point most people go  with what they know or try the flavor-of-the-day ramping up on whatever idioms and special syntax is required. That's not a problem if you're a small team with one app, but if you have lots of consumers of your Alert component you're entering into a code contract and the less that contract asks of the implementer the better.
 
-We can minimize the contract and be better positioned for the long-term if we pick a solution that follows, or stays close to, Custom Elements. Here's some that do:
+We can minimize the contract and be better positioned for the long-term if we pick a solution that follows, or stays close to, Custom Elements. Here's some options available today:
 * vanilla [Custom Elements](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements) and [Web Components](https://www.webcomponents.org/introduction) of course
-* [Polymer 2+](https://www.polymer-project.org/3.0/start/)
+* [Polymer](https://www.polymer-project.org/3.0/start/)
 * [Slim](http://slimjs.com/#/getting-started)
 * [Vue](https://vuejs.org/v2/guide/#Relation-to-Custom-Elements)
-* [Riot](https://riot.js.org), pretty close and has the best DX out there imo [try it](https://riot.js.org/play/), there's even a w3c [proposal that looks similar](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Declarative-Custom-Elements-Strawman.md)
+* [Riot](https://riot.js.org), has the best DX out there imo [try it](https://riot.js.org/play/), there's even a w3c [proposal that looks similar](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Declarative-Custom-Elements-Strawman.md)
 
 If whatever you pick enables you to compose UIs using what you already know - HTML - then it's a good choice. Being able to write and maintain standards-based markup is easier and less costly since there's nothing proprierary here that will fall out of fashion and need to be refactored:
 
