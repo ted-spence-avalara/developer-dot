@@ -49,7 +49,7 @@ What exactly is that last one supposed to be? Too messy.
 <div class="icon icon-phone"></div>
 <span class="icon icon-phone"></span>
 ```
-That means `<div class=""></div>` is just boilerplate.
+That means `<div class=""></div>` is all boilerplate.
 #### 4) Next to standard elements the class-based design looks out of place; it lacks uniformity:
 ```html
 <i class="icon icon-phone"></i>
@@ -62,7 +62,7 @@ What if standard elements were based on that same design? So we'd have:
 ```
 Pretty gross, but that's what you get with a class-based design. Gets even worse if you go BEM: 
 ```html
-<div class="mdl-dialog__actions--full-width">
+<div class="mdl-dialog__actions mdl-dialog__actions--full-width">
 ``` 
 [That's real btw](https://getmdl.io/components/index.html#dialog-with-full-width-actions)
 
