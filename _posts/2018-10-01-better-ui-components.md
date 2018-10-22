@@ -259,7 +259,9 @@ We can minimize the contract and be better positioned for the long-term if we pi
 * [Vue](https://vuejs.org/v2/guide/#Relation-to-Custom-Elements)
 * [Riot](https://riot.js.org), which has the best DX out there imo, [try it](https://riot.js.org/play/). There's even a w3c proposal out there [that takes the spec in a similar direction](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Declarative-Custom-Elements-Strawman.md)
 
-If whatever you pick enables you and other devs to compose UIs using HTML, then it's a good choice. Being able to write and maintain standards-based markup is easier and less costly since there's nothing proprietary that will inevitably fall out of fashion and need to be refactored. I don't know what GitHub is buitl with, but here's me pretending to use Skylab to create their UI:
+If whatever you pick enables you and other devs to compose UIs using HTML, then it's a good choice. And hopefully it does so without requiring multiple dependencies, tooling, and build pipeline.
+
+Being able to write and maintain apps built with standards-based markup is easier and less costly since there's nothing proprietary that will inevitably fall out of fashion and need to be refactored. I don't know what GitHub is built with, but here's me pretending to use Skylab to create their UI:
 
 ```html
 <body>
@@ -287,4 +289,31 @@ If whatever you pick enables you and other devs to compose UIs using HTML, then 
   <footer>...</footer>
 </body>
 ```
+
+Now I know this doesn't address the hard problem of application state management and having the UI reliably reflect that state. That's what React and others set out to solve and they did. But the front-end community seems to have been unable to take a balanced approach to adopting these new technologies and just started engineering stuff. If you use React, you no doubt have an over-engineered app, or at least in part. When I see things like this I just wonder what the heck are all you React devs doing to yourselves:
+```html
+<DisplayText size="extraLarge" element="h4">Good evening, Dominic.</DisplayText>
+
+which outputs
+
+<h4 class="Polaris-DisplayText Polaris-DisplayText--sizeExtraLarge">Good evening, Dominic.</h4>
+```
+Just take a minute to think about that...
+
+I won't name names; they're all doing it. Here's another one from a big tech company that should know better:
+```html
+<UitkInlineBadge
+  shape="shape-pill"
+  theme="theme-success"
+>
+10% off
+</UitkInlineBadge>
+
+which outputs
+
+<span class="uitk-badge uitk-badge-inline shape-pill theme-success">10% off</span>
+```
+Using React, which means adding a dependency on npm and Webpack and Babel and Jest+Enzyme and installing the React dev tools, to build components that are, in the first case, just basic HTML headings, and in the second case easily done with basic markup and CSS.
+
+Should an engineer write a dozen or so lines of CSS to make Badge, or should they write *474 total lines of code across 8 files* with multiple dependencies and a whole build pipleine? I hope that's not a difficult question to answer!
 
