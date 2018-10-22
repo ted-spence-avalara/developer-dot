@@ -239,7 +239,7 @@ If whatever you pick enables you to compose UIs using what you already know, i.e
   <nav>...</nav>
   <x-tabs>
     <x-tab for="code">
-      <x-icon name="code></x-icon> Code
+      <x-icon name="code"></x-icon> Code
     </x-tab>
     <div id="code">
       <x-editor mode="md"></x-editor>
