@@ -259,7 +259,7 @@ We can minimize the contract and be better positioned for the long-term if we pi
 * [Vue](https://vuejs.org/v2/guide/#Relation-to-Custom-Elements)
 * [Riot](https://riot.js.org), which has the best DX out there imo, [try it](https://riot.js.org/play/). There's even a w3c proposal out there [that takes the spec in a similar direction](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Declarative-Custom-Elements-Strawman.md)
 
-If whatever you pick enables you to compose UIs using what you already know - HTML - then it's a good choice. Being able to write and maintain standards-based markup is easier and less costly since there's nothing proprierary here that will fall out of fashion and need to be refactored:
+If whatever you pick enables you and other devs to compose UIs using HTML, then it's a good choice. Being able to write and maintain standards-based markup is easier and less costly since there's nothing proprietary that will inevitably fall out of fashion and need to be refactored. I don't know what GitHub is buitl with, but here's me pretending to use Skylab to create their UI:
 
 ```html
 <body>
@@ -287,4 +287,4 @@ If whatever you pick enables you to compose UIs using what you already know - HT
   <footer>...</footer>
 </body>
 ```
-That's me pretending to use Skylab to create GitHub's UI.
+
