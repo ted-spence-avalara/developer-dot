@@ -2,7 +2,7 @@
 # Better UI Components
 ## How to avoid over-engineering user interfaces through the use of standards
 
-There's a user interface technology that is so good it has _100%_ developer adoption. It is also totally compatible with _all_ browsers and developer tools, has no dependencies, is very well-documented, and easy to learn.  The technology of course is none other than HTML and web developers have ignored its power to enable us to design, construct, and implement better UI components.
+There's a user interface technology that is so good it has _100%_ developer adoption. It is also totally compatible with _all_ browsers and developer tools, has no dependencies, is very well-documented, and easy to learn.  The technology of course is none other than HTML and I think we've ignored its power to enable us to design, construct, and implement better UI components.
 
 ### HTML all the way
 As a reminder, HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements to provide semantic support for more content, like `<nav>` and `<video>` and `<article>`. Over the years it also added new capabilities to existing elements like the addition of the `autofocus` attribute, which tells the browser which element to focus on page load. These additions are of course made accessible to us through the usual HTML constructs: *tags*, *attributes*, and *nesting*. Here's some examples:
