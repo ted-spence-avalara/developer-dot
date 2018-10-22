@@ -194,13 +194,13 @@ Although we aren't technically creating Custom Elements at this point, you'll wa
 * **s**emantic - tags with attributes are much more semantic than div/span with classes
 * **s**mall - basic HTML and CSS can take you very far without needing something like React
 * **s**hared - these components are shared by our 20+ web apps and three times as many developers
-* **S**eattle - that's HQ! Come [join us](https://www.avalara.com/us/en/about/jobs/job-openings.html)
+* **S**eattle - not really, but that's where we are! Come [join us](https://www.avalara.com/us/en/about/jobs/job-openings.html)
 
-Prefixing is a best-practice. It solves the risk of colliding tags, it's also a helpful distinguisher between standard and custom tags, and it sets you up very nicely for when JavaScript-enabled functionality is required. The custom tag approach scales in both directions: you get to scale down to lightweight HTML and CSS-only components like icon, or all the way up to interactive components that respond to state changes all _while maintaining the same uniform HTML interface_. The secret is sticking with standards.
+Prefixing is a best-practice. It solves the risk of colliding tags, it's also a helpful distinguisher between standard and custom tags, and it sets you up very nicely for when JavaScript-enabled functionality is required. The custom tag approach scales in both directions: you get to scale down to lightweight HTML and CSS-only components like icon, or all the way up to interactive components that respond to state changes all while maintaining _the same uniform HTML interface_. The secret is sticking with standards.
 
 Let's see how our Alert can go from basic custom tag with styles to interactive component without breaking changes or a shifting paradigm.
 
-Let's say in a future release of Alert we're adding the ability to customize the `autodismiss` duration. You can take the default four seconds by simply adding the attribute, or you can shorten or extend that duration by setting its value to a number:
+In a future release of Alert let's say we're adding the ability to customize the `autodismiss` duration. You can take the default four seconds by simply adding the attribute, or you can shorten or extend that duration by setting its value to a number:
 ```html
 <alert type="success" autodismiss="10">
   <p>You should try this</p>
@@ -213,17 +213,17 @@ But as we've learned, it's best-practice to prefix, so that really should be:
 </s-alert>
 ```
 > Side note: If you're the maintainer of a shared library, pick a short prefix that's meaningful to you. Twitter's Bootstrap, for example, would go from:
-```html
-<div class="alert alert-success">
-```
-to
-```html
-<twbs-alert type="success">
-```
-or maybe just
-```html
-<b-alert type="success">
-```
+> ```html
+> <div class="alert alert-success">
+> ```
+> to
+> ```html
+> <twbs-alert type="success">
+> ```
+> or maybe just
+> ```html
+> <b-alert type="success">
+> ```
 Anyway, back to `autodismiss`. Supporting a value of seconds now requires the use of JavaScript. At this point most people go for the flavor-of-the-day proceed to write tens, even hundreds, of lines of code following whatever framework idioms and special syntax is required. That's not a problem if you're a tiny team with one app, but if you have lots of consumers of your Alert you're entering into a code contract, and the less that contract asks of the implementer the better. If we built our Alert in React for example, we would require:
 * A 32kb download of React added to their site
 * Continued updates of that dependency
