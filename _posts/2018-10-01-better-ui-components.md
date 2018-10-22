@@ -145,6 +145,7 @@ alert {
 }
 
 alert[type="success"] {
+  color: white;
   background-color: green;
 }
 ```
@@ -152,7 +153,7 @@ That would look something like:
 
 image here...
 
-Pretty basic component with a nice little custom `alert` tag, a familiar `type` attribute, and naturally supports nesting HTML. Please note that there are no dependencies here. There's nothing to download, no tools and nothing to build. No magic, no hacks, nothing proprietary, no new idioms or special syntax, nothing. And when it comes to building software, _nothing_ is better than something.
+Please note that there are no dependencies here. There's nothing to download, no tools and nothing to build. No magic, no hacks, nothing proprietary, no new idioms or special syntax, nothing. And when it comes to building software, _nothing_ is better than something.
 
 Our Alert is pretty plain right now, so let’s see if we can give it an icon:
 
@@ -198,11 +199,13 @@ alert[autodismiss] {
     opacity: 0; 
 }
 ```
-Not bad! We have a useful Alert component with a friendly little API:
+Nice! We got ourselves a useful component without a single build step or polyfill required ;)
+
+And check out that friendly little API:
 * Semantic `alert` tag
-* `type` attribute - _required_ - One of "info", "success", "warn", or "error"
-* `autodismiss` attribute - _optional_ - If present, the Alert will disappear after four seconds
-* You can nest content inside it, including other custom HTML
+* `type` - _required_ - One of "info", "success", "warn", or "error"
+* `autodismiss` - _optional_ - If present, the Alert will disappear after four seconds
+* You can nest content, including other custom HTML
 
 If you didn't know any better you'd be sure this was a standard HTML5 element available in all newer browsers. Hey, that's a good sign! 
 
