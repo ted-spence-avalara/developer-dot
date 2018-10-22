@@ -28,10 +28,72 @@ function getCompareDate() {
 **   SAMPLE DATA Functions: Build the sample data in the correct language
 ************************************************************************/
 
-// helper function to check if shipTo address is selected
+// HELPER: check if shipTo address is selected
 function setShipToOrSingleLocation() {
     const checked = $('input[type=radio][name=srcAddress]:checked').length > 0;
     return checked;
+}
+
+// HELPER: for jsonSampleData, build shipTo/From objs
+function makeAddressObj(addressName){
+    const address = $(`input[type=radio][name=${addressName}]:checked`).val().split(',');
+    const addressObj = {
+        "line1": address[0],
+        "city": address[1],
+        "region": address[2],
+        "country": address[3],
+        "postalCode": address[4],
+    }
+    return addressObj;
+}
+
+function jsonSampleData() {
+    // check if there is a shipTo address selected
+    const shipToAddress = setShipToOrSingleLocation();
+    const address = makeAddressObj('address');
+    let sampleData;
+
+    if(shipToAddress) {
+        const srcAddress = makeAddressObj('srcAddress');
+
+        sampleData = {
+            "lines": [],
+            "type": "SalesOrder",
+            "companyCode": "DEMOPAGE",
+            "date": "2018-09-05",
+            "customerCode": "ABC",
+            "addresses": {
+                "shipTo": address,
+                "shipFrom": srcAddress,
+            }
+        };
+    }
+    else {
+        sampleData = {
+            "lines": [],
+            "type": "SalesOrder",
+            "companyCode": "DEMOPAGE",
+            "date": "2018-09-05",
+            "customerCode": "ABC",
+            "addresses": {
+                "singleLocation": address,
+            }
+        };
+    }
+
+    // Loop through all the checked products and add one line for each
+    var lineNum = 1;
+    $('input[type=checkbox][name=product]:checked').each(function () {
+        // Find amount
+        sampleData.lines.push({
+            "number": lineNum++,
+            "amount": $('#' + $(this).attr('id') + '-amount').val(),
+            "taxCode": $(this).val(),
+            "description": $(this).attr('description')
+        });
+    });
+
+    return sampleData;
 }
 
 function cSharpSampleData() {
@@ -97,7 +159,7 @@ function cSharpSampleData() {
         }`;
     }
 
-        // build sample data for c#
+    // build sample data for c#
     const sampleData = `// Create AvaTaxClient
 var client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox).WithSecurity("MyUsername", "MyPassword");
 
@@ -184,64 +246,63 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
     return sampleData;
 }
 
-function makeAddressObj(addressName){
-    const address = $(`input[type=radio][name=${addressName}]:checked`).val().split(',');
-    const addressObj = {
-        "line1": address[0],
-        "city": address[1],
-        "region": address[2],
-        "country": address[3],
-        "postalCode": address[4],
-    }
-    return addressObj;
-}
+function pythonSampleData() {
 
-function jsonSampleData() {
-    // check if there is a shipTo address selected
+    let lines = ``;
+    let address;
     const shipToAddress = setShipToOrSingleLocation();
-    const address = makeAddressObj('address');
-    let sampleData;
-
-    if(shipToAddress) {
-        const srcAddress = makeAddressObj('srcAddress');
-
-        sampleData = {
-            "lines": [],
-            "type": "SalesOrder",
-            "companyCode": "DEMOPAGE",
-            "date": "2018-09-05",
-            "customerCode": "ABC",
-            "addresses": {
-                "shipTo": address,
-                "shipFrom": srcAddress,
-            }
-        };
-    }
-    else {
-        sampleData = {
-            "lines": [],
-            "type": "SalesOrder",
-            "companyCode": "DEMOPAGE",
-            "date": "2018-09-05",
-            "customerCode": "ABC",
-            "addresses": {
-                "singleLocation": address,
-            }
-        };
-    }
-
+    
     // Loop through all the checked products and add one line for each
-    var lineNum = 1;
+    var lineNum = 0;
     $('input[type=checkbox][name=product]:checked').each(function () {
         // Find amount
-        sampleData.lines.push({
-            "number": lineNum++,
+        lines += `{
             "amount": $('#' + $(this).attr('id') + '-amount').val(),
-            "taxCode": $(this).val(),
-            "description": $(this).attr('description')
-        });
+            "description": $(this).attr('description'),
+            "number": lineNum++,
+            "taxCode": $(this).val()
+        }`;
     });
 
+    // if (shipToAddress){
+
+    // } else {
+
+    // }
+    
+    const sampleData = `#Create a new AvaTaxClient object
+client = AvataxClient('my test app',
+'ver 0.0',
+'my test machine',
+'sandbox')
+
+#Add your credentials
+client = client.add_credentials('USERNAME/ACCOUNT_ID', 'PASSWORD/LICENSE_KEY')
+
+#Build your tax document
+tax_document = {
+    'addresses': {
+        'SingleLocation': {
+            'city': 'Irvine',
+            'country': 'US',
+            'line1': '123 Main Street',
+            'postalCode': '92615',
+            'region': 'CA'
+        }
+    },
+    'companyCode': 'DEMO PAGE',
+    'customerCode': 'ABC',
+    'date': '2017-04-12',
+    'lines': [
+        ${lines}
+    ],
+    'type': 'SalesOrder'
+}
+
+#Create transaction
+transaction_response = client.create_transaction(tax_document)
+print(transaction_response.text())`;
+    
     return sampleData;
 }
 
@@ -266,6 +327,9 @@ function fillWithSampleData() {
             break;
         case 'PHP':
             sampleData = phpSampleData(); 
+            break;
+        case 'Python':
+            sampleData = pythonSampleData();
             break;
         case 'JSON':
             sampleData = JSON.stringify(jsonSampleData(), null, 2);

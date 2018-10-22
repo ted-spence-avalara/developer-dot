@@ -186,7 +186,7 @@ doctype: use_cases
                             <option value="CURL">CURL</option>
                             <option value="C#">C# SDK</option>
                             <option value="PHP">PHP SDK</option>
-                            <option value="PHP">Python SDK</option>
+                            <option value="Python">Python SDK</option>
                         </select>
                     </div>
                     <div style="display:inline-block;float:right;" class="btn-group">
