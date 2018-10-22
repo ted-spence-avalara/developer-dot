@@ -2,7 +2,7 @@
 layout: page
 title: Chapter 2 - Calculate Taxes
 product: communications
-doctype: comms_dev_guide
+doctype: comms_rest_v2_dev_guide
 chapter: calculate-taxes
 nav: apis
 disqus: 0

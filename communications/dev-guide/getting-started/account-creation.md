@@ -2,7 +2,7 @@
 layout: page
 title: Chapter 1.1 - Account Creation
 product: communications
-doctype: comms_dev_guide
+doctype: comms_rest_v2_dev_guide
 chapter: getting-started
 nav: apis
 disqus: 0

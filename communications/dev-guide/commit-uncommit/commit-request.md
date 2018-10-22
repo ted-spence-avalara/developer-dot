@@ -2,7 +2,7 @@
 layout: page
 title: Chapter 3.1 - Commit Request
 product: communications
-doctype: comms_dev_guide
+doctype: comms_rest_v2_dev_guide
 chapter: commit-uncommit
 nav: apis
 disqus: 0

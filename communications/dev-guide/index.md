@@ -2,7 +2,7 @@
 layout: page
 title:  Avalara Communications Developer Guide
 product: communications
-doctype: comms_dev_guide
+doctype: comms_rest_v2_dev_guide
 nav: apis
 disqus: 0
 ---

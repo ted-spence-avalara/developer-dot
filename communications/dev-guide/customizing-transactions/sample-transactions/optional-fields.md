@@ -2,7 +2,7 @@
 layout: page
 title: Chapter 4.3.16 - Optional Fields
 product: communications
-doctype: comms_dev_guide
+doctype: comms_rest_v2_dev_guide
 chapter: customizing-transactions
 nav: apis
 disqus: 0

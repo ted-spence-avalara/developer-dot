@@ -2,7 +2,7 @@
 layout: page
 title:  Chapter 5.7 - Safe Harbor Override
 product: communications
-doctype: comms_dev_guide
+doctype: comms_rest_v2_dev_guide
 chapter: reference
 nav: apis
 disqus: 0
