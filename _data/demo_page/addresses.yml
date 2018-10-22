@@ -1,0 +1,43 @@
+- city: Irvine
+  street: 2000 Main Street
+  countryZip: Irvine, CA 92614
+  value: 2000 Main Street,Irvine,CA,US,92614
+  lat: 33.6846603698176
+  long: -117.850629887389
+  type: national
+- city: Seattle
+  street: 255 S. King Street
+  countryZip: Seattle, WA, 98104
+  value: 255 S. King Street,Seattle,WA,US,98104
+  lat: 47.598100-122.331206
+  long: -122.331206
+  type: national
+- city: Durham
+  street: 512 S Mangum Street
+  countryZip: Durham, NC 27701
+  value: 512 S Mangum Street,Durham,NC,US,27701
+  lat: 35.991727
+  long: -78.902647
+  type: national
+- city: Brighton
+  street: 3rd Floor Trafalgar Place
+  countryZip: Brighton, UK BN1 4FU
+  value: 3rd Floor Trafalgar Place,Brighton,Brighton and Hove,UK,BN1 4FU
+  lat: 50.828746
+  long: -0.139584
+  type: international
+- city: Pune
+  street: 3rd Floor, Pride Portal
+  region: Bahiratwadi, Shivajinagar
+  countryZip: Pune, India 411 016
+  value: Bahiratwadi Shivajinagar,Pune,Maharashtra,India,411 016
+  lat: 18.533946
+  long: 73.827597
+  type: international
+- city: São Paulo
+  street: Rua Henri Dunant 137
+  countryZip: São Paulo, Brazil 04709-110
+  value: Rua Henri Dunant 137,São Paulo,SP,Brazil,04709-110
+  lat: -23.633102
+  long: -46.695348
+  type: international
