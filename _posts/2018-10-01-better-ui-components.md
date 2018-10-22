@@ -207,7 +207,7 @@ And check out that friendly little API:
 * `autodismiss` - _optional_ - if present, the Alert will disappear after four seconds
 * You can nest content, including other custom HTML
 
-If you didn't know any better you'd be sure this was a standard HTML5 element available in all newer browsers. Hey, that's a good sign! 
+If you didn't know any better you'd think this was a standard HTML5 element available in all newer browsers. Hey, that's a good sign! 
 
 There is a small problem though. The problem is our tag name is not totally future-proof. There's two considerations here:
 
@@ -218,13 +218,14 @@ Although we aren't technically creating Custom Elements at this point, you'll wa
 * **s**emantic - tags with attributes are much more semantic than div/span with classes
 * **s**mall - basic HTML and CSS can take you very far without needing something like React
 * **s**hared - these components are shared by our 20+ web apps and three times as many developers
-* **S**eattle - not really, but that's where we are! Come [join us](https://www.avalara.com/us/en/about/jobs/job-openings.html)
+* **S**eattle - not really, but that's where we are! Come [join us](https://www.avalara.com/us/en/about/jobs/job-details.oUKm8fwS.html)
 
-Prefixing is a best-practice. It solves the risk of colliding tags, it's also a helpful distinguisher between standard and custom tags, and it sets you up very nicely for when JavaScript-enabled functionality is required. The custom tag approach scales in both directions: you get to scale down to lightweight HTML and CSS-only components like icon, or all the way up to interactive components that respond to state changes all while maintaining _the same uniform HTML interface_. The secret is sticking with standards.
+So yeah, prefixing is a best-practice. It solves the risk of colliding tags and it's a helpful visual distinguisher between standard and custom tags. More importantly it sets you up very nicely for when JavaScript-enabled functionality is required. You see, the custom tag approach scales in both directions: you get to scale down to lightweight CSS-only components like icon, or all the way up to interactive components that respond to state changes all while maintaining _the same uniform HTML interface_. The secret is staying close to standards.
 
-Let's see how our Alert can go from basic custom tag with styles to interactive component without breaking changes or a shifting paradigm.
+Let's see how our Alert can go from a basic custom tag with styles to interactive component without breaking changes or a shifting paradigm.
 
 In a future release of Alert let's say we're adding the ability to customize the `autodismiss` duration. You can take the default four seconds by simply adding the attribute, or you can shorten or extend that duration by setting its value to a number:
+_Customized autodismiss_
 ```html
 <alert type="success" autodismiss="10">
   <p>You should try this</p>
