@@ -203,8 +203,8 @@ Nice! We got ourselves a useful component without a single build step or polyfil
 
 And check out that friendly little API:
 * Semantic `alert` tag
-* `type` - _required_ - One of "info", "success", "warn", or "error"
-* `autodismiss` - _optional_ - If present, the Alert will disappear after four seconds
+* `type` - _required_ - one of "info", "success", "warn", or "error"
+* `autodismiss` - _optional_ - if present, the Alert will disappear after four seconds
 * You can nest content, including other custom HTML
 
 If you didn't know any better you'd be sure this was a standard HTML5 element available in all newer browsers. Hey, that's a good sign! 
