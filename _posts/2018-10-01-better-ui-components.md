@@ -135,7 +135,7 @@ That would look something like:
 
 image here...
 
-Pretty basic component with a nice little API that uses a custom `alert` tag, a familiar `type` attribute, and naturally supports nesting HTML inside. There are no dependencies here. Nothing to download, nothing to build. No magic, no hacks, nothing proprietary, no new idioms or special syntax, it's just HTML and CSS that every dev knows and every browser supports. It's really as if this was a standard element.
+Pretty basic component with a nice little custom `alert` tag, a familiar `type` attribute, and naturally supports nesting HTML inside. There are no dependencies here. Nothing to download, nothing to build. No magic, no hacks, nothing proprietary, no new idioms or special syntax, it's just HTML and CSS that every dev knows and every browser supports. It's really as if this was a standard element.
 
 It doesn't offer much though, so let’s see if we can support an icon:
 ```html
