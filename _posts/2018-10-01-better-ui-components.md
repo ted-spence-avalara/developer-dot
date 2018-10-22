@@ -177,19 +177,19 @@ alert[autodismiss] {
     opacity: 0; 
 }
 ```
-Not bad! We have a simple Alert component with a nice little API:
+Not bad! We have a useful Alert component with a friendly little API:
 * Semantic `alert` tag
 * `type` attribute - _required_ - One of "info", "success", "warn", or "error"
 * `autodismiss` attribute - _optional_ - If present, the Alert will disappear after four seconds
 * You can nest content inside it, including other custom HTML
 
-If you didn't know any better you'd be sure this was a standard HTML5 element available in all newer browsers. That's a good sign. 
+If you didn't know any better you'd be sure this was a standard HTML5 element available in all newer browsers. Hey, that's a good sign! 
 
 There is a small problem though. The problem is our tag name is not totally future-proof. There's two considerations here:
 
 The first is that some day HTML might get a tag with the same name. I pray every night before bed that WHATWG will give us `icon`. If WHATWG doesn't, it's still possible some other developer will use it. Either way there's risk of a collision and this brings us to the second consideration: prefixing. 
 
-Although we aren't technically creating Custom Elements at this point, it's best practice to use a prefix for custom tags. At Avalara we use `s-` as our prefix. The `s` is short for Skylab, which is the name of our design system. But it also stands for **S**eattle - that's where we are, **s**tandards - we always go for standards until we actually need to bring in a dependency, **s**emantic - tags with attributes are much more semantic than a span with a class list, **s**mall - plain HTML and CSS can take you very far without needing something like React, and **s**hared - we have over 20 web apps and three times as many developers that need a common set of custom UI components.
+Although we aren't technically creating Custom Elements at this point, you'll want to follow the spec and use a prefix for your custom tags. At Avalara we use `s-` as our prefix. The `s` is short for Skylab, which is the name of our design system. But it also stands for **S**eattle - that's where we are, **s**tandards - we always go for standards until we actually need to bring in a dependency, **s**emantic - tags with attributes are much more semantic than a span with a class list, **s**mall - plain HTML and CSS can take you very far without needing something like React, and **s**hared - we have over 20 web apps and three times as many developers that need a common set of custom UI components.
 
 Prefixing is a best-practice. It solves the risk of colliding tags, it's also a helpful distinguisher between standard and custom tags, and it sets you up very nicely for when JavaScript-enabled functionality is required. The custom tag approach scales in both directions: you get to scale down to lightweight HTML and CSS-only components like icon, or all the way up to interactive components that respond to state changes all _while maintaining the same uniform HTML interface_. The secret is sticking with standards.
 
