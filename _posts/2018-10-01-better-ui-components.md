@@ -249,7 +249,13 @@ If whatever you pick enables you to compose UIs using what you already know, i.e
     </s-tab>
     <div id="pull-req">
       ...
-    </div>  
+    </div> 
+    <s-tab for="projects">
+      <s-icon name="board"></s-icon> Projects <s-badge count="1"></s-badge>
+    </s-tab>
+    <div id="projects">
+      ...
+    </div>
   </s-tabs>
   <footer>...</footer>
 </body>
