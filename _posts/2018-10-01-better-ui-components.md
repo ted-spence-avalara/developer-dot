@@ -61,9 +61,9 @@ Pretty gross, but it's how we've been designing custom components.
 
 We don't have to do it that way. We don't have to use classes. There's something better. 
 
-### HTML your way
+### Custom HTML tags
 
-We can design and construct our custom components with the same declarative style as standard elements. Here's what I mean:
+We can design and construct our custom components with the same declarative style as standard elements using custom tags. Here's what that means:
 Before:
 ```html
 <i class="icon icon-phone"></i>
@@ -72,7 +72,7 @@ After:
 ```html
 <icon name="phone"></icon>
 ```
-The custom `<icon>` tag solution code is 100% compatible with all modern browsers and some older versions of IE. Browsers will download and parse it just like any "real" HTML because it is. Sure, it's not a standard element and browsers won't apply any default styles to these "unknown" tags, but that is not a problem at all. You can create CSS rules using the `icon` tag selector just like you would for standard tags and attributes or classes. So, this works perfectly fine:
+The custom `icon` tag solution is compatible with all modern browsers and some older versions of IE. Browsers will download and parse it just like any "real" HTML because it is. Sure, it's not a standard element and browsers won't apply any default styles to these _unknown_ tags, but that is not a problem at all. You can create CSS rules using the `icon` tag selector just like you would for standard tags and attributes or classes:
 ```css
 icon {
   font-family: 'My Icons';
@@ -82,15 +82,18 @@ icon[name="phone"]:before {
   content: "\u123";
 }
 ```
-Let's take it up a notch:
+
+That works perfectly fine. Other than specificity, it's no different than using `.icon`.
+
+Let's do another one. A Badge component would go from:
 ```html
 <span class="badge badge-success">1</span>
 ```
-becomes
+to
 ```html
 <badge count="1" type="success"></badge>
 ```
-The second one is clearly a Badge with it's own attributes, just like real elements. And with a little CSS we can add some intelligence to Badge so that when it has a zero count or no count it's hidden, i.e. `badge[count="0"], badge[count=""] { display: none }`. Cool!
+The second one is clearly a Badge with it's own attributes just like real elements. And with a little CSS we can add some intelligence to Badge so when Badge has a zero count or no count it's hidden, i.e. `badge[count="0"], badge[count=""] { display: none }`. That's cool!
 
 Here's some other examples of components built with custom tags and attributes instead of classes:
 ```html
@@ -104,15 +107,18 @@ Here's some other examples of components built with custom tags and attributes i
 </row>
 ```
 
-Are you starting to see the difference? Do you sense the benefits? Designing these UI components with tags and attributes is fun! It's also better. It is objectively better:
+Are you starting to see the difference? Do you sense the benefits? 
 
-* Enables UI engineers to implement components with high-level APIs rather than dumb elements with a list of classes
+Designing these UI components with tags and attributes is fun! And it's better. It is objectively better:
+
+* Enables UI engineers to implement components with high-level APIs instead of a boilerplate tag and list of classes
 * No more OOCSS, BEM, or similar attempts to engineer around the problems with class-based design
 * Custom tags have strong semantic meaning and are easily identifiable, e.g. `<badge>` vs. `<span class="badge">`
 * The `class` attribute is still usable and if it is used it won't dilute your code, e.g. `<icon name="phone" class="foo bar baz">`
-* You get uniformity of markup because custom components use tags and attributes just like standard HTML elements. In many cases you can ditch the need for templating, e.g. `{{> "icon" name="phone"}}` becomes `<icon name="phone"></icon>`
-* Using custom tags and attributes is officially supported! This is how custom components are _supposed_ to be done
-* Doing so sets you up for future improvements. Let’s get into that now.
+* You get clean, uniform markup because custom components use tags and attributes just like standard HTML elements. 
+* In some cases you can ditch the need for template abstraction, e.g. `{{> "icon" name="phone"}}` replaced with `<icon name="phone"></icon>`
+* Using custom tags and attributes is officially supported! It's how HTML thought we'd design custom components, but we instead went crazy for classes
+* Custom tags set you up very nicely for future improvements. How so? Let’s get into that now.
 
 ### Component evolution
 Creating and sharing custom components is a commitment. Your components will evolve and have new capabilities added to them over time just like the standard ones do. Let's look at the possible evolution of a custom Alert or "callout" component:
