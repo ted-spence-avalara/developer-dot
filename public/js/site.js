@@ -100,6 +100,7 @@ function cSharpSampleData() {
         // build sample data for c#
     const sampleData = `// Create AvaTaxClient
 var client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox).WithSecurity("MyUsername", "MyPassword");
+
 // Setup transaction model
 var createModel = new CreateTransactionModel()
 {
@@ -116,6 +117,7 @@ var createModel = new CreateTransactionModel()
         ${address}
     }
 }
+
 // Create transaction
 var transaction = client.CreateTransaction(null, createModel);`;
 
@@ -158,6 +160,7 @@ function phpSampleData() {
     const sampleData = `// Create a new client
 $client = new Avalara\AvaTaxClient('phpTestApp', '1.0', 'localhost', 'sandbox');
 $client->withSecurity('myUsername', 'myPassword’);
+
 // Create a simple transaction using the fluent transaction builder
 $tb = new Avalara\\TransactionBuilder($client, “DEMOPAGE", Avalara\\DocumentType::C_SALESORDER, 'ABC');
 $t = $tb->${address}
@@ -181,21 +184,8 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
     return sampleData;
 }
 
-//TODO: combine the two makeAddressObj funcs
-function makeAddressObj(){
-    const address = $('input[type=radio][name=address]:checked').val().split(',');
-    const addressObj = {
-        "line1": address[0],
-        "city": address[1],
-        "region": address[2],
-        "country": address[3],
-        "postalCode": address[4],
-    }
-    return addressObj;
-}
-
-function makeSrcAddressObj(){
-    const address = $('input[type=radio][name=srcAddress]:checked').val().split(',');
+function makeAddressObj(addressName){
+    const address = $(`input[type=radio][name=${addressName}]:checked`).val().split(',');
     const addressObj = {
         "line1": address[0],
         "city": address[1],
@@ -209,11 +199,11 @@ function makeSrcAddressObj(){
 function jsonSampleData() {
     // check if there is a shipTo address selected
     const shipToAddress = setShipToOrSingleLocation();
-    const address = makeAddressObj();
+    const address = makeAddressObj('address');
     let sampleData;
 
     if(shipToAddress) {
-        const srcAddress = makeSrcAddressObj();
+        const srcAddress = makeAddressObj('srcAddress');
 
         sampleData = {
             "lines": [],
