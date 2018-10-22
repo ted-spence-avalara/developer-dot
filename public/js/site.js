@@ -24,57 +24,50 @@ function getCompareDate() {
   return [year, month, day].join('');
 }
 
-// fill demo pg request console with correct sample based on user's input
-function fillWithSampleData() {
-    const reqType = $('#req-type').val();
-    const noAddress = $('input[type=radio][name=srcAddress]:checked').length = 0;
+/************************************************************************
+**   SAMPLE DATA Functions: Build the sample data in the correct language
+************************************************************************/
 
-    let sampleData;
-    if (noAddress) {
-        return;
-    } else if (reqType === "CURL") {
-        const json = JSON.stringify(buildJSON(), null, 2)
-        sampleData = `-X POST
--H 'Accept: application/json'
--H 'Authorization: Basic aHR0cHdhdGNoOmY='
--H 'Content-Type: application/json'
---data '${json}'
-https://sandbox-rest.avatax.com/api/v2/transactions/create
-        `;
-    } else if (reqType === 'C#') {
-        let lines = '';
-        let address;
-        const shipToAddress = setShipToOrSingleLocation();
-        
-        // gather all product info and make into SDK friendly form
-        let lineNum = 1;
-        const allProducts = $('input[type=checkbox][name=product]:checked');
-        allProducts.each(function () {
-            // Find amount
-            const taxCode = $(this).val();
-            //const description = $(this).attr('description');
-            const amount = $('#' + $(this).attr('id') + '-amount').val();
-            lines += `new LineItemModel() 
+// helper function to check if shipTo address is selected
+function setShipToOrSingleLocation() {
+    const checked = $('input[type=radio][name=srcAddress]:checked').length > 0;
+    return checked;
+}
+
+function cSharpSampleData() {
+    let lines = '';
+    let address;
+    const shipToAddress = setShipToOrSingleLocation();
+    
+    // gather all product info and make into SDK friendly form
+    let lineNum = 1;
+    const allProducts = $('input[type=checkbox][name=product]:checked');
+    allProducts.each(function () {
+        // Find amount
+        const taxCode = $(this).val();
+        //const description = $(this).attr('description');
+        const amount = $('#' + $(this).attr('id') + '-amount').val();
+        lines += `new LineItemModel() 
         {
             number = "${lineNum}",
             quantity = 1,
             amount = ${amount},
             taxCode = "${taxCode}"
         }`;
-            
-            if (lineNum != allProducts.length) {
-                lines += ',\n        ';
-            }
-            lineNum++;
-        });
+        
+        if (lineNum != allProducts.length) {
+            lines += ',\n        ';
+        }
+        lineNum++;
+    });
 
-        // check if shipFrom/To addresses
-        if(shipToAddress) {
-            const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
-            const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
-            
-            // build C# req for multiple addresses
-            address = `shipFrom = new AddressLocationInfo()
+    // check if shipFrom/To addresses
+    if(shipToAddress) {
+        const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
+        const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
+        
+        // build C# req for multiple addresses
+        address = `shipFrom = new AddressLocationInfo()
         {
             line1 = "${shipFrom[0]}",
             city = "${shipFrom[1]}",
@@ -90,24 +83,23 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
             country = "${shipTo[4]}",
             postalCode = "${shipTo[3]}"
         }`;
-        } else {
-            const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
+    } else {
+        const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
 
-            // build C# req for single location
-            address = `singleLocation = new AddressLocationInfo()
-            {
-                line1 = "${singleLocation[0]}",
-                city = "${singleLocation[1]}",
-                region = "${singleLocation[2]}",
-                country = "${singleLocation[4]}",
-                postalCode = "${singleLocation[3]}"
-            }`;
-        }
+        // build C# req for single location
+        address = `singleLocation = new AddressLocationInfo()
+        {
+            line1 = "${singleLocation[0]}",
+            city = "${singleLocation[1]}",
+            region = "${singleLocation[2]}",
+            country = "${singleLocation[4]}",
+            postalCode = "${singleLocation[3]}"
+        }`;
+    }
 
         // build sample data for c#
-        sampleData = `// Create AvaTaxClient
+    const sampleData = `// Create AvaTaxClient
 var client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTaxEnvironment.Sandbox).WithSecurity("MyUsername", "MyPassword");
-
 // Setup transaction model
 var createModel = new CreateTransactionModel()
 {
@@ -124,61 +116,72 @@ var createModel = new CreateTransactionModel()
         ${address}
     }
 }
-
 // Create transaction
 var transaction = client.CreateTransaction(null, createModel);`;
-        
-    } else if (reqType === 'PHP') {
-        let lines = '';
-        let address;
-        const shipToAddress = setShipToOrSingleLocation();
-        
-        // gather all product info and make into PHP SDK friendly form
-        let lineNum = 0;
-        $('input[type=checkbox][name=product]:checked').each(function () {
-            const taxCode = $(this).val();
-            const amount = $('#' + $(this).attr('id') + '-amount').val();
-            if (lineNum === 0) {
-                lines += `->withLine(${amount}, ${lineNum++}, null, ${taxCode})`; 
-            } else {
-                lines += `\n    ->withLine(${amount}, ${lineNum++}, null, ${taxCode})`;
-            }
-        });
 
-        // check if shipFrom/To addresses
-        if(shipToAddress) {
-            const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
-            const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
-            
-            // build PHP req for multiple addresses
-            address = `->withAddress('ShipFrom', ${shipTo[0]}, null, null, ${shipTo[1]}, ${shipTo[2]}, ${shipTo[4]}, ${shipTo[3]})
-    ->withAddress('ShipTo', ${shipFrom[0]}, null, null, ${shipFrom[1]}, ${shipFrom[2]}, ${shipFrom[4]}, ${shipFrom[3]})`;
+    return sampleData;
+}
+
+function phpSampleData() {
+    let lines = '';
+    let address;
+    const shipToAddress = setShipToOrSingleLocation();
+    
+    // gather all product info and make into PHP SDK friendly form
+    let lineNum = 0;
+    $('input[type=checkbox][name=product]:checked').each(function () {
+        const taxCode = $(this).val();
+        const amount = $('#' + $(this).attr('id') + '-amount').val();
+        if (lineNum === 0) {
+            lines += `->withLine(${amount}, ${lineNum++}, null, ${taxCode})`; 
         } else {
-            const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
-
-            // build PHP req for single location
-            address = `withAddress('SingleLocation', ${singleLocation[0]}, null, null, ${singleLocation[1]}, ${singleLocation[2]}, ${singleLocation[4]}, ${singleLocation[3]})`;
+            lines += `\n    ->withLine(${amount}, ${lineNum++}, null, ${taxCode})`;
         }
+    });
+
+    // check if shipFrom/To addresses
+    if(shipToAddress) {
+        const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
+        const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
+        
+        // build PHP req for multiple addresses
+        address = `->withAddress('ShipFrom', ${shipTo[0]}, null, null, ${shipTo[1]}, ${shipTo[2]}, ${shipTo[4]}, ${shipTo[3]})
+->withAddress('ShipTo', ${shipFrom[0]}, null, null, ${shipFrom[1]}, ${shipFrom[2]}, ${shipFrom[4]}, ${shipFrom[3]})`;
+    } else {
+        const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
+
+        // build PHP req for single location
+        address = `withAddress('SingleLocation', ${singleLocation[0]}, null, null, ${singleLocation[1]}, ${singleLocation[2]}, ${singleLocation[4]}, ${singleLocation[3]})`;
+    }
 
         // build sample data for PHP
-        sampleData = `// Create a new client
+    const sampleData = `// Create a new client
 $client = new Avalara\AvaTaxClient('phpTestApp', '1.0', 'localhost', 'sandbox');
 $client->withSecurity('myUsername', 'myPassword’);
-
 // Create a simple transaction using the fluent transaction builder
 $tb = new Avalara\\TransactionBuilder($client, “DEMOPAGE", Avalara\\DocumentType::C_SALESORDER, 'ABC');
 $t = $tb->${address}
     ${lines}
     ->create();
     `;
-    } else {
-        const json = JSON.stringify(buildJSON(), null, 2);
-        sampleData = json;
-    }
 
-    $('#demo-console-input').empty().text(sampleData);
-};
+    return sampleData
+}
 
+function curlSampleData() {
+    const json = JSON.stringify(jsonSampleData(), null, 2)
+    const sampleData = `-X POST
+-H 'Accept: application/json'
+-H 'Authorization: Basic aHR0cHdhdGNoOmY='
+-H 'Content-Type: application/json'
+--data '${json}'
+https://sandbox-rest.avatax.com/api/v2/transactions/create
+        `;
+    
+    return sampleData;
+}
+
+//TODO: combine the two makeAddressObj funcs
 function makeAddressObj(){
     const address = $('input[type=radio][name=address]:checked').val().split(',');
     const addressObj = {
@@ -203,15 +206,10 @@ function makeSrcAddressObj(){
     return addressObj;
 }
 
-function setShipToOrSingleLocation() {
-    var checked = $('input[type=radio][name=srcAddress]:checked').length > 0;
-
-    return checked;    
-}
-
-function buildJSON() {
-    const address = makeAddressObj();
+function jsonSampleData() {
+    // check if there is a shipTo address selected
     const shipToAddress = setShipToOrSingleLocation();
+    const address = makeAddressObj();
     let sampleData;
 
     if(shipToAddress) {
@@ -257,21 +255,53 @@ function buildJSON() {
     return sampleData;
 }
 
-const proxy = {
-    "route": "https://xp0wfn7roi.execute-api.us-west-2.amazonaws.com/production/proxy",
-    "key": {
-        "name": "api-key",
-        "location": "v2-devdot-keys/devdot-proxy-key"
-    }
-}
+//
+// MAIN Sample Data function: populates request console
+//
+function fillWithSampleData() {
+    const noAddress = $('input[type=radio][name=srcAddress]:checked').length = 0;
+    const reqType = noAddress ? 'noAddress' : $('#req-type').val();
 
-function copyToClipboard(element) {
-    var $temp = $("<input>");
-    $("body").append($temp);
-    $temp.val($(element).text()).select();
-    document.execCommand("copy");
-    $temp.remove();
-  }
+    let sampleData;
+
+    switch (reqType) {
+        case 'noAddress':
+            sampleData = '{}';
+            break;
+        case 'CURL':
+            sampleData = curlSampleData();
+            break;
+        case 'C#':
+            sampleData = cSharpSampleData();
+            break;
+        case 'PHP':
+            sampleData = phpSampleData(); 
+            break;
+        case 'JSON':
+            sampleData = JSON.stringify(jsonSampleData(), null, 2);
+            break;
+        default:
+            sampleData = '{}';
+            break;
+    }
+
+    $('#demo-console-input').empty().text(sampleData);
+};
+/***************** END SAMPLE DATA Functions ****************************/
+
+
+/************************************************************************
+**   INFOBOX Functions: Build infobox on map
+************************************************************************/
+
+// ...no other way to keep track of state...
+let showInfobox = true;
+
+function hideInfobox() {
+    $(".demo-infobox").css('display', 'none');
+    $(".demo-infobox").addClass('hidden');
+    showInfobox = false
+}
 
 function buildInfoboxHTML(body) {
     const summaryArray = body.summary;
@@ -323,6 +353,19 @@ function buildInfoboxHTML(body) {
     `;
     return infoboxHTML;
 }
+/***************** END INFOBOX Functions ********************************/
+
+
+/************************************************************************
+**  API REQUEST Functions: Send CreateTransaction request through proxy
+************************************************************************/
+const proxy = {
+    "route": "https://xp0wfn7roi.execute-api.us-west-2.amazonaws.com/production/proxy",
+    "key": {
+        "name": "api-key",
+        "location": "v2-devdot-keys/devdot-proxy-key"
+    }
+}
 
 function ApiRequest() {
     // clear the console output/infobox and display loading-pulse
@@ -333,8 +376,7 @@ function ApiRequest() {
         $("#demo-infobox-header").html('Calculating...');
     }
     
-
-    const data = buildJSON();
+    const data = jsonSampleData();
     const [bucket, key] = proxy.key.location.split('/');
 
     const keyBucket = new AWS.S3({params: {Bucket: bucket, Key: key}});
@@ -377,14 +419,18 @@ function ApiRequest() {
         });
     })
 }
+/***************** END API REQUEST Functions ****************************/
 
-// ...no other way to keep track of state...
-let showInfobox = true;
 
-function hideInfobox() {
-    $(".demo-infobox").css('display', 'none');
-    $(".demo-infobox").addClass('hidden');
-    showInfobox = false
+/************************************************************************
+**   GENERAL Demo Page Functions
+************************************************************************/
+function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
 }
 
 function accordionTrigger(currentElementId, nextElementId) {
@@ -408,6 +454,8 @@ function accordionTrigger(currentElementId, nextElementId) {
     })
 
 }
+/***************** END GENERAL Functions *******************************/
+
 
 $(document).ready(function() {
     fixApiRefNav();
