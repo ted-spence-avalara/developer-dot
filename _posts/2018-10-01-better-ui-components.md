@@ -6,8 +6,8 @@ How did we miss it? It was right there this whole time and nobody, not for the 1
 
 What I’m talking about is a user interface technology that is so good it already has 100% developer adoption. It is also totally compatible with _all_ browsers and existing tools, it has no dependencies, is very well-documented and is very easy to learn. It’s so good it’s an open web standard. The technology of course is none other than HTML and we’ve ignored its power to enable us to design, construct, and implement better UI components. Let me explain.
 
-### HTML is the way
-As a reminder, HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements to provide semantic support for content like `<video>` and `<article>`. Over the years it's also added improved capabilities for existing elements like the addition of the `autofocus` attribute, which tells the browser where to focus on page load. These additions were built with the HTML constructs that already existed and no doubt will continue to exist, those are: *tags*, *attributes*, and *nesting*. Class is an attribute whose value is arbitray and 100% user-defined, so that's why we never have or ever will see "new" HTML classes in the spec. Tags and attributes, yes, but no classes. Here are some examples of standard HTML elements and their semantic, declarative API:
+### HTML all the way
+As a reminder, HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements to provide semantic support for content, like `<video>` and `<article>`. Over the years it also added new capabilities to existing elements like the addition of the `autofocus` attribute, which tells the browser where to focus on page load. These additions are of course made accessible through the usual HTML constructs: *tags*, *attributes*, and *nesting*. Here are some examples of standard HTML elements and their semantic, declarative API:
 
 ```html
 <h1>
