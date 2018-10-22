@@ -18,7 +18,7 @@ As a reminder, HTML’s job is to give content structure and meaning. This is ca
 
 <video src="example.com/vids/cats.mp4" poster="example.com/posters/cats.jpg" autoplay loop controls>
 ```
-HTML gives us a lot to work with. Probably more than we give it credit for! But it definitely doesn't give us everything we need and it shouldn't. Let's use icons as a quick example.
+HTML gives us a lot to work with - probably more than we give it credit for - but it definitely doesn't give us everything we need. Let's use icons as a quick example.
 
 Because HTML doesn't give us an `icon` tag to markup a site's icons we have to design our own solution. Here's three similar approaches you've likely seen before:
 
@@ -34,33 +34,34 @@ Pretty simple. Those solutions use classes to both define the element and its at
 #### 1) Repetitive naming:
 `fa`, `icon`, and `oi` are repeated twice.
 
-#### 2) Loss of clarity when the following inevitably happens (or the extra effort required to prevent it):
+#### 2) Loss of clarity when the following inevitably happens (or the constant effort required to prevent it):
 ```html
 <i class="icon icon-phone"></i>  original code
 <i class="icon icon-phone foo"></i>  six weeks later
 <i class="bar baz icon icon-phone foo"></i>  a year later
 ```
-What is that last one? Is it a `bar` or `baz` or maybe an `icon` with a `foo`? This is messy.
+What exactly is that last one supposed to be? Messy.
 #### 3) The tag becomes unavoidable boilerplate with no meaning:
 ```html
 <i class="icon icon-phone"></i>
 <div class="icon icon-phone"></div>
 <span class="icon icon-phone"></span>
 ```
-The code looks more like spans dressed up as icons rather than looking like true icons.
+So `<i|div|span class=""></i|div|span>` is boilerplate.
 #### 4) Next to standard elements the class-based design looks out of place; it lacks uniformity:
 ```html
 <i class="icon icon-phone"></i>
 <input type="email" autofocus>
 ```
-What if standard elements were based on that same design:
+What if standard elements were based on that same design? We'd have:
 ```html
 <i class="input input-email input-autofocus">
 ```
-Gross, but that's how we've been designing custom components.
+Pretty gross, but it's how we've been designing custom components.
+
+We don't have to do it that way. We don't have to use classes. There's something better. 
 
 ### HTML your way
-We don't have to do it that way. We don't have to use classes. There's something better. 
 
 We can design and construct our custom components with the same declarative style as standard elements. Here's what I mean:
 Before:
