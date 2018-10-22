@@ -67,6 +67,7 @@ Pretty gross, but that's what you get with a class-based design. Gets even worse
 [That's real btw](https://getmdl.io/components/index.html#dialog-with-full-width-actions)
 
 
+
 We don't have to do it this way. We don't have to use classes. There's something better. 
 
 ### Custom HTML tags
