@@ -140,6 +140,10 @@ _Original design_
 </alert>
 ```
 ```css
+alert { 
+  display: flex; 
+}
+
 alert[type="success"] {
   background-color: green;
 }
