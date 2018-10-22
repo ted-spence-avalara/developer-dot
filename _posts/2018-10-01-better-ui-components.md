@@ -234,7 +234,7 @@ We can minimize the contract and be better positioned for the long-term if we pi
 * [Riot](https://riot.js.org), pretty close and has the best DX out there imo [try it](https://riot.js.org/play/), there's even a w3c [proposal that looks similar](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Declarative-Custom-Elements-Strawman.md)
 
 If whatever you pick enables you to compose UIs using what you already know, i.e. HTML, then I say go for it. Being able to write and maintain code like this is better than anything that currently exists or may exist in the future:
-```
+```html
 <body>
   <nav>...</nav>
   <x-tabs>
