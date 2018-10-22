@@ -238,9 +238,18 @@ If whatever you pick enables you to compose UIs using what you already know, i.e
 <body>
   <nav>...</nav>
   <x-tabs>
-    <x-tab label="Code">
-      <x-editor mode="md"></x-editor>
+    <x-tab for="code">
+      <x-icon name="code></x-icon> Code
     </x-tab>
-    <x-tab label="Pull requests">...</x-tab>
+    <div id="code">
+      <x-editor mode="md"></x-editor>
+    </div>
+    <x-tab for="pull-req">
+      <x-icon name="merge></x-icon> Pull requests <x-badge count="0"></x-badge>
+    </x-tab>
+    <div id="pull-req">
+      ...
+    </div>  
   </x-tabs>
+  <footer>...</footer>
 </body>
