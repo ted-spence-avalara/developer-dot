@@ -72,7 +72,7 @@ We don't have to do it this way. We don't have to use classes. There's something
 
 ### Custom HTML tags
 
-We can design custom components with the same declarative style as standard elements using custom tags and attributes. Here's what that means:
+We can design our custom components with the same declarative style as standard elements using custom tags and attributes. Here's what that means:
 
 _Before_
 ```html
@@ -119,15 +119,15 @@ Here's some other examples of components built with custom tags and attributes i
 
 Are you starting to see the difference? Do you sense the benefits? 
 
-Designing custom UI components with tags and attributes instead of classes is fun! And it's better. It is objectively better:
+Designing custom UI components with tags and attributes instead of classes is fun and it's better. It is objectively better:
 
-* Enables UI engineers to design components with a high-level API instead of a boilerplate tag and list of classes
-* No more OOCSS, BEM, or similar attempts to engineer around the problems with class-based design
+* Enables UI engineers to design components with a meaningful API instead of a boilerplate tag and list of classes
 * Custom tags have strong semantic meaning and are easily identifiable: `<badge>` vs. `<span class="badge">`
+* No more BEM or similar methodologies for engineering around the problems with class-based design
 * The `class` attribute is still usable and if it is used it won't dilute your code, e.g. `<icon name="phone" class="foo bar baz">`
 * In so many cases you can ditch the need for abstraction, e.g. `{{> "icon" name="phone"}}` or `<OverEngineeredIcon name="phone"/>` is replaced with `<icon name="phone"></icon>`
-* The result is clean, uniform markup since custom components use real HTML just like the rest of your markup 
-* Using custom tags and attributes is officially supported! It's how HTML thought we'd design custom components, but we instead went crazy for classes
+* The result is standards-based clean, uniform markup since custom components use real HTML just like the rest of your markup 
+* Using custom tags and attributes is officially supported. It's how HTML thought we'd design custom components, but we instead went crazy for classes!
 * Custom tags set you up perfectly for future improvements. How so? Let’s get into that now.
 
 ### Component evolution
