@@ -18,9 +18,9 @@ As a reminder, HTML’s job is to give content structure and meaning. This is ca
 
 <video src="example.com/vids/cats.mp4" poster="example.com/posters/cats.jpg" autoplay loop controls>
 ```
-HTML gives us a lot to work with. More than we give it credit for and for the things it doesn't, it gives us control to do it ourselves. And that’s where we went wrong. Let's use icons as a quick example.
+HTML gives us a lot to work with. Probably more than we give it credit for! But it definitely doesn't give us everything we need and it shouldn't. Let's use icons as a quick example.
 
-Because HTML doesn't give us an `icon` tag to markup our site's icons, we have to design and construct our own solution. Many similar approaches exist. Here's three (you'll likely recognize them):
+Because HTML doesn't give us an `icon` tag to markup a site's icons we have to design our own solution. Here's three similar approaches you've likely seen before:
 
 ```html
 <i class="fa fa-phone"></i>
@@ -29,7 +29,7 @@ Because HTML doesn't give us an `icon` tag to markup our site's icons, we have t
 
 <span class="oi oi-phone"></span>
 ```
-Pretty simple. They use classes to define themselves and their attributes and while there is nothing wrong with it, there are flaws:
+Pretty simple. Those solutions use classes to both define the element and its attributes, and while there is nothing wrong with that, there are drawbacks:
 
 #### 1) Repetitive naming:
 `fa`, `icon`, and `oi` are repeated twice.
@@ -41,34 +41,37 @@ Pretty simple. They use classes to define themselves and their attributes and wh
 <i class="bar baz icon icon-phone foo"></i>  a year later
 ```
 What is that last one? Is it a `bar` or `baz` or maybe an `icon` with a `foo`? This is messy.
-#### 3) Tags become unavoidable boilerplate with no meaning:
+#### 3) The tag becomes unavoidable boilerplate with no meaning:
 ```html
 <i class="icon icon-phone"></i>
 <div class="icon icon-phone"></div>
 <span class="icon icon-phone"></span>
 ```
 The code looks more like spans dressed up as icons rather than looking like true icons.
-#### 4) Next to standard elements the class-based stuff looks out of place; it lacks uniformity:
+#### 4) Next to standard elements the class-based design looks out of place; it lacks uniformity:
 ```html
 <i class="icon icon-phone"></i>
 <input type="email" autofocus>
 ```
-What if standard elements were based on that same approach:
+What if standard elements were based on that same design:
 ```html
 <i class="input input-email input-autofocus">
 ```
-Gross! You might laugh at that, but it’s how we've always done custom stuff. 
+Gross, but that's how we've been designing custom components.
 
 ### HTML your way
-We don't have to use classes when building UI. There's a better way. We can design and construct our custom components with a similar semantic and declarative API as the standard elements. Here's what I mean:
+We don't have to do it that way. We don't have to use classes. There's something better. 
+
+We can design and construct our custom components with the same declarative style as standard elements. Here's what I mean:
+Before:
 ```html
 <i class="icon icon-phone"></i>
 ```
-becomes
+After:
 ```html
 <icon name="phone"></icon>
 ```
-That code is 100% compatible with all browsers. It can be authored, downloaded, and parsed just like any "real" HTML because it is. Sure, it's not a standard element and browsers won't apply any default styles, but this is not a problem at all. You can write CSS that applies to `icon` just like you do for any of the standard tags and attributes:
+The custom `<icon>` tag solution code is 100% compatible with all modern browsers and some older versions of IE. Browsers will download and parse it just like any "real" HTML because it is. Sure, it's not a standard element and browsers won't apply any default styles to these "unknown" tags, but that is not a problem at all. You can create CSS rules using the `icon` tag selector just like you would for standard tags and attributes or classes. So, this works perfectly fine:
 ```css
 icon {
   font-family: 'My Icons';
