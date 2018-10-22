@@ -139,13 +139,18 @@ _Original design_
   <p>You should try this</p>
 </alert>
 ```
+```css
+alert[type="success"] {
+  background-color: green;
+}
+```
 That would look something like:
 
 image here...
 
 Pretty basic component with a nice little custom `alert` tag, a familiar `type` attribute, and naturally supports nesting HTML. Please note that there are no dependencies here. There's nothing to download, no tools and nothing to build. No magic, no hacks, nothing proprietary, no new idioms or special syntax, nothing. And when it comes to building software, _nothing_ is better than something.
 
-Our Alert doesn't offer much though, so let’s see if we can support an icon:
+Our Alert is pretty plain right now, so let’s see if we can give it an icon:
 
 _With an icon_
 ```html
@@ -154,7 +159,7 @@ _With an icon_
   <p>You should try this</p>
 </alert>
 ```
-That works and adds some visual value, but it's not the right way to design a component. Let's get an icon without leaving it up to the implementer:
+That works, but it's not the right way to design a component. Let's get an icon without leaving it up to the implementer:
 
 _With the icon inferred_
 ```html
