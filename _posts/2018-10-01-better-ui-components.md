@@ -57,22 +57,24 @@ What if standard elements were based on that same design? We'd have:
 ```html
 <i class="input input-email input-autofocus">
 ```
-Pretty gross, but it's how we've been designing custom components.
+Pretty gross, but that's how we've been designing custom components.
 
-We don't have to do it that way. We don't have to use classes. There's something better. 
+
+We don't have to do it this way. We don't have to use classes. There's something better. 
 
 ### Custom HTML tags
 
-We can design and construct our custom components with the same declarative style as standard elements using custom tags. Here's what that means:
-Before:
+We can design custom components with the same declarative style as standard elements using custom tags and attributes. Here's what that means:
+
+_Before_
 ```html
 <i class="icon icon-phone"></i>
 ```
-After:
+_After_
 ```html
 <icon name="phone"></icon>
 ```
-The custom `icon` tag solution is compatible with all modern browsers and some older versions of IE. Browsers will download and parse it just like any "real" HTML because it is. Sure, it's not a standard element and browsers won't apply any default styles to these _unknown_ tags, but that is not a problem at all. You can create CSS rules using the `icon` tag selector just like you would for standard tags and attributes or classes:
+Custom tags are compatible with all modern browsers and later versions of IE. Browsers will download and parse that code just like any "real" HTML because it is. Sure, it's not a standard element and browsers won't apply any default styles to these _unknown_ tags, but that is not a problem at all. You can create CSS rules using custom tags, i.e. `icon`, just like you would for standard tags and attributes or classes:
 ```css
 icon {
   font-family: 'My Icons';
@@ -83,9 +85,9 @@ icon[name="phone"]:before {
 }
 ```
 
-That works perfectly fine. Other than specificity, it's no different than using `.icon`.
+That works perfectly fine. Other than specificity, it's no different than using `.icon` and `.icon-phone:before`.
 
-Let's do another one. A Badge component would go from:
+Let's do another one. A Badge component's design would go from:
 ```html
 <span class="badge badge-success">1</span>
 ```
@@ -93,7 +95,7 @@ to
 ```html
 <badge count="1" type="success"></badge>
 ```
-The second one is clearly a Badge with it's own attributes just like real elements. And with a little CSS we can add some intelligence to Badge so when Badge has a zero count or no count it's hidden, i.e. `badge[count="0"], badge[count=""] { display: none }`. That's cool!
+The second one is clearly a Badge element with it's own attributes. Just like real elements! And with a little CSS we can add some intelligence to Badge so when it has a zero count or no count it hides, i.e. `badge[count="0"], badge[count=""] { display: none }`. That's cool!
 
 Here's some other examples of components built with custom tags and attributes instead of classes:
 ```html
@@ -109,21 +111,21 @@ Here's some other examples of components built with custom tags and attributes i
 
 Are you starting to see the difference? Do you sense the benefits? 
 
-Designing these UI components with tags and attributes is fun! And it's better. It is objectively better:
+Designing custom UI components with tags and attributes instead of classes is fun! And it's better. It is objectively better:
 
-* Enables UI engineers to implement components with high-level APIs instead of a boilerplate tag and list of classes
+* Enables UI engineers to design components with a high-level API instead of a boilerplate tag and list of classes
 * No more OOCSS, BEM, or similar attempts to engineer around the problems with class-based design
-* Custom tags have strong semantic meaning and are easily identifiable, e.g. `<badge>` vs. `<span class="badge">`
+* Custom tags have strong semantic meaning and are easily identifiable: `<badge>` vs. `<span class="badge">`
 * The `class` attribute is still usable and if it is used it won't dilute your code, e.g. `<icon name="phone" class="foo bar baz">`
-* You get clean, uniform markup because custom components use tags and attributes just like standard HTML elements. 
-* In some cases you can ditch the need for template abstraction, e.g. `{{> "icon" name="phone"}}` replaced with `<icon name="phone"></icon>`
+* In so many cases you can ditch the need for abstraction, e.g. `{{> "icon" name="phone"}}` or `<OverEngineeredIcon name="phone"/>` is replaced with `<icon name="phone"></icon>`
+* The result is clean, uniform markup since custom components use real HTML just like the rest of your markup 
 * Using custom tags and attributes is officially supported! It's how HTML thought we'd design custom components, but we instead went crazy for classes
-* Custom tags set you up very nicely for future improvements. How so? Let’s get into that now.
+* Custom tags set you up perfectly for future improvements. How so? Let’s get into that now.
 
 ### Component evolution
-Creating and sharing custom components is a commitment. Your components will evolve and have new capabilities added to them over time just like the standard ones do. Let's look at the possible evolution of a custom Alert or "callout" component:
+Creating and sharing custom components is a commitment. Your components will evolve and have new capabilities added to them over time. Let's look at the possible evolution of a custom Alert (aka Callout) component:
 
-Original design:
+_Original design_
 ```html
 <alert type="success">
   <p>You should try this</p>
@@ -131,9 +133,9 @@ Original design:
 ```
 That would look something like:
 
-image...
+image here...
 
-Pretty basic component with a nice little API that uses a custom tag, familiar `type` attribute, and naturally supports nesting HTML inside. There are no dependencies here. No magic, no hacks, nothing proprietary, no new idioms or special syntax, it's just HTML and CSS that every dev knows and every browser supports. It's really as if this was a standard element.
+Pretty basic component with a nice little API that uses a custom `alert` tag, a familiar `type` attribute, and naturally supports nesting HTML inside. There are no dependencies here. Nothing to download, nothing to build. No magic, no hacks, nothing proprietary, no new idioms or special syntax, it's just HTML and CSS that every dev knows and every browser supports. It's really as if this was a standard element.
 
 It doesn't offer much though, so let’s see if we can support an icon:
 ```html
@@ -151,10 +153,15 @@ That works and adds some visual value, but it's not the right way to design a co
 ```css
 alert[type="success"]:before {
   font-family: 'My Icons';
-  content: "\u555";
+  content: "\u555"; /* gets us a ✓ icon */
 }
 ```
-It's starting to really look like something. It's pretty common for alerts to disappear automatically, so let's add support for that. If this were a standard element I would kind of expect it would have an `autodismiss` attribute for this, so let's give it one:
+
+image here...
+
+It's starting to really look like something. It's pretty common for Alerts to disappear automatically, so let's add support for that. 
+
+If there really was an HTML `alert` element, I could imagine it would have an `autodismiss` attribute for this feature, so let's follow our imagination and give it one:
 ```html
 <alert type="success" autodismiss>
   <p>You should try this</p>
@@ -176,17 +183,19 @@ Not bad! We have a simple Alert component with a nice little API:
 * `autodismiss` attribute - _optional_ - If present, the Alert will disappear after four seconds
 * You can nest content inside it, including other custom HTML
 
+If you didn't know any better you'd be sure this was a standard HTML5 element available in all newer browsers. That's a good sign. 
+
 There is a small problem though. The problem is our tag name is not totally future-proof. There's two considerations here:
 
-The first is that some day HTML might get a tag with the same name. I pray every night before bed that WHATWG will give us `icon`. If WHATWG doesn't, it's still possible some other developer will. Either way there's risk of a collision and this brings us to the second consideration: prefixing. 
+The first is that some day HTML might get a tag with the same name. I pray every night before bed that WHATWG will give us `icon`. If WHATWG doesn't, it's still possible some other developer will use it. Either way there's risk of a collision and this brings us to the second consideration: prefixing. 
 
-Although we aren't technically creating Custom Elements at this point, it's best practice to always use a prefix for custom tags. At Avalara we use `s-` as our prefix. The `s` is short for *S*kylab, which is the name of our design system. But it also stands for *S*eattle - that's where we are, *s*tandards - we always go for standards until we actually need to bring in a dependency, *s*emantic - tags with attributes are much more semantic than a span with a class list, *s*mall - HTML and a little CSS can take you very far without the need for something like React, and *s*hared - we have over 20 web apps and three times as many developers that need a common set of custom UI components.
+Although we aren't technically creating Custom Elements at this point, it's best practice to use a prefix for custom tags. At Avalara we use `s-` as our prefix. The `s` is short for Skylab, which is the name of our design system. But it also stands for **S**eattle - that's where we are, **s**tandards - we always go for standards until we actually need to bring in a dependency, **s**emantic - tags with attributes are much more semantic than a span with a class list, **s**mall - plain HTML and CSS can take you very far without needing something like React, and **s**hared - we have over 20 web apps and three times as many developers that need a common set of custom UI components.
 
-Prefixing is a best-practice. It solves the risk of colliding tags, it's also a helpful distinguisher between standard and custom tags, and it sets you up very nicely for when JavaScript-enabled functionality is required. This custom tag approach, unlike many JavaScript libraries, scales in both directions: you can scale down to simple HTML and CSS-only components like icon, or all the way up to interactive components that respond to state changes all _while maintaining the same uniform HTML interface_.
+Prefixing is a best-practice. It solves the risk of colliding tags, it's also a helpful distinguisher between standard and custom tags, and it sets you up very nicely for when JavaScript-enabled functionality is required. The custom tag approach scales in both directions: you get to scale down to lightweight HTML and CSS-only components like icon, or all the way up to interactive components that respond to state changes all _while maintaining the same uniform HTML interface_. The secret is sticking with standards.
 
 Let's see how our Alert can go from basic custom tag with styles to interactive component without breaking changes or a shifting paradigm.
 
-In a future release of Alert we're adding the ability to customize the `autodismiss` duration. You can take the default four seconds by simply adding the attribute, or you can shorten or extend that duration by setting it's value to a number:
+Let's say in a future release of Alert we're adding the ability to customize the `autodismiss` duration. You can take the default four seconds by simply adding the attribute, or you can shorten or extend that duration by setting its value to a number:
 ```html
 <alert type="success" autodismiss="10">
   <p>You should try this</p>
@@ -198,7 +207,7 @@ But as we've learned, it's best-practice to prefix, so that really should be:
   <p>You should try this</p>
 </s-alert>
 ```
-If you're the maintainer of a shared library, pick a short prefix that's meaningful to you. Twitter's Bootstrap, for example, would go from:
+> Side note: If you're the maintainer of a shared library, pick a short prefix that's meaningful to you. Twitter's Bootstrap, for example, would go from:
 ```html
 <div class="alert alert-success">
 ```
