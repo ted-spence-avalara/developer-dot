@@ -2,12 +2,10 @@
 # Better UI Components
 ## How to avoid over-engineering user interfaces through the use of standards
 
-How did we miss it? It was right there this whole time and nobody, not for the 10 plus years that it’s been possible, seemed to use it. Somebody somewhere must have used it. Perhaps some people did, but didn’t bother to write about it. I hope that’s not true because the web community would have been better off with it. In today’s climate of hype I think it needs to be shared and embraced before we go too far down this over-engineered path we seem to be on. Well then, what is "it"?
-
-What I’m talking about is a user interface technology that is so good it already has 100% developer adoption. It is also totally compatible with _all_ browsers and existing tools, it has no dependencies, is very well-documented and is very easy to learn. It’s so good it’s an open web standard. The technology of course is none other than HTML and we’ve ignored its power to enable us to design, construct, and implement better UI components. Let me explain.
+There's a user interface technology that is so good it has _100%_ developer adoption. It is also totally compatible with _all_ browsers and developer tools, has no dependencies, is very well-documented, and easy to learn.  The technology of course is none other than HTML and web developers have ignored its power to enable us to design, construct, and implement better UI components.
 
 ### HTML all the way
-As a reminder, HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements to provide semantic support for content, like `<video>` and `<article>`. Over the years it also added new capabilities to existing elements like the addition of the `autofocus` attribute, which tells the browser where to focus on page load. These additions are of course made accessible through the usual HTML constructs: *tags*, *attributes*, and *nesting*. Here are some examples of standard HTML elements and their semantic, declarative API:
+As a reminder, HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements to provide semantic support for more content, like `<nav>` and `<video>` and `<article>`. Over the years it also added new capabilities to existing elements like the addition of the `autofocus` attribute, which tells the browser which element to focus on page load. These additions are of course made accessible to us through the usual HTML constructs: *tags*, *attributes*, and *nesting*. Here's some examples:
 
 ```html
 <h1>
@@ -18,7 +16,9 @@ As a reminder, HTML’s job is to give content structure and meaning. This is ca
 
 <video src="example.com/vids/cats.mp4" poster="example.com/posters/cats.jpg" autoplay loop controls>
 ```
-HTML gives us a lot to work with - probably more than we give it credit for - but it definitely doesn't give us everything we need. Let's use icons as a quick example.
+Semantic elements with a declarative API. Pretty simple; no mystery there.
+
+As you know HTML gives us a lot to work with - probably more than we give it credit for - but it definitely doesn't give us elements for everything we need, does it? Let's use icons as a quick example.
 
 Because HTML doesn't give us an `icon` tag to markup a site's icons we have to design our own solution. Here's three similar approaches you've likely seen before:
 
@@ -29,7 +29,7 @@ Because HTML doesn't give us an `icon` tag to markup a site's icons we have to d
 
 <span class="oi oi-phone"></span>
 ```
-Pretty simple. Those solutions use classes to both define the element and its attributes, and while there is nothing wrong with that, there are drawbacks:
+Those solutions use classes to both define the element and its attributes, and while there is nothing wrong with that, there are drawbacks:
 
 #### 1) Repetitive naming:
 `fa`, `icon`, and `oi` are repeated twice.
@@ -40,24 +40,25 @@ Pretty simple. Those solutions use classes to both define the element and its at
 <i class="icon icon-phone foo"></i>  six weeks later
 <i class="bar baz icon icon-phone foo"></i>  a year later
 ```
-What exactly is that last one supposed to be? Messy.
+What exactly is that last one supposed to be? Too messy.
 #### 3) The tag becomes unavoidable boilerplate with no meaning:
 ```html
 <i class="icon icon-phone"></i>
 <div class="icon icon-phone"></div>
 <span class="icon icon-phone"></span>
 ```
-So `<i|div|span class=""></i|div|span>` is boilerplate.
+That means `<i|div|span class=""></i|div|span>` is just boilerplate.
 #### 4) Next to standard elements the class-based design looks out of place; it lacks uniformity:
 ```html
 <i class="icon icon-phone"></i>
 <input type="email" autofocus>
 ```
-What if standard elements were based on that same design? We'd have:
+What if standard elements were based on that same design? So we'd have:
 ```html
+<i class="icon icon-phone"></i>
 <i class="input input-email input-autofocus">
 ```
-Pretty gross, but that's how we've been designing custom components.
+Pretty gross, but that's what you get with a class-based design. Gets even worse if you go BEM: `class="mdl-dialog__actions--full-width"` ([that's real btw](https://getmdl.io/components/index.html#dialog-with-full-width-actions))
 
 
 We don't have to do it this way. We don't have to use classes. There's something better. 
