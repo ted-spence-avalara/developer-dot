@@ -245,7 +245,7 @@ If whatever you pick enables you to compose UIs using what you already know, i.e
       <x-editor mode="md"></x-editor>
     </div>
     <x-tab for="pull-req">
-      <x-icon name="merge></x-icon> Pull requests <x-badge count="0"></x-badge>
+      <x-icon name="merge"></x-icon> Pull requests <x-badge count="0"></x-badge>
     </x-tab>
     <div id="pull-req">
       ...
