@@ -5,20 +5,22 @@
 There's a user interface technology that is so good it has _100%_ developer adoption. It is also totally compatible with _all_ browsers and developer tools, has no dependencies, is very well-documented, and easy to learn.  The technology of course is none other than HTML and I think we've ignored its power to enable us to design, construct, and implement better UI components.
 
 ### HTML all the way
-As a reminder, HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements to provide semantic support for more content, like `<nav>` and `<video>` and `<article>`. Over the years it also added new capabilities to existing elements like the addition of the `autofocus` attribute, which tells the browser which element to focus on page load. These additions are of course made accessible to us through the usual HTML constructs: *tags*, *attributes*, and *nesting*. Here's some examples:
+As a reminder, HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements to provide semantic support for more content, like `<nav>` and `<video>` and `<article>`. Over the years it also added new capabilities to existing elements like the addition of the `autofocus` attribute, which tells the browser which element to focus on page load (a must for log in and search UX!).
+
+These additions are of course made accessible to us through the usual HTML constructs: *tags*, *attributes*, and *nesting*. In case you need a refresher, here's some examples:
 
 ```html
-<h1>
+<h1>Hello World!</h1>
 
-<a href="example.com" download>
+<p>Ready for <a href="example.com" download>download</a></p>
 
 <input type="email" placeholder="name@example.com" autofocus>
 
-<video src="example.com/vids/cats.mp4" poster="example.com/posters/cats.jpg" autoplay loop controls>
+<video src="example.com/vids/cats.mp4" poster="example.com/posters/cats.jpg" autoplay loop controls></video>
 ```
-Semantic elements with a declarative API. Pretty simple; no mystery there.
+Standard semantic elements with the declarative API that makes HTML so easy. Pretty simple; no mystery here.
 
-As you know HTML gives us a lot to work with - probably more than we give it credit for - but it definitely doesn't give us elements for everything we need, does it? Let's use icons as a quick example.
+As you know HTML gives us a lot of elements to work with - probably more than we give it credit for - but it definitely doesn't give us elements for everything we need, does it? Let's use icons as a quick example.
 
 Because HTML doesn't give us an `icon` tag to markup a site's icons we have to design our own solution. Here's three similar approaches you've likely seen before:
 
@@ -47,7 +49,7 @@ What exactly is that last one supposed to be? Too messy.
 <div class="icon icon-phone"></div>
 <span class="icon icon-phone"></span>
 ```
-That means `<i|div|span class=""></i|div|span>` is just boilerplate.
+That means `<div class=""></div>` is just boilerplate.
 #### 4) Next to standard elements the class-based design looks out of place; it lacks uniformity:
 ```html
 <i class="icon icon-phone"></i>
@@ -58,7 +60,11 @@ What if standard elements were based on that same design? So we'd have:
 <i class="icon icon-phone"></i>
 <i class="input input-email input-autofocus">
 ```
-Pretty gross, but that's what you get with a class-based design. Gets even worse if you go BEM: `class="mdl-dialog__actions--full-width"` ([that's real btw](https://getmdl.io/components/index.html#dialog-with-full-width-actions))
+Pretty gross, but that's what you get with a class-based design. Gets even worse if you go BEM: 
+```html
+<div class="mdl-dialog__actions--full-width">
+``` 
+[That's real btw](https://getmdl.io/components/index.html#dialog-with-full-width-actions)
 
 
 We don't have to do it this way. We don't have to use classes. There's something better. 
