@@ -7,7 +7,7 @@ There's a user interface technology that is so good it has _100%_ developer adop
 ### HTML all the way
 As a reminder, HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements to provide semantic support for more content, like `<nav>` and `<video>` and `<article>`. Over the years it also added new capabilities to existing elements like the addition of the `autofocus` attribute, which tells the browser which element to focus on page load (a must for log in and search UX!).
 
-These additions are of course made accessible to us through the usual HTML constructs: *tags*, *attributes*, and *nesting*. In case you need a refresher, here's some examples:
+These additions are of course implemented through the usual HTML constructs: *tags*, *attributes*, and *nesting*. In case you need a refresher, here's some examples:
 
 ```html
 <h1>Hello World!</h1>
@@ -72,38 +72,44 @@ We don't have to do it this way. We don't have to use classes. There's something
 
 ### Custom HTML tags
 
-We can design our custom components with the same declarative style as standard elements using custom tags and attributes. Here's what that means:
+We can design our own custom components that have a more meaningful API like standard elements by using tags, attributes, and nesting. Here's what that means:
 
-_Before_
+_Old class-based design_
 ```html
 <i class="icon icon-phone"></i>
 ```
-_After_
+_Using a tag and attribute(s)_
 ```html
 <icon name="phone"></icon>
 ```
-Custom tags are compatible with all modern browsers and later versions of IE. Browsers will download and parse that code just like any "real" HTML because it is. Sure, it's not a standard element and browsers won't apply any default styles to these _unknown_ tags, but that is not a problem at all. You can create CSS rules using custom tags, i.e. `icon`, just like you would for standard tags and attributes or classes:
+If this kind of makes you uneasy, don't worry. These custom tags are compatible with all modern browsers and later versions of IE. Browsers will download and parse and render that code just like any "real" HTML because it is. Sure, it's not a standard element and browsers won't have any default styles for your custom or _unknown_ tags, but that is not a problem at all. You can create CSS rules for custom tags, like `icon`, just like you can for standard tags and classes:
 ```css
 icon {
   font-family: 'My Icons';
 }
 
 icon[name="phone"]:before {
-  content: "\u123";
+  content: "\u123"; /* a phone glyph */
 }
 ```
 
-That works perfectly fine. Other than specificity, it's no different than using `.icon` and `.icon-phone:before`.
+That works perfectly! Other than specificity, it's no different than using `.icon` and `.icon-phone:before`. Let's do another one. 
 
-Let's do another one. A Badge component's design would go from:
+A typical Badge component's design looks like:
 ```html
 <span class="badge badge-success">1</span>
 ```
-to
+That's ok. Here's the same thing with a tag and attributes:
 ```html
 <badge count="1" type="success"></badge>
 ```
-The second one is clearly a Badge element with it's own attributes. Just like real elements! And with a little CSS we can add some intelligence to Badge so when it has a zero count or no count it hides, i.e. `badge[count="0"], badge[count=""] { display: none }`. That's cool!
+The second one is clearly a Badge element with it's own attributes - just like real elements! And with a little CSS we can add some intelligence to Badge so when it has a zero count or no count it hides: 
+```css
+badge[count="0"], badge[count=""] { 
+  display: none 
+}
+``` 
+That's cool!
 
 Here's some other examples of components built with custom tags and attributes instead of classes:
 ```html
@@ -121,14 +127,14 @@ Are you starting to see the difference? Do you sense the benefits?
 
 Designing custom UI components with tags and attributes instead of classes is fun and it's better. It is objectively better:
 
-* Enables UI engineers to design components with a meaningful API instead of a boilerplate tag and list of classes
+* Enables UI engineers to design components with much more meaningful APIs instead of a boilerplate tag and list of classes
 * Custom tags have strong semantic meaning and are easily identifiable: `<badge>` vs. `<span class="badge">`
 * No more BEM or similar methodologies for engineering around the problems with class-based design
-* The `class` attribute is still usable and if it is used it won't dilute your code, e.g. `<icon name="phone" class="foo bar baz">`
-* In so many cases you can ditch the need for abstraction, e.g. `{{> "icon" name="phone"}}` or `<OverEngineeredIcon name="phone"/>` is replaced with `<icon name="phone"></icon>`
-* The result is standards-based clean, uniform markup since custom components use real HTML just like the rest of your markup 
+* The `class` attribute is still usable and if it is used it doesn't dilute your component's identity: `<icon name="phone" class="foo bar baz">`
+* In so many cases you can ditch the need for abstraction: `{{> "icon" name="phone"}}` or `<OverEngineeredIcon name="phone"/>` is replaced with `<icon name="phone"></icon>`
+* The result is clean, standards-based markup that has a nice uniform look to it 
 * Using custom tags and attributes is officially supported. It's how HTML thought we'd design custom components, but we instead went crazy for classes!
-* Custom tags set you up perfectly for future improvements. How so? Let’s get into that now.
+* Lastly, custom tags set you up perfectly for future improvements. How so? Let’s get into that now.
 
 ### Component evolution
 Creating and sharing custom components is a commitment. Your components will evolve and have new capabilities added to them over time. Let's look at the possible evolution of a custom Alert (aka Callout) component:
@@ -293,9 +299,9 @@ Being able to write and maintain apps built with standards-based markup is easie
 Now I know this doesn't address the hard problem of application state management and having the UI reliably reflect that state. That's what React and others set out to solve and they did. But the front-end community seems to have been unable to take a balanced approach to adopting these new technologies and just started engineering stuff. If you use React, you no doubt have an over-engineered app, or at least in part. When I see things like this I just wonder what the heck are all you React devs doing to yourselves:
 ```html
 <DisplayText size="extraLarge" element="h4">Good evening, Dominic.</DisplayText>
-
+```
 which outputs
-
+```html
 <h4 class="Polaris-DisplayText Polaris-DisplayText--sizeExtraLarge">Good evening, Dominic.</h4>
 ```
 Just take a minute to think about that...
@@ -308,12 +314,12 @@ I won't name names; they're all doing it. Here's another one from a big tech com
 >
 10% off
 </UitkInlineBadge>
-
+```
 which outputs
-
+```html
 <span class="uitk-badge uitk-badge-inline shape-pill theme-success">10% off</span>
 ```
 Using React, which means adding a dependency on npm and Webpack and Babel and Jest+Enzyme and installing the React dev tools, to build components that are, in the first case, just basic HTML headings, and in the second case easily done with basic markup and CSS.
 
-Should an engineer write a dozen or so lines of CSS to make Badge, or should they write *474 total lines of code across 8 files* with multiple dependencies and a whole build pipleine? I hope that's not a difficult question to answer!
+Should an engineer write a dozen or so lines of CSS to make Badge, or should they write *474 total lines of code across 8 files* (true story) with multiple dependencies and a whole build pipleine? I hope that's not a difficult question to answer!
 
