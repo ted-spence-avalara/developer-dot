@@ -29,13 +29,56 @@ function getCompareDate() {
 **   Langauges: JSON, C#, PHP, Python, (Ruby, Java, JavaScript)
 ************************************************************************/
 
+
+
+// TODO: function lineBuilder() {
+//     let lineNum = 1;
+//     const allProducts = $('input[type=checkbox][name=product]:checked');
+//     allProducts.each(function () {
+//         const taxCode = $(this).val();
+//         const amount = $('#' + $(this).attr('id') + '-amount').val();
+//         const description = $(this).attr('description');
+//         lines += `{
+//             'amount': '${amount}',
+//             'description': '${description}',
+//             'number': '${lineNum}',
+//             'taxCode': '${taxCode}'
+//         }`;
+
+//         if (lineNum != allProducts.length) {
+//             lines += ',\n        ';
+//         }
+
+//         lineNum++
+//     });
+// }
+
+// TODO: function addressBuilder() {
+//     let address;
+//     let lines = ``;
+//     const shipToAddress = shipToChecked();
+
+//     if (shipToAddress) {
+//         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
+//         const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
+
+//         address = ``;
+//     } else {
+//         const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
+
+//         address = ``;
+//     }
+
+//     const sampleData = ;
+
+//     return sampleData
+// }
+
 // HELPER: check if shipTo address is selected
 function shipToChecked() {
     const checked = $('input[type=radio][name=srcAddress]:checked').length > 0;
     return checked;
 }
-
-// TODO: helper line builder
 
 // HELPER: for jsonSampleData, build shipTo/From objs
 function makeAddressObj(addressName){
@@ -427,8 +470,70 @@ transaction = @client.create_transaction(createTransactionModel)`;
 }
 
 //TODO: Java
+function javaSampleData() {
+    let lines = '';
+    let address;
+    const shipToAddress = shipToChecked();
+    
+    if (shipToAddress) {
+        const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
+        const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
+
+        address = `->withAddress('ShipFrom', ${shipTo[0]}, null, null, ${shipTo[1]}, ${shipTo[2]}, ${shipTo[4]}, ${shipTo[3]})
+            ->withAddress('ShipTo', ${shipFrom[0]}, null, null, ${shipFrom[1]}, ${shipFrom[2]}, ${shipFrom[4]}, ${shipFrom[3]})
+        `;
+
+    } else {
+        const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
+
+        address = `->withAddress('SingleLocation', ${singleLocation[0]}, null, null, ${singleLocation[1]}, ${singleLocation[2]}, ${singleLocation[4]}, ${singleLocation[3]})`;
+    }
+
+    const sampleData = ``;
+
+    return sampleData
+}
 
 //TODO: JS
+function javascriptSampleData() {
+    let address;
+    let lines = ``;
+    const shipToAddress = shipToChecked();
+
+    if (shipToAddress) {
+        const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
+        const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
+
+        address = `ShipFrom: {
+            line1: "${shipFrom[0]}",
+            city: "${shipFrom[1]}",
+            region: "${shipFrom[2]}",
+            country: "${shipFrom[3]}",
+            postalCode: "${shipFrom[4]}"
+        },
+        ShipTo: {
+            line1: "${shipTo[0]}",
+            city: "${shipTo[1]}",
+            region: "${shipTo[2]}",
+            country: "${shipTo[3]}",
+            postalCode: "${shipTo[4]}"
+        }`;
+    } else {
+        const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
+
+        address = `SingleLocation: {
+            line1: "${singleLocation[0]}",
+            city: "${singleLocation[1]}",
+            region: "${singleLocation[2]}",
+            country: "${singleLocation[3]}",
+            postalCode: "${singleLocation[4]}"
+        }`;
+    }
+
+    const sampleData = ``;
+
+    return sampleData
+}
 
 //
 // MAIN Sample Data function: populates request console
@@ -458,6 +563,12 @@ function fillWithSampleData() {
             break;
         case 'Ruby':
             sampleData = rubySampleData();
+            break;
+        case 'Java':
+            sampleData = javaSampleData();
+            break;
+        case 'JS':
+            sampleData = javascriptSampleData();
             break;
         case 'JSON':
             sampleData = JSON.stringify(jsonSampleData(), null, 2);
