@@ -108,7 +108,6 @@ function cSharpSampleData() {
     allProducts.each(function () {
         // Find amount
         const taxCode = $(this).val();
-        //const description = $(this).attr('description');
         const amount = $('#' + $(this).attr('id') + '-amount').val();
         lines += `new LineItemModel() 
         {
@@ -248,7 +247,6 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
 }
 
 function pythonSampleData() {
-
     let lines = ``;
     let address;
     const shipToAddress = setShipToOrSingleLocation();
@@ -263,7 +261,7 @@ function pythonSampleData() {
         lines += `{
             "amount": ${amount},
             "description": ${description},
-            "number": ${lineNum++},
+            "number": ${lineNum},
             "taxCode": ${taxCode}
         }`;
 
@@ -345,7 +343,7 @@ print(transaction_response.text())`;
 // MAIN Sample Data function: populates request console
 //
 function fillWithSampleData() {
-    const noAddress = $('input[type=radio][name=srcAddress]:checked').length = 0;
+    const noAddress = $('input[type=radio][name=address]:checked').length === 0;
     const reqType = noAddress ? 'noAddress' : $('#req-type').val();
 
     let sampleData;
