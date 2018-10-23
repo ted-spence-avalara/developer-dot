@@ -254,13 +254,13 @@ function phpSampleData() {
         const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
         
         // build PHP req for multiple addresses
-        address = `->withAddress('ShipFrom', ${shipTo[0]}, null, null, ${shipTo[1]}, ${shipTo[2]}, ${shipTo[4]}, ${shipTo[3]})
-->withAddress('ShipTo', ${shipFrom[0]}, null, null, ${shipFrom[1]}, ${shipFrom[2]}, ${shipFrom[4]}, ${shipFrom[3]})`;
+        address = `->withAddress('ShipFrom', '${shipTo[0]}', null, null, '${shipTo[1]}', '${shipTo[2]}', '${shipTo[4]}', '${shipTo[3]}')
+->withAddress('ShipTo', '${shipFrom[0]}', null, null, '${shipFrom[1]}', '${shipFrom[2]}', '${shipFrom[4]}', '${shipFrom[3]}')`;
     } else {
         const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
 
         // build PHP req for single location
-        address = `withAddress('SingleLocation', ${singleLocation[0]}, null, null, ${singleLocation[1]}, ${singleLocation[2]}, ${singleLocation[4]}, ${singleLocation[3]})`;
+        address = `withAddress('SingleLocation', '${singleLocation[0]}', null, null, '${singleLocation[1]}', '${singleLocation[2]}', '${singleLocation[4]}', '${singleLocation[3]}')`;
     }
 
         // build sample data for PHP
@@ -413,14 +413,14 @@ function rubySampleData() {
             city: "${shipFrom[1]}",
             region: "${shipFrom[2]}",
             country: "${shipFrom[3]}",
-            postalCode: "${shipFrom[4]}"
+            postalCode: ${shipFrom[4]}
         },
         ShipTo: {
             line1: "${shipTo[0]}",
             city: "${shipTo[1]}",
             region: "${shipTo[2]}",
             country: "${shipTo[3]}",
-            postalCode: "${shipTo[4]}"
+            postalCode: ${shipTo[4]}
         }`;
     } else {
         const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
@@ -430,7 +430,7 @@ function rubySampleData() {
             city: "${singleLocation[1]}",
             region: "${singleLocation[2]}",
             country: "${singleLocation[3]}",
-            postalCode: "${singleLocation[4]}"
+            postalCode: ${singleLocation[4]}
         }`;
     }
 
@@ -452,10 +452,10 @@ end
 @client = AvaTax::Client.new(:logger => true)
 
 createTransactionModel = {
-    type: 'SalesInvoice',
-    companyCode: '12670',
-    date: '2017-06-05',
-    customerCode: 'ABC',
+    type: "SalesInvoice",
+    companyCode: "12670",
+    date: "2017-06-05",
+    customerCode: "ABC",
     addresses: {
        ${address} 
     },
@@ -474,13 +474,25 @@ function javaSampleData() {
     let lines = ``;
     let address;
     const shipToAddress = shipToChecked();
+
+    // gather all product info and make into PHP SDK friendly form
+    let lineNum = 0;
+    $('input[type=checkbox][name=product]:checked').each(function () {
+        const taxCode = $(this).val();
+        const amount = $('#' + $(this).attr('id') + '-amount').val();
+        if (lineNum === 0) {
+            lines += `.withLine(new BigDecimal(${amount}), new BigDecimal(${lineNum++}), "${taxCode}")`; 
+        } else {
+            lines += `\n    .withLine(new BigDecimal(${amount}), new BigDecimal(${lineNum++}), "${taxCode}")`;
+        }
+    });
     
     if (shipToAddress) {
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
         const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
 
         address = `.withAddress(TransactionAddressType.ShipTo, ${shipTo[0]}, null, null, ${shipTo[1]}, ${shipTo[2]}, ${shipTo[4]}, ${shipTo[3]})
-        .withAddress(TransactionAddressType.ShipFrom, ${shipFrom[0]}, null, null, ${shipFrom[1]}, ${shipFrom[2]}, ${shipFrom[4]}, ${shipFrom[3]})`;
+    .withAddress(TransactionAddressType.ShipFrom, ${shipFrom[0]}, null, null, ${shipFrom[1]}, ${shipFrom[2]}, ${shipFrom[4]}, ${shipFrom[3]})`;
 
     } else {
         const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
@@ -506,6 +518,27 @@ function javascriptSampleData() {
     let address;
     let lines = ``;
     const shipToAddress = shipToChecked();
+
+    // Loop through all the checked products and add one line for each
+    let lineNum = 1;
+    const allProducts = $('input[type=checkbox][name=product]:checked');
+    allProducts.each(function () {
+        const taxCode = $(this).val();
+        const amount = $('#' + $(this).attr('id') + '-amount').val();
+        const description = $(this).attr('description');
+        lines += `{
+            amount: '${amount}',
+            description: '${description}',
+            number: '${lineNum}',
+            taxCode: '${taxCode}'
+        }`;
+
+        if (lineNum != allProducts.length) {
+            lines += ',\n        ';
+        }
+
+        lineNum++
+    });    
 
     if (shipToAddress) {
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
