@@ -471,7 +471,7 @@ transaction = @client.create_transaction(createTransactionModel)`;
 
 //TODO: Java
 function javaSampleData() {
-    let lines = '';
+    let lines = ``;
     let address;
     const shipToAddress = shipToChecked();
     
@@ -479,17 +479,24 @@ function javaSampleData() {
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
         const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
 
-        address = `->withAddress('ShipFrom', ${shipTo[0]}, null, null, ${shipTo[1]}, ${shipTo[2]}, ${shipTo[4]}, ${shipTo[3]})
-            ->withAddress('ShipTo', ${shipFrom[0]}, null, null, ${shipFrom[1]}, ${shipFrom[2]}, ${shipFrom[4]}, ${shipFrom[3]})
-        `;
+        address = `.withAddress(TransactionAddressType.ShipTo, ${shipTo[0]}, null, null, ${shipTo[1]}, ${shipTo[2]}, ${shipTo[4]}, ${shipTo[3]})
+        .withAddress(TransactionAddressType.ShipFrom, ${shipFrom[0]}, null, null, ${shipFrom[1]}, ${shipFrom[2]}, ${shipFrom[4]}, ${shipFrom[3]})`;
 
     } else {
         const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
 
-        address = `->withAddress('SingleLocation', ${singleLocation[0]}, null, null, ${singleLocation[1]}, ${singleLocation[2]}, ${singleLocation[4]}, ${singleLocation[3]})`;
+        address = `.withAddress(TransactionAddressType.SingleLocation, ${singleLocation[0]}, null, null, ${singleLocation[1]}, ${singleLocation[2]}, ${singleLocation[4]}, ${singleLocation[3]})`;
     }
 
-    const sampleData = ``;
+    const sampleData = `//creates our AvaTaxClient
+AvaTaxClient client = new AvaTaxClient("Test", "1.0", "localhost", AvaTaxEnvironment.Sandbox)
+    .withSecurity("MyUsername", "MyPassword");
+
+// build and create transaction
+TransactionModel transaction = new TransactionBuilder(client, "DEFAULT", DocumentType.SalesInvoice, "ABC")
+    ${address}
+    ${lines}
+    .Create();`;
 
     return sampleData
 }
@@ -505,32 +512,63 @@ function javascriptSampleData() {
         const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
 
         address = `ShipFrom: {
-            line1: "${shipFrom[0]}",
-            city: "${shipFrom[1]}",
-            region: "${shipFrom[2]}",
-            country: "${shipFrom[3]}",
-            postalCode: "${shipFrom[4]}"
+            line1: '${shipFrom[0]}',
+            city: '${shipFrom[1]}',
+            region: '${shipFrom[2]}',
+            country: '${shipFrom[3]}',
+            postalCode: '${shipFrom[4]}'
         },
         ShipTo: {
-            line1: "${shipTo[0]}",
-            city: "${shipTo[1]}",
-            region: "${shipTo[2]}",
-            country: "${shipTo[3]}",
-            postalCode: "${shipTo[4]}"
+            line1: '${shipTo[0]}',
+            city: '${shipTo[1]}',
+            region: '${shipTo[2]}',
+            country: '${shipTo[3]}',
+            postalCode: '${shipTo[4]}'
         }`;
     } else {
         const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
 
         address = `SingleLocation: {
-            line1: "${singleLocation[0]}",
-            city: "${singleLocation[1]}",
-            region: "${singleLocation[2]}",
-            country: "${singleLocation[3]}",
-            postalCode: "${singleLocation[4]}"
+            line1: '${singleLocation[0]}',
+            city: '${singleLocation[1]}',
+            region: '${singleLocation[2]}',
+            country: '${singleLocation[3]}',
+            postalCode: '${singleLocation[4]}'
         }`;
     }
 
-    const sampleData = ``;
+    const sampleData = `const config = {
+    appName: 'your-app',
+    appVersion: '1.0',
+    environment: 'sandbox',
+    machineName: 'your-machine-name'
+};
+    
+const creds = {
+    username: '<your-username>',
+    password: '<your-password>'
+};
+    
+var client = new Avatax(config).withSecurity(creds);
+
+const taxDocument = {
+    type: 'SalesOrder',
+    companyCode: 'abc123',
+    date: '2017-04-12',
+    customerCode: 'ABC',
+    addresses: {
+        ${address}
+    },
+    lines: [
+        ${lines}
+    ],
+}
+    
+return client.createTransaction({ model: taxDocument })
+    .then(result => {
+        // response tax document
+        console.log(result);
+    });`;
 
     return sampleData
 }
