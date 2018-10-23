@@ -35,6 +35,8 @@ function shipToChecked() {
     return checked;
 }
 
+// TODO: helper line builder
+
 // HELPER: for jsonSampleData, build shipTo/From objs
 function makeAddressObj(addressName){
     const address = $(`input[type=radio][name=${addressName}]:checked`).val().split(',');
@@ -50,11 +52,11 @@ function makeAddressObj(addressName){
 
 function jsonSampleData() {
     // check if there is a shipTo address selected
-    const shipToChecked = shipToChecked();
+    const shipToAddress = shipToChecked();
     const address = makeAddressObj('address');
     let sampleData;
 
-    if(shipToChecked) {
+    if(shipToAddress) {
         const srcAddress = makeAddressObj('srcAddress');
 
         sampleData = {
@@ -100,7 +102,7 @@ function jsonSampleData() {
 function cSharpSampleData() {
     let lines = '';
     let address;
-    const shipToChecked = shipToChecked();
+    const shipToAddress = shipToChecked();
     
     // gather all product info and make into SDK friendly form
     let lineNum = 1;
@@ -124,7 +126,7 @@ function cSharpSampleData() {
     });
 
     // check if shipFrom/To addresses
-    if(shipToChecked) {
+    if(shipToAddress) {
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
         const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
         
@@ -189,7 +191,7 @@ var transaction = client.CreateTransaction(null, createModel);`;
 function phpSampleData() {
     let lines = '';
     let address;
-    const shipToChecked = shipToChecked();
+    const shipToAddress = shipToChecked();
     
     // gather all product info and make into PHP SDK friendly form
     let lineNum = 0;
@@ -204,7 +206,7 @@ function phpSampleData() {
     });
 
     // check if shipFrom/To addresses
-    if(shipToChecked) {
+    if(shipToAddress) {
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
         const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
         
@@ -249,7 +251,7 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
 function pythonSampleData() {
     let lines = ``;
     let address;
-    const shipToChecked = shipToChecked();
+    const shipToAddress = shipToChecked();
     
     // Loop through all the checked products and add one line for each
     let lineNum = 1;
@@ -259,10 +261,10 @@ function pythonSampleData() {
         const amount = $('#' + $(this).attr('id') + '-amount').val();
         const description = $(this).attr('description');
         lines += `{
-            "amount": ${amount},
-            "description": ${description},
-            "number": ${lineNum},
-            "taxCode": ${taxCode}
+            'amount': '${amount}',
+            'description': '${description}',
+            'number': '${lineNum}',
+            'taxCode': '${taxCode}'
         }`;
 
         if (lineNum != allProducts.length) {
@@ -272,34 +274,34 @@ function pythonSampleData() {
         lineNum++
     });
 
-    if (shipToChecked){
+    if (shipToAddress){
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
         const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
 
         address = `'ShipFrom': {
-            'city': ${shipFrom[1]},
-            'country': ${shipFrom[3]},
-            'line1': ${shipFrom[0]},
-            'postalCode': ${shipFrom[4]},
-            'region': ${shipFrom[2]}
+            'city': '${shipFrom[1]}',
+            'country': '${shipFrom[3]}',
+            'line1': '${shipFrom[0]}',
+            'postalCode': '${shipFrom[4]}',
+            'region': '${shipFrom[2]}'
         },
         'ShipTo': {
-            'city': ${shipTo[1]},
-            'country': ${shipTo[3]},
-            'line1': ${shipTo[0]},
-            'postalCode': ${shipTo[4]},
-            'region': ${shipTo[2]}
+            'city': '${shipTo[1]}',
+            'country': '${shipTo[3]}',
+            'line1': '${shipTo[0]}',
+            'postalCode': '${shipTo[4]}',
+            'region': '${shipTo[2]}'
         },
         `;
     } else {
         const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
 
         address = `'SingleLocation': {
-            'city': ${singleLocation[1]},
-            'country': ${singleLocation[3]},
-            'line1': ${singleLocation[0]},
-            'postalCode': ${singleLocation[4]},
-            'region': ${singleLocation[2]}
+            'city': '${singleLocation[1]}',
+            'country': '${singleLocation[3]}',
+            'line1': '${singleLocation[0]}',
+            'postalCode': '${singleLocation[4]}',
+            'region': '${singleLocation[2]}'
         }`;
     }
     
@@ -333,11 +335,10 @@ print(transaction_response.text())`;
     return sampleData;
 }
 
-//TODO: Ruby
 function rubySampleData() {
     let address;
     let lines;
-    const shipToChecked = shipToChecked();
+    const shipToAddress = shipToChecked();
 
     // Loop through all the checked products and add one line for each
     let lineNum = 1;
@@ -347,10 +348,10 @@ function rubySampleData() {
         const amount = $('#' + $(this).attr('id') + '-amount').val();
         const description = $(this).attr('description');
         lines += `{
-            "amount": ${amount},
-            "description": ${description},
-            "number": ${lineNum},
-            "taxCode": ${taxCode}
+            amount: "${amount}",
+            description: "${description}",
+            number: "${lineNum}",
+            taxCode: "${taxCode}"
         }`;
 
         if (lineNum != allProducts.length) {
@@ -360,33 +361,36 @@ function rubySampleData() {
         lineNum++
     });
 
-    if (shipToChecked) {
+    console.warn('LINES'), lines;
+    
+
+    if (shipToAddress) {
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
         const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
 
-        address = `"ShipFrom": {
-            "line1": "123 Main Street",
-            "city": "Irvine",
-            "region": "CA",
-            "country": "US",
-            "postalCode": "92615"
+        address = `ShipFrom: {
+            line1: "${shipFrom[0]}",
+            city: "${shipFrom[1]}",
+            region: "${shipFrom[2]}",
+            country: "${shipFrom[3]}",
+            postalCode: "${shipFrom[4]}"
         },
-        "ShipTo": {
-            "line1": "100 Market Street",
-            "city": "San Francisco",
-            "region": "CA",
-            "country": "US",
-            "postalCode": "94105"
+        ShipTo: {
+            line1: "${shipTo[0]}",
+            city: "${shipTo[1]}",
+            region: "${shipTo[2]}",
+            country: "${shipTo[3]}",
+            postalCode: "${shipTo[4]}"
         }`;
     } else {
         const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
-//1, 3, 0, 4, 2
-        address = `"SingleLocation": {
-            "line1": "123 Main Street",
-            "city": "Irvine",
-            "region": "CA",
-            "country": "US",
-            "postalCode": "92615"
+
+        address = `SingleLocation: {
+            line1: "${singleLocation[0]}",
+            city: "${singleLocation[1]}",
+            region: "${singleLocation[2]}",
+            country: "${singleLocation[3]}",
+            postalCode: "${singleLocation[4]}"
         }`;
     }
 
@@ -412,7 +416,7 @@ createTransactionModel = {
     companyCode: '12670',
     date: '2017-06-05',
     customerCode: 'ABC',
-    "addresses": {
+    addresses: {
        ${address} 
     },
     lines: [
@@ -434,15 +438,16 @@ transaction = @client.create_transaction(createTransactionModel)`;
 //
 function fillWithSampleData() {
     const noAddress = $('input[type=radio][name=address]:checked').length === 0;
-    const reqType = noAddress ? 'noAddress' : $('#req-type').val();
 
+    if (noAddress) {
+        return;
+    }
+    
+    const reqType = $('#req-type').val();
     let sampleData;
 
     switch (reqType) {
-        case 'noAddress':
-            sampleData = '{}';
-            break;
-        case 'CURL':
+        case 'cURL':
             sampleData = curlSampleData();
             break;
         case 'C#':
@@ -461,7 +466,7 @@ function fillWithSampleData() {
             sampleData = JSON.stringify(jsonSampleData(), null, 2);
             break;
         default:
-            sampleData = '{}';
+            sampleData = '{ }';
             break;
     }
 
