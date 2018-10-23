@@ -337,7 +337,7 @@ print(transaction_response.text())`;
 
 function rubySampleData() {
     let address;
-    let lines;
+    let lines = ``;
     const shipToAddress = shipToChecked();
 
     // Loop through all the checked products and add one line for each
@@ -361,7 +361,7 @@ function rubySampleData() {
         lineNum++
     });
 
-    console.warn('LINES'), lines;
+    console.warn('LINES', lines);
     
 
     if (shipToAddress) {
