@@ -187,6 +187,7 @@ doctype: use_cases
                             <option value="C#">C# SDK</option>
                             <option value="PHP">PHP SDK</option>
                             <option value="Python">Python SDK</option>
+                            <option value="Ruby">Ruby SDK</option>
                         </select>
                     </div>
                     <div style="display:inline-block;float:right;" class="btn-group">

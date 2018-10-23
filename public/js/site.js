@@ -30,7 +30,7 @@ function getCompareDate() {
 ************************************************************************/
 
 // HELPER: check if shipTo address is selected
-function setShipToOrSingleLocation() {
+function shipToChecked() {
     const checked = $('input[type=radio][name=srcAddress]:checked').length > 0;
     return checked;
 }
@@ -50,11 +50,11 @@ function makeAddressObj(addressName){
 
 function jsonSampleData() {
     // check if there is a shipTo address selected
-    const shipToAddress = setShipToOrSingleLocation();
+    const shipToChecked = shipToChecked();
     const address = makeAddressObj('address');
     let sampleData;
 
-    if(shipToAddress) {
+    if(shipToChecked) {
         const srcAddress = makeAddressObj('srcAddress');
 
         sampleData = {
@@ -100,7 +100,7 @@ function jsonSampleData() {
 function cSharpSampleData() {
     let lines = '';
     let address;
-    const shipToAddress = setShipToOrSingleLocation();
+    const shipToChecked = shipToChecked();
     
     // gather all product info and make into SDK friendly form
     let lineNum = 1;
@@ -124,7 +124,7 @@ function cSharpSampleData() {
     });
 
     // check if shipFrom/To addresses
-    if(shipToAddress) {
+    if(shipToChecked) {
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
         const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
         
@@ -189,7 +189,7 @@ var transaction = client.CreateTransaction(null, createModel);`;
 function phpSampleData() {
     let lines = '';
     let address;
-    const shipToAddress = setShipToOrSingleLocation();
+    const shipToChecked = shipToChecked();
     
     // gather all product info and make into PHP SDK friendly form
     let lineNum = 0;
@@ -204,7 +204,7 @@ function phpSampleData() {
     });
 
     // check if shipFrom/To addresses
-    if(shipToAddress) {
+    if(shipToChecked) {
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
         const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
         
@@ -249,7 +249,7 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create
 function pythonSampleData() {
     let lines = ``;
     let address;
-    const shipToAddress = setShipToOrSingleLocation();
+    const shipToChecked = shipToChecked();
     
     // Loop through all the checked products and add one line for each
     let lineNum = 1;
@@ -272,7 +272,7 @@ function pythonSampleData() {
         lineNum++
     });
 
-    if (shipToAddress){
+    if (shipToChecked){
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
         const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
 
@@ -334,6 +334,96 @@ print(transaction_response.text())`;
 }
 
 //TODO: Ruby
+function rubySampleData() {
+    let address;
+    let lines;
+    const shipToChecked = shipToChecked();
+
+    // Loop through all the checked products and add one line for each
+    let lineNum = 1;
+    const allProducts = $('input[type=checkbox][name=product]:checked');
+    allProducts.each(function () {
+        const taxCode = $(this).val();
+        const amount = $('#' + $(this).attr('id') + '-amount').val();
+        const description = $(this).attr('description');
+        lines += `{
+            "amount": ${amount},
+            "description": ${description},
+            "number": ${lineNum},
+            "taxCode": ${taxCode}
+        }`;
+
+        if (lineNum != allProducts.length) {
+            lines += ',\n        ';
+        }
+
+        lineNum++
+    });
+
+    if (shipToChecked) {
+        const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
+        const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
+
+        address = `"ShipFrom": {
+            "line1": "123 Main Street",
+            "city": "Irvine",
+            "region": "CA",
+            "country": "US",
+            "postalCode": "92615"
+        },
+        "ShipTo": {
+            "line1": "100 Market Street",
+            "city": "San Francisco",
+            "region": "CA",
+            "country": "US",
+            "postalCode": "94105"
+        }`;
+    } else {
+        const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
+//1, 3, 0, 4, 2
+        address = `"SingleLocation": {
+            "line1": "123 Main Street",
+            "city": "Irvine",
+            "region": "CA",
+            "country": "US",
+            "postalCode": "92615"
+        }`;
+    }
+
+    const sampleData = `credentials = YAML.load_file(File.expand_path('../credentials.yaml', __FILE__))
+
+AvaTax.configure do |config|
+    begin
+    credentials = YAML.load_file(File.expand_path('../credentials.yaml', __FILE__))
+    config.endpoint = credentials['endpoint']
+    config.username = credentials['username']
+    config.password = credentials['password']
+    rescue
+    config.endpoint = 'https://sandbox-rest.avatax.com'
+    config.username = ENV['SANDBOX_USERNAME']
+    config.password = ENV['SANDBOX_PASSWORD']
+    end
+end
+
+@client = AvaTax::Client.new(:logger => true)
+
+createTransactionModel = {
+    type: 'SalesInvoice',
+    companyCode: '12670',
+    date: '2017-06-05',
+    customerCode: 'ABC',
+    "addresses": {
+       ${address} 
+    },
+    lines: [
+        ${lines}
+    ]
+}
+
+transaction = @client.create_transaction(createTransactionModel)`;
+
+    return sampleData;
+}
 
 //TODO: Java
 
@@ -363,6 +453,9 @@ function fillWithSampleData() {
             break;
         case 'Python':
             sampleData = pythonSampleData();
+            break;
+        case 'Ruby':
+            sampleData = rubySampleData();
             break;
         case 'JSON':
             sampleData = JSON.stringify(jsonSampleData(), null, 2);
