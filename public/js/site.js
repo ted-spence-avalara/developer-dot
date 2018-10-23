@@ -26,6 +26,7 @@ function getCompareDate() {
 
 /************************************************************************
 **   SAMPLE DATA Functions: Build the sample data in the correct language
+**   Langauges: JSON, C#, PHP, Python, (Ruby, Java, JavaScript)
 ************************************************************************/
 
 // HELPER: check if shipTo address is selected
@@ -253,28 +254,62 @@ function pythonSampleData() {
     const shipToAddress = setShipToOrSingleLocation();
     
     // Loop through all the checked products and add one line for each
-    var lineNum = 0;
-    $('input[type=checkbox][name=product]:checked').each(function () {
-        // Find amount
+    let lineNum = 1;
+    const allProducts = $('input[type=checkbox][name=product]:checked');
+    allProducts.each(function () {
+        const taxCode = $(this).val();
+        const amount = $('#' + $(this).attr('id') + '-amount').val();
+        const description = $(this).attr('description');
         lines += `{
-            "amount": $('#' + $(this).attr('id') + '-amount').val(),
-            "description": $(this).attr('description'),
-            "number": lineNum++,
-            "taxCode": $(this).val()
+            "amount": ${amount},
+            "description": ${description},
+            "number": ${lineNum++},
+            "taxCode": ${taxCode}
         }`;
+
+        if (lineNum != allProducts.length) {
+            lines += ',\n        ';
+        }
+
+        lineNum++
     });
 
-    // if (shipToAddress){
+    if (shipToAddress){
+        const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
+        const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
 
-    // } else {
+        address = `'ShipFrom': {
+            'city': ${shipFrom[1]},
+            'country': ${shipFrom[3]},
+            'line1': ${shipFrom[0]},
+            'postalCode': ${shipFrom[4]},
+            'region': ${shipFrom[2]}
+        },
+        'ShipTo': {
+            'city': ${shipTo[1]},
+            'country': ${shipTo[3]},
+            'line1': ${shipTo[0]},
+            'postalCode': ${shipTo[4]},
+            'region': ${shipTo[2]}
+        },
+        `;
+    } else {
+        const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
 
-    // }
+        address = `'SingleLocation': {
+            'city': ${singleLocation[1]},
+            'country': ${singleLocation[3]},
+            'line1': ${singleLocation[0]},
+            'postalCode': ${singleLocation[4]},
+            'region': ${singleLocation[2]}
+        }`;
+    }
     
     const sampleData = `#Create a new AvaTaxClient object
-client = AvataxClient('my test app',
-'ver 0.0',
-'my test machine',
-'sandbox')
+    client = AvataxClient('my test app',
+    'ver 0.0',
+    'my test machine',
+    'sandbox')
 
 #Add your credentials
 client = client.add_credentials('USERNAME/ACCOUNT_ID', 'PASSWORD/LICENSE_KEY')
@@ -282,13 +317,7 @@ client = client.add_credentials('USERNAME/ACCOUNT_ID', 'PASSWORD/LICENSE_KEY')
 #Build your tax document
 tax_document = {
     'addresses': {
-        'SingleLocation': {
-            'city': 'Irvine',
-            'country': 'US',
-            'line1': '123 Main Street',
-            'postalCode': '92615',
-            'region': 'CA'
-        }
+        ${address}
     },
     'companyCode': 'DEMO PAGE',
     'customerCode': 'ABC',
@@ -305,6 +334,12 @@ print(transaction_response.text())`;
     
     return sampleData;
 }
+
+//TODO: Ruby
+
+//TODO: Java
+
+//TODO: JS
 
 //
 // MAIN Sample Data function: populates request console
