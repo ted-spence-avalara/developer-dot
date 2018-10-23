@@ -359,10 +359,7 @@ function rubySampleData() {
         }
 
         lineNum++
-    });
-
-    console.warn('LINES', lines);
-    
+    });    
 
     if (shipToAddress) {
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
