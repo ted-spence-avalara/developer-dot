@@ -218,7 +218,7 @@ doctype: use_cases
                             <i class="glyphicon glyphicon-copy"></i>Copy
                         </button>
                         <button class="btn btn-link" style="display:inline;color:#000000;margin-right:5px;">
-                            <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/" style="color:#000000;" target="_blank">
+                            <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/TransactionModel/" style="color:#000000;" target="_blank">
                                 <i class="glyphicon glyphicon-list-alt"></i>Docs
                             </a>
                         </button>

@@ -255,7 +255,7 @@ function phpSampleData() {
         
         // build PHP req for multiple addresses
         address = `->withAddress('ShipFrom', '${shipTo[0]}', null, null, '${shipTo[1]}', '${shipTo[2]}', '${shipTo[4]}', '${shipTo[3]}')
-->withAddress('ShipTo', '${shipFrom[0]}', null, null, '${shipFrom[1]}', '${shipFrom[2]}', '${shipFrom[4]}', '${shipFrom[3]}')`;
+    ->withAddress('ShipTo', '${shipFrom[0]}', null, null, '${shipFrom[1]}', '${shipFrom[2]}', '${shipFrom[4]}', '${shipFrom[3]}')`;
     } else {
         const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
 
