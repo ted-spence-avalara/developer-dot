@@ -29,13 +29,14 @@ function getCompareDate() {
 **   Langauges: JSON, C#, PHP, Python, (Ruby, Java, JavaScript)
 ************************************************************************/
 
-
+// HELPER: build with correct line template for given language
 function lineBuilder(reqType) {
-    let lines =  reqType === 'JSON' ? [] : ``;
+    let lines = reqType === 'JSON' ? [] : ``;
     
     let lineNum = 1;
     const allProducts = $('input[type=checkbox][name=product]:checked');
     
+    // build line for each selected products
     allProducts.each(function () {
         const taxCode = $(this).val();
         const amount = $('#' + $(this).attr('id') + '-amount').val();
@@ -45,10 +46,10 @@ function lineBuilder(reqType) {
         switch (reqType) {
             case 'JSON':
                 lines.push({
-                    "number": `${lineNum}`,
-                    "amount": `${amount}`,
-                    "taxCode": `${taxCode}`,
-                    "description": `${description}`
+                    "number": lineNum,
+                    "amount": amount,
+                    "taxCode": taxCode,
+                    "description": description
                 });
                 break;
             case 'JS':
@@ -59,7 +60,7 @@ function lineBuilder(reqType) {
                     number: "${lineNum}",
                     taxCode: "${taxCode}"
                 }`;
-                if (lineNum != allProducts.length) lines += ',\n        ';
+                if (lineNum !== allProducts.length) lines += ',\n        ';
                 break;
             case 'Python':
                 lines += `{
@@ -68,25 +69,25 @@ function lineBuilder(reqType) {
                     'number': '${lineNum}',
                     'taxCode': '${taxCode}'
                 }`;
-                if (lineNum != allProducts.length) lines += ',\n        ';
+                if (lineNum !== allProducts.length) lines += ',\n        ';
                 break;
             case 'C#':
-                lines =+ `new LineItemModel() 
-                {
-                    number = "${lineNum}",
-                    quantity = 1,
-                    amount = ${amount},
-                    taxCode = "${taxCode}"
-                }`;
-                if (lineNum != allProducts.length) lines += ',\n        ';
+                lines += `new LineItemModel() 
+        {
+            number = ${lineNum},
+            quantity = 1,
+            amount = ${amount},
+            taxCode = "${taxCode}"
+        }`;                
+                if (lineNum !== allProducts.length) lines += ',\n        ';
                 break;
             case 'PHP':
                 lines += `->withLine(${amount}, ${lineNum}, null, ${taxCode})`; 
-                if (lineNum != allProducts.length) lines += '\n    ';
+                if (lineNum !== allProducts.length) lines += '\n    ';
                 break;
             case 'Java':
                 lines += `.withLine(new BigDecimal(${amount}), new BigDecimal(${lineNum++}), "${taxCode}")`; 
-                if (lineNum != allProducts.length) lines += '\n    ';
+                if (lineNum !== allProducts.length) lines += '\n    ';
                 break;å
             default:
                 break;
@@ -94,6 +95,7 @@ function lineBuilder(reqType) {
        
         lineNum++
     });
+
 
     return lines;
 }
@@ -190,30 +192,9 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create`;
 }
 
 function cSharpSampleData() {
-    let lines = '';
+    const lines = lineBuilder('C#');
     let address;
     const shipToAddress = shipToChecked();
-    
-    // gather all product info and make into SDK friendly form
-    let lineNum = 1;
-    const allProducts = $('input[type=checkbox][name=product]:checked');
-    allProducts.each(function () {
-        // Find amount
-        const taxCode = $(this).val();
-        const amount = $('#' + $(this).attr('id') + '-amount').val();
-        lines += `new LineItemModel() 
-        {
-            number = "${lineNum}",
-            quantity = 1,
-            amount = ${amount},
-            taxCode = "${taxCode}"
-        }`;
-        
-        if (lineNum != allProducts.length) {
-            lines += ',\n        ';
-        }
-        lineNum++;
-    });
 
     // check if shipFrom/To addresses
     if(shipToAddress) {
