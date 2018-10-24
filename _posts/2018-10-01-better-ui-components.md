@@ -422,5 +422,5 @@ _Should an engineer write a dozen lines of CSS to make Badge, or should they wri
 
 So it can. And yet 9 out of 10 of cases were in zero danger of not being able to scale, but all 10 were solved with [insert favorite js library] and now the app has 10x the amount of code as necessary. Can it scale _down_? Down so much that it can get out of its own way and not be needed at all? 
 
-And that's really what the custom tag approach is about. Yes, a tag and attribute design is much nicer than class-based - the time for that switch has come - but being able to scale in either direction using standards-based constructs (prefixed tag, attributes, and nesting) across a wide range of UI components is a very compelling opportunity!
+And that's really what the custom tag approach is about. Yes, a tag and attribute design is much nicer than class-based - the time for that switch has come - but being able to design and build components that scale in either direction using standards-based HTML constructs (prefixed tag, attributes, and nesting) across a wide range of use cases is a very compelling opportunity!
 
