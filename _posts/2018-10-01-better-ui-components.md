@@ -354,10 +354,9 @@ _Riot_
 ```html
 <s-alert>
     <s-icon name="{icon}"></i>
-    <yield/> <!-- like <slot> -->
+    <yield/> <!-- same as <slot> -->
 
     <script>
-        // Determine Icon based on type
         this.icon = this.opts.type === 'success' ? 'check' : this.opts.type === 'error' ? 'info' : 'warn';
 
         this.on('mount', () => {
@@ -368,6 +367,7 @@ _Riot_
         })
     </script>
     <style>
+      s-alert {...}
     </style>  
 </s-alert>
 ```
