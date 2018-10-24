@@ -227,7 +227,7 @@ The first is that some day HTML might get a tag with the same name as ours. I pr
 
 Although these aren't technically Custom Elements at this point, you'll want to follow the spec and use a prefix for your custom tags. At Avalara we use `s-` as our prefix. The `s` is short for Skylab, which is the name of our design system, but it also means:
 * **s**tandards - we always go for standards until we actually need to bring in a dependency
-* **s**emantic - tags with attributes are much more semantic than div/span with classes
+* **s**emantic - tags with attributes are much more semantic than `div` with classes
 * **s**mall - basic HTML and CSS can take you very far without needing something like React
 * **s**hared - these components are shared by our 20+ web apps and three times as many developers
 * **S**eattle - ok not really, but that's where we are! Come [join us](https://www.avalara.com/us/en/about/jobs/job-details.oUKm8fwS.html)
