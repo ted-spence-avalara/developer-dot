@@ -29,7 +29,7 @@ function getCompareDate() {
 **   Langauges: JSON, C#, PHP, Python, (Ruby, Java, JavaScript)
 ************************************************************************/
 
-// HELPER: build with correct line template for given language
+// HELPER: build lines with correct template for given language
 function lineBuilder(reqType) {
     let lines = reqType === 'JSON' ? [] : ``;
     
@@ -55,20 +55,20 @@ function lineBuilder(reqType) {
             case 'JS':
             case 'Ruby':
                 lines += `{
-                    amount: "${amount}",
-                    description: "${description}",
-                    number: "${lineNum}",
-                    taxCode: "${taxCode}"
-                }`;
+            amount: "${amount}",
+            description: "${description}",
+            number: "${lineNum}",
+            taxCode: "${taxCode}"
+        }`;
                 if (lineNum !== allProducts.length) lines += ',\n        ';
                 break;
             case 'Python':
                 lines += `{
-                    'amount': '${amount}',
-                    'description': '${description}',
-                    'number': '${lineNum}',
-                    'taxCode': '${taxCode}'
-                }`;
+            'amount': '${amount}',
+            'description': '${description}',
+            'number': '${lineNum}',
+            'taxCode': '${taxCode}'
+        }`;
                 if (lineNum !== allProducts.length) lines += ',\n        ';
                 break;
             case 'C#':
@@ -96,30 +96,49 @@ function lineBuilder(reqType) {
         lineNum++
     });
 
-
     return lines;
 }
 
-// TODO: function addressBuilder() {
-//     let address;
-//     let lines = ``;
-//     const shipToAddress = shipToChecked();
+// HELPER: build address with correct template for given language
+function addressBuilder(reqType, addressName, prefix) {
+    const addressArray = $(`input[type=radio][name=${addressName}]:checked`).val().split(',');
+    let address;
 
-//     if (shipToAddress) {
-//         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
-//         const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
+    switch (reqType) {
+        case 'JSON':
+            address = {
+                "line1": addressArray[0],
+                "city": addressArray[1],
+                "region": addressArray[2],
+                "country": addressArray[3],
+                "postalCode": addressArray[4],
+            };
+            break;
+        case 'JS':
+        case 'Ruby':
+            break;
+        case 'Python':
+            break;
+        case 'C#':
+            address = `{
+            line1 = "${addressArray[0]}",
+            city = "${addressArray[1]}",
+            region = "${addressArray[2]}",
+            country = "${addressArray[4]}",
+            postalCode = "${addressArray[3]}"
+        }`;
+            break;
+        case 'PHP':
+            address = `withAddress('${prefix}', '${singleLocation[0]}', null, null, '${singleLocation[1]}', '${singleLocation[2]}', '${singleLocation[4]}', '${singleLocation[3]}')`;
+            break;
+        case 'Java':
+            break;
+        default:
+            break;
+    }
 
-//         address = ``;
-//     } else {
-//         const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
-
-//         address = ``;
-//     }
-
-//     const sampleData = ;
-
-//     return sampleData
-// }
+    return address;
+}
 
 // HELPER: check if shipTo address is selected
 function shipToChecked() {
@@ -141,13 +160,13 @@ function makeAddressObj(addressName){
 }
 
 function jsonSampleData() {
-    // check if there is a shipTo address selected
-    const shipToAddress = shipToChecked();
-    const address = makeAddressObj('address');
+    const shipToSelected = shipToChecked();
+    const shipFromAddress = addressBuilder('JSON', 'address');
     let sampleData;
 
-    if(shipToAddress) {
-        const srcAddress = makeAddressObj('srcAddress');
+    // check if there is a shipTo address selected
+    if(shipToSelected) {
+        const shipToAddress = addressBuilder('JSON', 'srcAddress');
 
         sampleData = {
             "lines": [],
@@ -156,8 +175,8 @@ function jsonSampleData() {
             "date": "2018-09-05",
             "customerCode": "ABC",
             "addresses": {
-                "shipTo": address,
-                "shipFrom": srcAddress,
+                "shipTo": shipToAddress,
+                "shipFrom": shipFromAddress,
             }
         };
     }
@@ -169,7 +188,7 @@ function jsonSampleData() {
             "date": "2018-09-05",
             "customerCode": "ABC",
             "addresses": {
-                "singleLocation": address,
+                "singleLocation": shipFromAddress,
             }
         };
     }
@@ -193,43 +212,20 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create`;
 
 function cSharpSampleData() {
     const lines = lineBuilder('C#');
-    let address;
-    const shipToAddress = shipToChecked();
+    const shipFromAddress = addressBuilder('C#', 'address');;
+    const shipToSelected = shipToChecked();
 
     // check if shipFrom/To addresses
-    if(shipToAddress) {
-        const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
-        const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
+    if(shipToSelected) {
+        const shipToAddress = addressBuilder('C#', 'srcAddress');
         
-        // build C# req for multiple addresses
         address = `shipFrom = new AddressLocationInfo()
-        {
-            line1 = "${shipFrom[0]}",
-            city = "${shipFrom[1]}",
-            region = "${shipFrom[2]}",
-            country = "${shipFrom[4]}",
-            postalCode = "${shipFrom[3]}"
-        },
+        ${shipFromAddress},
         shipTo = new AddressLocationInfo()
-        {
-            line1 = "${shipTo[0]}",
-            city = "${shipTo[1]}",
-            region = "${shipTo[2]}",
-            country = "${shipTo[4]}",
-            postalCode = "${shipTo[3]}"
-        }`;
+        ${shipToAddress}`;
     } else {
-        const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
-
-        // build C# req for single location
         address = `singleLocation = new AddressLocationInfo()
-        {
-            line1 = "${singleLocation[0]}",
-            city = "${singleLocation[1]}",
-            region = "${singleLocation[2]}",
-            country = "${singleLocation[4]}",
-            postalCode = "${singleLocation[3]}"
-        }`;
+        ${shipFromAddress}`;
     }
 
     // build sample data for c#
@@ -260,21 +256,9 @@ var transaction = client.CreateTransaction(null, createModel);`;
 }
 
 function phpSampleData() {
-    let lines = '';
+    const lines = lineBuilder('PHP');
     let address;
     const shipToAddress = shipToChecked();
-    
-    // gather all product info and make into PHP SDK friendly form
-    let lineNum = 0;
-    $('input[type=checkbox][name=product]:checked').each(function () {
-        const taxCode = $(this).val();
-        const amount = $('#' + $(this).attr('id') + '-amount').val();
-        if (lineNum === 0) {
-            lines += `->withLine(${amount}, ${lineNum++}, null, ${taxCode})`; 
-        } else {
-            lines += `\n    ->withLine(${amount}, ${lineNum++}, null, ${taxCode})`;
-        }
-    });
 
     // check if shipFrom/To addresses
     if(shipToAddress) {
@@ -307,30 +291,9 @@ $t = $tb->${address}
 }
 
 function pythonSampleData() {
-    let lines = ``;
+    const lines = lineBuilder('Python');
     let address;
     const shipToAddress = shipToChecked();
-    
-    // Loop through all the checked products and add one line for each
-    let lineNum = 1;
-    const allProducts = $('input[type=checkbox][name=product]:checked');
-    allProducts.each(function () {
-        const taxCode = $(this).val();
-        const amount = $('#' + $(this).attr('id') + '-amount').val();
-        const description = $(this).attr('description');
-        lines += `{
-            'amount': '${amount}',
-            'description': '${description}',
-            'number': '${lineNum}',
-            'taxCode': '${taxCode}'
-        }`;
-
-        if (lineNum != allProducts.length) {
-            lines += ',\n        ';
-        }
-
-        lineNum++
-    });
 
     if (shipToAddress){
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
@@ -395,29 +358,8 @@ print(transaction_response.text())`;
 
 function rubySampleData() {
     let address;
-    let lines = ``;
-    const shipToAddress = shipToChecked();
-
-    // Loop through all the checked products and add one line for each
-    let lineNum = 1;
-    const allProducts = $('input[type=checkbox][name=product]:checked');
-    allProducts.each(function () {
-        const taxCode = $(this).val();
-        const amount = $('#' + $(this).attr('id') + '-amount').val();
-        const description = $(this).attr('description');
-        lines += `{
-            amount: "${amount}",
-            description: "${description}",
-            number: "${lineNum}",
-            taxCode: "${taxCode}"
-        }`;
-
-        if (lineNum != allProducts.length) {
-            lines += ',\n        ';
-        }
-
-        lineNum++
-    });    
+    const lines = lineBuilder('Ruby');
+    const shipToAddress = shipToChecked();   
 
     if (shipToAddress) {
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
@@ -485,21 +427,9 @@ transaction = @client.create_transaction(createTransactionModel)`;
 }
 
 function javaSampleData() {
-    let lines = ``;
+    const lines = lineBuilder('Java');
     let address;
     const shipToAddress = shipToChecked();
-
-    // gather all product info and make into PHP SDK friendly form
-    let lineNum = 0;
-    $('input[type=checkbox][name=product]:checked').each(function () {
-        const taxCode = $(this).val();
-        const amount = $('#' + $(this).attr('id') + '-amount').val();
-        if (lineNum === 0) {
-            lines += `.withLine(new BigDecimal(${amount}), new BigDecimal(${lineNum++}), "${taxCode}")`; 
-        } else {
-            lines += `\n    .withLine(new BigDecimal(${amount}), new BigDecimal(${lineNum++}), "${taxCode}")`;
-        }
-    });
     
     if (shipToAddress) {
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
@@ -529,29 +459,8 @@ TransactionModel transaction = new TransactionBuilder(client, "DEFAULT", Documen
 
 function javascriptSampleData() {
     let address;
-    let lines = ``;
-    const shipToAddress = shipToChecked();
-
-    // Loop through all the checked products and add one line for each
-    let lineNum = 1;
-    const allProducts = $('input[type=checkbox][name=product]:checked');
-    allProducts.each(function () {
-        const taxCode = $(this).val();
-        const amount = $('#' + $(this).attr('id') + '-amount').val();
-        const description = $(this).attr('description');
-        lines += `{
-            amount: '${amount}',
-            description: '${description}',
-            number: '${lineNum}',
-            taxCode: '${taxCode}'
-        }`;
-
-        if (lineNum != allProducts.length) {
-            lines += ',\n        ';
-        }
-
-        lineNum++
-    });    
+    const lines = lineBuilder('JS');
+    const shipToAddress = shipToChecked();    
 
     if (shipToAddress) {
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
