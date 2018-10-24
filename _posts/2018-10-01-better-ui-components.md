@@ -414,7 +414,7 @@ which outputs
 ```html
 <span class="uitk-badge uitk-badge-inline shape-pill theme-success">10% off</span>
 ```
-The overuse of these libraries diminishes the potential gains from using them, even to the point of resulting in a net negative outcome. But I don't know, maybe it's not so obvious: Should an engineer write a dozen lines of CSS to make Badge, or should they write *474 total lines of code across 8 files* (true story) with multiple dependencies and a mandatory build pipleine? "But it scales!" But 9/10 of your cases were in zero danger of not being able to scale, and yet all 10 were solved with [insert favorite js]. Can it scale _down_? Down so much that it can get out of its own way and not be needed at all? 
+The overuse of these libraries diminishes the potential gains from using them, even to the point of resulting in a net negative outcome. But I don't know, maybe it's not so obvious: _Should an engineer write a dozen lines of CSS to make Badge, or should they write **474 total lines of code across 8 files with multiple dependencies and a mandatory build pipleine** (true story)?_ "But it scales!" But 9/10 of your cases were in zero danger of not being able to scale, and yet all 10 were solved with [insert favorite js]. Can it scale _down_? Down so much that it can get out of its own way and not be needed at all? 
 
 And that's really what the custom tag approach is about. Yes, a tag and attribute design is better than class-based - the time for that switch has come - but the real value is being able to leverage a web standard across all types of UI components, from standard elements like `<input>` to custom "micro" components like `<s-icon>` up to stateful components like `<s-alert>` and beyond.
 
