@@ -86,9 +86,9 @@ function lineBuilder(reqType) {
                 if (lineNum !== allProducts.length) lines += '\n    ';
                 break;
             case 'Java':
-                lines += `.withLine(new BigDecimal(${amount}), new BigDecimal(${lineNum++}), "${taxCode}")`; 
+                lines += `.withLine(new BigDecimal(${amount}), new BigDecimal(${lineNum}), "${taxCode}")`; 
                 if (lineNum !== allProducts.length) lines += '\n    ';
-                break;å
+                break;
             default:
                 break;
         }
@@ -146,7 +146,7 @@ function addressBuilder(reqType, addressName, prefix) {
             address = `->withAddress('${prefix}', '${addressArray[0]}', null, null, '${addressArray[1]}', '${addressArray[2]}', '${addressArray[4]}', '${addressArray[3]}')`;
             break;
         case 'Java':
-            address = `.withAddress('${prefix}', '${addressArray[0]}', null, null, '${addressArray[1]}', '${addressArray[2]}', '${addressArray[4]}', '${addressArray[3]}')`;
+            address = `.withAddress(${prefix}, "${addressArray[0]}", null, null, "${addressArray[1]}", "${addressArray[2]}", "${addressArray[4]}", "${addressArray[3]}")`;
             break;
         default:
             break;
@@ -381,20 +381,17 @@ transaction = @client.create_transaction(createTransactionModel)`;
 
 function javaSampleData() {
     const lines = lineBuilder('Java');
-    const shipFromSelected = shipFromChecked();
     let address;
-    
-    if (shipFromSelected) {
-        const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
-        const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
+    const shipFromSelected = shipFromChecked();
 
-        address = `.withAddress(TransactionAddressType.ShipTo, ${shipTo[0]}, null, null, ${shipTo[1]}, ${shipTo[2]}, ${shipTo[4]}, ${shipTo[3]})
-    .withAddress(TransactionAddressType.ShipFrom, ${shipFrom[0]}, null, null, ${shipFrom[1]}, ${shipFrom[2]}, ${shipFrom[4]}, ${shipFrom[3]})`;
+    // check if shipFrom/To addresses
+    if(shipFromSelected) {
+        const shipFromAddress = addressBuilder('Java', 'srcAddress', 'TransactionAddressType.ShipFrom');
+        const shipToAddress = addressBuilder('Java', 'address', 'TransactionAddressType.ShipTo');
 
+        address = shipFromAddress + '\n    ' + shipToAddress;
     } else {
-        const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
-
-        address = `.withAddress(TransactionAddressType.SingleLocation, ${singleLocation[0]}, null, null, ${singleLocation[1]}, ${singleLocation[2]}, ${singleLocation[4]}, ${singleLocation[3]})`;
+        address = addressBuilder('Java', 'address', 'TransactionAddressType.SingleLocation');
     }
 
     const sampleData = `//creates our AvaTaxClient
@@ -411,38 +408,18 @@ TransactionModel transaction = new TransactionBuilder(client, "DEFAULT", Documen
 }
 
 function javascriptSampleData() {
-    let address;
     const lines = lineBuilder('JS');
-    const shipToAddress = shipFromChecked();    
+    const shipFromSelected = shipFromChecked(); 
+    const shipToAddress = addressBuilder('Ruby', 'address');
+    let address;
+  
+    if (shipFromSelected) {
+        const shipFromAddress = addressBuilder('Ruby', 'srcAddress');
 
-    if (shipToAddress) {
-        const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
-        const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
-
-        address = `ShipFrom: {
-            line1: '${shipFrom[0]}',
-            city: '${shipFrom[1]}',
-            region: '${shipFrom[2]}',
-            country: '${shipFrom[3]}',
-            postalCode: '${shipFrom[4]}'
-        },
-        ShipTo: {
-            line1: '${shipTo[0]}',
-            city: '${shipTo[1]}',
-            region: '${shipTo[2]}',
-            country: '${shipTo[3]}',
-            postalCode: '${shipTo[4]}'
-        }`;
+        address = `ShipFrom: ${shipFromAddress},
+        ShipTo: ${shipToAddress}`;
     } else {
-        const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
-
-        address = `SingleLocation: {
-            line1: '${singleLocation[0]}',
-            city: '${singleLocation[1]}',
-            region: '${singleLocation[2]}',
-            country: '${singleLocation[3]}',
-            postalCode: '${singleLocation[4]}'
-        }`;
+        address = `SingleLocation: ${shipToAddress}`;
     }
 
     const sampleData = `const config = {
