@@ -121,7 +121,7 @@ Here's some other examples of components built with custom tags and attributes i
   <col span="6 sm-12">...</col>
 </row>
 ```
-How about we redo Material's Dialog component from earlier? That means:
+How about we redo Material's Dialog Actions from earlier? That'd go something this:
 ```html
 <div class="mdl-dialog__actions mdl-dialog__actions--full-width">...</div>
 ```
