@@ -230,6 +230,7 @@ Nice! We really got ourselves a useful component without a single build step or 
 * `alert` tag
 * `type` attribute (_required_) - one of "success", "warn", or "error"
 * `autodismiss` attribute (_optional_) - if present, the Alert will disappear after four seconds
+* `transitionend` event - DOM event, fires after Alert disappears
 * Accepts nested content, including other custom tags
 
 If you didn't know any better you might think this was one of them fancy HTML5 elements available in all those non-IE browsers. That's a sign we are on the right track! 
