@@ -111,7 +111,7 @@ Not awful, but here's the same thing using a tag and attributes:
 ```html
 <badge count="1" type="success"></badge>
 ```
-The second one is clearly a Badge element with it's own attributes - just like real elements! And with a little CSS we can add some intelligence to Badge so when it has a zero count or no count it hides: 
+The second one is clearly a Badge element with it's own attributes. Again, not unlike real elements. And with a little CSS we can add some intelligence to Badge so when it has a zero count or no count it hides: 
 ```css
 badge[count="0"], badge[count=""] { 
   display: none 
