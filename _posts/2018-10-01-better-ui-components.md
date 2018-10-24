@@ -390,7 +390,7 @@ And the default still works the same too:
   <p>You should try this</p>
 </s-alert>
 ```
-
+### Going forward
 If whatever you pick enables you and other devs to compose UIs using HTML, then it's a good choice. If something forces you to add lots of kb (more than 10 min+gz) and write special syntax, then it's not a good choice for UI composition because we already have HTML for that. We just haven't been using it correctly!
 
 Being able to write apps built with this kind of standards-based markup is not just a better DX, it's less costly since there's nothing proprietary that will inevitably fall out of fashion and need to be refactored. Take GitHub's UI for example. As I write this article I look at GitHub's design imagining using Skylab to recreate it:
