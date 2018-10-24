@@ -204,7 +204,9 @@ alert[type="success"]:before {
 
 image here...
 
-It's starting to really look like something. It's pretty common for Alerts to disappear automatically, so let's add support for that. If there really was an HTML `alert` element and it had an auto-disappearing feature I could imagine it would have an `autodismiss` attribute for triggering this behavior, so let's go with that:
+It's starting to really look like something. 
+
+It's pretty common for Alerts to disappear automatically, so let's add support for that. If there really was an HTML `alert` element and it had an auto-disappearing feature I could imagine it would have an `autodismiss` attribute for triggering this behavior, so let's go with that:
 
 _New autodismiss feature_
 ```html
