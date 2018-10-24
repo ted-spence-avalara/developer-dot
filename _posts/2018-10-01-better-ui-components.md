@@ -448,6 +448,6 @@ _Should an engineer write a dozen lines of CSS to make Badge, or should they wri
 
 And yet 9 out of 10 implementations were in zero danger of not being able to scale, but all 10 were solved with [insert favorite js library] and now the app has 10x the amount of code as necessary. Can it scale _down_? Down so much that it can get out of its own way and not be needed at all? 
 
-And that's really what the custom tag approach is about. Yes, a tag and attribute design is much nicer than class-based - the time for that switch has come - but being able to design and build components that scale in either direction using standards-based HTML constructs (prefixed tag, attributes, and nesting) across a wide range of use cases is a very compelling opportunity!
+And that's really what the custom tag approach is about. Yes, a tag and attribute design is much nicer than class-based (the time for that switch has definitely come), but being able to design and build components that scale in either direction using standards-based HTML constructs (prefixed tag, attributes, and nesting) across a wide range of use cases is a very compelling opportunity!
 
-And so my eye is on Web Components (recently landed in Firefox!), the spec, and the few js libs that stay close to it. Pre-Custom Elements era solutions, no matter how popular, need to catch up or they'll find themselves on that short road to the garbage heap of JavaScript libraries.
+And so my eye is on custom tags, Web Components, the Custom Elements spec and the few js libs that stay close to it. That's the path to designing better UI components and ending this over-engineered era.
