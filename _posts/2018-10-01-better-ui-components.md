@@ -255,7 +255,7 @@ _Override autodismiss duration_
   <p>You should try this</p>
 </alert>
 ```
-But as we've learned, it's best-practice to prefix, so that really should be:
+But as we've learned it's best-practice to prefix, so that really should be:
 ```html
 <s-alert type="success" autodismiss="10">
   <p>You should try this</p>
@@ -371,7 +371,7 @@ _Riot_
 
 In both cases using this new version of Alert with JavaScript-endabled `autodismiss` hasn't changed:
 ```html
-<s-alert type="success" autodismiss="7">
+<s-alert type="success" autodismiss="10">
   <p>You should try this</p>
 </s-alert>
 ```
