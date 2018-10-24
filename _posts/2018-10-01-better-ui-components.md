@@ -294,6 +294,7 @@ _Custom Elements + `<template>` element_
 ```html
 <template id="s-alert">
   <style>
+    :host {...}
   </style>
   
   <s-icon></s-icon>
