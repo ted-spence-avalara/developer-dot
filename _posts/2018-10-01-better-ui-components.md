@@ -49,7 +49,7 @@ What exactly is that last one supposed to be? Not clear; too messy.
 <div class="icon icon-phone"></div>
 <span class="icon icon-phone"></span>
 ```
-That means `<div class=""></div>` is all boilerplate. Lame.
+That means `<div class=""></div>` is just boilerplate. Bummer.
 #### 4) Next to standard elements the class-based design looks out of place:
 ```html
 <i class="icon icon-phone"></i>
@@ -60,7 +60,7 @@ What if standard elements were based on classes? So instead of the above we'd ha
 <i class="icon icon-phone"></i>
 <i class="input input-type-email input-autofocus">
 ```
-Pretty gross, but that's what you get with a class-based design. And it gets even worse if you go BEM: 
+Pretty gross, but that's class-based design, and it gets even worse if you follow BEM. Here's an example of that from a popular design system: 
 ```html
 <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
 ``` 
@@ -121,6 +121,14 @@ Here's some other examples of components built with custom tags and attributes i
   <col span="6 sm-12">...</col>
 </row>
 ```
+Let's redo the Material Dialog from above:
+```html
+<div class="mdl-dialog__actions mdl-dialog__actions--full-width">...</div>
+```
+becomes
+```html
+<mdl-dialog-actions size="full-width">...</mdl-dialog-actions>
+```
 
 Can you see the difference? Are you starting to sense the benefits? 
 
@@ -129,9 +137,9 @@ Designing custom UI components with tags and attributes instead of classes is fu
 * Enables UI engineers to design components with much more meaningful APIs instead of a boilerplate tag and list of classes
 * Custom tags have strong semantic meaning and are easily identifiable: `<badge>` vs. `<span class="badge">`
 * No more BEM or similar methodologies for engineering around the problems with class-based design
-* The `class` attribute is still usable and if it is used it doesn't dilute your component's identity: `<icon name="phone" class="foo bar baz">`
-* In so many cases you can ditch the need for abstraction: `{{> "icon" name="phone"}}` or `<OverEngineeredIcon name="phone"/>` is replaced with `<icon name="phone"></icon>`
-* The result is clean, standards-based markup that has a nice uniform look to it 
+* The `class` attribute is still usable, but if it is used it won't dilute your component's identity: `<icon name="phone" class="foo bar baz">`
+* In many cases you can ditch the need for abstraction: `{{> "icon" name="phone"}}` or `<OverEngineeredIcon name="phone"/>` is replaced with `<icon name="phone"></icon>`
+* The result is clean, standards-based markup that has a nice uniform look with greater semantics and readability
 * Using custom tags and attributes is officially supported. It's how HTML thought we'd design custom components, but we instead went crazy for classes!
 * Lastly, custom tags set you up perfectly for future improvements. How so? Let’s get into that now.
 
@@ -204,9 +212,7 @@ alert[autodismiss] {
     opacity: 0; 
 }
 ```
-Nice! We got ourselves a useful component without a single build step or polyfill required ;)
-
-And check out that friendly little API:
+Nice! We got ourselves a useful component without a single build step or polyfill required ;) And check out its friendly little API:
 * Semantic `alert` tag
 * `type` - _required_ - one of "info", "success", "warn", or "error"
 * `autodismiss` - _optional_ - if present, the Alert will disappear after four seconds
@@ -216,18 +222,18 @@ If you didn't know any better you'd think this was a standard HTML5 element avai
 
 There is a small problem though. The problem is our tag name is not totally future-proof. There's two considerations here:
 
-The first is that some day HTML might get a tag with the same name. I pray every night before bed that WHATWG will give us `icon`. If WHATWG doesn't, it's still possible some other developer will use it. Either way there's risk of a collision and this brings us to the second consideration: prefixing. 
+The first is that some day HTML might get a tag with the same name as ours. I pray every night before bed that WHATWG will give us `<icon>`...but if WHATWG doesn't, it's still possible some other developer might. Either way there's risk of a collision and this brings us to the second consideration: prefixing. 
 
-Although we aren't technically creating Custom Elements at this point, you'll want to follow the spec and use a prefix for your custom tags. At Avalara we use `s-` as our prefix. The `s` is short for Skylab, which is the name of our design system, but it also stands for:
+Although these aren't technically Custom Elements at this point, you'll want to follow the spec and use a prefix for your custom tags. At Avalara we use `s-` as our prefix. The `s` is short for Skylab, which is the name of our design system, but it also means:
 * **s**tandards - we always go for standards until we actually need to bring in a dependency
 * **s**emantic - tags with attributes are much more semantic than div/span with classes
 * **s**mall - basic HTML and CSS can take you very far without needing something like React
 * **s**hared - these components are shared by our 20+ web apps and three times as many developers
 * **S**eattle - not really, but that's where we are! Come [join us](https://www.avalara.com/us/en/about/jobs/job-details.oUKm8fwS.html)
 
-So yeah, prefixing is a best-practice. It solves the risk of colliding tags and it's a helpful visual distinguisher between standard and custom tags. More importantly it sets you up very nicely for when JavaScript-enabled functionality is required. You see, the custom tag approach scales in both directions: you get to scale down to lightweight CSS-only components like icon, or all the way up to interactive components that respond to state changes all while maintaining _the same uniform HTML interface_. The secret is staying close to standards.
+So yeah, prefixing is a best-practice. It solves the risk of colliding tags and it's a helpful visual distinguisher between standard and custom tags. More importantly it sets you up very nicely for when JavaScript-enabled functionality is required and you go Custom Elements or similar. You see, using prefixed custom tags instead of classes can scale in either direction: you can scale down to lightweight CSS-only components like icon, or all the way up to interactive components that respond to state changes all while maintaining _the same uniform HTML interface_. The secret is prefixed custom tags.
 
-Let's see how our Alert can go from a basic custom tag with styles to interactive component without breaking changes or a shifting paradigm.
+Let's see how our Alert can go from a basic custom tag with styles to interactive JavaScript-enabled component without breaking changes or a shifting paradigm.
 
 In a future release of Alert let's say we're adding the ability to customize the `autodismiss` duration. You can take the default four seconds by simply adding the attribute, or you can shorten or extend that duration by setting its value to a number:
 
@@ -255,6 +261,7 @@ But as we've learned, it's best-practice to prefix, so that really should be:
 > ```html
 > <b-alert type="success">
 > ```
+> and Material can use `mdl-` as shown above.  
 Anyway, back to `autodismiss`. Supporting a value of seconds now requires the use of JavaScript. At this point most people go  with what they know or try the flavor-of-the-day ramping up on whatever idioms and special syntax is required. That's not a problem if you're a small team with one app, but if you have lots of consumers of your Alert component you're entering into a code contract and the less that contract asks of the implementer the better.
 
 We can minimize the contract and be better positioned for the long-term if we pick a solution that follows, or stays close to, Custom Elements. Here's some options available today:
@@ -263,6 +270,43 @@ We can minimize the contract and be better positioned for the long-term if we pi
 * [Slim](http://slimjs.com/#/getting-started)
 * [Vue](https://vuejs.org/v2/guide/#Relation-to-Custom-Elements)
 * [Riot](https://riot.js.org), which has the best DX out there imo, [try it](https://riot.js.org/play/). There's even a w3c proposal out there [that takes the spec in a similar direction](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Declarative-Custom-Elements-Strawman.md)
+
+Here's two examples where Alert can be upgraded, or scale up, to a stateful component:
+_Vanilla Custom Elements_
+```js
+window.customElements.define('s-alert', class extends HTMLElement {
+  constructor() {
+    super(); // always call super() first in the constructor.
+    ...
+  }
+  connectedCallback() {
+    ...
+  }
+});
+
+```
+_Riot_
+```html
+<s-alert>
+    <s-icon name="{icon}"></i>
+    <yield/>
+
+    <script>
+        // Determine Icon based on type
+        this.icon = this.opts.type === 'success' ? 'check' : this.opts.type === 'error' ? 'info' : 'warn';
+
+        this.on('mount', function() {
+            if (this.opts.autodismiss) {
+                let seconds = (typeof this.opts.autodismiss === 'number' ? this.opts.autodismiss : 4) * 1000;
+                setTimeout(this.remove(), seconds);
+            }
+        })
+    </script>
+    <style>
+      ...
+    </style>  
+</s-alert>
+```
 
 If whatever you pick enables you and other devs to compose UIs using HTML, then it's a good choice. And hopefully it does so without requiring multiple dependencies, tooling, and build pipeline.
 
