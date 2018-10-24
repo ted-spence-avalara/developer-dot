@@ -396,7 +396,7 @@ Being able to write and maintain apps built with this kind of standards-based ma
 </body>
 ```
 
-Now I know this doesn't address the hard problem of application state management and having the UI reliably reflect that state. That's what React and others set out to solve and they did. But the front-end community seems to have been unable to take a balanced approach to adopting these new technologies and just started engineering stuff. If you use React, you no doubt have an over-engineered app, or at least in part. When I see things like this I just wonder what the heck are all the React devs doing to themselves:
+Now I know this doesn't address the hard problem of application state management and having the UI reliably reflect that state. That's what React and others set out to solve and they did. But the front-end community seems to have been unable to take a balanced approach to adopting these new technologies and just started over-engineering everything in sight. It's very pervasive in the React community in particular. I'll go out on a limb and say that if you use React you no doubt have an over-engineered app, or at least in part. When I see things like this (real React components) I just wonder what the heck are all the React devs doing to themselves:
 ```html
 <DisplayText size="extraLarge" element="h4">Good evening, Dominic.</DisplayText>
 ```
@@ -404,9 +404,9 @@ which outputs
 ```html
 <h4 class="Polaris-DisplayText Polaris-DisplayText--sizeExtraLarge">Good evening, Dominic.</h4>
 ```
-Just take a minute to think about that...
+Just take a minute to think about what happened there...
 
-Here's another one from a big tech company that should know better:
+Here's another one from a nice tech company that should know better:
 ```html
 <UitkInlineBadge shape="shape-pill" theme="theme-success">10% off</UitkInlineBadge>
 ```
@@ -414,5 +414,7 @@ which outputs
 ```html
 <span class="uitk-badge uitk-badge-inline shape-pill theme-success">10% off</span>
 ```
-Should an engineer write a dozen or so lines of CSS to make Badge, or should they write *474 total lines of code across 8 files* (true story) with multiple dependencies and a mandatory build pipleine? I hope that's not a difficult question to answer!
+The overuse of these libraries diminishes the potential gains from using them, even to the point of rendering a net negative cost. But I don't know, maybe it's not so obvious: Should an engineer write a dozen lines of CSS to make Badge, or should they write *474 total lines of code across 8 files* (true story) with multiple dependencies and a mandatory build pipleine? "But it scales!" But 9/10 of your cases were in zero danger of not being able to scale, and yet all 10 were solved with [insert favorite js]. Can it scale _down_? Down so much it's no longer needed? 
+
+That's really what the custom tag approach is all about. Yes, a tag and attribute design is better than class-based, but the real value is being able to leverage a web standard all the way from `<s-icon>` to `<s-alert>` and beyond.
 
