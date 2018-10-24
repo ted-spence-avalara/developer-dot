@@ -79,7 +79,7 @@ We don't have to do it this way. We don't have to use classes. There's something
 
 We can design custom components with more meaningful APIs by using tags, attributes, and nesting - just like real elements. Here's what that means:
 
-_Old class-based design_
+_a typical class-based design_
 ```html
 <i class="icon icon-phone"></i>
 ```
