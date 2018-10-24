@@ -78,7 +78,7 @@ _Or, custom tag and attribute design_
 ```html
 <icon name="phone"></icon>
 ```
-If this kind of makes you uneasy, don't worry. Custom tags are compatible with all modern browsers and later versions of IE. Browsers happily download, parse, and render custom tags just like any "real" HTML because it is. Sure, it's not a standard element and browsers won't have any default styles for your custom or _unknown_ tags, but that's not a problem at all. You can create CSS rules for custom tags, like `icon`, just like you can for standard tags and classes:
+If this kind of makes you uneasy, don't worry. Custom tags are compatible with all modern browsers and later versions of IE. Browsers happily download, parse, and render custom tags just like any "real" HTML because it is. Sure, it's not a standard element and browsers won't have any default styles or built-in behaviors for your custom or _unknown_ tags, but that's not a problem at all. You can create CSS rules for custom tags, like `icon`, just like you can for standard tags and classes:
 ```css
 icon {
   font-family: 'My Icons';
