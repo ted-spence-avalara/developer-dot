@@ -176,7 +176,7 @@ alert[type="error"] { background-color: red; }
 ```
 That would look something like:
 
-image here...
+<img src="/public/images/alert-component-v1.png" alt="Alert component">
 
 Please note that there are no dependencies here. There's nothing to download, no tools and nothing to build. No magic, no hacks, nothing proprietary, no frameworks or special syntax, nothing. And when it comes to building software, _nothing_ is better than something.
 
@@ -204,7 +204,7 @@ alert[type="success"]:before {
 }
 ```
 
-image here...
+<img src="/public/images/alert-component-v2.png" alt="Alert component with an icon">
 
 Ok, that's starting to really look like something. (Note that the CSS here does not include all the properties needed) 
 
