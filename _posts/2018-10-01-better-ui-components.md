@@ -142,7 +142,7 @@ Designing custom UI components with tags and attributes instead of classes is fu
 * In many cases you can ditch the need for abstraction: `{{> icon name="phone"}}` or `<OverEngineeredIcon name="phone"/>` is replaced with `<icon name="phone"></icon>`
 * The result is clean, standards-based markup that has a nice uniform look with excellent readability
 * Using custom tags and attributes is officially supported. It's how HTML thought we'd design custom components, but we instead went crazy for classes!
-* Lastly, custom tags set you up perfectly for future improvements. How so? Let’s get into that now.
+* Lastly, using custom tags with attributes sets you up for future improvements. How so? Let’s get into that now.
 
 ### Component evolution
 Creating and sharing custom components is a commitment. Your components will evolve and have new capabilities added to them over time. Let's look at the possible evolution of a custom Alert (aka Callout) component:
