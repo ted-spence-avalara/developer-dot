@@ -414,11 +414,13 @@ which outputs
 ```html
 <span class="uitk-badge uitk-badge-inline shape-pill theme-success">10% off</span>
 ```
-The overuse of these libraries diminishes the potential gains from using them, even to the point of resulting in a net negative outcome. But I don't know, maybe it's not so obvious: _Should an engineer write a dozen lines of CSS to make Badge, or should they write **474 total lines of code across 8 files with multiple dependencies and a mandatory build pipleine** (true story)?_  
+The overuse of these libraries diminishes the potential gains from using them, even to the point of resulting in an overall negative outcome. But I don't know, maybe it's not so obvious: 
+
+_Should an engineer write a dozen lines of CSS to make Badge, or should they write **474 total lines of code across 8 files with multiple dependencies and a mandatory build pipleine** (true story)?_  
 
 "So it can scale!" 
 
-So it can. And yet 9 out of 10 of your cases were in zero danger of not being able to scale, but all 10 were solved with [insert favorite js library]. Can it scale _down_? Down so much that it can get out of its own way and not be needed at all? 
+So it can. And yet 9 out of 10 of your cases were in zero danger of not being able to scale, but all 10 were solved with [insert favorite js library] and the app has 10x the amount of code as necessary. Can it scale _down_? Down so much that it can get out of its own way and not be needed at all? 
 
-And that's really what the custom tag approach is about. Yes, a tag and attribute design is better than class-based - the time for that switch has come - but the real value is being able to leverage a web standard (prefixed tag and attributes) across all types of UI components without the abstractions leaking.
+And that's really what the custom tag approach is about. Yes, a tag and attribute design is better than class-based - the time for that switch has come - but the real value is being able to leverage a web standard (prefixed tag and attributes) across all types and sizes of UI components without the abstraction leaking.
 
