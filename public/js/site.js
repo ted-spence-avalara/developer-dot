@@ -140,33 +140,20 @@ function addressBuilder(reqType, addressName, prefix) {
     return address;
 }
 
-// HELPER: check if shipTo address is selected
-function shipToChecked() {
+// HELPER: check if shipFrom address is selected
+function shipFromChecked() {
     const checked = $('input[type=radio][name=srcAddress]:checked').length > 0;
     return checked;
 }
 
-// HELPER: for jsonSampleData, build shipTo/From objs
-function makeAddressObj(addressName){
-    const address = $(`input[type=radio][name=${addressName}]:checked`).val().split(',');
-    const addressObj = {
-        "line1": address[0],
-        "city": address[1],
-        "region": address[2],
-        "country": address[3],
-        "postalCode": address[4],
-    }
-    return addressObj;
-}
-
 function jsonSampleData() {
-    const shipToSelected = shipToChecked();
-    const shipFromAddress = addressBuilder('JSON', 'address');
+    const shipFromSelected = shipFromChecked();
+    const shipToAddress = addressBuilder('JSON', 'address');
     let sampleData;
 
     // check if there is a shipTo address selected
-    if(shipToSelected) {
-        const shipToAddress = addressBuilder('JSON', 'srcAddress');
+    if(shipFromSelected) {
+        const shipFromAddress = addressBuilder('JSON', 'srcAddress');
 
         sampleData = {
             "lines": [],
@@ -188,7 +175,7 @@ function jsonSampleData() {
             "date": "2018-09-05",
             "customerCode": "ABC",
             "addresses": {
-                "singleLocation": shipFromAddress,
+                "singleLocation": shipToAddress,
             }
         };
     }
@@ -212,12 +199,12 @@ https://sandbox-rest.avatax.com/api/v2/transactions/create`;
 
 function cSharpSampleData() {
     const lines = lineBuilder('C#');
-    const shipFromAddress = addressBuilder('C#', 'address');;
-    const shipToSelected = shipToChecked();
+    const shipToAddress = addressBuilder('C#', 'address');;
+    const shipFromSelected = shipFromChecked();
 
     // check if shipFrom/To addresses
-    if(shipToSelected) {
-        const shipToAddress = addressBuilder('C#', 'srcAddress');
+    if(shipFromSelected) {
+        const shipFromAddress = addressBuilder('C#', 'srcAddress');
         
         address = `shipFrom = new AddressLocationInfo()
         ${shipFromAddress},
@@ -225,7 +212,7 @@ function cSharpSampleData() {
         ${shipToAddress}`;
     } else {
         address = `singleLocation = new AddressLocationInfo()
-        ${shipFromAddress}`;
+        ${shipToAddress}`;
     }
 
     // build sample data for c#
@@ -258,7 +245,7 @@ var transaction = client.CreateTransaction(null, createModel);`;
 function phpSampleData() {
     const lines = lineBuilder('PHP');
     let address;
-    const shipToAddress = shipToChecked();
+    const shipToAddress = shipFromChecked();
 
     // check if shipFrom/To addresses
     if(shipToAddress) {
@@ -293,7 +280,7 @@ $t = $tb->${address}
 function pythonSampleData() {
     const lines = lineBuilder('Python');
     let address;
-    const shipToAddress = shipToChecked();
+    const shipToAddress = shipFromChecked();
 
     if (shipToAddress){
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
@@ -359,7 +346,7 @@ print(transaction_response.text())`;
 function rubySampleData() {
     let address;
     const lines = lineBuilder('Ruby');
-    const shipToAddress = shipToChecked();   
+    const shipToAddress = shipFromChecked();   
 
     if (shipToAddress) {
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
@@ -429,7 +416,7 @@ transaction = @client.create_transaction(createTransactionModel)`;
 function javaSampleData() {
     const lines = lineBuilder('Java');
     let address;
-    const shipToAddress = shipToChecked();
+    const shipToAddress = shipFromChecked();
     
     if (shipToAddress) {
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
@@ -460,7 +447,7 @@ TransactionModel transaction = new TransactionBuilder(client, "DEFAULT", Documen
 function javascriptSampleData() {
     let address;
     const lines = lineBuilder('JS');
-    const shipToAddress = shipToChecked();    
+    const shipToAddress = shipFromChecked();    
 
     if (shipToAddress) {
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
