@@ -233,7 +233,7 @@ Nice! We really got ourselves a useful component without a single build step or 
 * `transitionend` event - DOM event, fires after Alert disappears
 * Accepts nested content, including other custom tags
 
-If you didn't know any better you might think this was one of them fancy HTML5 elements available in all those non-IE browsers. That's a sign we are on the right track! 
+If you didn't know any better you might think this was one of them fancy HTML5 elements. That's a sign we are on the right track! 
 
 There is a small problem though. The problem is our tag name is not totally future-proof. There's two considerations here:
 
