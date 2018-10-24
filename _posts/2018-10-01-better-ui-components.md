@@ -156,12 +156,12 @@ _Original design_
 ```css
 alert { 
   display: flex; 
+  color: white;
 }
 
-alert[type="success"] {
-  color: white;
-  background-color: green;
-}
+alert[type="success"] { background-color: green; }
+alert[type="warn"] { background-color: orange; }
+alert[type="error"] { background-color: red; }
 ```
 That would look something like:
 
@@ -213,11 +213,11 @@ alert[autodismiss] {
     opacity: 0; 
 }
 ```
-Nice! We got ourselves a useful component without a single build step or polyfill required ;) And check out its friendly little API:
-* Semantic `alert` tag
-* `type` - _required_ - one of "info", "success", "warn", or "error"
-* `autodismiss` - _optional_ - if present, the Alert will disappear after four seconds
-* You can nest content, including other custom HTML
+Nice! We really got ourselves a useful component without a single build step or polyfill required - imagine that! And check out its friendly little API:
+* `alert` tag
+* `type` attribute (_required_) - one of "info", "success", "warn", or "error"
+* `autodismiss` attribute (_optional_) - if present, the Alert will disappear after four seconds
+* Accepts nested content, including other custom tags
 
 If you didn't know any better you'd think this was a standard HTML5 element available in all newer browsers. Hey, that's a good sign! 
 
