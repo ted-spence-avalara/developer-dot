@@ -235,6 +235,7 @@ Nice! We really got ourselves a useful component without a single build step or 
 
 If you didn't know any better you might think this was one of them fancy HTML5 elements. That's a sign we are on the right track! 
 
+#### Close, but not quite
 There is a small problem though. The problem is our tag name is not totally future-proof. There's two considerations here:
 
 The first is that some day HTML might get a tag with the same name as ours. I pray every night before bed that WHATWG will give us `<icon>`...but if WHATWG doesn't, it's still possible some other developer might. Either way there's risk of a collision and that brings us to the second consideration: prefixing. 
