@@ -62,7 +62,7 @@ What if the standard elements used classes like this? So instead of the above we
 ```
 Pretty gross, but that's class-based design, and it gets even worse if you follow BEM. Here's an example of that from a popular design system: 
 ```html
-<div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+<div class="mdc-dialog__actions mdc-dialog__actions--full-width">
 ``` 
 We don't have to do it this way. We don't have to use classes. There's something better. 
 
@@ -123,11 +123,11 @@ Here's some other examples of components built with custom tags and attributes i
 ```
 How about we redo Material's Dialog Actions from earlier? That'd go like this:
 ```html
-<div class="mdl-dialog__actions mdl-dialog__actions--full-width">...</div>
+<div class="mdc-dialog__actions mdc-dialog__actions--full-width">...</div>
 ```
 becomes
 ```html
-<mdl-dialog-actions size="full-width">...</mdl-dialog-actions>
+<mdc-dialog-actions size="full-width">...</mdc-dialog-actions>
 ```
 
 Can you see the difference? 
@@ -262,7 +262,7 @@ But as we've learned, it's best-practice to prefix, so that really should be:
 > ```html
 > <b-alert type="success">
 > ```
-> and Material can use `mdl-` as shown above.  
+> and Material can use `mdc-` as shown above.  
 
 Anyway, back to `autodismiss`. Supporting a value of seconds now requires the use of JavaScript. At this point most people go  with what they know or try the flavor-of-the-day ramping up on whatever idioms and special syntax is required. That's not a problem if you're a small team with one app, but if you have lots of consumers of your Alert component you're entering into a code contract and the less that contract asks of the implementer the better.
 
