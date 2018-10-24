@@ -54,11 +54,9 @@ Those solutions use classes to define both the element and its attributes, and w
 What exactly is that last one supposed to be? It's no longer clear. 
 #### 3) The tag becomes unavoidable boilerplate with no meaning:
 ```html
-<i class="icon icon-phone"></i>
 <div class="icon icon-phone"></div>
-<span class="icon icon-phone"></span>
 ```
-That means `<div class=""></div>` is just boilerplate. Bummer.
+That means `<div class=""></div>` is all boilerplate. Bummer.
 #### 4) Next to standard elements the class-based design looks out of place:
 ```html
 <i class="icon icon-phone"></i>
