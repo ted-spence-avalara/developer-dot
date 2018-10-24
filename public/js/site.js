@@ -233,7 +233,7 @@ var client = new AvaTaxClient("MyTestApp", "1.0", Environment.MachineName, AvaTa
 // Setup transaction model
 var createModel = new CreateTransactionModel()
 {
-    type = docType,
+    type = DocumentType.SalesOrder,
     companyCode = "DEMOPAGE",
     date = DateTime.Today,
     customerCode = "ABC",
@@ -362,7 +362,7 @@ end
 @client = AvaTax::Client.new(:logger => true)
 
 createTransactionModel = {
-    type: "SalesInvoice",
+    type: "SalesOrder",
     companyCode: "12670",
     date: "2017-06-05",
     customerCode: "ABC",
@@ -399,7 +399,7 @@ AvaTaxClient client = new AvaTaxClient("Test", "1.0", "localhost", AvaTaxEnviron
     .withSecurity("MyUsername", "MyPassword");
 
 // build and create transaction
-TransactionModel transaction = new TransactionBuilder(client, "DEFAULT", DocumentType.SalesInvoice, "ABC")
+TransactionModel transaction = new TransactionBuilder(client, "DEFAULT", DocumentType.SalesOrder, "ABC")
     ${address}
     ${lines}
     .Create();`;
