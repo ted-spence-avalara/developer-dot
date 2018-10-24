@@ -12,11 +12,11 @@ These additions were of course implemented through the usual HTML constructs: *t
 ```html
 <h1>Hello World!</h1>
 ```
-`h1` is the "heading level 1" tag.
+`h1` is the "heading level 1" _tag_.
 ```html
 <p>Ready for <a href="example.com" download>download</a></p>
 ```
-That's an "anchor" element with download and "hypertext reference" attributes nested inside a paragraph. Here's some more examples:
+That's an "anchor" element, the `a` tag, with download and "hypertext reference" _attributes_ and it's _nested_ inside a `p` or paragraph. Here's some more examples:
 ```html
 <section>
   <header>...</header>
