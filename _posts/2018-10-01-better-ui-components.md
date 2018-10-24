@@ -413,7 +413,7 @@ Being able to write apps built with this kind of standards-based markup is not j
 </body>
 ```
 
-Now I know this doesn't address the hard problem of application state management and having the UI reliably reflect that state. That's what React and others set out to solve and they did. But the front-end community seems to have been unable to take a balanced approach to adopting these new technologies and just started over-engineering everything in sight. It's very pervasive in the React community in particular. I'll go out on a limb and say that if you use React you no doubt have an over-engineered app, or at least in part. When I see things like this (real React components) I just wonder what the heck are all the React devs doing to themselves:
+Now I know this doesn't address the hard problem of application state management and having the UI reliably reflect that state. That's what React and others set out to solve and they did. But the front-end community seems to have been unable to take a balanced approach to adopting these new technologies and just started over-engineering everything in sight. It's very pervasive in the React community in particular. I'll go out on a limb and say that if you use React you no doubt have an over-engineered app, or at least in part. When I see things like this I just wonder what the heck are all the React devs doing to themselves (these are real React components, there's 100's of examples out there like this):
 ```html
 <DisplayText size="extraLarge" element="h4">Good evening, Dominic.</DisplayText>
 ```
@@ -431,7 +431,7 @@ which outputs
 ```html
 <span class="uitk-badge uitk-badge-inline shape-pill theme-success">10% off</span>
 ```
-The overuse of these libraries diminishes the potential gains from using them, even to the point of resulting in an overall negative outcome. But I don't know, maybe it's not so obvious: 
+The overuse of these libraries diminishes the potential gains, even to the point of resulting in an overall negative outcome. But I don't know, maybe it's not so obvious: 
 
 _Should an engineer write a dozen lines of CSS to make Badge, or should they write **474 total lines of code across 8 files with multiple dependencies and a mandatory build pipleine** (true story)?_  
 
