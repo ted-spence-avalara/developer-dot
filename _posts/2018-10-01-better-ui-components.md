@@ -121,7 +121,7 @@ Here's some other examples of components built with custom tags and attributes i
   <col span="6 sm-12">...</col>
 </row>
 ```
-Let's redo the Material Dialog from above:
+Let's redo Material's Dialog component from earlier:
 ```html
 <div class="mdl-dialog__actions mdl-dialog__actions--full-width">...</div>
 ```
