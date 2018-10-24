@@ -273,7 +273,7 @@ We can minimize the contract and be better positioned for the long-term if we pi
 
 Here's two examples where Alert can be upgraded, or scale up, to a stateful component:
 
-_Custom Elements + <template>_
+_Custom Elements + `<template>` element_
 ```html
 <template id="s-alert">
   <style>
