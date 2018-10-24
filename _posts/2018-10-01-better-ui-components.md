@@ -5,9 +5,9 @@
 **Tl;dr:** this is something new that's NOT another js thing vying for market share. Enjoy!
 
 ### HTML now and forever
-HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements to provide semantic support for more content, like `<nav>` for navigation and `<video>` for videos and `<article>` for, well, articles. Over the years it also added new capabilities to existing elements like the addition of the `autofocus` attribute, which tells the browser which element to focus on page load (you know that one is a must for log in and search UX!).
+HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements to provide semantic support for more content, like `<nav>` for navigation and `<video>` for videos and `<article>` for, well, articles. Over the years it also added new capabilities to existing elements like the addition of the `autofocus` attribute, which tells the browser which element to focus on page load (you know that one is a must for login and search UI!).
 
-These additions were of course implemented through the usual HTML constructs: *tags*, *attributes*, and *nesting*. In case you need a refresher, here's some examples:
+These additions were implemented through the usual HTML constructs: *tags*, *attributes*, and *nesting*. In case you need a refresher, here's some examples:
 
 ```html
 <h1>Hello World!</h1>
@@ -29,7 +29,7 @@ That's an "anchor" element, the `a` tag, with download and "hypertext reference"
 ```
 So yeah, those are standard elements with that familiar declarative API that makes learning and writing HTML so simple. Pretty basic stuff; no mystery here.
 
-As you know HTML gives us lots of elements to work with, but you no doubt also know it doesn't give us enough elements for everything we need. Not by a long shot. Let's takes icons for a simple example.
+HTML gives us lots of elements to work with, but you no doubt also know it doesn't give us enough elements for everything we need. Not by a long shot. Let's takes icons for a simple example.
 
 Because HTML doesn't give us an `icon` tag to markup a site's icons we have to design our own solution. Here's three similar approaches you've likely seen before:
 
