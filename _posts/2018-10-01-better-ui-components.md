@@ -145,7 +145,7 @@ Can you see the difference?
 
 Are you starting to sense the benefits? 
 
-Designing custom UI components with tags and attributes instead of classes is fun and it's better. It is objectively better:
+Designing these simple UI components with tags and attributes instead of classes is fun and it's better. It is objectively better:
 
 * Enables UI engineers to design components with much more meaningful APIs instead of a boilerplate tag and list of classes
 * Custom tags have strong semantic meaning and are easily identifiable: `<badge>` vs. `<span class="badge">`
