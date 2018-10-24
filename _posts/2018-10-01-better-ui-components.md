@@ -121,7 +121,7 @@ Here's some other examples of components built with custom tags and attributes i
   <col span="6 sm-12">...</col>
 </row>
 ```
-Let's redo Material's Dialog component from earlier:
+How about we redo Material's Dialog component from earlier? That means:
 ```html
 <div class="mdl-dialog__actions mdl-dialog__actions--full-width">...</div>
 ```
@@ -130,7 +130,9 @@ becomes
 <mdl-dialog-actions size="full-width">...</mdl-dialog-actions>
 ```
 
-Can you see the difference? Are you starting to sense the benefits? 
+Can you see the difference? 
+
+Are you starting to sense the benefits? 
 
 Designing custom UI components with tags and attributes instead of classes is fun and it's better. It is objectively better:
 
