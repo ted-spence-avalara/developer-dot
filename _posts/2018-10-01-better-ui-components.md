@@ -247,7 +247,7 @@ Although these aren't technically Custom Elements at this point, you'll want to 
 * **s**hared - these components are shared by our 20+ web apps and three times as many developers
 * **S**eattle - ok not really, but that's where we are! Come [join us](https://www.avalara.com/us/en/about/jobs/job-details.oUKm8fwS.html)
 
-So yeah, prefixing is a best-practice. It solves the risk of colliding tags and it's a helpful visual distinguisher between standard and custom tags. More importantly it sets you up very nicely for when JavaScript-enabled functionality is required and you go Custom Elements or similar. You see, using prefixed custom tags instead of classes can scale in either direction: you can scale down to lightweight CSS-only components like icon, or all the way up to interactive components that respond to state changes _all while maintaining the same interface_. The secret is prefixed custom tags.
+So yeah, prefixing is a best-practice. It solves the risk of colliding tags and it's a helpful visual distinguisher between standard and custom tags. More importantly it sets you up very nicely for when JavaScript-enabled functionality is required and your happy little "micro" component needs to grow up and become a true Custom Element (or similar). You see, using prefixed custom tags instead of classes allows your component to scale in either direction: you can scale down to lightweight CSS-only components like icon, or all the way up to interactive components that respond to state changes _all while maintaining the same interface_. The secret is prefixed custom tags.
 
 Let's see how our Alert can go from a basic custom tag with styles to interactive JavaScript-enabled component without breaking changes or a shifting paradigm.
 
