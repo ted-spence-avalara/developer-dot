@@ -271,7 +271,7 @@ We can minimize the contract and be better positioned for the long-term if we pi
 * [Polymer](https://www.polymer-project.org/3.0/start/)
 * [Slim](http://slimjs.com/#/getting-started)
 * [Vue](https://vuejs.org/v2/guide/#Relation-to-Custom-Elements)
-* [Riot](https://riot.js.org), which has the best DX out there imo, [try it](https://riot.js.org/play/). There's even a w3c proposal [that takes the spec in a similar direction](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Declarative-Custom-Elements-Strawman.md)
+* [Riot](https://riot.js.org), which has the best DX out there imo, [try it](https://riot.js.org/play/). There's even a w3c [proposal that takes the Custom Elements spec in a similar direction](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Declarative-Custom-Elements-Strawman.md)
 
 Here's two examples where Alert can be upgraded, or scale up, to a stateful component:
 
