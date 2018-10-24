@@ -433,7 +433,7 @@ which outputs
 ```
 The overuse of these libraries diminishes the potential gains, even to the point of resulting in an overall negative outcome. But I don't know, maybe it's not so obvious: 
 
-_Should an engineer write a dozen lines of CSS to make Badge, or should they write **474 total lines of code across 8 files with multiple dependencies and a mandatory build pipleine** (true story)?_  
+_Should an engineer write a dozen lines of CSS to make Badge, or should they write **474 total lines of code across 8 files with multiple dependencies and a mandatory build pipleine**?_ True story btw. 
 
 "So it can scale!" 
 
