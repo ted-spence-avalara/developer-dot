@@ -240,7 +240,7 @@ There is a small problem though. The problem is our tag name is not totally futu
 
 The first is that some day HTML might get a tag with the same name as ours. I pray every night before bed that WHATWG will give us `<icon>`, but if WHATWG doesn't it's still possible some other developer will. Either way there's risk of a collision and that brings us to the second consideration: prefixing. 
 
-Although these aren't technically Custom Elements at this point, you'll want to follow the spec and use a prefix for your custom tags. At Avalara we use `s-` as our prefix. The `s` is short for Skylab, which is the name of our design system, but it also means:
+Although these aren't technically Custom Elements at this point, you'll want to follow that spec by using a prefix for your custom tags. At Avalara we use `s-` as our prefix. The `s` is short for Skylab, which is the name of our design system, but it also means:
 * **s**tandards - we always go for standards until we actually need to bring in a dependency
 * **s**emantic - tags with attributes are much more semantic than `div` with classes
 * **s**mall - basic HTML and CSS can take you very far without the overhead of something like React
