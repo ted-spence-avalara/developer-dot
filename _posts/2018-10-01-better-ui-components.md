@@ -167,7 +167,7 @@ That would look something like:
 
 image here...
 
-Please note that there are no dependencies here. There's nothing to download, no tools and nothing to build. No magic, no hacks, nothing proprietary, no new idioms or special syntax, nothing. And when it comes to building software, _nothing_ is better than something.
+Please note that there are no dependencies here. There's nothing to download, no tools and nothing to build. No magic, no hacks, nothing proprietary, no frameworks or special syntax, nothing. And when it comes to building software, _nothing_ is better than something.
 
 Our Alert is pretty plain right now, so let’s see if we can give it an icon:
 
