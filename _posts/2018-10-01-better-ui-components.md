@@ -2,7 +2,7 @@
 # Custom HTML Tags
 ## How to design better UI components and avoid over-engineering
 
-**Tl;dr:** this is something new that's NOT another js thing vying for market share. Enjoy!
+**Tl;dr:** a new approach and it's NOT another js thing vying for market share. Yay!
 
 ### HTML now and forever
 HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements to provide semantic support for more content, like `<nav>` for navigation and `<video>` for videos and `<article>` for, well, articles. Over the years it also added new capabilities to existing elements like the addition of the `autofocus` attribute, which tells the browser which element to focus on page load (you know that one is a must for login and search UI!).
