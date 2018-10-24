@@ -236,9 +236,9 @@ So yeah, prefixing is a best-practice. It solves the risk of colliding tags and 
 
 Let's see how our Alert can go from a basic custom tag with styles to interactive JavaScript-enabled component without breaking changes or a shifting paradigm.
 
-In a future release of Alert let's say we're adding the ability to customize the `autodismiss` duration. You can take the default four seconds by simply adding the attribute, or you can shorten or extend that duration by setting its value to a number:
+In a future release of Alert let's say we're adding the ability to set the `autodismiss` duration. You can take the default four seconds by simply adding the attribute, or you can shorten or extend that duration by setting its value to a number:
 
-_Customized autodismiss_
+_Override autodismiss duration_
 ```html
 <alert type="success" autodismiss="10">
   <p>You should try this</p>
