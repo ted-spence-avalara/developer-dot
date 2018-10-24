@@ -345,10 +345,10 @@ _Riot_
         // Determine Icon based on type
         this.icon = this.opts.type === 'success' ? 'check' : this.opts.type === 'error' ? 'info' : 'warn';
 
-        this.on('mount', function() {
+        this.on('mount', () => {
             if (this.opts.autodismiss) {
                 let seconds = (typeof this.opts.autodismiss === 'number' ? this.opts.autodismiss : 4) * 1000;
-                setTimeout(this.remove(), seconds);
+                setTimeout(this.unmount(), seconds);
             }
         })
     </script>
