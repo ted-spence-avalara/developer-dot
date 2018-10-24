@@ -13,9 +13,9 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/getting-started/account-creation/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-This chapter will explain the preliminary steps that must be completed before you are able to access the REST v2 API.
+This chapter explains the preliminary steps that must be completed before you are able to access the REST v2 API.
 
-We will begin with account creation and describe the information needed to authenticate your requests with our system. Next we will discuss API endpoints and the environments available to you for calculating taxes.
+We begin with account creation and describe the information needed to authenticate your requests with our system. Next we discuss API endpoints and the environments available to you for calculating taxes.
 
 
 <ul class="pager">

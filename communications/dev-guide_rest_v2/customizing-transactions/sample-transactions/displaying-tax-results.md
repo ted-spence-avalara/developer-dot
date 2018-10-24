@@ -160,6 +160,12 @@ This is the only combination of fields to return both the Detail and Summary tax
 {% endhighlight %}
 
 <h4>Response</h4>
+Detailed taxes (<code>txs</code>) and Summarized taxes (<code>summ</code>) are both returned.
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -573,6 +579,9 @@ This is the only combination of fields to return both the Detail and Summary tax
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
 <h3>Example 2 - Only Detail taxes Returned</h3>
 This example demonstrates the Detail taxes (<code>txs</code>) returned in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/">CalcTaxes response</a>, but the Summary taxes (<code>summ</code>) suppressed.
@@ -658,6 +667,12 @@ The following additional scenarios return the same results:
 {% endhighlight %}
 
 <h4>Response</h4>
+Only Detailed taxes (<code>txs</code>) are returned.
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse2">View the Response JSON</a>
+  <div id="collapse2" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -882,6 +897,9 @@ The following additional scenarios return the same results:
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
 <h3>Example 3 - Only Summary taxes Returned</h3>
 This example demonstrates the Summary taxes (<code>summ</code>) returned in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/">CalcTaxes response</a>, but the Detailed taxes (<code>txs</code>) suppressed.
@@ -891,7 +909,7 @@ In this sample request:
   <li>InvoiceMode and ReturnSummary set to <code>true</code> but ReturnDetail set to <code>false</code></li>
 </ul>
 
-This is the only combination of fields to return both the Detail and Summary taxes together.
+This is the only combination of fields to return only Summary taxes.
 
 {% highlight json %}
 {
@@ -962,6 +980,12 @@ This is the only combination of fields to return both the Detail and Summary tax
 {% endhighlight %}
 
 <h4>Response</h4>
+Only Summarized taxes (<code>summ</code>) are returned.
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse3">View the Response JSON</a>
+  <div id="collapse3" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -1171,6 +1195,9 @@ This is the only combination of fields to return both the Detail and Summary tax
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-inclusive/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

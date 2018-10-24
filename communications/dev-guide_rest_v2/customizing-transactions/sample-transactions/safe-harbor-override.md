@@ -13,9 +13,9 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-The Safe Harbor override structure (<code>sovr</code>) allows you to apply the results of percentages from a traffic study by administering traffic study TAM overrides within the context of the <code>CalcTaxes</code> request.  More information on the safe harbor override structure can be found <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/safe-harbor-override/">here</a>.
+The Safe Harbor override (<code>sovr</code>) object allows you to apply traffic study TAM overrides to the <code>CalcTaxes</code> request.  See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/safe-harbor-override/">Safe Harbor Override</a> for more information.
 
-The Safe Harbor Override allows you to adjust traffic study percentages for the following TAM values:
+The Safe Harbor Override allows you to adjust Federal traffic study percentages for:
 <ul class="dev-guide-list">
     <li>Cellular</li>
     <li>VoIP</li>
@@ -23,18 +23,20 @@ The Safe Harbor Override allows you to adjust traffic study percentages for the 
 </ul>
 
 <h4 id="note">Note</h4>
-Although the <code>CalcTaxes</code> request gives the user the flexibility to input Safe Harbor Override information for each transaction, we recommend using a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/">Client Profile</a>. This results in better performance from the Tax Engine because your override settings are cached <i>before</i> tax calculation begins.
+Although the <code>CalcTaxes</code> request gives the user the flexibility to input Safe Harbor Override information for each transaction, we recommend using a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/">Client Profile</a>. Using a client profile results in better performance from the Tax Engine because your override settings are cached <i>before</i> tax calculation begins.
 
-Provide the following information to utilize the Safe Harbor override:
+Provide the following information for a Safe Harbor override:
 <ul class="dev-guide-list">
     <li>Safe Harbor Type (<code>sh</code>)</li>
     <li>Original Federal TAM (<code>old</code>)</li>
     <li>New Federal TAM (<code>new</code>)</li>
 </ul>
 
-The Original and New Federal TAM values should be passed as a decimal.  For example, a 64.9% Federal TAM value should be entered as "0.649".  The <b>State</b> TAM is calculated automatically (State TAM = 1.0 - Federal TAM).
+The Original and New Federal TAM values are passed as a decimal.  For example, a 64.9% Federal TAM value is entered as "0.649".  The <b>State</b> TAM is calculated automatically (State TAM = 1.0 - Federal TAM).
 
 <h3>Safe Harbor Override Example</h3>
+This example shows the use of the Safe Harbor Override (<code>sovr</code>) object.  The <b>VoIP</b> safe harbor type (<code>sh</code>) is being overridden from the <b>original</b> Federal TAM (<code>old</code>) of 0.649 (64.9%) to <b>your</b> calculated Federal TAM (<code>new</code>) of 0.250 (25%).
+
 {% highlight json %}
 {
   "cmpn": {
@@ -108,15 +110,31 @@ The Original and New Federal TAM values should be passed as a decimal.  For exam
   ],
   "sovr": [	
     {
-      "sh": 2,				// [SafeHarborType]		1 = Cellular, 2 = VoIP, 4 = Paging
-      "old": 0.649,			// [OriginalFederalTam]	Original Federal TAM.  64.9% = 0.649   State = (1.0 - Federal TAM)
-      "new": 0.250			// [NewFederalTam]		New Federal TAM.  25.0% = 0.250		   State = (1.0 - Federal TAM)
+      "sh": 2,
+      "old": 0.649,
+      "new": 0.250
     }
   ]
 }
 {% endhighlight %}
 
 <h4>Response</h4>
+The result of the Safe Harbor override can be seen on Federal-level Tax Type IDs (<code>tid</code>) 162, 226:
+<ul class="dev-guide-list">
+  <li>Total Charge (<code>tchg</code>) is 25 based on the requested 100 charge (Total Charge is 64.90 without the Safe Harbor override)</li>
+  <li>Exempt Sale Amount (<code>exm</code>) is 25 based on the requested 100 charge (Exempt Sale Amount is 35.10 without the Safe Harbor override)</li>
+</ul>
+
+State taxes are automatically updated based on the Federal override.  The State TAM is 75% (1.0 - new Federal TAM) and can be seen on Tax Type IDs (<code>tid</code>) 161, 217, 450, 452, 453, 454:
+<ul class="dev-guide-list">
+  <li>Total Charge (<code>tchg</code>) is 75 based on the requested 100 charge (Total Charge is 35.10 without the Safe Harbor override)</li>
+  <li>Exempt Sale Amount (<code>exm</code>) is 25 based on the requested 100 charge (Exempt Sale Amount is 64.9 without the Safe Harbor override)</li>
+</ul>
+
+ <div class="panel-group">
+  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -565,6 +583,9 @@ The Original and New Federal TAM values should be passed as a decimal.  For exam
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
 
 <ul class="pager">

@@ -44,7 +44,21 @@ Three pieces of information must appear in your request header:
 
 <h3>Encode your API Key</h3>
 
-To encode a plaintext string to Base64 in Windows Powershell, you can use the following script:
+The <code>api_key</code> is your Customer Portal "username:password" encoded in Base64.  For example, if your username is <code>first.last@avalara.com</code> and your password is <code>secretpassword!</code>, your <code>api_key</code> would be <code>Zmlyc3QubGFzdEBhdmFsYXJhLmNvbTpzZWNyZXRwYXNzd29yZCE=</code>
+
+The <a class="dev-guide-link" href="https://communications.avalara.net/API/AFCSaaSProTaxREST">REST v2 Swagger page</a> automatically generates your api_key for you.  To generate the api_key on the <a class="dev-guide-link" href="https://communications.avalara.net/API/AFCSaaSProTaxREST">Swagger</a> page:
+<ol class="dev-guide-list">
+  <li>Enter your username in the <code>email address</code> field.</li>
+  <li>Enter your password in the <code>password</code> field.</li>
+  <li>Click the <code>Generate api_key</code> button.</li>
+</ol>
+The encoded api_key is populated in the <code>api_key</code> field.  Copy this value for later use.
+
+<img src="/public/images/comms/dev-guide_rest_v2/comms_rest_v2_swagger_api_key.png"/>
+
+<br/>
+
+Alternatively, to encode a plaintext string to Base64 in <b>Windows Powershell</b>, you can use the following script:
 
 {% highlight powershell %}
 # Encode a string to Base64
@@ -52,11 +66,11 @@ To encode a plaintext string to Base64 in Windows Powershell, you can use the fo
   [System.Text.Encoding]::UTF8.GetBytes("first.last@avalara.com:secretpassword!"));
 {% endhighlight %}
 
-For example, if your username is <code>first.last@avalara.com</code> and your password is <code>secretpassword!</code>, your <code>api_key</code> would be <code>Zmlyc3QubGFzdEBhdmFsYXJhLmNvbTpzZWNyZXRwYXNzd29yZCE=</code>
+
 
 <h3>Optional Headers</h3>
 
-Our tax engine allows for additional customization when calculating taxes and we accomplish this through the creation of <b>Client Profiles</b>. We will discuss how Client Profiles work in more detail in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/">Customizing Transactions</a> section. For now, just know that you have the ability to pass an additional header to specify a specific profile:
+Our tax engine allows for additional customization when calculating taxes and we accomplish this through the creation of <b>Client Profiles</b>. We will discuss how Client Profiles work in more detail in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/">Customizing Transactions</a> section.  For now, just know that you have the ability to pass an additional header to specify a specific profile:
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -74,6 +88,9 @@ Our tax engine allows for additional customization when calculating taxes and we
     </tbody>
   </table>
 <div>
+
+<h4>Note</h4>
+If a <code>client_profile_id</code> is not supplied, REST v2 uses the System Default configuration.
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/getting-started/account-creation/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

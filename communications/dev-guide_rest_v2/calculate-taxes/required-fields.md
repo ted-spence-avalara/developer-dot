@@ -90,7 +90,7 @@ If using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/r
 </ul>
 
 <br/>
-When using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> object, the following fields are required.  Please note that only one of the options below is required.
+When using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> object, the following fields are required.  Note that only <b>one</b> of the options below is required.
 <ul class="dev-guide-list">
   <li>PCode (<code>pcd</code>)</li>
   <li>FIPS (<code>fips</code>)</li>

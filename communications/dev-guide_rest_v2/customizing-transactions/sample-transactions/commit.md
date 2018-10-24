@@ -74,6 +74,12 @@ This example is committing DocumentCode (<code>doc</code>) "DocumentXYZ123" by s
 {% endhighlight %}
 
 <h4>Response</h4>
+Taxes (<code>txs</code>) are returned as normal.
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -234,6 +240,10 @@ This example is committing DocumentCode (<code>doc</code>) "DocumentXYZ123" by s
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
+
 
 <h3>Transaction-Level Uncommit Example</h3>
 This example is uncommitting DocumentCode (<code>doc</code>) "DocumentXYZ123" by setting the Commit flag (<code>cmmt</code>) to <code>false</code>.
@@ -286,6 +296,12 @@ This example is uncommitting DocumentCode (<code>doc</code>) "DocumentXYZ123" by
 {% endhighlight %}
 
 <h4>Response</h4>
+Taxes (<code>txs</code>) are returned as normal.
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse2">View the Response JSON</a>
+  <div id="collapse2" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -446,6 +462,10 @@ This example is uncommitting DocumentCode (<code>doc</code>) "DocumentXYZ123" by
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
+
 
 <h3>Commit API</h3>
 The same actions can be taken by using the <code>/api/v2/afc/Commit</code> <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/commit-request/">endpoint</a>.  Just execute the <code>Commit</code> API with the desired DocumentCode (<code>doc</code>) and Commit flag (<code>cmmt</code>) values set.

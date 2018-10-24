@@ -15,7 +15,7 @@ disqus: 0
 
 <h3>Your First CalcTaxes Request</h3>
 
-Let's dive right in. We're going to send a simple <code>CalcTaxes</code> call using <a class="dev-guide-link" href="https://www.getpostman.com">Postman</a> and inspect the results.
+Let's dive in. We're going to send a simple <code>CalcTaxes</code> call using <a class="dev-guide-link" href="https://www.getpostman.com">Postman</a> and inspect the results.
 
 <h3>Headers</h3>
 
@@ -27,7 +27,7 @@ Add the following <a class="dev-guide-link" href="/communications/dev-guide_rest
 </ul>
 
 <h4>Postman example</h4>
-<img src="/public/images/comms/dev-guide/comms_dev_guide_1.png"/>
+<img src="/public/images/comms/dev-guide_rest_v2/comms_dev_guide_1.png"/>
 
 <h3>Body</h3>
 For the body of the <code>POST</code> request, copy and paste the following example:

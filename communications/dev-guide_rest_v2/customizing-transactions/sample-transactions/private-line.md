@@ -44,6 +44,8 @@ Private Line functionality is not supported on a Tax Inclusive (<code>incl</code
 {% endhighlight %}
 
 <h3>Private Line Example</h3>
+Point 'A' is Louisville, KY while Point 'Z' is Irving, TX.  A 50% Private Line split (<code>plsp</code>) is set, meaning that 50% of the transaction is applied to Point 'A' and the remaining 50% to Point 'Z'.
+
 {% highlight json %}
 {
   "cmpn": {
@@ -95,6 +97,12 @@ Private Line functionality is not supported on a Tax Inclusive (<code>incl</code
 {% endhighlight %}
 
 <h4>Response</h4>
+Taxes for both Point 'A' and Point 'B' are returned.
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -201,7 +209,9 @@ Private Line functionality is not supported on a Tax Inclusive (<code>incl</code
   ]
 }
 {% endhighlight %}
-
+    </div>
+  </div>
+</div>
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

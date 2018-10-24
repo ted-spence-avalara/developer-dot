@@ -87,7 +87,7 @@ Add the following <a class="dev-guide-link" href="/communications/dev-guide_rest
 </ul>
 
 <h4>Postman example</h4>
-<img src="/public/images/comms/dev-guide/comms_dev_guide_3.png"/>
+<img src="/public/images/comms/dev-guide_rest_v2/comms_dev_guide_3.png"/>
 
 <h3>Body</h3>
 For the body of the <code>POST</code> request, copy and paste the following example:

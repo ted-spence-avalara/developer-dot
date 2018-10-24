@@ -13,7 +13,7 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/displaying-tax-results/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-A Tax Inclusive transaction specifies the desired total amount of the transaction with the sale amount and expected taxes included.  REST v2 determines the appropriate base sale amount required to arrive at the total desired charge.
+A <b>Tax Inclusive</b> transaction specifies the desired total amount of the transaction with the sale amount and expected taxes included.  REST v2 determines the appropriate base sale amount required to arrive at the total desired charge.
 
 The Tax Inclusive flag (<code>incl</code>) is set individually on each <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">LineItem</a> included in an <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a>.  
 
@@ -29,7 +29,8 @@ The desired total must be a positive value sufficiently large to cover any fixed
 The calculated base charge can be found for each LineItem in the BaseCharge (<code>base</code>) field in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/">CalcTaxes response</a>.
 
 <h3>Tax Inclusive Example - Single Line Item</h3>
-In this example, Line Item 001 is designated as TaxInclusive (<code>incl</code> = <code>true</code>) with a desired total charge of 100 (<code>chg</code> = 100).  In the <a class="dev-guide-link" href="#response1">response</a>, the base sale amount (<code>base</code>) is set to 87.64509.  The desired total charge (100) = base sale amount (87.64509) + total taxes returned (12.35491).
+In this example, Line Item 001 is designated as TaxInclusive (<code>incl</code> = <code>true</code>) with a desired total charge of 100 (<code>chg</code> = 100).
+
 {% highlight json %}
 {
   "cmpn": {
@@ -76,7 +77,13 @@ In this example, Line Item 001 is designated as TaxInclusive (<code>incl</code> 
 }
 {% endhighlight %}
 
-<h4 id="response1">Response</h4>
+<h4>Response</h4>
+The base sale amount (<code>base</code>) is set to 87.64509.  The desired total charge (100) = base sale amount (87.64509) + total taxes returned (12.35491).
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -220,9 +227,13 @@ In this example, Line Item 001 is designated as TaxInclusive (<code>incl</code> 
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
 <h3>Tax Inclusive Example - Multiple Line Items</h3>
-In this example, Line Item 001 and Line Item 002 are designated as TaxInclusive (<code>incl</code> = <code>true</code>), both with a desired total charge of 100 (<code>chg</code> = 100).  In the <a class="dev-guide-link" href="#response2">response</a>, the base sale amount (<code>base</code>) is set for Line Item 001 and Line Item 002, but not for Line Item 003 (<code>incl</code> = <code>true</code>).
+In this example, Line Item 001 and Line Item 002 are designated as TaxInclusive (<code>incl</code> = <code>true</code>), both with a desired total charge of 100 (<code>chg</code> = 100).
+
 {% highlight json %}
 {
   "cmpn": {
@@ -291,7 +302,13 @@ In this example, Line Item 001 and Line Item 002 are designated as TaxInclusive 
 }
 {% endhighlight %}
 
-<h4 id="response2">Response</h4>
+<h4>Response</h4>
+The base sale amount (<code>base</code>) is set for Line Item 001 and Line Item 002, but not for Line Item 003 (<code>incl</code> = <code>true</code>).
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse2">View the Response JSON</a>
+  <div id="collapse2" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -707,6 +724,9 @@ In this example, Line Item 001 and Line Item 002 are designated as TaxInclusive 
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/adjustment/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

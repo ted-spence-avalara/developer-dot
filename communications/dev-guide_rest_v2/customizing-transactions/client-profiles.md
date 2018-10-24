@@ -39,9 +39,11 @@ Add the following <a class="dev-guide-link" href="/communications/dev-guide_rest
   <li><code>Content-Type: application/json</code></li>
   <li><code>client_profile_id</code></li>
 </ul>
-<img src="/public/images/comms/dev-guide/comms_dev_guide_2.png"/>
+<img src="/public/images/comms/dev-guide_rest_v2/comms_dev_guide_2.png"/>
 
 <h3>How to run transactions without a profile</h3>
+If a profile is not specified, REST v2 uses the System Default configuration.
+
 There are two ways to send send a transaction to AFC Rest v2 without a client profile applied:
 <ul class="dev-guide-list">
   <li>Do not include <code>client_profile_id</code> from the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/authentication/">header</a>.  <code>client_profile_id</code> is an optional header field</li> 

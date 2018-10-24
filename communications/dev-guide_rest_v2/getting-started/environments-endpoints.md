@@ -15,7 +15,7 @@ disqus: 0
 
 <h3>Environments</h3>
 
-There are two environments available to you, Sandbox and Production:
+The two environments available to you are Sandbox and Production:
 
 <ul class="dev-guide-list">
   <li><b>Production</b>: <a class="dev-guide-link" href="https://communications.avalara.net">communications.avalara.net</a></li>
@@ -34,11 +34,11 @@ There are two environments available to you, Sandbox and Production:
     </thead>
     <tbody>
       <tr>
-        <td><code>/api/v2/afc/calctaxes</code></td>
-        <td><code>POST</code> Performs tax calculation on invoices.</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/"><code>/api/v2/afc/calctaxes</code></a></td>
+        <td><code>POST</code> Performs tax calculation on invoices.  See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/calculate-taxes/">Calculate Taxes</a> for more information.</td>
       </tr>
       <tr>
-        <td><code>/api/v2/afc/commit</code></td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/commit-request/"><code>/api/v2/afc/commit</code></a></td>
         <td><code>POST</code> Commits and Uncommits transactions. See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/">Commit/Uncommit</a> for more information.</td>
       </tr>
       <tr>

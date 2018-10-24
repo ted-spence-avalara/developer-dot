@@ -15,8 +15,8 @@ disqus: 0
 
 The Interstate/Intrastate Determination feature provides you with the ability to apply interstate or intrastate charges appropriately when sending transaction messages to AFC REST v2 without specifying either the transaction type or the service type. To use this functionality:
 <ul class="dev-guide-list">
-    <li>Set the transaction type (<code>tran</code>) to ‘-1’ and a valid service type (<code>serv</code>)</li>
-    <li>Set the transaction type to a valid transaction type (<code>tran</code>) and the service type (<code>serv</code>) to ‘-1’</li>
+    <li>Set the transaction type (<code>tran</code>) to "-1" and a valid service type (<code>serv</code>)</li>
+    <li>Set the transaction type to a valid transaction type (<code>tran</code>) and the service type (<code>serv</code>) to "-1"</li>
 </ul>
 
 REST v2 will determine the appropriate interstate or intrastate transaction or service and return the appropriate taxes.  See the scenarios below for further details.
@@ -149,6 +149,7 @@ REST v2 automatically determines one of the following <b>service types</b> based
 
 
 <h3>Transaction Type Determination Example</h3>
+In this example, the Transaction Type (<code>tran</code>) is set to <code>-1</code>.  The transaction type will be automatically determined based on the jurisdiction provided.  In this case, since San Francisco is the only jurisdiction, an <b>Intrastate</b> transaction type is expected to be used.
 {% highlight json %}
 {
   "cmpn": {
@@ -202,6 +203,12 @@ REST v2 automatically determines one of the following <b>service types</b> based
 {% endhighlight %}
 
 <h4>Response</h4>
+Taxes are returned based upon the determined transaction type.
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -430,8 +437,12 @@ REST v2 automatically determines one of the following <b>service types</b> based
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
 <h3>Service Type Determination Example</h3>
+In this example, the Service Type (<code>serv</code>) is set to <code>-1</code>.  The service type will be automatically determined based on the jurisdiction provided.  In this case, since San Francisco is the only jurisdiction, an <b>Intrastate</b> service type is expected to be used.
 {% highlight json %}
 {
   "cmpn": {
@@ -485,6 +496,12 @@ REST v2 automatically determines one of the following <b>service types</b> based
 {% endhighlight %}
 
 <h4>Response</h4>
+Taxes are returned based upon the determined service type.
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse2">View the Response JSON</a>
+  <div id="collapse2" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json%}
 {
   "inv": [
@@ -748,6 +765,9 @@ REST v2 automatically determines one of the following <b>service types</b> based
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
 
 <ul class="pager">

@@ -13,9 +13,11 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/private-line/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-In addition to Communications taxes, REST v2 also provides you with the ability to return Sales and Use taxes from the AFC tax engine.
+REST v2 provides Sales and Use taxes in addition to Communications taxes.
 
 <h3>Sales and Use Example</h3>
+Sales and Use Transaction/Service Pairs (<code>tran</code> and <code>serv</code>) are used.  To find a list of Sales and Use Transaction/Service Pairs, use the <code>/api/v2/afc/tspairs</code> <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints/">endpoint</a>.
+
 {% highlight json %}
 {
   "cmpn": {
@@ -94,6 +96,12 @@ In addition to Communications taxes, REST v2 also provides you with the ability 
 {% endhighlight %}
 
 <h4>Response</h4>
+Sales and Use taxes, identified by the <b>SALES AND USE TAXES</b> category (<code>cat</code>), are returned.
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -330,6 +338,10 @@ In addition to Communications taxes, REST v2 also provides you with the ability 
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
+
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/safe-harbor-override/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

@@ -101,6 +101,12 @@ In this example, the three line items are processed together as one invoice beca
 {% endhighlight %}
 
 <h4>Response</h4>
+Detailed taxes (<code>txs</code>) per line and summarized taxes (<code>summ</code>) for the entire invoice are returned.
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -514,9 +520,13 @@ In this example, the three line items are processed together as one invoice beca
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
-<h3>Invoice Mode Off - Multiple LineItems</h3>
+<h3>Invoice Mode Off - Multiple LineItems Example</h3>
 This example demonstrates the output results for the same multi-line <code>CalcTaxes</code> request, but InvoiceMode (<code>invm</code>) set to <code>false</code>.  Note that the three LineItems are processed and results are returned individually.  No Summary-level tax results are provided in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/">CalcTaxes Response</a> even though the Return Summary flag (<code>summ</code>) in the request is set to <code>true</code>.  See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/displaying-tax-results/">Displaying Tax Results</a> for more information.
+
 {% highlight json %} 
 {
   "cmpn": {
@@ -592,6 +602,13 @@ This example demonstrates the output results for the same multi-line <code>CalcT
 {% endhighlight %}
 
 <h4>Response</h4>
+Detailed taxes (<code>txs</code>) for each line item are returned.  However, no summarized taxes (<code>summ</code>) are returned since the line items are treated as individual requests not part of a larger invoice.
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse2">View the Response JSON</a>
+  <div id="collapse2" class="panel-collapse collapse">
+    <div class="panel-body">
+
 {% highlight json %}
 {
   "inv": [
@@ -816,6 +833,9 @@ This example demonstrates the output results for the same multi-line <code>CalcT
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/invoice-date/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

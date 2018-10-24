@@ -24,6 +24,8 @@ Although the <code>CalcTaxes</code> request gives the user the flexibility to in
 Excluded tax jurisdictions will either appear as unknown or will not be included in any Transaction Service Reports (TSR) produced.
 
 <h3>State Exclusion</h3>
+California (<code>st</code>) in the USA (<code>ctry</code>) is being excluded within the Exclusion (<code>excl</code>) object.
+
 {% highlight json %}
 {
   "cmpn": {
@@ -44,7 +46,7 @@ Excluded tax jurisdictions will either appear as unknown or will not be included
     {
       "doc": "TEST-VOIP INVOICE 2017.12.26:12.02 AVA",
       "cmmt": false,
-      "bill": {   // Bill-to will be applied to origination and destination also
+      "bill": {
         "cnty": "San Francisco",
         "ctry": "USA",
         "int": true,
@@ -106,6 +108,12 @@ Excluded tax jurisdictions will either appear as unknown or will not be included
 {% endhighlight %}
 
 <h4>Response</h4>
+All California state level taxes (<code>lvl</code> of 1) are excluded from the response.
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -200,7 +208,9 @@ Excluded tax jurisdictions will either appear as unknown or will not be included
   ]
 }
 {% endhighlight %}
-
+    </div>
+  </div>
+</div>
 
 <!--<h3>Federal Exclusion</h3>
 
@@ -217,7 +227,6 @@ ON HOLD DUE TO PLAT-7868
 	"excl": [
       {
         "ctry": "USA",
-        "st": "CA",
         "excl": true
       }
     ]

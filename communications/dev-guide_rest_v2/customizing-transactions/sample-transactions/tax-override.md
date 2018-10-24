@@ -19,6 +19,14 @@ The override structure (<code>ovr</code>) allows you to change the rate of a tax
 Although the <code>CalcTaxes</code> request gives the user the flexibility to input Override information for each transaction, we recommend using a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/">Client Profile</a> with a custom override file applied. This results in better performance from the Tax Engine because your override settings are cached <i>before</i> tax calculation begins.
 
 <h3>Tax Override Example</h3>
+This example shows the use of the Tax Override (<code>ovr</code>) object.  It contains the following 2 overrides:
+<ol class="dev-guide-list">
+  <li>Tax Type (<code>tid</code>) <b>162</b> is being overridden to a <b>0</b> rate for <b>all tax brackets</b> (<code>rate</code> and <code>max</code> within the tax bracket (<code>brkt</code>) object) for <b>all jurisdictions</b> within the USA (<code>ctry</code> within the location (<code>loc</code>) object)</li>
+  <li>Tax Type (<code>tid</code>) <b>163</b> is being overridden to a <b>0.195</b> rate for <b>all tax brackets</b> (<code>rate</code> and <code>max</code> within the tax bracket (<code>brkt</code>) object) for <b>all jurisdictions</b> within the USA (<code>ctry</code> within the location (<code>loc</code>) object)</li>
+</ol>
+
+The overrides are being applied to all tax brackets by setting the <code>max</code> field within the tax bracket (<code>brkt</code>) to the "unlimited" value - <code>2147483647</code>.
+
 {% highlight json %}
 {
   "cmpn": {
@@ -115,6 +123,12 @@ Although the <code>CalcTaxes</code> request gives the user the flexibility to in
  {% endhighlight %}
 
  <h4>Response</h4>
+ In the response, you can see that Tax Type (<code>tid</code>) 163 uses the overridden rate (<code>rate</code>) of 0.195 for all line items (<code>txs</code>) and the summarized taxes (<code>summ</code>).  Additionally, Tax Type 162 is not returned as a tax for this transaction since the rate has been overridden to 0.
+
+ <div class="panel-group">
+  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
  {% highlight json %}
  {
   "inv": [
@@ -367,6 +381,9 @@ Although the <code>CalcTaxes</code> request gives the user the flexibility to in
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
 
 <ul class="pager">

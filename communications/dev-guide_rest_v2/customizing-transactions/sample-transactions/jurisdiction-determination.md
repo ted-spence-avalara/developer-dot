@@ -37,7 +37,8 @@ When specifying jurisdictions outside of the United States via country/state/cou
 
 More information regarding the <code>Location</code> object can be found <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">here</a>.
 
-<h3>Canadian Tax Request</h3>
+<h3>Canadian Tax Request Example</h3>
+This example specifies that the jurisdiction for this transaction, entered in the BillTo <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">location</a> object (<code>bill</code>) is Montreal, QC.
 {% highlight json %}
 {
   "cmpn": {
@@ -112,6 +113,12 @@ More information regarding the <code>Location</code> object can be found <a clas
 {% endhighlight %}
 
 <h4>Response</h4>
+Taxes returned are for Quebec (tax level <code>lvl</code> 1) and Canada (tax level <code>lvl</code> 0).
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -351,9 +358,13 @@ More information regarding the <code>Location</code> object can be found <a clas
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
+<h3 id="us_geo">United States Tax Request using Geocoding Example</h3>
+Geocoding functionality is being used in this example through the use of <code>geo</code> being set to <code>true</code> and an address (<code>addr</code>), city (<code>city</code>), state (<code>st</code>), postal code (<code>zip</code>), and country (<code>ctry</code>) being specified.
 
-<h3 id="us_geo">United States Tax Request using geocoding</h3>
 {% highlight json %}
 {
   "cmpn": {
@@ -428,6 +439,13 @@ More information regarding the <code>Location</code> object can be found <a clas
 {% endhighlight %}
 
 <h4>Response</h4>
+Federal, State, and County taxes are returned based upon the geocoding request.
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse2">View the Response JSON</a>
+  <div id="collapse2" class="panel-collapse collapse">
+    <div class="panel-body">
+
 {% highlight json %}
 {
   "inv": [
@@ -804,9 +822,12 @@ More information regarding the <code>Location</code> object can be found <a clas
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
 <h3>Jurisdiction Determination using PCode, NPANXX, or FIPS</h3>
-Using the <a class="dev-guide-link" href="#us_geo">sample above</a>, update the BillTo object (<code>bill</code>) as follows to determine jurisdiction based on PCode, NPANXX, or FIPS.
+Using the <a class="dev-guide-link" href="#us_geo">sample above</a>, update the BillTo object (<code>bill</code>) as follows to determine jurisdiction based on PCode, NPANXX, or FIPS.  These fields can also be used in the From (<code>from</code>) and/or To (<code>to</code>) on a <a href="/communications/dev-guide_rest_v2/reference/line-item/">line item</a>.
 
 <h4>PCode</h4>
 {% highlight json %}

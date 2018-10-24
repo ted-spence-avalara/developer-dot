@@ -13,8 +13,8 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/multi-line-request/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-<h3>Simple Request</h3>
-This is an example of a simple request.  It is setting all of the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/calculate-taxes/required-fields/">required fields</a>, plus a charge (<code>chg</code>) of 100 and the number of lines (<code>line</code>) to 10.
+<h3>Simple Request Example</h3>
+This is an example of a simple request containing an invoice and 1 line item.  It is setting all of the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/calculate-taxes/required-fields/">required fields</a>, plus a charge (<code>chg</code>) of 100 and the number of lines (<code>line</code>) to 10.
 
 {% highlight json %}
 {
@@ -50,6 +50,12 @@ This is an example of a simple request.  It is setting all of the <a class="dev-
 {% endhighlight %}
 
 <h4>Response</h4>
+This transaction returns 3 taxes (<code>txs</code>), totalling 19.640015.
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -118,11 +124,13 @@ This is an example of a simple request.  It is setting all of the <a class="dev-
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
 
-
-<h3>Single Tax Item Request</h3>
-This sample contains a little more detail than the previous sample.  This example includes a single <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item">line item</a>.
+<h3>Single Line Item Example</h3>
+This sample contains a little more detail than the previous example, still with one line item and some additional information such as an <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/key-value-pair">optional field</a>.
 
 {% highlight json %}
 {
@@ -177,6 +185,12 @@ This sample contains a little more detail than the previous sample.  This exampl
 {% endhighlight %}
 
 <h4>Response</h4>
+In this case, 8 taxes (<code>txs</code>) are returned, totalling 38.100488.
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse2">View the Response JSON</a>
+  <div id="collapse2" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -337,6 +351,9 @@ This sample contains a little more detail than the previous sample.  This exampl
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/transaction-use-cases/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

@@ -31,10 +31,13 @@ There are two ways to send an Adjustment to REST v2:
     </ul>
 </ol>
 
-<h4 id="adjm">Adjustment Method</h4>
+<h4>Note</h4>
+Adjustment transactions are run independently of any other invoice, meaning that there is no connection between the transactions.  Be mindful of what has been submitted to avoid duplicate credits to your customers, etc.  The <a class="dev-guide-link" href="https://communications.avalara.net/AFC/Reporting/Explorer">Reporting</a> tool within <a class="dev-guide-link" href="https://communications.avalara.net/AFC/Reporting/Explorer">Customer Portal</a> can be used to help identify the transactions and adjustments already processed.
+
+<h3 id="adjm">Adjustment Method</h3>
 The use of <b>Adjustment Method</b> (<code>adjm</code>) has been deprecated.  This field should always be defaulted to <code>0</code>.
 
-<h4 id="disc">Discount Type</h4>
+<h3 id="disc">Discount Type</h3>
 Set the <b>Discount Type</b> (<code>disc</code>) to one of the values listed below.  If discounts do not apply or you are unsure, set the field to <code>0</code>.
 
 Discounts may or may not be taxed within each state. When a discount is taxed, the customer receives a tax benefit commensurate with the amount of the discount (i.e., if the customer gets $5 off on a transaction subject to a 5% tax, the customer pays $0.25 less in tax than they would have). 
@@ -106,6 +109,8 @@ A customer buys a second line and gets voice mail free for a month ($6.00 value)
 To accomplish this, the billing system will make separate calls to REST v2 of $6.00 for the monthly recurring voice mail charge and -$6.00 for the Goodwill discount. Both transactions will be represented by the same tax category, but the billing system will send an additional value on the discount transaction indicating that it is a Goodwill discount. The $6.00 charge for voice mail generates $0.32 in state sales tax. When the -$6.00 discount is processed for tax applications, REST v2 determines that a Goodwill discount is not taxed and generates -$0.00 in state sales tax. The offsetting tax amounts are presumably netted together in the tax summary on the customer’s bill. Whether the charge and discount amounts are netted on the customer’s bill is up to the billing system, and does not affect the tax calculation or the presentation of tax on the bill.
 
 <h3>Adjustment Example using Adjustment Flag</h3>
+In this example, the adjustment flag (<code>adj</code>) is set to <code>true</code> on all three line item included in the invoice and the charge amounts (<code>chg</code>) are positive values.  Adjustment method (<code>adjm</code>) is explicitly set to <code>0</code> on Line Items 001 and 003, while allowed to default on Line Item 002.  Discount Type (<code>disc</code>) is set to <code>0</code> for Line Item 001, <code>1</code> for Line Item 002, and <code>5</code> for Line Item 003.
+<br/>
 {% highlight json %}
 {
   "cmpn": {
@@ -142,7 +147,7 @@ To accomplish this, the billing system will make separate calls to REST v2 of $6
           "serv": 6,
           "dbt": false,
           "adj": true,
-		      "adjm": 0,
+          "adjm": 0,
           "disc": 0
         },
         {
@@ -167,7 +172,7 @@ To accomplish this, the billing system will make separate calls to REST v2 of $6
           "serv": 37,
           "dbt": false,
           "adj": true,
-		      "adjm": 0,
+          "adjm": 0,
           "disc": 5
         }
       ],
@@ -180,6 +185,12 @@ To accomplish this, the billing system will make separate calls to REST v2 of $6
 {% endhighlight %}
 
 <h4>Response</h4>
+Notice the negative exempt sale amounts (<code>exm</code>) and tax amounts (<code>tax</code>), indicating the credit back to your customer.
+<br/>
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -486,8 +497,13 @@ To accomplish this, the billing system will make separate calls to REST v2 of $6
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
 <h3>Adjustment Example using Negative Amounts</h3>
+In this example, the adjustment flag (<code>adj</code>) is set to <code>false</code> on all three line item included in the invoice and the charge amounts (<code>chg</code>) are set to negative values, indicating the need for an adjustment.  Adjustment method (<code>adjm</code>) is explicitly set to <code>0</code> on Line Items 001 and 003, while allowed to default on Line Item 002.  Discount Type (<code>disc</code>) is set to <code>0</code> for Line Item 001, <code>1</code> for Line Item 002, and <code>5</code> for Line Item 003.
+<br/>
 {% highlight json %}
 {
   "cmpn": {
@@ -524,7 +540,7 @@ To accomplish this, the billing system will make separate calls to REST v2 of $6
           "serv": 6,
           "dbt": false,
           "adj": false,
-		      "adjm": 0,
+          "adjm": 0,
           "disc": 0
         },
         {
@@ -549,7 +565,7 @@ To accomplish this, the billing system will make separate calls to REST v2 of $6
           "serv": 37,
           "dbt": false,
           "adj": false,
-		      "adjm": 0,
+          "adjm": 0,
           "disc": 5
         }
       ],
@@ -562,6 +578,12 @@ To accomplish this, the billing system will make separate calls to REST v2 of $6
 {% endhighlight %}
 
 <h4>Response</h4>
+Notice the negative exempt sale amounts (<code>exm</code>) and tax amounts (<code>tax</code>), indicating the credit back to your customer.
+<br/>
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse2">View the Response JSON</a>
+  <div id="collapse2" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -868,6 +890,9 @@ To accomplish this, the billing system will make separate calls to REST v2 of $6
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/optional-fields/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

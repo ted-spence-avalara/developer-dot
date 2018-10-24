@@ -13,7 +13,7 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/transaction-information/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-The Proration (<code>pror</code>) key provides the ability to calculate prorated taxes on a transaction that represents a partial month of service. Percentage-based taxes are prorated by way of the charge (<code>chg</code>) amount passed. However, fixed and per line taxes are subject to special prorating rules and procedures. Some tax authorities allow sellers to prorate fixed and per line taxes for partial months, but many insist on receiving the full amount. REST v2 applies these rules automatically if the pro-rating feature is used.  Just specify the percentage of the month the service was active as a decimal in the <code>pror</code> key.  
+The Proration (<code>pror</code>) key calculates prorated taxes on a transaction that represents a partial month of service. Percentage-based taxes are prorated by way of the charge (<code>chg</code>) amount passed. However, fixed and per line taxes are subject to special prorating rules and procedures. Some tax authorities allow sellers to prorate fixed and per line taxes for partial months, but many insist on receiving the full amount. REST v2 applies these rules automatically if the pro-rating feature is used.  Just specify the percentage of the month the service was active as a decimal in the <code>pror</code> key.  
 
 A few things to keep in mind:
 <ul class="dev-guide-list">
@@ -23,6 +23,8 @@ A few things to keep in mind:
 </ul>
 
 <h3>Proration Example</h3>
+Proration (<code>pror</code>) is set to 50% for 10 lines (<code>line</code>).
+
 {% highlight json %}
 {
   "cmpn": {
@@ -60,6 +62,12 @@ A few things to keep in mind:
 {% endhighlight %}
 
 <h4>Response</h4>
+The prorated tax amounts (<code>tax</code>) are seen on Tax Type IDs (<code>tid</code>) 6 and 23.
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -129,6 +137,9 @@ A few things to keep in mind:
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
 
 <ul class="pager">

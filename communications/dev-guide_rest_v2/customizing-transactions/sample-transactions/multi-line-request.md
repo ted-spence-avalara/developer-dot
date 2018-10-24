@@ -13,7 +13,9 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-<h3>Simple Multi-line Invoice</h3>
+<h3>Simple Multi-line Invoice Example</h3>
+This invoice contains 3 simple line items.
+
 {% highlight json %}
 {
   "cmpn": {
@@ -89,6 +91,21 @@ disqus: 0
 {% endhighlight %}
 
 <h4>Response</h4>
+In this response, you'll see a few things going on:
+<ul class="dev-guide-list">
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/detailed-tax-result/">Detailed taxes</a> (<code>txs</code>) for the three line items are displayed</li>
+    <ul class="dev-guide-list">
+      <li>Line Item 001 returns 7 taxes totalling 14.096528</li>
+      <li>Line Item 002 returns 1 tax totalling 32.7</li>
+      <li>Line Item 003 returns 3 taxes totalling 2.125</li>
+    </ul>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/summarized-tax-result/">Summarized taxes</a> (<code>summ</code>) for the entire invoice are displayed - 11 taxes returned totalling 48.921528</li>
+</ul>
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -502,9 +519,12 @@ disqus: 0
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
-
-<h3>Texas Internet Tax Multi-line Invoice</h3>
+<h3>Texas Internet Tax Multi-line Invoice Example</h3>
+This example shows an invoice with 2 line items processed in <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/invoice-mode/">Invoice Mode</a> (<code>invm</code> is <code>true</code>).  
 {% highlight json %}
 {
   "cmpn": {
@@ -568,6 +588,13 @@ disqus: 0
 }
 {% endhighlight %}
 
+<h4>Response</h4>
+Again in this example, both the line item <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/detailed-tax-result/">detailed taxes</a> (<code>txs</code>) and the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/summarized-tax-result/">summarized taxes</a> (<code>summ</code>) are returned.
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse2">View the Response JSON</a>
+  <div id="collapse2" class="panel-collapse collapse">
+    <div class="panel-body">
 <h4>Response</h4>
 {% highlight json %}
 {
@@ -751,6 +778,9 @@ disqus: 0
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/simple-request/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

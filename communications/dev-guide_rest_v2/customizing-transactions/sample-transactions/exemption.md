@@ -50,7 +50,9 @@ More information about the <code>Exemption</code> object can be found <a class="
 <h4>Note</h4>
 Although the <code>CalcTaxes</code> request gives the user the flexibility to input exemption information for each transaction, we recommend using a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/">Client Profile</a> with a custom exemption file applied. This results in better performance from the Tax Engine because your exemption settings are cached <i>before</i> tax calculation begins.
 
-<h3>Category Exemption</h3>
+<h3>Category Exemption Example</h3>
+The "Sales and Use Taxes" category - Category ID (<code>cat</code>) 1 - is being exempted for California, USA within the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exemption/">exemption</a> (<code>exms</code>) object.
+
 {% highlight json %}
 {
   "cmpn": {
@@ -64,7 +66,7 @@ Although the <code>CalcTaxes</code> request gives the user the flexibility to in
     {
       "doc": "TEST-VOIP INVOICE 2017.12.26:12.02 AVA",
       "cmmt": false,
-      "bill": {   // Bill-to will be applied to origination and destination also
+      "bill": {
         "cnty": "San Francisco",
         "ctry": "USA",
         "int": true,
@@ -77,12 +79,12 @@ Although the <code>CalcTaxes</code> request gives the user the flexibility to in
       "lfln": false,
       "date": "2017-05-01T12:00:00Z",
       "exms": [		
-        {  // Category exemption for all sales tax in CA
+        {
           "loc": {
             "ctry": "USA",
             "st": "CA"
           },
-          "cat": 1				// [TaxCategory]	Tax Category for Tax Category Exemptions
+          "cat": 1
         } ],
       "itms": [
         {
@@ -134,6 +136,17 @@ Although the <code>CalcTaxes</code> request gives the user the flexibility to in
 {% endhighlight %}
 
 <h4>Response</h4>
+The impact of the category exemption can be seen in 2 places in the response:
+<ul class="dev-guide-list">
+  <li>Detailed taxes (<code>txs</code> for Line Item 003 - the 3 taxes returned are all part of the "Sales and Use Taxes" category (<code>cid</code> is <code>1</code>) and the tax 0 on each as a result</li>
+  <li> Summarized taxes (<code>summ</code>) - the last 3 taxes listed are part of the "Sales and Use Taxes" category (<code>cid</code> is <code>1</code>) and the tax 0 on each as well</li>
+  <li>Exempt Sale Amount (<code>exm</code>) contains the amount exempted</li> 
+</ul>
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse1">View the Response JSON</a>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -547,9 +560,13 @@ Although the <code>CalcTaxes</code> request gives the user the flexibility to in
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
+<h3>Level Exemption Example</h3>
+All taxes (<code>tpe</code> set to <code>0</code>) at the Federal level (<code>lvl</code> set to 0) are being exempted in the exemption (<code>exms</code>) below.
 
-<h3>Level Exemption</h3>
 {% highlight json %}
 {
   "cmpn": {
@@ -563,7 +580,7 @@ Although the <code>CalcTaxes</code> request gives the user the flexibility to in
     {
       "doc": "TEST-VOIP Federal Level Exemption INVOICE AVA",
       "cmmt": false,
-      "bill": {   // Bill-to will be applied to origination and destination also
+      "bill": {
         "cnty": "San Francisco",
         "ctry": "USA",
         "int": true,
@@ -576,13 +593,13 @@ Although the <code>CalcTaxes</code> request gives the user the flexibility to in
       "lfln": false,
       "date": "2018-05-01T12:00:00Z",
       "exms": [		
-        {  // Tax type level exemption for Federal
+        {
           "loc": {
             "ctry": "USA"
           },
-          "tpe": 0,			// [TaxType]		0 = All tax types
-          "lvl": 0,			// [TaxLevel]		0 = Federal Level
-          "frc": true	    // [Force] 		false = do not allow level exemption  true = support level exemption
+          "tpe": 0,
+          "lvl": 0,
+          "frc": true
 		  } ],
       "itms": [
         {
@@ -634,6 +651,12 @@ Although the <code>CalcTaxes</code> request gives the user the flexibility to in
 {% endhighlight %}
 
 <h4>Response</h4>
+All taxes (<code>txs</code>) with a Federal tax level (<code>lvl</code> of <code>0</code>) are exempted below.  Exempt Sale Amount (<code>exm</code>) contains the amount exempted.
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse2">View the Response JSON</a>
+  <div id="collapse2" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -1082,9 +1105,12 @@ Although the <code>CalcTaxes</code> request gives the user the flexibility to in
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
-
-<h3>Tax Type Exemption</h3>
+<h3>Tax Type Exemption Example</h3>
+In this example, Tax Type (<code>tpe</code>) 162 at the Federal level (<code>lvl</code> of <code>0</code>) is being exempted.
 {% highlight json %}
 {
   "cmpn": {
@@ -1098,7 +1124,7 @@ Although the <code>CalcTaxes</code> request gives the user the flexibility to in
     {
       "doc": "TEST-VOIP INVOICE 2017.12.26:12.02 AVA",
       "cmmt": false,
-      "bill": {   // Bill-to will be applied to origination and destination also
+      "bill": {
         "cnty": "San Francisco",
         "ctry": "USA",
         "int": true,
@@ -1115,8 +1141,8 @@ Although the <code>CalcTaxes</code> request gives the user the flexibility to in
           "loc": {
             "ctry": "USA"
           },
-          "tpe": 162,			// [TaxType]		Tax Type for Tax Type Exemption
-          "lvl": 0				// [TaxLevel]		Tax Level for Tax Type Exemption
+          "tpe": 162,
+          "lvl": 0
         } ],
       "itms": [
         {
@@ -1168,6 +1194,12 @@ Although the <code>CalcTaxes</code> request gives the user the flexibility to in
 {% endhighlight %}
 
 <h4>Response</h4>
+You will see in this response that Tax Type (<code>tid</code>) 162 has a 0 tax amount and an Exempt Sale Amount (<code>exm</code>) of 100 at the Federal level (<code>lvl<code> of <code>0</code>).
+
+<div class="panel-group">
+  <a data-toggle="collapse" href="#collapse3">View the Response JSON</a>
+  <div id="collapse3" class="panel-collapse collapse">
+    <div class="panel-body">
 {% highlight json %}
 {
   "inv": [
@@ -1581,6 +1613,9 @@ Although the <code>CalcTaxes</code> request gives the user the flexibility to in
   ]
 }
 {% endhighlight %}
+    </div>
+  </div>
+</div>
 
 <h4>Note</h4>
 Most Federal taxes are only exempted when selling to a reseller who is registered, reporting, and remitting to the regulating agency. For this reason, a wholesale exemption or a tax type exemption must be used to exempt taxes at the Federal level.
