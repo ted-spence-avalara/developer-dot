@@ -68,7 +68,7 @@ We don't have to do it this way. We don't have to use classes. There's something
 
 ### Custom HTML tags
 
-We can design custom components with more meaningful APIs by using tags, attributes, and nesting. Here's what that means:
+We can design custom components with more meaningful APIs by using tags, attributes, and nesting - just like "real" elements. Here's what that means:
 
 _Old class-based design_
 ```html
