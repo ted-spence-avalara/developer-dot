@@ -85,7 +85,7 @@ _A typical class-based design_
 ```html
 <i class="icon icon-phone"></i>
 ```
-_Now done with a custom tag and attribute design_
+_Now done with a custom tag and attribute_
 ```html
 <icon name="phone"></icon>
 ```
