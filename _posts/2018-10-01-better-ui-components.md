@@ -267,7 +267,7 @@ But as we've learned, it's best-practice to prefix, so that really should be:
 Anyway, back to `autodismiss`. Supporting a value of seconds now requires the use of JavaScript. At this point most people go  with what they know or try the flavor-of-the-day ramping up on whatever idioms and special syntax is required. That's not a problem if you're a small team with one app, but if you have lots of consumers of your Alert component you're entering into a code contract and the less that contract asks of the implementer the better.
 
 We can minimize the contract and be better positioned for the long-term if we pick a solution that follows, or stays close to, Custom Elements. Here's some options available today:
-* vanilla [Custom Elements](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements) and [Web Components](https://www.webcomponents.org/introduction) of course
+* [Custom Elements](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements) or full-blown [Web Components](https://www.webcomponents.org/introduction) of course
 * [Polymer](https://www.polymer-project.org/3.0/start/)
 * [Slim](http://slimjs.com/#/getting-started)
 * [Vue](https://vuejs.org/v2/guide/#Relation-to-Custom-Elements)
