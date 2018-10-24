@@ -215,7 +215,7 @@ alert[autodismiss] {
 ```
 Nice! We really got ourselves a useful component without a single build step or polyfill required - imagine that! And check out its friendly little API:
 * `alert` tag
-* `type` attribute (_required_) - one of "info", "success", "warn", or "error"
+* `type` attribute (_required_) - one of "success", "warn", or "error"
 * `autodismiss` attribute (_optional_) - if present, the Alert will disappear after four seconds
 * Accepts nested content, including other custom tags
 
