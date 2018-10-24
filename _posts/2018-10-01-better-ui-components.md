@@ -27,9 +27,9 @@ That's an "anchor" element with download and "hypertext reference" attributes ne
 
 <video src="example.com/vids/cats.mp4" poster="example.com/posters/cats.jpg" autoplay loop controls></video>
 ```
-So yeah, those are some standard elements with the familiar declarative API that makes HTML so easy. Pretty simple; no mystery here.
+So yeah, those are standard elements with that familiar declarative API that makes learning and writing HTML so simple. Pretty basic stuff; no mystery here.
 
-As you know HTML gives us a lot of elements to work with, but you no doubt also know it doesn't give us elements for everything we need. Not by a long shot. Let's takes icons for a simple example.
+As you know HTML gives us lots of elements to work with, but you no doubt also know it doesn't give us enough elements for everything we need. Not by a long shot. Let's takes icons for a simple example.
 
 Because HTML doesn't give us an `icon` tag to markup a site's icons we have to design our own solution. Here's three similar approaches you've likely seen before:
 
