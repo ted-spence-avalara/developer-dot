@@ -450,4 +450,4 @@ And yet 9 out of 10 implementations were in zero danger of not being able to sca
 
 And that's really what the custom tag approach is about. Yes, a tag and attribute design is much nicer than class-based (the time for that switch has definitely come), but being able to design and build components that scale in either direction using standards-based HTML constructs (prefixed tag, attributes, and nesting) across a wide range of use cases is a very compelling opportunity!
 
-And so my eye is on custom tags, Web Components, the Custom Elements spec and the few js libs that stay close to it. That's the path to designing better UI components and ending this over-engineered era.
+Custom tags, Web Components, the Custom Elements spec and the few js libs that stay close to it - that's the path to designing better UI components and getting past this over-engineered era.
