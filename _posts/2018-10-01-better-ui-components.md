@@ -1,6 +1,6 @@
 
 # Custom HTML Tags
-## How to design better UI components and avoid over-engineering user interfaces through the use of standards
+## How to design better UI components and avoid over-engineering
 
 **Tl;dr:** this is something new that's NOT another js thing vying for market share. Enjoy!
 
