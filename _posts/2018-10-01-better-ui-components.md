@@ -223,7 +223,7 @@ If you didn't know any better you'd think this was a standard HTML5 element avai
 
 There is a small problem though. The problem is our tag name is not totally future-proof. There's two considerations here:
 
-The first is that some day HTML might get a tag with the same name as ours. I pray every night before bed that WHATWG will give us `<icon>`...but if WHATWG doesn't, it's still possible some other developer might. Either way there's risk of a collision and this brings us to the second consideration: prefixing. 
+The first is that some day HTML might get a tag with the same name as ours. I pray every night before bed that WHATWG will give us `<icon>`...but if WHATWG doesn't, it's still possible some other developer might. Either way there's risk of a collision and that brings us to the second consideration: prefixing. 
 
 Although these aren't technically Custom Elements at this point, you'll want to follow the spec and use a prefix for your custom tags. At Avalara we use `s-` as our prefix. The `s` is short for Skylab, which is the name of our design system, but it also means:
 * **s**tandards - we always go for standards until we actually need to bring in a dependency
