@@ -1,26 +1,35 @@
 
-# Better UI Components
-## How to avoid over-engineering user interfaces through the use of standards
+# Custom HTML Tags
+## How to design better UI components and avoid over-engineering user interfaces through the use of standards
 
-There's a user interface technology that is so good it has _100%_ developer adoption. It is also totally compatible with _all_ browsers and developer tools, has no dependencies, is very well-documented, and easy to learn.  The technology of course is none other than HTML and I think we've ignored its power to enable us to design, construct, and implement better UI components.
+**Tl;dr:** Something new and it's NOT another js thing vying for market share. Enjoy!
 
-### HTML all the way
-As a reminder, HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements to provide semantic support for more content, like `<nav>` and `<video>` and `<article>`. Over the years it also added new capabilities to existing elements like the addition of the `autofocus` attribute, which tells the browser which element to focus on page load (a must for log in and search UX!).
+### HTML now and forever
+HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements to provide semantic support for more content, like `<nav>` for navigation and `<video>` for videos and `<article>` for, well, articles. Over the years it also added new capabilities to existing elements like the addition of the `autofocus` attribute, which tells the browser which element to focus on page load (you know that one is a must for log in and search UX!).
 
 These additions are of course implemented through the usual HTML constructs: *tags*, *attributes*, and *nesting*. In case you need a refresher, here's some examples:
 
 ```html
 <h1>Hello World!</h1>
-
+```
+`h1` is the "heading level 1" tag.
+```html
 <p>Ready for <a href="example.com" download>download</a></p>
+```
+That's an "anchor" element with download and "hypertext reference" attributes nested inside a paragraph. Here's some more examples:
+```html
+<section>
+  <header>...</header>
+  <footer>...</footer>
+</section>
 
 <input type="email" placeholder="name@example.com" autofocus>
 
 <video src="example.com/vids/cats.mp4" poster="example.com/posters/cats.jpg" autoplay loop controls></video>
 ```
-Standard semantic elements with the declarative API that makes HTML so easy. Pretty simple; no mystery here.
+So yeah, those are some standard elements with the familiar declarative API that makes HTML so easy. Pretty simple; no mystery here.
 
-As you know HTML gives us a lot of elements to work with - probably more than we give it credit for - but it definitely doesn't give us elements for everything we need, does it? Let's use icons as a quick example.
+As you know HTML gives us a lot of elements to work with, but you no doubt also know it doesn't give us elements for everything we need. Not by a long shot. Let's takes icons for a simple example.
 
 Because HTML doesn't give us an `icon` tag to markup a site's icons we have to design our own solution. Here's three similar approaches you've likely seen before:
 
