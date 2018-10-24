@@ -30,28 +30,73 @@ function getCompareDate() {
 ************************************************************************/
 
 
+function lineBuilder(reqType) {
+    let lines =  reqType === 'JSON' ? [] : ``;
+    
+    let lineNum = 1;
+    const allProducts = $('input[type=checkbox][name=product]:checked');
+    
+    allProducts.each(function () {
+        const taxCode = $(this).val();
+        const amount = $('#' + $(this).attr('id') + '-amount').val();
+        const description = $(this).attr('description');
 
-// TODO: function lineBuilder() {
-//     let lineNum = 1;
-//     const allProducts = $('input[type=checkbox][name=product]:checked');
-//     allProducts.each(function () {
-//         const taxCode = $(this).val();
-//         const amount = $('#' + $(this).attr('id') + '-amount').val();
-//         const description = $(this).attr('description');
-//         lines += `{
-//             'amount': '${amount}',
-//             'description': '${description}',
-//             'number': '${lineNum}',
-//             'taxCode': '${taxCode}'
-//         }`;
+        // pick the correct line template
+        switch (reqType) {
+            case 'JSON':
+                lines.push({
+                    "number": `${lineNum}`,
+                    "amount": `${amount}`,
+                    "taxCode": `${taxCode}`,
+                    "description": `${description}`
+                });
+                break;
+            case 'JS':
+            case 'Ruby':
+                lines += `{
+                    amount: "${amount}",
+                    description: "${description}",
+                    number: "${lineNum}",
+                    taxCode: "${taxCode}"
+                }`;
+                if (lineNum != allProducts.length) lines += ',\n        ';
+                break;
+            case 'Python':
+                lines += `{
+                    'amount': '${amount}',
+                    'description': '${description}',
+                    'number': '${lineNum}',
+                    'taxCode': '${taxCode}'
+                }`;
+                if (lineNum != allProducts.length) lines += ',\n        ';
+                break;
+            case 'C#':
+                lines =+ `new LineItemModel() 
+                {
+                    number = "${lineNum}",
+                    quantity = 1,
+                    amount = ${amount},
+                    taxCode = "${taxCode}"
+                }`;
+                if (lineNum != allProducts.length) lines += ',\n        ';
+                break;
+            case 'PHP':
+                lines += `->withLine(${amount}, ${lineNum}, null, ${taxCode})`; 
+                if (lineNum != allProducts.length) lines += '\n    ';
+                break;
+            case 'Java':
+                lines += `.withLine(new BigDecimal(${amount}), new BigDecimal(${lineNum++}), "${taxCode}")`; 
+                if (lineNum != allProducts.length) lines += '\n    ';
+                break;å
+            default:
+                break;
+        }
+       
+        lineNum++
+    });
 
-//         if (lineNum != allProducts.length) {
-//             lines += ',\n        ';
-//         }
-
-//         lineNum++
-//     });
-// }
+    return lines;
+}
 
 // TODO: function addressBuilder() {
 //     let address;
@@ -127,18 +172,20 @@ function jsonSampleData() {
         };
     }
 
-    // Loop through all the checked products and add one line for each
-    var lineNum = 1;
-    $('input[type=checkbox][name=product]:checked').each(function () {
-        // Find amount
-        sampleData.lines.push({
-            "number": lineNum++,
-            "amount": $('#' + $(this).attr('id') + '-amount').val(),
-            "taxCode": $(this).val(),
-            "description": $(this).attr('description')
-        });
-    });
+    sampleData.lines = lineBuilder('JSON');
 
+    return sampleData;
+}
+
+function curlSampleData() {
+    const json = JSON.stringify(jsonSampleData(), null, 2)
+    const sampleData = `-X POST
+-H 'Accept: application/json'
+-H 'Authorization: Basic aHR0cHdhdGNoOmY='
+-H 'Content-Type: application/json'
+--data '${json}'
+https://sandbox-rest.avatax.com/api/v2/transactions/create`;
+    
     return sampleData;
 }
 
@@ -276,19 +323,6 @@ $t = $tb->${address}
     `;
 
     return sampleData
-}
-
-function curlSampleData() {
-    const json = JSON.stringify(jsonSampleData(), null, 2)
-    const sampleData = `-X POST
--H 'Accept: application/json'
--H 'Authorization: Basic aHR0cHdhdGNoOmY='
--H 'Content-Type: application/json'
---data '${json}'
-https://sandbox-rest.avatax.com/api/v2/transactions/create
-        `;
-    
-    return sampleData;
 }
 
 function pythonSampleData() {
@@ -469,7 +503,6 @@ transaction = @client.create_transaction(createTransactionModel)`;
     return sampleData;
 }
 
-//TODO: Java
 function javaSampleData() {
     let lines = ``;
     let address;
@@ -513,7 +546,6 @@ TransactionModel transaction = new TransactionBuilder(client, "DEFAULT", Documen
     return sampleData
 }
 
-//TODO: JS
 function javascriptSampleData() {
     let address;
     let lines = ``;
@@ -571,24 +603,24 @@ function javascriptSampleData() {
     }
 
     const sampleData = `const config = {
-    appName: 'your-app',
-    appVersion: '1.0',
-    environment: 'sandbox',
-    machineName: 'your-machine-name'
+    appName: "your-app",
+    appVersion: "1.0",
+    environment: "sandbox",
+    machineName: "your-machine-name"
 };
     
 const creds = {
-    username: '<your-username>',
-    password: '<your-password>'
+    username: "<your-username>",
+    password: "<your-password>"
 };
     
 var client = new Avatax(config).withSecurity(creds);
 
 const taxDocument = {
-    type: 'SalesOrder',
-    companyCode: 'abc123',
-    date: '2017-04-12',
-    customerCode: 'ABC',
+    type: "SalesOrder",
+    companyCode: "abc123",
+    date: "2017-04-12",
+    customerCode: "ABC",
     addresses: {
         ${address}
     },
@@ -609,7 +641,7 @@ return client.createTransaction({ model: taxDocument })
 //
 // MAIN Sample Data function: populates request console
 //
-function fillWithSampleData() {
+function fillWithSampleData() {     
     const noAddress = $('input[type=radio][name=address]:checked').length === 0;
 
     if (noAddress) {
