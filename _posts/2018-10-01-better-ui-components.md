@@ -71,7 +71,11 @@ Pretty gross, but that's class-based design, and it gets even worse if you follo
 ```html
 <div class="mdc-dialog__actions mdc-dialog__actions--full-width">
 ``` 
-We don't have to do it this way. We don't have to use classes. There's something better. 
+Other approaches get even weirder:
+```html
+<span uk-icon="icon: phone"></span>
+```
+We don't have to do it this way. We don't have to use classes or trickery. There's something better. 
 
 ### Custom HTML tags
 
