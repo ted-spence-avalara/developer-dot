@@ -140,7 +140,7 @@ Designing custom UI components with tags and attributes instead of classes is fu
 * Custom tags have strong semantic meaning and are easily identifiable: `<badge>` vs. `<span class="badge">`
 * No more BEM or similar methodologies for engineering around the problems with class-based design
 * In many cases you can ditch the need for abstraction: `{{> icon name="phone"}}` or `<OverEngineeredIcon name="phone"/>` is replaced with `<icon name="phone"></icon>`
-* The result is clean, standards-based markup that has a nice uniform look with greater semantics and readability
+* The result is clean, standards-based markup that has a nice uniform look with excellent readability
 * Using custom tags and attributes is officially supported. It's how HTML thought we'd design custom components, but we instead went crazy for classes!
 * Lastly, custom tags set you up perfectly for future improvements. How so? Let’s get into that now.
 
