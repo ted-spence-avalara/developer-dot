@@ -432,7 +432,7 @@ which outputs
 ```
 Just take a minute to think about what happened there...
 
-Here's another one from a great travel company that should know better:
+Here's another one from a great company that should know better:
 ```html
 <UitkInlineBadge shape="shape-pill" theme="theme-success">10% off</UitkInlineBadge>
 ```
