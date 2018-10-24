@@ -284,7 +284,7 @@ We can minimize the contract and be better positioned for the long-term if we pi
 * [Vue](https://vuejs.org/v2/guide/#Relation-to-Custom-Elements)
 * [Riot](https://riot.js.org), which has the best DX out there imo, [try it](https://riot.js.org/play/). There's even a w3c [proposal that takes the Custom Elements spec in a similar direction](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Declarative-Custom-Elements-Strawman.md)
 
-Here's two examples where Alert can be upgraded, or scale up, to a stateful component:
+Here's two examples where Alert has been upgraded to a stateful component to support user-defined seconds:
 
 _Custom Elements + `<template>` element_
 ```html
@@ -369,9 +369,15 @@ _Riot_
 </s-alert>
 ```
 
-In both cases using this new version of Alert with JavaScript-endabled `autodismiss` hasn't changed:
+With either implementation using the new version of Alert with the overrideable `autodismiss` hasn't changed:
 ```html
 <s-alert type="success" autodismiss="10">
+  <p>You should try this</p>
+</s-alert>
+```
+And the default still works the same too:
+```html
+<s-alert type="success" autodismiss>
   <p>You should try this</p>
 </s-alert>
 ```
