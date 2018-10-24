@@ -29,7 +29,7 @@ That's an "anchor" element, the `a` tag, with download and "hypertext reference"
 ```
 So yeah, standard elements with that familiar declarative API that makes learning and writing HTML so simple. Pretty basic stuff; no mystery here.
 
-HTML gives us lots of elements to work with, but you no doubt also know it doesn't give us enough elements for everything we need. Not by a long shot. Let's takes icons for a simple example.
+HTML gives us lots of these elements to work with, but you no doubt also know it doesn't give us enough elements for everything we need. Not by a long shot. Let's takes icons for a simple example.
 
 Because HTML doesn't give us an `icon` tag to markup a site's icons we have to design our own solution. Here's three similar approaches you've likely seen before:
 
