@@ -294,7 +294,6 @@ _Custom Elements + `<template>` element_
 ```html
 <template id="s-alert">
   <style>
-    ...
   </style>
   
   <s-icon></s-icon>
@@ -315,6 +314,16 @@ _Custom Elements + `<template>` element_
       return ['type', 'autodismiss'];
     }
 
+    get type() {
+      return this.getAttribute('type', val);
+    }
+
+    set type(val) {
+      if (val) {
+        this.setAttribute('type', val);
+      }
+    }
+  
     get seconds() {
       if (this.hasAttribute('autodismiss')) {
         let seconds = (typeof this.getAttribute('autodismiss') === 'number' ? this.getAttribute('autodismiss') : 4) * 1000;
@@ -325,27 +334,23 @@ _Custom Elements + `<template>` element_
       return seconds;
     }
 
-    set disabled(val) {
+    set seconds(val) {
       if (val) {
-        this.setAttribute('disabled', '');
+        this.setAttribute('autodismiss', val);
       } else {
-        this.removeAttribute('disabled');
+        this.removeAttribute('autodismiss');
       }
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-    if (this.disabled) {
-      this.setAttribute('tabindex', '-1');
-      this.setAttribute('aria-disabled', 'true');
-    } else {
-      this.setAttribute('tabindex', '0');
-      this.setAttribute('aria-disabled', 'false');
-    }
-    // TODO: also react to the open attribute changing.
+      // Update the attribute
     }
 
     connectedCallback() {
-      ...
+      let icon = this.type === 'success' ? 'check' : this.type === 'error' ? 'info' : 'warn';
+      this.getElementsByTagName('s-icon')[0].setAttribute('name', icon);
+  
+      if (this.seconds > 0) setTimeout(this.remove(), this.seconds);
     }
   });
 </script>
@@ -367,7 +372,7 @@ _Riot_
         })
     </script>
     <style>
-      :scope {...} /* applied to s-alert elements */
+      :scope {...}
     </style>  
 </s-alert>
 ```
