@@ -118,6 +118,13 @@ function addressBuilder(reqType, addressName, prefix) {
         case 'Ruby':
             break;
         case 'Python':
+            address = `{
+            'city': '${addressArray[1]}',
+            'country': '${addressArray[3]}',
+            'line1': '${addressArray[0]}',
+            'postalCode': '${addressArray[4]}',
+            'region': '${addressArray[2]}'
+        }`;
             break;
         case 'C#':
             address = `{
@@ -132,6 +139,7 @@ function addressBuilder(reqType, addressName, prefix) {
             address = `->withAddress('${prefix}', '${addressArray[0]}', null, null, '${addressArray[1]}', '${addressArray[2]}', '${addressArray[4]}', '${addressArray[3]}')`;
             break;
         case 'Java':
+            address = `.withAddress('${prefix}', '${addressArray[0]}', null, null, '${addressArray[1]}', '${addressArray[2]}', '${addressArray[4]}', '${addressArray[3]}')`;
             break;
         default:
             break;
@@ -270,38 +278,18 @@ $t = $tb${address}
 
 function pythonSampleData() {
     const lines = lineBuilder('Python');
+    const shipFromSelected = shipFromChecked();
+    const shipToAddress = addressBuilder('Python', 'address');
+
     let address;
-    const shipToAddress = shipFromChecked();
 
-    if (shipToAddress){
-        const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
-        const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
+    if (shipFromSelected){
+        const shipFromAddress = addressBuilder('Python', 'srcAddress');
 
-        address = `'ShipFrom': {
-            'city': '${shipFrom[1]}',
-            'country': '${shipFrom[3]}',
-            'line1': '${shipFrom[0]}',
-            'postalCode': '${shipFrom[4]}',
-            'region': '${shipFrom[2]}'
-        },
-        'ShipTo': {
-            'city': '${shipTo[1]}',
-            'country': '${shipTo[3]}',
-            'line1': '${shipTo[0]}',
-            'postalCode': '${shipTo[4]}',
-            'region': '${shipTo[2]}'
-        },
-        `;
+        address = `'ShipFrom': ${shipFromAddress},
+        'ShipTo': ${shipToAddress}`;
     } else {
-        const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
-
-        address = `'SingleLocation': {
-            'city': '${singleLocation[1]}',
-            'country': '${singleLocation[3]}',
-            'line1': '${singleLocation[0]}',
-            'postalCode': '${singleLocation[4]}',
-            'region': '${singleLocation[2]}'
-        }`;
+        address = `'SingleLocation': ${shipToAddress}`;
     }
     
     const sampleData = `#Create a new AvaTaxClient object
