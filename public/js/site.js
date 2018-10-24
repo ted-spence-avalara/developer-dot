@@ -129,7 +129,7 @@ function addressBuilder(reqType, addressName, prefix) {
         }`;
             break;
         case 'PHP':
-            address = `withAddress('${prefix}', '${singleLocation[0]}', null, null, '${singleLocation[1]}', '${singleLocation[2]}', '${singleLocation[4]}', '${singleLocation[3]}')`;
+            address = `->withAddress('${prefix}', '${addressArray[0]}', null, null, '${addressArray[1]}', '${addressArray[2]}', '${addressArray[4]}', '${addressArray[3]}')`;
             break;
         case 'Java':
             break;
@@ -149,36 +149,32 @@ function shipFromChecked() {
 function jsonSampleData() {
     const shipFromSelected = shipFromChecked();
     const shipToAddress = addressBuilder('JSON', 'address');
+    let address;
     let sampleData;
 
     // check if there is a shipTo address selected
     if(shipFromSelected) {
         const shipFromAddress = addressBuilder('JSON', 'srcAddress');
 
-        sampleData = {
-            "lines": [],
-            "type": "SalesOrder",
-            "companyCode": "DEMOPAGE",
-            "date": "2018-09-05",
-            "customerCode": "ABC",
-            "addresses": {
-                "shipTo": shipToAddress,
-                "shipFrom": shipFromAddress,
-            }
+        address = {
+            "shipTo": shipToAddress,
+            "shipFrom": shipFromAddress,
         };
     }
     else {
-        sampleData = {
-            "lines": [],
-            "type": "SalesOrder",
-            "companyCode": "DEMOPAGE",
-            "date": "2018-09-05",
-            "customerCode": "ABC",
-            "addresses": {
-                "singleLocation": shipToAddress,
-            }
+        address = {
+            "singleLocation": shipToAddress,
         };
     }
+
+    sampleData = {
+        "lines": lineBuilder('JSON'),
+        "type": "SalesOrder",
+        "companyCode": "DEMOPAGE",
+        "date": "2018-09-05",
+        "customerCode": "ABC",
+        "addresses": address
+    };
 
     sampleData.lines = lineBuilder('JSON');
 
@@ -245,31 +241,26 @@ var transaction = client.CreateTransaction(null, createModel);`;
 function phpSampleData() {
     const lines = lineBuilder('PHP');
     let address;
-    const shipToAddress = shipFromChecked();
+    const shipFromSelected = shipFromChecked();
 
     // check if shipFrom/To addresses
-    if(shipToAddress) {
-        const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
-        const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
-        
-        // build PHP req for multiple addresses
-        address = `->withAddress('ShipFrom', '${shipTo[0]}', null, null, '${shipTo[1]}', '${shipTo[2]}', '${shipTo[4]}', '${shipTo[3]}')
-    ->withAddress('ShipTo', '${shipFrom[0]}', null, null, '${shipFrom[1]}', '${shipFrom[2]}', '${shipFrom[4]}', '${shipFrom[3]}')`;
-    } else {
-        const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
+    if(shipFromSelected) {
+        const shipFromAddress = addressBuilder('PHP', 'srcAddress', 'ShipFrom');
+        const shipToAddress = addressBuilder('PHP', 'address', 'ShipTo');
 
-        // build PHP req for single location
-        address = `withAddress('SingleLocation', '${singleLocation[0]}', null, null, '${singleLocation[1]}', '${singleLocation[2]}', '${singleLocation[4]}', '${singleLocation[3]}')`;
+        address = shipFromAddress + '\n    ' + shipToAddress
+    } else {
+        address = addressBuilder('PHP', 'address', 'SingleLocation');
     }
 
-        // build sample data for PHP
+    // build sample data for PHP
     const sampleData = `// Create a new client
 $client = new Avalara\AvaTaxClient('phpTestApp', '1.0', 'localhost', 'sandbox');
 $client->withSecurity('myUsername', 'myPassword’);
 
 // Create a simple transaction using the fluent transaction builder
 $tb = new Avalara\\TransactionBuilder($client, “DEMOPAGE", Avalara\\DocumentType::C_SALESORDER, 'ABC');
-$t = $tb->${address}
+$t = $tb${address}
     ${lines}
     ->create();
     `;
