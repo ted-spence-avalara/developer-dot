@@ -34,55 +34,51 @@ Because HTML doesn't give us an `icon` tag to markup a site's icons we have to d
 Those solutions use classes to both define the element and its attributes, and while there is nothing wrong with that, there are drawbacks:
 
 #### 1) Repetitive naming:
-`fa`, `icon`, and `oi` are repeated twice.
+`fa`, `icon`, and `oi` are repeated twice. Not DRY.
 
-#### 2) Loss of clarity when the following inevitably happens (or the constant effort required to prevent it):
+#### 2) Loss of clarity when the following inevitably happens (or the extra effort required to prevent it):
 ```html
 <i class="icon icon-phone"></i>  original code
 <i class="icon icon-phone foo"></i>  six weeks later
 <i class="bar baz icon icon-phone foo"></i>  a year later
 ```
-What exactly is that last one supposed to be? Too messy.
+What exactly is that last one supposed to be? Not clear; too messy.
 #### 3) The tag becomes unavoidable boilerplate with no meaning:
 ```html
 <i class="icon icon-phone"></i>
 <div class="icon icon-phone"></div>
 <span class="icon icon-phone"></span>
 ```
-That means `<div class=""></div>` is all boilerplate.
-#### 4) Next to standard elements the class-based design looks out of place; it lacks uniformity:
+That means `<div class=""></div>` is all boilerplate. Lame.
+#### 4) Next to standard elements the class-based design looks out of place:
 ```html
 <i class="icon icon-phone"></i>
 <input type="email" autofocus>
 ```
-What if standard elements were based on that same design? So we'd have:
+What if standard elements were based on classes? So instead of the above we'd have:
 ```html
 <i class="icon icon-phone"></i>
-<i class="input input-email input-autofocus">
+<i class="input input-type-email input-autofocus">
 ```
-Pretty gross, but that's what you get with a class-based design. Gets even worse if you go BEM: 
+Pretty gross, but that's what you get with a class-based design. And it gets even worse if you go BEM: 
 ```html
 <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
 ``` 
-[That's real btw](https://getmdl.io/components/index.html#dialog-with-full-width-actions)
-
-
-
 We don't have to do it this way. We don't have to use classes. There's something better. 
 
 ### Custom HTML tags
 
-We can design our own custom components that have a more meaningful API like standard elements by using tags, attributes, and nesting. Here's what that means:
+We can design custom components with more meaningful APIs by using tags, attributes, and nesting. Here's what that means:
 
 _Old class-based design_
 ```html
 <i class="icon icon-phone"></i>
 ```
-_Using a tag and attribute(s)_
+_Or, custom tag and attribute design_
 ```html
 <icon name="phone"></icon>
 ```
-If this kind of makes you uneasy, don't worry. These custom tags are compatible with all modern browsers and later versions of IE. Browsers will download and parse and render that code just like any "real" HTML because it is. Sure, it's not a standard element and browsers won't have any default styles for your custom or _unknown_ tags, but that is not a problem at all. You can create CSS rules for custom tags, like `icon`, just like you can for standard tags and classes:
+If this kind of makes you uneasy, don't worry. Custom tags are compatible with all modern browsers and later versions of IE. Browsers happily download, parse, and render custom tags just like any "real" HTML because it is. Sure, it's not a standard element and browsers won't have any default styles for your custom or _unknown_ tags, but that's not a problem at all. You can create CSS rules for custom tags, like `icon`, just like you can for standard tags and classes:
 ```css
 icon {
   font-family: 'My Icons';
@@ -93,13 +89,16 @@ icon[name="phone"]:before {
 }
 ```
 
-That works perfectly! Other than specificity, it's no different than using `.icon` and `.icon-phone:before`. Let's do another one. 
+So there we go. That works perfectly fine! Other than specificity, it works the same as `.icon` and `.icon-phone:before`.
 
-A typical Badge component's design looks like:
+
+Let's do another one. 
+
+A typical class-based Badge design looks like:
 ```html
 <span class="badge badge-success">1</span>
 ```
-That's ok. Here's the same thing with a tag and attributes:
+Not awful, but here's the same thing using a tag and attributes:
 ```html
 <badge count="1" type="success"></badge>
 ```
@@ -123,7 +122,7 @@ Here's some other examples of components built with custom tags and attributes i
 </row>
 ```
 
-Are you starting to see the difference? Do you sense the benefits? 
+Can you see the difference? Are you starting to sense the benefits? 
 
 Designing custom UI components with tags and attributes instead of classes is fun and it's better. It is objectively better:
 
