@@ -161,7 +161,7 @@ Creating and sharing custom components is a commitment. Your components will evo
 _Original design_
 ```html
 <alert type="success">
-  <p>You should try this</p>
+  <p>Custom tags are great!</p>
 </alert>
 ```
 ```css
@@ -186,7 +186,7 @@ _With an icon_
 ```html
 <alert type="success">
   <icon name="check"></icon>
-  <p>You should try this</p>
+  <p>Custom tags are great!</p>
 </alert>
 ```
 That works, but it's not the right way to design a component. Let's get an icon without leaving it up to the implementer:
@@ -194,7 +194,7 @@ That works, but it's not the right way to design a component. Let's get an icon 
 _With the icon inferred_
 ```html
 <alert type="success">
-  <p>You should try this</p>
+  <p>Custom tags are great!</p>
 </alert>
 ```
 ```css
@@ -213,7 +213,7 @@ It's pretty common for Alerts to disappear automatically, so let's add support f
 _New autodismiss feature_
 ```html
 <alert type="success" autodismiss>
-  <p>You should try this</p>
+  <p>Custom tags are great!</p>
 </alert> 
 ```
 ```css
@@ -256,13 +256,13 @@ In a future release of Alert let's say we're adding the ability to set the `auto
 _Override autodismiss duration_
 ```html
 <alert type="success" autodismiss="10">
-  <p>You should try this</p>
+  <p>Custom tags are great!</p>
 </alert>
 ```
 But as we've learned it's best-practice to prefix, so that really should be:
 ```html
 <s-alert type="success" autodismiss="10">
-  <p>You should try this</p>
+  <p>Custom tags are great!</p>
 </s-alert>
 ```
 > Side note: If you're the maintainer of a shared library, pick a short prefix that's meaningful to you. Twitter's Bootstrap, for example, would go from:
@@ -381,13 +381,13 @@ _Riot_
 Regardless of implementation, our use of Alert with the overrideable `autodismiss` hasn't changed:
 ```html
 <s-alert type="success" autodismiss="10">
-  <p>You should try this</p>
+  <p>Custom tags are great!</p>
 </s-alert>
 ```
 And the default still works the same too:
 ```html
 <s-alert type="success" autodismiss>
-  <p>You should try this</p>
+  <p>Custom tags are great!</p>
 </s-alert>
 ```
 ### Going forward
