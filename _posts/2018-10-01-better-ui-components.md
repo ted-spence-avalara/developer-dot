@@ -55,7 +55,7 @@ That means `<div class=""></div>` is just boilerplate. Bummer.
 <i class="icon icon-phone"></i>
 <input type="email" autofocus>
 ```
-What if standard elements were based on classes? So instead of the above we'd have:
+What if the standard elements used classes like this? So instead of the above we'd have:
 ```html
 <i class="icon icon-phone"></i>
 <i class="input input-type-email input-autofocus">
