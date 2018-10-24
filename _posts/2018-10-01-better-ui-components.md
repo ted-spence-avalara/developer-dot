@@ -367,7 +367,7 @@ _Riot_
         })
     </script>
     <style>
-      s-alert {...}
+      :scope {...} /* applied to s-alert elements */
     </style>  
 </s-alert>
 ```
