@@ -262,6 +262,7 @@ But as we've learned, it's best-practice to prefix, so that really should be:
 > <b-alert type="success">
 > ```
 > and Material can use `mdl-` as shown above.  
+
 Anyway, back to `autodismiss`. Supporting a value of seconds now requires the use of JavaScript. At this point most people go  with what they know or try the flavor-of-the-day ramping up on whatever idioms and special syntax is required. That's not a problem if you're a small team with one app, but if you have lots of consumers of your Alert component you're entering into a code contract and the less that contract asks of the implementer the better.
 
 We can minimize the contract and be better positioned for the long-term if we pick a solution that follows, or stays close to, Custom Elements. Here's some options available today:
