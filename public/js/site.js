@@ -116,6 +116,13 @@ function addressBuilder(reqType, addressName, prefix) {
             break;
         case 'JS':
         case 'Ruby':
+            address = `{
+            line1: "${addressArray[0]}",
+            city: "${addressArray[1]}",
+            region: "${addressArray[2]}",
+            country: "${addressArray[3]}",
+            postalCode: ${addressArray[4]}
+        }`;
             break;
         case 'Python':
             address = `{
@@ -323,38 +330,18 @@ print(transaction_response.text())`;
 }
 
 function rubySampleData() {
-    let address;
     const lines = lineBuilder('Ruby');
-    const shipToAddress = shipFromChecked();   
+    const shipFromSelected = shipFromChecked(); 
+    const shipToAddress = addressBuilder('Ruby', 'address');
+    let address;
+  
+    if (shipFromSelected) {
+        const shipFromAddress = addressBuilder('Ruby', 'srcAddress');
 
-    if (shipToAddress) {
-        const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
-        const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
-
-        address = `ShipFrom: {
-            line1: "${shipFrom[0]}",
-            city: "${shipFrom[1]}",
-            region: "${shipFrom[2]}",
-            country: "${shipFrom[3]}",
-            postalCode: ${shipFrom[4]}
-        },
-        ShipTo: {
-            line1: "${shipTo[0]}",
-            city: "${shipTo[1]}",
-            region: "${shipTo[2]}",
-            country: "${shipTo[3]}",
-            postalCode: ${shipTo[4]}
-        }`;
+        address = `ShipFrom: ${shipFromAddress},
+        ShipTo: ${shipToAddress}`;
     } else {
-        const singleLocation = $('input[type=radio][name=address]:checked').val().split(',');
-
-        address = `SingleLocation: {
-            line1: "${singleLocation[0]}",
-            city: "${singleLocation[1]}",
-            region: "${singleLocation[2]}",
-            country: "${singleLocation[3]}",
-            postalCode: ${singleLocation[4]}
-        }`;
+        address = `SingleLocation: ${shipToAddress}`;
     }
 
     const sampleData = `credentials = YAML.load_file(File.expand_path('../credentials.yaml', __FILE__))
@@ -394,10 +381,10 @@ transaction = @client.create_transaction(createTransactionModel)`;
 
 function javaSampleData() {
     const lines = lineBuilder('Java');
+    const shipFromSelected = shipFromChecked();
     let address;
-    const shipToAddress = shipFromChecked();
     
-    if (shipToAddress) {
+    if (shipFromSelected) {
         const shipTo = $('input[type=radio][name=srcAddress]:checked').val().split(',');
         const shipFrom = $('input[type=radio][name=address]:checked').val().split(',');
 
