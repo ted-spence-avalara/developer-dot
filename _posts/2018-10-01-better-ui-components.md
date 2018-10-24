@@ -51,7 +51,7 @@ Those solutions use classes to define both the element and its attributes, and w
 <i class="icon icon-phone foo"></i>  six weeks later
 <i class="bar baz icon icon-phone foo"></i>  a year later
 ```
-What exactly is that last one supposed to be? Not clear; too messy.
+What exactly is that last one supposed to be? Code is no longer clear. It got messy. 
 #### 3) The tag becomes unavoidable boilerplate with no meaning:
 ```html
 <i class="icon icon-phone"></i>
