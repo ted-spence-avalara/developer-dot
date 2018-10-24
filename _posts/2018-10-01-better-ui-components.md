@@ -272,24 +272,72 @@ We can minimize the contract and be better positioned for the long-term if we pi
 * [Riot](https://riot.js.org), which has the best DX out there imo, [try it](https://riot.js.org/play/). There's even a w3c proposal out there [that takes the spec in a similar direction](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Declarative-Custom-Elements-Strawman.md)
 
 Here's two examples where Alert can be upgraded, or scale up, to a stateful component:
-_Vanilla Custom Elements_
-```js
-window.customElements.define('s-alert', class extends HTMLElement {
-  constructor() {
-    super(); // always call super() first in the constructor.
-    ...
-  }
-  connectedCallback() {
-    ...
-  }
-});
 
+_Custom Elements + <template>_
+```html
+<template id="s-alert">
+  <style>
+    ...
+  </style>
+  
+  <s-icon></s-icon>
+  <slot></slot>
+</template>
+
+<script>
+  let tmpl = document.querySelector('#s-alert');
+
+  customElements.define('s-alert', class extends HTMLElement {
+    constructor() {
+      super();
+      let shadowRoot = this.attachShadow({mode: 'open'});
+      shadowRoot.appendChild(tmpl.content.cloneNode(true));
+    }
+    
+    static get observedAttributes() {
+      return ['type', 'autodismiss'];
+    }
+
+    get seconds() {
+      if (this.hasAttribute('autodismiss')) {
+        let seconds = (typeof this.getAttribute('autodismiss') === 'number' ? this.getAttribute('autodismiss') : 4) * 1000;
+      } else {
+        let seconds = 0
+      }
+      
+      return seconds;
+    }
+
+    set disabled(val) {
+      if (val) {
+        this.setAttribute('disabled', '');
+      } else {
+        this.removeAttribute('disabled');
+      }
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+    if (this.disabled) {
+      this.setAttribute('tabindex', '-1');
+      this.setAttribute('aria-disabled', 'true');
+    } else {
+      this.setAttribute('tabindex', '0');
+      this.setAttribute('aria-disabled', 'false');
+    }
+    // TODO: also react to the open attribute changing.
+    }
+
+    connectedCallback() {
+      ...
+    }
+  });
+</script>
 ```
 _Riot_
 ```html
 <s-alert>
     <s-icon name="{icon}"></i>
-    <yield/>
+    <yield/> <!-- like <slot> -->
 
     <script>
         // Determine Icon based on type
@@ -308,9 +356,16 @@ _Riot_
 </s-alert>
 ```
 
-If whatever you pick enables you and other devs to compose UIs using HTML, then it's a good choice. And hopefully it does so without requiring multiple dependencies, tooling, and build pipeline.
+In both cases using this new version of Alert with JavaScript-endabled `autodismiss` hasn't changed:
+```html
+<s-alert type="success" autodismiss="7">
+  <p>You should try this</p>
+</s-alert>
+```
 
-Being able to write and maintain apps built with standards-based markup is easier and less costly since there's nothing proprietary that will inevitably fall out of fashion and need to be refactored. I don't know what GitHub is built with, but here's me pretending to use Skylab to create their UI:
+If whatever you pick enables you and other devs to compose UIs using HTML, then it's a good choice. If something forces you to add lots of kb (i.e. > 10 min+gz imo) and write special syntax, then it's not a good choice for UI composition. We already have HTML for that, so let's use it to the fullest!
+
+Being able to write and maintain apps built with this kind of standards-based markup is easier and it's less costly since there's nothing proprietary that will inevitably fall out of fashion and need to be refactored. I don't know what GitHub's UI is built with, but here's me pretending to use Skylab to create their UI:
 
 ```html
 <body>
@@ -339,7 +394,7 @@ Being able to write and maintain apps built with standards-based markup is easie
 </body>
 ```
 
-Now I know this doesn't address the hard problem of application state management and having the UI reliably reflect that state. That's what React and others set out to solve and they did. But the front-end community seems to have been unable to take a balanced approach to adopting these new technologies and just started engineering stuff. If you use React, you no doubt have an over-engineered app, or at least in part. When I see things like this I just wonder what the heck are all you React devs doing to yourselves:
+Now I know this doesn't address the hard problem of application state management and having the UI reliably reflect that state. That's what React and others set out to solve and they did. But the front-end community seems to have been unable to take a balanced approach to adopting these new technologies and just started engineering stuff. If you use React, you no doubt have an over-engineered app, or at least in part. When I see things like this I just wonder what the heck are all the React devs doing to themselves:
 ```html
 <DisplayText size="extraLarge" element="h4">Good evening, Dominic.</DisplayText>
 ```
@@ -349,20 +404,13 @@ which outputs
 ```
 Just take a minute to think about that...
 
-I won't name names; they're all doing it. Here's another one from a big tech company that should know better:
+Here's another one from a big tech company that should know better:
 ```html
-<UitkInlineBadge
-  shape="shape-pill"
-  theme="theme-success"
->
-10% off
-</UitkInlineBadge>
+<UitkInlineBadge shape="shape-pill" theme="theme-success">10% off</UitkInlineBadge>
 ```
 which outputs
 ```html
 <span class="uitk-badge uitk-badge-inline shape-pill theme-success">10% off</span>
 ```
-Using React, which means adding a dependency on npm and Webpack and Babel and Jest+Enzyme and installing the React dev tools, to build components that are, in the first case, just basic HTML headings, and in the second case easily done with basic markup and CSS.
-
-Should an engineer write a dozen or so lines of CSS to make Badge, or should they write *474 total lines of code across 8 files* (true story) with multiple dependencies and a whole build pipleine? I hope that's not a difficult question to answer!
+Should an engineer write a dozen or so lines of CSS to make Badge, or should they write *474 total lines of code across 8 files* (true story) with multiple dependencies and a mandatory build pipleine? I hope that's not a difficult question to answer!
 
