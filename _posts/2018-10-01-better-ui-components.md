@@ -368,12 +368,11 @@ _Riot_
         })
     </script>
     <style>
-      ...
     </style>  
 </s-alert>
 ```
 
-With either implementation using the new version of Alert with the overrideable `autodismiss` hasn't changed:
+Regardless of implementation, our use of Alert with the overrideable `autodismiss` hasn't changed:
 ```html
 <s-alert type="success" autodismiss="10">
   <p>You should try this</p>
