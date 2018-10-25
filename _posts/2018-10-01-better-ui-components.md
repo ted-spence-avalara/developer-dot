@@ -104,6 +104,7 @@ _Now done with a custom tag and attribute_
 If this kind of makes you uneasy, don't worry. Custom tags are compatible with all modern browsers and later versions of IE. Browsers happily download, parse, and render custom tags just like any "real" HTML because it is. Sure, it's not a standard element and browsers won't have any default styles or built-in behaviors for your custom or _unknown_ tags, but that's not a problem at all. You can create CSS rules for custom tags, like `icon`, just like you can for standard tags and classes:
 ```css
 icon {
+  /* display: inline; Browsers display all unknown tags as inline, you can set it to whatever you want */
   font-family: 'My Icons';
 }
 
@@ -112,7 +113,7 @@ icon[name="phone"]:before {
 }
 ```
 
-So there we go. That works perfectly fine! Other than specificity, it works the same as `.icon` and `.icon-phone:before`.
+So there we go. It works perfectly and other than specificity it's no different than `.icon` and `.icon-phone:before`.
 
 
 Let's do another one. 
