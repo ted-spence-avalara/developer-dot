@@ -458,10 +458,11 @@ The overuse of these libraries diminishes the potential gains, even to the point
 
 _Should an engineer write a dozen lines of CSS to make Badge, or should they write **474 total lines of code across 8 files with multiple dependencies and a mandatory build pipleine**?_ (true story btw)
 
-"So it can scale!" I hear. So it can. 
+"So it can scale," I hear. So it can...and yet 9 out of 10 implementations were in zero danger of not being able to scale, but all 10 were solved with [insert favorite js library] and now the app has 10x the amount of code as necessary and an extremely high degree of dependency. Can it scale _down_? Down so much that it can get out of its own way and not be needed at all? 
 
-And yet 9 out of 10 implementations were in zero danger of not being able to scale, but all 10 were solved with [insert favorite js library] and now the app has 10x the amount of code as necessary. Can it scale _down_? Down so much that it can get out of its own way and not be needed at all? 
+And that's really what the custom tag approach is about. Yes, a tag plus attributes design is much nicer than class-based (the time for that switch has definitely come), but being able to design and build components that scale in either direction with good ol' HTML across a wide range of use cases is a very compelling opportunity!
 
-And that's really what the custom tag approach is about. Yes, a tag and attribute design is much nicer than class-based (the time for that switch has definitely come), but being able to design and build components that scale in either direction using standards-based HTML constructs (prefixed tag, attributes, and nesting) across a wide range of use cases is a very compelling opportunity!
+## Conclusion
+Custom HTML tags, Web Components, the Custom Elements spec and the few js libs that stay close to it - that's the path to designing better UI components and getting past this over-engineered era. 
 
-Custom tags, Web Components, the Custom Elements spec and the few js libs that stay close to it - that's the path to designing better UI components and getting past this over-engineered era.
+Loved it? Hated it? Any custom tag experience you'd like to share? Comment below!
