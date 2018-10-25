@@ -38,8 +38,10 @@ Because HTML doesn't give us an `icon` tag to markup a site's icons we have to d
 <i class="icon icon-phone"></i>
 
 <span class="oi oi-phone"></span>
+
+<svg class="octicon octicon-code">...</svg> <!-- this is what GitHub is doing for those icons above -->
 ```
-Those solutions use classes to define both the element and its attributes, and while there is nothing wrong with that, there are drawbacks:
+Those solutions use classes to define both the component type and its attributes, and while there is nothing wrong with that, there are drawbacks:
 
 #### 1) Repetitive naming:
 `fa`, `icon`, and `oi` are repeated twice. Not DRY.
