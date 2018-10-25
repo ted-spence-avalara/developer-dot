@@ -13,7 +13,7 @@ disqus: 1
 # Custom HTML Tags
 ## How to design better UI components and avoid over-engineering
 
-**Tl;dr:** it's a new approach and it's NOT another js thing vying for market share. Yay!
+**tl;dr:** it's a new approach and it's NOT another js thing vying for market share. Yay!
 
 ### HTML now and forever
 I like writing code. I've written in Java, PHP, C#, perl *shutters*, and JavaScript. As much as I love js, my favorite is probably HTML because of the way its declarative nature allows me to easily express what I'm envisioning in my mind and, with one click of the refresh button, I get to immediately see my creation on screen. It's design and engineering all in one motion and I love it! But HTML doesn't get the kind of use it ought to. Let's take a brief look at the basics and dig into a new approach that you might find worth considering.
@@ -43,7 +43,7 @@ That's an "anchor" element, the `a` tag, with download and "hypertext reference"
 HTML gives us lots of these elements to work with, but as you well know it doesn't give us enough elements for everything we need. Not by a long shot! Take icons as a simple example, here's some in GitHub's UI:
 <img src="/public/images/github-tabs.png" alt="Icons used in a tabs user interface">
 
-Because HTML doesn't give us an `icon` tag to markup a site's icons we've had to come up with our own solutions. Here's four similar approaches you've likely seen before:
+Because HTML doesn't give us an `icon` tag to markup a site's icons we've had to come up with our own solutions. Here are four similar approaches you've likely seen before:
 
 ```html
 <i class="fa fa-phone"></i>
@@ -103,7 +103,7 @@ _Now done with a custom tag and attribute_
 ```html
 <icon name="phone"></icon>
 ```
-If this kind of makes you uneasy, don't worry. Custom tags are compatible with all modern browsers and later versions of IE. Browsers happily download, parse, and render custom tags just like any "real" HTML because it is. Sure, it's not a standard element and browsers won't have any default styles or built-in behaviors for your custom or _unknown_ tags, but that's not a problem at all. You can create CSS rules for custom tags, like `icon`, just like you can for standard tags and classes:
+If this kind of makes you uneasy, don't worry. Custom tags are compatible with all modern browsers and later versions of IE. Browsers happily download, parse, and render custom tags just like any "real" HTML because this _is_ real HTML. Sure, it's not a standard element and browsers won't have any default styles or built-in behaviors for your custom or _unknown_ tags, but that's not a problem at all. You can create CSS rules for custom tags, like `icon`, just like you can for standard tags and classes:
 ```css
 icon {
   /* display: inline; Browsers display all unknown tags as inline, you can set it to whatever you want */
@@ -168,7 +168,8 @@ Designing these simple UI components with tags and attributes instead of classes
 * In many cases you can ditch the need for abstraction: `{{> icon name="phone"}}` or `<OverEngineeredIcon name="phone"/>` is replaced with `<icon name="phone"></icon>`
 * The result is clean, standards-based markup that has a nice uniform look with excellent readability
 * Using custom tags and attributes is officially supported. It's how HTML thought we'd design custom components, but we instead went crazy for classes!
-* Lastly, using custom tags with attributes sets you up for future improvements. How so? Let’s get into that now.
+
+There's also another big benefit to using custom tags and attributes: it better positions your component for future improvements. How so? Let’s get into that now.
 
 ### Component evolution
 Creating and sharing custom components is a commitment. Your components will evolve and have new capabilities added to them over time. Let's look at the possible evolution of a custom Alert (aka Callout) component:
@@ -223,7 +224,7 @@ alert[type="success"]:before {
 
 Ok, that's starting to really look like something. (Note that the CSS here does not include all the properties needed) 
 
-It's pretty common for Alerts to disappear automatically, so let's add support for that. If there really was an HTML `alert` element and it had an auto-disappearing feature I could imagine it would have an `autodismiss` attribute for triggering this behavior, so let's go with that:
+It's pretty common for Alerts to disappear automatically, so let's add support for that. If there really was an HTML `alert` element and it had an auto-disappearing feature one could imagine it would have an `autodismiss` attribute for triggering this behavior, so let's go with that:
 
 _New autodismiss feature_
 ```html
@@ -241,7 +242,7 @@ alert[autodismiss] {
     opacity: 0; 
 }
 ```
-Nice! We really got ourselves a useful component without a single build step or polyfill required - imagine that! And check out its friendly little API:
+Nice! We've really got ourselves a useful component without a single build step or polyfill required - imagine that! And check out its friendly little API:
 * `alert` tag
 * `type` attribute (_required_) - one of "success", "warn", or "error"
 * `autodismiss` attribute (_optional_) - if present, the Alert will disappear after four seconds
@@ -252,10 +253,12 @@ Nice! We really got ourselves a useful component without a single build step or 
 If you didn't know any better you might think this was one of them fancy HTML5 elements. That's a sign we are on the right track! 
 
 #### Close, but not quite
-There is a small problem though. The problem is our tag name is not totally future-proof. There's two considerations here:
+There is a small problem, though. The problem is our tag name is not totally future-proof. There are two considerations here:
 
+##### Collisions
 The first is that some day HTML might get a tag with the same name as ours. I pray every night before bed that WHATWG will give us `<icon>`, but if WHATWG doesn't it's still possible some other developer will. Either way there's risk of a collision and that brings us to the second consideration: prefixing. 
 
+##### Prefixing
 Although these aren't technically Custom Elements at this point, you'll want to follow that spec by using a prefix for your custom tags. At Avalara we use `s-` as our prefix. The `s` is short for Skylab, which is the name of our design system, but it also means:
 * **s**tandards - we always go for standards until we actually need to bring in a dependency
 * **s**emantic - tags with attributes are much more semantic than `div` with classes
@@ -295,16 +298,16 @@ But as we've learned it's best-practice to prefix, so that really should be:
 > ```
 > Material could use `mdc-` as shown above.  
 
-Anyway, back to `autodismiss`. Supporting a value of seconds now requires the use of JavaScript. At this point most people go  with what they know or try the flavor-of-the-day ramping up on whatever idioms and special syntax is required. That's not a problem if you're a small team with one app, but if you have lots of consumers of your Alert component you're entering into a code contract and the less that contract asks of the implementer the better.
+Anyway, back to `autodismiss`. Supporting a value of seconds now requires the use of JavaScript. At this point most people go with what they know, or try the flavor-of-the-day ramping up on whatever idioms and special syntax is required. That's not a problem if you're a small team with one app, but if you have lots of consumers of your Alert component you're entering into a code contract and the less that contract asks of the implementer, the better.
 
-We can minimize the contract and be better positioned for the long-term if we pick a solution that follows, or stays close to, Custom Elements. Here's some options available today:
+We can minimize the contract and be better positioned for the long-term if we pick a solution that follows, or stays close to, Custom Elements. Here are some options available today:
 * [Custom Elements](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements) or full-blown [Web Components](https://www.webcomponents.org/introduction) of course
 * [Polymer](https://www.polymer-project.org/3.0/start/)
 * [Slim](http://slimjs.com/#/getting-started)
 * [Vue](https://vuejs.org/v2/guide/#Relation-to-Custom-Elements)
 * [Riot](https://riot.js.org), which has the best DX out there imo, [try it](https://riot.js.org/play/). There's even a w3c [proposal that takes the Custom Elements spec in a similar direction](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Declarative-Custom-Elements-Strawman.md)
 
-Here's two examples where Alert has been upgraded to a stateful component to support user-defined seconds:
+Here are two examples where Alert has been upgraded to a stateful component to support a user-defined value for `autodismiss` delay:
 
 _Custom Elements + `<template>` element_
 ```html
@@ -394,7 +397,7 @@ _Riot_
 </s-alert>
 ```
 
-Regardless of implementation, our use of Alert with the overrideable `autodismiss` hasn't changed:
+Regardless of the implementation, our markup for Alert hasn't changed:
 ```html
 <s-alert type="success" autodismiss="10">
   <p>Custom tags are great!</p>
