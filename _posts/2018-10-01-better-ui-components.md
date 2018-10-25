@@ -38,10 +38,10 @@ That's an "anchor" element, the `a` tag, with download and "hypertext reference"
 
 <video src="example.com/vids/cats.mp4" poster="example.com/posters/cats.jpg" autoplay loop controls></video>
 ```
-HTML gives us lots of these elements to work with, but as you well know it doesn't give us enough elements for everything we need. Not by a long shot! Take icons as a simple example; here's some in GitHub's UI:
+HTML gives us lots of these elements to work with, but as you well know it doesn't give us enough elements for everything we need. Not by a long shot! Take icons as a simple example, here's some in GitHub's UI:
 <img src="/public/images/github-icons.png" alt="Icons used in a tabs user interface">
 
-Because HTML doesn't give us an `icon` tag to markup a site's icons we have to design our own solution. Here's three similar approaches you've likely seen before:
+Because HTML doesn't give us an `icon` tag to markup a site's icons we've had to come up with our own solutions. Here's three similar approaches you've likely seen before:
 
 ```html
 <i class="fa fa-phone"></i>
