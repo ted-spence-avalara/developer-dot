@@ -55,7 +55,7 @@ Because HTML doesn't give us an `icon` tag to markup a site's icons we've had to
 Those solutions use classes to define both the component type and its attributes, and while there is nothing wrong with that, there are drawbacks:
 
 #### 1) Repetitive naming:
-`fa`, `icon`, `oi`, and `oct` have to be repeated twice. Not DRY.
+`fa`, `icon`, `oi`, and `octicon` have to be repeated twice. Not DRY.
 
 #### 2) Loss of clarity when the following inevitably happens (or the extra effort required to prevent it):
 ```html
