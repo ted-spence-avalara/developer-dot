@@ -41,7 +41,7 @@ That's an "anchor" element, the `a` tag, with download and "hypertext reference"
 HTML gives us lots of these elements to work with, but as you well know it doesn't give us enough elements for everything we need. Not by a long shot! Take icons as a simple example, here's some in GitHub's UI:
 <img src="/public/images/github-tabs.png" alt="Icons used in a tabs user interface">
 
-Because HTML doesn't give us an `icon` tag to markup a site's icons we've had to come up with our own solutions. Here's three similar approaches you've likely seen before:
+Because HTML doesn't give us an `icon` tag to markup a site's icons we've had to come up with our own solutions. Here's four similar approaches you've likely seen before:
 
 ```html
 <i class="fa fa-phone"></i>
