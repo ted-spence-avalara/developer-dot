@@ -243,6 +243,7 @@ Nice! We really got ourselves a useful component without a single build step or 
 * `alert` tag
 * `type` attribute (_required_) - one of "success", "warn", or "error"
 * `autodismiss` attribute (_optional_) - if present, the Alert will disappear after four seconds
+* `id`, `class`, `aria-` and other "inherited" attributes still apply
 * `transitionend` event - DOM event, fires after Alert disappears
 * Accepts nested content, including other custom tags
 
@@ -357,7 +358,7 @@ _Custom Elements + `<template>` element_
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-      // Update the attribute
+      // Update the type or autodismiss attribute
     }
 
     connectedCallback() {
