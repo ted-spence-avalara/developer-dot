@@ -90,66 +90,23 @@ doctype: use_cases
                 <div class="panel" style="display:block;">
                     <p>Choose a pre-selected address</p>
                     <form id="dropdown-dest-addresses" onChange="fillWithSampleData();" class="demo-form">
-                        <!-- national addresses -->
-                        <label class="demo-label-container">
-                            <input name="address" type="radio" value="2000 Main Street,Irvine,CA,US,92614" lat="33.6846603698176" long="-117.850629887389" class="demo-radio" addressType="national"/>
-                            <span class="demo-label"> Irvine</span>
+                        <!-- loop thru addresses -->
+                        {% for address in site.data.demo_page.addresses %}
+                            <label class="demo-label-container">
+                                <input name="address" type="radio" value="{{ address.value }}" lat="{{ address.lat }}" long="{{ address.long }}" class="demo-radio" addressType="{{ address.type }}"/>
+                                <span class="demo-label"> {{ address.city }}</span>
+                                <br>
+                                <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
+                                {{ address.street }}
+                                <br>
+                                {% if address.region %}
+                                    <span class="demo-city-zip">{{ address.region }}</span>
+                                    <br>
+                                {% endif %}
+                                <span class="demo-city-zip">{{ address.countryZip }}</span>
+                            </label>
                             <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 2000 Main Street
-                            <br>
-                            <span class="demo-city-zip">Irvine, CA 92614</span>
-                        </label>
-                        <br>
-                        <label class="demo-label-container">
-                            <input name="address" type="radio" value="255 S. King Street,Seattle,WA,US,98104" lat="47.598100-122.331206" long="-122.331206" class="demo-radio" addressType="national"/>
-                            <span class="demo-label"> Seattle</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 255 S. King Street
-                            <br>
-                            <span class="demo-city-zip">Seattle, WA, 98104</span>
-                        </label>
-                        <br>
-                        <label class="demo-label-container">
-                            <input name="address" type="radio" value="512 S Mangum Street,Durham,NC,US,27701"
-                            lat="35.991727" long="-78.902647"  class="demo-radio" addressType="national" />
-                            <span class="demo-label"> Durham</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 512 S Mangum Street
-                            <br>
-                            <span class="demo-city-zip">Durham, NC 27701</span>
-                        </label>
-                        <br>
-                        <!-- international addresses -->
-                        <label class="demo-label-container">
-                            <input name="address" type="radio" value="3rd Floor Trafalgar Place,Brighton,Brighton and Hove,UK,BN1 4FU" lat="50.828746" long="-0.139584"  class="demo-radio" addressType="international"/>
-                            <span class="demo-label"> Brighton</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 3rd Floor Trafalgar Place
-                            <br>
-                            <span class="demo-city-zip">Brighton, UK BN1 4FU</span>
-                        </label>
-                        <br>
-                        <label class="demo-label-container">
-                            <input name="address" type="radio" value="Bahiratwadi Shivajinagar,Pune,Maharashtra,India,411 016"
-                            lat="18.533946" long="73.827597"  class="demo-radio" addressType="international"/>
-                            <span class="demo-label"> Pune</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 3rd Floor, Pride Portal
-                            <br>
-                            <span class="demo-city-zip">Bahiratwadi, Shivajinagar</span>
-                            <br>
-                            <span class="demo-city-zip">Pune, India 411 016</span>
-                        </label>
-                        <br>
-                        <label class="demo-label-container">
-                            <input name="address" type="radio" value="Rua Henri Dunant 137,São Paulo,SP,Brazil,04709-110"
-                            lat="-23.633102" long="-46.695348"  class="demo-radio" addressType="international"/>
-                            <span class="demo-label"> São Paulo</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> Rua Henri Dunant 137
-                            <br>
-                            <span class="demo-city-zip">São Paulo, Brazil 04709-110</span>
-                        </label>
+                        {% endfor %}
                     </form>
                     <button class="btn btn-primary" type="button" onClick="accordionTrigger('step-one-btn', 'step-two-btn');" style="display:block;">
                         Next
@@ -160,119 +117,46 @@ doctype: use_cases
                 <div class="panel">
                     <p>Choose a common product or service to calculate tax</p>
                     <form id="dropdown-products" onChange="fillWithSampleData();" class="demo-form">
-                        <label class="demo-label demo-label-container">
-                            <input value="P0000000" name="product" id="p1c" type="checkbox" description="Widget" checked  class="demo-radio"/>
-                            <input value="100.00" type="text" id="p1c-amount" style="width: 50px;">
-                            <span class="demo-label"> Widgets <i>(an item not otherwise classified; taxed as tangible personal property)</i></span>
-                        </label>
-                        <br>
-                        <label class="demo-label demo-label-container">
-                            <input value="PF160024" name="product" id="p2c" type="checkbox" description="Pre-packaged Sushi"  class="demo-radio"/>
-                            <input value="15.99" type="text" id="p2c-amount" style="width: 50px;">
-                            <span class="demo-label"> Pre-packaged Sushi</span>
-                        </label>
-                        <br>
-                        <label class="demo-label demo-label-container">
-                            <input value="DM040200" name="product" id="p3c" type="checkbox" description="MP3 download"  class="demo-radio"/>
-                            <input value="0.99" type="text" id="p3c-amount" style="width: 50px;">
-                            <span class="demo-label"> MP3 download</span>
-                        </label>
-                        <br>
-                        <label class="demo-label demo-label-container">
-                            <input value="PC040400" name="product" id="p4c" type="checkbox" description="Baseball Bat" class="" />
-                            <input value="40.21" type="text" id="p4c-amount" style="width: 50px;">
-                            <span class="demo-label"> Baseball Bat</span>
-                        </label>
-                        <br>
-                        <label class="demo-label demo-label-container">
-                            <input value="PC070400" name="product" id="p5c" type="checkbox" description="Color Laser Printer" class="" />
-                            <input value="199.00" type="text" id="p5c-amount" style="width: 50px;">
-                            <span class="demo-label"> Color Laser Printer</span>
-                        </label>
-                        <br>
-                        <label class="demo-label demo-label-container">
-                            <input value="SA090700" name="product" id="p6c" type="checkbox" description="Oil change service (with synthetic oil)" class="" />
-                            <input value="89.99" type="text" id="p6c-amount" style="width: 50px;">
-                            <span class="demo-label"> Oil change service (with synthetic oil)</span>
-                        </label>
-                        <br>
-                        <label class="demo-label demo-label-container">
-                            <input value="FR010000" name="product" id="p7c" type="checkbox" description="Shipping"  class="demo-radio" />
-                            <input value="19.99" type="text" id="p7c-amount" style="width: 50px;">
-                            <span class="demo-label"> Shipping</span>
-                        </label>
-                        <br>
+                        <!-- loop thru products -->
+                        {% for product in site.data.demo_page.products %}
+                            <label class="demo-label demo-label-container">
+                                <input value="{{ product.taxCode }}" name="product" id="{{ product.inputId }}" type="checkbox" description="{{ product.name }}" class="demo-radio" {{ product.checked }}/>
+                                <input value="{{ product.value }}" type="text" id="{{ product.inputId }}-amount" style="width: 50px;">
+                                <span class="demo-label"> {{ product.name }} 
+                                {% if product.subLabel %}
+                                    <i>{{ product.subLabel }}</i>
+                                {% endif %}
+                                </span>
+                            </label>
+                            <br>
+                        {% endfor %}
                     </form>
                     <button class="btn btn-primary" type="button" onClick="accordionTrigger('step-two-btn','step-three-btn');" style="display:block;">
                         Next
                     </button>
                 </div>
                 <!-- step 3 / ship from -->
-                <button class="accordion" id='step-three-btn'>Step 3: Where are you shipping from? (optional)</button>
+                <button class="accordion" id='step-three-btn'>Step 3: Where are you shipping from? (optional) </button>
                 <div class="panel">
                     <p>Choose a pre-selected address</p>
                     <form id="dropdown-src-addresses" onChange="fillWithSampleData();" class="demo-form">
-                        <label class="demo-label-container">
-                            <input name="srcAddress" type="radio" value="2000 Main Street,Irvine,CA,US,92614"
-                            lat="33.6846603698176" long="-117.850629887389"  class="demo-radio" addressType="national"/>
-                            <span class="demo-label"> Irvine</span>
+                        <!-- loop thru addresses -->
+                        {% for address in site.data.demo_page.addresses %}
+                            <label class="demo-label-container">
+                                <input name="srcAddress" type="radio" value="{{ address.value }}" lat="{{ address.lat }}" long="{{ address.long }}" class="demo-radio" addressType="{{ address.type }}"/>
+                                <span class="demo-label"> {{ address.city }}</span>
+                                <br>
+                                <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 
+                                {{ address.street }}
+                                <br>
+                                {% if address.region %}
+                                    <span class="demo-city-zip">{{ address.region }}</span>
+                                    <br>
+                                {% endif %}
+                                <span class="demo-city-zip">{{ address.countryZip }}</span>
+                            </label>
                             <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 2000 Main Street
-                            <br>
-                            <span class="demo-city-zip">Irvine, CA 92614</span>
-                        </label>
-                        <br>
-                        <label class="demo-label-container">
-                            <input name="srcAddress" type="radio" value="255 S. King Street,Seattle,WA,US,98104"
-                            lat="47.598100-122.331206" long="-122.331206"  class="demo-radio" addressType="national"/>
-                            <span class="demo-label"> Seattle</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 255 S. King Street
-                            <br>
-                            <span class="demo-city-zip">Seattle, WA, 98104</span>
-                        </label>
-                        <br>
-                        <label class="demo-label-container">
-                            <input name="srcAddress" type="radio" value="512 S Mangum Street,Durham,NC,US,27701"
-                            lat="35.991727" long="-78.902647"  class="demo-radio" addressType="national"/>
-                            <span class="demo-label"> Durham</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 512 S Mangum Street
-                            <br>
-                            <span class="demo-city-zip">Durham, NC 27701</span>
-                        </label>
-                        <br>
-                        <!-- international addresses -->
-                        <label class="demo-label-container">
-                            <input name="srcAddress" type="radio" value="3rd Floor Trafalgar Place,Brighton,Brighton and Hove,UK,BN1 4FU" lat="50.828746" long="-0.139584"  class="demo-radio" addressType="international"/>
-                            <span class="demo-label"> Brighton</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 3rd Floor Trafalgar Place
-                            <br>
-                            <span class="demo-city-zip">Brighton, UK BN1 4FU</span>
-                        </label>
-                        <br>
-                        <label class="demo-label-container">
-                            <input name="srcAddress" type="radio" value="Bahiratwadi Shivajinagar,Pune,Maharashtra,India,411 016"
-                            lat="18.533946" long="73.827597"  class="demo-radio" addressType="international"/>
-                            <span class="demo-label"> Pune</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> 3rd Floor, Pride Portal
-                            <br>
-                            <span class="demo-city-zip">Bahiratwadi, Shivajinagar</span>
-                            <br>
-                            <span class="demo-city-zip">Pune, India 411 016</span>
-                        </label>
-                        <br>
-                        <label class="demo-label-container">
-                            <input name="srcAddress" type="radio" value="Rua Henri Dunant 137,São Paulo,SP,Brazil,04709-110"
-                            lat="-23.633102" long="-46.695348"  class="demo-radio" addressType="international"/>
-                            <span class="demo-label"> São Paulo</span>
-                            <br>
-                            <i class="glyphicon glyphicon-map-marker demo-city-marker"></i> Rua Henri Dunant 137
-                            <br>
-                            <span class="demo-city-zip">São Paulo, Brazil 04709-110</span>
-                        </label>
+                        {% endfor %}
                     </form>
                     <button class="btn btn-primary" type="button" onClick="ApiRequest();" style="display:block;">
                         Submit
@@ -299,9 +183,13 @@ doctype: use_cases
                     <div class="form-group" style="display: inline;" onChange="fillWithSampleData();">
                         <select class="form-control" id="req-type" style="display: inline;width: 100px;">
                             <option value="JSON">JSON</option>
-                            <option value="CURL">CURL</option>
+                            <option value="cURL">cURL</option>
                             <option value="C#">C# SDK</option>
                             <option value="PHP">PHP SDK</option>
+                            <option value="Python">Python SDK</option>
+                            <option value="Ruby">Ruby SDK</option>
+                            <option value="Java">Java SDK</option>
+                            <option value="JS">JS SDK</option>
                         </select>
                     </div>
                     <div style="display:inline-block;float:right;" class="btn-group">
@@ -330,7 +218,7 @@ doctype: use_cases
                             <i class="glyphicon glyphicon-copy"></i>Copy
                         </button>
                         <button class="btn btn-link" style="display:inline;color:#000000;margin-right:5px;">
-                            <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/" style="color:#000000;" target="_blank">
+                            <a href="https://developer.avalara.com/api-reference/avatax/rest/v2/models/TransactionModel/" style="color:#000000;" target="_blank">
                                 <i class="glyphicon glyphicon-list-alt"></i>Docs
                             </a>
                         </button>
