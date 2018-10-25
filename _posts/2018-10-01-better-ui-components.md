@@ -13,10 +13,12 @@ disqus: 1
 # Custom HTML Tags
 ## How to design better UI components and avoid over-engineering
 
-**Tl;dr:** a new approach and it's NOT another js thing vying for market share. Yay!
+**Tl;dr:** it's a new approach and it's NOT another js thing vying for market share. Yay!
 
 ### HTML now and forever
-HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements to provide semantic support for more content, like `<nav>` for navigation and `<video>` for videos and `<article>` for, well, articles. Over the years it also added new capabilities to existing elements like the addition of the `autofocus` attribute, which tells the browser which element to focus on page load (you know that one is a must for login and search UI!).
+I like writing code. I've written in Java, PHP, C#, perl *shutters*, and JavaScript. As much as I love js, my favorite is probably HTML because of the way its declarative nature allows me to easily express what I'm envisioning in my mind and, with one click of the refresh button, I get to immediately see my creation on screen. It's design and engineering all in one motion and I love it! But HTML doesn't get the kind of use it ought to. Let's take a brief look at the basics and dig into a new approach that you might find worth considering.
+
+So HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements to provide semantic support for more content, like `<nav>` for navigation and `<video>` for videos and `<article>` for, well, articles. Over the years it also added new capabilities to existing elements like the addition of the `autofocus` attribute, which tells the browser which element to focus on page load (you know that one is a must for login and search UI!).
 
 These additions were implemented through the usual HTML constructs: *tags*, *attributes*, and *nesting*. In case you need a refresher, here's some examples:
 
