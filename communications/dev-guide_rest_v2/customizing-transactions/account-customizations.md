@@ -52,19 +52,25 @@ Customization files allow you to change how results are returned from the AFC ta
       </tr>
       <tr>
         <td>Exclusion</td>
-        <td>Indicates countries or states where no tax should be applied.</td>
+        <td>Indicates countries or states where no tax should be applied</td>
+        <td>.exc</td>
+        <td>AFC Manager</td>
+      </tr>
+      <tr>
+        <td>Exemption</td>
+        <td>Indicates jurisdictions, tax types, and tax levels where taxes should be exempted</td>
         <td>.exc</td>
         <td>AFC Manager</td>
       </tr>
       <tr>
         <td>Override</td>
-        <td>Used to modify tax rates for a specified jurisdiction, alter the tax logic for transaction/ services, and add or remove taxes from transaction/services.</td>
+        <td>Used to modify tax rates for a specified jurisdiction, alter the tax logic for transaction/ services, and add or remove taxes from transaction/services</td>
         <td>.ovr</td>
         <td>AFC Manager (Rate and Logic Modifier (RLM) component)</td>
       </tr>
       <tr>
         <td>Nexus</td>
-        <td>Indicates the jurisdictions that require you to calculate sales and use taxes.</td>
+        <td>Indicates the jurisdictions that require you to calculate sales and use taxes</td>
         <td>.nex</td>
         <td>AFC Manager - Sales and Use Viewer</td>
       </tr>
@@ -96,9 +102,9 @@ Configuration options are used to modify the operation of the AFC tax engine.
       <tr>
         <td>Safe Harbor TAM Override(s)</td>
         <td><ul class="dev-guide-list">
-              <li>Cellular Override TAM</li>
-              <li>VoIP Override TAM</li>
-              <li>Paging Override TAM</li>
+              <li>Cellular TAM Override</li>
+              <li>VoIP TAM Override</li>
+              <li>Paging TAM Override</li>
             </ul>
         </td>
         <td>Safe Harbor TAM Override configuration settings allow traffic study values to be applied for a given session or account.
@@ -112,10 +118,10 @@ The results of percentages from a traffic study can be applied by administering 
 <h3>Requesting a new client profile or changes to an existing client profile</h3>
 Contact <a class="dev-guide-link" href="mailto:CommunicationSupport@avalara.com">CommunicationSupport@avalara.com</a> to request a new client profile for your account.
 <ul class="dev-guide-list">
-  <li>Request the configuration option updates required and any overrides, exclusions, exemptions, or bundles needed.  If you already have customization files, attach the files to the email.</li>
+  <li>Request the configuration option updates required and any overrides, exclusions, exemptions, or bundles needed.  Attach any existing customization files to the email.</li>
   <li>Include instructions as to whether the client profile should be applied to Sandbox for testing purposes, Production, or both environments.</li>
-  <li>If changes are needed to an existing client profile, include the <code>client_profile_id</code> to be updated.</li>
-  <li>Once applied, the account could take up to 24 hours to refresh with the new changes.</li>
+  <li>Include the <code>client_profile_id</code> to be updated if changes are needed to an existing client profile</li>
+  <li>The account could take up to 24 hours to refresh with the new changes</li>
 </ul>
 
 

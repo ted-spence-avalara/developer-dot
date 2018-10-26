@@ -18,8 +18,8 @@ Set the jurisdiction in the BillTo object (<code>bill</code>) inside the <a clas
     <li><b>PCode</b> (<code>pcd</code>): persisted numeric identifer for a taxing jurisdiction</li>
     <li><b>Address</b>: When using an address to specify the taxing jurisdiction, the more complete the information provided the more accurate the lookup will be. For most foreign nations, other than Canada and Brazil, the Country ISO is sufficient for taxation purposes. For USA and Canada, at a minimum the Country, State and Zip Code must be provided.
       <ul class="dev-guide-list">
-        <li>Street Address (<code>addr</code>), Country (<code>ctry</code>), State (<code>st</code>), County (<code>cnty</code>), City (<code>cty</code>), and/or Postal Code (<code>zip</code>) lookup using geocoding (<code>geo</code> = <code>true</code>)</li>
-        <li>Country (<code>ctry</code>), State (<code>st</code>), County (<code>cnty</code>), City (<code>cty</code>), and/or Postal Code (<code>zip</code>) lookup without using geocoding (<code>geo</code> = <code>false</code>)</li>
+        <li>Street Address (<code>addr</code>), Country (<code>ctry</code>), State (<code>st</code>), County (<code>cnty</code>), City (<code>city</code>), and/or Postal Code (<code>zip</code>) lookup using geocoding (<code>geo</code> = <code>true</code>)</li>
+        <li>Country (<code>ctry</code>), State (<code>st</code>), County (<code>cnty</code>), City (<code>city</code>), and/or Postal Code (<code>zip</code>) lookup without using geocoding (<code>geo</code> = <code>false</code>)</li>
       </ul>
     </li>
     <li><b>FIPS</b> (<code>fips</code>): standardized set of numeric or alphabetic codes issued by the National Institute of Standards and Technology (NIST) to ensure uniform identification of geographic entities through all federal government agencies</li>

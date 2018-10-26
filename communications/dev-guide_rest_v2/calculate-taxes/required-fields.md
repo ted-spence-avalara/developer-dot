@@ -13,10 +13,10 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/commit-uncommit/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-While the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/">CalcTaxes request</a> has numerous fields available, only a handful are required.  
+The <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/">CalcTaxes request</a> has numerous fields available, but only a handful are required.  
 
 <h3>CompanyData</h3>
-More information about <code>CompanyData</code> can be found <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/company-data/">here</a>.
+See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/company-data/">Company Data</a> for more information about <code>CompanyData</code>.
 <ul class="dev-guide-list">
   <li>BusinessClass (<code>bscl</code>)</li>
   <li>ServiceClass (<code>svcl</code>)</li>
@@ -25,20 +25,20 @@ More information about <code>CompanyData</code> can be found <a class="dev-guide
 </ul>
 
 <br/>
-If using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exclusion/">Exclusion</a> object (<code>excl</code>), the following fields are required:
+If you're using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exclusion/">Exclusion</a> object (<code>excl</code>), the following fields are required:
 <ul class="dev-guide-list">
   <li>Country (<code>ctry</code>)</li>
   <li>ExclusionOn (<code>excl</code>)</li>
 </ul>
 
 <h3>Invoice</h3>
-More information about <code>Invoice</code> can be found <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">here</a>.
+See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a> for more information about <code>Invoice</code>.
 <ul class="dev-guide-list">
   <li>BillTo (<code>bill</code>) - See <a class="dev-guide-link" href="#location">Location</a> below for more information</li>
   <li>CustomerType (<code>cust</code>)</li>
   <li>Date (<code>date</code>)</li>
   <li>DocumentCode (<code>doc</code>) - only required when the Commit flag (<code>cmmt</code>) is set to <code>true</code></li>
-  <li>LineItem object - More information about <code>LineItem</code> can be found <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">here</a></li>
+  <li>LineItem object - See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line Item</a> for more information about <code>LineItem</code></li>
   <ul class="dev-guide-list">
     <li>Sale (<code>sale</code>)</li>
     <li>TransactionType (<code>tran</code>)</li>
@@ -47,7 +47,7 @@ More information about <code>Invoice</code> can be found <a class="dev-guide-lin
 </ul>
 
 <br/>
-If using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exemption/">Exemption</a> object (<code>exms</code>), the following fields are required:
+If you're using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exemption/">Exemption</a> object (<code>exms</code>), the following fields are required:
 <ul class="dev-guide-list">
   <li>Location (<code>loc</code>) - See <a class="dev-guide-link" href="#location">Location</a> below for more information</li>
   <li>TaxType (<code>tpe</code>) and <b>one</b> of the following <b>OR</b> TaxCategory (<code>cat</code>)</li>
@@ -58,7 +58,7 @@ If using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/r
 </ul>
 
 <h3>Tax Override</h3>
-If using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/tax-override/">TaxOverride</a> object (<code>ovr</code>), the following fields are required:
+If you're using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/tax-override/">TaxOverride</a> object (<code>ovr</code>), the following fields are required:
 <ul class="dev-guide-list">
   <li> BracketInfo (<code>brkt</code>)</li>
   <ul class="dev-guide-list">
@@ -72,7 +72,7 @@ If using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/r
 </ul>
 
 <h3>Safe Harbor Override</h3>
-If using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/safe-harbor-override/">SafeHarborOverride</a> object (<code>sovr</code>), the following fields are required:
+If you're using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/safe-harbor-override/">SafeHarborOverride</a> object (<code>sovr</code>), the following fields are required:
 <ul class="dev-guide-list">
   <li>SafeHarborType (<code>sh</code>)</li>
   <li>OriginalFederalTam (<code>old</code>)</li>
@@ -90,7 +90,7 @@ If using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/r
 </ul>
 
 <br/>
-When using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> object, the following fields are required.  Note that only <b>one</b> of the options below is required.
+When using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> object, the following fields are required.  Only <b>one</b> of the options below is required.
 <ul class="dev-guide-list">
   <li>PCode (<code>pcd</code>)</li>
   <li>FIPS (<code>fips</code>)</li>

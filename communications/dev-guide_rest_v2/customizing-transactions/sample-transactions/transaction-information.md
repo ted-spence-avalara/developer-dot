@@ -13,26 +13,26 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exclusion/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-REST v2 looks at the transaction as a whole and bases the returned taxes off of the information provided.  
+REST v2 takes the transaction as a whole and bases the returned taxes off of the information provided.  
 
 Each transaction contains the following information:
 <ul class="dev-guide-list">
-    <li>Company (Seller) Data</li>
-    <li>Customer (Buyer) Data</li>
-    <li>Transaction (Invoice and Line Item) Data</li>
+    <li><a class="dev-guide-link" href="#company">Company (Seller) Data</a></li>
+    <li><a class="dev-guide-link" href="#customer">Customer (Buyer) Data</a></li>
+    <li><a class="dev-guide-link" href="#transaction">Transaction (Invoice and Line Item) Data</a></li>
 </ul>
 
 A product (defined by the transaction/service pair) can return different taxes, or no taxes, depending on the selections made.  For example, setting the following details on a transaction returns 0 taxes:
 <ul class="dev-guide-list">
-    <li>Customer Type (<code>cust</code>): "Residential" (<code>0</code>)</li>
-    <li>Jurisdiction (<code>bill</code>): Richmond, OH</li>
-    <li>Transaction/Service Pair (<code>tran</code> and <code>serv</code>): Internet/WEB Hosting (5/29)</li>
+    <li><b>Customer Type</b> (<code>cust</code>): "Residential" (<code>0</code>)</li>
+    <li><b>Jurisdiction</b> (<code>bill</code>): Richmond, OH</li>
+    <li><b>Transaction/Service Pair</b> (<code>tran</code> and <code>serv</code>): Internet/WEB Hosting (5/29)</li>
 </ul>
 
-But by changing <b>Customer Type</b> to <b>Business</b> (<code>cust</code> to <code>1</code>), Sales Tax at the State and County tax levels is returned.  Because of this, it is <b>imperative</b> that the transaction information is set correctly in order to get the proper taxes back.
+But by changing <b>Customer Type</b> to <b>Business</b> (<code>cust</code> to <code>1</code>), State and Country Sales Tax is returned.  It is <b>imperative</b> that the transaction information is set correctly in order to get the proper taxes back.
 
-<h3>Company Data</h3>
-Company data defines the <b>company</b> or <b>seller</b>.  Set these keys in the <code>CompanyData</code> object.  More information about <code>CompanyData</code> can be found <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/company-data/">here</a>.
+<h3 id="company">Company (Seller) Data</h3>
+Company data defines the <b>company</b> or <b>seller</b>.  Set these keys in the <code>CompanyData</code> object.  See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/company-data/"><code>CompanyData</code> Reference</a> for more information.
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -117,10 +117,9 @@ Company data defines the <b>company</b> or <b>seller</b>.  Set these keys in the
 </div>
 
 
-<h3>Customer Data</h3>
-Customer data defines the customer or buyer.  Set these keys in the <code>Invoice</code> or <code>Location</code> objects.  
-More information about <code>Invoice</code> can be found <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">here</a>.
- More information about <code>Location</code> can be found <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">here</a>.
+<h3 id="customer">Customer (Buyer) Data</h3>
+Customer data defines the <b>customer</b> or <b>buyer</b>.  Set these keys in the <code>Invoice</code> or <code>Location</code> objects.  
+See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/"><code>Invoice</code> Reference</a>  and <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/"><code>Location</code></a> for more information.
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -176,13 +175,13 @@ More information about <code>Invoice</code> can be found <a class="dev-guide-lin
 </div>
 
 
-<h3>Transaction Data</h3>
-Transaction data defines the transaction in terms of where the transaction takes place, what is being be taxed, and other details of the transaction.  Set these keys in the <code>Invoice</code> or <code>LineItem</code> objects.  
+<h3 id="transaction">Transaction Data</h3>
+Transaction data defines the <b>transaction</b> in terms of where the transaction takes place, what is being be taxed, and other details.  Set these keys in the <a class="dev-guide-link" href="#invoice"><code>Invoice</code></a> or <a class="dev-guide-link" href="#lineitem"><code>LineItem</code></a> objects.  
 
-In addition to these objects, transactions can also be customized through <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-override/">Tax Overrides</a> and <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/safe-harbor-override/">Safe Harbor Overrides</a>.
+Transactions can also be customized through <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/tax-override/">Tax Overrides</a> and <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/safe-harbor-override/">Safe Harbor Overrides</a>.
 
-<h4>Invoice Keys</h4>
-More information about <code>Invoice</code> can be found <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">here</a>.
+<h4 id="invoice">Invoice Keys</h4>
+See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/"><code>Invoice</code> Reference</a> for more information.
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -265,8 +264,9 @@ More information about <code>Invoice</code> can be found <a class="dev-guide-lin
   </table>
 </div>
 
-<h4>LineItem Keys</h4>
-More information about <code>LineItem</code> can be found <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">here</a>.
+<h4 id="lineitem">LineItem Keys</h4>
+See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/"><code>LineItem</code> Reference</a> for more information.
+
 <div class="mobile-table">
   <table class="styled-table">
     <thead>
