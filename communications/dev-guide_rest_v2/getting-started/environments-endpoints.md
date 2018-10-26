@@ -19,8 +19,27 @@ The two environments available to you are Sandbox and Production:
 
 <ul class="dev-guide-list">
   <li><b>Production</b>: <a class="dev-guide-link" href="https://communications.avalara.net">communications.avalara.net</a></li>
+    <ul class="dev-guide-list">
+      <li>Used for live transactions and bill runs</li>
+    </ul>
   <li><b>Sandbox</b>: <a class="dev-guide-link" href="https://communicationsua.avalara.net">communicationsua.avalara.net</a></li>
+    <ul class="dev-guide-list">
+      <li>Used for testing</li>
+    </ul>
 </ul>
+
+Both the Sandbox and Production environments operate identically for purposes of tax calculation and reporting.  Tax calculations produce the same results when identical <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles/">client profiles</a> are used in both environments.
+
+Some differences between Sandbox and Production:
+<ol class="dev-guide-list">
+  <li>Each environment is self-contained and does not impact the other environment.  For example:</li>
+    <ul class="dev-guide-list">
+      <li>If a profile is updated in one environment, it does not impact the other environment unless you request both environments be updated.  Sandbox can be used to test profile changes in before applying the same profile to Production.</li>
+      <li>Calculations performed in one environment only appear in reports for that environment.  For testing purposes in Sandbox, you can repeatedly perform a bill run with no impact to Production reports.</li>
+      <li>Access provided to users for one environment has no impact on who has access to the other environment.  Developers, QA, and other team members can be given access to Sandbox for testing purposes, but not given access to Production.</li>
+    </ul>
+  <li>Automated compliance report generation to the Avalara Returns Team is only available from Production</li>
+</ol>
 
 <h3>Endpoints</h3>
 
