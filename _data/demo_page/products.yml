@@ -1,0 +1,30 @@
+- name: Widget
+  taxCode: P0000000
+  inputId: p1c
+  value: 100.00
+  subLabel: (an item not otherwise classified; taxed as tangible personal property)
+  checked: checked
+- name: Pre-packaged Sushi
+  taxCode: PF160024
+  inputId: p2c
+  value: 15.99
+- name: MP3 download
+  taxCode: DM040200
+  inputId: p3c
+  value: 0.99
+- name: Baseball Bat
+  taxCode: PC040400
+  inputId: p4c
+  value: 40.21
+- name: Color Laser Printer
+  taxCode: PC070400
+  inputId: p5c
+  value: 199.00
+- name: Oil change service (with synthetic oil)
+  taxCode: SA090700
+  inputId: p6c
+  value: 89.99
+- name: Shipping
+  taxCode: FR010000
+  inputId: p7c
+  value: 19.99
