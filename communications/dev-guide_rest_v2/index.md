@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Avalara Communications Developer Guide
+title:  Avalara for Communications REST v2 Developer Guide
 product: communications
 doctype: comms_rest_v2_dev_guide
 nav: apis

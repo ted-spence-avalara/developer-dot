@@ -18,13 +18,13 @@ disqus: 0
 The two environments available to you are Sandbox and Production:
 
 <ul class="dev-guide-list">
-  <li><b>Production</b>: <a class="dev-guide-link" href="https://communications.avalara.net">communications.avalara.net</a></li>
-    <ul class="dev-guide-list">
-      <li>Used for live transactions and bill runs</li>
-    </ul>
   <li><b>Sandbox</b>: <a class="dev-guide-link" href="https://communicationsua.avalara.net">communicationsua.avalara.net</a></li>
     <ul class="dev-guide-list">
       <li>Used for testing</li>
+    </ul>
+  <li><b>Production</b>: <a class="dev-guide-link" href="https://communications.avalara.net">communications.avalara.net</a></li>
+    <ul class="dev-guide-list">
+      <li>Used for live transactions and bill runs</li>
     </ul>
 </ul>
 
@@ -41,8 +41,96 @@ Some differences between Sandbox and Production:
   <li>Automated compliance report generation to the Avalara Returns Team is only available from Production</li>
 </ol>
 
-<h3>Endpoints</h3>
+<h3 id="endpoints">Endpoints</h3>
+<h4>Healthcheck</h4>
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Endpoint</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/v2/Healthcheck</code></td>
+        <td><code>GET</code> Healthcheck that confirms the service is operational and ready to use</td>
+      </tr>
+    </tbody>
+  </table>
+<div>
 
+<br/>
+<h4>Jurisdiction Determination</h4>
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Endpoint</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/v2/geo/PCode</code></td>
+        <td><code>POST</code> Get PCode(s) associated with a location - Ctry/State/County/City/Zip.  Populate the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/zip-lookup-request/">zipLookupRequest</a> object.</td>
+      </tr>
+      <tr>
+        <td><code>/api/v2/geo/Geocode</code></td>
+        <td><code>POST</code> Geocodes one or more street addresses or lat/long coordinates.  Populate the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/geocode-requests/">geocodeRequests</a> object.
+        <br/>
+        Only address information <b>or</b> latitude/longitude coordinates should be provided in the request, but not both.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<div>
+
+<br/>
+<h4>Lookups</h4>
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Endpoint</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/v2/afc/serviceinfo</code></td>
+        <td><code>GET</code> Retrieves server time, service build version, and tax engine version.</td>
+      </tr>
+      <tr>
+        <td><code>/api/v2/afc/taxtype/{taxType}</code></td>
+        <td><code>GET</code> Get the tax information (description and category) for a Tax Type ID.
+        <br/>
+        Specify the Tax Type ID in the {taxType} parameter of the URL.  Use "*" as a wildcard to return all tax types.</td>
+      </tr>
+      <tr>
+        <td><code>/api/v2/afc/tspairs</code></td>
+        <td><code>GET</code> Get Transaction/Service (T/S) Pair information.</td>
+      </tr>
+      <tr>
+        <td><code>/api/v2/afc/location/{pcode}</code></td>
+        <td><code>GET</code> Get all jurisdiction location data associated with a specific PCode.
+        <br/>
+        Specify the PCode in the {pcode} parameter of the URL.
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v2/afc/primary/{pcode}</code></td>
+        <td><code>GET</code> Similar to the <code>/api/v2/afc/location/{pcode}</code>endpoint, but works as a "best match." Returns location info for the primary jurisdiction associated with the specified PCode.
+        <br/>
+        Specify the PCode in the {pcode} parameter of the URL.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<div>
+
+<br/>
+<h4>Tax Calculation</h4>
 <div class="mobile-table">
   <table class="styled-table">
     <thead>
@@ -59,32 +147,6 @@ Some differences between Sandbox and Production:
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/commit-request/"><code>/api/v2/afc/commit</code></a></td>
         <td><code>POST</code> Commits and Uncommits transactions. See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/">Commit/Uncommit</a> for more information.</td>
-      </tr>
-      <tr>
-        <td><code>/api/v2/geo/geocode</code></td>
-        <td><code>POST</code> Geocodes one or more street addresses or lat/long coordinates.</td>
-      </tr>
-      <tr>
-        <td><code>/api/v2/afc/serviceinfo</code></td>
-        <td><code>GET</code> Server time, build version, and tax engine version.</td>
-      </tr>
-      <tr>
-        <td><code>/api/v2/afc/taxtype/{taxType}</code></td>
-        <td><code>GET</code> Tax description and category for a tax type ID.
-        <br>
-        Use "*" as a wildcard for all tax types.</td>
-      </tr>
-      <tr>
-        <td><code>/api/v2/afc/tspairs</code></td>
-        <td><code>GET</code> Transaction/Service (T/S) Pair information.</td>
-      </tr>
-      <tr>
-        <td><code>/api/v2/afc/location/{pcode}</code></td>
-        <td><code>GET</code> Location data associated with a specific PCode.</td>
-      </tr>
-      <tr>
-        <td><code>/api/v2/afc/primary/{pcode}</code></td>
-        <td><code>GET</code> Similar to the endpoint above, but works as a "best match." Returns location info for the primary jurisdiction associated with the specified PCode.</td>
       </tr>
     </tbody>
   </table>

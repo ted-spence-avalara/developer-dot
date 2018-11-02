@@ -192,9 +192,59 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
             The Attribute property used for supported Sales and Use Transaction/Service pairs.
         </td>
       </tr>
+      <tr>
+        <td><code>bill</code></td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/"><code>[Location]</code></a> Bill To Location
+          <br>
+          There are several ways to input location information. See the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> section for more details.
+        </td>
+      </tr>
+      <tr>
+        <td><code>cust</code></td>
+        <td><code>[int]</code> Customer Type
+          <br>
+          <ul class="dev-guide-list">
+            <li><code>0</code>: Residential</li>
+            <li><code>1</code>: Business</li>
+            <li><code>2</code>: Senior Citizen</li>
+            <li><code>3</code>: Industrial</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><code>lfln</code></td>
+        <td><code>[bool]</code> Lifeline
+          <ul class="dev-guide-list">
+            <li><code>true</code>: The customer is a Lifeline participant</li>
+            <li><code>false</code>: The customer is not a Lifeline participant</li>
+          </ul>
+          Lifeline is a federal program that subsidizes the cost of phone and internet for eligible customers.
+        </td>
+      </tr>
+      <tr>
+        <td><code>date</code></td>
+        <td><code>[timestamp]</code> Invoice Date
+          <br>
+          <i>ex.</i><code> 2009-12-01T03:00:00</code>
+          <br>
+          The date when the transaction took place. <b>An accurate timestamp in this field is important!</b> This will affect the rules our tax engine applies when calculating taxes. 
+          <br>
+          <br>
+          For example, if you submit a CalcTaxes request with a <code>date</code> of <code>7/1/2018</code>, our tax engine will use the rules that apply for your jurisdiction on <code>7/1/2018</code>. If the transaction <i>actually</i> occurred on <code>7/25/2018</code>, and the tax rate for this transaction changed after <code>7/1/2018</code>, you may receive incorrect tax information.
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
+
+<h4>Note</h4>
+The following fields override the same fields set on the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a>:
+<ul class="dev-guide-list">
+    <li>Bill To (<code>bill</code>)</li>
+    <li>Customer Type (<code>cust</code>)</li>
+    <li>Lifeline (<code>lfln</code>)</li>
+    <li>Invoice Date (<code>date</code>)</li>
+</ul>
 
 <h3>Example</h3>
 
@@ -230,7 +280,13 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
         // Key Value Pair
       }
     ],
-    "prop": 0
+    "prop": 0,
+    "bill": {
+      // Location
+    },
+    "cust": 0,
+    "lfln": false,
+    "date": "2018-09-23T20:31:53.452Z"
   }
 ]
 {% endhighlight %}

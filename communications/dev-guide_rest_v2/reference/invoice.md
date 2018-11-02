@@ -146,6 +146,15 @@ The <code>Invoice</code> object contains information about one or more <b>transa
 </div>
 <br>
 
+<h4>Note</h4>
+The following fields can be overridden on the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line Item</a>:
+<ul class="dev-guide-list">
+    <li>Bill To (<code>bill</code>)</li>
+    <li>Customer Type (<code>cust</code>)</li>
+    <li>Lifeline (<code>lfln</code>)</li>
+    <li>Invoice Date (<code>date</code>)</li>
+</ul>
+
 <h3>Example</h3>
 
 {% highlight json %}
