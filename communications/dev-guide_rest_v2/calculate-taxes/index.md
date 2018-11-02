@@ -15,11 +15,11 @@ disqus: 0
 
 <h3>Your First CalcTaxes Request</h3>
 
-Let's dive in. We're going to send a simple <code>CalcTaxes</code> call using <a class="dev-guide-link" href="https://www.getpostman.com">Postman</a> and inspect the results.
+Let's dive in. We're going to send a simple <code>CalcTaxes</code> call using <a class="dev-guide-link" href="https://www.getpostman.com">Postman</a> and then inspect the results.
 
 <h3>Headers</h3>
 
-Add the following <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/authentication/">mandatory headers</a> to your request:
+Add these <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/authentication/">mandatory headers</a> to your request:
 <ul class="dev-guide-list">
   <li><code>api_key</code></li>
   <li><code>client_id</code></li>
@@ -74,11 +74,11 @@ For the body of the <code>POST</code> request, copy and paste the following exam
   <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a> (<code>inv</code>) details</li>
     <ul class="dev-guide-list">
       <li>DocumentCode (<code>doc</code>) is included so we can <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/commit-uncommit/">commit</a> this transaction later</li>
-      <li>The Commit flag (<code>cmmt</code>) is set to <code>false</code>.  Set the Commit flag to <code>true</code> in the transaction if you want to <a class="dev-guide-link"  href="/communications/dev-guide_rest_v2/commit-uncommit/">commit</a> immediately.</li>
-      <li>BillTo (<code>bill</code>) is a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> object and can be specified in several ways. We pass a combination of Country (<code>ctry</code>), City(<code>city</code>), State (<code>st</code>), and Postal Code (<code>zip</code>), but we can also pass a single PCode (<code>pcd</code>), FIPS (<code>fips</code>), or NPANXX (<code>npa</code>) value.</li>
+      <li>The Commit flag (<code>cmmt</code>) is set to <code>false</code>.  If you want to <a class="dev-guide-link"  href="/communications/dev-guide_rest_v2/commit-uncommit/">commit</a> immediately, set the Commit flag to <code>true</code> in the transaction.</li>
+      <li>BillTo (<code>bill</code>) is a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> object and is specified in different ways. We pass a combination of Country (<code>ctry</code>), City(<code>city</code>), State (<code>st</code>), and Postal Code (<code>zip</code>), but we can also pass a single PCode (<code>pcd</code>), FIPS (<code>fips</code>), or NPANXX (<code>npa</code>) value.</li>
     </ul>
-  <li>The value you assign to the <code>date</code> key is important: this affects which rules are used by our tax engine to calculate taxes. Tax rules change frequently and our Content Team continuously updates our tax engine to reflect these changes.</li>
-  <li>The <a class="dev-guide-link"  href="/communications/dev-guide_rest_v2/reference/line-item/">LineItem</a>(<code>itms</code>) is contained within the <code>Invoice</code>. This is where information like the Charge (<code>chg</code>), Transaction/Service Pair (<code>tran</code> and <code>serv</code>), and number of Lines (<code>line</code>) is entered.</li>
+  <li>The value you assign to the <code>date</code> key is important because it affects which rules are used by our tax engine to calculate taxes. Tax rules change frequently, and our Content Team continuously updates our tax engine to reflect these changes.</li>
+  <li>The <a class="dev-guide-link"  href="/communications/dev-guide_rest_v2/reference/line-item/">LineItem</a> (<code>itms</code>) is contained within the <code>Invoice</code>. This is where you enter information such as Charge (<code>chg</code>), Transaction/Service Pair (<code>tran</code> and <code>serv</code>), and number of Lines (<code>line</code>).</li>
 </ol>
 
 
@@ -166,7 +166,7 @@ Each tax amount returned contains additional information including:
   <li><code>tax</code>: Tax Amount</li>
 </ul>
 
-See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/">CalcTaxes Response</a> for more information.
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-response/">CalcTaxes Response</a>.
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/getting-started"><i class="glyphicon glyphicon-chevron-left"></i>Previous Chapter</a></li>

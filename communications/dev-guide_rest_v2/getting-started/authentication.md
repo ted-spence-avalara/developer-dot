@@ -15,7 +15,7 @@ disqus: 0
 
 <h3>Required Headers</h3>
 
-Three pieces of information must appear in your request header:
+These items must appear in your request header:
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -32,7 +32,7 @@ Three pieces of information must appear in your request header:
       </tr>
       <tr>
         <td><code>client_id</code></td>
-        <td>Unique identifier for your company. Avalara will provide this to you during <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/account-creation/">account creation</a> and your Client ID will be the same across all environments.</td>
+        <td>Unique identifier for your company. Avalara provides this during <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/account-creation/">account creation</a>.  Your Client ID is the same across all environments.</td>
       </tr>
       <tr>
       <td><code>Content-Type</code></td>
@@ -46,19 +46,19 @@ Three pieces of information must appear in your request header:
 
 The <code>api_key</code> is your Customer Portal "username:password" encoded in Base64.  For example, if your username is <code>first.last@avalara.com</code> and your password is <code>secretpassword!</code>, your <code>api_key</code> is <code>Zmlyc3QubGFzdEBhdmFsYXJhLmNvbTpzZWNyZXRwYXNzd29yZCE=</code>.
 
-The <a class="dev-guide-link" href="https://communications.avalara.net/API/AFCSaaSProTaxREST">REST v2 Swagger page</a> automatically generates your api_key for you.  To generate the api_key on the <a class="dev-guide-link" href="https://communications.avalara.net/API/AFCSaaSProTaxREST">Swagger</a> page:
+The <a class="dev-guide-link" href="https://communications.avalara.net/API/AFCSaaSProTaxREST">Communications REST v2 Swagger page</a> automatically generates your api_key for you.  To generate the api_key on the <a class="dev-guide-link" href="https://communications.avalara.net/API/AFCSaaSProTaxREST">Swagger</a> page:
 <ol class="dev-guide-list">
   <li>Enter your username in the <code>email address</code> field.</li>
   <li>Enter your password in the <code>password</code> field.</li>
   <li>Click the <code>Generate api_key</code> button.</li>
 </ol>
-The encoded api_key is populated in the <code>api_key</code> field.  Copy this value for later use.
+The encoded api_key is populated in the <code>api_key</code> field.  Copy and save this value for later use.
 
 <img src="/public/images/comms/dev-guide_rest_v2/comms_rest_v2_swagger_api_key.png"/>
 
 <br/>
 
-Alternatively, to encode a plaintext string to Base64 in <b>Windows Powershell</b>, you can use the following script:
+You can also encode a plaintext string to Base64 in <b>Windows Powershell</b> using the following script:
 
 {% highlight powershell %}
 # Encode a string to Base64
@@ -70,7 +70,7 @@ Alternatively, to encode a plaintext string to Base64 in <b>Windows Powershell</
 
 <h3>Optional Headers</h3>
 
-Our tax engine allows for additional customization when calculating taxes and we accomplish this through the creation of <b>Client Profiles</b>. We will discuss how Client Profiles work in more detail in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/">Customizing Transactions</a> section.  For now, just know that you have the ability to pass an additional header to specify a specific profile:
+Our tax engine allows for additional customization when calculating taxes through <b>Client Profiles</b>. For details about how Client Profiles work, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/">Customizing Transactions</a>.  For now, just know that you can pass an additional header to use a specific profile:
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -90,7 +90,7 @@ Our tax engine allows for additional customization when calculating taxes and we
 <div>
 
 <h4>Note</h4>
-If a <code>client_profile_id</code> is not supplied, REST v2 uses the System Default configuration.
+If a <code>client_profile_id</code> is left blank, REST v2 uses the System Default configuration.
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/getting-started/account-creation/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

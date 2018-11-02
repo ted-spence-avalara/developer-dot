@@ -37,7 +37,7 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
   <li>BillTo (<code>bill</code>) - See <a class="dev-guide-link" href="#location">Location</a> below for more information</li>
   <li>CustomerType (<code>cust</code>)</li>
   <li>Date (<code>date</code>)</li>
-  <li>DocumentCode (<code>doc</code>) - only required when the Commit flag (<code>cmmt</code>) is set to <code>true</code></li>
+  <li>DocumentCode (<code>doc</code>) - Required only if the Commit flag (<code>cmmt</code>) is set to <code>true</code></li>
   <li>LineItem object - See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line Item</a> for more information about <code>LineItem</code></li>
   <ul class="dev-guide-list">
     <li>Sale (<code>sale</code>)</li>

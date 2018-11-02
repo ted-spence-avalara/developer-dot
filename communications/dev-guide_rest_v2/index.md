@@ -13,7 +13,7 @@ disqus: 0
 
 Welcome to the Avalara for Communications REST v2 Developer Guide!
 
-This guide is intended to simplify the tax calculation process by providing developers with an overview of the Avalara for Communications REST v2 API functionality, including:
+This guide provides youwith an overview of the Avalara for Communications REST v2 API functionality, including:
 
 <ul class="dev-guide-list">
   <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/authentication/">Authentication</a> and <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints/">endpoints</a></li>
@@ -21,7 +21,7 @@ This guide is intended to simplify the tax calculation process by providing deve
   <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/transaction-use-cases">Examples</a> of specific use cases and how to customize your transactions</li>
 </ul>
 
-We are continuously adding new functionality to our REST v2 API and encourage you to check back here for updates and descriptions of new features.
+We are continuously adding new functionality to our REST v2 API and encourage you to check back here for updates.
 
 Copyright © 2018 Avalara Inc. All rights reserved.
 
