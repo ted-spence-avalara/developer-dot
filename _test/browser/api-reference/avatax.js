@@ -76,7 +76,7 @@ module.exports = {
 
         browser.page.endpointSummary()
             .navigateTo('#ResolveAddressPost-console')
-            .navigateTo('#ResolveAddressPost-console-body .fill-sample-data')
+            .click('#ResolveAddressPost-console-body .fill-sample-data')
             .click('#ResolveAddressPost-console-body .submit')
 
             .getConsoleText('ResolveAddressPost', 'responseConsole', function(res) {
