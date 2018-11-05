@@ -42,7 +42,7 @@ Some differences between Sandbox and Production:
 </ol>
 
 <h3 id="endpoints">Endpoints</h3>
-<h4>Healthcheck</h4>
+<h4 id="healthcheck">Healthcheck</h4>
 <div class="mobile-table">
   <table class="styled-table">
     <thead>
@@ -61,7 +61,7 @@ Some differences between Sandbox and Production:
 <div>
 
 <br/>
-<h4>Jurisdiction Determination</h4>
+<h4 id="jur_determine">Jurisdiction Determination</h4>
 <div class="mobile-table">
   <table class="styled-table">
     <thead>
@@ -87,7 +87,7 @@ Some differences between Sandbox and Production:
 <div>
 
 <br/>
-<h4>Lookups</h4>
+<h4 id="lookups">Lookups</h4>
 <div class="mobile-table">
   <table class="styled-table">
     <thead>
@@ -130,7 +130,7 @@ Some differences between Sandbox and Production:
 <div>
 
 <br/>
-<h4>Tax Calculation</h4>
+<h4 id="tax_calc">Tax Calculation</h4>
 <div class="mobile-table">
   <table class="styled-table">
     <thead>
