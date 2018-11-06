@@ -57,7 +57,7 @@ The <code>LineItemResult</code> object contains the <b>individual tax calculatio
         </tr>
     </tbody>
   </table>
-<div>
+</div>
 <br>
 
 <h3>Example</h3>

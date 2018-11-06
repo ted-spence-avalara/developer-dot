@@ -138,7 +138,7 @@ The <code>Tax</code> object contains the <b>taxes</b> generated for each <a clas
         </tr>
     </tbody>
   </table>
-<div>
+</div>
 <br>
 
 <h3>Example</h3>

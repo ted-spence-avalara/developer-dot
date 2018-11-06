@@ -18,7 +18,7 @@ disqus: 0
 Use <a class="dev-guide-link" href="https://communicationsua.avalara.net">Customer Portal Sandbox</a> to test:
 <ul class="dev-guide-list">
     <li>Changes to your Communications REST v2 integration</li>
-    <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/transaction-use-cases">Transactions customizations</a></li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/transaction-use-cases">Transaction customizations</a></li>
     <li>New <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles">client profiles</a></li>
     <li>Upcoming bill runs</li>
 </ul>
@@ -63,14 +63,14 @@ Picking the correct jurisdiction is critical because taxes are location-specific
 See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/">Customizing Transactions</a>:
 <ul class="dev-guide-list">
     <li>Use <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/client-profiles">client profiles</a> to define <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/account-customizations/">account customizations</a></li>
-    <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/transaction-use-case">Modify transactions</a> to meet your business needs</li>
+    <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/transaction-use-cases">Modify transactions</a> to meet your business needs</li>
 </ul>
 
 <h3>Increase Your Throughput</h3>
 <ul class="dev-guide-list">
     <li>Limit your <b>Line Item count</b> per transaction</li>
         <ul class="dev-guide-list">
-            <li>Use between 1,000 and 5,000 line items per <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/calculate-taxes/"><code>CalcTaxes</code> request</a></li>
+            <li>Make more <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/calculate-taxes/"><code>CalcTaxes</code> requests</a> with fewer line items in each request to increase performance throughput</li>
             <li>It is better to send 300 <code>CalcTaxes</code> requests containing 1,000 line items in each call than to send 30 <code>CalcTaxes</code> requests with 10,000 line items</li>
             <li>Use <a class="dev-guide-link" href="https://communicationsua.avalara.net">Customer Portal Sandbox</a> to try out different scenarios and find your ideal line item count</li>
         </ul>

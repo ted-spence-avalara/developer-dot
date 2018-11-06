@@ -126,7 +126,7 @@ The <code>SummarizedTax</code> object contains the <b>tax data</b> for summarize
         </tr>
     </tbody>
   </table>
-<div>
+</div>
 <br>
 
 <h3>Example</h3>

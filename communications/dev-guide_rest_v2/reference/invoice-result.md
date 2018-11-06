@@ -56,7 +56,7 @@ The <code>InvoiceResult</code> object contains the <b>tax calculation results</b
       </tr>
     </tbody>
   </table>
-<div>
+</div>
 <br>
 
 <h3>Example</h3>

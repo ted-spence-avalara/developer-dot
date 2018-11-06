@@ -238,7 +238,7 @@ The <code>LineItem</code> object contains <b>detailed</b> information about a <b
 </div>
 
 <h4>Note</h4>
-The following fields override the same fields set on the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a>:
+These fields override the same fields set on the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a>:
 <ul class="dev-guide-list">
     <li>Bill To (<code>bill</code>)</li>
     <li>Customer Type (<code>cust</code>)</li>

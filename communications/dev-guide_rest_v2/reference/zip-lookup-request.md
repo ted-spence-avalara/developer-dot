@@ -75,7 +75,7 @@ The <code>zipLookupRequest</code> object contains the <b>location data</b> used 
         </tr>
     </tbody>
   </table>
-<div>
+</div>
 <br>
 
 <h3>Example</h3>

@@ -97,7 +97,7 @@ The <code>geocodeResult</code> object contains a list of <b>geocoding results</b
         </tr>
     </tbody>
   </table>
-<div>
+</div>
 <br>
 
 <h3>Example</h3>

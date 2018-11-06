@@ -63,7 +63,7 @@ The <code>BridgeParticipantResult</code> functionality is still in beta.  Contac
         </tr>
     </tbody>
   </table>
-<div>
+</div>
 <br>
 
 <h3>Example</h3>

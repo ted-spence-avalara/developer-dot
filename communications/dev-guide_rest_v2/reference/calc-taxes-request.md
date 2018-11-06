@@ -54,7 +54,7 @@ At the highest level, a <code>CalcTaxes</code> request is a JSON object comprise
       </tr>
     </tbody>
   </table>
-<div>
+</div>
 <br>
 
 <h3>Example</h3>

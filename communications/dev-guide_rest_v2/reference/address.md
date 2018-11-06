@@ -43,7 +43,7 @@ The <code>Address</code> object contains the <b>CASS address information</b> fro
         </tr>
     </tbody>
   </table>
-<div>
+</div>
 <br>
 
 <h3>Example</h3>

@@ -82,7 +82,7 @@ Only address information <b>or</b> latitude/longitude coordinates should be prov
         </tr>
     </tbody>
   </table>
-<div>
+</div>
 <br>
 
 <h3>Example</h3>

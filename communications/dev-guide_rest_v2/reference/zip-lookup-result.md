@@ -67,7 +67,7 @@ The <code>zipLookupResult</code> object contains the <b>jurisdiction information
         </tr>
     </tbody>
   </table>
-<div>
+</div>
 <br>
 
 <h3>Example</h3>

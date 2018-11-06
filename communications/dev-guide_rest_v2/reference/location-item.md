@@ -65,7 +65,7 @@ The <code>LocationItem</code> object contains the <b>location information</b>, i
         </tr>
     </tbody>
   </table>
-<div>
+</div>
 <br>
 
 <h3>Example</h3>
