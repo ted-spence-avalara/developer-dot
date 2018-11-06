@@ -23,8 +23,8 @@ What happened here?
 
 If you make a grocery purchase for $25.00, it's likely that some items will be taxable and others will be exempt.  Many states have exemptions for basic food needs, or for certain types of items.  Ideally, to include maximum information, your receipt could display something like the following:
 
-||Name|Amount|Rate|Tax||
-|--|--|--|
+|Name|Amount|Rate|Tax|
+|---|---|---|---|
 |TOMATOES|2.99|7%|0.21|
 |LENTILS|2.79|7%|0.20|
 |MILK|3.99|0%|0.00|
