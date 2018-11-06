@@ -41,13 +41,13 @@ To handle this problem, AvaTax supports both line-level rounding and document-le
 
 The choice of rounding modes is entirely an accounting policy decision.  There is no right answer; your accounting department needs to decide whether each line on the invoice is considered to be severable or whether the entire transaction is a single whole.  If you choose to expose lots of detail on your receipt, your customers may scrutinize it and ask to debate your choice of rounding modes.
 
-The next problem comes when you have tax laws more complex than single rates.
+The next problem comes when we face other types of tax laws.
 
 <h3>Complex Tax Laws</h3>
 
-Tax laws don't have to be complicated.  A jurisdiction can pass a straightforward law that says "All products sold in this jurisdiction must pay a sales tax of one percent of the total amount of the sale."  That kind of law is easy to calculate and easy to use.
+It's possible to pass a straightforward law that says "All products sold in this jurisdiction must pay a sales tax of one percent of the total amount of the sale."  That kind of law is easy to calculate and easy to use.
 
-The most difficulty occurs when a jurisdiction passes tax laws that contain features such as caps, thresholds, tax base issues, and others.  Some jurisdictions even mix in per-quantity fixed amount taxes, such as bottle deposits, alongside dollar-amount-percentage rate taxes, like sales taxes or VAT.  Other jurisdictions include rules where certain taxes only apply in some situations like mixed-sourcing, or interrelationships between taxed items.
+However, this is the real world; and here some jurisdictions choose to pass tax laws containing caps, thresholds, tax base issues, and others.  Some jurisdictions even mix in per-quantity fixed amount taxes, such as bottle deposits, alongside dollar-amount-percentage rate taxes, like sales taxes or VAT.  Other jurisdictions include rules where certain taxes only apply in some situations like mixed-sourcing, or interrelationships between taxed items.  Some jurisdictions write special deals for companies to be partially exempt from taxes!
 
 As of the date I wrote this article, in Tennessee, there is a [local option tax](https://www.tn.gov/revenue/taxes/sales-and-use-tax/single-article.html) that applies to only a portion of the line amount.  The exact rules are pretty complex; suffice to say that you need to determine for each line of your invoice how much of the item is taxed.
 
