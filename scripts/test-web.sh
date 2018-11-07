@@ -31,7 +31,7 @@ fi
 # already running selenium, so we must start it
 if ! $isCI ; then
     java \
-        -Dwebdriver.chrome.driver=_test/browser/_bin/chromedriver.mac \
+        -Dwebdriver.chrome.driver=_test/browser/_bin/chromedriver \
         -Dselenium.LOGGER.level=OFF \
         -jar _test/browser/_bin/selenium.jar &
     seleniumPID=$!
