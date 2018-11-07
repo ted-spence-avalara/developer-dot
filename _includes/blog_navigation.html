@@ -6,7 +6,7 @@
         </li>
         {% assign sortedCategories = site.categories | sort %}
         {% for category in sortedCategories %} 
-            <!-- {% if category[1].size != 1 %}  -->
+            {% if category[1].size >= 1 %} 
                 {% assign a = category[0] | downcase %} 
                 {% assign p = page.title | downcase %}
                 <li {% if p==a %}class="active" {% endif %}>
@@ -17,7 +17,7 @@
                     <a class="capitalize" href="/blog/{{ cate | downcase}}/">{{ category[0] }}</a> 
                 {% endif %}
                 </li>
-            <!-- {% endif %}         -->
+            {% endif %}        
         {% endfor %}
 
         <li {% if page.url=="/blog/" %}class="active" {% endif %}>
