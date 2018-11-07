@@ -5,7 +5,7 @@ description: AvaTax C# SDK 18.2.1.168 update to address HTTP verb case issue.
 date: 2018-03-12 17:00
 author: Wayne Myer
 comments: true
-categories: [avatax, C#, SDK]
+categories: [avatax, c#, sdk]
 product: blog
 doctype: blog
 disqus: 1

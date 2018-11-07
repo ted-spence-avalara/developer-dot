@@ -5,7 +5,7 @@ description: The CRUSH DC Business Case for Avalara CRUSH Conference - Sales Tax
 date: 2018-02-28 11:00
 author: Tela Andrews
 comments: true
-categories: [avatax, CRUSH, conference]
+categories: [avatax, crush, conference]
 product: blog
 doctype: blog
 disqus: 1

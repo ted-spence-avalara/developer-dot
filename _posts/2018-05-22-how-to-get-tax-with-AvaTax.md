@@ -4,7 +4,7 @@ title: How to Get Tax
 date: 2018-05-22 18:00
 author: Wayne Myer
 comments: true
-categories: [avatax, howto]
+categories: [avatax, how to]
 product: avatax
 doctype: blog
 disqus: 1

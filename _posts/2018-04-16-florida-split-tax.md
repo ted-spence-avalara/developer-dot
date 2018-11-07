@@ -4,7 +4,7 @@ title: Florida Split Tax Feature for Discretionary SurTax
 date: 2018-04-16 17:00
 author: John Horsley
 comments: true
-categories: [avatax, taxrules]
+categories: [avatax, tax rules]
 product: blog
 doctype: blog
 disqus: 1
