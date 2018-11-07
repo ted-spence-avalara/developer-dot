@@ -4,7 +4,7 @@ title: Custom HTML Tags
 date: 2018-10-25 12:00
 author: Jordan Brennan
 comments: true
-categories: [ui, web]
+categories: [UI, web]
 product: blog
 doctype: blog
 disqus: 1

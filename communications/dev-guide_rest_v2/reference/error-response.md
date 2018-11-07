@@ -39,7 +39,7 @@ The <code>Error</code> object contains the <b>error description</b> as applicabl
       </tr>
     </tbody>
   </table>
-<div>
+</div>
 <br>
 
 <h3>Example</h3>

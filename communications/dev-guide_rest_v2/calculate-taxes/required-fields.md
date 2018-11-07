@@ -13,71 +13,291 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/commit-uncommit/">Next Chapter<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-The <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/">CalcTaxes request</a> has numerous fields available, but only a handful are required.  
+The <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/calc-taxes-request/">CalcTaxes request</a> has numerous fields, but only a handful of the fields are required by Communications REST v2.  
 
 <h3>CompanyData</h3>
-See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/company-data/">Company Data</a> for more information about <code>CompanyData</code>.
-<ul class="dev-guide-list">
-  <li>BusinessClass (<code>bscl</code>)</li>
-  <li>ServiceClass (<code>svcl</code>)</li>
-  <li>Facilities (<code>fclt</code>)</li>
-  <li>Regulated (<code>reg</code>)</li>
-</ul>
+These fields are required in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/company-data/">Company Data</a> object (<code>cmpn</code>):
 
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>bscl</code></td>
+        <td>Business Class</td>
+      </tr>
+      <tr>
+        <td><code>svcl</code></td>
+        <td>Service Class</td>
+      </tr>
+      <tr>
+        <td><code>fclt</code></td>
+        <td>Facilities</td>
+      </tr>
+      <tr>
+        <td><code>reg</code></td>
+        <td>Regulated</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br>
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/company-data/">Company Data</a>.
 <br/>
-If you're using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exclusion/">Exclusion</a> object (<code>excl</code>), the following fields are required:
-<ul class="dev-guide-list">
-  <li>Country (<code>ctry</code>)</li>
-  <li>ExclusionOn (<code>excl</code>)</li>
-</ul>
+<br/>
+<h4>Exclusion</h4>
+The <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exclusion/">Exclusion</a> object (<code>excl</code>) is not required.  If you do use the Exclusion object, these fields are required:
 
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ctry</code></td>
+        <td>Country</td>
+      </tr>
+      <tr>
+        <td><code>excl</code></td>
+        <td>Exclusion On</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br/>
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exclusion/">Exclusion</a>.
+<br/>
+<br/>
 <h3>Invoice</h3>
-See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a> for more information about <code>Invoice</code>.
-<ul class="dev-guide-list">
-  <li>BillTo (<code>bill</code>) - See <a class="dev-guide-link" href="#location">Location</a> below for more information</li>
-  <li>CustomerType (<code>cust</code>)</li>
-  <li>Date (<code>date</code>)</li>
-  <li>DocumentCode (<code>doc</code>) - only required when the Commit flag (<code>cmmt</code>) is set to <code>true</code></li>
-  <li>LineItem object - See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line Item</a> for more information about <code>LineItem</code></li>
-  <ul class="dev-guide-list">
-    <li>Sale (<code>sale</code>)</li>
-    <li>TransactionType (<code>tran</code>)</li>
-    <li>ServiceType (<code>serv</code>)</li>
-  </ul>
-</ul>
+These fields are required in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a> object (<code>inv</code>):
 
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>bill</code></td>
+        <td>Bill To <a class="dev-guide-link" href="#location">Location</a></td>
+      </tr>
+      <tr>
+        <td><code>cust</code></td>
+        <td>Customer Type</td>
+      </tr>
+      <tr>
+        <td><code>date</code></td>
+        <td>Invoice Date</td>
+      </tr>
+      <tr>
+        <td><code>doc</code></td>
+        <td>Document Code
+        <br/>
+        Required only if Commit (<code>cmmt</code>) is set to <code>true</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>itms</code></td>
+        <td><a class="dev-guide-link" href="#line-item">LineItem object</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 <br/>
-If you're using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exemption/">Exemption</a> object (<code>exms</code>), the following fields are required:
-<ul class="dev-guide-list">
-  <li>Location (<code>loc</code>) - See <a class="dev-guide-link" href="#location">Location</a> below for more information</li>
-  <li>TaxType (<code>tpe</code>) and <b>one</b> of the following <b>OR</b> TaxCategory (<code>cat</code>)</li>
-  <ul class="dev-guide-list">
-    <li>TaxLevel (<code>lvl</code>)</li>
-    <li>Domain (<code>dom</code>)</li>
-  </ul>
-</ul>
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/">Invoice</a>.
+<br/>
+<br/>
+<h4 id="line-item">Line Item</h4>
+These fields are required in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">LineItem</a> object (<code>itms</code>):
 
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>sale</code></td>
+        <td>Sale</td>
+      </tr>
+      <tr>
+        <td><code>tran</code></td>
+        <td>Transaction Type</td>
+      </tr>
+      <tr>
+        <td><code>serv</code></td>
+        <td>Service Type</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br>
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/">Line Item</a>.
+<br/>
+<br/>
+<h4>Exemption</h4>
+The <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exemption/">Exemption</a> object (<code>exms</code>) is not required.  If you do use the Exemption object, these fields are required:
+
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>loc</code></td>
+        <td><a class="dev-guide-link" href="#location">Location</a></td>
+      </tr>
+      <tr>
+        <td><code>tpe</code> or <code>cat</code></td>
+        <td>Tax Type or Tax Category (choose one)
+        <br/>
+        <br/>
+        If Tax Type, one of these is required:
+        <div class="mobile-table">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>Key</th>
+                <th>Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>lvl</code></td>
+                <td>Tax Level</td>
+              </tr>
+              <tr>
+                <td><code>dom</code></td>
+                <td>Domain</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br/>
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/exemption/">Exemption</a>.
+<br/>
+<br/>
 <h3>Tax Override</h3>
-If you're using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/tax-override/">TaxOverride</a> object (<code>ovr</code>), the following fields are required:
-<ul class="dev-guide-list">
-  <li> BracketInfo (<code>brkt</code>)</li>
-  <ul class="dev-guide-list">
-    <li>Rate (<code>rate</code>)</li>
-    <li>MaxBase (<code>max</code>)</li>
-  </ul>
-  <li>Location (<code>loc</code>) - See <a class="dev-guide-link" href="#location">Location</a> below for more information</li>
-  <li>Scope (<code>scp</code>)</li>
-  <li>TaxType (<code>tid</code>)</li>
-  <li>TaxLevel (<code>lvl</code>)</li>
-</ul>
+The <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/tax-override/">TaxOverride</a> object (<code>ovr</code>) is not required.  If you do use the Tax Override object, these fields are required:
 
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>loc</code></td>
+        <td><a class="dev-guide-link" href="#location">Location</a></td>
+      </tr>
+      <tr>
+        <td><code>scp</code></td>
+        <td>Scope</td>
+      </tr>
+      <tr>
+        <td><code>tid</code></td>
+        <td>Tax Type ID</td>
+      </tr>
+      <tr>
+        <td><code>lvl</code></td>
+        <td>Tax Level ID</td>
+      </tr>
+      <tr>
+        <td><code>brkt</code></td>
+        <td><a class="dev-guide-link" href="#tax_bracket">Tax Bracket object</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br/>
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/tax-override/">Tax Override</a>.
+<br/>
+<br/>
+<h4 id="tax_bracket">Tax Bracket</h4>
+These fields are required in the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/tax-bracket/">TaxBracket</a> object (<code>brkt</code>):
+
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>rate</code></td>
+        <td>Rate</td>
+      </tr>
+      <tr>
+        <td><code>max</code></td>
+        <td>Max Base</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br/>
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/tax-bracket/">Tax Bracket</a>.
+<br/>
+<br/>
 <h3>Safe Harbor Override</h3>
-If you're using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/safe-harbor-override/">SafeHarborOverride</a> object (<code>sovr</code>), the following fields are required:
-<ul class="dev-guide-list">
-  <li>SafeHarborType (<code>sh</code>)</li>
-  <li>OriginalFederalTam (<code>old</code>)</li>
-  <li>NewFederalTam (<code>new</code>)</li>
-</ul>
+The <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/safe-harbor-override/">SafeHarborOverride</a> object (<code>sovr</code>) is not required.  If you do use the Safe Harbor Override object, these fields are required:
+
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>sh</code></td>
+        <td>Safe Harbor Type</td>
+      </tr>
+      <tr>
+        <td><code>old</code></td>
+        <td>Original Federal TAM</td>
+      </tr>
+      <tr>
+        <td><code>new</code></td>
+        <td>New Federal TAM</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br/>
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/safe-harbor-override/">Safe Harbor Override</a>.
+<br/>
+<br/>
 
 <h3 id="location">Location</h3>
 <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> is used by the following objects:
@@ -90,13 +310,71 @@ If you're using the <a class="dev-guide-link" href="/communications/dev-guide_re
 </ul>
 
 <br/>
-When using the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> object, the following fields are required.  Only <b>one</b> of the options below is required.
-<ul class="dev-guide-list">
-  <li>PCode (<code>pcd</code>)</li>
-  <li>FIPS (<code>fips</code>)</li>
-  <li>NPANXX (<code>npa</code>)</li>
-  <li>StreetAddress (<code>addr</code>), City (<code>city</code>), State (<code>st</code>), and PostalCode (<code>zip</code>) when <code>geo</code> is <code>true</code></li>
-</ul>
+
+Only <b>one</b> of these fields is required in a <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> object:
+
+<div class="mobile-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>pcd</code></td>
+        <td>PCode</td>
+      </tr>
+      <tr>
+        <td><code>fips</code></td>
+        <td>FIPS</td>
+      </tr>
+      <tr>
+        <td><code>npa</code></td>
+        <td>NPANXX</td>
+      </tr>
+      <tr>
+        <td><code>geo</code></td>
+        <td>Geocoded Street Address
+        <br/>
+        <br/>
+        These fields are required when <code>geo</code> is <code>true</code>:
+        <div class="mobile-table">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>Key</th>
+                <th>Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>addr</code></td>
+                <td>Street Address</td>
+              </tr>
+              <tr>
+                <td><code>city</code></td>
+                <td>City</td>
+              </tr>
+              <tr>
+                <td><code>st</code></td>
+                <td>State</td>
+              </tr>
+              <tr>
+                <td><code>zip</code></td>
+                <td>Postal Code</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br/>
+For more information, see <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a>.
 
 <ul class="pager">
   <li class="previous"><a href="/communications/dev-guide_rest_v2/calculate-taxes/"><i class="glyphicon glyphicon-chevron-left"></i>Previous</a></li>

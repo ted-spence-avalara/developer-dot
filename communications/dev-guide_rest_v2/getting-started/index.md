@@ -13,11 +13,12 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/getting-started/account-creation/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-This chapter explains how to get started with REST v2:
+This chapter explains how to get started with Communications REST v2:
 <ul class="dev-guide-list">
   <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/account-creation/">Establishing</a> your REST v2 account</li>
   <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/authentication/">Authenticating</a> to REST v2</li>
   <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints/">Environments and endpoints</a></li>
+  <li><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/best-practices/">Best Practices</a></li>
 </ul>
 
 <ul class="pager">

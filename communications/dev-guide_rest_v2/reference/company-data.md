@@ -91,7 +91,7 @@ The <code>CompanyData</code> object contains information about <b>your</b> compa
       </tr>
     </tbody>
   </table>
-<div>
+</div>
 <br>
 
 <h3>Example</h3>

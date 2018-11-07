@@ -42,7 +42,7 @@ At the highest level, a <code>CalcTaxes</code> response is a JSON object compris
       </tr>
     </tbody>
   </table>
-<div>
+</div>
 <br>
 
 <h3>Example</h3>

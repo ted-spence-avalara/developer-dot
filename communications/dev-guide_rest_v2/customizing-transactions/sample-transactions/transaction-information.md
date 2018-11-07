@@ -13,7 +13,7 @@ disqus: 0
   <li class="next"><a href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exclusion/">Next<i class="glyphicon glyphicon-chevron-right"></i></a></li>
 </ul>
 
-REST v2 takes the transaction as a whole and bases the returned taxes off of the information provided.  
+Communications REST v2 takes the transaction as a whole and bases the returned taxes off of the information provided.  
 
 Each transaction contains the following information:
 <ul class="dev-guide-list">
@@ -47,57 +47,161 @@ Company data defines the <b>company</b> or <b>seller</b>.  Set these keys in the
       <tr>
         <td>Business Class</td>
         <td><code>bscl</code></td>
-        <td>Specifies whether the business making the transaction is an Incumbent Local Exchange Company (ILEC) or not an ILEC
-            <ul class="dev-guide-list">
-                <li><b>Not an ILEC</b> (<span class="t5">default</span>): Engaged in selling services competing with an incumbent provider</li>
-                <li><b>ILEC</b>: Engaged in selling services over company-owned lines and equipment</li>
-                <li>Use <b>Not an ILEC</b> if neither class applies</li>
-            </ul>
+        <td>Specifies whether the business making the transaction is an Incumbent Local Exchange Company (ILEC) or not an ILEC.  Only impacts Communications transactions in certain jurisdictions, such as Oregon.
             <br/>
-            Only impacts Communications transactions in certain jurisdictions, such as Oregon</td>
+            <br/>
+            <div class="mobile-table">
+              <table class="styled-table">
+                <thead>
+                  <tr>
+                    <th>Value</th>
+                    <th>Option</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>0</code></td>
+                    <td>ILEC</td>
+                    <td>Engaged in selling services over company-owned lines and equipment</td>
+                  </tr>
+                  <tr>
+                    <td><code>1</code></td>
+                    <td>Not an ILEC</td>
+                    <td>Engaged in selling services competing with an incumbent provider
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <br/>
+            Use <b>Not an ILEC</b> if neither class applies
+          </td>
       </tr>
       <tr>
         <td>Service Class</td>
         <td><code>svcl</code></td>
-        <td>Delineates the primary activity of an organization as Local Service or Long Distance 
-            <ul class="dev-guide-list">
-                <li><b>Primary Local</b> (<span class="t5">default</span>): Carriers vending their services with over 50% of the gross business activities in Local Service revenue</li>
-                <li><b>Primary Long Distance</b>: Carriers vending their services with over 50% of the gross business activities in Long Distance revenue</li>
-            </ul>
-            <br/>
-            Only impacts Communications transactions in certain jurisdictions, such as New York</td>
+        <td>Delineates the primary activity of an organization as Local Service or Long Distance.   Only impacts Communications transactions in certain jurisdictions, such as New York.
+          <br/>
+          <br/>
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>0</code></td>
+                  <td>Primary Local</td>
+                  <td>Carriers vending their services with over 50% of the gross business activities in Local Service revenue</td>
+                </tr>
+                <tr>
+                  <td><code>1</code></td>
+                  <td>Primary Long Distance</td>
+                  <td>Carriers vending their services with over 50% of the gross business activities in Long Distance revenue</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
       </tr>
       <tr>
         <td>Facilities</td>
         <td><code>fclt</code></td>
-        <td>Specifies whether the transaction is sold over tangible facilities controlled by the seller
-            <ul class="dev-guide-list">
-                <li><b>True</b> (<span class="t5">default</span>): Seller delivering the service owns or controls the facilities used to provide the service (facilities based)</li>
-                <li><b>False</b>: Carrier does not own the facilities (non-facilities based)</li>
-            </ul>
-            <br/>
-            In some jurisdictions, tax outcomes will vary depending on whether the service is delivered over infrastructure controlled by the seller</td>
+        <td>Specifies whether the transaction is sold over tangible facilities controlled by the seller.  In some jurisdictions, tax outcomes vary depending on whether the service is delivered over infrastructure controlled by the seller.
+          <br/>
+          <br/>  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Facilities Based</td>
+                  <td>Seller delivering the service owns or controls the facilities used to provide the service</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Non-Facilities Based</td>
+                  <td>Carrier does not own the facilities</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
       </tr>
       <tr>
         <td>Franchise</td>
         <td><code>frch</code></td>
         <td>Indicates that the seller provides services sold pursuant to a franchise agreement between the carrier and the jurisdiction
-            <ul class="dev-guide-list">
-                <li><b>True</b> (<span class="t5">default</span>): Seller has a franchise agreement with the jurisdiction</li>
-                <li><b>False</b>: Franchise fees and taxes do not apply to seller</li>
-            </ul>
+          <br/>
+          <br/>  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Franchise</td>
+                  <td>Seller has a franchise agreement with the jurisdiction</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Not a Franchise</td>
+                  <td>Franchise fees and taxes do not apply to seller</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </td>
       </tr>
       <tr>
         <td>Regulated</td>
         <td><code>reg</code></td>
         <td>Specifies if the company and its services are regulated by the regulatory commission in the state of the service
-            <ul class="dev-guide-list">
-                <li><b>False</b> (<span class="t5">default</span>): Company is not rate-regulated</li>
-                <li><b>True</b>: Company is rate-regulated</li>
-            </ul>
-            <br/>
-            Unless the seller is registered with the state regulatory commission as a rate-regulated, incumbent provider, all transactions should be set to <code>false</code>
+          <br/>
+          <br/>  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Regulated</td>
+                  <td>Company is rate-regulated</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Not Regulated</td>
+                  <td>Company is not rate-regulated</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br/>
+          All transactions should be set to <code>false</code> unless the seller is registered with the state regulatory commission as a rate-regulated, incumbent provider 
         </td>
       </tr>
       <tr>
@@ -110,7 +214,7 @@ Company data defines the <b>company</b> or <b>seller</b>.  Set these keys in the
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exclusion/">Exclusions</a></td>
         <td><code>excl</code></td>
-        <td>The Exclusions object allows you to specify the exclusions that apply to the transaction</td>
+        <td>The <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exclusion/">Exclusions</a> object allows you to specify the exclusions that apply to the transaction</td>
       </tr>
     </tbody>
   </table>
@@ -118,8 +222,8 @@ Company data defines the <b>company</b> or <b>seller</b>.  Set these keys in the
 
 
 <h3 id="customer">Customer (Buyer) Data</h3>
-Customer data defines the <b>customer</b> or <b>buyer</b>.  Set these keys in the <code>Invoice</code> or <code>Location</code> objects.  
-See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/"><code>Invoice</code> Reference</a>  and <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/"><code>Location</code></a> for more information.
+Customer data defines the <b>customer</b> or <b>buyer</b>.  Set these keys in the <code>Invoice</code>, <code>Location</code>, or <code>LineItem</code> objects.  
+See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/invoice/"><code>Invoice</code></a>, <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/"><code>Location</code></a>, and <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/line-item/"><code>LineItem</code></a> for more information.
 
 <div class="mobile-table">
   <table class="styled-table">
@@ -134,41 +238,112 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
       <tr>
         <td>Customer Type</td>
         <td><code>cust</code></td>
-        <td>Specifies the type of customer involved in the transaction
-            <ul class="dev-guide-list">
-                <li><b>Residential</b>: Transactions made by the customer for home use</li>
-                <li><b>Business</b>: Transactions made at a place of business</li>
-                <li><b>Senior Citizen</b>: Transactions made by the customer who meets the jurisdiction requirements to be considered a senior citizen and qualify for senior citizen tax breaks</li>
-                <li><b>Industrial</b>: Transactions made at an industrial business</li>
-            </ul>
+        <td>Specifies the type of customer involved in the transaction.  Customer Type is set on the invoice but can be overridden on the line item.
+          <br/>
+          <br/>  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>0</code></td>
+                  <td>Residential</td>
+                  <td>Transactions made by the customer for home use</td>
+                </tr>
+                <tr>
+                  <td><code>1</code></td>
+                  <td>Business</td>
+                  <td>Transactions made at a place of business</td>
+                </tr>
+                <tr>
+                  <td><code>2</code></td>
+                  <td>Senior Citizen</td>
+                  <td>Transactions made by the customer who meets the jurisdiction requirements to be considered a senior citizen and qualify for senior citizen tax breaks</td>
+                </tr>
+                <tr>
+                  <td><code>3</code></td>
+                  <td>Industrial</td>
+                  <td>Transactions made at an industrial business</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </td>
       </tr>
       <tr>
         <td>Lifeline</td>
         <td><code>lfln</code></td>
-        <td>Indicates if the customer is a Lifeline participant
-            <ul class="dev-guide-list">
-                <li><b>False</b> (<span class="t5">default</span>): Collects all taxes</li>
-                <li><b>True</b>: Turns off the calculation of taxes that are not collected from Lifeline recipients</li>
-            </ul>
+        <td>Indicates if the customer is a Lifeline participant.  Lifeline is set on the invoice but can be overridden on the line item.
+          <br/>
+          <br/>  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Lifeline Participant</td>
+                  <td>Turns off the calculation of taxes that are not collected from Lifeline recipients</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Not a Lifeline Participant</td>
+                  <td>Collects all taxes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </td>
       </tr>
       <tr>
         <td>Incorporated</td>
         <td><code>int</code></td>
         <td>Specifies whether the customer is involved in this transaction inside or outside of the Local level of the jurisdiction.
-            <ul class="dev-guide-list">
-                <li><b>True</b> (<span class="t5">default</span>): Jurisdiction is inside an incorporated location</li>
-                <li><b>False</b>: Jurisdiction is outside an incorporated location.  This option usually results in no local taxes returned</li>
-            </ul>
-            <br/>
-            If unsure, set this key to <code>true</code>
+          <br/>
+          <br/>  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Incorporated</td>
+                  <td>Jurisdiction is inside an incorporated location</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Unincorporated</td>
+                  <td>Jurisdiction is outside an incorporated location.  This option usually results in no local taxes returned</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br/>
+          Use <code>true</code> if unsure
         </td>
       </tr>
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exemption/">Exemptions</a></td>
         <td><code>exms</code></td>
-        <td>The Exemptions object allows you to specify the exemptions that apply to the transaction</td>
+        <td>The <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/exemption/">Exemptions</a> object allows you to specify the exemptions that apply to the transaction</td>
       </tr>
     </tbody>
   </table>
@@ -198,7 +373,7 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
         <td><code>doc</code></td>
         <td>Identifies a single or group of transactions, quotes, or invoices in the calling system. This is a user-defined field limited to 150 characters
             <br/>
-            DocumentCode must be set if <b>Commit</b> is <code>true</code>
+            Document Code must be set if <b>Commit</b> is <code>true</code>
         </td>
       </tr>
       <tr>
@@ -206,59 +381,146 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
         <td><code>cmmt</code></td>
         <td>Specifies if the DocumentCode should be committed as soon as the tax calculation is processed
             <ul class="dev-guide-list">
-                <li><b>False</b> (<span class="t5">default</span>): DocumentCode is not committed or is uncommitted if previously committed and still within the current reporting period</li>
-                <li><b>True</b>: DocumentCode is committed</li>
-                <li>If <b>DocumentCode</b> is provided but <b>Commit</b> is <code>null</code>, <b>Commit</b> is defaulted to <code>false</code></li>
-                <li>If <b>Commit</b> is <code>true</code>, <b>DocumentCode</b> must be set</li>
+                <li>If <b>Document Code</b> is provided but <b>Commit</b> is <code>null</code>, <b>Commit</b> is set to <code>false</code></li>
+                <li>If <b>Commit</b> is <code>true</code>, <b>Document Code</b> must be set</li>
             </ul>
+          <br/>
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Committed</td>
+                  <td>Document Code is committed</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Uncommitted</td>
+                  <td>Document Code is not committed or is uncommitted if previously committed and still within the current reporting period</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </td>
       </tr>
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/">Bill To Jurisdiction</a></td>
         <td><code>bill</code></td>
-        <td>Identifies the location to be billed</td>
+        <td>Identifies the <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">location</a> to be billed.  BillTo is set on the invoice but can be overridden on the line item.</td>
       </tr>
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/invoice-date/">Invoice Date</a></td>
         <td><code>date</code></td>
-        <td>Date to be applied to the transaction or invoice.  Normally set to the bill date, invoice date, or call date (as applicable)</td>
+        <td>Date to be applied to the transaction or invoice.  Normally set to the bill date, invoice date, or call date (as applicable).  Invoice Date is set on the invoice but can be overridden on the line item.</td>
       </tr>
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/invoice-mode/">Invoice Mode</a></td>
         <td><code>invm</code></td>
         <td>Indicates if all line items within an invoice should be processed individually or as one invoice
-            <ul class="dev-guide-list">
-                <li><b>True</b> (<span class="t5">default</span>): line items are part of a single invoice</li>
-                <li><b>False</b>: line items are unrelated</li>
-            </ul>
+          <br/>
+          <br/>  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Invoice Mode</td>
+                  <td>Line items are part of a single invoice</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Not Invoice Mode</td>
+                  <td>Line items are unrelated</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </td>
       </tr>
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/displaying-tax-results/">Return Detail</a></td>
         <td><code>dtl</code></td>
         <td>Indicates if individual line item taxes should be included in response
-            <ul class="dev-guide-list">
-                <li><b>True</b> (<span class="t5">default</span>): return line item level tax results</li>
-                <li><b>False</b>: do not return line item level tax results</li>
-                <li>ReturnDetail and/or ReturnSummary must be set to <code>true</code></li>
-            </ul>
+          <br/>
+          <br/>  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Return Detailed Taxes</td>
+                  <td>Return line item level tax results</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Don't Return Detailed Taxes</td>
+                  <td>Don't return line item level tax results</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br/>
+          ReturnDetail, ReturnSummary, or both must be set to <code>true</code>
         </td>
       </tr>
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/displaying-tax-results/">Return Summary</a></td>
         <td><code>summ</code></td>
         <td>Indicates if the summarized taxes for the invoice should be included in the response
-            <ul class="dev-guide-list">
-                <li><b>False</b> (<span class="t5">default</span>): do not return summarized tax results</li>
-                <li><b>True</b>: return summarized tax results when InvoiceMode (<code>invm</code> is <code>true</code></li>
-                <li>ReturnDetail and/or ReturnSummary must be set to <code>true</code></li>
-            </ul>
+          <br/>
+          <br/>  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Return Summary Taxes</td>
+                  <td>Return summarized tax results when InvoiceMode (<code>invm</code> is <code>true</code></td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Don't Return Summary Taxes</td>
+                  <td>Don't return summarized tax results</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br/>
+          ReturnDetail, ReturnSummary, or both must be set to <code>true</code>
         </td>
       </tr>
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/optional-fields/">Optional Fields</a></td>
         <td><code>opt</code></td>
-        <td>Optional reporting fields useful in reporting.  Optional fields do not impact taxation</td>
+        <td>Optional reporting fields useful in reporting.  <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/optional-fields/">Optional Fields</a> do not impact taxation</td>
       </tr>
     </tbody>
   </table>
@@ -285,12 +547,12 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/">Origination/Ship From Jurisdiction</a></td>
         <td><code>from</code></td>
-        <td>Location for the origination point. If <code>null</code>, the invoice's BillTo location is used</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> for the origination point. If <code>null</code>, the BillTo location is used</td>
       </tr>
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/jurisdiction-determination/">Termination/Ship To Jurisdiction</a></td>
         <td><code>to</code></td>
-        <td>Location for the destination point. If <code>null</code>, the invoice's BillTo location is used</td>
+        <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/location/">Location</a> for the destination point. If <code>null</code>, the BillTo location is used</td>
       </tr>
       <tr>
         <td>Charge</td>
@@ -327,12 +589,45 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
         <td>Sale Type</td>
         <td><code>sale</code></td>
         <td>Indicates if the transaction retail or wholesale
-            <ul class="dev-guide-list">
-                <li><b>wholesale</b>: specifies that the transaction is a sale to another company that will resell the product or service to a consumer</li>
-                <li><b>Retail</b>: specifies that the transaction is a sale to an end user</li>
-                <li><b>Consumed</b>: <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau/">Sales and Use</a> only.  Specifies that the transaction is for an item that is consumed directly</li>
-                <li><b>Vendor Use</b>: <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau/">Sales and Use</a> only.  Specifies that the transaction is for an item that is subject to vendor use tax</li>
-            </ul>
+          <br/>
+          <br/>  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>0</code></td>
+                  <td>wholesale</td>
+                  <td>Specifies that the transaction is a sale to another company that will resell the product or service to a consumer</td>
+                </tr>
+                <tr>
+                  <td><code>1</code></td>
+                  <td>Retail</td>
+                  <td>Specifies that the transaction is a sale to an end user</td>
+                </tr>
+                <tr>
+                  <td><code>2</code></td>
+                  <td>Consumed</td>
+                  <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau/">Sales and Use</a> only  
+                  <br/>
+                  Specifies that the transaction is for an item that is consumed directly</td>
+                </tr>
+                <tr>
+                  <td><code>3</code></td>
+                  <td>Vendor Use</td>
+                  <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/sau/">Sales and Use</a> only
+                  <br/>
+                  Specifies that the transaction is for an item that is subject to vendor use tax</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </td>
       </tr>
       <tr>
@@ -344,10 +639,31 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
         <td>Tax Inclusive</td>
         <td><code>incl</code></td>
         <td>Indicates if the charge for the line item includes tax
-            <ul class="dev-guide-list">
-                <li><b>False</b> (<span class="t5">default</span>): taxes not included in the Line Item charge</li>
-                <li><b>True</b>: taxes are included in the Line Item charge</li>
-            </ul>
+          <br/>
+          <br/>  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Tax Inclusive</td>
+                  <td>Taxes are included in the Line Item charge</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Not Tax Inclusive</td>
+                  <td>Taxes not included in the Line Item charge</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </td>
       </tr>
       <tr>
@@ -363,33 +679,76 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
       <tr>
         <td>Transaction Type</td>
         <td><code>tran</code></td>
-        <td>Transaction Type ID of the service being taxed.  See <a class="dev-guide-link" href="https://github.com/Avalara/Communications-Developer-Content/tree/master/afc_saaspro_tax/support_docs">AFC Telecom Mapping Guidelines</a> for a list of transaction type IDs.</td>
+        <td>Transaction Type ID of the service being taxed.  Use the <code>/api/v2/afc/tspairs</code> <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints/#lookups">endpoint</a> for a list of transaction type IDs.</td>
       </tr>
       <tr>
         <td>Service Type</td>
         <td><code>serv</code></td>
-        <td>Service Type ID of the service being taxed.  See <a class="dev-guide-link" href="https://github.com/Avalara/Communications-Developer-Content/tree/master/afc_saaspro_tax/support_docs">AFC Telecom Mapping Guidelines</a> for a list of service type IDs.</td>
+        <td>Service Type ID of the service being taxed.  Use the <code>/api/v2/afc/tspairs</code> <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/getting-started/environments-endpoints/#lookups">endpoint</a> for a list of service type IDs.</td>
       </tr>
       <tr>
         <td>Debit</td>
         <td><code>dbt</code></td>
         <td>Indicates if the transaction is prepaid
-            <ul class="dev-guide-list">
-                <li><b>False</b> (<span class="t5">default</span>): Debit does not apply</li>
-                <li><b>True</b>: perform a debit call tax calculation</li>
-            </ul>
-            <br/>
-            Only set <b>Debit</b> to <code>true</code> if you are a prepaid seller
+          <br/>
+          <br/>  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Debit</td>
+                  <td>Perform a debit call tax calculation</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Not Debit</td>
+                  <td>Debit does not apply</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br/>
+          Set Debit to <code>true</code> <i>only</i> if you are a prepaid seller
         </td>
       </tr>
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/adjustment/">Adjustment</a></td>
         <td><code>adj</code></td>
         <td>Indicates if this line item is a credit or adjustment
-            <ul class="dev-guide-list">
-                <li><b>False</b> (<span class="t5">default</span>): not a credit or adjustment</li>
-                <li><b>True</b>: is a credit/adjustment</li>
-            </ul></td>
+          <br/>
+          <br/>  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>true</code></td>
+                  <td>Adjustment</td>
+                  <td>Is a credit/adjustment</td>
+                </tr>
+                <tr>
+                  <td><code>false</code></td>
+                  <td>Not an Adjustment</td>
+                  <td>Not a credit or adjustment</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
       </tr>
       <tr>
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/adjustment/">Adjustment Method</a></td>
@@ -400,14 +759,51 @@ See <a class="dev-guide-link" href="/communications/dev-guide_rest_v2/reference/
         <td><a class="dev-guide-link" href="/communications/dev-guide_rest_v2/customizing-transactions/sample-transactions/adjustment/">Discount Type</a></td>
         <td><code>disc</code></td>
         <td>Identifies the discount type for an adjustment
-            <ul class="dev-guide-list">
-                <li><b>None</b> (<span class="t5">default</span>): Discount Type not applicable</li>
-                <li><b>Retail Product</b>: an amount subtracted from the original price to arrive at a lower price</li>
-                <li><b>Manufacturer Product</b>: a credit applied to the total amount reimbursed to either the retailer or the customer by the manufacturer</li>
-                <li><b>Account Level</b>: a stand-alone discount that is not applied against any service but instead as a stand-alone product</li>
-                <li><b>Subsidized</b>: a credit for telephone service where the telephone provider provides a service to a lifeline eligible customer. The credit is applied to the subscriber line charge</li>
-                <li><b>Goodwill</b>: a credit applied to customer invoices for the purpose of engendering customer goodwill. For example, compensation for a service outage</li>
-            </ul>
+          <br/>
+          <br/>  
+          <div class="mobile-table">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Option</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>0</code></td>
+                  <td>None</td>
+                  <td>Discount Type not applicable</td>
+                </tr>
+                <tr>
+                  <td><code>1</code></td>
+                  <td>Retail Product</td>
+                  <td>An amount subtracted from the original price to arrive at a lower price</td>
+                </tr>
+                <tr>
+                  <td><code>2</code></td>
+                  <td>Manufacturer Product</td>
+                  <td>A credit applied to the total amount reimbursed to either the retailer or the customer by the manufacturer</td>
+                </tr>
+                <tr>
+                  <td><code>3</code></td>
+                  <td>Account Level</td>
+                  <td>A stand-alone discount that is not applied against any service but instead as a stand-alone product</td>
+                </tr>
+                <tr>
+                  <td><code>4</code></td>
+                  <td>Subsidized</td>
+                  <td>A credit for telephone service where the telephone provider provides a service to a lifeline eligible customer. The credit is applied to the subscriber line charge</td>
+                </tr>
+                <tr>
+                  <td><code>5</code></td>
+                  <td>Goodwill</td>
+                  <td>A credit applied to customer invoices for the purpose of engendering customer goodwill. For example, compensation for a service outage</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </td>
       </tr>
       <tr>
