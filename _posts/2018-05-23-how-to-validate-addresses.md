@@ -4,7 +4,7 @@ title: How to Validate Addresses
 date: 2018-05-23 10:00
 author: Wayne Myer
 comments: true
-categories: [avatax, howto]
+categories: [avatax, how to]
 product: avatax
 doctype: blog
 disqus: 1

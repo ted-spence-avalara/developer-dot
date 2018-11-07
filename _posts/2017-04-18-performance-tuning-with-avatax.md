@@ -6,7 +6,7 @@ relevantapimethods: Ping
 date: 2017-04-19 12:00
 author: Ted Spence
 comments: true
-categories: [avatax, howto]
+categories: [avatax, how to]
 product: blog
 doctype: blog
 disqus: 1

@@ -4,7 +4,7 @@ title: What's My Tax Profile?
 date: 2018-06-05 13:00
 author: Wayne Myer
 comments: true
-categories: [avatax, howto]
+categories: [avatax, how to]
 product: avatax
 doctype: blog
 disqus: 1

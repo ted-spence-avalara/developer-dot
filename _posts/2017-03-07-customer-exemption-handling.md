@@ -7,7 +7,7 @@ relevantapimethods:
 date: 2017-03-07 16:00
 author: Aaron Robles
 comments: true
-categories: [avatax, howto, exemptions]
+categories: [avatax, how to, exemptions]
 product: blog
 doctype: blog
 disqus: 1

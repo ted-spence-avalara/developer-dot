@@ -6,7 +6,7 @@ relevantapimethods: Ping
 date: 2017-05-15 12:00
 author: Charlie Morrisette
 comments: true
-categories: [avatax, howto, troubleshooting]
+categories: [avatax, how to, troubleshooting]
 product: blog
 doctype: blog
 disqus: 1

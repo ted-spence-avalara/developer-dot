@@ -6,7 +6,7 @@ relevantapimethods: CreateTransaction, CommitTransaction, VerifyTransaction, Voi
 date: 2017-01-23 17:00
 author: Ted Spence
 comments: true
-categories: [avatax, howto]
+categories: [avatax, how to]
 product: blog
 doctype: blog
 disqus: 1

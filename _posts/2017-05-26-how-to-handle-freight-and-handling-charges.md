@@ -6,7 +6,7 @@ relevantapimethods: CreateTransaction
 date: 2017-05-26 12:00
 author: Bob Erdman
 comments: true
-categories: [avatax, shipping, howto]
+categories: [avatax, shipping, how to]
 product: blog
 doctype: blog
 disqus: 1
