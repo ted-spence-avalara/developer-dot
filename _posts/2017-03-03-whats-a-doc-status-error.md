@@ -6,7 +6,7 @@ relevantapimethods: CreateTransaction
 date: 2017-03-03 15:00
 author: Mark Withers
 comments: true
-categories: [avatax, howto, troubleshooting]
+categories: [avatax, how to, troubleshooting]
 product: blog
 doctype: blog
 disqus: 1

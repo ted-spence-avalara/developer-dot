@@ -4,7 +4,7 @@ title: Avatax Connector App
 date: 2016-12-05 1:00
 author: Anagha Sulakhe
 comments: true
-categories: [avatax, howto]
+categories: [avatax, how to]
 product: blog
 doctype: blog
 disqus: 1

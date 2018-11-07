@@ -4,7 +4,7 @@ title: Getting Started with AvaTax REST v2
 date: 2016-10-04 09:00
 author: Ted Spence
 comments: true
-categories: [avatax, howto]
+categories: [avatax, how to]
 product: blog
 doctype: blog
 disqus: 1

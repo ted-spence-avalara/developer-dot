@@ -4,7 +4,7 @@ title: Getting Started With Avalara's APIs
 date: 2016-09-30 11:00
 author: Joe Savarese
 comments: true
-categories: [avatax, howto]
+categories: [avatax, how to]
 product: blog
 doctype: blog
 disqus: 1

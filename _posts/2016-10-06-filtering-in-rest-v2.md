@@ -4,7 +4,7 @@ title: Filtering in AvaTax REST v2
 date: 2016-10-06 10:00
 author: Ted Spence
 comments: true
-categories: [avatax, howto]
+categories: [avatax, how to]
 product: blog
 doctype: blog
 disqus: 1

@@ -11,7 +11,7 @@
                 {% assign p = page.title | downcase %}
                 <li {% if p==a %}class="active" {% endif %}>
                 {% assign cate = category[0] | replace: ' ', '-' %} 
-                {% if category[0] == "api" or category[0] == "sdk" or category[0] == "rest" or category[0] == "ui" %}
+                {% if category[0] == "api" or category[0] == "sdk" or category[0] == "rest" or category[0] == "ui" or category[0] == "crush" %}
                      <a class="text-uppercase" href="/blog/{{ cate | downcase}}/">{{ category[0] }}</a> 
                 {% elsif category[0] != "older" %}
                     <a class="capitalize" href="/blog/{{ cate | downcase}}/">{{ category[0] }}</a> 
@@ -35,7 +35,7 @@
                 {% assign p = page.title | downcase %}
                 <li {% if p == a %}class="active"{% endif %} >
                     {% assign cate = category[0] | replace: ' ', '-' %}
-                    {% if category[0] == "api" or category[0] == "sdk" or category[0] == "rest" or category[0] == "ui" %}
+                    {% if category[0] == "api" or category[0] == "sdk" or category[0] == "rest" or category[0] == "ui" category[0] == "crush" %}
                         <a class="text-uppercase" href="/blog/{{ cate | downcase}}/">{{ category[0] }}</a>
                     {% else %}
                         <a class="capitalize" href="/blog/{{ cate | downcase}}/">{{ category[0] }}</a>

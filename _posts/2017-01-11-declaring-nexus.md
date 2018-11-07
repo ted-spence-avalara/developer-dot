@@ -5,7 +5,7 @@ description: An explanation of how to use the Nexus features of the AvaTax REST 
 date: 2017-01-11 15:00
 author: Ted Spence
 comments: true
-categories: [avatax, howto]
+categories: [avatax, how to]
 product: blog
 doctype: blog
 disqus: 1
