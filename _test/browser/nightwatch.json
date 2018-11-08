@@ -42,7 +42,7 @@
             },
             "screenshots": {
                 "path": "_test/browser/_results/screenshots/FAIL/chrome"
-            },
+            }
         }
     }
 }

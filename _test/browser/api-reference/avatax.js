@@ -46,7 +46,7 @@ module.exports = {
     'API Reference: AvaTax: REST v2 (verify number of endpoints)': function(browser) {
         // NOTE: THESE NOW ALL EXIST ON SUB 'TAG' PAGES
 
-        expectedNumberOfApiEndpoints = 40;
+        expectedNumberOfApiEndpoints = 39;
         const expectedNumberOfSubTags = 7;
 
         const expectedRequest = {accountId: 123456789, confirmResetLicenseKey: true};
@@ -73,18 +73,14 @@ module.exports = {
 
         browser
             .initialize(browser.globals.baseURL + '/api-reference/avatax/rest/v2/methods/Addresses/ResolveAddressPost/');
-        browser.pause(5000)
 
         browser.page.endpointSummary()
             .navigateTo('#ResolveAddressPost-console')
             .navigateTo('#ResolveAddressPost-console-body .fill-sample-data')
-        browser.pause(5000)
 
         browser.page.endpointSummary()
             .click('#ResolveAddressPost-console-body .submit')
         
-        browser.pause(120000)
-
         browser.page.endpointSummary()
             .getConsoleText('ResolveAddressPost', 'responseConsole', function(res) {
                 console.log(res)
