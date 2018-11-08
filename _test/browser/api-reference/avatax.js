@@ -73,16 +73,24 @@ module.exports = {
 
         browser
             .initialize(browser.globals.baseURL + '/api-reference/avatax/rest/v2/methods/Addresses/ResolveAddressPost/');
+        browser.pause(5000)
 
         browser.page.endpointSummary()
             .navigateTo('#ResolveAddressPost-console')
-            .click('#ResolveAddressPost-console-body .fill-sample-data')
-            .click('#ResolveAddressPost-console-body .submit')
+            .navigateTo('#ResolveAddressPost-console-body .fill-sample-data')
+        browser.pause(5000)
 
+        browser.page.endpointSummary()
+            .click('#ResolveAddressPost-console-body .submit')
+        
+        browser.pause(120000)
+
+        browser.page.endpointSummary()
             .getConsoleText('ResolveAddressPost', 'responseConsole', function(res) {
+                console.log(res)
                 browser.assert.ok(deepEqual(res.address, expectedResponse.address),
                     "response for 'try it now' matches expected response");
-            });
+            })
     },
     'API Reference: AvaTax: SOAP (verify number of endpoints)': function(browser) {
         expectedNumberOfApiEndpoints = 15;
