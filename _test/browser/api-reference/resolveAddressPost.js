@@ -1,6 +1,8 @@
 const deepEqual = require('../helpers/deepEqual');
 
 module.exports = {
+    '@tags' : ["SKIP"],
+    
     'before': function(browser) {
         browser.maximizeWindow();
         navigationBar = browser.page.navigationBar();

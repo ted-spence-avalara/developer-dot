@@ -46,6 +46,7 @@ fi
 _test/browser/nightwatch \
     --config _test/browser/nightwatch.json \
     $nightwatchENV \
+    --skiptags SKIP
 
 # since script is ending naturally, traps will not be invoked
 # teardown jekyll and selenium here
