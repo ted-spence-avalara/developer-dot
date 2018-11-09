@@ -45,7 +45,7 @@ fi
 # run nightwatch tests
 _test/browser/nightwatch \
     --config _test/browser/nightwatch.json \
-    $nightwatchENV
+    $nightwatchENV \
 
 # since script is ending naturally, traps will not be invoked
 # teardown jekyll and selenium here

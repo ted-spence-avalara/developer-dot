@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "/Users/genevieve.conty/Documents/Avalara/developer-dot/public/code/blog/avatax-connector-app/AvaTaxConnector.Tests/AvaTaxConnector.Tests.csproj",
+  "TargetFramework": "v4.5.1",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}
