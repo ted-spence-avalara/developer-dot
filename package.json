@@ -13,7 +13,7 @@
     "test": "NODE_ENV=test mocha --compilers js:babel-register --recursive _test/react _test/unit",
     "test-web": "bash ./scripts/test-web.sh",
     "test-web-bstack": "_test/browser/nightwatch --config _test/browser/nightwatchBrowserStack.json --retries 1",
-    "lint": "eslint --ext .js,.jsx ./dynamic ./_test --fix"
+    "lint": "eslint --ext .js,.jsx ./dynamic ./_test"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
