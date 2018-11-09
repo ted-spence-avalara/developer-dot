@@ -25,7 +25,7 @@ const saveToFs = (folder, file, html) => {
 const buildBlogMap = (endpoint) => {
     const blogPath = path.join(__dirname, '..', '_posts');
     const files = fs.readdirSync(blogPath);
-    let blogMap = [];
+    const blogMap = [];
 
     if (endpoint) {
         const opId = endpoint.operationId;

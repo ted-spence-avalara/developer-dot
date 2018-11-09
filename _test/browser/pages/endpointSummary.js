@@ -27,6 +27,7 @@ const endpointSummary = {
                     .waitForElementVisible(firstText, this.api.globals.waitTime)
                     .api.getText(consoleBody, function(res) {
                         const response = JSON.parse(res.value);
+
                         response.Timestamp = undefined;
                         response.date = undefined;
                         callback(response);

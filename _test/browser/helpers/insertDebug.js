@@ -1,4 +1,4 @@
-"use strict";
+
 
 /**
  * This should ONLY be used in development!
@@ -12,24 +12,25 @@
  *
  */
 exports.command = function insertDebug() {
-  return this.executeAsync(function(done) {
-    $("body").append('<button id="debug-continue">Continue</button>');
-    let $debugContinue = $("#debug-continue");
-    $debugContinue.css({
-      width: "100px",
-      height: "50px",
-      position: "absolute",
-      top: 0,
-      left: 0,
-      "background-color": "magenta",
-      "z-index": 1000000,
-      color: "white"
-    });
-    $debugContinue.click(function() {
-      $debugContinue.remove();
-    });
-    done();
-  })
-    .waitForElementPresent("button#debug-continue")
-    .waitForElementNotPresent("button#debug-continue", 600 * 1000);
+    return this.executeAsync(function(done) {
+        $('body').append('<button id="debug-continue">Continue</button>');
+        const $debugContinue = $('#debug-continue');
+
+        $debugContinue.css({
+            'width': '100px',
+            'height': '50px',
+            'position': 'absolute',
+            'top': 0,
+            'left': 0,
+            'background-color': 'magenta',
+            'z-index': 1000000,
+            'color': 'white'
+        });
+        $debugContinue.click(function() {
+            $debugContinue.remove();
+        });
+        done();
+    })
+    .waitForElementPresent('button#debug-continue')
+    .waitForElementNotPresent('button#debug-continue', 600 * 1000);
 };

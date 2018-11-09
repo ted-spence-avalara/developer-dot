@@ -1,11 +1,10 @@
 const deepEqual = require('../helpers/deepEqual');
 
 module.exports = {
-    '@tags' : ["SKIP"],
-    
+    '@tags': ['SKIP'],
+
     'before': function(browser) {
         browser.maximizeWindow();
-        navigationBar = browser.page.navigationBar();
     },
 
     'after': function(browser) {
@@ -22,11 +21,10 @@ module.exports = {
             .navigateTo('#ResolveAddressPost-console')
             .navigateTo('#ResolveAddressPost-console-body .fill-sample-data')
             .click('#ResolveAddressPost-console-body .submit')
-        
+
             .getConsoleText('ResolveAddressPost', 'responseConsole', function(res) {
-                console.log(res)
                 browser.assert.ok(deepEqual(res.address, expectedResponse.address),
                     "response for 'try it now' matches expected response");
-            })
+            });
     }
 };
