@@ -1,4 +1,4 @@
-gaconst deepEqual = require('../helpers/deepEqual');
+const deepEqual = require('../helpers/deepEqual');
 
 module.exports = {
     'before': function(browser) {
