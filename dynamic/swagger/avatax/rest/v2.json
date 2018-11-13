@@ -18,6 +18,7 @@
 "schemes": [
   "https"
 ],
+    "basePath": "/",
 	"paths": {
 		"/api/v2/accounts": {
 			"get": {
@@ -23427,7 +23428,7 @@
 					"uniqueItems": false,
 					"type": "array",
 					"items": {
-						
+
 					},
 					"example": [{
 							"companyId": 0,
